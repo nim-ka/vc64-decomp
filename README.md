@@ -1,6 +1,6 @@
-# wiivc-decomp
+# vc64-decomp
 
-Wii Virtual Console decompilation project. Targets SM64 North American release, and builds 00000001.app.
+Wii N64 Virtual Console decompilation project. Targets SM64 North American release, and builds 00000001.app.
 
 SHA-1:
 
