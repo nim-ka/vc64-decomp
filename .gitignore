@@ -1,0 +1,10 @@
+baserom*
+build/*
+tools/*
+!tools/Makefile
+!tools/*.c
+!tools/*.h
+!tools/*.cpp
+!tools/*.hpp
+!tools/*.cxx
+!tools/*.hxx
