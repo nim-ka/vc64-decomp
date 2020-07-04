@@ -13,9 +13,6 @@ ELF := $(DOL:.app=.elf)
 MAP := $(BUILD)/vc64.map
 O_FILES := $(addprefix $(BUILD)/,$(S_FILES:.s=.o) $(C_FILES:.c=.o))
 
-DEVKITPPC ?= /mnt/c/devkitPro/devkitPPC
-MWCCTOOLS ?= /mnt/c/Program\ Files/CodeWarrior/PowerPC_EABI_Tools/Command_Line_Tools
-
 MAKE := make
 
 AS := $(DEVKITPPC)/bin/powerpc-eabi-as.exe
