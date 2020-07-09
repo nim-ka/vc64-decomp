@@ -48,7 +48,6 @@ SECTIONS
         code_80139084.o(.text)
         code_8013E0FC.o(.text)
         code_8013E6A8.o(.text)
-        dummy.o(.text) /* TODO: what the fuck */
     }
 
     .ctors BIND(0x80167240) : { *(.ctors) }
