@@ -1,3 +1,21 @@
+ifneq ($(findstring MINGW,$(shell uname)),)
+	WINDOWS := 1
+endif
+ifneq ($(findstring MSYS,$(shell uname)),)
+	WINDOWS := 1
+endif
+
+WSLENV ?= dummy
+ifndef WSLENV
+	WINDOWS := 1
+endif
+
+ifeq ($(WINDOWS), 1)
+	WINE :=
+else
+	WINE := wine
+endif
+
 ASM_DIR := asm
 SRC_DIR := src
 
@@ -13,19 +31,19 @@ ELF := $(DOL:.app=.elf)
 MAP := $(BUILD)/vc64.map
 O_FILES := $(addprefix $(BUILD)/,$(S_FILES:.s=.o) $(C_FILES:.c=.o))
 
-MAKE := make
-
-AS := $(DEVKITPPC)/bin/powerpc-eabi-as.exe
-OBJCOPY := $(DEVKITPPC)/bin/powerpc-eabi-objcopy.exe
-CC := $(MWCCTOOLS)/mwcceppc.exe
-LD := $(MWCCTOOLS)/mwldeppc.exe
-ELF2DOL := tools/elf2dol
 MKDIR := mkdir
 SHA1SUM := sha1sum
+MAKE := make
+
+AS := $(DEVKITPPC)/bin/powerpc-eabi-as
+OBJCOPY := $(DEVKITPPC)/bin/powerpc-eabi-objcopy
+CC := $(WINE) $(MWCCTOOLS)/mwcceppc.exe
+LD := $(WINE) $(MWCCTOOLS)/mwldeppc.exe
+ELF2DOL := tools/elf2dol
 
 ASFLAGS := -mgekko -I include
-LDFLAGS := -proc gekko -map $(MAP)
-CFLAGS := -proc gekko -fp hard -O4,p -i include
+LDFLAGS := -proc gekko -fp hard -map $(MAP)
+CFLAGS := -proc gekko -Cpp_exceptions off -fp hard -use_lmw_stmw on -i include
 
 DUMMY != mkdir -p $(BUILD) $(BUILD)/$(ASM_DIR) $(BUILD)/$(SRC_DIR)
 

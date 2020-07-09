@@ -1,3 +1,12 @@
+FORCEFILES
+{
+        code_8000CB6C.o
+	code_80043A0C.o
+	code_8004E5A0.o
+	code_8005F198.o
+	code_800C7B54.o
+}
+
 SECTIONS
 {
     .init BIND(0x80004000) : { *(.init) }
