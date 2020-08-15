@@ -1,6 +1,7 @@
 baserom*
 build/*
 tools/*
+!tools/asm_processor
 !tools/asm_processor/*
 !tools/Makefile
 !tools/*.c
