@@ -1,3 +1,8 @@
+.macro glabel label
+    .global \label
+    \label:
+.endm
+
 /*
 Code sections:
 	.init:	0x00000100	0x80004000	0x800064E0

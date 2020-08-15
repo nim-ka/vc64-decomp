@@ -29,7 +29,11 @@ BUILD := build
 DOL := $(BUILD)/$(TARGET)
 ELF := $(DOL:.app=.elf)
 MAP := $(BUILD)/vc64.map
+
 O_FILES := $(addprefix $(BUILD)/,$(S_FILES:.s=.o) $(C_FILES:.c=.o))
+
+GLOBAL_ASM_C_FILES != grep -rl 'GLOBAL_ASM(' $(C_FILES)
+GLOBAL_ASM_O_FILES = $(addprefix $(BUILD)/,$(GLOBAL_ASM_C_FILES:.c=.o))
 
 MKDIR := mkdir
 SHA1SUM := sha1sum
@@ -41,9 +45,20 @@ CC := $(WINE) $(MWCCTOOLS)/mwcceppc.exe
 LD := $(WINE) $(MWCCTOOLS)/mwldeppc.exe
 ELF2DOL := tools/elf2dol
 
-ASFLAGS := -mgekko -I include
-LDFLAGS := -proc gekko -fp hard -map $(MAP)
-CFLAGS := -proc gekko -Cpp_exceptions off -fp hard -use_lmw_stmw on -i include
+ASM_PROCESSOR_DIR := tools/asm_processor
+ASM_PROCESSOR := $(ASM_PROCESSOR_DIR)/compile.sh
+
+ASFLAGS :=
+LDFLAGS :=
+CFLAGS :=
+
+ifeq ($(NON_MATCHING),1)
+    CFLAGS := $(CFLAGS) -DNON_MATCHING
+endif
+
+ASFLAGS := $(ASFLAGS) -mgekko -I include
+LDFLAGS := $(LDFLAGS) -proc gekko -fp hard -map $(MAP)
+CFLAGS := $(CFLAGS) -proc gekko -Cpp_exceptions off -fp hard -use_lmw_stmw on -i include
 
 DUMMY != mkdir -p $(BUILD) $(BUILD)/$(ASM_DIR) $(BUILD)/$(SRC_DIR)
 
@@ -60,6 +75,9 @@ clean:
 $(ELF): $(O_FILES) $(LDSCRIPT)
 	$(LD) $(LDFLAGS) -o $@ -lcf $(LDSCRIPT) $(O_FILES)
 	$(OBJCOPY) $@ $@
+
+$(GLOBAL_ASM_O_FILES): $(GLOBAL_ASM_C_FILES)
+	$(ASM_PROCESSOR) "$(CC) $(CFLAGS)" "$(AS) $(ASFLAGS)" $< $@
 
 $(BUILD)/%.o: %.s
 	$(AS) $(ASFLAGS) -o $@ $<
