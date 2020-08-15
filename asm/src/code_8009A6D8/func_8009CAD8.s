@@ -1,0 +1,9 @@
+.section .text
+
+glabel func_8009CAD8
+/* 8009CAD8 00098098  38 00 00 00 */	li r0, 0
+/* 8009CADC 0009809C  80 8D 90 80 */	lwz r4, lbl_8025BB40-_SDA_BASE_(r13)
+/* 8009CAE0 000980A0  50 60 07 BE */	rlwimi r0, r3, 0, 0x1e, 0x1f
+/* 8009CAE4 000980A4  60 00 00 04 */	ori r0, r0, 4
+/* 8009CAE8 000980A8  B0 04 00 08 */	sth r0, 8(r4)
+/* 8009CAEC 000980AC  4E 80 00 20 */	blr 

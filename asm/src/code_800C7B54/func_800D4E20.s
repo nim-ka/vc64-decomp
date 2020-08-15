@@ -1,0 +1,9 @@
+.section .text
+
+glabel func_800D4E20
+/* 800D4E20 000D03E0  3C 80 80 24 */	lis r4, lbl_80239C74@ha
+/* 800D4E24 000D03E4  38 60 00 04 */	li r3, 4
+/* 800D4E28 000D03E8  38 84 9C 74 */	addi r4, r4, lbl_80239C74@l
+/* 800D4E2C 000D03EC  38 A0 00 00 */	li r5, 0
+/* 800D4E30 000D03F0  38 84 00 95 */	addi r4, r4, 0x95
+/* 800D4E34 000D03F4  48 00 87 78 */	b func_800DD5AC

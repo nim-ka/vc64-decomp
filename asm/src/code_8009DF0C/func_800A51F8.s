@@ -1,0 +1,7 @@
+.section .text
+
+glabel func_800A51F8
+/* 800A51F8 000A07B8  7C 60 1B 78 */	mr r0, r3
+/* 800A51FC 000A07BC  80 6D 83 8C */	lwz r3, lbl_8025AE4C-_SDA_BASE_(r13)
+/* 800A5200 000A07C0  90 0D 83 8C */	stw r0, lbl_8025AE4C-_SDA_BASE_(r13)
+/* 800A5204 000A07C4  4E 80 00 20 */	blr 

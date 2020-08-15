@@ -1,0 +1,9 @@
+.section .text
+
+glabel func_8009023C
+/* 8009023C 0008B7FC  7C 6D 42 E6 */	mftbu r3
+/* 80090240 0008B800  7C 8C 42 E6 */	mftb r4, 0x10c
+/* 80090244 0008B804  7C AD 42 E6 */	mftbu r5
+/* 80090248 0008B808  7C 03 28 00 */	cmpw r3, r5
+/* 8009024C 0008B80C  40 82 FF F0 */	bne func_8009023C
+/* 80090250 0008B810  4E 80 00 20 */	blr 

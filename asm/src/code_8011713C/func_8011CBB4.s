@@ -1,0 +1,24 @@
+.section .text
+
+glabel func_8011CBB4
+/* 8011CBB4 00118174  C0 42 89 B0 */	lfs f2, lbl_8025CAF0-_SDA2_BASE_(r2)
+/* 8011CBB8 00118178  EC 01 10 2A */	fadds f0, f1, f2
+/* 8011CBBC 0011817C  FC 00 10 40 */	fcmpo cr0, f0, f2 /* unknown instruction */
+/* 8011CBC0 00118180  40 81 00 08 */	ble lbl_8011CBC8
+/* 8011CBC4 00118184  48 00 00 18 */	b lbl_8011CBDC
+lbl_8011CBC8:
+/* 8011CBC8 00118188  C0 42 89 B4 */	lfs f2, lbl_8025CAF4-_SDA2_BASE_(r2)
+/* 8011CBCC 0011818C  FC 00 10 40 */	fcmpo cr0, f0, f2 /* unknown instruction */
+/* 8011CBD0 00118190  40 80 00 08 */	bge lbl_8011CBD8
+/* 8011CBD4 00118194  48 00 00 08 */	b lbl_8011CBDC
+lbl_8011CBD8:
+/* 8011CBD8 00118198  FC 40 00 90 */	fmr f2, f0
+lbl_8011CBDC:
+/* 8011CBDC 0011819C  C0 03 01 44 */	lfs f0, 0x144(r3)
+/* 8011CBE0 001181A0  FC 02 00 00 */	fcmpu cr0, f2, f0
+/* 8011CBE4 001181A4  4D 82 00 20 */	beqlr 
+/* 8011CBE8 001181A8  88 03 01 23 */	lbz r0, 0x123(r3)
+/* 8011CBEC 001181AC  D0 43 01 44 */	stfs f2, 0x144(r3)
+/* 8011CBF0 001181B0  60 00 00 20 */	ori r0, r0, 0x20
+/* 8011CBF4 001181B4  98 03 01 23 */	stb r0, 0x123(r3)
+/* 8011CBF8 001181B8  4E 80 00 20 */	blr 

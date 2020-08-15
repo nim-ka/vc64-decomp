@@ -1,0 +1,8 @@
+.section .text
+
+glabel func_800A83D8
+/* 800A83D8 000A3998  3C 60 CC 00 */	lis r3, 0xCC005036@ha
+/* 800A83DC 000A399C  A0 03 50 36 */	lhz r0, 0xCC005036@l(r3)
+/* 800A83E0 000A39A0  54 00 04 7E */	clrlwi r0, r0, 0x11
+/* 800A83E4 000A39A4  B0 03 50 36 */	sth r0, 0x5036(r3)
+/* 800A83E8 000A39A8  4E 80 00 20 */	blr 

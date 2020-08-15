@@ -1,0 +1,9 @@
+.section .text
+
+glabel func_8014F9D4
+/* 8014F9D4 0014AF94  93 6B FF EC */	stw r27, -0x14(r11)
+/* 8014F9D8 0014AF98  93 8B FF F0 */	stw r28, -0x10(r11)
+/* 8014F9DC 0014AF9C  93 AB FF F4 */	stw r29, -0xc(r11)
+/* 8014F9E0 0014AFA0  93 CB FF F8 */	stw r30, -8(r11)
+/* 8014F9E4 0014AFA4  93 EB FF FC */	stw r31, -4(r11)
+/* 8014F9E8 0014AFA8  4E 80 00 20 */	blr 

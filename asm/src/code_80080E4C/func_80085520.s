@@ -1,0 +1,7 @@
+.section .text
+
+glabel func_80085520
+/* 80085520 00080AE0  3C 60 80 16 */	lis r3, lbl_80167EA0@ha
+/* 80085524 00080AE4  38 63 7E A0 */	addi r3, r3, lbl_80167EA0@l
+/* 80085528 00080AE8  4C C6 31 82 */	crclr 6
+/* 8008552C 00080AEC  48 00 39 3C */	b func_80088E68

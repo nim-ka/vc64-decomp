@@ -1,0 +1,9 @@
+.section .text
+
+glabel func_8014FA20
+/* 8014FA20 0014AFE0  83 6B FF EC */	lwz r27, -0x14(r11)
+/* 8014FA24 0014AFE4  83 8B FF F0 */	lwz r28, -0x10(r11)
+/* 8014FA28 0014AFE8  83 AB FF F4 */	lwz r29, -0xc(r11)
+/* 8014FA2C 0014AFEC  83 CB FF F8 */	lwz r30, -8(r11)
+/* 8014FA30 0014AFF0  83 EB FF FC */	lwz r31, -4(r11)
+/* 8014FA34 0014AFF4  4E 80 00 20 */	blr 

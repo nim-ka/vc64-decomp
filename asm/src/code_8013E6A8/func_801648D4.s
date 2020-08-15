@@ -1,0 +1,9 @@
+.section .text
+
+glabel func_801648D4
+/* 801648D4 0015FE94  3C 60 80 26 */	lis r3, lbl_80259FFC@ha
+/* 801648D8 0015FE98  38 00 00 01 */	li r0, 1
+/* 801648DC 0015FE9C  38 83 9F FC */	addi r4, r3, lbl_80259FFC@l
+/* 801648E0 0015FEA0  38 60 00 00 */	li r3, 0
+/* 801648E4 0015FEA4  90 04 00 98 */	stw r0, 0x98(r4)
+/* 801648E8 0015FEA8  4E 80 00 20 */	blr 

@@ -1,0 +1,10 @@
+.section .text
+
+glabel func_8008E220
+/* 8008E220 000897E0  3C 60 80 17 */	lis r3, lbl_801745D0@ha
+/* 8008E224 000897E4  3C A0 80 17 */	lis r5, lbl_8017460C@ha
+/* 8008E228 000897E8  38 63 45 D0 */	addi r3, r3, lbl_801745D0@l
+/* 8008E22C 000897EC  38 80 03 A7 */	li r4, 0x3a7
+/* 8008E230 000897F0  38 A5 46 0C */	addi r5, r5, lbl_8017460C@l
+/* 8008E234 000897F4  4C C6 31 82 */	crclr 6
+/* 8008E238 000897F8  4B FF AC C0 */	b func_80088EF8

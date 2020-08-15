@@ -1,0 +1,8 @@
+.section .text
+
+glabel func_800881E8
+/* 800881E8 000837A8  7C 00 04 AC */	sync
+/* 800881EC 000837AC  7C 70 FA A6 */	mfspr r3, 0x3f0
+/* 800881F0 000837B0  60 63 40 00 */	ori r3, r3, 0x4000
+/* 800881F4 000837B4  7C 70 FB A6 */	mtspr 0x3f0, r3
+/* 800881F8 000837B8  4E 80 00 20 */	blr 

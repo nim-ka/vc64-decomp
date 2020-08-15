@@ -1,0 +1,7 @@
+.section .text
+
+glabel func_80094F84
+/* 80094F84 00090544  7C 60 00 A6 */	mfmsr r3
+/* 80094F88 00090548  60 63 00 30 */	ori r3, r3, 0x30
+/* 80094F8C 0009054C  7C 60 01 24 */	mtmsr r3
+/* 80094F90 00090550  4B FF FF AC */	b func_80094F3C

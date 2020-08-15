@@ -1,0 +1,11 @@
+.section .text
+
+glabel func_800EAB9C
+/* 800EAB9C 000E615C  28 03 00 FF */	cmplwi r3, 0xff
+/* 800EABA0 000E6160  41 82 00 0C */	beq lbl_800EABAC
+/* 800EABA4 000E6164  3C 80 80 24 */	lis r4, lbl_8023D0A0@ha
+/* 800EABA8 000E6168  98 64 D0 A0 */	stb r3, lbl_8023D0A0@l(r4)
+lbl_800EABAC:
+/* 800EABAC 000E616C  3C 60 80 24 */	lis r3, lbl_8023D0A0@ha
+/* 800EABB0 000E6170  88 63 D0 A0 */	lbz r3, lbl_8023D0A0@l(r3)
+/* 800EABB4 000E6174  4E 80 00 20 */	blr 

@@ -1,0 +1,23 @@
+.section .text
+
+glabel func_8011C98C
+/* 8011C98C 00117F4C  C0 42 89 CC */	lfs f2, lbl_8025CB0C-_SDA2_BASE_(r2)
+/* 8011C990 00117F50  FC 01 10 40 */	fcmpo cr0, f1, f2 /* unknown instruction */
+/* 8011C994 00117F54  40 81 00 08 */	ble lbl_8011C99C
+/* 8011C998 00117F58  48 00 00 18 */	b lbl_8011C9B0
+lbl_8011C99C:
+/* 8011C99C 00117F5C  C0 42 89 B4 */	lfs f2, lbl_8025CAF4-_SDA2_BASE_(r2)
+/* 8011C9A0 00117F60  FC 01 10 40 */	fcmpo cr0, f1, f2 /* unknown instruction */
+/* 8011C9A4 00117F64  40 80 00 08 */	bge lbl_8011C9AC
+/* 8011C9A8 00117F68  48 00 00 08 */	b lbl_8011C9B0
+lbl_8011C9AC:
+/* 8011C9AC 00117F6C  FC 40 08 90 */	fmr f2, f1
+lbl_8011C9B0:
+/* 8011C9B0 00117F70  C0 03 01 2C */	lfs f0, 0x12c(r3)
+/* 8011C9B4 00117F74  FC 02 00 00 */	fcmpu cr0, f2, f0
+/* 8011C9B8 00117F78  4D 82 00 20 */	beqlr 
+/* 8011C9BC 00117F7C  88 03 01 23 */	lbz r0, 0x123(r3)
+/* 8011C9C0 00117F80  D0 43 01 2C */	stfs f2, 0x12c(r3)
+/* 8011C9C4 00117F84  60 00 00 20 */	ori r0, r0, 0x20
+/* 8011C9C8 00117F88  98 03 01 23 */	stb r0, 0x123(r3)
+/* 8011C9CC 00117F8C  4E 80 00 20 */	blr 

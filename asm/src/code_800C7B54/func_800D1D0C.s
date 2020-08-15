@@ -1,0 +1,8 @@
+.section .text
+
+glabel func_800D1D0C
+/* 800D1D0C 000CD2CC  3C A0 80 24 */	lis r5, lbl_80239AB0@ha
+/* 800D1D10 000CD2D0  7C 64 1B 78 */	mr r4, r3
+/* 800D1D14 000CD2D4  38 A5 9A B0 */	addi r5, r5, lbl_80239AB0@l
+/* 800D1D18 000CD2D8  38 65 00 40 */	addi r3, r5, 0x40
+/* 800D1D1C 000CD2DC  4B FF D8 E8 */	b func_800CF604

@@ -1,0 +1,9 @@
+.section .text
+
+glabel func_800D1778
+/* 800D1778 000CCD38  3C 80 80 24 */	lis r4, lbl_80238A80@ha
+/* 800D177C 000CCD3C  3C 60 80 0D */	lis r3, func_800D1910@ha
+/* 800D1780 000CCD40  38 84 8A 80 */	addi r4, r4, lbl_80238A80@l
+/* 800D1784 000CCD44  38 63 19 10 */	addi r3, r3, func_800D1910@l
+/* 800D1788 000CCD48  38 84 10 00 */	addi r4, r4, 0x1000
+/* 800D178C 000CCD4C  4B FB 72 70 */	b func_800889FC

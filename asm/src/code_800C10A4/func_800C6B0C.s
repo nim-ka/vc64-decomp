@@ -1,0 +1,120 @@
+.section .text
+
+glabel func_800C6B0C
+/* 800C6B0C 000C20CC  94 21 FF E0 */	stwu r1, -0x20(r1)
+/* 800C6B10 000C20D0  39 03 00 C8 */	addi r8, r3, 0xc8
+/* 800C6B14 000C20D4  38 03 00 F8 */	addi r0, r3, 0xf8
+/* 800C6B18 000C20D8  38 AD 94 60 */	addi r5, r13, 0x8025BF20-_SDA_BASE_
+/* 800C6B1C 000C20DC  C0 A3 00 B4 */	lfs f5, 0xb4(r3)
+/* 800C6B20 000C20E0  38 8D 94 58 */	addi r4, r13, 0x8025BF18-_SDA_BASE_
+/* 800C6B24 000C20E4  C0 03 03 C8 */	lfs f0, 0x3c8(r3)
+/* 800C6B28 000C20E8  C0 63 00 B8 */	lfs f3, 0xb8(r3)
+/* 800C6B2C 000C20EC  C0 23 03 CC */	lfs f1, 0x3cc(r3)
+/* 800C6B30 000C20F0  EC 85 00 32 */	fmuls f4, f5, f0
+/* 800C6B34 000C20F4  EC 43 00 32 */	fmuls f2, f3, f0
+/* 800C6B38 000C20F8  C0 03 03 B0 */	lfs f0, 0x3b0(r3)
+/* 800C6B3C 000C20FC  EC 63 00 72 */	fmuls f3, f3, f1
+/* 800C6B40 000C2100  EC 25 00 72 */	fmuls f1, f5, f1
+/* 800C6B44 000C2104  EC E4 18 2A */	fadds f7, f4, f3
+/* 800C6B48 000C2108  ED 02 08 28 */	fsubs f8, f2, f1
+/* 800C6B4C 000C210C  EC E7 00 32 */	fmuls f7, f7, f0
+/* 800C6B50 000C2110  ED 08 00 32 */	fmuls f8, f8, f0
+lbl_800C6B54:
+/* 800C6B54 000C2114  88 C8 00 08 */	lbz r6, 8(r8)
+/* 800C6B58 000C2118  7C C6 07 75 */	extsb. r6, r6
+/* 800C6B5C 000C211C  40 82 01 54 */	bne lbl_800C6CB0
+/* 800C6B60 000C2120  C0 48 00 00 */	lfs f2, 0(r8)
+/* 800C6B64 000C2124  C0 08 00 04 */	lfs f0, 4(r8)
+/* 800C6B68 000C2128  EC 22 38 28 */	fsubs f1, f2, f7
+/* 800C6B6C 000C212C  C0 6D 94 60 */	lfs f3, lbl_8025BF20-_SDA_BASE_(r13)
+/* 800C6B70 000C2130  EC C0 40 28 */	fsubs f6, f0, f8
+/* 800C6B74 000C2134  EC A2 38 2A */	fadds f5, f2, f7
+/* 800C6B78 000C2138  EC 80 40 2A */	fadds f4, f0, f8
+/* 800C6B7C 000C213C  D0 21 00 10 */	stfs f1, 0x10(r1)
+/* 800C6B80 000C2140  FC 01 18 40 */	fcmpo cr0, f1, f3 /* unknown instruction */
+/* 800C6B84 000C2144  D0 C1 00 14 */	stfs f6, 0x14(r1)
+/* 800C6B88 000C2148  D0 A1 00 08 */	stfs f5, 8(r1)
+/* 800C6B8C 000C214C  D0 81 00 0C */	stfs f4, 0xc(r1)
+/* 800C6B90 000C2150  4C 40 13 82 */	cror 2, 0, 2
+/* 800C6B94 000C2154  41 82 00 34 */	beq lbl_800C6BC8
+/* 800C6B98 000C2158  C0 4D 94 58 */	lfs f2, lbl_8025BF18-_SDA_BASE_(r13)
+/* 800C6B9C 000C215C  FC 01 10 40 */	fcmpo cr0, f1, f2 /* unknown instruction */
+/* 800C6BA0 000C2160  4C 41 13 82 */	cror 2, 1, 2
+/* 800C6BA4 000C2164  41 82 00 24 */	beq lbl_800C6BC8
+/* 800C6BA8 000C2168  C0 25 00 04 */	lfs f1, 4(r5)
+/* 800C6BAC 000C216C  FC 06 08 40 */	fcmpo cr0, f6, f1 /* unknown instruction */
+/* 800C6BB0 000C2170  4C 40 13 82 */	cror 2, 0, 2
+/* 800C6BB4 000C2174  41 82 00 14 */	beq lbl_800C6BC8
+/* 800C6BB8 000C2178  C0 04 00 04 */	lfs f0, 4(r4)
+/* 800C6BBC 000C217C  FC 06 00 40 */	fcmpo cr0, f6, f0 /* unknown instruction */
+/* 800C6BC0 000C2180  4C 41 13 82 */	cror 2, 1, 2
+/* 800C6BC4 000C2184  40 82 00 7C */	bne lbl_800C6C40
+lbl_800C6BC8:
+/* 800C6BC8 000C2188  C0 21 00 08 */	lfs f1, 8(r1)
+/* 800C6BCC 000C218C  C0 0D 94 60 */	lfs f0, lbl_8025BF20-_SDA_BASE_(r13)
+/* 800C6BD0 000C2190  FC 01 00 40 */	fcmpo cr0, f1, f0 /* unknown instruction */
+/* 800C6BD4 000C2194  40 81 00 DC */	ble lbl_800C6CB0
+/* 800C6BD8 000C2198  C0 0D 94 58 */	lfs f0, lbl_8025BF18-_SDA_BASE_(r13)
+/* 800C6BDC 000C219C  FC 01 00 40 */	fcmpo cr0, f1, f0 /* unknown instruction */
+/* 800C6BE0 000C21A0  40 80 00 D0 */	bge lbl_800C6CB0
+/* 800C6BE4 000C21A4  C0 21 00 0C */	lfs f1, 0xc(r1)
+/* 800C6BE8 000C21A8  C0 05 00 04 */	lfs f0, 4(r5)
+/* 800C6BEC 000C21AC  FC 01 00 40 */	fcmpo cr0, f1, f0 /* unknown instruction */
+/* 800C6BF0 000C21B0  40 81 00 C0 */	ble lbl_800C6CB0
+/* 800C6BF4 000C21B4  C0 04 00 04 */	lfs f0, 4(r4)
+/* 800C6BF8 000C21B8  FC 01 00 40 */	fcmpo cr0, f1, f0 /* unknown instruction */
+/* 800C6BFC 000C21BC  40 80 00 B4 */	bge lbl_800C6CB0
+/* 800C6C00 000C21C0  80 A8 00 00 */	lwz r5, 0(r8)
+/* 800C6C04 000C21C4  38 80 00 00 */	li r4, 0
+/* 800C6C08 000C21C8  80 E8 00 04 */	lwz r7, 4(r8)
+/* 800C6C0C 000C21CC  38 00 FF FF */	li r0, -1
+/* 800C6C10 000C21D0  80 C1 00 10 */	lwz r6, 0x10(r1)
+/* 800C6C14 000C21D4  90 A3 01 04 */	stw r5, 0x104(r3)
+/* 800C6C18 000C21D8  80 A1 00 14 */	lwz r5, 0x14(r1)
+/* 800C6C1C 000C21DC  90 E3 01 08 */	stw r7, 0x108(r3)
+/* 800C6C20 000C21E0  80 E8 00 08 */	lwz r7, 8(r8)
+/* 800C6C24 000C21E4  90 E3 01 0C */	stw r7, 0x10c(r3)
+/* 800C6C28 000C21E8  90 C3 00 F8 */	stw r6, 0xf8(r3)
+/* 800C6C2C 000C21EC  90 A3 00 FC */	stw r5, 0xfc(r3)
+/* 800C6C30 000C21F0  98 83 01 00 */	stb r4, 0x100(r3)
+/* 800C6C34 000C21F4  98 03 01 01 */	stb r0, 0x101(r3)
+/* 800C6C38 000C21F8  38 60 FF FF */	li r3, -1
+/* 800C6C3C 000C21FC  48 00 00 84 */	b lbl_800C6CC0
+lbl_800C6C40:
+/* 800C6C40 000C2200  FC 05 18 40 */	fcmpo cr0, f5, f3 /* unknown instruction */
+/* 800C6C44 000C2204  4C 40 13 82 */	cror 2, 0, 2
+/* 800C6C48 000C2208  41 82 00 28 */	beq lbl_800C6C70
+/* 800C6C4C 000C220C  FC 05 10 40 */	fcmpo cr0, f5, f2 /* unknown instruction */
+/* 800C6C50 000C2210  4C 41 13 82 */	cror 2, 1, 2
+/* 800C6C54 000C2214  41 82 00 1C */	beq lbl_800C6C70
+/* 800C6C58 000C2218  FC 04 08 40 */	fcmpo cr0, f4, f1 /* unknown instruction */
+/* 800C6C5C 000C221C  4C 40 13 82 */	cror 2, 0, 2
+/* 800C6C60 000C2220  41 82 00 10 */	beq lbl_800C6C70
+/* 800C6C64 000C2224  FC 04 00 40 */	fcmpo cr0, f4, f0 /* unknown instruction */
+/* 800C6C68 000C2228  4C 41 13 82 */	cror 2, 1, 2
+/* 800C6C6C 000C222C  40 82 00 44 */	bne lbl_800C6CB0
+lbl_800C6C70:
+/* 800C6C70 000C2230  80 A8 00 00 */	lwz r5, 0(r8)
+/* 800C6C74 000C2234  38 80 00 00 */	li r4, 0
+/* 800C6C78 000C2238  80 E8 00 04 */	lwz r7, 4(r8)
+/* 800C6C7C 000C223C  38 00 FF FF */	li r0, -1
+/* 800C6C80 000C2240  80 C1 00 08 */	lwz r6, 8(r1)
+/* 800C6C84 000C2244  90 A3 00 F8 */	stw r5, 0xf8(r3)
+/* 800C6C88 000C2248  80 A1 00 0C */	lwz r5, 0xc(r1)
+/* 800C6C8C 000C224C  90 E3 00 FC */	stw r7, 0xfc(r3)
+/* 800C6C90 000C2250  80 E8 00 08 */	lwz r7, 8(r8)
+/* 800C6C94 000C2254  90 E3 01 00 */	stw r7, 0x100(r3)
+/* 800C6C98 000C2258  90 C3 01 04 */	stw r6, 0x104(r3)
+/* 800C6C9C 000C225C  90 A3 01 08 */	stw r5, 0x108(r3)
+/* 800C6CA0 000C2260  98 83 01 0C */	stb r4, 0x10c(r3)
+/* 800C6CA4 000C2264  98 03 01 0D */	stb r0, 0x10d(r3)
+/* 800C6CA8 000C2268  38 60 FF FF */	li r3, -1
+/* 800C6CAC 000C226C  48 00 00 14 */	b lbl_800C6CC0
+lbl_800C6CB0:
+/* 800C6CB0 000C2270  39 08 00 0C */	addi r8, r8, 0xc
+/* 800C6CB4 000C2274  7C 08 00 40 */	cmplw r8, r0
+/* 800C6CB8 000C2278  41 80 FE 9C */	blt lbl_800C6B54
+/* 800C6CBC 000C227C  38 60 00 00 */	li r3, 0
+lbl_800C6CC0:
+/* 800C6CC0 000C2280  38 21 00 20 */	addi r1, r1, 0x20
+/* 800C6CC4 000C2284  4E 80 00 20 */	blr 

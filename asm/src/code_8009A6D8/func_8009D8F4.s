@@ -1,0 +1,8 @@
+.section .text
+
+glabel func_8009D8F4
+/* 8009D8F4 00098EB4  80 82 85 E8 */	lwz r4, lbl_8025C728-_SDA2_BASE_(r2)
+/* 8009D8F8 00098EB8  80 04 02 3C */	lwz r0, 0x23c(r4)
+/* 8009D8FC 00098EBC  50 60 3D F0 */	rlwimi r0, r3, 7, 0x17, 0x18
+/* 8009D900 00098EC0  90 04 02 3C */	stw r0, 0x23c(r4)
+/* 8009D904 00098EC4  4E 80 00 20 */	blr 

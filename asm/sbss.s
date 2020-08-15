@@ -1,9 +1,9 @@
 .include "macros.s"
 
 .section .sbss  # 0x8025B3E0 - 0x8025C140
-.global lbl_8025B3E0
-lbl_8025B3E0:
-	.skip 0x4
+#.global lbl_8025B3E0
+#lbl_8025B3E0:
+#	.skip 0x4
 .global lbl_8025B3E4
 lbl_8025B3E4:
 	.skip 0x4

@@ -1,0 +1,8 @@
+.section .text
+
+glabel func_800D2208
+/* 800D2208 000CD7C8  3C A0 80 24 */	lis r5, lbl_80239B38@ha
+/* 800D220C 000CD7CC  7C 64 1B 78 */	mr r4, r3
+/* 800D2210 000CD7D0  38 A5 9B 38 */	addi r5, r5, lbl_80239B38@l
+/* 800D2214 000CD7D4  38 65 00 68 */	addi r3, r5, 0x68
+/* 800D2218 000CD7D8  48 00 02 14 */	b func_800D242C

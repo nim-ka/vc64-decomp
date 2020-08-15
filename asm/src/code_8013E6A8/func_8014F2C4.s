@@ -1,0 +1,6 @@
+.section .text
+
+glabel func_8014F2C4
+/* 8014F2C4 0014A884  81 8D 88 D0 */	lwz r12, lbl_8025B390-_SDA_BASE_(r13)
+/* 8014F2C8 0014A888  7D 89 03 A6 */	mtctr r12
+/* 8014F2CC 0014A88C  4E 80 04 20 */	bctr 

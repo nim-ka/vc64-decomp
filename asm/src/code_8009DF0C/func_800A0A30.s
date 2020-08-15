@@ -1,0 +1,7 @@
+.section .text
+
+glabel func_800A0A30
+/* 800A0A30 0009BFF0  80 6D 90 7C */	lwz r3, lbl_8025BB3C-_SDA_BASE_(r13)
+/* 800A0A34 0009BFF4  38 00 00 04 */	li r0, 4
+/* 800A0A38 0009BFF8  B0 03 00 04 */	sth r0, 4(r3)
+/* 800A0A3C 0009BFFC  4E 80 00 20 */	blr 

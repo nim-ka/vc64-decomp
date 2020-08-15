@@ -1,0 +1,5 @@
+.section .text
+
+glabel func_800A5678
+/* 800A5678 000A0C38  38 6D 90 E0 */	addi r3, r13, 0x8025BBA0-_SDA_BASE_
+/* 800A567C 000A0C3C  4B FE AA CC */	b func_80090148

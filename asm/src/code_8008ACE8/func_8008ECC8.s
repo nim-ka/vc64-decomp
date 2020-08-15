@@ -1,0 +1,10 @@
+.section .text
+
+glabel func_8008ECC8
+/* 8008ECC8 0008A288  7D 30 FA A6 */	mfspr r9, 0x3f0
+/* 8008ECCC 0008A28C  61 2A 00 08 */	ori r10, r9, 8
+/* 8008ECD0 0008A290  7D 50 FB A6 */	mtspr 0x3f0, r10
+/* 8008ECD4 0008A294  4C 00 01 2C */	isync 
+/* 8008ECD8 0008A298  7C 00 04 AC */	sync
+/* 8008ECDC 0008A29C  7D 30 FB A6 */	mtspr 0x3f0, r9
+/* 8008ECE0 0008A2A0  4C 00 00 64 */	rfi 

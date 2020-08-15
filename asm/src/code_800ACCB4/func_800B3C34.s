@@ -1,0 +1,6 @@
+.section .text
+
+glabel func_800B3C34
+/* 800B3C34 000AF1F4  38 80 04 61 */	li r4, 0x461
+/* 800B3C38 000AF1F8  38 A0 00 15 */	li r5, 0x15
+/* 800B3C3C 000AF1FC  4B FF F2 DC */	b func_800B2F18

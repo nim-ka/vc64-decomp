@@ -1,0 +1,10 @@
+.section .text
+
+glabel func_800D7BEC
+/* 800D7BEC 000D31AC  3C 60 80 24 */	lis r3, lbl_80239FD8@ha
+/* 800D7BF0 000D31B0  38 80 7D 00 */	li r4, 0x7d00
+/* 800D7BF4 000D31B4  38 63 9F D8 */	addi r3, r3, lbl_80239FD8@l
+/* 800D7BF8 000D31B8  38 00 00 FF */	li r0, 0xff
+/* 800D7BFC 000D31BC  B0 83 04 C6 */	sth r4, 0x4c6(r3)
+/* 800D7C00 000D31C0  98 03 27 BF */	stb r0, 0x27bf(r3)
+/* 800D7C04 000D31C4  4E 80 00 20 */	blr 

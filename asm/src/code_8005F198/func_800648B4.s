@@ -1,0 +1,6 @@
+.section .text
+
+glabel func_800648B4
+/* 800648B4 0005FE74  3C 60 00 01 */	lis r3, 0x0000F0A0@ha
+/* 800648B8 0005FE78  38 63 F0 A0 */	addi r3, r3, 0x0000F0A0@l
+/* 800648BC 0005FE7C  4E 80 00 20 */	blr 

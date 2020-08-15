@@ -4,6 +4,6 @@
 #ifdef NON_MATCHING
 void func_80007020(void) {}
 #else
-GLOBAL_ASM("asm/src/func_80007020.s")
+GLOBAL_ASM("asm/src/code_80007020/func_80007020.s")
 #endif
 

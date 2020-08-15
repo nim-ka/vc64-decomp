@@ -1,0 +1,6 @@
+.section .text
+
+glabel func_800A9474
+/* 800A9474 000A4A34  90 6D 92 54 */	stw r3, lbl_8025BD14-_SDA_BASE_(r13)
+/* 800A9478 000A4A38  90 8D 92 48 */	stw r4, lbl_8025BD08-_SDA_BASE_(r13)
+/* 800A947C 000A4A3C  4E 80 00 20 */	blr 

@@ -1,0 +1,7 @@
+.section .text
+
+glabel func_8000EA2C
+/* 8000EA2C 00009FEC  38 00 00 00 */	li r0, 0
+/* 8000EA30 00009FF0  38 60 00 01 */	li r3, 1
+/* 8000EA34 00009FF4  B0 05 00 00 */	sth r0, 0(r5)
+/* 8000EA38 00009FF8  4E 80 00 20 */	blr 

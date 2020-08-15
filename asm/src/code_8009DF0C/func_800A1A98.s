@@ -1,0 +1,8 @@
+.section .text
+
+glabel func_800A1A98
+/* 800A1A98 0009D058  3C A0 80 0A */	lis r5, func_800A19BC@ha
+/* 800A1A9C 0009D05C  38 60 00 00 */	li r3, 0
+/* 800A1AA0 0009D060  38 A5 19 BC */	addi r5, r5, func_800A19BC@l
+/* 800A1AA4 0009D064  38 80 00 00 */	li r4, 0
+/* 800A1AA8 0009D068  48 00 51 68 */	b func_800A6C10

@@ -1,0 +1,9 @@
+.section .text
+
+glabel func_800A6138
+/* 800A6138 000A16F8  81 8D 91 88 */	lwz r12, lbl_8025BC48-_SDA_BASE_(r13)
+/* 800A613C 000A16FC  2C 0C 00 00 */	cmpwi r12, 0
+/* 800A6140 000A1700  4D 82 00 20 */	beqlr 
+/* 800A6144 000A1704  7D 89 03 A6 */	mtctr r12
+/* 800A6148 000A1708  4E 80 04 20 */	bctr 
+/* 800A614C 000A170C  4E 80 00 20 */	blr 

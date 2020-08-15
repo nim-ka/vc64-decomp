@@ -1,0 +1,9 @@
+.section .text
+
+glabel func_800A59AC
+/* 800A59AC 000A0F6C  3C 80 80 1E */	lis r4, lbl_801E13C0@ha
+/* 800A59B0 000A0F70  38 84 13 C0 */	addi r4, r4, lbl_801E13C0@l
+/* 800A59B4 000A0F74  7C 03 20 40 */	cmplw r3, r4
+/* 800A59B8 000A0F78  40 82 00 0C */	bne func_800A59C4
+/* 800A59BC 000A0F7C  38 60 00 01 */	li r3, 1
+/* 800A59C0 000A0F80  4E 80 00 20 */	blr 

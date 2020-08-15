@@ -48,6 +48,7 @@ SECTIONS
         code_80139084.o(.text)
         code_8013E0FC.o(.text)
         code_8013E6A8.o(.text)
+	dummy.o(.text) /* what the FUCK */
     }
 
     .ctors BIND(0x80167240) : { *(.ctors) }
@@ -56,7 +57,17 @@ SECTIONS
     .data BIND(0x8016C300) : { *(.data) }
     .bss BIND(0x8019D440) : { *(.bss) }
     .sdata BIND(0x8025AAC0) : { *(.sdata) }
-    .sbss BIND(0x8025B3E0) : { *(.sbss) }
-    .sdata2 BIND(0x8025C140) : { *(.sdata2) }
+
+    .sbss BIND(0x8025B3E0) : {
+        code_80007020.o(.sbss)
+        sbss.o(.sbss)
+    }
+
+    .sdata2 BIND(0x8025C140) : {
+        sdata2_0.o(.sdata2)
+        code_800FD3D0.o(.sdata2)
+        sdata2.o(.sdata2)
+    }
+
     .sbss2 BIND(0x8025D380) : { *(.sbss2) }
 }

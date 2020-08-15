@@ -1,0 +1,9 @@
+.section .text
+
+glabel func_800DB130
+/* 800DB130 000D66F0  3C 80 80 24 */	lis r4, lbl_80239FD8@ha
+/* 800DB134 000D66F4  7C 60 1B 78 */	mr r0, r3
+/* 800DB138 000D66F8  38 84 9F D8 */	addi r4, r4, lbl_80239FD8@l
+/* 800DB13C 000D66FC  80 64 05 68 */	lwz r3, 0x568(r4)
+/* 800DB140 000D6700  90 04 05 68 */	stw r0, 0x568(r4)
+/* 800DB144 000D6704  4E 80 00 20 */	blr 

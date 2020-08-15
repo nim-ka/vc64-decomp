@@ -1,0 +1,9 @@
+.section .text
+
+glabel func_800FD710
+/* 800FD710 000F8CD0  80 6D 94 E8 */	lwz r3, lbl_8025BFA8-_SDA_BASE_(r13)
+/* 800FD714 000F8CD4  80 03 00 10 */	lwz r0, 0x10(r3)
+/* 800FD718 000F8CD8  2C 00 00 12 */	cmpwi r0, 0x12
+/* 800FD71C 000F8CDC  41 82 00 0C */	beq func_800FD728
+/* 800FD720 000F8CE0  38 60 FF FF */	li r3, -1
+/* 800FD724 000F8CE4  4E 80 00 20 */	blr 

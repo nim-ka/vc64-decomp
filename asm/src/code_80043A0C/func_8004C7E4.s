@@ -1,0 +1,8 @@
+.section .text
+
+glabel func_8004C7E4
+/* 8004C7E4 00047DA4  28 03 7D 00 */	cmplwi r3, 0x7d00
+/* 8004C7E8 00047DA8  4C 82 00 20 */	bnelr 
+/* 8004C7EC 00047DAC  38 00 00 01 */	li r0, 1
+/* 8004C7F0 00047DB0  90 0D 8A 54 */	stw r0, lbl_8025B514-_SDA_BASE_(r13)
+/* 8004C7F4 00047DB4  4E 80 00 20 */	blr 

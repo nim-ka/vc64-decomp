@@ -1,0 +1,12 @@
+.section .text
+
+glabel func_800AE324
+/* 800AE324 000A98E4  2C 04 00 00 */	cmpwi r4, 0
+/* 800AE328 000A98E8  40 82 00 0C */	bne lbl_800AE334
+/* 800AE32C 000A98EC  80 63 00 00 */	lwz r3, 0(r3)
+/* 800AE330 000A98F0  4E 80 00 20 */	blr 
+lbl_800AE334:
+/* 800AE334 000A98F4  A0 03 00 0A */	lhz r0, 0xa(r3)
+/* 800AE338 000A98F8  7C 64 02 14 */	add r3, r4, r0
+/* 800AE33C 000A98FC  80 63 00 04 */	lwz r3, 4(r3)
+/* 800AE340 000A9900  4E 80 00 20 */	blr 

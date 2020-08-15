@@ -1,0 +1,11 @@
+.section .text
+
+glabel func_800A8FE4
+/* 800A8FE4 000A45A4  80 0D 92 28 */	lwz r0, lbl_8025BCE8-_SDA_BASE_(r13)
+/* 800A8FE8 000A45A8  3C 80 80 1E */	lis r4, lbl_801E33E0@ha
+/* 800A8FEC 000A45AC  38 84 33 E0 */	addi r4, r4, lbl_801E33E0@l
+/* 800A8FF0 000A45B0  1C 00 04 80 */	mulli r0, r0, 0x480
+/* 800A8FF4 000A45B4  7C 84 02 14 */	add r4, r4, r0
+/* 800A8FF8 000A45B8  38 04 01 80 */	addi r0, r4, 0x180
+/* 800A8FFC 000A45BC  90 03 00 00 */	stw r0, 0(r3)
+/* 800A9000 000A45C0  4E 80 00 20 */	blr 

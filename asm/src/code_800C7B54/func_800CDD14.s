@@ -1,0 +1,7 @@
+.section .text
+
+glabel func_800CDD14
+/* 800CDD14 000C92D4  3C 60 80 19 */	lis r3, lbl_80189908@ha
+/* 800CDD18 000C92D8  38 63 99 08 */	addi r3, r3, lbl_80189908@l
+/* 800CDD1C 000C92DC  4C C6 31 82 */	crclr 6
+/* 800CDD20 000C92E0  48 00 00 1C */	b func_800CDD3C

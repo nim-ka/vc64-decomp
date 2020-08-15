@@ -1,0 +1,6 @@
+.section .text
+
+glabel func_80081614
+/* 80081614 0007CBD4  B0 6D 8B 7C */	sth r3, lbl_8025B63C-_SDA_BASE_(r13)
+/* 80081618 0007CBD8  B0 8D 8B 7E */	sth r4, lbl_8025B63E-_SDA_BASE_(r13)
+/* 8008161C 0007CBDC  4E 80 00 20 */	blr 

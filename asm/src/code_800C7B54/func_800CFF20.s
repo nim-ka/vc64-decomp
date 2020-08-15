@@ -1,0 +1,14 @@
+.section .text
+
+glabel func_800CFF20
+/* 800CFF20 000CB4E0  3C C0 80 23 */	lis r6, lbl_80236200@ha
+/* 800CFF24 000CB4E4  38 00 00 00 */	li r0, 0
+/* 800CFF28 000CB4E8  38 C6 62 00 */	addi r6, r6, lbl_80236200@l
+/* 800CFF2C 000CB4EC  98 06 00 1E */	stb r0, 0x1e(r6)
+/* 800CFF30 000CB4F0  98 06 00 1A */	stb r0, 0x1a(r6)
+/* 800CFF34 000CB4F4  98 06 00 1B */	stb r0, 0x1b(r6)
+/* 800CFF38 000CB4F8  98 06 00 1C */	stb r0, 0x1c(r6)
+/* 800CFF3C 000CB4FC  98 66 00 1F */	stb r3, 0x1f(r6)
+/* 800CFF40 000CB500  98 86 00 20 */	stb r4, 0x20(r6)
+/* 800CFF44 000CB504  B0 A6 00 12 */	sth r5, 0x12(r6)
+/* 800CFF48 000CB508  4E 80 00 20 */	blr 

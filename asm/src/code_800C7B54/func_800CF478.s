@@ -1,0 +1,8 @@
+.section .text
+
+glabel func_800CF478
+/* 800CF478 000CAA38  38 00 00 00 */	li r0, 0
+/* 800CF47C 000CAA3C  90 03 00 00 */	stw r0, 0(r3)
+/* 800CF480 000CAA40  90 03 00 04 */	stw r0, 4(r3)
+/* 800CF484 000CAA44  90 03 00 08 */	stw r0, 8(r3)
+/* 800CF488 000CAA48  4E 80 00 20 */	blr 

@@ -1,0 +1,12 @@
+.section .text
+
+glabel func_800CF91C
+/* 800CF91C 000CAEDC  3C A0 80 21 */	lis r5, lbl_8020D720@ha
+/* 800CF920 000CAEE0  88 85 D7 20 */	lbz r4, lbl_8020D720@l(r5)
+/* 800CF924 000CAEE4  38 65 D7 20 */	addi r3, r5, -10464
+/* 800CF928 000CAEE8  38 84 FF FF */	addi r4, r4, -1
+/* 800CF92C 000CAEEC  54 80 15 BA */	rlwinm r0, r4, 2, 0x16, 0x1d
+/* 800CF930 000CAEF0  98 85 D7 20 */	stb r4, -0x28e0(r5)
+/* 800CF934 000CAEF4  7C 63 02 14 */	add r3, r3, r0
+/* 800CF938 000CAEF8  80 63 00 04 */	lwz r3, 4(r3)
+/* 800CF93C 000CAEFC  4B FB CF 58 */	b func_8008C894

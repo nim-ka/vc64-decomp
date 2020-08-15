@@ -1,0 +1,12 @@
+.section .text
+
+glabel func_801648A0
+/* 801648A0 0015FE60  94 21 FF C0 */	stwu r1, -0x40(r1)
+/* 801648A4 0015FE64  DB E1 00 10 */	stfd f31, 0x10(r1)
+/* 801648A8 0015FE68  F3 E1 00 20 */	psq_st f31, 32(r1), 0, 0
+/* 801648AC 0015FE6C  CB E3 00 00 */	lfd f31, 0(r3)
+/* 801648B0 0015FE70  FD FE FD 8E */	mtfsf 0xff, f31
+/* 801648B4 0015FE74  E3 E1 00 20 */	psq_l f31, 32(r1), 0, 0
+/* 801648B8 0015FE78  CB E1 00 10 */	lfd f31, 0x10(r1)
+/* 801648BC 0015FE7C  38 21 00 40 */	addi r1, r1, 0x40
+/* 801648C0 0015FE80  4E 80 00 20 */	blr 

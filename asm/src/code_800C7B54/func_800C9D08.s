@@ -1,0 +1,8 @@
+.section .text
+
+glabel func_800C9D08
+/* 800C9D08 000C52C8  3C 60 80 21 */	lis r3, lbl_8020B9C0@ha
+/* 800C9D0C 000C52CC  38 00 00 01 */	li r0, 1
+/* 800C9D10 000C52D0  38 63 B9 C0 */	addi r3, r3, lbl_8020B9C0@l
+/* 800C9D14 000C52D4  98 03 00 0C */	stb r0, 0xc(r3)
+/* 800C9D18 000C52D8  4E 80 00 20 */	blr 

@@ -1,0 +1,6 @@
+.section .text
+
+glabel func_800E4170
+/* 800E4170 000DF730  7C 64 1B 78 */	mr r4, r3
+/* 800E4174 000DF734  38 60 00 01 */	li r3, 1
+/* 800E4178 000DF738  4B FF FE 14 */	b func_800E3F8C

@@ -1,0 +1,11 @@
+.section .text
+
+glabel func_8015D49C
+/* 8015D49C 00158A5C  38 83 FF FE */	addi r4, r3, -2
+/* 8015D4A0 00158A60  38 60 FF FF */	li r3, -1
+lbl_8015D4A4:
+/* 8015D4A4 00158A64  A4 04 00 02 */	lhzu r0, 2(r4)
+/* 8015D4A8 00158A68  38 63 00 01 */	addi r3, r3, 1
+/* 8015D4AC 00158A6C  2C 00 00 00 */	cmpwi r0, 0
+/* 8015D4B0 00158A70  40 82 FF F4 */	bne lbl_8015D4A4
+/* 8015D4B4 00158A74  4E 80 00 20 */	blr 

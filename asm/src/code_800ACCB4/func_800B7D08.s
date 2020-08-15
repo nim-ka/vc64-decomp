@@ -1,0 +1,10 @@
+.section .text
+
+glabel func_800B7D08
+/* 800B7D08 000B32C8  2C 04 00 00 */	cmpwi r4, 0
+/* 800B7D0C 000B32CC  41 82 00 0C */	beq lbl_800B7D18
+/* 800B7D10 000B32D0  54 80 06 FF */	clrlwi. r0, r4, 0x1b
+/* 800B7D14 000B32D4  41 82 00 0C */	beq func_800B7D20
+lbl_800B7D18:
+/* 800B7D18 000B32D8  38 60 FF 9B */	li r3, -101
+/* 800B7D1C 000B32DC  4E 80 00 20 */	blr 

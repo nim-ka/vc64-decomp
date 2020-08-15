@@ -1,0 +1,14 @@
+.section .text
+
+glabel func_8010FCCC
+/* 8010FCCC 0010B28C  80 E4 00 00 */	lwz r7, 0(r4)
+/* 8010FCD0 0010B290  80 C4 00 04 */	lwz r6, 4(r4)
+/* 8010FCD4 0010B294  C0 04 00 08 */	lfs f0, 8(r4)
+/* 8010FCD8 0010B298  80 A4 00 0C */	lwz r5, 0xc(r4)
+/* 8010FCDC 0010B29C  80 04 00 10 */	lwz r0, 0x10(r4)
+/* 8010FCE0 0010B2A0  90 E3 00 00 */	stw r7, 0(r3)
+/* 8010FCE4 0010B2A4  90 C3 00 04 */	stw r6, 4(r3)
+/* 8010FCE8 0010B2A8  D0 03 00 08 */	stfs f0, 8(r3)
+/* 8010FCEC 0010B2AC  90 A3 00 0C */	stw r5, 0xc(r3)
+/* 8010FCF0 0010B2B0  90 03 00 10 */	stw r0, 0x10(r3)
+/* 8010FCF4 0010B2B4  4E 80 00 20 */	blr 

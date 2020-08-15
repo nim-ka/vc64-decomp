@@ -1,0 +1,5 @@
+.section .text
+
+glabel func_800FD598
+/* 800FD598 000F8B58  80 6D 94 E8 */	lwz r3, lbl_8025BFA8-_SDA_BASE_(r13)
+/* 800FD59C 000F8B5C  48 00 16 0C */	b func_800FEBA8
