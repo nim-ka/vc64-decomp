@@ -51,12 +51,29 @@ SECTIONS
 	dummy.o(.text) /* what the FUCK */
     }
 
-    .ctors BIND(0x80167240) : { *(.ctors) }
-    .dtors BIND(0x801672A0) : { *(.dtors) }
-    .rodata BIND(0x801672C0) : { *(.rodata) }
-    .data BIND(0x8016C300) : { *(.data) }
-    .bss BIND(0x8019D440) : { *(.bss) }
-    .sdata BIND(0x8025AAC0) : { *(.sdata) }
+    .ctors BIND(0x80167240) : {
+        ctors.o(.ctors)
+    }
+
+    .dtors BIND(0x801672A0) : {
+        dtors.o(.dtors)
+    }
+
+    .rodata BIND(0x801672C0) : {
+        rodata.o(.rodata)
+    }
+
+    .data BIND(0x8016C300) : {
+        data.o(.data)
+    }
+
+    .bss BIND(0x8019D440) : {
+        bss.o(.bss)
+    }
+
+    .sdata BIND(0x8025AAC0) : {
+        sdata.o(.sdata)
+    }
 
     .sbss BIND(0x8025B3E0) : {
         code_80007020.o(.sbss)
@@ -64,10 +81,10 @@ SECTIONS
     }
 
     .sdata2 BIND(0x8025C140) : {
-        sdata2_0.o(.sdata2)
-        code_800FD3D0.o(.sdata2)
         sdata2.o(.sdata2)
     }
 
-    .sbss2 BIND(0x8025D380) : { *(.sbss2) }
+    .sbss2 BIND(0x8025D380) : {
+        sbss2.o(.sbss2)
+    }
 }
