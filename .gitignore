@@ -1,6 +1,7 @@
 baserom*
 build/*
 tools/*
+asm_processor_temp*
 !tools/asm_processor
 !tools/asm_processor/*
 !tools/Makefile
