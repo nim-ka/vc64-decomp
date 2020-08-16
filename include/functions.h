@@ -930,7 +930,7 @@ extern void func_8008FAF0(void);
 extern void func_8008FC30(void);
 extern void func_8008FEC8(void);
 extern void func_8009005C(void);
-extern void func_80090148(void);
+extern void func_80090148(s32 *);
 extern void func_8009023C(void);
 extern void func_80090254(void);
 extern void func_8009025C(void);
