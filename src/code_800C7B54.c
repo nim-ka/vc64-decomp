@@ -1093,11 +1093,9 @@ void func_800D221C(void) {}
 GLOBAL_ASM("asm/src/code_800C7B54/func_800D221C.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800D2284(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800C7B54/func_800D2284.s")
-#endif
+void func_800D2284(s8 arg0) {
+	lbl_8025BFA0 = arg0;
+}
 
 #ifdef NON_MATCHING
 void func_800D228C(void) {}

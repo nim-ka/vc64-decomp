@@ -2402,7 +2402,7 @@ extern s32 lbl_8025BF90;
 extern s32 lbl_8025BF94;
 extern s32 lbl_8025BF98;
 extern s32 lbl_8025BF9C;
-extern s32 lbl_8025BFA0;
+extern s8 lbl_8025BFA0;
 extern s32 lbl_8025BFA8;
 extern s32 lbl_8025BFB0;
 extern s32 lbl_8025BFB8;

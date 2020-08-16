@@ -1919,7 +1919,7 @@ extern void func_800D21CC(void);
 extern void func_800D21E8(void);
 extern void func_800D2208(void);
 extern void func_800D221C(void);
-extern void func_800D2284(void);
+extern void func_800D2284(s8);
 extern void func_800D228C(void);
 extern void func_800D22D8(void);
 extern void func_800D238C(void);
