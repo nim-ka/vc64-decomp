@@ -37,11 +37,9 @@ void func_8009B4AC(void) {}
 GLOBAL_ASM("asm/src/code_8009A6D8/func_8009B4AC.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_8009B73C(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8009A6D8/func_8009B73C.s")
-#endif
+u8 func_8009B73C(void) {
+	return lbl_8025BB61;
+}
 
 #ifdef NON_MATCHING
 void func_8009B744(void) {}

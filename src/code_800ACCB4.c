@@ -1669,11 +1669,9 @@ void func_800BE94C(void) {}
 GLOBAL_ASM("asm/src/code_800ACCB4/func_800BE94C.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800BEB2C(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800ACCB4/func_800BEB2C.s")
-#endif
+u8 func_800BEB2C(void) {
+	return lbl_8025BEE1;
+}
 
 #ifdef NON_MATCHING
 void func_800BEB34(void) {}
