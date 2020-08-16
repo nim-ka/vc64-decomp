@@ -709,17 +709,9 @@ void func_80091038(void) {}
 GLOBAL_ASM("asm/src/code_8008ACE8/func_80091038.s")
 #endif
 
-#ifdef NON_MATCHING
 void func_80091048(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8008ACE8/func_80091048.s")
-#endif
 
-#ifdef NON_MATCHING
 void func_8009104C(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8008ACE8/func_8009104C.s")
-#endif
 
 #ifdef NON_MATCHING
 void func_80091050(void) {}

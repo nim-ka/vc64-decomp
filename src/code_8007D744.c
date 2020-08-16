@@ -169,17 +169,9 @@ void func_8007F4B4(void) {}
 GLOBAL_ASM("asm/src/code_8007D744/func_8007F4B4.s")
 #endif
 
-#ifdef NON_MATCHING
 void func_8007F5C4(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8007D744/func_8007F5C4.s")
-#endif
 
-#ifdef NON_MATCHING
 void func_8007F5C8(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8007D744/func_8007F5C8.s")
-#endif
 
 #ifdef NON_MATCHING
 void func_8007F5CC(void) {}
@@ -217,11 +209,7 @@ void func_8007FC78(void) {}
 GLOBAL_ASM("asm/src/code_8007D744/func_8007FC78.s")
 #endif
 
-#ifdef NON_MATCHING
 void func_8007FD58(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8007D744/func_8007FD58.s")
-#endif
 
 #ifdef NON_MATCHING
 void func_8007FD5C(void) {}
