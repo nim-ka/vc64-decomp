@@ -1507,11 +1507,7 @@ void func_801618C0(void) {}
 GLOBAL_ASM("asm/src/code_8013E6A8/func_801618C0.s")
 #endif
 
-#ifdef NON_MATCHING
 void func_80161B08(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8013E6A8/func_80161B08.s")
-#endif
 
 #ifdef NON_MATCHING
 void func_80161B0C(void) {}
@@ -1693,11 +1689,7 @@ void func_801628F8(void) {}
 GLOBAL_ASM("asm/src/code_8013E6A8/func_801628F8.s")
 #endif
 
-#ifdef NON_MATCHING
 void func_801629C8(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8013E6A8/func_801629C8.s")
-#endif
 
 #ifdef NON_MATCHING
 void func_801629CC(void) {}
@@ -2113,11 +2105,7 @@ void func_80166768(void) {}
 GLOBAL_ASM("asm/src/code_8013E6A8/func_80166768.s")
 #endif
 
-#ifdef NON_MATCHING
 void func_801667F0(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8013E6A8/func_801667F0.s")
-#endif
 
 #ifdef NON_MATCHING
 void func_801667F4(void) {}
@@ -2359,9 +2347,5 @@ void func_8016720C(void) {}
 GLOBAL_ASM("asm/src/code_8013E6A8/func_8016720C.s")
 #endif
 
-#ifdef NON_MATCHING
 void func_8016723C(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8013E6A8/func_8016723C.s")
-#endif
 
