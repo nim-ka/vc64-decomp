@@ -333,11 +333,9 @@ GLOBAL_ASM("asm/src/code_800A7E98/func_800A9EB0.s")
 
 void func_800A9EE8(void) {}
 
-#ifdef NON_MATCHING
-void func_800A9EEC(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800A7E98/func_800A9EEC.s")
-#endif
+void func_800A9EEC(s32 arg0) {
+	lbl_8025BD30 = arg0;
+}
 
 u16 func_800A9EF4(void) {
 	return lbl_8025BD24;
