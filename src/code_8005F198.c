@@ -269,11 +269,9 @@ void func_80063148(void) {}
 GLOBAL_ASM("asm/src/code_8005F198/func_80063148.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800633E4(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8005F198/func_800633E4.s")
-#endif
+s32 func_800633E4(void) {
+	return lbl_8025B3E0;
+}
 
 #ifdef NON_MATCHING
 void func_800633EC(void) {}

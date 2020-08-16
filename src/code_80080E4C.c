@@ -143,17 +143,13 @@ void func_80083964(void) {}
 GLOBAL_ASM("asm/src/code_80080E4C/func_80083964.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_80083974(void) {}
-#else
-GLOBAL_ASM("asm/src/code_80080E4C/func_80083974.s")
-#endif
+s32 func_80083974(void) {
+	return lbl_8025B69C;
+}
 
-#ifdef NON_MATCHING
-void func_8008397C(void) {}
-#else
-GLOBAL_ASM("asm/src/code_80080E4C/func_8008397C.s")
-#endif
+s32 func_8008397C(void) {
+	return lbl_8025B6A0;
+}
 
 #ifdef NON_MATCHING
 void func_80083984(void) {}
@@ -745,41 +741,29 @@ void func_80087C34(void) {}
 GLOBAL_ASM("asm/src/code_80080E4C/func_80087C34.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_80087CA0(void) {}
-#else
-GLOBAL_ASM("asm/src/code_80080E4C/func_80087CA0.s")
-#endif
+s32 func_80087CA0(void) {
+	return lbl_8025B970;
+}
 
-#ifdef NON_MATCHING
-void func_80087CA8(void) {}
-#else
-GLOBAL_ASM("asm/src/code_80080E4C/func_80087CA8.s")
-#endif
+s32 func_80087CA8(void) {
+	return lbl_8025B974;
+}
 
-#ifdef NON_MATCHING
-void func_80087CB0(void) {}
-#else
-GLOBAL_ASM("asm/src/code_80080E4C/func_80087CB0.s")
-#endif
+s32 func_80087CB0(void) {
+	return lbl_8025B970;
+}
 
-#ifdef NON_MATCHING
-void func_80087CB8(void) {}
-#else
-GLOBAL_ASM("asm/src/code_80080E4C/func_80087CB8.s")
-#endif
+s32 func_80087CB8(void) {
+	return lbl_8025AD48;
+}
 
-#ifdef NON_MATCHING
-void func_80087CC0(void) {}
-#else
-GLOBAL_ASM("asm/src/code_80080E4C/func_80087CC0.s")
-#endif
+s32 func_80087CC0(void) {
+	return lbl_8025AD4C;
+}
 
-#ifdef NON_MATCHING
-void func_80087CC8(void) {}
-#else
-GLOBAL_ASM("asm/src/code_80080E4C/func_80087CC8.s")
-#endif
+s32 func_80087CC8(void) {
+	return lbl_8025AD48;
+}
 
 #ifdef NON_MATCHING
 void func_80087CD0(void) {}
