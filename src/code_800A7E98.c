@@ -349,23 +349,17 @@ u16 func_800A9F04(void) {
 	return lbl_8025BD20;
 }
 
-#ifdef NON_MATCHING
-void func_800A9F0C(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800A7E98/func_800A9F0C.s")
-#endif
+void func_800A9F0C(s16 arg0) {
+	lbl_8025BD24 = arg0;
+}
 
-#ifdef NON_MATCHING
-void func_800A9F14(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800A7E98/func_800A9F14.s")
-#endif
+void func_800A9F14(s16 arg0) {
+	lbl_8025BD22 = arg0;
+}
 
-#ifdef NON_MATCHING
-void func_800A9F1C(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800A7E98/func_800A9F1C.s")
-#endif
+void func_800A9F1C(s16 arg0) {
+	lbl_8025BD20 = arg0;
+}
 
 #ifdef NON_MATCHING
 void func_800A9F24(void) {}
