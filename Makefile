@@ -70,7 +70,6 @@ $(DOL): $(ELF2DOL) $(ELF)
 
 clean:
 	rm -rf $(BUILD)
-	$(MAKE) -C tools clean
 
 $(ELF): $(O_FILES) $(LDSCRIPT)
 	$(LD) $(LDFLAGS) -o $@ -lcf $(LDSCRIPT) $(O_FILES)

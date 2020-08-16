@@ -4,6 +4,8 @@ tools/*
 asm_processor_temp*
 !tools/asm_processor
 !tools/asm_processor/*
+!tools/utils
+!tools/utils/*
 !tools/Makefile
 !tools/*.c
 !tools/*.h
