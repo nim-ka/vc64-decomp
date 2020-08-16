@@ -2283,11 +2283,9 @@ void func_80167190(void) {}
 GLOBAL_ASM("asm/src/code_8013E6A8/func_80167190.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_801671E0(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8013E6A8/func_801671E0.s")
-#endif
+s32 func_801671E0(s32 *arg0) {
+	return arg0[0x10 / 4];
+}
 
 #ifdef NON_MATCHING
 void func_801671E8(void) {}

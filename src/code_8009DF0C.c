@@ -43,11 +43,9 @@ void func_8009E2A8(void) {}
 GLOBAL_ASM("asm/src/code_8009DF0C/func_8009E2A8.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_8009E2B0(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8009DF0C/func_8009E2B0.s")
-#endif
+s32 func_8009E2B0(s32 *arg0) {
+	return arg0[0x10 / 4];
+}
 
 #ifdef NON_MATCHING
 void func_8009E2B8(void) {}
@@ -61,11 +59,9 @@ void func_8009E2CC(void) {}
 GLOBAL_ASM("asm/src/code_8009DF0C/func_8009E2CC.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_8009E2E0(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8009DF0C/func_8009E2E0.s")
-#endif
+s32 func_8009E2E0(s32 *arg0) {
+	return arg0[0x14 / 4];
+}
 
 #ifdef NON_MATCHING
 void func_8009E2E8(void) {}

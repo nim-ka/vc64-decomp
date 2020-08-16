@@ -55,11 +55,9 @@ void func_800FD710(void) {}
 GLOBAL_ASM("asm/src/code_800FD3D0/func_800FD710.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800FD728(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800FD3D0/func_800FD728.s")
-#endif
+s32 func_800FD728(s32 *arg0) {
+	return arg0[0xac / 4];
+}
 
 #ifdef NON_MATCHING
 void func_800FD730(void) {}

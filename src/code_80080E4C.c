@@ -713,11 +713,9 @@ void func_80087BA4(void) {}
 GLOBAL_ASM("asm/src/code_80080E4C/func_80087BA4.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_80087BAC(void) {}
-#else
-GLOBAL_ASM("asm/src/code_80080E4C/func_80087BAC.s")
-#endif
+s32 func_80087BAC(s32 *arg0) {
+	return arg0[0x28 / 4];
+}
 
 #ifdef NON_MATCHING
 void func_80087BB4(void) {}

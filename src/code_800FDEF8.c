@@ -211,11 +211,9 @@ void func_80106DB8(void) {}
 GLOBAL_ASM("asm/src/code_800FDEF8/func_80106DB8.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_80106DD8(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800FDEF8/func_80106DD8.s")
-#endif
+s32 func_80106DD8(s32 *arg0) {
+	return arg0[0x20 / 4];
+}
 
 #ifdef NON_MATCHING
 void func_80106DE0(void) {}
@@ -335,11 +333,9 @@ void func_80107F2C(void) {}
 GLOBAL_ASM("asm/src/code_800FDEF8/func_80107F2C.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_80107F38(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800FDEF8/func_80107F38.s")
-#endif
+s32 func_80107F38(s32 *arg0) {
+	return arg0[0xc / 4];
+}
 
 #ifdef NON_MATCHING
 void func_80107F40(void) {}
