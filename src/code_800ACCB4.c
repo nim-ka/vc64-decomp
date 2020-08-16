@@ -707,11 +707,9 @@ void func_800B25EC(void) {}
 GLOBAL_ASM("asm/src/code_800ACCB4/func_800B25EC.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800B2728(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800ACCB4/func_800B2728.s")
-#endif
+void func_800B2728(void) {
+	func_800B25EC();
+}
 
 #ifdef NON_MATCHING
 void func_800B272C(void) {}
@@ -1141,11 +1139,9 @@ void func_800B64DC(void) {}
 GLOBAL_ASM("asm/src/code_800ACCB4/func_800B64DC.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800B66E0(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800ACCB4/func_800B66E0.s")
-#endif
+void func_800B66E0(void) {
+	func_800B64DC();
+}
 
 #ifdef NON_MATCHING
 void func_800B66E4(void) {}
@@ -1279,11 +1275,9 @@ void func_800B7B80(void) {}
 GLOBAL_ASM("asm/src/code_800ACCB4/func_800B7B80.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800B7BB4(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800ACCB4/func_800B7BB4.s")
-#endif
+void func_800B7BB4(void) {
+	func_800B5C78();
+}
 
 #ifdef NON_MATCHING
 void func_800B7BB8(void) {}
@@ -1327,11 +1321,9 @@ void func_800B7D28(void) {}
 GLOBAL_ASM("asm/src/code_800ACCB4/func_800B7D28.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800B7DCC(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800ACCB4/func_800B7DCC.s")
-#endif
+void func_800B7DCC(void) {
+	func_800B56E0();
+}
 
 #ifdef NON_MATCHING
 void func_800B7DD0(void) {}
@@ -1483,35 +1475,25 @@ void func_800BB2D0(void) {}
 GLOBAL_ASM("asm/src/code_800ACCB4/func_800BB2D0.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800BB524(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800ACCB4/func_800BB524.s")
-#endif
+void func_800BB524(void) {
+	func_800CB948();
+}
 
-#ifdef NON_MATCHING
-void func_800BB528(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800ACCB4/func_800BB528.s")
-#endif
+void func_800BB528(void) {
+	func_800CB9D4();
+}
 
-#ifdef NON_MATCHING
-void func_800BB52C(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800ACCB4/func_800BB52C.s")
-#endif
+void func_800BB52C(void) {
+	func_800CB7B8();
+}
 
-#ifdef NON_MATCHING
-void func_800BB530(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800ACCB4/func_800BB530.s")
-#endif
+void func_800BB530(void) {
+	func_800CB558();
+}
 
-#ifdef NON_MATCHING
-void func_800BB534(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800ACCB4/func_800BB534.s")
-#endif
+void func_800BB534(void) {
+	func_800CB6C8();
+}
 
 #ifdef NON_MATCHING
 void func_800BB538(void) {}

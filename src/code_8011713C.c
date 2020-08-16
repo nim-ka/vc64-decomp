@@ -325,11 +325,9 @@ void func_8011CF14(void) {}
 GLOBAL_ASM("asm/src/code_8011713C/func_8011CF14.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_8011CF70(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8011713C/func_8011CF70.s")
-#endif
+void func_8011CF70(void) {
+	func_8011DF28();
+}
 
 #ifdef NON_MATCHING
 void func_8011CF74(void) {}
