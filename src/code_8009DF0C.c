@@ -579,11 +579,9 @@ void func_800A1AE8(void) {}
 GLOBAL_ASM("asm/src/code_8009DF0C/func_800A1AE8.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800A1BD4(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8009DF0C/func_800A1BD4.s")
-#endif
+s32 func_800A1BD4(void) {
+	return 3;
+}
 
 #ifdef NON_MATCHING
 void func_800A1BDC(void) {}
@@ -825,11 +823,9 @@ void func_800A59C4(void) {}
 GLOBAL_ASM("asm/src/code_8009DF0C/func_800A59C4.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800A59CC(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8009DF0C/func_800A59CC.s")
-#endif
+s32 func_800A59CC(void) {
+	return 1;
+}
 
 void func_800A59D4(void) {}
 
@@ -1043,17 +1039,13 @@ void func_800A79B4(void) {}
 GLOBAL_ASM("asm/src/code_8009DF0C/func_800A79B4.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800A79C0(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8009DF0C/func_800A79C0.s")
-#endif
+s32 func_800A79C0(void) {
+	return 1;
+}
 
-#ifdef NON_MATCHING
-void func_800A79C8(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8009DF0C/func_800A79C8.s")
-#endif
+s32 func_800A79C8(void) {
+	return 1;
+}
 
 #ifdef NON_MATCHING
 void func_800A79D0(void) {}
@@ -1061,11 +1053,9 @@ void func_800A79D0(void) {}
 GLOBAL_ASM("asm/src/code_8009DF0C/func_800A79D0.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800A7B34(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8009DF0C/func_800A7B34.s")
-#endif
+s32 func_800A7B34(void) {
+	return 0;
+}
 
 #ifdef NON_MATCHING
 void func_800A7B3C(void) {}

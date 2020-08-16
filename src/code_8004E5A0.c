@@ -55,11 +55,9 @@ void func_800521FC(void) {}
 GLOBAL_ASM("asm/src/code_8004E5A0/func_800521FC.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_8005253C(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8004E5A0/func_8005253C.s")
-#endif
+s32 func_8005253C(void) {
+	return 1;
+}
 
 #ifdef NON_MATCHING
 void func_80052544(void) {}

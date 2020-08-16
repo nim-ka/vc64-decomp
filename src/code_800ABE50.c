@@ -25,11 +25,9 @@ void func_800AC134(void) {}
 GLOBAL_ASM("asm/src/code_800ABE50/func_800AC134.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800AC16C(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800ABE50/func_800AC16C.s")
-#endif
+s32 func_800AC16C(void) {
+	return 0;
+}
 
 #ifdef NON_MATCHING
 void func_800AC174(void) {}

@@ -61,17 +61,13 @@ void func_8005C00C(void) {}
 GLOBAL_ASM("asm/src/code_800575A0/func_8005C00C.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_8005C01C(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800575A0/func_8005C01C.s")
-#endif
+s32 func_8005C01C(void) {
+	return 1;
+}
 
-#ifdef NON_MATCHING
-void func_8005C024(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800575A0/func_8005C024.s")
-#endif
+s32 func_8005C024(void) {
+	return 1;
+}
 
 #ifdef NON_MATCHING
 void func_8005C02C(void) {}
@@ -127,11 +123,9 @@ void func_8005DBD8(void) {}
 GLOBAL_ASM("asm/src/code_800575A0/func_8005DBD8.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_8005E88C(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800575A0/func_8005E88C.s")
-#endif
+s32 func_8005E88C(void) {
+	return 1;
+}
 
 #ifdef NON_MATCHING
 void func_8005E894(void) {}
