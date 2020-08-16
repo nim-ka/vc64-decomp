@@ -339,23 +339,17 @@ void func_800A9EEC(void) {}
 GLOBAL_ASM("asm/src/code_800A7E98/func_800A9EEC.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_800A9EF4(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800A7E98/func_800A9EF4.s")
-#endif
+u16 func_800A9EF4(void) {
+	return lbl_8025BD24;
+}
 
-#ifdef NON_MATCHING
-void func_800A9EFC(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800A7E98/func_800A9EFC.s")
-#endif
+u16 func_800A9EFC(void) {
+	return lbl_8025BD22;
+}
 
-#ifdef NON_MATCHING
-void func_800A9F04(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800A7E98/func_800A9F04.s")
-#endif
+u16 func_800A9F04(void) {
+	return lbl_8025BD20;
+}
 
 #ifdef NON_MATCHING
 void func_800A9F0C(void) {}
