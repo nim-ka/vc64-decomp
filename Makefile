@@ -50,15 +50,15 @@ ASM_PROCESSOR := $(ASM_PROCESSOR_DIR)/compile.sh
 
 ASFLAGS :=
 LDFLAGS :=
-CFLAGS := -O4,p
+CFLAGS :=
 
 ifeq ($(NON_MATCHING),1)
     CFLAGS := $(CFLAGS) -DNON_MATCHING
 endif
 
 ASFLAGS := $(ASFLAGS) -mgekko -I include
-LDFLAGS := $(LDFLAGS) -proc gekko -fp hard -map $(MAP)
-CFLAGS := $(CFLAGS) -proc gekko -Cpp_exceptions off -fp hard -i include
+LDFLAGS := $(LDFLAGS) -proc gekko -nostdlib -fp hard -map $(MAP)
+CFLAGS := $(CFLAGS) -proc gekko -nostdinc -Cpp_exceptions off -fp hard -i include
 
 DUMMY != mkdir -p $(BUILD) $(BUILD)/$(ASM_DIR) $(BUILD)/$(SRC_DIR)
 
@@ -75,9 +75,11 @@ $(ELF): $(O_FILES) $(LDSCRIPT)
 	$(LD) $(LDFLAGS) -o $@ -lcf $(LDSCRIPT) $(O_FILES)
 	$(OBJCOPY) $@ $@
 
-BUILD_C = $(CC) $(CFLAGS) -c -o
+build/src/init1.o: OPT_FLAGS ?= -opt peep -opt schedule
+OPT_FLAGS ?= -O4,p
 
-$(GLOBAL_ASM_O_FILES): BUILD_C := $(ASM_PROCESSOR) "$(CC) $(CFLAGS)" "$(AS) $(ASFLAGS)"
+$(GLOBAL_ASM_O_FILES): BUILD_C := $(ASM_PROCESSOR) "$(CC) $(CFLAGS) $(OPT_FLAGS)" "$(AS) $(ASFLAGS)"
+BUILD_C ?= $(CC) $(CFLAGS) $(OPT_FLAGS) -c -o
 
 $(BUILD)/%.o: %.s
 	$(AS) $(ASFLAGS) -o $@ $<
@@ -87,3 +89,4 @@ $(BUILD)/%.o: %.c
 
 $(ELF2DOL):
 	$(MAKE) -C tools
+
