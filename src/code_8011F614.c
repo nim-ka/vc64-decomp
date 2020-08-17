@@ -1,6 +1,9 @@
 #include "revolution.h"
 #include "globals.h"
 
+s32 lbl_80249984[3];
+s32 lbl_80249978[3];
+
 #ifdef NON_MATCHING
 void func_8011F614(void) {}
 #else

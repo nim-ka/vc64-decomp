@@ -58,7 +58,7 @@ endif
 
 ASFLAGS := $(ASFLAGS) -mgekko -I include
 LDFLAGS := $(LDFLAGS) -proc gekko -nostdlib -fp hard -map $(MAP)
-CFLAGS := $(CFLAGS) -proc gekko -nostdinc -Cpp_exceptions off -fp hard -i include
+CFLAGS := $(CFLAGS) -sdata 4 -sdata2 4 -proc gekko -nostdinc -Cpp_exceptions off -fp hard -i include
 
 DUMMY != mkdir -p $(BUILD) $(BUILD)/$(ASM_DIR) $(BUILD)/$(SRC_DIR)
 
