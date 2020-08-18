@@ -2983,8 +2983,5 @@ extern s32 lbl_8025D348;
 extern s32 lbl_8025D350;
 extern s32 lbl_8025D358;
 extern s32 lbl_8025D360;
-extern s32 lbl_8025D380;
-extern s32 lbl_8025D388;
-extern s32 lbl_8025D390;
 
 #endif
