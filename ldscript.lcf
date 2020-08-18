@@ -122,6 +122,6 @@ SECTIONS {
     }
 
     .sbss2: {
-        sbss2.o(.sbss2)
+        code_8010DA94.o(.sbss2)
     }
 }
