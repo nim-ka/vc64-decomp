@@ -12,6 +12,7 @@ SECTIONS {
         init0.o(.rodata)
         init1.o(.text)
         init1.o(.rodata)
+	*(.init)
     }
 
     extab_: { *(extab_) }
@@ -52,23 +53,27 @@ SECTIONS {
         code_80139084.o(.text)
         code_8013E0FC.o(.text)
         code_8013E6A8.o(.text)
-        dummy.o(.text) /* what the FUCK */
+        *(.text)
     }
 
     .ctors: {
         ctors.o(.ctors)
+        *(.ctors)
     }
 
     .dtors: {
         dtors.o(.dtors)
+        *(.dtors)
     }
 
     .rodata: {
         rodata.o(.rodata)
+        *(.rodata)
     }
 
     .data: {
         data.o(.data)
+        *(.data)
     }
 
     .bss: {
@@ -106,10 +111,12 @@ SECTIONS {
         code_80139084.o(.bss)
         code_8013E0FC.o(.bss)
         code_8013E6A8.o(.bss)
+        *(.bss)
     }
 
     .sdata: {
         sdata.o(.sdata)
+        *(.sdata)
     }
 
     .sbss: {
@@ -147,13 +154,16 @@ SECTIONS {
         code_80139084.o(.sbss)
         code_8013E0FC.o(.sbss)
         code_8013E6A8.o(.sbss)
+        *(.sbss)
     }
 
     .sdata2: {
         sdata2.o(.sdata2)
+        *(.sdata2)
     }
 
     .sbss2: {
         code_8010DA94.o(.sbss2)
+        *(.sbss2)
     }
 }
