@@ -1,6 +1,43 @@
 #include "revolution.h"
 #include "globals.h"
 
+s32 lbl_8025B64C;
+s32 lbl_8025B648;
+u16 lbl_8025B646;
+u16 lbl_8025B644;
+u16 lbl_8025B642;
+u16 lbl_8025B640;
+u16 lbl_8025B63E;
+u16 lbl_8025B63C;
+s32 lbl_8025B638;
+s32 lbl_8025B634;
+s32 lbl_8025B630;
+s32 lbl_8025B62C;
+s32 lbl_8025B628;
+s32 lbl_8025B624;
+s32 lbl_8025B620;
+s32 lbl_8025B61C;
+s32 lbl_8025B618;
+s32 lbl_8025B614;
+s32 lbl_8025B610;
+s32 lbl_8025B60C;
+s32 lbl_8025B608;
+s32 lbl_8025B604;
+s32 lbl_8025B600;
+s32 lbl_8025B5FC;
+s32 lbl_8025B5F8;
+s32 lbl_8025B5F4;
+s32 lbl_8025B5F0;
+s32 lbl_8025B5EC;
+s32 lbl_8025B5E8;
+s32 lbl_8025B5E4;
+s32 lbl_8025B5E0;
+s32 lbl_8025B5DC;
+s32 lbl_8025B5D8;
+s32 lbl_8025B5D4;
+s32 lbl_8025B5D0;
+s32 lbl_8025B5CC;
+s32 lbl_8025B5C8;
 #ifdef NON_MATCHING
 void func_8007D744(void) {}
 #else

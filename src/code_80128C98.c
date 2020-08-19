@@ -1,6 +1,22 @@
 #include "revolution.h"
 #include "globals.h"
 
+s32 lbl_8025C0A4;
+s32 lbl_8025C0A0;
+s32 lbl_8025C09C;
+s32 lbl_8025C098;
+s32 lbl_8025C094;
+s32 lbl_8025C090;
+s32 lbl_8025C08C;
+s32 lbl_8025C088;
+s32 lbl_8025C084;
+s32 lbl_8025C080;
+s32 lbl_8025C07C;
+s32 lbl_8025C078;
+s32 lbl_8025C074;
+s32 lbl_8025C070;
+s32 lbl_8025C06C;
+s32 lbl_8025C068;
 s32 lbl_802581C4[3];
 s32 lbl_802581B8[3];
 s32 lbl_802581AC[3];

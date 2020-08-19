@@ -1,8 +1,3 @@
-.section .sbss
-
-glabel lbl_8025B3E0
-	.skip 0x4
-
 .section .text
 
 glabel func_80007020
