@@ -42,7 +42,7 @@ MAKE := make
 AS := $(DEVKITPPC)/bin/powerpc-eabi-as
 OBJCOPY := $(DEVKITPPC)/bin/powerpc-eabi-objcopy
 CC := $(WINE) $(MWCCTOOLS)/mwcceppc.exe
-LD := $(WINE) $(MWLDTOOLS)/mwldeppc.exe
+LD := $(WINE) $(MWCCTOOLS)/mwldeppc.exe
 ELF2DOL := tools/elf2dol
 
 ASM_PROCESSOR_DIR := tools/asm_processor
