@@ -1,4 +1,4 @@
-baserom*
+base*
 build/*
 tools/*
 asm_processor_temp*
