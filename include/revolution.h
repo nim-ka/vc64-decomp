@@ -1,6 +1,3 @@
-#ifndef REVOLUTION_H
-#define REVOLUTION_H
+#pragma once
 
 #include "revolution/types.h"
-
-#endif

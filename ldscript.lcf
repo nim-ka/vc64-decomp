@@ -15,12 +15,11 @@ SECTIONS {
 	*(.init)
     }
 
-    extab_: { *(extab_) }
-    extabindex_: { *(extabindex_) }
+    extab_ BIND(0x800064E0): { *(extab_) }
+    extabindex_ BIND(0x800069A0): { *(extabindex_) }
 
-    .text: {
+    .text BIND(0x80007020): {
         code_80007020.o(.text)
-        code_800071C8.o(.text)
         code_8000CB6C.o(.text)
         code_80033914.o(.text)
         code_80043A0C.o(.text)
@@ -56,29 +55,28 @@ SECTIONS {
         *(.text)
     }
 
-    .ctors: {
+    .ctors BIND(0x80167240): {
         ctors.o(.ctors)
         *(.ctors)
     }
 
-    .dtors: {
+    .dtors BIND(0x801672A0): {
         dtors.o(.dtors)
         *(.dtors)
     }
 
-    .rodata: {
+    .rodata BIND(0x801672C0): {
         rodata.o(.rodata)
         *(.rodata)
     }
 
-    .data: {
+    .data BIND(0x8016C300): {
         data.o(.data)
         *(.data)
     }
 
-    .bss: {
+    .bss BIND(0x8019D440): {
         code_80007020.o(.bss)
-        code_800071C8.o(.bss)
         code_8000CB6C.o(.bss)
         code_80033914.o(.bss)
         code_80043A0C.o(.bss)
@@ -114,14 +112,13 @@ SECTIONS {
         *(.bss)
     }
 
-    .sdata: {
+    .sdata BIND(0x8025AAC0): {
         sdata.o(.sdata)
         *(.sdata)
     }
 
-    .sbss: {
+    .sbss BIND(0x8025B3E0): {
         code_80007020.o(.sbss)
-        code_800071C8.o(.sbss)
         code_8000CB6C.o(.sbss)
         code_80033914.o(.sbss)
         code_80043A0C.o(.sbss)
@@ -157,12 +154,12 @@ SECTIONS {
         *(.sbss)
     }
 
-    .sdata2: {
+    .sdata2 BIND(0x8025C140): {
         sdata2.o(.sdata2)
         *(.sdata2)
     }
 
-    .sbss2: {
+    .sbss2 BIND(0x8025D380): {
         code_8010DA94.o(.sbss2)
         *(.sbss2)
     }

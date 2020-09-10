@@ -1,0 +1,39 @@
+#pragma once
+
+extern u8 lbl_8025C0AF;
+extern u8 lbl_8025C0AE;
+extern u8 lbl_8025C0AD;
+extern u8 lbl_8025C0AC;
+extern s32 lbl_8025C0A8;
+extern s32 lbl_802581E0[4];
+extern s32 lbl_802581D0[4];
+
+extern void func_80139084(void);
+extern void func_8013965C(void);
+extern void func_801397D8(void);
+extern void func_801398E0(void);
+extern void func_8013A498(void);
+extern void func_8013AC64(void);
+extern void func_8013ACA4(void);
+extern void func_8013AEB4(void);
+extern void func_8013AFCC(void);
+extern void func_8013BBC4(void);
+extern void func_8013BD30(void);
+extern void func_8013C078(void);
+extern void func_8013C39C(void);
+extern void func_8013C6EC(void);
+extern void func_8013C804(void);
+extern void func_8013C91C(void);
+extern void func_8013CCE0(void);
+extern void func_8013CF18(void);
+extern void func_8013D150(void);
+extern void func_8013D388(void);
+extern void func_8013D4A0(void);
+extern void func_8013D5B8(void);
+extern void func_8013D8E8(void);
+extern void func_8013DA1C(void);
+extern void func_8013DB40(void);
+extern void func_8013DC64(void);
+extern void func_8013DD98(void);
+extern void func_8013DECC(void);
+extern void func_8013DFE4(void);
