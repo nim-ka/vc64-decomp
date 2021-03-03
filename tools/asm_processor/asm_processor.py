@@ -964,11 +964,11 @@ def fixup_objfile(objfile_name, functions, asm_prelude, assembler, output_enc):
             asm.extend(conts)
         asm.append('glabel {}'.format(late_rodata_source_name_end))
 
-    o_file = open("asm_processor_temp.o", 'w').close() # Create temp file. tempfile module isn't working for me.
-    o_name = "asm_processor_temp.o"
+    o_file = tempfile.NamedTemporaryFile(prefix='asm-processor', suffix='.o', delete=False)
+    o_name = o_file.name
 
-    s_file = open("asm_processor_temp.s", 'wb') # Ditto.
-    s_name = "asm_processor_temp.s"
+    s_file = tempfile.NamedTemporaryFile(prefix='asm-processor', suffix='.s', delete=False)
+    s_name = s_file.name
     try:
         s_file.write(asm_prelude + b'\n')
         for line in asm:
@@ -1167,10 +1167,10 @@ def fixup_objfile(objfile_name, functions, asm_prelude, assembler, output_enc):
         objfile.write(objfile_name)
     finally:
         s_file.close()
-        #os.remove(s_name)
+        os.remove(s_name)
         try:
             pass
-            #os.remove(o_name)
+            os.remove(o_name)
         except:
             pass
 
