@@ -117,7 +117,7 @@ extern void func_800ADED4(void);
 extern void func_800AE030(void);
 extern void func_800AE0C4(void);
 extern void func_800AE134(void);
-extern void func_800AE1D8(void);
+extern s32 func_800AE1D8(s32 (***arg0)(s32 (***arg0)(), s32 arg1), s32 arg1);
 extern void func_800AE1E8(void);
 extern void func_800AE1F8(void);
 extern void func_800AE214(void);
