@@ -68,7 +68,7 @@ s32 lbl_8025C0F0;
 s32 lbl_8025C0EC;
 s32 lbl_8025C0E8;
 s32 lbl_8025C0E4;
-s32 lbl_8025C0E0;
+struct Struct80249978 *lbl_8025C0E0;
 u8 lbl_8025C0DF;
 u8 lbl_8025C0DE;
 u8 lbl_8025C0DD;
@@ -461,11 +461,19 @@ void func_8014F090(void) {}
 GLOBAL_ASM("asm/src/code_8013E6A8/func_8014F090.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_8014F158(void) {}
-#else
-GLOBAL_ASM("asm/src/code_8013E6A8/func_8014F158.s")
-#endif
+void func_8014F158(s32 *arg0, s32 *(*arg1)(s32 *arg0, s32 arg1), struct Struct80249978 *arg2) {
+	arg2->unk0 = lbl_8025C0E0;
+	arg2->unk4 = arg1;
+	arg2->unk8 = arg0;
+	lbl_8025C0E0 = arg2;
+}
+void unused_8014F170(struct Struct80249978 *arg0) {
+	struct Struct80249978 *r3;
+	while ((r3 = lbl_8025C0E0) != 0) {
+		lbl_8025C0E0 = r3->unk0;
+		r3->unk4(r3->unk8, -1);
+	}
+}
 
 #ifdef NON_MATCHING
 void func_8014F1B8(void) {}

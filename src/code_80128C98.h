@@ -108,7 +108,7 @@ extern void func_8012E4F0(void);
 extern void func_8012F43C(void);
 extern void func_8012F920(void);
 extern void func_8012FAB8(void);
-extern void func_8012FB34(void);
+extern void func_8012FB34(s32 arg0[]);
 extern void func_8012FB84(void);
 extern void func_8012FBCC(void);
 extern void func_8012FC3C(void);

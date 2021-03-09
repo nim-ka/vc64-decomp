@@ -228,7 +228,7 @@ extern s32 lbl_8025B210;
 extern s32 lbl_8025B218;
 extern s32 lbl_8025B220;
 extern s32 lbl_8025B228;
-extern s32 lbl_8025B22C;
+extern char *lbl_8025B22C[];
 extern s32 lbl_8025B230;
 extern s32 lbl_8025B234;
 extern s32 lbl_8025B238;

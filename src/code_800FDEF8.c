@@ -80,7 +80,22 @@ s32 lbl_802423B8[48];
 s32 lbl_802422F8[48];
 
 #ifdef NON_MATCHING
-void func_800FDEF8(void) {}
+// I started trying to match this
+void func_800FDEF8(void) {
+	struct idk_8014F9B8 *temp = func_8014F9B8();
+	s32 a;
+	temp->unk0[0x8b] = 0;
+	temp->unk0[0x8c] = 0;
+	temp->unk0[0x8d] = 0;
+	func_800FE984();
+	func_800FEB1C(temp);
+	a = func_800AE1D8((s32 (***)())lbl_8025B158, 0xB0);
+	if (a) {
+		temp->unk1f4 = func_8010C82C(a);
+	} else {
+		temp->unk1f4 = a;
+	}
+}
 #else
 GLOBAL_ASM("asm/src/code_800FDEF8/func_800FDEF8.s")
 #endif
@@ -664,7 +679,29 @@ GLOBAL_ASM("asm/src/code_800FDEF8/func_80109408.s")
 #endif
 
 #ifdef NON_MATCHING
-void func_80109524(void) {}
+//TODO: finish
+void func_80109524(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+	func_8014F9D0();
+	func_8008C86C();
+	func_800957A8(0);
+	func_800957EC(0);
+	if (lbl_8025BFCC != 0) {
+		func_8010AAC0(0);
+	}
+	func_80109408();
+	if (lbl_8025BFCC != 0) {
+		func_8010A074(lbl_8025BFCC, &lbl_80191360[0x18], arg0, arg1);
+		func_80109F7C(3, lbl_8025BFCC, arg2, arg3);
+		func_8010A074(lbl_8025BFCC, lbl_8025B22C, arg2, arg3);
+		if (lbl_8025BFCC == 0) {
+			func_8010969C(&lbl_80191360[0x70], 0x1B2, &lbl_80191360[0x7c]);
+		}
+		func_8010A19C(lbl_8025BFCC);
+		// oh no compiler can't find _savegpr_27 and _restgpr_27
+		// this is dumb
+	}
+	//lbl_80109654
+}
 #else
 GLOBAL_ASM("asm/src/code_800FDEF8/func_80109524.s")
 #endif
