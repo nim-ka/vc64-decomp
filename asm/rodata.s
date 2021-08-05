@@ -1,8 +1,7 @@
 .include "macros.s"
 
 .section .rodata  # 0x801672C0 - 0x8016C300
-.global lbl_801672C0
-lbl_801672C0:
+glabel lbl_801672C0
 	.long 0x00000006
 	.long 0x00000000
 	.long 0x00000005
@@ -19,8 +18,7 @@ lbl_801672C0:
 	.long 0x0003F000
 	.long 0x00000000
 	.long 0x0003F800
-.global lbl_80167300
-lbl_80167300:
+glabel lbl_80167300
 	.long 0x141E3212
 	.long 0x1B2F1018
 	.long 0x280E1523
@@ -33,1060 +31,400 @@ lbl_80167300:
 	.long 0xC3F00000
 	.long 0x44200000
 	.long 0x43F00000
-.global lbl_80167330
-lbl_80167330:
-	.long 0x486F6D65
-	.long 0x42757474
-	.long 0x6F6E332F
+glabel lbl_80167330
+	.asciz "HomeButton3/"
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-	.long 0x00000000
-.global lbl_80167350
-lbl_80167350:
+glabel lbl_80167350
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x43A00000
 	.long 0x43700000
-.global lbl_80167360
-lbl_80167360:
-	.long 0x6172632F
-	.long 0x74696D67
-	.long 0x2F646566
-	.long 0x63757273
-	.long 0x6F725F66
-	.long 0x696E616C
+glabel lbl_80167360
+	.asciz "arc/timg/defcursor_final"
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-	.long 0x00000000
-.global lbl_80167388
-lbl_80167388:
-	.long 0x36345F61
-	.long 0x2E74706C
-	.long 0x005F7031
-	.long 0x2E74706C
-	.long 0x00000000
+glabel lbl_80167388
+	.asciz "64_a.tpl"
+	.asciz "_p1.tpl"
+	.balign 4
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000260
 	.long 0x000001C8
-.global lbl_801673B0
-lbl_801673B0:
-	.long 0x21215757
-	.long 0x57204F55
-	.long 0x54204F46
-	.long 0x204D454D
-	.long 0x4F525921
-	.long 0x210A0047
-	.long 0x4F474920
-	.long 0x50726576
-	.long 0x696F7573
-	.long 0x20506167
-	.long 0x6500474F
-	.long 0x4749204E
-	.long 0x65787420
-	.long 0x50616765
-	.long 0x00617263
-	.long 0x00746578
-	.long 0x742F6874
-	.long 0x6D6C004E
-	.long 0x4F204D45
-	.long 0x4D4F5259
-	.long 0x0A000000
+glabel lbl_801673B0
+	.asciz "!!WWW OUT OF MEMORY!!\n"
+	.asciz "GOGI Previous Page"
+	.asciz "GOGI Next Page"
+	.asciz "arc"
+	.asciz "text/html"
+	.asciz "NO MEMORY\n"
+	.balign 4
 	.long 0x00000000
-	.long 0x76634A61
-	.long 0x76615363
-	.long 0x72697074
-	.long 0x45787400
-.global lbl_80167418
-lbl_80167418:
-	.long 0x76634A61
-	.long 0x76615363
-	.long 0x72697074
-	.long 0x4578742E
-	.long 0x646C6C00
-	.long 0x76634A61
-	.long 0x76615363
-	.long 0x72697074
-	.long 0x45787400
-	.long 0x00466164
-	.long 0x65496E00
-	.long 0x466F6375
-	.long 0x73536F75
-	.long 0x6E64004C
-	.long 0x65667453
-	.long 0x63726F6C
-	.long 0x6C005269
-	.long 0x67687453
-	.long 0x63726F6C
-	.long 0x6C005365
-	.long 0x6C656374
-	.long 0x536F756E
-	.long 0x64000000
+	.asciz "vcJavaScriptExt"
+glabel lbl_80167418
+	.asciz "vcJavaScriptExt.dll"
+	.asciz "vcJavaScriptExt\0"
+	.asciz "FadeIn"
+	.asciz "FocusSound"
+	.asciz "LeftScroll"
+	.asciz "RightScroll"
+	.asciz "SelectSound"
 	.long 0x00000000
-.global lbl_80167478
-lbl_80167478:
-	.long 0x416C6C6F
-	.long 0x6349664E
-	.long 0x65636573
-	.long 0x73617279
-	.long 0x2073697A
-	.long 0x653D2570
-	.long 0x20666169
-	.long 0x6C65640A
-	.long 0x20007663
-	.long 0x6D765F6D
-	.long 0x61696E2E
-	.long 0x63707000
-	.long 0x4661696C
-	.long 0x65642074
-	.long 0x6F20696E
-	.long 0x69746961
-	.long 0x6C697A65
-	.long 0x20575757
-	.long 0x00466169
-	.long 0x6C656420
-	.long 0x746F2069
-	.long 0x6E697420
-	.long 0x666C7573
-	.long 0x68206361
-	.long 0x6C6C6261
-	.long 0x636B2066
-	.long 0x6F722057
-	.long 0x57570057
-	.long 0x6969204E
-	.long 0x544C4720
-	.long 0x50476F74
-	.long 0x68696300
-	.long 0x2F666C61
-	.long 0x73682F74
-	.long 0x6D702F6F
-	.long 0x70657261
-	.long 0x2E617263
-	.long 0x2F6F7065
-	.long 0x72610046
-	.long 0x61696C65
-	.long 0x6420746F
-	.long 0x20696E69
-	.long 0x74204F70
-	.long 0x6572613A
-	.long 0x2025642C
-	.long 0x2025730A
-	.long 0x004F4F4D
-	.long 0x00466169
-	.long 0x6C757265
-	.long 0x00617263
+glabel lbl_80167478
+	.asciz "AllocIfNecessary size=%p failed\n "
+	.asciz "vcmv_main.cpp"
+	.asciz "Failed to initialize WWW"
+	.asciz "Failed to init flush callback for WWW"
+	.asciz "Wii NTLG PGothic"
+	.asciz "/flash/tmp/opera.arc/opera"
+	.asciz "Failed to init Opera: %d, %s\n"
+	.asciz "OOM"
+	.asciz "Failure"
+	.asciz "arc"
+	.balign 4
 	.long 0x00000000
+	.asciz "WWWSurfaceInit"
+	.balign 4
+	.asciz "WWWSurfaceNewScreen"
+	.asciz "WWWSurfaceDeleteScreen"
+	.balign 4
+	.asciz "WWWSurfaceResize"
+	.balign 4
+	.asciz "WWWSurfaceShutdown"
+	.balign 4
+	.asciz "WWWSurfaceSetFlushCallback"
+	.balign 4
+	.asciz "WWWSurfaceInvalidate"
+	.balign 4
+	.asciz "WWWSurfaceUpdateScreen"
+	.balign 4
+	.asciz "WWWSurfaceLockArea"
+	.balign 4
+	.asciz "WWWSurfaceUnlockArea"
+	.balign 4
+	.asciz "WWWSurfaceMouseEvt"
+	.balign 4
+	.asciz "WWWSurfaceWheelEvt"
+	.balign 4
+	.asciz "WWWSurfaceKeyboardEvt"
+	.balign 4
+	.asciz "WWWSurfaceAddFont"
+	.balign 4
+	.asciz "WWWCreateBrowser"
+	.balign 4
+	.asciz "WWWTerminateBrowser"
+	.asciz "WWWRunSlice"
+	.asciz "WWWCreateBrowserWindow"
+	.balign 4
+	.asciz "WWWCloseBrowserWindow"
+	.balign 4
+	.asciz "WWWSetBrowserWindowTransparent"
+	.balign 4
 	.long 0x00000000
-	.long 0x57575753
-	.long 0x75726661
-	.long 0x6365496E
-	.long 0x69740000
-	.long 0x57575753
-	.long 0x75726661
-	.long 0x63654E65
-	.long 0x77536372
-	.long 0x65656E00
-	.long 0x57575753
-	.long 0x75726661
-	.long 0x63654465
-	.long 0x6C657465
-	.long 0x53637265
-	.long 0x656E0000
-	.long 0x57575753
-	.long 0x75726661
-	.long 0x63655265
-	.long 0x73697A65
+	.asciz "WWWGetBrowserWindowRect"
+	.asciz "WWWSetBrowserWindowRect"
+	.asciz "WWWRaiseBrowserWindow"
+	.balign 4
+	.asciz "WWWLowerBrowserWindow"
+	.balign 4
+	.asciz "WWWShowBrowserWindow"
+	.balign 4
+	.asciz "WWWHideBrowserWindow"
+	.balign 4
+	.asciz "WWWCommitIme"
+	.balign 4
+	.asciz "WWWUpdateIme"
+	.balign 4
+	.asciz "WWWPostUrl"
+	.balign 4
+	.asciz "WWWOpenUrl"
+	.balign 4
+	.asciz "WWWGetHistoryCount"
+	.balign 4
+	.asciz "WWWNextPage"
+	.asciz "WWWPrevPage"
+	.asciz "WWWMoveInHistory"
+	.balign 4
+	.asciz "WWWReload"
+	.balign 4
+	.asciz "WWWReflow"
+	.balign 4
+	.asciz "WWWSearch"
+	.balign 4
+	.asciz "WWWResetSearch"
+	.balign 4
+	.asciz "WWWSetFocus"
+	.asciz "WWWLoseFocus"
+	.balign 4
+	.asciz "WWWHistory"
+	.balign 4
 	.long 0x00000000
-	.long 0x57575753
-	.long 0x75726661
-	.long 0x63655368
-	.long 0x7574646F
-	.long 0x776E0000
-	.long 0x57575753
-	.long 0x75726661
-	.long 0x63655365
-	.long 0x74466C75
-	.long 0x73684361
-	.long 0x6C6C6261
-	.long 0x636B0000
-	.long 0x57575753
-	.long 0x75726661
-	.long 0x6365496E
-	.long 0x76616C69
-	.long 0x64617465
+	.asciz "WWWClearHistory"
+	.asciz "WWWGetTrueZoom"
+	.balign 4
+	.asciz "WWWSetTrueZoom"
+	.balign 4
+	.asciz "WWWGetZoom"
+	.balign 4
+	.asciz "WWWSetZoom"
+	.balign 4
+	.asciz "WWWGetSecurityMode"
+	.balign 4
+	.asciz "WWWGetScroll"
+	.balign 4
+	.asciz "WWWSetScroll"
+	.balign 4
+	.asciz "WWWSetRenderingMode"
+	.asciz "WWWGetRenderingMode"
 	.long 0x00000000
-	.long 0x57575753
-	.long 0x75726661
-	.long 0x63655570
-	.long 0x64617465
-	.long 0x53637265
-	.long 0x656E0000
-	.long 0x57575753
-	.long 0x75726661
-	.long 0x63654C6F
-	.long 0x636B4172
-	.long 0x65610000
-	.long 0x57575753
-	.long 0x75726661
-	.long 0x6365556E
-	.long 0x6C6F636B
-	.long 0x41726561
+	.asciz "WWWSetImageMode"
+	.asciz "WWWCreateCertificateManager"
+	.asciz "WWWCloseCertificateManager"
+	.balign 4
+	.asciz "WWWGetNumberOfCertificates"
+	.balign 4
+	.asciz "WWWSetLanguageEncoding"
+	.balign 4
+	.asciz "WWWGetDocumentIcon"
+	.balign 4
+	.asciz "WWWGetDocumentIconUrl"
+	.balign 4
+	.asciz "WWWClearCookies"
+	.asciz "WWWGetDocumentSize"
+	.balign 4
+	.asciz "WWWSetIntPref"
+	.balign 4
+	.asciz "WWWGetIntPref"
+	.balign 4
+	.asciz "WWWSetStringPref"
+	.balign 4
+	.asciz "WWWGetStringPref"
+	.balign 4
+	.asciz "WWWCommitPrefs"
+	.balign 4
+	.asciz "WWWSetFocusColors"
+	.balign 4
+	.asciz "WWWSetScrollbarColors"
+	.balign 4
+	.asciz "WWWSetScrollbarSize"
+	.asciz "WWWSetWidgetColors"
+	.balign 4
+	.asciz "WWWSetDisabledWidgetColors"
+	.balign 4
+	.asciz "WWWSetButtonWidgetColors"
+	.balign 4
+	.asciz "WWWSetUastringExtension"
+	.asciz "WWWMarkNextItemInDirection"
+	.balign 4
+	.asciz "WWWResetNavigation"
+	.balign 4
+	.asciz "WWWClearHighlight"
+	.balign 4
 	.long 0x00000000
-	.long 0x57575753
-	.long 0x75726661
-	.long 0x63654D6F
-	.long 0x75736545
-	.long 0x76740000
-	.long 0x57575753
-	.long 0x75726661
-	.long 0x63655768
-	.long 0x65656C45
-	.long 0x76740000
-	.long 0x57575753
-	.long 0x75726661
-	.long 0x63654B65
-	.long 0x79626F61
-	.long 0x72644576
-	.long 0x74000000
-	.long 0x57575753
-	.long 0x75726661
-	.long 0x63654164
-	.long 0x64466F6E
-	.long 0x74000000
-	.long 0x57575743
-	.long 0x72656174
-	.long 0x6542726F
-	.long 0x77736572
+	.asciz "WWWSetHighlight"
+	.asciz "WWWGetActiveLinkType"
+	.balign 4
+	.asciz "WWWGetBrowserAllocationFunctions"
+	.balign 4
+	.asciz "WWWShutdownBrowserAllocationFunctions"
+	.balign 4
+	.asciz "WWWSetAllocationFunctions"
+	.balign 4
+	.asciz "WWWHTTPCreateHttpLib"
+	.balign 4
+	.asciz "WWWHTTPTerminateHttpLib"
+	.asciz "WWWHTTPSessionRunSlice"
+	.balign 4
+	.asciz "WWWHTTPInitSession"
+	.balign 4
+	.asciz "WWWHTTPDeleteSession"
+	.balign 4
 	.long 0x00000000
-	.long 0x57575754
-	.long 0x65726D69
-	.long 0x6E617465
-	.long 0x42726F77
-	.long 0x73657200
-	.long 0x57575752
-	.long 0x756E536C
-	.long 0x69636500
-	.long 0x57575743
-	.long 0x72656174
-	.long 0x6542726F
-	.long 0x77736572
-	.long 0x57696E64
-	.long 0x6F770000
-	.long 0x57575743
-	.long 0x6C6F7365
-	.long 0x42726F77
-	.long 0x73657257
-	.long 0x696E646F
-	.long 0x77000000
-	.long 0x57575753
-	.long 0x65744272
-	.long 0x6F777365
-	.long 0x7257696E
-	.long 0x646F7754
-	.long 0x72616E73
-	.long 0x70617265
-	.long 0x6E740000
+	.asciz "WWWHTTPSetSessionHeader"
+	.asciz "WWWHTTPRemoveSessionHeader"
+	.balign 4
+	.asciz "WWWHTTPRemoveAllSessionHeaders"
+	.balign 4
+	.asciz "WWWHTTPCreateRequest"
+	.balign 4
+	.asciz "WWWHTTPDeleteRequest"
+	.balign 4
 	.long 0x00000000
-	.long 0x57575747
-	.long 0x65744272
-	.long 0x6F777365
-	.long 0x7257696E
-	.long 0x646F7752
-	.long 0x65637400
-	.long 0x57575753
-	.long 0x65744272
-	.long 0x6F777365
-	.long 0x7257696E
-	.long 0x646F7752
-	.long 0x65637400
-	.long 0x57575752
-	.long 0x61697365
-	.long 0x42726F77
-	.long 0x73657257
-	.long 0x696E646F
-	.long 0x77000000
-	.long 0x5757574C
-	.long 0x6F776572
-	.long 0x42726F77
-	.long 0x73657257
-	.long 0x696E646F
-	.long 0x77000000
-	.long 0x57575753
-	.long 0x686F7742
-	.long 0x726F7773
-	.long 0x65725769
-	.long 0x6E646F77
+	.asciz "WWWHTTPSetRequestHeader"
+	.asciz "WWWHTTPGetRequestHeader"
+	.asciz "WWWHTTPRemoveRequestHeader"
+	.balign 4
+	.asciz "WWWHTTPRemoveAllRequestHeaders"
+	.balign 4
+	.asciz "WWWHTTPGetResponseHeader"
+	.balign 4
+	.asciz "WWWHTTPGetResponseHeaders"
+	.balign 4
+	.asciz "WWWHTTPIssue"
+	.balign 4
 	.long 0x00000000
-	.long 0x57575748
-	.long 0x69646542
-	.long 0x726F7773
-	.long 0x65725769
-	.long 0x6E646F77
+	.asciz "WWWHTTPNbActiveRequests"
+	.asciz "WWWHTTPPostBodyData"
+	.asciz "WWWHTTPSetAuthCredentials"
+	.balign 4
+	.asciz "WWWHTTPRemoveAuthCredentials"
+	.balign 4
+	.asciz "WWWHTTPSetProxy"
+	.asciz "WWWHTTPRemoveProxy"
+	.balign 4
+	.asciz "WWWHTTPEndLoading"
+	.balign 4
+	.asciz "WWWAddJSPlugin"
+	.balign 4
+	.asciz "WWWAddNSPlugin"
+	.balign 4
+	.asciz "WWWProtocolWrite"
+	.balign 4
+	.asciz "WWWProtocolSetMimeType"
+	.balign 4
+	.asciz "WWWProtocolFinished"
+	.asciz "WWWProtocolFailed"
+	.balign 4
+	.asciz "WWWAddProtocol"
+	.balign 4
+	.asciz "WiiNTLG-Regular.ttc"
+glabel lbl_80167EA0
+	.asciz "\nError: call www unlinked function.\n"
+	.asciz "AllocIfNecessary(%d)\n"
+	.asciz "wwwlib-rvl.lz7"
+	.balign 4
 	.long 0x00000000
-	.long 0x57575743
-	.long 0x6F6D6D69
-	.long 0x74496D65
+	.asciz "ARCClose"
+	.balign 4
+	.asciz "ARCConvertPathToEntrynum"
+	.balign 4
+	.asciz "ARCEntrynumIsDir"
+	.balign 4
+	.asciz "ARCFastOpen"
+	.asciz "ARCGetLength"
+	.balign 4
+	.asciz "ARCGetStartAddrInMem"
+	.balign 4
+	.asciz "ARCGetStartOffset"
+	.balign 4
+	.asciz "ARCInitHandle"
+	.balign 4
+	.asciz "ARCReadDir"
+	.balign 4
+	.asciz "DVDClose"
+	.balign 4
+	.asciz "DVDCloseDir"
+	.asciz "DVDConvertPathToEntrynum"
+	.balign 4
+	.asciz "DVDEntrynumIsDir"
+	.balign 4
+	.asciz "DVDFastOpen"
+	.asciz "DVDOpenDir"
+	.balign 4
+	.asciz "DVDReadDir"
+	.balign 4
+	.asciz "DVDReadPrio"
+	.asciz "NANDClose"
+	.balign 4
+	.asciz "NANDCreate"
+	.balign 4
+	.asciz "NANDCreateDir"
+	.balign 4
+	.asciz "NANDDelete"
+	.balign 4
+	.asciz "NANDGetCurrentDir"
+	.balign 4
+	.asciz "NANDGetLength"
+	.balign 4
+	.asciz "NANDGetStatus"
+	.balign 4
+	.asciz "NANDGetType"
+	.asciz "NANDOpen"
+	.balign 4
+	.asciz "NANDRead"
+	.balign 4
+	.asciz "NANDReadDir"
+	.asciz "NANDSafeClose"
+	.balign 4
+	.asciz "NANDSafeOpen"
+	.balign 4
+	.asciz "NANDSeek"
+	.balign 4
+	.asciz "NANDWrite"
+	.balign 4
+	.asciz "NETGetUniversalCalendar"
+	.asciz "OSCalendarTimeToTicks"
+	.balign 4
+	.asciz "OSGetTime"
+	.balign 4
+	.asciz "OSRegisterVersion"
+	.balign 4
+	.asciz "OSReport"
+	.balign 4
+	.asciz "OSYieldThread"
+	.balign 4
+	.asciz "SCGetLanguage"
+	.balign 4
+	.asciz "WWW_FONT_FILE_DATA_TABLE__"
+	.balign 4
+	.asciz "contentCloseNAND"
+	.balign 4
+	.asciz "contentConvertPathToEntrynumNAND"
+	.balign 4
+	.asciz "contentFastOpenNAND"
+	.asciz "contentGetLengthNAND"
+	.balign 4
+	.asciz "contentInitHandleNAND"
+	.balign 4
+	.asciz "contentOpenDirNAND"
+	.balign 4
+	.asciz "contentReadNAND"
+	.asciz "contentReleaseHandleNAND"
+	.balign 4
 	.long 0x00000000
-	.long 0x57575755
-	.long 0x70646174
-	.long 0x65496D65
+	.asciz "contentSeekNAND"
+	.asciz "__OSGetSystemTime"
+	.balign 4
+	.asciz "_SDA2_BASE_"
+	.asciz "_SDA_BASE_"
+	.balign 4
+	.asciz "__construct_array"
+	.balign 4
+	.asciz "__construct_new_array"
+	.balign 4
+	.asciz "__cvt_fp2unsigned"
+	.balign 4
+	.asciz "__cvt_sll_dbl"
+	.balign 4
+	.asciz "__destroy_arr"
+	.balign 4
+	.asciz "__double_huge"
+	.balign 4
+	.asciz "__ptmf_scall"
+	.balign 4
+	.asciz "__setjmp"
+	.balign 4
+	.asciz "__va_arg"
+	.balign 4
 	.long 0x00000000
-	.long 0x57575750
-	.long 0x6F737455
-	.long 0x726C0000
-	.long 0x5757574F
-	.long 0x70656E55
-	.long 0x726C0000
-	.long 0x57575747
-	.long 0x65744869
-	.long 0x73746F72
-	.long 0x79436F75
-	.long 0x6E740000
-	.long 0x5757574E
-	.long 0x65787450
-	.long 0x61676500
-	.long 0x57575750
-	.long 0x72657650
-	.long 0x61676500
-	.long 0x5757574D
-	.long 0x6F766549
-	.long 0x6E486973
-	.long 0x746F7279
-	.long 0x00000000
-	.long 0x57575752
-	.long 0x656C6F61
-	.long 0x64000000
-	.long 0x57575752
-	.long 0x65666C6F
-	.long 0x77000000
-	.long 0x57575753
-	.long 0x65617263
-	.long 0x68000000
-	.long 0x57575752
-	.long 0x65736574
-	.long 0x53656172
-	.long 0x63680000
-	.long 0x57575753
-	.long 0x6574466F
-	.long 0x63757300
-	.long 0x5757574C
-	.long 0x6F736546
-	.long 0x6F637573
-	.long 0x00000000
-	.long 0x57575748
-	.long 0x6973746F
-	.long 0x72790000
-	.long 0x00000000
-	.long 0x57575743
-	.long 0x6C656172
-	.long 0x48697374
-	.long 0x6F727900
-	.long 0x57575747
-	.long 0x65745472
-	.long 0x75655A6F
-	.long 0x6F6D0000
-	.long 0x57575753
-	.long 0x65745472
-	.long 0x75655A6F
-	.long 0x6F6D0000
-	.long 0x57575747
-	.long 0x65745A6F
-	.long 0x6F6D0000
-	.long 0x57575753
-	.long 0x65745A6F
-	.long 0x6F6D0000
-	.long 0x57575747
-	.long 0x65745365
-	.long 0x63757269
-	.long 0x74794D6F
-	.long 0x64650000
-	.long 0x57575747
-	.long 0x65745363
-	.long 0x726F6C6C
-	.long 0x00000000
-	.long 0x57575753
-	.long 0x65745363
-	.long 0x726F6C6C
-	.long 0x00000000
-	.long 0x57575753
-	.long 0x65745265
-	.long 0x6E646572
-	.long 0x696E674D
-	.long 0x6F646500
-	.long 0x57575747
-	.long 0x65745265
-	.long 0x6E646572
-	.long 0x696E674D
-	.long 0x6F646500
-	.long 0x00000000
-	.long 0x57575753
-	.long 0x6574496D
-	.long 0x6167654D
-	.long 0x6F646500
-	.long 0x57575743
-	.long 0x72656174
-	.long 0x65436572
-	.long 0x74696669
-	.long 0x63617465
-	.long 0x4D616E61
-	.long 0x67657200
-	.long 0x57575743
-	.long 0x6C6F7365
-	.long 0x43657274
-	.long 0x69666963
-	.long 0x6174654D
-	.long 0x616E6167
-	.long 0x65720000
-	.long 0x57575747
-	.long 0x65744E75
-	.long 0x6D626572
-	.long 0x4F664365
-	.long 0x72746966
-	.long 0x69636174
-	.long 0x65730000
-	.long 0x57575753
-	.long 0x65744C61
-	.long 0x6E677561
-	.long 0x6765456E
-	.long 0x636F6469
-	.long 0x6E670000
-	.long 0x57575747
-	.long 0x6574446F
-	.long 0x63756D65
-	.long 0x6E744963
-	.long 0x6F6E0000
-	.long 0x57575747
-	.long 0x6574446F
-	.long 0x63756D65
-	.long 0x6E744963
-	.long 0x6F6E5572
-	.long 0x6C000000
-	.long 0x57575743
-	.long 0x6C656172
-	.long 0x436F6F6B
-	.long 0x69657300
-	.long 0x57575747
-	.long 0x6574446F
-	.long 0x63756D65
-	.long 0x6E745369
-	.long 0x7A650000
-	.long 0x57575753
-	.long 0x6574496E
-	.long 0x74507265
-	.long 0x66000000
-	.long 0x57575747
-	.long 0x6574496E
-	.long 0x74507265
-	.long 0x66000000
-	.long 0x57575753
-	.long 0x65745374
-	.long 0x72696E67
-	.long 0x50726566
-	.long 0x00000000
-	.long 0x57575747
-	.long 0x65745374
-	.long 0x72696E67
-	.long 0x50726566
-	.long 0x00000000
-	.long 0x57575743
-	.long 0x6F6D6D69
-	.long 0x74507265
-	.long 0x66730000
-	.long 0x57575753
-	.long 0x6574466F
-	.long 0x63757343
-	.long 0x6F6C6F72
-	.long 0x73000000
-	.long 0x57575753
-	.long 0x65745363
-	.long 0x726F6C6C
-	.long 0x62617243
-	.long 0x6F6C6F72
-	.long 0x73000000
-	.long 0x57575753
-	.long 0x65745363
-	.long 0x726F6C6C
-	.long 0x62617253
-	.long 0x697A6500
-	.long 0x57575753
-	.long 0x65745769
-	.long 0x64676574
-	.long 0x436F6C6F
-	.long 0x72730000
-	.long 0x57575753
-	.long 0x65744469
-	.long 0x7361626C
-	.long 0x65645769
-	.long 0x64676574
-	.long 0x436F6C6F
-	.long 0x72730000
-	.long 0x57575753
-	.long 0x65744275
-	.long 0x74746F6E
-	.long 0x57696467
-	.long 0x6574436F
-	.long 0x6C6F7273
-	.long 0x00000000
-	.long 0x57575753
-	.long 0x65745561
-	.long 0x73747269
-	.long 0x6E674578
-	.long 0x74656E73
-	.long 0x696F6E00
-	.long 0x5757574D
-	.long 0x61726B4E
-	.long 0x65787449
-	.long 0x74656D49
-	.long 0x6E446972
-	.long 0x65637469
-	.long 0x6F6E0000
-	.long 0x57575752
-	.long 0x65736574
-	.long 0x4E617669
-	.long 0x67617469
-	.long 0x6F6E0000
-	.long 0x57575743
-	.long 0x6C656172
-	.long 0x48696768
-	.long 0x6C696768
-	.long 0x74000000
-	.long 0x00000000
-	.long 0x57575753
-	.long 0x65744869
-	.long 0x67686C69
-	.long 0x67687400
-	.long 0x57575747
-	.long 0x65744163
-	.long 0x74697665
-	.long 0x4C696E6B
-	.long 0x54797065
-	.long 0x00000000
-	.long 0x57575747
-	.long 0x65744272
-	.long 0x6F777365
-	.long 0x72416C6C
-	.long 0x6F636174
-	.long 0x696F6E46
-	.long 0x756E6374
-	.long 0x696F6E73
-	.long 0x00000000
-	.long 0x57575753
-	.long 0x68757464
-	.long 0x6F776E42
-	.long 0x726F7773
-	.long 0x6572416C
-	.long 0x6C6F6361
-	.long 0x74696F6E
-	.long 0x46756E63
-	.long 0x74696F6E
-	.long 0x73000000
-	.long 0x57575753
-	.long 0x6574416C
-	.long 0x6C6F6361
-	.long 0x74696F6E
-	.long 0x46756E63
-	.long 0x74696F6E
-	.long 0x73000000
-	.long 0x57575748
-	.long 0x54545043
-	.long 0x72656174
-	.long 0x65487474
-	.long 0x704C6962
-	.long 0x00000000
-	.long 0x57575748
-	.long 0x54545054
-	.long 0x65726D69
-	.long 0x6E617465
-	.long 0x48747470
-	.long 0x4C696200
-	.long 0x57575748
-	.long 0x54545053
-	.long 0x65737369
-	.long 0x6F6E5275
-	.long 0x6E536C69
-	.long 0x63650000
-	.long 0x57575748
-	.long 0x54545049
-	.long 0x6E697453
-	.long 0x65737369
-	.long 0x6F6E0000
-	.long 0x57575748
-	.long 0x54545044
-	.long 0x656C6574
-	.long 0x65536573
-	.long 0x73696F6E
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x57575748
-	.long 0x54545053
-	.long 0x65745365
-	.long 0x7373696F
-	.long 0x6E486561
-	.long 0x64657200
-	.long 0x57575748
-	.long 0x54545052
-	.long 0x656D6F76
-	.long 0x65536573
-	.long 0x73696F6E
-	.long 0x48656164
-	.long 0x65720000
-	.long 0x57575748
-	.long 0x54545052
-	.long 0x656D6F76
-	.long 0x65416C6C
-	.long 0x53657373
-	.long 0x696F6E48
-	.long 0x65616465
-	.long 0x72730000
-	.long 0x57575748
-	.long 0x54545043
-	.long 0x72656174
-	.long 0x65526571
-	.long 0x75657374
-	.long 0x00000000
-	.long 0x57575748
-	.long 0x54545044
-	.long 0x656C6574
-	.long 0x65526571
-	.long 0x75657374
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x57575748
-	.long 0x54545053
-	.long 0x65745265
-	.long 0x71756573
-	.long 0x74486561
-	.long 0x64657200
-	.long 0x57575748
-	.long 0x54545047
-	.long 0x65745265
-	.long 0x71756573
-	.long 0x74486561
-	.long 0x64657200
-	.long 0x57575748
-	.long 0x54545052
-	.long 0x656D6F76
-	.long 0x65526571
-	.long 0x75657374
-	.long 0x48656164
-	.long 0x65720000
-	.long 0x57575748
-	.long 0x54545052
-	.long 0x656D6F76
-	.long 0x65416C6C
-	.long 0x52657175
-	.long 0x65737448
-	.long 0x65616465
-	.long 0x72730000
-	.long 0x57575748
-	.long 0x54545047
-	.long 0x65745265
-	.long 0x73706F6E
-	.long 0x73654865
-	.long 0x61646572
-	.long 0x00000000
-	.long 0x57575748
-	.long 0x54545047
-	.long 0x65745265
-	.long 0x73706F6E
-	.long 0x73654865
-	.long 0x61646572
-	.long 0x73000000
-	.long 0x57575748
-	.long 0x54545049
-	.long 0x73737565
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x57575748
-	.long 0x5454504E
-	.long 0x62416374
-	.long 0x69766552
-	.long 0x65717565
-	.long 0x73747300
-	.long 0x57575748
-	.long 0x54545050
-	.long 0x6F737442
-	.long 0x6F647944
-	.long 0x61746100
-	.long 0x57575748
-	.long 0x54545053
-	.long 0x65744175
-	.long 0x74684372
-	.long 0x6564656E
-	.long 0x7469616C
-	.long 0x73000000
-	.long 0x57575748
-	.long 0x54545052
-	.long 0x656D6F76
-	.long 0x65417574
-	.long 0x68437265
-	.long 0x64656E74
-	.long 0x69616C73
-	.long 0x00000000
-	.long 0x57575748
-	.long 0x54545053
-	.long 0x65745072
-	.long 0x6F787900
-	.long 0x57575748
-	.long 0x54545052
-	.long 0x656D6F76
-	.long 0x6550726F
-	.long 0x78790000
-	.long 0x57575748
-	.long 0x54545045
-	.long 0x6E644C6F
-	.long 0x6164696E
-	.long 0x67000000
-	.long 0x57575741
-	.long 0x64644A53
-	.long 0x506C7567
-	.long 0x696E0000
-	.long 0x57575741
-	.long 0x64644E53
-	.long 0x506C7567
-	.long 0x696E0000
-	.long 0x57575750
-	.long 0x726F746F
-	.long 0x636F6C57
-	.long 0x72697465
-	.long 0x00000000
-	.long 0x57575750
-	.long 0x726F746F
-	.long 0x636F6C53
-	.long 0x65744D69
-	.long 0x6D655479
-	.long 0x70650000
-	.long 0x57575750
-	.long 0x726F746F
-	.long 0x636F6C46
-	.long 0x696E6973
-	.long 0x68656400
-	.long 0x57575750
-	.long 0x726F746F
-	.long 0x636F6C46
-	.long 0x61696C65
-	.long 0x64000000
-	.long 0x57575741
-	.long 0x64645072
-	.long 0x6F746F63
-	.long 0x6F6C0000
-	.long 0x5769694E
-	.long 0x544C472D
-	.long 0x52656775
-	.long 0x6C61722E
-	.long 0x74746300
-.global lbl_80167EA0
-lbl_80167EA0:
-	.long 0x0A457272
-	.long 0x6F723A20
-	.long 0x63616C6C
-	.long 0x20777777
-	.long 0x20756E6C
-	.long 0x696E6B65
-	.long 0x64206675
-	.long 0x6E637469
-	.long 0x6F6E2E0A
-	.long 0x00416C6C
-	.long 0x6F634966
-	.long 0x4E656365
-	.long 0x73736172
-	.long 0x79282564
-	.long 0x290A0077
-	.long 0x77776C69
-	.long 0x622D7276
-	.long 0x6C2E6C7A
-	.long 0x37000000
-	.long 0x00000000
-	.long 0x41524343
-	.long 0x6C6F7365
-	.long 0x00000000
-	.long 0x41524343
-	.long 0x6F6E7665
-	.long 0x72745061
-	.long 0x7468546F
-	.long 0x456E7472
-	.long 0x796E756D
-	.long 0x00000000
-	.long 0x41524345
-	.long 0x6E747279
-	.long 0x6E756D49
-	.long 0x73446972
-	.long 0x00000000
-	.long 0x41524346
-	.long 0x6173744F
-	.long 0x70656E00
-	.long 0x41524347
-	.long 0x65744C65
-	.long 0x6E677468
-	.long 0x00000000
-	.long 0x41524347
-	.long 0x65745374
-	.long 0x61727441
-	.long 0x64647249
-	.long 0x6E4D656D
-	.long 0x00000000
-	.long 0x41524347
-	.long 0x65745374
-	.long 0x6172744F
-	.long 0x66667365
-	.long 0x74000000
-	.long 0x41524349
-	.long 0x6E697448
-	.long 0x616E646C
-	.long 0x65000000
-	.long 0x41524352
-	.long 0x65616444
-	.long 0x69720000
-	.long 0x44564443
-	.long 0x6C6F7365
-	.long 0x00000000
-	.long 0x44564443
-	.long 0x6C6F7365
-	.long 0x44697200
-	.long 0x44564443
-	.long 0x6F6E7665
-	.long 0x72745061
-	.long 0x7468546F
-	.long 0x456E7472
-	.long 0x796E756D
-	.long 0x00000000
-	.long 0x44564445
-	.long 0x6E747279
-	.long 0x6E756D49
-	.long 0x73446972
-	.long 0x00000000
-	.long 0x44564446
-	.long 0x6173744F
-	.long 0x70656E00
-	.long 0x4456444F
-	.long 0x70656E44
-	.long 0x69720000
-	.long 0x44564452
-	.long 0x65616444
-	.long 0x69720000
-	.long 0x44564452
-	.long 0x65616450
-	.long 0x72696F00
-	.long 0x4E414E44
-	.long 0x436C6F73
-	.long 0x65000000
-	.long 0x4E414E44
-	.long 0x43726561
-	.long 0x74650000
-	.long 0x4E414E44
-	.long 0x43726561
-	.long 0x74654469
-	.long 0x72000000
-	.long 0x4E414E44
-	.long 0x44656C65
-	.long 0x74650000
-	.long 0x4E414E44
-	.long 0x47657443
-	.long 0x75727265
-	.long 0x6E744469
-	.long 0x72000000
-	.long 0x4E414E44
-	.long 0x4765744C
-	.long 0x656E6774
-	.long 0x68000000
-	.long 0x4E414E44
-	.long 0x47657453
-	.long 0x74617475
-	.long 0x73000000
-	.long 0x4E414E44
-	.long 0x47657454
-	.long 0x79706500
-	.long 0x4E414E44
-	.long 0x4F70656E
-	.long 0x00000000
-	.long 0x4E414E44
-	.long 0x52656164
-	.long 0x00000000
-	.long 0x4E414E44
-	.long 0x52656164
-	.long 0x44697200
-	.long 0x4E414E44
-	.long 0x53616665
-	.long 0x436C6F73
-	.long 0x65000000
-	.long 0x4E414E44
-	.long 0x53616665
-	.long 0x4F70656E
-	.long 0x00000000
-	.long 0x4E414E44
-	.long 0x5365656B
-	.long 0x00000000
-	.long 0x4E414E44
-	.long 0x57726974
-	.long 0x65000000
-	.long 0x4E455447
-	.long 0x6574556E
-	.long 0x69766572
-	.long 0x73616C43
-	.long 0x616C656E
-	.long 0x64617200
-	.long 0x4F534361
-	.long 0x6C656E64
-	.long 0x61725469
-	.long 0x6D65546F
-	.long 0x5469636B
-	.long 0x73000000
-	.long 0x4F534765
-	.long 0x7454696D
-	.long 0x65000000
-	.long 0x4F535265
-	.long 0x67697374
-	.long 0x65725665
-	.long 0x7273696F
-	.long 0x6E000000
-	.long 0x4F535265
-	.long 0x706F7274
-	.long 0x00000000
-	.long 0x4F535969
-	.long 0x656C6454
-	.long 0x68726561
-	.long 0x64000000
-	.long 0x53434765
-	.long 0x744C616E
-	.long 0x67756167
-	.long 0x65000000
-	.long 0x5757575F
-	.long 0x464F4E54
-	.long 0x5F46494C
-	.long 0x455F4441
-	.long 0x54415F54
-	.long 0x41424C45
-	.long 0x5F5F0000
-	.long 0x636F6E74
-	.long 0x656E7443
-	.long 0x6C6F7365
-	.long 0x4E414E44
-	.long 0x00000000
-	.long 0x636F6E74
-	.long 0x656E7443
-	.long 0x6F6E7665
-	.long 0x72745061
-	.long 0x7468546F
-	.long 0x456E7472
-	.long 0x796E756D
-	.long 0x4E414E44
-	.long 0x00000000
-	.long 0x636F6E74
-	.long 0x656E7446
-	.long 0x6173744F
-	.long 0x70656E4E
-	.long 0x414E4400
-	.long 0x636F6E74
-	.long 0x656E7447
-	.long 0x65744C65
-	.long 0x6E677468
-	.long 0x4E414E44
-	.long 0x00000000
-	.long 0x636F6E74
-	.long 0x656E7449
-	.long 0x6E697448
-	.long 0x616E646C
-	.long 0x654E414E
-	.long 0x44000000
-	.long 0x636F6E74
-	.long 0x656E744F
-	.long 0x70656E44
-	.long 0x69724E41
-	.long 0x4E440000
-	.long 0x636F6E74
-	.long 0x656E7452
-	.long 0x6561644E
-	.long 0x414E4400
-	.long 0x636F6E74
-	.long 0x656E7452
-	.long 0x656C6561
-	.long 0x73654861
-	.long 0x6E646C65
-	.long 0x4E414E44
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x636F6E74
-	.long 0x656E7453
-	.long 0x65656B4E
-	.long 0x414E4400
-	.long 0x5F5F4F53
-	.long 0x47657453
-	.long 0x79737465
-	.long 0x6D54696D
-	.long 0x65000000
-	.long 0x5F534441
-	.long 0x325F4241
-	.long 0x53455F00
-	.long 0x5F534441
-	.long 0x5F424153
-	.long 0x455F0000
-	.long 0x5F5F636F
-	.long 0x6E737472
-	.long 0x7563745F
-	.long 0x61727261
-	.long 0x79000000
-	.long 0x5F5F636F
-	.long 0x6E737472
-	.long 0x7563745F
-	.long 0x6E65775F
-	.long 0x61727261
-	.long 0x79000000
-	.long 0x5F5F6376
-	.long 0x745F6670
-	.long 0x32756E73
-	.long 0x69676E65
-	.long 0x64000000
-	.long 0x5F5F6376
-	.long 0x745F736C
-	.long 0x6C5F6462
-	.long 0x6C000000
-	.long 0x5F5F6465
-	.long 0x7374726F
-	.long 0x795F6172
-	.long 0x72000000
-	.long 0x5F5F646F
-	.long 0x75626C65
-	.long 0x5F687567
-	.long 0x65000000
-	.long 0x5F5F7074
-	.long 0x6D665F73
-	.long 0x63616C6C
-	.long 0x00000000
-	.long 0x5F5F7365
-	.long 0x746A6D70
-	.long 0x00000000
-	.long 0x5F5F7661
-	.long 0x5F617267
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x5F637572
-	.long 0x72656E74
-	.long 0x5F6C6F63
-	.long 0x616C6500
-	.long 0x6C6F6361
-	.long 0x6C74696D
-	.long 0x65000000
-	.long 0x736E7072
-	.long 0x696E7466
-	.long 0x00000000
-	.long 0x73747266
-	.long 0x74696D65
-	.long 0x00000000
-	.long 0x7374726E
-	.long 0x69636D70
-	.long 0x00000000
-	.long 0x76736E70
-	.long 0x72696E74
-	.long 0x66000000
-	.long 0x76737072
-	.long 0x696E7466
-	.long 0x00000000
-.global lbl_80168360
-lbl_80168360:
+	.asciz "_current_locale"
+	.asciz "localtime"
+	.balign 4
+	.asciz "snprintf"
+	.balign 4
+	.asciz "strftime"
+	.balign 4
+	.asciz "strnicmp"
+	.balign 4
+	.asciz "vsnprintf"
+	.balign 4
+	.asciz "vsprintf"
+glabel lbl_80168360
 	.long 0x80167EF0
 	.long 0x800B4A8C
 	.long 0x80167EFC
@@ -1347,54 +685,15 @@ lbl_80168360:
 	.long 0x80157BE8
 	.long 0x8025C6A8
 	.long 0x00000000
-.global lbl_80168770
-lbl_80168770:
-	.long 0x21212121
-	.long 0x2150726F
-	.long 0x6C6F6721
-	.long 0x21212121
-	.long 0x0A005253
-	.long 0x4F204D6F
-	.long 0x64756C65
-	.long 0x203A2063
-	.long 0x616C6C20
-	.long 0x636F6E73
-	.long 0x74727563
-	.long 0x746F7220
-	.long 0x28253038
-	.long 0x78290A00
-	.long 0x21212121
-	.long 0x21457069
-	.long 0x6C6F6721
-	.long 0x21212121
-	.long 0x0A005253
-	.long 0x4F204D6F
-	.long 0x64756C65
-	.long 0x203A2063
-	.long 0x616C6C20
-	.long 0x64657374
-	.long 0x72756374
-	.long 0x6F722028
-	.long 0x25303878
-	.long 0x290A000A
-	.long 0x5B457272
-	.long 0x6F725D3A
-	.long 0x20556E6C
-	.long 0x696E6B65
-	.long 0x64206675
-	.long 0x6E637469
-	.long 0x6F6E2077
-	.long 0x61732063
-	.long 0x616C6C65
-	.long 0x642E0A00
-	.long 0x52534F4C
-	.long 0x696E6B49
-	.long 0x6E697420
-	.long 0x4552524F
-	.long 0x52210A00
+glabel lbl_80168770
+	.asciz "!!!!!Prolog!!!!!\n"
+	.asciz "RSO Module : call constructor (%08x)\n"
+	.asciz "!!!!!Epilog!!!!!\n"
+	.asciz "RSO Module : call destructor (%08x)\n"
+	.asciz "\n[Error]: Unlinked function was called.\n"
+	.asciz "RSOLinkInit ERROR!\n"
 	.long 0x00000000
-.global lbl_80168820
-lbl_80168820:
+glabel lbl_80168820
 	.long 0x80181D60
 	.long 0x80181DF0
 	.long 0x80181E8C
@@ -1403,8 +702,7 @@ lbl_80168820:
 	.long 0x801820C8
 	.long 0x80182180
 	.long 0x00000000
-.global lbl_80168840
-lbl_80168840:
+glabel lbl_80168840
 	.long 0x00000000
 	.long 0x00000000
 	.long 0xFFFFFF9A
@@ -1483,33 +781,13 @@ lbl_80168840:
 	.long 0xFFFFFFFE
 	.long 0xFFFFFFE9
 	.long 0xFFFFFFC0
-.global lbl_80168978
-lbl_80168978:
-	.long 0x2F736861
-	.long 0x72656432
-	.long 0x2F737973
-	.long 0x00000000
-.global lbl_80168988
-lbl_80168988:
-	.long 0x2F736861
-	.long 0x72656432
-	.long 0x2F737973
-	.long 0x2F535953
-	.long 0x434F4E46
-	.long 0x00000000
-.global lbl_801689A0
-lbl_801689A0:
-	.long 0x2F746974
-	.long 0x6C652F30
-	.long 0x30303030
-	.long 0x3030312F
-	.long 0x30303030
-	.long 0x30303032
-	.long 0x2F646174
-	.long 0x612F7365
-	.long 0x7474696E
-	.long 0x672E7478
-	.long 0x74000000
+glabel lbl_80168978
+	.asciz "/shared2/sys"
+glabel lbl_80168988
+	.asciz "/shared2/sys/SYSCONF"
+glabel lbl_801689A0
+	.asciz "/title/00000001/00000002/data/setting.txt"
+	.balign 4
 	.long 0x00000000
 	.long 0x3FECC000
 	.long 0x00000000
@@ -1527,8 +805,7 @@ lbl_801689A0:
 	.long 0x00000000
 	.long 0x40033000
 	.long 0x00000000
-.global lbl_80168A10
-lbl_80168A10:
+glabel lbl_80168A10
 	.long 0x02000071
 	.long 0x01006400
 	.long 0xFE020000
@@ -1541,22 +818,19 @@ lbl_80168A10:
 	.long 0x07000071
 	.long 0x01007200
 	.long 0x20000000
-.global lbl_80168A40
-lbl_80168A40:
+glabel lbl_80168A40
 	.long 0xFD05B304
 	.long 0x63033503
 	.long 0x1F030000
 	.long 0x00000000
-.global lbl_80168A50
-lbl_80168A50:
+glabel lbl_80168A50
 	.long func_800CFF20
 	.long func_800CFF4C
 	.long 0x800CFFB4
 	.long 0x800CFFE8
 	.long 0x800D0018
 	.long 0x00000000
-.global lbl_80168A68
-lbl_80168A68:
+glabel lbl_80168A68
 	.long 0x40020400
 	.long 0x000F2000
 	.long 0x13880000
@@ -1597,8 +871,7 @@ lbl_80168A68:
 	.long 0x8025B0C8
 	.long 0x04000000
 	.long 0x00000000
-.global lbl_80168B08
-lbl_80168B08:
+glabel lbl_80168B08
 	.long 0x12001101
 	.long 0x11031111
 	.long 0x11021108
@@ -1611,8 +884,7 @@ lbl_80168B08:
 	.long 0x110B110E
 	.long 0x11241304
 	.long 0x112F0000
-.global lbl_80168B38
-lbl_80168B38:
+glabel lbl_80168B38
 	.long 0x00000000
 	.long 0x00000001
 	.long 0x00000003
@@ -1637,16 +909,14 @@ lbl_80168B38:
 	.long 0x00000025
 	.long 0x0000002C
 	.long 0x00000000
-.global lbl_80168B98
-lbl_80168B98:
+glabel lbl_80168B98
 	.long 0x800D39B8
 	.long func_800D3B40
 	.long 0x800D3C78
 	.long 0x800D3C70
 	.long 0x800D3D14
 	.long 0x00000000
-.global lbl_80168BB0
-lbl_80168BB0:
+glabel lbl_80168BB0
 	.long 0x800D24B0
 	.long 0x800D25C0
 	.long func_800D272C
@@ -1660,8 +930,7 @@ lbl_80168BB0:
 	.long 0x800D57C8
 	.long 0x800D46F8
 	.long func_800D479C
-.global lbl_80168BE4
-lbl_80168BE4:
+glabel lbl_80168BE4
 	.long 0x000D0001
 	.long 0x0D00020D
 	.long 0x00030D00
@@ -1673,8 +942,7 @@ lbl_80168BE4:
 	.long 0x000B0D00
 	.long 0x0C0D0000
 	.long 0x00000000
-.global lbl_80168C10
-lbl_80168C10:
+glabel lbl_80168C10
 	.long 0x800D295C
 	.long 0x800D29BC
 	.long 0x800D2A40
@@ -1721,14 +989,12 @@ lbl_80168C10:
 	.long 0x12030512
 	.long 0x03121200
 	.long 0x08120300
-.global lbl_80168CC8
-lbl_80168CC8:
+glabel lbl_80168CC8
 	.long 0x80168C58
 	.long 0x80168C74
 	.long 0x80168C90
 	.long 0x80168CAC
-.global lbl_80168CD8
-lbl_80168CD8:
+glabel lbl_80168CD8
 	.long 0x800D5F20
 	.long 0x800D60B0
 	.long func_800D6620
@@ -1759,14 +1025,12 @@ lbl_80168CD8:
 	.long 0x05030C03
 	.long 0x08030903
 	.long 0x0A030C03
-.global lbl_80168D50
-lbl_80168D50:
+glabel lbl_80168D50
 	.long 0x80168D08
 	.long 0x80168D20
 	.long 0x80168D38
 	.long 0x00000000
-.global lbl_80168D60
-lbl_80168D60:
+glabel lbl_80168D60
 	.long 0x03020201
 	.long 0x03010102
 	.long 0x03000000
@@ -1775,14 +1039,12 @@ lbl_80168D60:
 	.long 0x00001F40
 	.long 0x000A0060
 	.long 0x003F0100
-.global lbl_80168D80
-lbl_80168D80:
+glabel lbl_80168D80
 	.long 0xFFFFFFFF
 	.long 0xFFFFFFFF
 	.long 0xFF7F0000
 	.long 0x00000000
-.global lbl_80168D90
-lbl_80168D90:
+glabel lbl_80168D90
 	.long 0x800E82DC
 	.long 0x800E8894
 	.long 0x00000000
@@ -1793,8 +1055,7 @@ lbl_80168D90:
 	.long 0x00000000
 	.long 0x800E9894
 	.long 0x800E969C
-.global lbl_80168DB8
-lbl_80168DB8:
+glabel lbl_80168DB8
 	.long 0x0091E372
 	.long 0x0796E475
 	.long 0x0E9FED7C
@@ -1859,14 +1120,12 @@ lbl_80168DB8:
 	.long 0xB32250C1
 	.long 0xBA2B59C8
 	.long 0xBD2C5ECF
-.global lbl_80168EB8
-lbl_80168EB8:
+glabel lbl_80168EB8
 	.long 0x00000000
 	.long 0x00001000
 	.long 0x80000080
 	.long 0x5F9B34FB
-.global lbl_80168EC8
-lbl_80168EC8:
+glabel lbl_80168EC8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
@@ -1891,8 +1150,7 @@ lbl_80168EC8:
 	.long 0x00000002
 	.long 0x00000007
 	.long 0x00000001
-.global lbl_80168F28
-lbl_80168F28:
+glabel lbl_80168F28
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000001
@@ -2041,8 +1299,7 @@ lbl_80168F28:
 	.long 0x00000012
 	.long 0x00000022
 	.long 0x00000015
-.global lbl_80169178
-lbl_80169178:
+glabel lbl_80169178
 	.long 0x7A7A7A7A
 	.long 0x7A7A7A7A
 	.long 0x7AFDFE7A
@@ -2075,8 +1332,7 @@ lbl_80169178:
 	.long 0x90919293
 	.long 0x94959676
 	.long 0x7778797A
-.global lbl_801691F8
-lbl_801691F8:
+glabel lbl_801691F8
 	.long 0x70871C30
 	.long 0x8988A250
 	.long 0x88808290
@@ -2141,8 +1397,7 @@ lbl_801691F8:
 	.long 0x00022200
 	.long 0x20800020
 	.long 0x00000000
-.global lbl_801692F8
-lbl_801692F8:
+glabel lbl_801692F8
 	.long 0x51421820
 	.long 0x53E7A420
 	.long 0x014A2C40
@@ -2221,8 +1476,7 @@ lbl_801692F8:
 	.long 0x40000000
 	.long 0xF8000000
 	.long 0x00000000
-.global lbl_80169430
-lbl_80169430:
+glabel lbl_80169430
 	.long 0xFD2DFD2E
 	.long 0xFD2FFD75
 	.long 0xFDA7FDCE
@@ -2287,8 +1541,7 @@ lbl_80169430:
 	.long 0xFFF9FFFA
 	.long 0xFFFCFFFD
 	.long 0xFFFF0000
-.global lbl_80169530
-lbl_80169530:
+glabel lbl_80169530
 	.long 0x3F7FCCB8
 	.long 0x3F7F9947
 	.long 0x3F7F65AD
@@ -2417,8 +1670,7 @@ lbl_80169530:
 	.long 0x3EE90841
 	.long 0x3EA8E5A3
 	.long 0x00000000
-.global lbl_80169730
-lbl_80169730:
+glabel lbl_80169730
 	.long 0x00060C13
 	.long 0x191F252B
 	.long 0x31363C41
@@ -2439,8 +1691,7 @@ lbl_80169730:
 	.long 0x801293A4
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80169780
-lbl_80169780:
+glabel lbl_80169780
 	.long 0x3F800000
 	.long 0x3F879C7D
 	.long 0x3F8FACD6
@@ -2453,8 +1704,7 @@ lbl_80169780:
 	.long 0x3FD744FD
 	.long 0x3FE411F0
 	.long 0x3FF1A1BF
-.global lbl_801697B0
-lbl_801697B0:
+glabel lbl_801697B0
 	.long 0x3F800000
 	.long 0x3F800765
 	.long 0x3F800ECA
@@ -2711,8 +1961,7 @@ lbl_801697B0:
 	.long 0x3F8784FF
 	.long 0x3F878CD3
 	.long 0x3F8794A8
-.global lbl_80169BB0
-lbl_80169BB0:
+glabel lbl_80169BB0
 	.long 0x00000000
 	.long 0x380021F4
 	.long 0x38019DD8
@@ -3678,8 +2927,7 @@ lbl_80169BB0:
 	.long 0x3FF99482
 	.long 0x3FFC7859
 	.long 0x3FFF64C1
-.global lbl_8016AAC4
-lbl_8016AAC4:
+glabel lbl_8016AAC4
 	.long 0x3F800000
 	.long 0x3F7F7FE0
 	.long 0x3F7EFF80
@@ -3950,93 +3198,32 @@ lbl_8016AAC4:
 	.long 0x3A657863
 	.long 0x65707469
 	.long 0x6F6E0000
-.global lbl_8016AEFC
-lbl_8016AEFC:
-	.long 0x21737464
-	.long 0x3A3A6578
-	.long 0x63657074
-	.long 0x696F6E21
-	.long 0x21737464
-	.long 0x3A3A6261
-	.long 0x645F616C
-	.long 0x6C6F6321
-	.long 0x21000000
-.global lbl_8016AF20
-lbl_8016AF20:
+glabel lbl_8016AEFC
+	.asciz "!std::exception!!std::bad_alloc!!"
+glabel lbl_8016AF20
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x41F00000
 	.long 0x00000000
 	.long 0x41E00000
 	.long 0x00000000
-	.long 0x7374643A
-	.long 0x3A626164
-	.long 0x5F657863
-	.long 0x65707469
-	.long 0x6F6E0000
-.global lbl_8016AF4C
-lbl_8016AF4C:
-	.long 0x21626164
-	.long 0x5F657863
-	.long 0x65707469
-	.long 0x6F6E2121
-	.long 0x00217374
-	.long 0x643A3A65
-	.long 0x78636570
-	.long 0x74696F6E
-	.long 0x21217374
-	.long 0x643A3A62
-	.long 0x61645F65
-	.long 0x78636570
-	.long 0x74696F6E
-	.long 0x21210021
-	.long 0x7374643A
-	.long 0x3A626164
-	.long 0x5F657863
-	.long 0x65707469
-	.long 0x6F6E2121
+	.asciz "std::bad_exception"
+glabel lbl_8016AF4C
+	.asciz "!bad_exception!!"
+	.asciz "!std::exception!!std::bad_exception!!"
+	.asciz "!std::bad_exception!!"
 	.long 0x00000000
-	.long 0x00000000
-.global lbl_8016AFA0
-lbl_8016AFA0:
-	.long 0x47434E5F
-	.long 0x4D656D5F
-	.long 0x416C6C6F
-	.long 0x632E6320
-	.long 0x3A20496E
-	.long 0x69744465
-	.long 0x6661756C
-	.long 0x74486561
-	.long 0x702E204E
-	.long 0x6F204865
-	.long 0x61702041
-	.long 0x7661696C
-	.long 0x61626C65
-	.long 0x0A004D65
-	.long 0x74726F77
-	.long 0x65726B73
-	.long 0x20435720
-	.long 0x72756E74
-	.long 0x696D6520
-	.long 0x6C696272
-	.long 0x61727920
-	.long 0x696E6974
-	.long 0x69616C69
-	.long 0x7A696E67
-	.long 0x20646566
-	.long 0x61756C74
-	.long 0x20686561
-	.long 0x700A0000
-.global lbl_8016B010
-lbl_8016B010:
+glabel lbl_8016AFA0
+	.asciz "GCN_Mem_Alloc.c : InitDefaultHeap. No Heap Available\n"
+	.asciz "Metrowerks CW runtime library initializing default heap\n"
+glabel lbl_8016B010
 	.long 0x00000004
 	.long 0x0000000C
 	.long 0x00000014
 	.long 0x00000024
 	.long 0x00000034
 	.long 0x00000044
-.global lbl_8016B028
-lbl_8016B028:
+glabel lbl_8016B028
 	.long 0x35343231
 	.long 0x30313038
 	.long 0x36323432
@@ -4349,85 +3536,25 @@ lbl_8016B028:
 	.long 0xF4F5F6F7
 	.long 0xF8F9FAFB
 	.long 0xFCFDFEFF
-	.long 0x25612025
-	.long 0x62202565
-	.long 0x20255420
-	.long 0x25590000
-	.long 0x25493A25
-	.long 0x4D3A2553
-	.long 0x20257000
-	.long 0x256D2F25
-	.long 0x642F2579
-	.long 0x00000000
-	.long 0x53756E7C
-	.long 0x53756E64
-	.long 0x61797C4D
-	.long 0x6F6E7C4D
-	.long 0x6F6E6461
-	.long 0x797C5475
-	.long 0x657C5475
-	.long 0x65736461
-	.long 0x797C5765
-	.long 0x647C5765
-	.long 0x646E6573
-	.long 0x6461797C
-	.long 0x5468757C
-	.long 0x54687572
-	.long 0x73646179
-	.long 0x7C467269
-	.long 0x7C467269
-	.long 0x6461797C
-	.long 0x5361747C
-	.long 0x53617475
-	.long 0x72646179
-	.long 0x00000000
-	.long 0x4A616E7C
-	.long 0x4A616E75
-	.long 0x6172797C
-	.long 0x4665627C
-	.long 0x46656272
-	.long 0x75617279
-	.long 0x7C4D6172
-	.long 0x7C4D6172
-	.long 0x63687C41
-	.long 0x70727C41
-	.long 0x7072696C
-	.long 0x7C4D6179
-	.long 0x7C4D6179
-	.long 0x7C4A756E
-	.long 0x7C4A756E
-	.long 0x657C4A75
-	.long 0x6C7C4A75
-	.long 0x6C797C41
-	.long 0x75677C41
-	.long 0x75677573
-	.long 0x747C5365
-	.long 0x707C5365
-	.long 0x7074656D
-	.long 0x6265727C
-	.long 0x4F63747C
-	.long 0x4F63746F
-	.long 0x6265727C
-	.long 0x4E6F767C
-	.long 0x4E6F7665
-	.long 0x6D626572
-	.long 0x7C446563
-	.long 0x7C446563
-	.long 0x656D6265
-	.long 0x72000000
-.global lbl_8016B610
-lbl_8016B610:
-	.long 0x30783070
-	.long 0x30002D49
-	.long 0x4E46002D
-	.long 0x696E6600
-	.long 0x494E4600
-	.long 0x696E6600
-	.long 0x2D4E414E
-	.long 0x002D6E61
-	.long 0x6E004E41
-	.long 0x4E006E61
-	.long 0x6E000000
+	.asciz "%a %b %e %T %Y"
+	.balign 4
+	.asciz "%I:%M:%S %p"
+	.asciz "%m/%d/%y"
+	.balign 4
+	.asciz "Sun|Sunday|Mon|Monday|Tue|Tuesday|Wed|Wednesday|Thu|Thursday|Fri|Friday|Sat|Saturday"
+	.balign 4
+	.asciz "Jan|January|Feb|February|Mar|March|Apr|April|May|May|Jun|June|Jul|July|Aug|August|Sep|September|Oct|October|Nov|November|Dec|December"
+glabel lbl_8016B610
+	.asciz "0x0p0"
+	.asciz "-INF"
+	.asciz "-inf"
+	.asciz "INF"
+	.asciz "inf"
+	.asciz "-NAN"
+	.asciz "-nan"
+	.asciz "NAN"
+	.asciz "nan"
+	.balign 4
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x7FFFFFFF
@@ -4439,14 +3566,10 @@ lbl_8016B610:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_8016B668
-lbl_8016B668:
-	.long 0x494E4649
-	.long 0x4E495459
+glabel lbl_8016B668
+	.asciz "INFINITY"
 	.long 0x00000000
-	.long 0x00000000
-.global lbl_8016B678
-lbl_8016B678:
+glabel lbl_8016B678
 	.long 0x0000001F
 	.long 0x003B005A
 	.long 0x00780097
@@ -4460,8 +3583,7 @@ lbl_8016B678:
 	.long 0x00D500F4
 	.long 0x01120131
 	.long 0x014F016E
-.global lbl_8016B6AC
-lbl_8016B6AC:
+glabel lbl_8016B6AC
 	.long 0x00020003
 	.long 0x0004001D
 	.long 0x001E001F
@@ -4475,56 +3597,28 @@ lbl_8016B6AC:
 	.long 0x00000001
 	.long 0x00000000
 	.long 0xFFFFFFFF
-.global lbl_8016B6E0
-lbl_8016B6E0:
-	.long 0x78787820
-	.long 0x78787820
-	.long 0x78782078
-	.long 0x783A7878
-	.long 0x3A787820
-	.long 0x78787878
-	.long 0x0A002573
-	.long 0x20257325
-	.long 0x33642025
-	.long 0x2E32643A
-	.long 0x252E3264
-	.long 0x3A252E32
-	.long 0x64202564
-	.long 0x0A00252E
-	.long 0x33732025
-	.long 0x2E337320
-	.long 0x25326420
-	.long 0x252E3264
-	.long 0x3A252E32
-	.long 0x643A252E
-	.long 0x32642025
-	.long 0x34640A00
-	.long 0x25730025
-	.long 0x2E337300
-	.long 0x252E3264
-	.long 0x00256D2F
-	.long 0x25642F25
-	.long 0x79002532
-	.long 0x6400252E
-	.long 0x34642D25
-	.long 0x2E32642D
-	.long 0x252E3264
-	.long 0x00252E34
-	.long 0x6400252E
-	.long 0x3364000A
-	.long 0x0025483A
-	.long 0x254D0009
-	.long 0x0025483A
-	.long 0x254D3A25
-	.long 0x53003700
-	.long 0x252E3164
-	.long 0x00303030
-	.long 0x3000252B
-	.long 0x30332E30
-	.long 0x66253032
-	.long 0x2E306600
-	.long 0x25250025
-	.long 0x25256300
+glabel lbl_8016B6E0
+	.asciz "xxx xxx xx xx:xx:xx xxxx\n"
+	.asciz "%s %s%3d %.2d:%.2d:%.2d %d\n"
+	.asciz "%.3s %.3s %2d %.2d:%.2d:%.2d %4d\n"
+	.asciz "%s"
+	.asciz "%.3s"
+	.asciz "%.2d"
+	.asciz "%m/%d/%y"
+	.asciz "%2d"
+	.asciz "%.4d-%.2d-%.2d"
+	.asciz "%.4d"
+	.asciz "%.3d"
+	.asciz "\n"
+	.asciz "%H:%M"
+	.asciz "\t"
+	.asciz "%H:%M:%S"
+	.asciz "7"
+	.asciz "%.1d"
+	.asciz "0000"
+	.asciz "%+03.0f%02.0f"
+	.asciz "%%"
+	.asciz "%%%c"
 	.long 0x00040004
 	.long 0x00040004
 	.long 0x00040004
@@ -4909,8 +4003,7 @@ lbl_8016B6E0:
 	.long 0x00FA00FB
 	.long 0x00FC00FD
 	.long 0x00FE00FF
-.global lbl_8016BDA0
-lbl_8016BDA0:
+glabel lbl_8016BDA0
 	.long 0x3FE00000
 	.long 0x00000000
 	.long 0xBFE00000
@@ -4923,14 +4016,12 @@ lbl_8016BDA0:
 	.long 0x35793C76
 	.long 0xBDEA39EF
 	.long 0x35793C76
-.global lbl_8016BDD0
-lbl_8016BDD0:
+glabel lbl_8016BDD0
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80000000
 	.long 0x00000000
-.global lbl_8016BDE0
-lbl_8016BDE0:
+glabel lbl_8016BDE0
 	.long 0x3FF00000
 	.long 0x00000000
 	.long 0x3FF80000
@@ -4943,8 +4034,7 @@ lbl_8016BDE0:
 	.long 0x00000000
 	.long 0x3E4CFDEB
 	.long 0x43CFD006
-.global lbl_8016BE10
-lbl_8016BE10:
+glabel lbl_8016BE10
 	.long 0x00A2F983
 	.long 0x006E4E44
 	.long 0x001529FC
@@ -5011,8 +4101,7 @@ lbl_8016BE10:
 	.long 0x0073A8C9
 	.long 0x0060E27B
 	.long 0x00C08C6B
-.global lbl_8016BF18
-lbl_8016BF18:
+glabel lbl_8016BF18
 	.long 0x3FF921FB
 	.long 0x400921FB
 	.long 0x4012D97C
@@ -5045,8 +4134,7 @@ lbl_8016BF18:
 	.long 0x40478FDB
 	.long 0x404858EB
 	.long 0x404921FB
-.global lbl_8016BF98
-lbl_8016BF98:
+glabel lbl_8016BF98
 	.long 0x00000002
 	.long 0x00000003
 	.long 0x00000004
@@ -5067,8 +4155,7 @@ lbl_8016BF98:
 	.long 0x80000000
 	.long 0x3569F31D
 	.long 0x00000000
-.global lbl_8016BFE8
-lbl_8016BFE8:
+glabel lbl_8016BFE8
 	.long 0x3FD55555
 	.long 0x55555563
 	.long 0x3FC11111
@@ -5095,8 +4182,7 @@ lbl_8016BFE8:
 	.long 0xDB605373
 	.long 0x3EFB2A70
 	.long 0x74BF7AD4
-.global lbl_8016C050
-lbl_8016C050:
+glabel lbl_8016C050
 	.long 0x3FDDAC67
 	.long 0x0561BB4F
 	.long 0x3FE921FB
@@ -5135,50 +4221,22 @@ lbl_8016C050:
 	.long 0x2C6A6C2F
 	.long 0x3F90AD3A
 	.long 0xE322DA11
-.global lbl_8016C0E8
-lbl_8016C0E8:
-	.long 0x4D657472
-	.long 0x6F54524B
-	.long 0x20666F72
-	.long 0x20526576
-	.long 0x6F6C7574
-	.long 0x696F6E20
-	.long 0x76302E31
+glabel lbl_8016C0E8
+	.asciz "MetroTRK for Revolution v0.1"
+glabel lbl_8016C108
+	.asciz "ERROR : No buffer available\n"
+glabel lbl_8016C128
+	.asciz "\nMetroTRK Option : SerialIO - "
+	.balign 4
+	.asciz "Enable\n"
+	.asciz "Disable\n"
 	.long 0x00000000
-.global lbl_8016C108
-lbl_8016C108:
-	.long 0x4552524F
-	.long 0x52203A20
-	.long 0x4E6F2062
-	.long 0x75666665
-	.long 0x72206176
-	.long 0x61696C61
-	.long 0x626C650A
-	.long 0x00000000
-.global lbl_8016C128
-lbl_8016C128:
-	.long 0x0A4D6574
-	.long 0x726F5452
-	.long 0x4B204F70
-	.long 0x74696F6E
-	.long 0x203A2053
-	.long 0x65726961
-	.long 0x6C494F20
-	.long 0x2D200000
-	.long 0x456E6162
-	.long 0x6C650A00
-	.long 0x44697361
-	.long 0x626C650A
-	.long 0x00000000
-	.long 0x00000000
-.global lbl_8016C160
-lbl_8016C160:
+glabel lbl_8016C160
 	.long 0x00000000
 	.long 0xFFFFFFFF
 	.long 0x00000001
 	.long 0x00000001
-.global lbl_8016C170
-lbl_8016C170:
+glabel lbl_8016C170
 	.long 0x60000000
 	.long 0x60000000
 	.long 0x60000000
@@ -5199,8 +4257,7 @@ lbl_8016C170:
 	.long 0x60000000
 	.long 0x60000000
 	.long 0x60000000
-.global lbl_8016C1C0
-lbl_8016C1C0:
+glabel lbl_8016C1C0
 	.long 0x60000000
 	.long 0x60000000
 	.long 0x60000000
@@ -5211,78 +4268,24 @@ lbl_8016C1C0:
 	.long 0x60000000
 	.long 0x60000000
 	.long 0x60000000
-.global lbl_8016C1E8
-lbl_8016C1E8:
-	.long 0x00454E44
-.global lbl_8016C1EC
-lbl_8016C1EC:
-	.long 0x25730A00
-	.long 0x4465766B
-	.long 0x69742073
-	.long 0x65742074
-	.long 0x6F203A20
-	.long 0x256C640A
-	.long 0x00000000
-	.long 0x4D657472
-	.long 0x6F54524B
-	.long 0x203A2053
-	.long 0x697A656F
-	.long 0x66205265
-	.long 0x706C7920
-	.long 0x2D20256C
-	.long 0x64206279
-	.long 0x7465730A
-	.long 0x00000000
-	.long 0x4D657472
-	.long 0x6F54524B
-	.long 0x203A2053
-	.long 0x65742074
-	.long 0x6F204242
-	.long 0x410A0000
-	.long 0x4D657472
-	.long 0x6F54524B
-	.long 0x203A2053
-	.long 0x65742074
-	.long 0x6F204E44
-	.long 0x45562068
-	.long 0x61726477
-	.long 0x6172650A
-	.long 0x00000000
-	.long 0x4D657472
-	.long 0x6F54524B
-	.long 0x203A2053
-	.long 0x65742074
-	.long 0x6F20554E
-	.long 0x4B4E4F57
-	.long 0x4E206861
-	.long 0x72647761
-	.long 0x72652E20
-	.long 0x28256C64
-	.long 0x290A0000
-	.long 0x4D657472
-	.long 0x6F54524B
-	.long 0x203A2049
-	.long 0x6E76616C
-	.long 0x69642068
-	.long 0x61726477
-	.long 0x61726520
-	.long 0x49442070
-	.long 0x61737365
-	.long 0x64206672
-	.long 0x6F6D204F
-	.long 0x530A0000
-	.long 0x4D657472
-	.long 0x6F54524B
-	.long 0x203A2044
-	.long 0x65666175
-	.long 0x6C74696E
-	.long 0x6720746F
-	.long 0x20474445
-	.long 0x56204861
-	.long 0x72647761
-	.long 0x72650A00
+glabel lbl_8016C1E8
+	.ascii "\0END"
+glabel lbl_8016C1EC
+	.asciz "%s\n"
+	.asciz "Devkit set to : %ld\n"
+	.balign 4
+	.asciz "MetroTRK : Sizeof Reply - %ld bytes\n"
+	.balign 4
+	.asciz "MetroTRK : Set to BBA\n"
+	.balign 4
+	.asciz "MetroTRK : Set to NDEV hardware\n"
+	.balign 4
+	.asciz "MetroTRK : Set to UNKNOWN hardware. (%ld)\n"
+	.balign 4
+	.asciz "MetroTRK : Invalid hardware ID passed from OS\n"
+	.balign 4
+	.asciz "MetroTRK : Defaulting to GDEV Hardware\n"
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-

@@ -23,6 +23,9 @@ S_FILES := $(wildcard $(ASM_DIR)/*.s)
 C_FILES := $(wildcard $(SRC_DIR)/*.c)
 LDSCRIPT := ldscript.lcf
 
+# Do we compare the SHA1 hash of the app after building?
+COMPARE ?= 1
+
 TARGET := vc64_00000001.app
 
 BUILD := build
@@ -54,6 +57,7 @@ CFLAGS :=
 
 ifeq ($(NON_MATCHING),1)
     CFLAGS := $(CFLAGS) -DNON_MATCHING
+    COMPARE := 0
 endif
 
 ASFLAGS := $(ASFLAGS) -mgekko -I include
@@ -63,7 +67,9 @@ CFLAGS := $(CFLAGS) -sdata 4 -sdata2 4 -proc gekko -nostdinc -Cpp_exceptions off
 DUMMY != mkdir -p $(BUILD) $(BUILD)/$(ASM_DIR) $(BUILD)/$(SRC_DIR)
 
 all: $(DOL)
+ifeq ($(COMPARE),1)
 	$(SHA1SUM) -c $(TARGET).sha1
+endif
 
 $(DOL): $(ELF2DOL) $(ELF)
 	$^ $@

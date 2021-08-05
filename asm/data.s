@@ -1,34 +1,21 @@
 .include "macros.s"
 
 .section .data  # 0x8016C300 - 0x8019D440
-.global lbl_8016C300
-lbl_8016C300:
+glabel lbl_8016C300
 	.long 0x786C436F
 	.long 0x72655256
 	.long 0x4C2E6300
-.global lbl_8016C30C
-lbl_8016C30C:
-	.long 0x44454D4F
-	.long 0x496E6974
-	.long 0x3A20696E
-	.long 0x76616C69
-	.long 0x64205456
-	.long 0x20666F72
-	.long 0x6D61740A
+glabel lbl_8016C30C
+	.ascii "DEMOInit: invalid TV format\n"
 	.long 0x00000000
-.global lbl_8016C32C
-lbl_8016C32C:
-	.long 0x434F5245
-	.long 0x20444F4E
-	.long 0x45210000
-.global lbl_8016C338
-lbl_8016C338:
+glabel lbl_8016C32C
+	.asciz "CORE DONE!\0"
+glabel lbl_8016C338
 	.long 0x8025AAC8
 	.long 0x00000038
 	.long 0x00000000
 	.long 0x80007A58
-.global lbl_8016C348
-lbl_8016C348:
+glabel lbl_8016C348
 	.long 0x80009E34
 	.long 0x80009E5C
 	.long 0x80009E5C
@@ -83,50 +70,13 @@ lbl_8016C348:
 	.long 0x80009E04
 	.long 0x80009E5C
 	.long 0x80009E4C
-	.long 0x0A0A4552
-	.long 0x524F523A
-	.long 0x20546869
-	.long 0x73207072
-	.long 0x6F677261
-	.long 0x6D204D55
-	.long 0x53542062
-	.long 0x65207275
-	.long 0x6E206F6E
-	.long 0x20612073
-	.long 0x79737465
-	.long 0x6D207769
-	.long 0x74682032
-	.long 0x344D4220
-	.long 0x286F7220
-	.long 0x6C657373
-	.long 0x29206D65
-	.long 0x6D6F7279
-	.long 0x210A0000
-	.long 0x76633634
-	.long 0x5F52564C
-	.long 0x2E630000
-	.long 0x20202020
-	.long 0x20202050
-	.long 0x6C656173
-	.long 0x65207265
-	.long 0x64756365
-	.long 0x206D656D
-	.long 0x6F72792D
-	.long 0x73697A65
-	.long 0x20746F20
-	.long 0x32344D42
-	.long 0x20287573
-	.long 0x696E6720
-	.long 0x27736574
-	.long 0x736D656D
-	.long 0x73697A65
-	.long 0x20307831
-	.long 0x38303030
-	.long 0x30302729
-	.long 0x0A0A0000
-	.long 0x00000000
-.global lbl_8016C4C8
-lbl_8016C4C8:
+	.asciz "\n\nERROR: This program MUST be run on a system with 24MB (or less) memory!\n"
+	.balign 4
+	.asciz "vc64_RVL.c"
+	.balign 4
+	.asciz "       Please reduce memory-size to 24MB (using 'setsmemsize 0x1800000')\n\n"
+	.balign 8
+glabel lbl_8016C4C8
 	.long 0x80000000
 	.long 0x40000000
 	.long 0x00000000
@@ -227,8 +177,7 @@ lbl_8016C4C8:
 	.long 0x00040000
 	.long 0x00020000
 	.long 0x00010000
-.global lbl_8016C658
-lbl_8016C658:
+glabel lbl_8016C658
 	.long 0x00000011
 	.long 0x80170BB0
 	.long 0x00000000
@@ -481,18 +430,11 @@ lbl_8016C658:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-	.long 0x42524541
-	.long 0x4B202843
-	.long 0x50552900
-	.long 0x42524541
-	.long 0x4B202853
-	.long 0x50290000
-	.long 0x54485245
-	.long 0x41445354
-	.long 0x41545553
-	.long 0x00000000
-.global lbl_8016CA70
-lbl_8016CA70:
+	.asciz "BREAK (CPU)"
+	.asciz "BREAK (SP)"
+	.balign 4
+	.asciz "THREADSTATUS"
+glabel lbl_8016CA70
 	.long 0x8000C3CC
 	.long 0x8000C3E4
 	.long 0x8000C3FC
@@ -509,14 +451,12 @@ lbl_8016CA70:
 	.long 0x8000C528
 	.long 0x8000C534
 	.long 0x8000C540
-.global lbl_8016CAB0
-lbl_8016CAB0:
+glabel lbl_8016CAB0
 	.long 0x8025AB24
 	.long 0x000000D8
 	.long 0x00000000
 	.long 0x8000D0C8
-.global lbl_8016CAC0
-lbl_8016CAC0:
+glabel lbl_8016CAC0
 	.long 0x8000D3A0
 	.long 0x8000D484
 	.long 0x8000D484
@@ -538,8 +478,7 @@ lbl_8016CAC0:
 	.long 0x8000D484
 	.long 0x8000D484
 	.long 0x8000D474
-.global lbl_8016CB14
-lbl_8016CB14:
+glabel lbl_8016CB14
 	.long 0x8000D4FC
 	.long 0x8000D58C
 	.long 0x8000D58C
@@ -565,8 +504,7 @@ lbl_8016CB14:
 	.long 0x0000001C
 	.long 0x00000000
 	.long 0x8000D604
-.global lbl_8016CB78
-lbl_8016CB78:
+glabel lbl_8016CB78
 	.long 0x8000D770
 	.long 0x8000D9A0
 	.long 0x8000D9A0
@@ -620,8 +558,7 @@ lbl_8016CB78:
 	.long 0x8000D9A0
 	.long 0x8000D9A0
 	.long 0x8000D958
-.global lbl_8016CC4C
-lbl_8016CC4C:
+glabel lbl_8016CC4C
 	.long 0x8000DA1C
 	.long 0x8000DAD0
 	.long 0x8000DAD0
@@ -679,8 +616,7 @@ lbl_8016CC4C:
 	.long 0x0000003C
 	.long 0x00000000
 	.long 0x8000DB68
-.global lbl_8016CD30
-lbl_8016CD30:
+glabel lbl_8016CD30
 	.long 0x8000DCFC
 	.long 0x8000DDE8
 	.long 0x8000DDE8
@@ -706,8 +642,7 @@ lbl_8016CD30:
 	.long 0x8000DDE8
 	.long 0x8000DDE8
 	.long 0x8000DDD4
-.global lbl_8016CD94
-lbl_8016CD94:
+glabel lbl_8016CD94
 	.long 0x8000DE40
 	.long 0x8000DE70
 	.long 0x8000DE70
@@ -737,8 +672,7 @@ lbl_8016CD94:
 	.long 0x00000004
 	.long 0x00000000
 	.long 0x8000DE88
-.global lbl_8016CE08
-lbl_8016CE08:
+glabel lbl_8016CE08
 	.long 0x8000E054
 	.long 0x8000E28C
 	.long 0x8000E28C
@@ -788,8 +722,7 @@ lbl_8016CE08:
 	.long 0x8000E28C
 	.long 0x8000E28C
 	.long 0x8000E27C
-.global lbl_8016CECC
-lbl_8016CECC:
+glabel lbl_8016CECC
 	.long 0x8000E2E4
 	.long 0x8000E3A4
 	.long 0x8000E3A4
@@ -843,8 +776,7 @@ lbl_8016CECC:
 	.long 0x00000088
 	.long 0x00000000
 	.long 0x8000E3BC
-.global lbl_8016CFA0
-lbl_8016CFA0:
+glabel lbl_8016CFA0
 	.long 0x8000E69C
 	.long 0x8000E840
 	.long 0x8000E840
@@ -858,8 +790,7 @@ lbl_8016CFA0:
 	.long 0x8000E840
 	.long 0x8000E840
 	.long 0x8000E744
-.global lbl_8016CFD4
-lbl_8016CFD4:
+glabel lbl_8016CFD4
 	.long 0x8000E8A0
 	.long 0x8000E8D4
 	.long 0x8000E8D4
@@ -881,8 +812,7 @@ lbl_8016CFD4:
 	.long 0x00000004
 	.long 0x00000000
 	.long 0x8000EB40
-.global lbl_8016D028
-lbl_8016D028:
+glabel lbl_8016D028
 	.long 0x00000000
 	.long 0x8000003F
 	.long 0x00000000
@@ -947,8 +877,7 @@ lbl_8016D028:
 	.long 0xFFFFFFFF
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_8016D128
-lbl_8016D128:
+glabel lbl_8016D128
 	.long 0x00000000
 	.long 0x0000003F
 	.long 0x00000000
@@ -1071,8 +1000,7 @@ lbl_8016D128:
 	.long 0x00000000
 	.long 0x8F5B012C
 	.long 0x44DBF800
-.global lbl_8016D310
-lbl_8016D310:
+glabel lbl_8016D310
 	.long 0x8000FF8C
 	.long 0x8000FF90
 	.long 0x8000FF8C
@@ -1105,8 +1033,7 @@ lbl_8016D310:
 	.long 0x8000FF8C
 	.long 0x8000FF8C
 	.long 0x8000FF90
-.global lbl_8016D390
-lbl_8016D390:
+glabel lbl_8016D390
 	.long 0x80010124
 	.long 0x80010004
 	.long 0x80010124
@@ -1139,8 +1066,7 @@ lbl_8016D390:
 	.long 0x80010124
 	.long 0x80010124
 	.long 0x80010114
-.global lbl_8016D410
-lbl_8016D410:
+glabel lbl_8016D410
 	.long 0x0000000A
 	.long 0x0000000B
 	.long 0x0000000C
@@ -1173,8 +1099,7 @@ lbl_8016D410:
 	.long 0x0000001F
 	.long 0x0000011E
 	.long 0x0000011F
-.global lbl_8016D490
-lbl_8016D490:
+glabel lbl_8016D490
 	.long 0x8001030C
 	.long 0x8001037C
 	.long 0x8001037C
@@ -1200,8 +1125,7 @@ lbl_8016D490:
 	.long 0x8001030C
 	.long 0x8001030C
 	.long 0x8001037C
-.global lbl_8016D4F4
-lbl_8016D4F4:
+glabel lbl_8016D4F4
 	.long 0x8001028C
 	.long 0x800102B8
 	.long 0x80010368
@@ -1226,291 +1150,112 @@ lbl_8016D4F4:
 	.long 0x80010378
 	.long 0x80010378
 	.long 0x80010378
-	.long 0x43414C4C
-	.long 0x45443A20
-	.long 0x6365696C
-	.long 0x5F772073
-	.long 0x696E676C
-	.long 0x65202825
-	.long 0x70290A00
-	.long 0x43414C4C
-	.long 0x45443A20
-	.long 0x666C6F6F
-	.long 0x725F7720
-	.long 0x73696E67
-	.long 0x6C652028
-	.long 0x2570290A
-	.long 0x00000000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x56545F53
-	.long 0x5F530A00
-	.long 0x43414C4C
-	.long 0x45443A20
-	.long 0x6365696C
-	.long 0x5F772064
-	.long 0x6F75626C
-	.long 0x65202825
-	.long 0x70290A00
-	.long 0x43414C4C
-	.long 0x45443A20
-	.long 0x666C6F6F
-	.long 0x725F7720
-	.long 0x646F7562
-	.long 0x6C652028
-	.long 0x2570290A
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x56545F53
-	.long 0x5F440A00
-	.long 0x4552524F
-	.long 0x523A2041
-	.long 0x44445F57
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2053
-	.long 0x55425F57
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A204D
-	.long 0x554C5F57
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2044
-	.long 0x49565F57
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2053
-	.long 0x5152545F
-	.long 0x570A0000
-	.long 0x4552524F
-	.long 0x523A2041
-	.long 0x42535F57
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A204D
-	.long 0x4F56455F
-	.long 0x570A0000
-	.long 0x4552524F
-	.long 0x523A204E
-	.long 0x45475F57
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2052
-	.long 0x4F554E44
-	.long 0x5F575F57
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2054
-	.long 0x52554E43
-	.long 0x5F575F57
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x45494C5F
-	.long 0x575F570A
-	.long 0x00000000
-	.long 0x4552524F
-	.long 0x523A2046
-	.long 0x4C4F4F52
-	.long 0x5F575F57
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x56545F57
-	.long 0x5F570A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E465F57
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E554E5F
-	.long 0x570A0000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E45515F
-	.long 0x570A0000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E554551
-	.long 0x5F570A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4F4C54
-	.long 0x5F570A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E554C54
-	.long 0x5F570A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4F4C45
-	.long 0x5F570A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E554C45
-	.long 0x5F570A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E53465F
-	.long 0x570A0000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4E474C
-	.long 0x455F570A
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E534551
-	.long 0x5F570A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4E474C
-	.long 0x5F570A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4C545F
-	.long 0x570A0000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4E4745
-	.long 0x5F570A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4C455F
-	.long 0x570A0000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4E4754
-	.long 0x5F570A00
-	.long 0x4552524F
-	.long 0x523A2041
-	.long 0x44445F4C
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2053
-	.long 0x55425F4C
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A204D
-	.long 0x554C5F4C
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2044
-	.long 0x49565F4C
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2053
-	.long 0x5152545F
-	.long 0x4C0A0000
-	.long 0x4552524F
-	.long 0x523A2041
-	.long 0x42535F4C
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A204D
-	.long 0x4F56455F
-	.long 0x4C0A0000
-	.long 0x4552524F
-	.long 0x523A204E
-	.long 0x45475F4C
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2052
-	.long 0x4F554E44
-	.long 0x5F575F4C
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2054
-	.long 0x52554E43
-	.long 0x5F575F4C
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x45494C5F
-	.long 0x575F4C0A
-	.long 0x00000000
-	.long 0x4552524F
-	.long 0x523A2046
-	.long 0x4C4F4F52
-	.long 0x5F575F4C
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x56545F57
-	.long 0x5F4C0A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E465F4C
-	.long 0x0A000000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E554E5F
-	.long 0x4C0A0000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E45515F
-	.long 0x4C0A0000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E554551
-	.long 0x5F4C0A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4F4C54
-	.long 0x5F4C0A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E554C54
-	.long 0x5F4C0A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4F4C45
-	.long 0x5F4C0A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E554C45
-	.long 0x5F4C0A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E53465F
-	.long 0x4C0A0000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4E474C
-	.long 0x455F4C0A
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E534551
-	.long 0x5F4C0A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4E474C
-	.long 0x5F4C0A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4C545F
-	.long 0x4C0A0000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4E4745
-	.long 0x5F4C0A00
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4C455F
-	.long 0x4C0A0000
-	.long 0x4552524F
-	.long 0x523A2043
-	.long 0x2E4E4754
-	.long 0x5F4C0A00
-.global lbl_8016D9C0
-lbl_8016D9C0:
+	.asciz "CALLED: ceil_w single (%p)\n"
+	.asciz "CALLED: floor_w single (%p)\n"
+	.balign 4
+	.asciz "ERROR: CVT_S_S\n"
+	.asciz "CALLED: ceil_w double (%p)\n"
+	.asciz "CALLED: floor_w double (%p)\n"
+	.balign 8
+    .asciz "ERROR: CVT_S_D\n"
+    .asciz "ERROR: ADD_W\n"
+    .balign 4
+	.asciz "ERROR: SUB_W\n"
+	.balign 4
+	.asciz "ERROR: MUL_W\n"
+	.balign 4
+	.asciz "ERROR: DIV_W\n"
+	.balign 4
+    .asciz "ERROR: SQRT_W\n"
+    .balign 4
+    .asciz "ERROR: ABS_W\n"
+    .balign 4
+    .asciz "ERROR: MOVE_W\n"
+    .balign 4
+    .asciz "ERROR: NEG_W\n"
+    .balign 4
+    .asciz "ERROR: ROUND_W_W\n"
+    .balign 4
+    .asciz "ERROR: TRUNC_W_W\n"
+    .balign 4
+    .asciz "ERROR: CEIL_W_W\n"
+    .balign 4
+    .asciz "ERROR: FLOOR_W_W\n"
+    .balign 4
+    .asciz "ERROR: CVT_W_W\n"
+    .asciz "ERROR: C.F_W\n"
+    .balign 4
+    .asciz "ERROR: C.UN_W\n"
+    .balign 4
+    .asciz "ERROR: C.EQ_W\n"
+    .balign 4
+    .asciz "ERROR: C.UEQ_W\n"
+    .asciz "ERROR: C.OLT_W\n"
+    .asciz "ERROR: C.ULT_W\n"
+    .asciz "ERROR: C.OLE_W\n"
+    .asciz "ERROR: C.ULE_W\n"
+    .asciz "ERROR: C.SF_W\n"
+    .balign 4
+    .asciz "ERROR: C.NGLE_W\n"
+    .balign 8
+    .asciz "ERROR: C.SEQ_W\n"
+    .asciz "ERROR: C.NGL_W\n"
+    .asciz "ERROR: C.LT_W\n"
+    .balign 4
+    .asciz "ERROR: C.NGE_W\n"
+    .asciz "ERROR: C.LE_W\n"
+    .balign 4
+    .asciz "ERROR: C.NGT_W\n"
+    .asciz "ERROR: ADD_L\n"
+    .balign 4
+    .asciz "ERROR: SUB_L\n"
+    .balign 4
+    .asciz "ERROR: MUL_L\n"
+    .balign 4
+    .asciz "ERROR: DIV_L\n"
+    .balign 4
+    .asciz "ERROR: SQRT_L\n"
+    .balign 4
+    .asciz "ERROR: ABS_L\n"
+    .balign 4
+    .asciz "ERROR: MOVE_L\n"
+    .balign 4
+    .asciz "ERROR: NEG_L\n"
+    .balign 4
+    .asciz "ERROR: ROUND_W_L\n"
+    .balign 4
+    .asciz "ERROR: TRUNC_W_L\n"
+    .balign 4
+    .asciz "ERROR: CEIL_W_L\n"
+    .balign 4
+    .asciz "ERROR: FLOOR_W_L\n"
+    .balign 4
+    .asciz "ERROR: CVT_W_L\n"
+    .asciz "ERROR: C.F_L\n"
+    .balign 4
+    .asciz "ERROR: C.UN_L\n"
+    .balign 4
+    .asciz "ERROR: C.EQ_L\n"
+    .balign 4
+    .asciz "ERROR: C.UEQ_L\n"
+    .asciz "ERROR: C.OLT_L\n"
+    .asciz "ERROR: C.ULT_L\n"
+    .asciz "ERROR: C.OLE_L\n"
+    .asciz "ERROR: C.ULE_L\n"
+    .asciz "ERROR: C.SF_L\n"
+    .balign 4
+    .asciz "ERROR: C.NGLE_L\n"
+    .balign 4
+    .long 0x00000000
+    .asciz "ERROR: C.SEQ_L\n"
+    .asciz "ERROR: C.NGL_L\n"
+    .asciz "ERROR: C.LT_L\n"
+    .balign 4
+    .asciz "ERROR: C.NGE_L\n"
+    .asciz "ERROR: C.LE_L\n"
+    .balign 4
+    .asciz "ERROR: C.NGT_L\n"
+glabel lbl_8016D9C0
 	.long 0x80026CDC
 	.long 0x80026D08
 	.long 0x80026D34
@@ -1575,8 +1320,7 @@ lbl_8016D9C0:
 	.long 0x8002721C
 	.long 0x80027234
 	.long 0x8002724C
-.global lbl_8016DAC0
-lbl_8016DAC0:
+glabel lbl_8016DAC0
 	.long 0x800267DC
 	.long 0x80026808
 	.long 0x80026834
@@ -1641,8 +1385,7 @@ lbl_8016DAC0:
 	.long 0x80026C68
 	.long 0x80026C80
 	.long 0x80026C98
-.global lbl_8016DBC0
-lbl_8016DBC0:
+glabel lbl_8016DBC0
 	.long 0x80022D9C
 	.long 0x80022F98
 	.long 0x8002318C
@@ -1707,8 +1450,7 @@ lbl_8016DBC0:
 	.long 0x80025EF0
 	.long 0x800261B8
 	.long 0x800264B4
-.global lbl_8016DCC0
-lbl_8016DCC0:
+glabel lbl_8016DCC0
 	.long 0x8001F290
 	.long 0x8001F498
 	.long 0x8001F698
@@ -1773,8 +1515,7 @@ lbl_8016DCC0:
 	.long 0x80022498
 	.long 0x80022768
 	.long 0x80022A6C
-.global lbl_8016DDC0
-lbl_8016DDC0:
+glabel lbl_8016DDC0
 	.long 0x8001E320
 	.long 0x8001E490
 	.long 0x8001E61C
@@ -1782,8 +1523,7 @@ lbl_8016DDC0:
 	.long 0x8001E71C
 	.long 0x8001E8E0
 	.long 0x8001EA60
-.global lbl_8016DDDC
-lbl_8016DDDC:
+glabel lbl_8016DDDC
 	.long 0x8001E244
 	.long 0x80032820
 	.long 0x80032820
@@ -1809,8 +1549,7 @@ lbl_8016DDDC:
 	.long 0x8001E244
 	.long 0x8001E244
 	.long 0x80032820
-.global lbl_8016DE40
-lbl_8016DE40:
+glabel lbl_8016DE40
 	.long 0x8001A000
 	.long 0x8001A208
 	.long 0x8001A410
@@ -1831,8 +1570,7 @@ lbl_8016DE40:
 	.long 0x8001AC48
 	.long 0x8001B018
 	.long 0x8001B414
-.global lbl_8016DE90
-lbl_8016DE90:
+glabel lbl_8016DE90
 	.long 0x80010BC4
 	.long 0x80019FD4
 	.long 0x80010DD0
@@ -1897,8 +1635,7 @@ lbl_8016DE90:
 	.long 0x80019FD4
 	.long 0x80019A10
 	.long 0x80019CF8
-.global lbl_8016DF90
-lbl_8016DF90:
+glabel lbl_8016DF90
 	.long 0x80010B9C
 	.long 0x80019FDC
 	.long 0x8001B818
@@ -1963,8 +1700,7 @@ lbl_8016DF90:
 	.long 0x800315C4
 	.long 0x8003281C
 	.long 0x800323A8
-.global lbl_8016E090
-lbl_8016E090:
+glabel lbl_8016E090
 	.long 0x8003923C
 	.long 0x80039278
 	.long 0x800392B4
@@ -2029,8 +1765,7 @@ lbl_8016E090:
 	.long 0x80039950
 	.long 0x800399AC
 	.long 0x80039A08
-.global lbl_8016E190
-lbl_8016E190:
+glabel lbl_8016E190
 	.long 0x80038B24
 	.long 0x80038B50
 	.long 0x80038B7C
@@ -2095,8 +1830,7 @@ lbl_8016E190:
 	.long 0x80039158
 	.long 0x80039198
 	.long 0x800391D8
-.global lbl_8016E290
-lbl_8016E290:
+glabel lbl_8016E290
 	.long 0x80038478
 	.long 0x800384A4
 	.long 0x800384D0
@@ -2161,8 +1895,7 @@ lbl_8016E290:
 	.long 0x80038A38
 	.long 0x80038A78
 	.long 0x80038ABC
-.global lbl_8016E390
-lbl_8016E390:
+glabel lbl_8016E390
 	.long 0x80037DC8
 	.long 0x80037DF4
 	.long 0x80037E20
@@ -2227,8 +1960,7 @@ lbl_8016E390:
 	.long 0x8003838C
 	.long 0x800383CC
 	.long 0x80038410
-.global lbl_8016E490
-lbl_8016E490:
+glabel lbl_8016E490
 	.long 0x80037B30
 	.long 0x80037B7C
 	.long 0x80037BA0
@@ -2236,8 +1968,7 @@ lbl_8016E490:
 	.long 0x80037BBC
 	.long 0x80037C24
 	.long 0x80037C48
-.global lbl_8016E4AC
-lbl_8016E4AC:
+glabel lbl_8016E4AC
 	.long 0x80037A4C
 	.long 0x80037A88
 	.long 0x8003A894
@@ -2247,8 +1978,7 @@ lbl_8016E4AC:
 	.long 0x8003A894
 	.long 0x8003A894
 	.long 0x8003A894
-.global lbl_8016E4D0
-lbl_8016E4D0:
+glabel lbl_8016E4D0
 	.long 0x80037A28
 	.long 0x80037798
 	.long 0x800377EC
@@ -2274,8 +2004,7 @@ lbl_8016E4D0:
 	.long 0x80037A28
 	.long 0x80037A28
 	.long 0x800379C4
-.global lbl_8016E534
-lbl_8016E534:
+glabel lbl_8016E534
 	.long 0x80037150
 	.long 0x80037180
 	.long 0x800371B0
@@ -2296,8 +2025,7 @@ lbl_8016E534:
 	.long 0x800373A4
 	.long 0x800373E0
 	.long 0x80037434
-.global lbl_8016E584
-lbl_8016E584:
+glabel lbl_8016E584
 	.long 0x800366C4
 	.long 0x8003A894
 	.long 0x800366E8
@@ -2362,8 +2090,7 @@ lbl_8016E584:
 	.long 0x8003A894
 	.long 0x800370CC
 	.long 0x800370FC
-.global lbl_8016E684
-lbl_8016E684:
+glabel lbl_8016E684
 	.long 0x800366A0
 	.long 0x8003712C
 	.long 0x80037488
@@ -2428,8 +2155,7 @@ lbl_8016E684:
 	.long 0x8003A7D8
 	.long 0x8003A894
 	.long 0x8003A838
-.global lbl_8016E784
-lbl_8016E784:
+glabel lbl_8016E784
 	.long 0x8003ADA0
 	.long 0x8003B054
 	.long 0x8003B808
@@ -2442,8 +2168,7 @@ lbl_8016E784:
 	.long 0x8003B590
 	.long 0x8003B808
 	.long 0x8003B6CC
-.global lbl_8016E7B4
-lbl_8016E7B4:
+glabel lbl_8016E7B4
 	.long 0x8003BB80
 	.long 0x8003C2BC
 	.long 0x8003C2BC
@@ -2459,14 +2184,12 @@ lbl_8016E7B4:
 	.long 0x8003BEC4
 	.long 0x8003C2BC
 	.long 0x8003C140
-.global lbl_8016E7F0
-lbl_8016E7F0:
+glabel lbl_8016E7F0
 	.long 0x8025AB60
 	.long 0x00012288
 	.long 0x00000000
 	.long 0x8003DFDC
-.global lbl_8016E800
-lbl_8016E800:
+glabel lbl_8016E800
 	.long 0x8003F0B8
 	.long 0x8003F300
 	.long 0x8003F300
@@ -2492,8 +2215,7 @@ lbl_8016E800:
 	.long 0x8003F0B8
 	.long 0x8003F0B8
 	.long 0x8003F08C
-.global lbl_8016E864
-lbl_8016E864:
+glabel lbl_8016E864
 	.long 0x8003ED80
 	.long 0x8003EE40
 	.long 0x8003EE04
@@ -2543,8 +2265,7 @@ lbl_8016E864:
 	.long 0x00000024
 	.long 0x00000000
 	.long 0x800425A0
-.global lbl_8016E928
-lbl_8016E928:
+glabel lbl_8016E928
 	.long 0x80042790
 	.long 0x80042788
 	.long 0x80042788
@@ -2582,8 +2303,7 @@ lbl_8016E928:
 	.long 0x80042788
 	.long 0x80042788
 	.long 0x80042790
-.global lbl_8016E9BC
-lbl_8016E9BC:
+glabel lbl_8016E9BC
 	.long 0x800427DC
 	.long 0x800427D4
 	.long 0x800427D4
@@ -2621,8 +2341,7 @@ lbl_8016E9BC:
 	.long 0x800427D4
 	.long 0x800427D4
 	.long 0x800427DC
-.global lbl_8016EA50
-lbl_8016EA50:
+glabel lbl_8016EA50
 	.long 0x80042828
 	.long 0x80042820
 	.long 0x80042820
@@ -2652,8 +2371,7 @@ lbl_8016EA50:
 	.long 0x80042820
 	.long 0x80042820
 	.long 0x80042828
-.global lbl_8016EAC4
-lbl_8016EAC4:
+glabel lbl_8016EAC4
 	.long 0x80042874
 	.long 0x8004286C
 	.long 0x8004286C
@@ -2683,8 +2401,7 @@ lbl_8016EAC4:
 	.long 0x8004286C
 	.long 0x8004286C
 	.long 0x80042874
-.global lbl_8016EB38
-lbl_8016EB38:
+glabel lbl_8016EB38
 	.long 0x8025AB70
 	.long 0x0000000C
 	.long 0x00000000
@@ -2693,8 +2410,7 @@ lbl_8016EB38:
 	.long 0x00011AF8
 	.long 0x00000000
 	.long 0x80044BB0
-.global lbl_8016EB58
-lbl_8016EB58:
+glabel lbl_8016EB58
 	.long 0x80044E54
 	.long 0x80044E5C
 	.long 0x8004517C
@@ -2723,30 +2439,24 @@ lbl_8016EB58:
 	.long 0x0000010C
 	.long 0x00000000
 	.long 0x800452B0
-	.long 0x4D454D4F
-	.long 0x52592D50
-	.long 0x414B0000
-	.long 0x00000000
-.global lbl_8016EBD8
-lbl_8016EBD8:
+	.asciz "MEMORY-PAK"
+	.balign 8
+glabel lbl_8016EBD8
 	.long 0x8016EBC8
 	.long 0x0000000C
 	.long 0x00000000
 	.long 0x8004553C
-.global lbl_8016EBE8
-lbl_8016EBE8:
+glabel lbl_8016EBE8
 	.long 0x8025AB94
 	.long 0x0000000C
 	.long 0x00000000
 	.long 0x800459A8
-.global lbl_8016EBF8
-lbl_8016EBF8:
+glabel lbl_8016EBF8
 	.long 0x8025ABA4
 	.long 0x00000014
 	.long 0x00000000
 	.long 0x80045F80
-.global lbl_8016EC08
-lbl_8016EC08:
+glabel lbl_8016EC08
 	.long 0x00000000
 	.long 0x00000008
 	.long 0x00000008
@@ -2771,8 +2481,7 @@ lbl_8016EC08:
 	.long 0x00000006
 	.long 0x00000006
 	.long 0x00000007
-.global lbl_8016EC68
-lbl_8016EC68:
+glabel lbl_8016EC68
 	.long 0x00000000
 	.long 0x00000001
 	.long 0x00000002
@@ -2871,12 +2580,9 @@ lbl_8016EC68:
 	.long 0x8025AC08
 	.long 0x8025AC10
 	.long 0x8025AC18
-	.long 0x30782530
-	.long 0x3878203D
-	.long 0x20282000
+	.asciz "0x%08x = ( "
 	.long 0x00000000
-.global lbl_8016EE00
-lbl_8016EE00:
+glabel lbl_8016EE00
 	.long 0x00000000
 	.long 0x00000008
 	.long 0x00000008
@@ -2903,8 +2609,7 @@ lbl_8016EE00:
 	.long 0x00000007
 	.long 0x00000000
 	.long 0x00000001
-.global lbl_8016EE68
-lbl_8016EE68:
+glabel lbl_8016EE68
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
@@ -2967,14 +2672,12 @@ lbl_8016EE68:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_8016EF60
-lbl_8016EF60:
+glabel lbl_8016EF60
 	.long 0x8025AC28
 	.long 0x0003F158
 	.long 0x00000000
 	.long 0x80053278
-.global lbl_8016EF70
-lbl_8016EF70:
+glabel lbl_8016EF70
 	.long 0x0000001E
 	.long 0x00000021
 	.long 0x00000024
@@ -2983,8 +2686,7 @@ lbl_8016EF70:
 	.long 0x0000002D
 	.long 0x00000030
 	.long 0x00000033
-.global lbl_8016EF90
-lbl_8016EF90:
+glabel lbl_8016EF90
 	.long 0x00000000
 	.long 0x00000001
 	.long 0x00000002
@@ -2993,8 +2695,7 @@ lbl_8016EF90:
 	.long 0x00000005
 	.long 0x00000006
 	.long 0x00000007
-.global lbl_8016EFB0
-lbl_8016EFB0:
+glabel lbl_8016EFB0
 	.long 0x000000BE
 	.long 0x000000BE
 	.long 0x000000BE
@@ -3030,8 +2731,7 @@ lbl_8016EFB0:
 	.long 0xED000000
 	.long 0x0B000000
 	.long 0x0A000000
-.global lbl_8016F03C
-lbl_8016F03C:
+glabel lbl_8016F03C
 	.long 0x8004C4EC
 	.long 0x8004C4EC
 	.long 0x8004C420
@@ -3051,8 +2751,7 @@ lbl_8016F03C:
 	.long 0x8004C4C8
 	.long 0x8004C4D4
 	.long 0x8004C4E0
-.global lbl_8016F088
-lbl_8016F088:
+glabel lbl_8016F088
 	.long 0x00000000
 	.long 0x00000001
 	.long 0x00000002
@@ -3061,8 +2760,7 @@ lbl_8016F088:
 	.long 0x00000005
 	.long 0x00000006
 	.long 0x00000007
-.global lbl_8016F0A8
-lbl_8016F0A8:
+glabel lbl_8016F0A8
 	.long 0x00000000
 	.long 0x00000001
 	.long 0x00000002
@@ -3071,8 +2769,7 @@ lbl_8016F0A8:
 	.long 0x00000005
 	.long 0x00000006
 	.long 0x00000007
-.global lbl_8016F0C8
-lbl_8016F0C8:
+glabel lbl_8016F0C8
 	.long 0x8004F670
 	.long 0x8004F790
 	.long 0x00000000
@@ -3081,20 +2778,15 @@ lbl_8016F0C8:
 	.long 0x8004FD50
 	.long 0x00000000
 	.long 0x80050DA4
-.global lbl_8016F0E8
-lbl_8016F0E8:
+glabel lbl_8016F0E8
 	.long 0x80050F40
 	.long 0x800510A4
 	.long 0x8005126C
 	.long 0x80051434
 	.long 0x800515DC
 	.long 0x800517E8
-	.long 0x57616974
-	.long 0x696E6720
-	.long 0x666F7220
-	.long 0x76616C69
-	.long 0x643F0A00
-	.long 0x00000000
+	.asciz "Waiting for valid?\n"
+	.balign 8
 	.long 0x0C192078
 	.long 0x00552078
 	.long 0x0C184F50
@@ -3495,8 +3187,7 @@ lbl_8016F0E8:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_8016F758
-lbl_8016F758:
+glabel lbl_8016F758
 	.long 0x80053838
 	.long 0x80053848
 	.long 0x8005387C
@@ -3527,8 +3218,7 @@ lbl_8016F758:
 	.long 0x800569CC
 	.long 0x800569D4
 	.long 0x00000000
-.global lbl_8016F7D0
-lbl_8016F7D0:
+glabel lbl_8016F7D0
 	.long 0x00000555
 	.long 0x00000556
 	.long 0x00000559
@@ -3593,8 +3283,7 @@ lbl_8016F7D0:
 	.long 0x00000AA6
 	.long 0x00000AA9
 	.long 0x00000AAA
-.global lbl_8016F8D0
-lbl_8016F8D0:
+glabel lbl_8016F8D0
 	.long 0x00000000
 	.long 0x80056C9C
 	.long 0x00000000
@@ -4056,8 +3745,7 @@ lbl_8016F8D0:
 	.long 0x00000055
 	.long 0x7F37D860
 	.long 0x00000080
-.global lbl_80170004
-lbl_80170004:
+glabel lbl_80170004
 	.long 0x7C65E2F4
 	.long 0x00000000
 	.long 0x00000000
@@ -4711,92 +4399,42 @@ lbl_80170004:
 	.long 0x00000004
 	.long 0x00000000
 	.long 0x8005E860
-.global lbl_80170A38
-lbl_80170A38:
-	.long 0x68746D6C
-	.long 0x2E617263
+glabel lbl_80170A38
+	.asciz "html.arc"
+glabel lbl_80170A44
+	.asciz "helpRVL.c"
+	.balign 4
+	.asciz "/tmp/HBMSE.brsar"
+	.balign 4
+	.asciz "/tmp/opera.arc"
+	.balign 4
 	.long 0x00000000
-.global lbl_80170A44
-lbl_80170A44:
-	.long 0x68656C70
-	.long 0x52564C2E
-	.long 0x63000000
-	.long 0x2F746D70
-	.long 0x2F48424D
-	.long 0x53452E62
-	.long 0x72736172
-	.long 0x00000000
-	.long 0x2F746D70
-	.long 0x2F6F7065
-	.long 0x72612E61
-	.long 0x72630000
-	.long 0x00000000
-	.long 0x48756638
-	.long 0x5F486F6D
-	.long 0x65427574
-	.long 0x746F6E53
-	.long 0x652E6272
-	.long 0x73617200
-	.long 0x4F706572
-	.long 0x612E6172
-	.long 0x63000000
-	.long 0x6172633A
-	.long 0x2F68746D
-	.long 0x6C2F0000
-	.long 0x4C5A3737
-	.long 0x5F686F6D
-	.long 0x6542746E
-	.long 0x5F465241
-	.long 0x2E617263
-	.long 0x00000000
-	.long 0x73746172
-	.long 0x7475705F
-	.long 0x6672612E
-	.long 0x68746D6C
-	.long 0x00000000
-	.long 0x4C5A3737
-	.long 0x5F686F6D
-	.long 0x6542746E
-	.long 0x5F535041
-	.long 0x2E617263
-	.long 0x00000000
-	.long 0x73746172
-	.long 0x7475705F
-	.long 0x6573702E
-	.long 0x68746D6C
-	.long 0x00000000
-	.long 0x4C5A3737
-	.long 0x5F686F6D
-	.long 0x6542746E
-	.long 0x5F454E47
-	.long 0x2E617263
-	.long 0x00000000
-	.long 0x73746172
-	.long 0x7475702E
-	.long 0x68746D6C
-	.long 0x00000000
-	.long 0x53435F4C
-	.long 0x414E475F
-	.long 0x454E474C
-	.long 0x4953480A
-	.long 0x00000000
-	.long 0x48756638
-	.long 0x5F537065
-	.long 0x616B6572
-	.long 0x53652E61
-	.long 0x72630000
-	.long 0x686F6D65
-	.long 0x2E637376
-	.long 0x00000000
-	.long 0x636F6E66
-	.long 0x69672E74
-	.long 0x78740000
-.global lbl_80170B68
-lbl_80170B68:
-	.long 0x686F6D65
-	.long 0x42746E49
-	.long 0x636F6E2E
-	.long 0x74706C00
+	.asciz "Huf8_HomeButtonSe.brsar"
+	.asciz "Opera.arc"
+	.balign 4
+	.asciz "arc:/html/"
+	.balign 4
+	.asciz "LZ77_homeBtn_FRA.arc"
+	.balign 4
+	.asciz "startup_fra.html"
+	.balign 4
+	.asciz "LZ77_homeBtn_SPA.arc"
+	.balign 4
+	.asciz "startup_esp.html"
+	.balign 4
+	.asciz "LZ77_homeBtn_ENG.arc"
+	.balign 4
+	.asciz "startup.html"
+	.balign 4
+	.asciz "SC_LANG_ENGLISH\n"
+	.balign 4
+	.asciz "Huf8_SpeakerSe.arc"
+	.balign 4
+	.asciz "home.csv"
+	.balign 4
+	.asciz "config.txt"
+glabel lbl_80170B68
+	.asciz "homeBtnIcon.tpl"
 	.long 0x80060234
 	.long 0x800604FC
 	.long 0x8006023C
@@ -4808,9 +4446,8 @@ lbl_80170B68:
 	.long 0x8006022C
 	.long 0x8006049C
 	.long 0x800604D8
-	.long 0x48656C70
-	.long 0x4D656E75
-	.long 0x00000000
+	.asciz "HelpMenu"
+	.balign 4
 	.long 0x80170BA4
 	.long 0x00000044
 	.long 0x00000000
@@ -4823,14 +4460,12 @@ lbl_80170B68:
 	.long 0x00000004
 	.long 0x00000000
 	.long 0x800618CC
-.global lbl_80170BE0
-lbl_80170BE0:
+glabel lbl_80170BE0
 	.long 0x8025AC88
 	.long 0x00000178
 	.long 0x00000000
 	.long 0x800620D8
-.global lbl_80170BF0
-lbl_80170BF0:
+glabel lbl_80170BF0
 	.long 0x80000000
 	.long 0x40000000
 	.long 0x20000000
@@ -4854,15 +4489,13 @@ lbl_80170BF0:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-	.long 0x436F6E74
-	.long 0x726F6C6C
-	.long 0x65720000
+	.asciz "Controller"
+	.balign 4
 	.long 0x80170C4C
 	.long 0x00000290
 	.long 0x00000000
 	.long 0x80063154
-.global lbl_80170C68
-lbl_80170C68:
+glabel lbl_80170C68
 	.long 0xFBB27B1C
 	.long 0x00000000
 	.long 0x00000000
@@ -5139,8 +4772,7 @@ lbl_80170C68:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_801710B8
-lbl_801710B8:
+glabel lbl_801710B8
 	.long 0xFFFFFFFF
 	.long 0x0000000B
 	.long 0xFFFFFFFE
@@ -5175,60 +4807,19 @@ lbl_801710B8:
 	.long 0x00000006
 	.long 0x00000000
 	.long 0x0000000B
-	.long 0x4572726F
-	.long 0x72735F56
-	.long 0x43363445
-	.long 0x72726F72
-	.long 0x53747269
-	.long 0x6E67735F
-	.long 0x656E2E62
-	.long 0x696E0000
-	.long 0x73617665
-	.long 0x436F6D6D
-	.long 0x656E7473
-	.long 0x5F736176
-	.long 0x65436F6D
-	.long 0x6D656E74
-	.long 0x735F656E
-	.long 0x2E62696E
+	.asciz "Errors_VC64ErrorStrings_en.bin"
+	.balign 4
+	.asciz "saveComments_saveComments_en.bin"
+	.balign 4
+	.asciz "Errors_VC64ErrorStrings_fr.bin"
+	.balign 4
+	.asciz "saveComments_saveComments_fr.bin"
+	.balign 4
+	.asciz "Errors_VC64ErrorStrings_es.bin"
+	.balign 4
+	.asciz "saveComments_saveComments_es.bin"
 	.long 0x00000000
-	.long 0x4572726F
-	.long 0x72735F56
-	.long 0x43363445
-	.long 0x72726F72
-	.long 0x53747269
-	.long 0x6E67735F
-	.long 0x66722E62
-	.long 0x696E0000
-	.long 0x73617665
-	.long 0x436F6D6D
-	.long 0x656E7473
-	.long 0x5F736176
-	.long 0x65436F6D
-	.long 0x6D656E74
-	.long 0x735F6672
-	.long 0x2E62696E
-	.long 0x00000000
-	.long 0x4572726F
-	.long 0x72735F56
-	.long 0x43363445
-	.long 0x72726F72
-	.long 0x53747269
-	.long 0x6E67735F
-	.long 0x65732E62
-	.long 0x696E0000
-	.long 0x73617665
-	.long 0x436F6D6D
-	.long 0x656E7473
-	.long 0x5F736176
-	.long 0x65436F6D
-	.long 0x6D656E74
-	.long 0x735F6573
-	.long 0x2E62696E
-	.long 0x00000000
-	.long 0x00000000
-.global lbl_80171210
-lbl_80171210:
+glabel lbl_80171210
 	.long 0x00000001
 	.long 0x80171140
 	.long 0x80171160
@@ -5241,8 +4832,7 @@ lbl_80171210:
 	.long 0xFFFFFFFF
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80171240
-lbl_80171240:
+glabel lbl_80171240
 	.long 0x80063EFC
 	.long 0x80063F0C
 	.long 0x80063F0C
@@ -5275,20 +4865,12 @@ lbl_80171240:
 	.long 0x8006427C
 	.long 0x8006427C
 	.long 0x800642C4
-.global lbl_801712C0
-lbl_801712C0:
-	.long 0x73617665
-	.long 0x5F62616E
-	.long 0x6E65722E
-	.long 0x74706C00
-.global lbl_801712D0
-lbl_801712D0:
-	.long 0x62616E6E
-	.long 0x65722E62
-	.long 0x696E0000
+glabel lbl_801712C0
+	.asciz "save_banner.tpl"
+glabel lbl_801712D0
+	.asciz "banner.bin"
 	.long 0x00000000
-.global lbl_801712E0
-lbl_801712E0:
+glabel lbl_801712E0
 	.long 0x00000007
 	.long 0x0000000E
 	.long 0x0000000C
@@ -5297,8 +4879,7 @@ lbl_801712E0:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80171300
-lbl_80171300:
+glabel lbl_80171300
 	.long 0x00000000
 	.long 0x00000001
 	.long 0x00000003
@@ -5397,13 +4978,11 @@ lbl_80171300:
 	.long 0x800707C4
 	.long 0x80070814
 	.long 0x800707D4
-.global lbl_80171488
-lbl_80171488:
+glabel lbl_80171488
 	.long 0x02000200
 	.long 0x01000200
 	.long 0x02000000
-.global lbl_80171494
-lbl_80171494:
+glabel lbl_80171494
 	.long 0x8007A3F8
 	.long 0x8007A77C
 	.long 0x8007A77C
@@ -5417,8 +4996,7 @@ lbl_80171494:
 	.long 0x8007A77C
 	.long 0x8007A77C
 	.long 0x8007A77C
-.global lbl_801714C8
-lbl_801714C8:
+glabel lbl_801714C8
 	.long 0x80079D1C
 	.long 0x80079F2C
 	.long 0x80079E1C
@@ -5434,8 +5012,7 @@ lbl_801714C8:
 	.long 0x8007A77C
 	.long 0x80079F2C
 	.long 0x8007A77C
-.global lbl_80171504
-lbl_80171504:
+glabel lbl_80171504
 	.long 0x800796CC
 	.long 0x8007988C
 	.long 0x80079720
@@ -5467,8 +5044,7 @@ lbl_80171504:
 	.long 0x8007A77C
 	.long 0x8007988C
 	.long 0x80079830
-.global lbl_80171580
-lbl_80171580:
+glabel lbl_80171580
 	.long 0x8007B99C
 	.long 0x8007C320
 	.long 0x8007C320
@@ -5482,8 +5058,7 @@ lbl_80171580:
 	.long 0x8007C320
 	.long 0x8007C320
 	.long 0x8007C320
-.global lbl_801715B4
-lbl_801715B4:
+glabel lbl_801715B4
 	.long 0x8007C320
 	.long 0x8007B480
 	.long 0x8007B370
@@ -5499,8 +5074,7 @@ lbl_801715B4:
 	.long 0x8007C320
 	.long 0x8007B480
 	.long 0x8007C320
-.global lbl_801715F0
-lbl_801715F0:
+glabel lbl_801715F0
 	.long 0x8007AE78
 	.long 0x8007B0F4
 	.long 0x8007C320
@@ -5525,20 +5099,9 @@ lbl_801715F0:
 	.long 0x8007C7E8
 	.long 0x8007C7D8
 	.long 0x8007C7E8
-.global lbl_80171650
-lbl_80171650:
-	.long 0x4672616D
-	.long 0x65436F6D
-	.long 0x706C6574
-	.long 0x653A2059
-	.long 0x69656C64
-	.long 0x65642074
-	.long 0x61736B20
-	.long 0x70656E64
-	.long 0x696E672E
-	.long 0x2E2E0A00
-.global lbl_80171678
-lbl_80171678:
+glabel lbl_80171650
+	.asciz "FrameComplete: Yielded task pending...\n"
+glabel lbl_80171678
 	.long 0x8007CF60
 	.long 0x8007CDD4
 	.long 0x8007CE08
@@ -5547,8 +5110,7 @@ lbl_80171678:
 	.long 0x8007CEC0
 	.long 0x8007CF28
 	.long 0x8007CF44
-.global lbl_80171698
-lbl_80171698:
+glabel lbl_80171698
 	.long 0x8007CC84
 	.long 0x8007D190
 	.long 0x8007D190
@@ -5578,8 +5140,7 @@ lbl_80171698:
 	.long 0x8007D190
 	.long 0x8007D190
 	.long 0x8007D184
-.global lbl_8017170C
-lbl_8017170C:
+glabel lbl_8017170C
 	.long 0x8007D388
 	.long 0x8007D3FC
 	.long 0x8007D3FC
@@ -5623,8 +5184,7 @@ lbl_8017170C:
 	.long 0x00504240
 	.long 0xFA000000
 	.long 0x00000000
-.global lbl_801717B8
-lbl_801717B8:
+glabel lbl_801717B8
 	.long 0x8007EE08
 	.long 0x8007EE00
 	.long 0x8007EE00
@@ -5689,8 +5249,7 @@ lbl_801717B8:
 	.long 0x8007D9A8
 	.long 0x8007D920
 	.long 0x8007D7CC
-.global lbl_801718B8
-lbl_801718B8:
+glabel lbl_801718B8
 	.long 0x8007EE60
 	.long 0x8007EF1C
 	.long 0x8007EF1C
@@ -5720,8 +5279,7 @@ lbl_801718B8:
 	.long 0x8007EF1C
 	.long 0x8007EF1C
 	.long 0x8007EF24
-.global lbl_8017192C
-lbl_8017192C:
+glabel lbl_8017192C
 	.long 0x8007EF68
 	.long 0x8007EFD8
 	.long 0x8007EFD8
@@ -5751,8 +5309,7 @@ lbl_8017192C:
 	.long 0x8007EFD8
 	.long 0x8007EFD8
 	.long 0x8007EFC8
-.global lbl_801719A0
-lbl_801719A0:
+glabel lbl_801719A0
 	.long 0x8007F024
 	.long 0x8007F05C
 	.long 0x8007F05C
@@ -5766,8 +5323,7 @@ lbl_801719A0:
 	.long 0x8007F05C
 	.long 0x8007F05C
 	.long 0x8007F054
-.global lbl_801719D4
-lbl_801719D4:
+glabel lbl_801719D4
 	.long 0x8007F0A0
 	.long 0x8007F0DC
 	.long 0x8007F0DC
@@ -5785,8 +5341,7 @@ lbl_801719D4:
 	.long 0x0000002C
 	.long 0x00000000
 	.long func_8007F0F4
-.global lbl_80171A18
-lbl_80171A18:
+glabel lbl_80171A18
 	.long 0x42480000
 	.long 0x42480000
 	.long 0x3EC28F5C
@@ -5811,8 +5366,7 @@ lbl_80171A18:
 	.long 0x3F6B851F
 	.long 0x00000000
 	.long 0xFF9C00FF
-.global lbl_80171A78
-lbl_80171A78:
+glabel lbl_80171A78
 	.long 0x4F072478
 	.long 0x431B3811
 	.long 0x5D702B7F
@@ -5845,8 +5399,7 @@ lbl_80171A78:
 	.long 0x31524723
 	.long 0x0F7D723C
 	.long 0x185A672F
-.global lbl_80171AF8
-lbl_80171AF8:
+glabel lbl_80171AF8
 	.long 0x800815DC
 	.long 0x80081378
 	.long 0x80081380
@@ -5905,8 +5458,7 @@ lbl_80171AF8:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80171BE0
-lbl_80171BE0:
+glabel lbl_80171BE0
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000019
@@ -5979,15 +5531,8 @@ lbl_80171BE0:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-	.long 0x633A5C76
-	.long 0x636D765C
-	.long 0x76636D76
-	.long 0x74657374
-	.long 0x2E62696E
-	.long 0x5C56636D
-	.long 0x76546573
-	.long 0x744E2E65
-	.long 0x6C660000
+	.asciz "c:\\vcmv\\vcmvtest.bin\\VcmvTestN.elf"
+	.balign 4
 	.long 0x000000CB
 	.long 0x00007AC8
 	.long 0x00000002
@@ -6508,367 +6053,140 @@ lbl_80171BE0:
 	.long 0x00002FF0
 	.long 0x00000002
 	.long 0x0FA7C7C4
-	.long 0x6D656D63
-	.long 0x7079006D
-	.long 0x656D7365
-	.long 0x74007374
-	.long 0x726C656E
-	.long 0x005F5F76
-	.long 0x615F6172
-	.long 0x67005F5F
-	.long 0x72656769
-	.long 0x73746572
-	.long 0x5F676C6F
-	.long 0x62616C5F
-	.long 0x6F626A65
-	.long 0x6374005F
-	.long 0x5F636F6E
-	.long 0x73747275
-	.long 0x63745F6E
-	.long 0x65775F61
-	.long 0x72726179
-	.long 0x005F5F63
-	.long 0x6F6E7374
-	.long 0x72756374
-	.long 0x5F617272
-	.long 0x6179005F
-	.long 0x5F646573
-	.long 0x74726F79
-	.long 0x5F617272
-	.long 0x005F5F70
-	.long 0x746D665F
-	.long 0x7363616C
-	.long 0x6C005F5F
-	.long 0x6376745F
-	.long 0x66703275
-	.long 0x6E736967
-	.long 0x6E656400
-	.long 0x5F5F6469
-	.long 0x76326900
-	.long 0x5F5F6D6F
-	.long 0x64326900
-	.long 0x5F5F7368
-	.long 0x6C326900
-	.long 0x5F5F6376
-	.long 0x745F736C
-	.long 0x6C5F6462
-	.long 0x6C005F5F
-	.long 0x7365746A
-	.long 0x6D70006C
-	.long 0x6F6E676A
-	.long 0x6D70005F
-	.long 0x5F66696C
-	.long 0x65730061
-	.long 0x6273006C
-	.long 0x61627300
-	.long 0x62736561
-	.long 0x72636800
-	.long 0x5F637572
-	.long 0x72656E74
-	.long 0x5F6C6F63
-	.long 0x616C6500
-	.long 0x6D656D6D
-	.long 0x6F766500
-	.long 0x6D656D63
-	.long 0x6872006D
-	.long 0x656D636D
-	.long 0x70007072
-	.long 0x696E7466
-	.long 0x00667072
-	.long 0x696E7466
-	.long 0x00767072
-	.long 0x696E7466
-	.long 0x0076736E
-	.long 0x7072696E
-	.long 0x74660076
-	.long 0x73707269
-	.long 0x6E746600
-	.long 0x736E7072
-	.long 0x696E7466
-	.long 0x00737072
-	.long 0x696E7466
-	.long 0x0071736F
-	.long 0x72740072
-	.long 0x616E6400
-	.long 0x7372616E
-	.long 0x64007373
-	.long 0x63616E66
-	.long 0x00737472
-	.long 0x63707900
-	.long 0x7374726E
-	.long 0x63707900
-	.long 0x73747263
-	.long 0x61740073
-	.long 0x74726E63
-	.long 0x61740073
-	.long 0x7472636D
-	.long 0x70007374
-	.long 0x726E636D
-	.long 0x70007374
-	.long 0x72636872
-	.long 0x00737472
-	.long 0x72636872
-	.long 0x00737472
-	.long 0x7062726B
-	.long 0x00737472
-	.long 0x73706E00
-	.long 0x73747263
-	.long 0x73706E00
-	.long 0x73747273
-	.long 0x74720073
-	.long 0x7472746F
-	.long 0x756C0073
-	.long 0x7472746F
-	.long 0x6C006174
-	.long 0x6F690061
-	.long 0x746F6C00
-	.long 0x636C6F63
-	.long 0x6B006D6B
-	.long 0x74696D65
-	.long 0x006C6F63
-	.long 0x616C7469
-	.long 0x6D650073
-	.long 0x74726674
-	.long 0x696D6500
-	.long 0x5F5F646F
-	.long 0x75626C65
-	.long 0x5F687567
-	.long 0x65006765
-	.long 0x74656E76
-	.long 0x0061626F
-	.long 0x72740073
-	.long 0x74726963
-	.long 0x6D700073
-	.long 0x74726E69
-	.long 0x636D7000
-	.long 0x69746F61
-	.long 0x00617461
-	.long 0x6E006365
-	.long 0x696C0063
-	.long 0x6F730066
-	.long 0x6C6F6F72
-	.long 0x0073696E
-	.long 0x0074616E
-	.long 0x0061636F
-	.long 0x73006173
-	.long 0x696E0061
-	.long 0x74616E32
-	.long 0x00657870
-	.long 0x00666D6F
-	.long 0x64006C6F
-	.long 0x6700706F
-	.long 0x77007371
-	.long 0x7274004E
-	.long 0x45544765
-	.long 0x74556E69
-	.long 0x76657273
-	.long 0x616C4361
-	.long 0x6C656E64
-	.long 0x61720057
-	.long 0x57575F46
-	.long 0x4F4E545F
-	.long 0x46494C45
-	.long 0x5F444154
-	.long 0x415F5441
-	.long 0x424C455F
-	.long 0x5F004152
-	.long 0x43496E69
-	.long 0x7448616E
-	.long 0x646C6500
-	.long 0x4152434F
-	.long 0x70656E00
-	.long 0x41524343
-	.long 0x6F6E7665
-	.long 0x72745061
-	.long 0x7468546F
-	.long 0x456E7472
-	.long 0x796E756D
-	.long 0x00415243
-	.long 0x46617374
-	.long 0x4F70656E
-	.long 0x00415243
-	.long 0x456E7472
-	.long 0x796E756D
-	.long 0x49734469
-	.long 0x72004152
-	.long 0x43476574
-	.long 0x53746172
-	.long 0x74416464
-	.long 0x72496E4D
-	.long 0x656D0041
-	.long 0x52434765
-	.long 0x74537461
-	.long 0x72744F66
-	.long 0x66736574
-	.long 0x00415243
-	.long 0x4765744C
-	.long 0x656E6774
-	.long 0x68004152
-	.long 0x43436C6F
-	.long 0x73650041
-	.long 0x52435265
-	.long 0x61644469
-	.long 0x72005343
-	.long 0x4765744C
-	.long 0x616E6775
-	.long 0x61676500
-	.long 0x44564443
-	.long 0x6F6E7665
-	.long 0x72745061
-	.long 0x7468546F
-	.long 0x456E7472
-	.long 0x796E756D
-	.long 0x00445644
-	.long 0x456E7472
-	.long 0x796E756D
-	.long 0x49734469
-	.long 0x72004456
-	.long 0x44466173
-	.long 0x744F7065
-	.long 0x6E004456
-	.long 0x44436C6F
-	.long 0x73650044
-	.long 0x56445265
-	.long 0x61645072
-	.long 0x696F0044
-	.long 0x56444F70
-	.long 0x656E4469
-	.long 0x72004456
-	.long 0x44526561
-	.long 0x64446972
-	.long 0x00445644
-	.long 0x436C6F73
-	.long 0x65446972
-	.long 0x004F5352
-	.long 0x65676973
-	.long 0x74657256
-	.long 0x65727369
-	.long 0x6F6E004F
-	.long 0x53526570
-	.long 0x6F727400
-	.long 0x4F535061
-	.long 0x6E696300
-	.long 0x4F535969
-	.long 0x656C6454
-	.long 0x68726561
-	.long 0x64004F53
-	.long 0x47657454
-	.long 0x696D6500
-	.long 0x5F5F4F53
-	.long 0x47657453
-	.long 0x79737465
-	.long 0x6D54696D
-	.long 0x65004F53
-	.long 0x43616C65
-	.long 0x6E646172
-	.long 0x54696D65
-	.long 0x546F5469
-	.long 0x636B7300
-	.long 0x65786974
-	.long 0x00636F6E
-	.long 0x74656E74
-	.long 0x496E6974
-	.long 0x48616E64
-	.long 0x6C654E41
-	.long 0x4E440063
-	.long 0x6F6E7465
-	.long 0x6E744661
-	.long 0x73744F70
-	.long 0x656E4E41
-	.long 0x4E440063
-	.long 0x6F6E7465
-	.long 0x6E74436F
-	.long 0x6E766572
-	.long 0x74506174
-	.long 0x68546F45
-	.long 0x6E747279
-	.long 0x6E756D4E
-	.long 0x414E4400
-	.long 0x636F6E74
-	.long 0x656E7447
-	.long 0x65744C65
-	.long 0x6E677468
-	.long 0x4E414E44
-	.long 0x00636F6E
-	.long 0x74656E74
-	.long 0x5365656B
-	.long 0x4E414E44
-	.long 0x00636F6E
-	.long 0x74656E74
-	.long 0x52656164
-	.long 0x4E414E44
-	.long 0x00636F6E
-	.long 0x74656E74
-	.long 0x436C6F73
-	.long 0x654E414E
-	.long 0x4400636F
-	.long 0x6E74656E
-	.long 0x7452656C
-	.long 0x65617365
-	.long 0x48616E64
-	.long 0x6C654E41
-	.long 0x4E440063
-	.long 0x6F6E7465
-	.long 0x6E744F70
-	.long 0x656E4469
-	.long 0x724E414E
-	.long 0x44004E41
-	.long 0x4E444372
-	.long 0x65617465
-	.long 0x004E414E
-	.long 0x4444656C
-	.long 0x65746500
-	.long 0x4E414E44
-	.long 0x52656164
-	.long 0x004E414E
-	.long 0x44577269
-	.long 0x7465004E
-	.long 0x414E4453
-	.long 0x65656B00
-	.long 0x4E414E44
-	.long 0x52656164
-	.long 0x44697200
-	.long 0x4E414E44
-	.long 0x43726561
-	.long 0x74654469
-	.long 0x72004E41
-	.long 0x4E444765
-	.long 0x744C656E
-	.long 0x67746800
-	.long 0x4E414E44
-	.long 0x47657453
-	.long 0x74617475
-	.long 0x73004E41
-	.long 0x4E444F70
-	.long 0x656E004E
-	.long 0x414E4443
-	.long 0x6C6F7365
-	.long 0x004E414E
-	.long 0x44536166
-	.long 0x654F7065
-	.long 0x6E004E41
-	.long 0x4E445361
-	.long 0x6665436C
-	.long 0x6F736500
-	.long 0x4E414E44
-	.long 0x47657443
-	.long 0x75727265
-	.long 0x6E744469
-	.long 0x72004E41
-	.long 0x4E444765
-	.long 0x74547970
-	.long 0x65005F53
-	.long 0x44415F42
-	.long 0x4153455F
-	.long 0x005F5344
-	.long 0x41325F42
-	.long 0x4153455F
+	.asciz "memcpy"
+	.asciz "memset"
+	.asciz "strlen"
+	.asciz "__va_arg"
+	.asciz "__register_global_object"
+	.asciz "__construct_new_array"
+	.asciz "__construct_array"
+	.asciz "__destroy_arr"
+	.asciz "__ptmf_scall"
+	.asciz "__cvt_fp2unsigned"
+	.asciz "__div2i"
+	.asciz "__mod2i"
+	.asciz "__shl2i"
+	.asciz "__cvt_sll_dbl"
+	.asciz "__setjmp"
+	.asciz "longjmp"
+	.asciz "__files"
+	.asciz "abs"
+	.asciz "labs"
+	.asciz "bsearch"
+	.asciz "_current_locale"
+	.asciz "memmove"
+	.asciz "memchr"
+	.asciz "memcmp"
+	.asciz "printf"
+	.asciz "fprintf"
+	.asciz "vprintf"
+	.asciz "vsnprintf"
+	.asciz "vsprintf"
+	.asciz "snprintf"
+	.asciz "sprintf"
+	.asciz "qsort"
+	.asciz "rand"
+	.asciz "srand"
+	.asciz "sscanf"
+	.asciz "strcpy"
+	.asciz "strncpy"
+	.asciz "strcat"
+	.asciz "strncat"
+	.asciz "strcmp"
+	.asciz "strncmp"
+	.asciz "strchr"
+	.asciz "strrchr"
+	.asciz "strpbrk"
+	.asciz "strspn"
+	.asciz "strcspn"
+	.asciz "strstr"
+	.asciz "strtoul"
+	.asciz "strtol"
+	.asciz "atoi"
+	.asciz "atol"
+	.asciz "clock"
+	.asciz "mktime"
+	.asciz "localtime"
+	.asciz "strftime"
+	.asciz "__double_huge"
+	.asciz "getenv"
+	.asciz "abort"
+	.asciz "stricmp"
+	.asciz "strnicmp"
+	.asciz "itoa"
+	.asciz "atan"
+	.asciz "ceil"
+	.asciz "cos"
+	.asciz "floor"
+	.asciz "sin"
+	.asciz "tan"
+	.asciz "acos"
+	.asciz "asin"
+	.asciz "atan2"
+	.asciz "exp"
+	.asciz "fmod"
+	.asciz "log"
+	.asciz "pow"
+	.asciz "sqrt"
+	.asciz "NETGetUniversalCalendar"
+	.asciz "WWW_FONT_FILE_DATA_TABLE__"
+	.asciz "ARCInitHandle"
+	.asciz "ARCOpen"
+	.asciz "ARCConvertPathToEntrynum"
+	.asciz "ARCFastOpen"
+	.asciz "ARCEntrynumIsDir"
+	.asciz "ARCGetStartAddrInMem"
+	.asciz "ARCGetStartOffset"
+	.asciz "ARCGetLength"
+	.asciz "ARCClose"
+	.asciz "ARCReadDir"
+	.asciz "SCGetLanguage"
+	.asciz "DVDConvertPathToEntrynum"
+	.asciz "DVDEntrynumIsDir"
+	.asciz "DVDFastOpen"
+	.asciz "DVDClose"
+	.asciz "DVDReadPrio"
+	.asciz "DVDOpenDir"
+	.asciz "DVDReadDir"
+	.asciz "DVDCloseDir"
+	.asciz "OSRegisterVersion"
+	.asciz "OSReport"
+	.asciz "OSPanic"
+	.asciz "OSYieldThread"
+	.asciz "OSGetTime"
+	.asciz "__OSGetSystemTime"
+	.asciz "OSCalendarTimeToTicks"
+	.asciz "exit"
+	.asciz "contentInitHandleNAND"
+	.asciz "contentFastOpenNAND"
+	.asciz "contentConvertPathToEntrynumNAND"
+	.asciz "contentGetLengthNAND"
+	.asciz "contentSeekNAND"
+	.asciz "contentReadNAND"
+	.asciz "contentCloseNAND"
+	.asciz "contentReleaseHandleNAND"
+	.asciz "contentOpenDirNAND"
+	.asciz "NANDCreate"
+	.asciz "NANDDelete"
+	.asciz "NANDRead"
+	.asciz "NANDWrite"
+	.asciz "NANDSeek"
+	.asciz "NANDReadDir"
+	.asciz "NANDCreateDir"
+	.asciz "NANDGetLength"
+	.asciz "NANDGetStatus"
+	.asciz "NANDOpen"
+	.asciz "NANDClose"
+	.asciz "NANDSafeOpen"
+	.asciz "NANDSafeClose"
+	.asciz "NANDGetCurrentDir"
+	.asciz "NANDGetType"
+	.asciz "_SDA_BASE_"
+	.asciz "_SDA2_BASE_"
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-	.long 0x00000000
-.global lbl_80172AE0
-lbl_80172AE0:
+glabel lbl_80172AE0
 	.long 0x80167548
 	.long lbl_8025B740
 	.long 0x80167558
@@ -7093,150 +6411,50 @@ lbl_80172AE0:
 	.long lbl_8025B8F8
 	.long 0x80167E7C
 	.long lbl_8025B8FC
-.global lbl_80172E60
-lbl_80172E60:
-	.long 0x48344120
-	.long 0x73686F75
-	.long 0x6C64206E
-	.long 0x6F742062
-	.long 0x6520636C
-	.long 0x65617265
-	.long 0x64206265
-	.long 0x63617573
-	.long 0x65206F66
-	.long 0x2042726F
-	.long 0x61647761
-	.long 0x79206572
-	.long 0x72617461
-	.long 0x2E0A0000
-.global lbl_80172E98
-lbl_80172E98:
-	.long 0x3C3C2052
-	.long 0x564C5F53
-	.long 0x444B202D
-	.long 0x204F5320
-	.long 0x0972656C
-	.long 0x65617365
-	.long 0x20627569
-	.long 0x6C643A20
-	.long 0x53657020
-	.long 0x32312032
-	.long 0x30303620
-	.long 0x31343A33
-	.long 0x323A3133
-	.long 0x20283078
-	.long 0x34323030
-	.long 0x5F363034
-	.long 0x32322920
-	.long 0x3E3E0000
-	.long 0x0A526576
-	.long 0x6F6C7574
-	.long 0x696F6E20
-	.long 0x4F530A00
-	.long 0x4B65726E
-	.long 0x656C2062
-	.long 0x75696C74
-	.long 0x203A2025
-	.long 0x73202573
-	.long 0x0A000000
-	.long 0x53657020
-	.long 0x32312032
-	.long 0x30303600
-	.long 0x31343A33
-	.long 0x323A3133
-	.long 0x00000000
-	.long 0x436F6E73
-	.long 0x6F6C6520
-	.long 0x54797065
-	.long 0x203A2000
-	.long 0x5072652D
-	.long 0x70726F64
-	.long 0x75637469
-	.long 0x6F6E2062
-	.long 0x6F617264
-	.long 0x20310A00
-	.long 0x5072652D
-	.long 0x70726F64
-	.long 0x75637469
-	.long 0x6F6E2062
-	.long 0x6F617264
-	.long 0x20322D31
-	.long 0x0A000000
-	.long 0x5072652D
-	.long 0x70726F64
-	.long 0x75637469
-	.long 0x6F6E2062
-	.long 0x6F617264
-	.long 0x20322D32
-	.long 0x0A000000
-	.long 0x52657461
-	.long 0x696C2025
-	.long 0x640A0000
-	.long 0x4E444556
-	.long 0x20322E31
-	.long 0x0A000000
-	.long 0x4E444556
-	.long 0x20322E30
-	.long 0x0A000000
-	.long 0x4E444556
-	.long 0x20312E32
-	.long 0x0A000000
-	.long 0x4E444556
-	.long 0x20312E31
-	.long 0x0A000000
-	.long 0x4E444556
-	.long 0x20312E30
-	.long 0x0A000000
-	.long 0x5265766F
-	.long 0x6C757469
-	.long 0x6F6E2045
-	.long 0x6D756C61
-	.long 0x746F720A
-	.long 0x00000000
-	.long 0x456D756C
-	.long 0x6174696F
-	.long 0x6E20706C
-	.long 0x6174666F
-	.long 0x726D2028
-	.long 0x25303878
-	.long 0x290A0000
-	.long 0x54444556
-	.long 0x2D626173
-	.long 0x65642065
-	.long 0x6D756C61
-	.long 0x74696F6E
-	.long 0x20485725
-	.long 0x640A0000
-	.long 0x4669726D
-	.long 0x77617265
-	.long 0x20202020
-	.long 0x203A2025
-	.long 0x642E2564
-	.long 0x2E256420
-	.long 0x00000000
-	.long 0x2825642F
-	.long 0x25642F25
-	.long 0x64290A00
-	.long 0x4D656D6F
-	.long 0x72792025
-	.long 0x64204D42
-	.long 0x0A000000
-	.long 0x4D454D31
-	.long 0x20417265
-	.long 0x6E61203A
-	.long 0x20307825
-	.long 0x78202D20
-	.long 0x30782578
-	.long 0x0A000000
-	.long 0x4D454D32
-	.long 0x20417265
-	.long 0x6E61203A
-	.long 0x20307825
-	.long 0x78202D20
-	.long 0x30782578
-	.long 0x0A000000
-.global lbl_80173088
-lbl_80173088:
+glabel lbl_80172E60
+	.asciz "H4A should not be cleared because of Broadway errata.\n"
+glabel lbl_80172E98
+	.asciz "<< RVL_SDK - OS \trelease build: Sep 21 2006 14:32:13 (0x4200_60422) >>"
+	.balign 4
+	.asciz "\nRevolution OS\n"
+	.asciz "Kernel built : %s %s\n"
+	.balign 4
+	.asciz "Sep 21 2006"
+	.asciz "14:32:13"
+	.balign 4
+	.asciz "Console Type : "
+	.asciz "Pre-production board 1\n"
+	.asciz "Pre-production board 2-1\n"
+	.balign 4
+	.asciz "Pre-production board 2-2\n"
+	.balign 4
+	.asciz "Retail %d\n"
+	.balign 4
+	.asciz "NDEV 2.1\n"
+	.balign 4
+	.asciz "NDEV 2.0\n"
+	.balign 4
+	.asciz "NDEV 1.2\n"
+	.balign 4
+	.asciz "NDEV 1.1\n"
+	.balign 4
+	.asciz "NDEV 1.0\n"
+	.balign 4
+	.asciz "Revolution Emulator\n"
+	.balign 4
+	.asciz "Emulation platform (%08x)\n"
+	.balign 4
+	.asciz "TDEV-based emulation HW%d\n"
+	.balign 4
+	.asciz "Firmware     : %d.%d.%d "
+	.balign 4
+	.asciz "(%d/%d/%d)\n"
+	.asciz "Memory %d MB\n"
+	.balign 4
+	.asciz "MEM1 Arena : 0x%x - 0x%x\n"
+	.balign 4
+	.asciz "MEM2 Arena : 0x%x - 0x%x\n"
+glabel lbl_80173088
 	.long 0x80086A20
 	.long 0x80086A30
 	.long 0x80086A30
@@ -7263,54 +6481,11 @@ lbl_80173088:
 	.long 0x80086A30
 	.long 0x800869E0
 	.long 0x800869D0
-	.long 0x4F532045
-	.long 0x52524F52
-	.long 0x3A20626F
-	.long 0x6F742070
-	.long 0x726F6772
-	.long 0x616D2069
-	.long 0x73206E6F
-	.long 0x7420666F
-	.long 0x72205256
-	.long 0x4C207461
-	.long 0x72676574
-	.long 0x2E20506C
-	.long 0x65617365
-	.long 0x20757365
-	.long 0x20636F72
-	.long 0x72656374
-	.long 0x20626F6F
-	.long 0x74207072
-	.long 0x6F677261
-	.long 0x6D2E0A00
-	.long 0x4661696C
-	.long 0x65642074
-	.long 0x6F207275
-	.long 0x6E206170
-	.long 0x70000000
+	.asciz "OS ERROR: boot program is not for RVL target. Please use correct boot program.\n"
+	.asciz "Failed to run app"
+	.balign 4
 	.long 0x00000000
-	.long 0x4F532045
-	.long 0x52524F52
-	.long 0x3A206170
-	.long 0x706C6F61
-	.long 0x6465725B
-	.long 0x445D2E69
-	.long 0x6D672069
-	.long 0x73206E6F
-	.long 0x7420666F
-	.long 0x72205256
-	.long 0x4C207461
-	.long 0x72676574
-	.long 0x2E20506C
-	.long 0x65617365
-	.long 0x20757365
-	.long 0x20636F72
-	.long 0x72656374
-	.long 0x20617070
-	.long 0x6C6F6164
-	.long 0x65725B44
-	.long 0x5D2E696D
-	.long 0x672E0A00
+	.asciz "OS ERROR: apploader[D].img is not for RVL target. Please use correct apploader[D].img.\n"
 	.long 0x00000100
 	.long 0x00000200
 	.long 0x00000300
@@ -7326,53 +6501,20 @@ lbl_80173088:
 	.long 0x00001300
 	.long 0x00001400
 	.long 0x00001700
-	.long 0x496E7374
-	.long 0x616C6C69
-	.long 0x6E67204F
-	.long 0x53444249
-	.long 0x6E746567
-	.long 0x7261746F
-	.long 0x720A0000
-	.long 0x3E3E3E20
-	.long 0x4F53494E
-	.long 0x49543A20
-	.long 0x65786365
-	.long 0x7074696F
-	.long 0x6E202564
-	.long 0x20636F6D
-	.long 0x6D616E64
-	.long 0x65657265
-	.long 0x64206279
-	.long 0x2054524B
-	.long 0x0A000000
-	.long 0x3E3E3E20
-	.long 0x4F53494E
-	.long 0x49543A20
-	.long 0x65786365
-	.long 0x7074696F
-	.long 0x6E202564
-	.long 0x20766563
-	.long 0x746F7265
-	.long 0x6420746F
-	.long 0x20646562
-	.long 0x75676765
-	.long 0x720A0000
-	.long 0x45786365
-	.long 0x7074696F
-	.long 0x6E732069
-	.long 0x6E697469
-	.long 0x616C697A
-	.long 0x65642E2E
-	.long 0x2E0A0000
+	.asciz "Installing OSDBIntegrator\n"
+	.balign 4
+	.asciz ">>> OSINIT: exception %d commandeered by TRK\n"
+	.balign 4
+	.asciz ">>> OSINIT: exception %d vectored to debugger\n"
+	.balign 4
+	.asciz "Exceptions initialized...\n"
 	.long 0x00000000
-.global lbl_80173288
-lbl_80173288:
+glabel lbl_80173288
 	.long 0x80087B18
 	.long 0xFFFFFFFF
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80173298
-lbl_80173298:
+glabel lbl_80173298
 	.long 0x029F0010
 	.long 0x029F0033
 	.long 0x029F0034
@@ -7405,461 +6547,86 @@ lbl_80173298:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80173318
-lbl_80173318:
-	.long 0x3E3E3E20
-	.long 0x4C322049
-	.long 0x4E56414C
-	.long 0x49444154
-	.long 0x45203A20
-	.long 0x53484F55
-	.long 0x4C44204E
-	.long 0x45564552
-	.long 0x20484150
-	.long 0x50454E0A
+glabel lbl_80173318
+	.asciz ">>> L2 INVALIDATE : SHOULD NEVER HAPPEN\n"
+	.balign 4
 	.long 0x00000000
+	.asciz "Machine check received\n"
+	.asciz "HID2 = 0x%x   SRR1 = 0x%x\n"
+	.balign 4
 	.long 0x00000000
-	.long 0x4D616368
-	.long 0x696E6520
-	.long 0x63686563
-	.long 0x6B207265
-	.long 0x63656976
-	.long 0x65640A00
-	.long 0x48494432
-	.long 0x203D2030
-	.long 0x78257820
-	.long 0x20205352
-	.long 0x5231203D
-	.long 0x20307825
-	.long 0x780A0000
+	.asciz "Machine check was not DMA/locked cache related\n"
+	.asciz "DMAErrorHandler(): An error occurred while processing DMA.\n"
+	.asciz "The following errors have been detected and cleared :\n"
+	.balign 4
+	.asciz "\t- Requested a locked cache tag that was already in the cache\n"
+	.balign 4
+	.asciz "\t- DMA attempted to access normal cache\n"
+	.balign 4
+	.asciz "\t- DMA missed in data cache\n"
+	.balign 4
+	.asciz "\t- DMA queue overflowed\n"
+	.balign 4
+	.asciz "L1 i-caches initialized\n"
+	.balign 4
+	.asciz "L1 d-caches initialized\n"
+	.balign 4
+	.asciz "L2 cache initialized\n"
+	.balign 4
+	.asciz "Locked cache machine check handler installed\n"
 	.long 0x00000000
-	.long 0x4D616368
-	.long 0x696E6520
-	.long 0x63686563
-	.long 0x6B207761
-	.long 0x73206E6F
-	.long 0x7420444D
-	.long 0x412F6C6F
-	.long 0x636B6564
-	.long 0x20636163
-	.long 0x68652072
-	.long 0x656C6174
-	.long 0x65640A00
-	.long 0x444D4145
-	.long 0x72726F72
-	.long 0x48616E64
-	.long 0x6C657228
-	.long 0x293A2041
-	.long 0x6E206572
-	.long 0x726F7220
-	.long 0x6F636375
-	.long 0x72726564
-	.long 0x20776869
-	.long 0x6C652070
-	.long 0x726F6365
-	.long 0x7373696E
-	.long 0x6720444D
-	.long 0x412E0A00
-	.long 0x54686520
-	.long 0x666F6C6C
-	.long 0x6F77696E
-	.long 0x67206572
-	.long 0x726F7273
-	.long 0x20686176
-	.long 0x65206265
-	.long 0x656E2064
-	.long 0x65746563
-	.long 0x74656420
-	.long 0x616E6420
-	.long 0x636C6561
-	.long 0x72656420
-	.long 0x3A0A0000
-	.long 0x092D2052
-	.long 0x65717565
-	.long 0x73746564
-	.long 0x2061206C
-	.long 0x6F636B65
-	.long 0x64206361
-	.long 0x63686520
-	.long 0x74616720
-	.long 0x74686174
-	.long 0x20776173
-	.long 0x20616C72
-	.long 0x65616479
-	.long 0x20696E20
-	.long 0x74686520
-	.long 0x63616368
-	.long 0x650A0000
-	.long 0x092D2044
-	.long 0x4D412061
-	.long 0x7474656D
-	.long 0x70746564
-	.long 0x20746F20
-	.long 0x61636365
-	.long 0x7373206E
-	.long 0x6F726D61
-	.long 0x6C206361
-	.long 0x6368650A
-	.long 0x00000000
-	.long 0x092D2044
-	.long 0x4D41206D
-	.long 0x69737365
-	.long 0x6420696E
-	.long 0x20646174
-	.long 0x61206361
-	.long 0x6368650A
-	.long 0x00000000
-	.long 0x092D2044
-	.long 0x4D412071
-	.long 0x75657565
-	.long 0x206F7665
-	.long 0x72666C6F
-	.long 0x7765640A
-	.long 0x00000000
-	.long 0x4C312069
-	.long 0x2D636163
-	.long 0x68657320
-	.long 0x696E6974
-	.long 0x69616C69
-	.long 0x7A65640A
-	.long 0x00000000
-	.long 0x4C312064
-	.long 0x2D636163
-	.long 0x68657320
-	.long 0x696E6974
-	.long 0x69616C69
-	.long 0x7A65640A
-	.long 0x00000000
-	.long 0x4C322063
-	.long 0x61636865
-	.long 0x20696E69
-	.long 0x7469616C
-	.long 0x697A6564
-	.long 0x0A000000
-	.long 0x4C6F636B
-	.long 0x65642063
-	.long 0x61636865
-	.long 0x206D6163
-	.long 0x68696E65
-	.long 0x20636865
-	.long 0x636B2068
-	.long 0x616E646C
-	.long 0x65722069
-	.long 0x6E737461
-	.long 0x6C6C6564
-	.long 0x0A000000
-	.long 0x00000000
-.global lbl_80173550
-lbl_80173550:
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D20436F
-	.long 0x6E746578
-	.long 0x74203078
-	.long 0x25303878
-	.long 0x202D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D0A00
-	.long 0x00000000
-	.long 0x72252D32
-	.long 0x6420203D
-	.long 0x20307825
-	.long 0x30387820
-	.long 0x28253134
-	.long 0x64292020
-	.long 0x72252D32
-	.long 0x6420203D
-	.long 0x20307825
-	.long 0x30387820
-	.long 0x28253134
-	.long 0x64290A00
-	.long 0x4C522020
-	.long 0x203D2030
-	.long 0x78253038
-	.long 0x78202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x43522020
-	.long 0x203D2030
-	.long 0x78253038
-	.long 0x780A0000
-	.long 0x53525230
-	.long 0x203D2030
-	.long 0x78253038
-	.long 0x78202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x53525231
-	.long 0x203D2030
-	.long 0x78253038
-	.long 0x780A0000
-	.long 0x0A475152
-	.long 0x732D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D0A
-	.long 0x00000000
-	.long 0x67717225
-	.long 0x64203D20
-	.long 0x30782530
-	.long 0x38782009
-	.long 0x20677172
-	.long 0x2564203D
-	.long 0x20307825
-	.long 0x3038780A
-	.long 0x00000000
-	.long 0x0A0A4650
-	.long 0x52732D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x0A000000
-	.long 0x66722564
-	.long 0x20093D20
-	.long 0x25642009
-	.long 0x20667225
-	.long 0x6420093D
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x0A0A5053
-	.long 0x46732D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x0A000000
-	.long 0x70732564
-	.long 0x20093D20
-	.long 0x30782578
-	.long 0x20092070
-	.long 0x73256420
-	.long 0x093D2030
-	.long 0x7825780A
-	.long 0x00000000
-	.long 0x0A416464
-	.long 0x72657373
-	.long 0x3A202020
-	.long 0x20202042
-	.long 0x61636B20
-	.long 0x43686169
-	.long 0x6E202020
-	.long 0x204C5220
-	.long 0x53617665
-	.long 0x0A000000
-	.long 0x30782530
-	.long 0x38783A20
-	.long 0x20203078
-	.long 0x25303878
-	.long 0x20202020
-	.long 0x30782530
-	.long 0x38780A00
-.global lbl_80173708
-lbl_80173708:
-	.long 0x4650552D
-	.long 0x756E6176
-	.long 0x61696C61
-	.long 0x626C6520
-	.long 0x68616E64
-	.long 0x6C657220
-	.long 0x696E7374
-	.long 0x616C6C65
-	.long 0x640A0000
-	.long 0x00000000
-.global lbl_80173730
-lbl_80173730:
-	.long 0x20696E20
-	.long 0x22257322
-	.long 0x206F6E20
-	.long 0x6C696E65
-	.long 0x2025642E
-	.long 0x0A000000
-	.long 0x0A416464
-	.long 0x72657373
-	.long 0x3A202020
-	.long 0x20202042
-	.long 0x61636B20
-	.long 0x43686169
-	.long 0x6E202020
-	.long 0x204C5220
-	.long 0x53617665
-	.long 0x0A000000
-	.long 0x30782530
-	.long 0x38783A20
-	.long 0x20203078
-	.long 0x25303878
-	.long 0x20202020
-	.long 0x30782530
-	.long 0x38780A00
-	.long 0x4E6F6E2D
-	.long 0x7265636F
-	.long 0x76657261
-	.long 0x626C6520
-	.long 0x45786365
-	.long 0x7074696F
-	.long 0x6E202564
-	.long 0x00000000
-	.long 0x556E6861
-	.long 0x6E646C65
-	.long 0x64204578
-	.long 0x63657074
-	.long 0x696F6E20
-	.long 0x25640000
-	.long 0x0A445349
-	.long 0x5352203D
-	.long 0x20307825
-	.long 0x30387820
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20204441
-	.long 0x5220203D
-	.long 0x20307825
-	.long 0x3038780A
-	.long 0x00000000
-	.long 0x5442203D
-	.long 0x20307825
-	.long 0x3031366C
-	.long 0x6C780A00
-	.long 0x0A496E73
-	.long 0x74727563
-	.long 0x74696F6E
-	.long 0x20617420
-	.long 0x30782578
-	.long 0x20287265
-	.long 0x61642066
-	.long 0x726F6D20
-	.long 0x53525230
-	.long 0x29206174
-	.long 0x74656D70
-	.long 0x74656420
-	.long 0x746F2061
-	.long 0x63636573
-	.long 0x7320696E
-	.long 0x76616C69
-	.long 0x64206164
-	.long 0x64726573
-	.long 0x73203078
-	.long 0x25782028
-	.long 0x72656164
-	.long 0x2066726F
-	.long 0x6D204441
-	.long 0x52290A00
-	.long 0x0A417474
-	.long 0x656D7074
-	.long 0x65642074
-	.long 0x6F206665
-	.long 0x74636820
-	.long 0x696E7374
-	.long 0x72756374
-	.long 0x696F6E20
-	.long 0x66726F6D
-	.long 0x20696E76
-	.long 0x616C6964
-	.long 0x20616464
-	.long 0x72657373
-	.long 0x20307825
-	.long 0x78202872
-	.long 0x65616420
-	.long 0x66726F6D
-	.long 0x20535252
-	.long 0x30290A00
-	.long 0x0A496E73
-	.long 0x74727563
-	.long 0x74696F6E
-	.long 0x20617420
-	.long 0x30782578
-	.long 0x20287265
-	.long 0x61642066
-	.long 0x726F6D20
-	.long 0x53525230
-	.long 0x29206174
-	.long 0x74656D70
-	.long 0x74656420
-	.long 0x746F2061
-	.long 0x63636573
-	.long 0x7320756E
-	.long 0x616C6967
-	.long 0x6E656420
-	.long 0x61646472
-	.long 0x65737320
-	.long 0x30782578
-	.long 0x20287265
-	.long 0x61642066
-	.long 0x726F6D20
-	.long 0x44415229
-	.long 0x0A000000
-	.long 0x0A50726F
-	.long 0x6772616D
-	.long 0x20657863
-	.long 0x65707469
-	.long 0x6F6E203A
-	.long 0x20506F73
-	.long 0x7369626C
-	.long 0x6520696C
-	.long 0x6C656761
-	.long 0x6C20696E
-	.long 0x73747275
-	.long 0x6374696F
-	.long 0x6E2F6F70
-	.long 0x65726174
-	.long 0x696F6E20
-	.long 0x6174206F
-	.long 0x72206172
-	.long 0x6F756E64
-	.long 0x20307825
-	.long 0x78202872
-	.long 0x65616420
-	.long 0x66726F6D
-	.long 0x20535252
-	.long 0x30290A00
-	.long 0x41492044
-	.long 0x4D412041
-	.long 0x64647265
-	.long 0x7373203D
-	.long 0x20202030
-	.long 0x78253034
-	.long 0x78253034
-	.long 0x780A0000
-	.long 0x4152414D
-	.long 0x20444D41
-	.long 0x20416464
-	.long 0x72657373
-	.long 0x203D2030
-	.long 0x78253034
-	.long 0x78253034
-	.long 0x780A0000
-	.long 0x44492044
-	.long 0x4D412041
-	.long 0x64647265
-	.long 0x7373203D
-	.long 0x20202030
-	.long 0x78253038
-	.long 0x780A0000
-	.long 0x0A4C6173
-	.long 0x7420696E
-	.long 0x74657272
-	.long 0x75707420
-	.long 0x28256429
-	.long 0x3A205352
-	.long 0x5230203D
-	.long 0x20307825
-	.long 0x30387820
-	.long 0x20544220
-	.long 0x3D203078
-	.long 0x25303136
-	.long 0x6C6C780A
-	.long 0x00000000
-.global lbl_80173A0C
-lbl_80173A0C:
+glabel lbl_80173550
+	.asciz "------------------------- Context 0x%08x -------------------------\n"
+	.balign 8
+	.asciz "r%-2d  = 0x%08x (%14d)  r%-2d  = 0x%08x (%14d)\n"
+	.asciz "LR   = 0x%08x                   CR   = 0x%08x\n"
+	.balign 4
+	.asciz "SRR0 = 0x%08x                   SRR1 = 0x%08x\n"
+	.balign 4
+	.asciz "\nGQRs----------\n"
+	.balign 4
+	.asciz "gqr%d = 0x%08x \t gqr%d = 0x%08x\n"
+	.balign 4
+	.asciz "\n\nFPRs----------\n"
+	.balign 4
+	.asciz "fr%d \t= %d \t fr%d \t= %d\n"
+	.balign 4
+	.asciz "\n\nPSFs----------\n"
+	.balign 4
+	.asciz "ps%d \t= 0x%x \t ps%d \t= 0x%x\n"
+	.balign 4
+	.asciz "\nAddress:      Back Chain    LR Save\n"
+	.balign 4
+	.asciz "0x%08x:   0x%08x    0x%08x\n"
+glabel lbl_80173708
+	.asciz "FPU-unavailable handler installed\n"
+	.balign 8
+glabel lbl_80173730
+	.asciz " in \"%s\" on line %d.\n"
+	.balign 4
+	.asciz "\nAddress:      Back Chain    LR Save\n"
+	.balign 4
+	.asciz "0x%08x:   0x%08x    0x%08x\n"
+	.asciz "Non-recoverable Exception %d"
+	.balign 4
+	.asciz "Unhandled Exception %d"
+	.balign 4
+	.asciz "\nDSISR = 0x%08x                   DAR  = 0x%08x\n"
+	.balign 4
+	.asciz "TB = 0x%016llx\n"
+	.asciz "\nInstruction at 0x%x (read from SRR0) attempted to access invalid address 0x%x (read from DAR)\n"
+	.asciz "\nAttempted to fetch instruction from invalid address 0x%x (read from SRR0)\n"
+	.asciz "\nInstruction at 0x%x (read from SRR0) attempted to access unaligned address 0x%x (read from DAR)\n"
+	.balign 4
+	.asciz "\nProgram exception : Possible illegal instruction/operation at or around 0x%x (read from SRR0)\n"
+	.asciz "AI DMA Address =   0x%04x%04x\n"
+	.balign 4
+	.asciz "ARAM DMA Address = 0x%04x%04x\n"
+	.balign 4
+	.asciz "DI DMA Address =   0x%08x\n"
+	.balign 4
+	.asciz "\nLast interrupt (%d): SRR0 = 0x%08x  TB = 0x%016llx\n"
+glabel lbl_80173A0C
 	.long 0x80089564
 	.long 0x80089564
 	.long 0x800894BC
@@ -7877,24 +6644,11 @@ lbl_80173A0C:
 	.long 0x80089564
 	.long 0x80089518
 	.long 0x00000000
-.global lbl_80173A50
-lbl_80173A50:
-	.long 0x0A736563
-	.long 0x75726974
-	.long 0x79206572
-	.long 0x726F7228
-	.long 0x25642920
-	.long 0x68617320
-	.long 0x6F636375
-	.long 0x72726564
-	.long 0x00000000
-.global lbl_80173A74
-lbl_80173A74:
-	.long 0x32303034
-	.long 0x2F30322F
-	.long 0x30310000
-.global lbl_80173A80
-lbl_80173A80:
+glabel lbl_80173A50
+	.asciz "\nsecurity error(%d) has occurred"
+glabel lbl_80173A74
+	.asciz "2004/02/01"
+glabel lbl_80173A80
 	.long 0x020C020D
 	.long 0x020E020F
 	.long 0x02100211
@@ -7991,8 +6745,7 @@ lbl_80173A80:
 	.long 0x02A402A5
 	.long 0x02A602A7
 	.long 0x02A802A9
-.global lbl_80173C00
-lbl_80173C00:
+glabel lbl_80173C00
 	.long 0x00000001
 	.long 0x00020003
 	.long 0x00040005
@@ -8605,8 +7358,7 @@ lbl_80173C00:
 	.long 0x031A031B
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80174590
-lbl_80174590:
+glabel lbl_80174590
 	.long 0x00000100
 	.long 0x00000040
 	.long 0xF8000000
@@ -8619,50 +7371,18 @@ lbl_80174590:
 	.long 0x04000000
 	.long 0x00004000
 	.long 0xFFFFFFFF
-.global lbl_801745C0
-lbl_801745C0:
+glabel lbl_801745C0
 	.long 0x8008D23C
 	.long 0x0000007F
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_801745D0
-lbl_801745D0:
-	.long 0x4F535265
-	.long 0x7365742E
-	.long 0x63000000
-.global lbl_801745DC
-lbl_801745DC:
-	.long 0x4F535265
-	.long 0x7475726E
-	.long 0x546F4D65
-	.long 0x6E752829
-	.long 0x3A204661
-	.long 0x6C696564
-	.long 0x20746F20
-	.long 0x626F6F74
-	.long 0x20737973
-	.long 0x74656D20
-	.long 0x6D656E75
-	.long 0x2E0A0000
-.global lbl_8017460C
-lbl_8017460C:
-	.long 0x4F535265
-	.long 0x73657453
-	.long 0x79737465
-	.long 0x6D282920
-	.long 0x6973206F
-	.long 0x62736F6C
-	.long 0x65746564
-	.long 0x2E204974
-	.long 0x20646F65
-	.long 0x736E2774
-	.long 0x20776F72
-	.long 0x6B20616E
-	.long 0x79206C6F
-	.long 0x6E676572
-	.long 0x2E0A0000
-.global lbl_80174648
-lbl_80174648:
+glabel lbl_801745D0
+	.asciz "OSReset.c"
+glabel lbl_801745DC
+	.asciz "OSReturnToMenu(): Falied to boot system menu.\n"
+glabel lbl_8017460C
+	.asciz "OSResetSystem() is obsoleted. It doesn't work any longer.\n"
+glabel lbl_80174648
 	.long 0x00000000
 	.long 0x0000001F
 	.long 0x0000003B
@@ -8675,8 +7395,7 @@ lbl_80174648:
 	.long 0x00000111
 	.long 0x00000130
 	.long 0x0000014E
-.global lbl_80174678
-lbl_80174678:
+glabel lbl_80174678
 	.long 0x00000000
 	.long 0x0000001F
 	.long 0x0000003C
@@ -8689,8 +7408,7 @@ lbl_80174678:
 	.long 0x00000112
 	.long 0x00000131
 	.long 0x0000014F
-.global lbl_801746A8
-lbl_801746A8:
+glabel lbl_801746A8
 	.long 0x20AC0000
 	.long 0x201A0192
 	.long 0x201E2026
@@ -12166,8 +10884,7 @@ lbl_801746A8:
 	.long 0x000095D9
 	.long 0x00009C50
 	.long 0x984D0000
-.global lbl_80177CF4
-lbl_80177CF4:
+glabel lbl_80177CF4
 	.long 0x00000000
 	.long 0x00009C51
 	.long 0x95BE9C54
@@ -12184,8 +10901,7 @@ lbl_80177CF4:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x000096ED
-.global lbl_80177D34
-lbl_80177D34:
+glabel lbl_80177D34
 	.long 0x8CB78CCA
 	.long 0x00009C57
 	.long 0x00000000
@@ -12794,8 +11510,7 @@ lbl_80177D34:
 	.long 0x000088AC
 	.long 0x00009D85
 	.long 0x00000000
-.global lbl_801786B4
-lbl_801786B4:
+glabel lbl_801786B4
 	.long 0x00000000
 	.long 0x00009D82
 	.long 0x00000000
@@ -20617,8 +19332,7 @@ lbl_801786B4:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_801800E8
-lbl_801800E8:
+glabel lbl_801800E8
 	.long 0x801746E8
 	.long 0x00000000
 	.long 0x00000000
@@ -20875,83 +19589,21 @@ lbl_801800E8:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8017FEE8
-.global lbl_801804E8
-lbl_801804E8:
-	.long 0x2F646576
-	.long 0x2F73746D
-	.long 0x2F696D6D
-	.long 0x65646961
-	.long 0x74650000
-.global lbl_801804FC
-lbl_801804FC:
-	.long 0x2F646576
-	.long 0x2F73746D
-	.long 0x2F657665
-	.long 0x6E74686F
-	.long 0x6F6B0000
-.global lbl_80180510
-lbl_80180510:
-	.long 0x4F535374
-	.long 0x61746554
-	.long 0x4D2E6300
-.global lbl_8018051C
-lbl_8018051C:
-	.long 0x4572726F
-	.long 0x723A2054
-	.long 0x68652066
-	.long 0x69726D77
-	.long 0x61726520
-	.long 0x646F6573
-	.long 0x6E277420
-	.long 0x73757070
-	.long 0x6F727420
-	.long 0x73687574
-	.long 0x646F776E
-	.long 0x20666561
-	.long 0x74757265
-	.long 0x2E0A0000
-.global lbl_80180554
-lbl_80180554:
-	.long 0x4572726F
-	.long 0x723A2054
-	.long 0x68652066
-	.long 0x69726D77
-	.long 0x61726520
-	.long 0x646F6573
-	.long 0x6E277420
-	.long 0x73757070
-	.long 0x6F727420
-	.long 0x7265626F
-	.long 0x6F742066
-	.long 0x65617475
-	.long 0x72652E0A
-	.long 0x00000000
-.global lbl_8018058C
-lbl_8018058C:
-	.long 0x4572726F
-	.long 0x72206F6E
-	.long 0x2053544D
-	.long 0x20737461
-	.long 0x74652065
-	.long 0x76656E74
-	.long 0x2068616E
-	.long 0x646C6572
-	.long 0x0A000000
-.global lbl_801805B0
-lbl_801805B0:
-	.long 0x2F746974
-	.long 0x6C652F30
-	.long 0x30303030
-	.long 0x3030312F
-	.long 0x30303030
-	.long 0x30303032
-	.long 0x2F646174
-	.long 0x612F706C
-	.long 0x61795F72
-	.long 0x65632E64
-	.long 0x61740000
-.global lbl_801805DC
-lbl_801805DC:
+glabel lbl_801804E8
+	.asciz "/dev/stm/immediate"
+glabel lbl_801804FC
+	.asciz "/dev/stm/eventhook"
+glabel lbl_80180510
+	.asciz "OSStateTM.c"
+glabel lbl_8018051C
+	.asciz "Error: The firmware doesn't support shutdown feature.\n"
+glabel lbl_80180554
+	.asciz "Error: The firmware doesn't support reboot feature.\n"
+glabel lbl_8018058C
+	.asciz "Error on STM state event handler\n"
+glabel lbl_801805B0
+	.asciz "/title/00000001/00000002/data/play_rec.dat"
+glabel lbl_801805DC
 	.long 0x80091268
 	.long 0x80091274
 	.long 0x800912F0
@@ -20959,70 +19611,23 @@ lbl_801805DC:
 	.long 0x8009135C
 	.long 0x80091368
 	.long 0x800913F0
-.global lbl_801805F8
-lbl_801805F8:
-	.long 0x2F746974
-	.long 0x6C652F30
-	.long 0x30303030
-	.long 0x3030312F
-	.long 0x30303030
-	.long 0x30303032
-	.long 0x2F646174
-	.long 0x612F7374
-	.long 0x6174652E
-	.long 0x64617400
-	.long 0x3C3C2052
-	.long 0x564C5F53
-	.long 0x444B202D
-	.long 0x20455849
-	.long 0x20097265
-	.long 0x6C656173
-	.long 0x65206275
-	.long 0x696C643A
-	.long 0x20536570
-	.long 0x20203720
-	.long 0x32303036
-	.long 0x2030373A
-	.long 0x31363A32
-	.long 0x30202830
-	.long 0x78343230
-	.long 0x305F3630
-	.long 0x34323229
-	.long 0x203E3E00
-	.long 0x3C3C2052
-	.long 0x564C5F53
-	.long 0x444B202D
-	.long 0x20534920
-	.long 0x0972656C
-	.long 0x65617365
-	.long 0x20627569
-	.long 0x6C643A20
-	.long 0x53657020
-	.long 0x20372032
-	.long 0x30303620
-	.long 0x30373A32
-	.long 0x303A3533
-	.long 0x20283078
-	.long 0x34323030
-	.long 0x5F363034
-	.long 0x32322920
-	.long 0x3E3E0000
-.global lbl_801806B0
-lbl_801806B0:
+glabel lbl_801805F8
+	.asciz "/title/00000001/00000002/data/state.dat"
+	.asciz "<< RVL_SDK - EXI \trelease build: Sep  7 2006 07:16:20 (0x4200_60422) >>"
+	.asciz "<< RVL_SDK - SI \trelease build: Sep  7 2006 07:20:53 (0x4200_60422) >>"
+glabel lbl_801806B0
 	.long 0xFFFFFFFF
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_801806C8
-lbl_801806C8:
+glabel lbl_801806C8
 	.long 0x00000008
 	.long 0x00000008
 	.long 0x00000008
 	.long 0x00000008
-.global lbl_801806D8
-lbl_801806D8:
+glabel lbl_801806D8
 	.long 0x00F60200
 	.long 0x000E1300
 	.long 0x001E0900
@@ -21047,50 +19652,13 @@ lbl_801806D8:
 	.long 0x00680300
 	.long 0x00680300
 	.long 0x009C0200
-	.long 0x53495365
-	.long 0x7453616D
-	.long 0x706C696E
-	.long 0x67526174
-	.long 0x653A2075
-	.long 0x6E6B6E6F
-	.long 0x776E2054
-	.long 0x5620666F
-	.long 0x726D6174
-	.long 0x2E205573
-	.long 0x65206465
-	.long 0x6661756C
-	.long 0x742E0000
+	.asciz "SISetSamplingRate: unknown TV format. Use default."
 	.long 0x00000000
-.global lbl_80180770
-lbl_80180770:
-	.long 0x44424578
-	.long 0x63657074
-	.long 0x696F6E44
-	.long 0x65737469
-	.long 0x6E617469
-	.long 0x6F6E0A00
-.global lbl_80180788
-lbl_80180788:
-	.long 0x3C3C2052
-	.long 0x564C5F53
-	.long 0x444B202D
-	.long 0x20564920
-	.long 0x0972656C
-	.long 0x65617365
-	.long 0x20627569
-	.long 0x6C643A20
-	.long 0x53657020
-	.long 0x32362032
-	.long 0x30303620
-	.long 0x31373A32
-	.long 0x373A3537
-	.long 0x20283078
-	.long 0x34323030
-	.long 0x5F363034
-	.long 0x32322920
-	.long 0x3E3E0000
-.global lbl_801807D0
-lbl_801807D0:
+glabel lbl_80180770
+	.asciz "DBExceptionDestination\n"
+glabel lbl_80180788
+	.asciz "<< RVL_SDK - VI \trelease build: Sep 26 2006 17:27:57 (0x4200_60422) >>"
+glabel lbl_801807D0
 	.long 0x060000F0
 	.long 0x00180019
 	.long 0x00030002
@@ -21196,8 +19764,7 @@ lbl_801807D0:
 	.long 0x404B6AAC
 	.long 0x017C7A00
 	.long 0x019C0000
-.global lbl_80180974
-lbl_80180974:
+glabel lbl_80180974
 	.long 0x01F001DC
 	.long 0x01AE0174
 	.long 0x012900DB
@@ -21211,14 +19778,12 @@ lbl_80180974:
 	.long 0x0013000F
 	.long 0x000C0008
 	.long 0x00010000
-.global lbl_801809A8
-lbl_801809A8:
+glabel lbl_801809A8
 	.long 0x80094FFC
 	.long 0x0000007F
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_801809B8
-lbl_801809B8:
+glabel lbl_801809B8
 	.long 0x800953A4
 	.long 0x800953AC
 	.long 0x800953B4
@@ -21227,8 +19792,7 @@ lbl_801809B8:
 	.long 0x800953B4
 	.long 0x800953A4
 	.long 0x800953A4
-.global lbl_801809D8
-lbl_801809D8:
+glabel lbl_801809D8
 	.long 0x80095850
 	.long 0x8009585C
 	.long 0x800958C8
@@ -21260,8 +19824,7 @@ lbl_801809D8:
 	.long 0x80095928
 	.long 0x80095928
 	.long 0x80095928
-.global lbl_80180A54
-lbl_80180A54:
+glabel lbl_80180A54
 	.long 0x80095FD8
 	.long 0x80095FE0
 	.long 0x80095FE8
@@ -21270,93 +19833,20 @@ lbl_80180A54:
 	.long 0x80095FE8
 	.long 0x80095FD8
 	.long 0x80095FD8
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A0A
-	.long 0x00000000
-	.long 0x20212021
-	.long 0x20212043
-	.long 0x20412055
-	.long 0x20542049
-	.long 0x204F204E
-	.long 0x20212021
-	.long 0x20212020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x2020200A
-	.long 0x00000000
-	.long 0x54686973
-	.long 0x20545620
-	.long 0x666F726D
-	.long 0x61742022
-	.long 0x44454255
-	.long 0x475F5041
-	.long 0x4C222069
-	.long 0x73206F6E
-	.long 0x6C792066
-	.long 0x6F72200A
-	.long 0x00000000
-	.long 0x74656D70
-	.long 0x6F726172
-	.long 0x7920736F
-	.long 0x6C757469
-	.long 0x6F6E2075
-	.long 0x6E74696C
-	.long 0x2050414C
-	.long 0x20444143
-	.long 0x20626F61
-	.long 0x7264200A
-	.long 0x00000000
-	.long 0x69732061
-	.long 0x7661696C
-	.long 0x61626C65
-	.long 0x2E20506C
-	.long 0x65617365
-	.long 0x20646F20
-	.long 0x4E4F5420
-	.long 0x75736520
-	.long 0x74686973
-	.long 0x2020200A
-	.long 0x00000000
-	.long 0x6D6F6465
-	.long 0x20696E20
-	.long 0x7265616C
-	.long 0x2067616D
-	.long 0x65732121
-	.long 0x21202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x2020200A
-	.long 0x00000000
-	.long 0x5649436F
-	.long 0x6E666967
-	.long 0x75726528
-	.long 0x293A2054
-	.long 0x72696564
-	.long 0x20746F20
-	.long 0x6368616E
-	.long 0x6765206D
-	.long 0x6F646520
-	.long 0x66726F6D
-	.long 0x20282564
-	.long 0x2920746F
-	.long 0x20282564
-	.long 0x292C2077
-	.long 0x68696368
-	.long 0x20697320
-	.long 0x666F7262
-	.long 0x69646465
-	.long 0x6E0A0000
-.global lbl_80180BC8
-lbl_80180BC8:
+	.asciz "***************************************\n"
+	.balign 4
+	.asciz " ! ! ! C A U T I O N ! ! !             \n"
+	.balign 4
+	.asciz "This TV format \"DEBUG_PAL\" is only for \n"
+	.balign 4
+	.asciz "temporary solution until PAL DAC board \n"
+	.balign 4
+	.asciz "is available. Please do NOT use this   \n"
+	.balign 4
+	.asciz "mode in real games!!!                  \n"
+	.balign 4
+	.asciz "VIConfigure(): Tried to change mode from (%d) to (%d), which is forbidden\n"
+glabel lbl_80180BC8
 	.long 0x80097370
 	.long 0x80097378
 	.long 0x8009737C
@@ -21365,8 +19855,7 @@ lbl_80180BC8:
 	.long 0x8009737C
 	.long 0x80097370
 	.long 0x80097370
-.global lbl_80180BE8
-lbl_80180BE8:
+glabel lbl_80180BE8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
@@ -21725,26 +20214,9 @@ lbl_80180BE8:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80181180
-lbl_80181180:
-	.long 0x3C3C2052
-	.long 0x564C5F53
-	.long 0x444B202D
-	.long 0x20475820
-	.long 0x0972656C
-	.long 0x65617365
-	.long 0x20627569
-	.long 0x6C643A20
-	.long 0x53657020
-	.long 0x20372032
-	.long 0x30303620
-	.long 0x31383A33
-	.long 0x303A3534
-	.long 0x20283078
-	.long 0x34323030
-	.long 0x5F363034
-	.long 0x32322920
-	.long 0x3E3E0000
+glabel lbl_80181180
+	.asciz "<< RVL_SDK - GX \trelease build: Sep  7 2006 18:30:54 (0x4200_60422) >>"
+	.balign 4
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
@@ -21819,8 +20291,7 @@ lbl_80181180:
 	.long 0xC0000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_801812F0
-lbl_801812F0:
+glabel lbl_801812F0
 	.long 0x00000000
 	.long 0x00010000
 	.long 0x00020000
@@ -21869,30 +20340,16 @@ lbl_801812F0:
 	.long 0x00050000
 	.long 0x000A0000
 	.long 0x00070000
-.global lbl_801813B0
-lbl_801813B0:
+glabel lbl_801813B0
 	.long 0x80099F38
 	.long 0x0000007F
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_801813C0
-lbl_801813C0:
-	.long 0x43505546
-	.long 0x69666F3A
-	.long 0x20253038
-	.long 0x58202D20
-	.long 0x25303858
-	.long 0x0A000000
-.global lbl_801813D8
-lbl_801813D8:
-	.long 0x47502046
-	.long 0x69666F3A
-	.long 0x20253038
-	.long 0x58202D20
-	.long 0x25303858
-	.long 0x0A000000
-.global lbl_801813F0
-lbl_801813F0:
+glabel lbl_801813C0
+	.asciz "CPUFifo: %08X - %08X\n"
+glabel lbl_801813D8
+	.asciz "GP Fifo: %08X - %08X\n"
+glabel lbl_801813F0
 	.long 0x8009B9C4
 	.long 0x8009B9D8
 	.long 0x8009B9EC
@@ -21919,8 +20376,7 @@ lbl_801813F0:
 	.long 0x8009BBB8
 	.long 0x8009BBB8
 	.long 0x8009BAC0
-.global lbl_80181458
-lbl_80181458:
+glabel lbl_80181458
 	.long 0x8009BE48
 	.long 0x8009BE60
 	.long 0x8009BE9C
@@ -21955,8 +20411,7 @@ lbl_80181458:
 	.long 0x8009C13C
 	.long 0x8009C13C
 	.long 0x8009C014
-.global lbl_801814E0
-lbl_801814E0:
+glabel lbl_801814E0
 	.long 0x8009C3E8
 	.long 0x8009C3F8
 	.long 0x8009C408
@@ -21964,8 +20419,7 @@ lbl_801814E0:
 	.long 0x8009C428
 	.long 0x8009C438
 	.long 0x8009C448
-.global lbl_801814FC
-lbl_801814FC:
+glabel lbl_801814FC
 	.long 0x8009C278
 	.long 0x8009C284
 	.long 0x8009C290
@@ -21987,8 +20441,7 @@ lbl_801814FC:
 	.long 0x8009C2F4
 	.long 0x8009C2A8
 	.long 0x8009C2B0
-.global lbl_80181550
-lbl_80181550:
+glabel lbl_80181550
 	.long 0x00000000
 	.long 0x028001E0
 	.long 0x01E00028
@@ -22004,8 +20457,7 @@ lbl_80181550:
 	.long 0x06060808
 	.long 0x0A0C0A08
 	.long 0x08000000
-.global lbl_8018158C
-lbl_8018158C:
+glabel lbl_8018158C
 	.long 0x00000002
 	.long 0x028001E0
 	.long 0x01E00028
@@ -22021,8 +20473,7 @@ lbl_8018158C:
 	.long 0x06060000
 	.long 0x15161500
 	.long 0x00000000
-.global lbl_801815C8
-lbl_801815C8:
+glabel lbl_801815C8
 	.long 0x00000008
 	.long 0x028001E0
 	.long 0x01E00028
@@ -22038,8 +20489,7 @@ lbl_801815C8:
 	.long 0x06060808
 	.long 0x0A0C0A08
 	.long 0x08000000
-.global lbl_80181604
-lbl_80181604:
+glabel lbl_80181604
 	.long 0x00000004
 	.long 0x02800210
 	.long 0x02100028
@@ -22055,8 +20505,7 @@ lbl_80181604:
 	.long 0x06060808
 	.long 0x0A0C0A08
 	.long 0x08000000
-.global lbl_80181640
-lbl_80181640:
+glabel lbl_80181640
 	.long 0x00000014
 	.long 0x028001E0
 	.long 0x01E00028
@@ -22073,8 +20522,7 @@ lbl_80181640:
 	.long 0x0A0C0A08
 	.long 0x08000000
 	.long 0x00000000
-.global lbl_80181680
-lbl_80181680:
+glabel lbl_80181680
 	.long 0x8009DE6C
 	.long 0x8009DE78
 	.long 0x8009DE78
@@ -22136,8 +20584,7 @@ lbl_80181680:
 	.long 0x8009DE78
 	.long 0x8009DE90
 	.long 0x8009DE84
-.global lbl_80181774
-lbl_80181774:
+glabel lbl_80181774
 	.long 0x8009E050
 	.long 0x8009E064
 	.long 0x8009E064
@@ -22153,8 +20600,7 @@ lbl_80181774:
 	.long 0x8009E0B4
 	.long 0x8009E0B4
 	.long 0x8009E0A0
-.global lbl_801817B0
-lbl_801817B0:
+glabel lbl_801817B0
 	.long 0xC008F8AF
 	.long 0xC008A89F
 	.long 0xC008AC8F
@@ -22175,8 +20621,7 @@ lbl_801817B0:
 	.long 0xC108F070
 	.long 0xC108FFC0
 	.long 0xC108FF80
-.global lbl_80181800
-lbl_80181800:
+glabel lbl_80181800
 	.long 0x00000000
 	.long 0x00000001
 	.long 0x00000000
@@ -22187,8 +20632,7 @@ lbl_80181800:
 	.long 0x00000005
 	.long 0x00000006
 	.long 0x00000000
-.global lbl_80181828
-lbl_80181828:
+glabel lbl_80181828
 	.long 0x00000000
 	.long 0x00000001
 	.long 0x00000002
@@ -22197,8 +20641,7 @@ lbl_80181828:
 	.long 0x00000004
 	.long 0x00000004
 	.long 0x00000005
-.global lbl_80181848
-lbl_80181848:
+glabel lbl_80181848
 	.long 0x800A0754
 	.long 0x800A0770
 	.long 0x800A078C
@@ -22222,8 +20665,7 @@ lbl_80181848:
 	.long 0x800A0A18
 	.long 0x800A07E0
 	.long 0x800A0A24
-.global lbl_801818A4
-lbl_801818A4:
+glabel lbl_801818A4
 	.long 0x800A0330
 	.long 0x800A0350
 	.long 0x800A0370
@@ -22261,137 +20703,20 @@ lbl_801818A4:
 	.long 0x800A0470
 	.long 0x800A0730
 	.long 0x00000000
-	.long 0x44564443
-	.long 0x6F6E7665
-	.long 0x7274456E
-	.long 0x7472796E
-	.long 0x756D546F
-	.long 0x50617468
-	.long 0x28706F73
-	.long 0x7369626C
-	.long 0x79204456
-	.long 0x444F7065
-	.long 0x6E206F72
-	.long 0x20445644
-	.long 0x4368616E
-	.long 0x67654469
-	.long 0x72206F72
-	.long 0x20445644
-	.long 0x4F70656E
-	.long 0x44697229
-	.long 0x3A207370
-	.long 0x65636966
-	.long 0x69656420
-	.long 0x64697265
-	.long 0x63746F72
-	.long 0x79206F72
-	.long 0x2066696C
-	.long 0x65202825
-	.long 0x73292064
-	.long 0x6F65736E
-	.long 0x2774206D
-	.long 0x61746368
-	.long 0x20737461
-	.long 0x6E646172
-	.long 0x6420382E
-	.long 0x3320666F
-	.long 0x726D6174
-	.long 0x2E205468
-	.long 0x69732069
-	.long 0x73206120
-	.long 0x74656D70
-	.long 0x6F726172
-	.long 0x79207265
-	.long 0x73747269
-	.long 0x6374696F
-	.long 0x6E20616E
-	.long 0x64207769
-	.long 0x6C6C2062
-	.long 0x65207265
-	.long 0x6D6F7665
-	.long 0x6420736F
-	.long 0x6F6E0A00
-.global lbl_80181A00
-lbl_80181A00:
-	.long 0x44564452
-	.long 0x65616441
-	.long 0x73796E63
-	.long 0x28293A20
-	.long 0x73706563
-	.long 0x69666965
-	.long 0x64206172
-	.long 0x65612069
-	.long 0x73206F75
-	.long 0x74206F66
-	.long 0x20746865
-	.long 0x2066696C
-	.long 0x65202000
-.global lbl_80181A34
-lbl_80181A34:
-	.long 0x44564452
-	.long 0x65616428
-	.long 0x293A2073
-	.long 0x70656369
-	.long 0x66696564
-	.long 0x20617265
-	.long 0x61206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x74686520
-	.long 0x66696C65
-	.long 0x20200000
-.global lbl_80181A64
-lbl_80181A64:
-	.long 0x5761726E
-	.long 0x696E673A
-	.long 0x20445644
-	.long 0x4F70656E
-	.long 0x44697228
-	.long 0x293A2066
-	.long 0x696C6520
-	.long 0x27257327
-	.long 0x20776173
-	.long 0x206E6F74
-	.long 0x20666F75
-	.long 0x6E642075
-	.long 0x6E646572
-	.long 0x2025732E
-	.long 0x0A000000
-	.long 0x3C3C2052
-	.long 0x564C5F53
-	.long 0x444B202D
-	.long 0x20445644
-	.long 0x20097265
-	.long 0x6C656173
-	.long 0x65206275
-	.long 0x696C643A
-	.long 0x204F6374
-	.long 0x20313820
-	.long 0x32303036
-	.long 0x2031303A
-	.long 0x30303A34
-	.long 0x33202830
-	.long 0x78343139
-	.long 0x395F3630
-	.long 0x37323629
-	.long 0x203E3E00
-.global lbl_80181AE8
-lbl_80181AE8:
-	.long 0x44564443
-	.long 0x68616E67
-	.long 0x65446973
-	.long 0x6B28293A
-	.long 0x20465354
-	.long 0x20696E20
-	.long 0x74686520
-	.long 0x6E657720
-	.long 0x64697363
-	.long 0x20697320
-	.long 0x746F6F20
-	.long 0x6269672E
-	.long 0x20202000
-.global lbl_80181B1C
-lbl_80181B1C:
+	.ascii "DVDConvertEntrynumToPath(possibly DVDOpen or DVDChangeDir or DVDOpenDir): "
+	.ascii "specified directory or file (%s) doesn't match standard 8.3 format. "
+	.ascii "This is a temporary restriction and will be removed soon\n"
+glabel lbl_80181A00
+	.asciz "DVDReadAsync(): specified area is out of the file  "
+glabel lbl_80181A34
+	.asciz "DVDRead(): specified area is out of the file  "
+glabel lbl_80181A64
+	.asciz "Warning: DVDOpenDir(): file '%s' was not found under %s.\n"
+	.balign 4
+	.asciz "<< RVL_SDK - DVD \trelease build: Oct 18 2006 10:00:43 (0x4199_60726) >>"
+glabel lbl_80181AE8
+	.asciz "DVDChangeDisk(): FST in the new disc is too big.   "
+glabel lbl_80181B1C
 	.long 0x800A3608
 	.long 0x800A35FC
 	.long 0x800A35FC
@@ -22431,8 +20756,7 @@ lbl_80181B1C:
 	.long 0x800A35E4
 	.long 0x800A35A8
 	.long 0x800A35E4
-.global lbl_80181BB8
-lbl_80181BB8:
+glabel lbl_80181BB8
 	.long 0x800A4674
 	.long 0x800A42DC
 	.long 0x800A4404
@@ -22475,8 +20799,7 @@ lbl_80181BB8:
 	.long 0xFFFFFFFF
 	.long 0xFFFFFFFF
 	.long 0xFFFFFFFF
-.global lbl_80181C60
-lbl_80181C60:
+glabel lbl_80181C60
 	.long 0x800A540C
 	.long 0x800A53AC
 	.long 0x800A53AC
@@ -22515,8 +20838,7 @@ lbl_80181C60:
 	.long 0x800A540C
 	.long 0x800A540C
 	.long 0x800A538C
-.global lbl_80181CF8
-lbl_80181CF8:
+glabel lbl_80181CF8
 	.long 0x800A52A8
 	.long 0x800A52A8
 	.long 0x800A52C8
@@ -22531,17 +20853,9 @@ lbl_80181CF8:
 	.long 0x800A52A8
 	.long 0x800A5438
 	.long 0x800A5534
-.global lbl_80181D30
-lbl_80181D30:
-	.long 0x2F736861
-	.long 0x72656432
-	.long 0x2F746573
-	.long 0x742F6476
-	.long 0x64657272
-	.long 0x6F722E64
-	.long 0x61740000
-.global lbl_80181D4C
-lbl_80181D4C:
+glabel lbl_80181D30
+	.asciz "/shared2/test/dvderror.dat"
+glabel lbl_80181D4C
 	.long 0x2F736861
 	.long 0x72656432
 	.long 0x2F746573
@@ -22583,1112 +20897,125 @@ lbl_80181D4C:
 	.long 0x82AD82BE
 	.long 0x82B382A2
 	.long 0x81420000
-	.long 0x0A0A0A41
-	.long 0x6E206572
-	.long 0x726F7220
-	.long 0x68617320
-	.long 0x6F636375
-	.long 0x72726564
-	.long 0x2E0A5072
-	.long 0x65737320
-	.long 0x74686520
-	.long 0x456A6563
-	.long 0x74204275
-	.long 0x74746F6E
-	.long 0x2C207265
-	.long 0x6D6F7665
-	.long 0x20746865
-	.long 0x0A47616D
-	.long 0x65204469
-	.long 0x73632C20
-	.long 0x616E6420
-	.long 0x7475726E
-	.long 0x20746865
-	.long 0x20706F77
-	.long 0x6572204F
-	.long 0x46462E0A
-	.long 0x506C6561
-	.long 0x73652072
-	.long 0x65616420
-	.long 0x74686520
-	.long 0x57696920
-	.long 0x4F706572
-	.long 0x6174696F
-	.long 0x6E73204D
-	.long 0x616E7561
-	.long 0x6C0A666F
-	.long 0x72206D6F
-	.long 0x72652069
-	.long 0x6E666F72
-	.long 0x6D617469
-	.long 0x6F6E2E00
-	.long 0x0A0A0A45
-	.long 0x696E2046
-	.long 0x65686C65
-	.long 0x72206973
-	.long 0x74206175
-	.long 0x66676574
-	.long 0x72657465
-	.long 0x6E2E0A44
-	.long 0x72FC636B
-	.long 0x65206465
-	.long 0x6E204175
-	.long 0x73676162
-	.long 0x656B6E6F
-	.long 0x70662C20
-	.long 0x656E746E
-	.long 0x696D6D20
-	.long 0x6469650A
-	.long 0x47616D65
-	.long 0x20446973
-	.long 0x6320756E
-	.long 0x64207363
-	.long 0x68616C74
-	.long 0x65206469
-	.long 0x65205769
-	.long 0x692D4B6F
-	.long 0x6E736F6C
-	.long 0x650A6175
-	.long 0x732E2042
-	.long 0x69747465
-	.long 0x206C6965
-	.long 0x73206469
-	.long 0x65204265
-	.long 0x6469656E
-	.long 0x756E6773
-	.long 0x616E6C65
-	.long 0x6974756E
-	.long 0x67206465
-	.long 0x720A5769
-	.long 0x692D4B6F
-	.long 0x6E736F6C
-	.long 0x652C2075
-	.long 0x6D207765
-	.long 0x69746572
-	.long 0x6520496E
-	.long 0x666F726D
-	.long 0x6174696F
-	.long 0x6E656E20
-	.long 0x7A750A65
-	.long 0x7268616C
-	.long 0x74656E2E
+	.asciz "\n\n\nAn error has occurred.\nPress the Eject Button, remove the\nGame Disc, and turn the power OFF.\nPlease read the Wii Operations Manual\nfor more information."
+	.asciz "\n\n\nEin Fehler ist aufgetreten.\nDrücke den Ausgabeknopf, entnimm die\nGame Disc und schalte die Wii-Konsole\naus. Bitte lies die Bedienungsanleitung der\nWii-Konsole, um weitere Informationen zu\nerhalten."
+	.balign 4
+	.asciz "\n\n\nUne erreur est survenue.\nAppuyez sur le bouton EJECT, retirez\nle disque de jeu et éteignez la console.\nVeuillez vous référer au mode d'emploi\nde la console pour de plus amples\ninformations."
+	.balign 4
+	.asciz "\n\n\nSe ha producido un error.\nPulsa el Botón EJECT, saca el disco y\napaga la consola. Consulta el manual de\ninstrucciones de la consola Wii para\nobtener más información."
+	.balign 4
+	.asciz "\n\n\nSi è verificato un errore.\nPremi il pulsante EJECT, estrai il disco\ndi gioco e spegni la console. Per maggiori\ninformazioni consulta il manuale di\nistruzioni della console Wii."
+	.balign 8
+	.asciz "\n\n\nEr is een fout opgetreden.\nDruk op de ejectknop, verwijder de\nspeldisk en zet het systeem uit. Lees\nde Wii-handleiding voor meer informatie."
+glabel lbl_80182210
+	.asciz "(doTransactionCallback) Error - context mangled!\n"
+	.balign 4
+	.asciz "(doCoverCallback) Error - context mangled!\n"
+	.asciz "IPCCltInit returned error: %d\n"
+	.balign 4
+	.asciz "(ddrAllocAligned32) Not enough space to allocate %d bytes\n"
+	.balign 4
+	.asciz "Allocation of diCommand blocks failed\n"
+	.balign 4
+	.asciz "Allocation of pathBuf failed\n"
+	.balign 4
+	.asciz "(DVDLowInit) Error: IOS_Open failed - pathname '/dev/di' does not exist\n"
+	.balign 4
+	.asciz "(DVDLowInit) Error: IOS_Open failed - calling thread lacks permission\n"
+	.balign 4
+	.asciz "(DVDLowInit) Error: IOS_Open failed - connection limit has been reached\n"
+	.balign 4
+	.asciz "(DVDLowInit) IOS_Open failed, errorcode = %d\n"
+	.balign 4
 	.long 0x00000000
-	.long 0x0A0A0A55
-	.long 0x6E652065
-	.long 0x72726575
-	.long 0x72206573
-	.long 0x74207375
-	.long 0x7276656E
-	.long 0x75652E0A
-	.long 0x41707075
-	.long 0x79657A20
-	.long 0x73757220
-	.long 0x6C652062
-	.long 0x6F75746F
-	.long 0x6E20454A
-	.long 0x4543542C
-	.long 0x20726574
-	.long 0x6972657A
-	.long 0x0A6C6520
-	.long 0x64697371
-	.long 0x75652064
-	.long 0x65206A65
-	.long 0x75206574
-	.long 0x20E97465
-	.long 0x69676E65
-	.long 0x7A206C61
-	.long 0x20636F6E
-	.long 0x736F6C65
-	.long 0x2E0A5665
-	.long 0x75696C6C
-	.long 0x657A2076
-	.long 0x6F757320
-	.long 0x72E966E9
-	.long 0x72657220
-	.long 0x6175206D
-	.long 0x6F646520
-	.long 0x6427656D
-	.long 0x706C6F69
-	.long 0x0A646520
-	.long 0x6C612063
-	.long 0x6F6E736F
-	.long 0x6C652070
-	.long 0x6F757220
-	.long 0x64652070
-	.long 0x6C757320
-	.long 0x616D706C
-	.long 0x65730A69
-	.long 0x6E666F72
-	.long 0x6D617469
-	.long 0x6F6E732E
+	.asciz "(newContext) ERROR: freeDvdContext.inUse (#%d) is true\n"
+	.asciz "(newContext) Now spinning in infinite loop\n"
+	.balign 8
+	.asciz "(newContext) Something overwrote the context magic - spinning \n"
+	.asciz "@@@@@@ WARNING - Calling DVDLowReadDiskId with NULL ptr\n"
+	.balign 4
+	.asciz "@@@ (DVDLowReadDiskID) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "(DVDLowOpenPartition) eTicket memory is unaligned\n"
+	.balign 4
 	.long 0x00000000
-	.long 0x0A0A0A53
-	.long 0x65206861
-	.long 0x2070726F
-	.long 0x64756369
-	.long 0x646F2075
-	.long 0x6E206572
-	.long 0x726F722E
-	.long 0x0A50756C
-	.long 0x73612065
-	.long 0x6C20426F
-	.long 0x74F36E20
-	.long 0x454A4543
-	.long 0x542C2073
-	.long 0x61636120
-	.long 0x656C2064
-	.long 0x6973636F
-	.long 0x20790A61
-	.long 0x70616761
-	.long 0x206C6120
-	.long 0x636F6E73
-	.long 0x6F6C612E
-	.long 0x20436F6E
-	.long 0x73756C74
-	.long 0x6120656C
-	.long 0x206D616E
-	.long 0x75616C20
-	.long 0x64650A69
-	.long 0x6E737472
-	.long 0x75636369
-	.long 0x6F6E6573
-	.long 0x20646520
-	.long 0x6C612063
-	.long 0x6F6E736F
-	.long 0x6C612057
-	.long 0x69692070
-	.long 0x6172610A
-	.long 0x6F627465
-	.long 0x6E657220
-	.long 0x6DE17320
-	.long 0x696E666F
-	.long 0x726D6163
-	.long 0x69F36E2E
-	.long 0x00000000
-	.long 0x0A0A0A53
-	.long 0x6920E820
-	.long 0x76657269
-	.long 0x66696361
-	.long 0x746F2075
-	.long 0x6E206572
-	.long 0x726F7265
-	.long 0x2E0A5072
-	.long 0x656D6920
-	.long 0x696C2070
-	.long 0x756C7361
-	.long 0x6E746520
-	.long 0x454A4543
-	.long 0x542C2065
-	.long 0x73747261
-	.long 0x6920696C
-	.long 0x20646973
-	.long 0x636F0A64
-	.long 0x69206769
-	.long 0x6F636F20
-	.long 0x65207370
-	.long 0x65676E69
-	.long 0x206C6120
-	.long 0x636F6E73
-	.long 0x6F6C652E
-	.long 0x20506572
-	.long 0x206D6167
-	.long 0x67696F72
-	.long 0x690A696E
-	.long 0x666F726D
-	.long 0x617A696F
-	.long 0x6E692063
-	.long 0x6F6E7375
-	.long 0x6C746120
-	.long 0x696C206D
-	.long 0x616E7561
-	.long 0x6C652064
-	.long 0x690A6973
-	.long 0x7472757A
-	.long 0x696F6E69
-	.long 0x2064656C
-	.long 0x6C612063
-	.long 0x6F6E736F
-	.long 0x6C652057
-	.long 0x69692E00
-	.long 0x00000000
-	.long 0x0A0A0A45
-	.long 0x72206973
-	.long 0x2065656E
-	.long 0x20666F75
-	.long 0x74206F70
-	.long 0x67657472
-	.long 0x6564656E
-	.long 0x2E0A4472
-	.long 0x756B206F
-	.long 0x70206465
-	.long 0x20656A65
-	.long 0x63746B6E
-	.long 0x6F702C20
-	.long 0x76657277
-	.long 0x696A6465
-	.long 0x72206465
-	.long 0x0A737065
-	.long 0x6C646973
-	.long 0x6B20656E
-	.long 0x207A6574
-	.long 0x20686574
-	.long 0x20737973
-	.long 0x7465656D
-	.long 0x20756974
-	.long 0x2E204C65
-	.long 0x65730A64
-	.long 0x65205769
-	.long 0x692D6861
-	.long 0x6E646C65
-	.long 0x6964696E
-	.long 0x6720766F
-	.long 0x6F72206D
-	.long 0x65657220
-	.long 0x696E666F
-	.long 0x726D6174
-	.long 0x69652E00
-.global lbl_80182210
-lbl_80182210:
-	.long 0x28646F54
-	.long 0x72616E73
-	.long 0x61637469
-	.long 0x6F6E4361
-	.long 0x6C6C6261
-	.long 0x636B2920
-	.long 0x4572726F
-	.long 0x72202D20
-	.long 0x636F6E74
-	.long 0x65787420
-	.long 0x6D616E67
-	.long 0x6C656421
-	.long 0x0A000000
-	.long 0x28646F43
-	.long 0x6F766572
-	.long 0x43616C6C
-	.long 0x6261636B
-	.long 0x29204572
-	.long 0x726F7220
-	.long 0x2D20636F
-	.long 0x6E746578
-	.long 0x74206D61
-	.long 0x6E676C65
-	.long 0x64210A00
-	.long 0x49504343
-	.long 0x6C74496E
-	.long 0x69742072
-	.long 0x65747572
-	.long 0x6E656420
-	.long 0x6572726F
-	.long 0x723A2025
-	.long 0x640A0000
-	.long 0x28646472
-	.long 0x416C6C6F
-	.long 0x63416C69
-	.long 0x676E6564
-	.long 0x33322920
-	.long 0x4E6F7420
-	.long 0x656E6F75
-	.long 0x67682073
-	.long 0x70616365
-	.long 0x20746F20
-	.long 0x616C6C6F
-	.long 0x63617465
-	.long 0x20256420
-	.long 0x62797465
-	.long 0x730A0000
-	.long 0x416C6C6F
-	.long 0x63617469
-	.long 0x6F6E206F
-	.long 0x66206469
-	.long 0x436F6D6D
-	.long 0x616E6420
-	.long 0x626C6F63
-	.long 0x6B732066
-	.long 0x61696C65
-	.long 0x640A0000
-	.long 0x416C6C6F
-	.long 0x63617469
-	.long 0x6F6E206F
-	.long 0x66207061
-	.long 0x74684275
-	.long 0x66206661
-	.long 0x696C6564
-	.long 0x0A000000
-	.long 0x28445644
-	.long 0x4C6F7749
-	.long 0x6E697429
-	.long 0x20457272
-	.long 0x6F723A20
-	.long 0x494F535F
-	.long 0x4F70656E
-	.long 0x20666169
-	.long 0x6C656420
-	.long 0x2D207061
-	.long 0x74686E61
-	.long 0x6D652027
-	.long 0x2F646576
-	.long 0x2F646927
-	.long 0x20646F65
-	.long 0x73206E6F
-	.long 0x74206578
-	.long 0x6973740A
-	.long 0x00000000
-	.long 0x28445644
-	.long 0x4C6F7749
-	.long 0x6E697429
-	.long 0x20457272
-	.long 0x6F723A20
-	.long 0x494F535F
-	.long 0x4F70656E
-	.long 0x20666169
-	.long 0x6C656420
-	.long 0x2D206361
-	.long 0x6C6C696E
-	.long 0x67207468
-	.long 0x72656164
-	.long 0x206C6163
-	.long 0x6B732070
-	.long 0x65726D69
-	.long 0x7373696F
-	.long 0x6E0A0000
-	.long 0x28445644
-	.long 0x4C6F7749
-	.long 0x6E697429
-	.long 0x20457272
-	.long 0x6F723A20
-	.long 0x494F535F
-	.long 0x4F70656E
-	.long 0x20666169
-	.long 0x6C656420
-	.long 0x2D20636F
-	.long 0x6E6E6563
-	.long 0x74696F6E
-	.long 0x206C696D
-	.long 0x69742068
-	.long 0x61732062
-	.long 0x65656E20
-	.long 0x72656163
-	.long 0x6865640A
-	.long 0x00000000
-	.long 0x28445644
-	.long 0x4C6F7749
-	.long 0x6E697429
-	.long 0x20494F53
-	.long 0x5F4F7065
-	.long 0x6E206661
-	.long 0x696C6564
-	.long 0x2C206572
-	.long 0x726F7263
-	.long 0x6F646520
-	.long 0x3D202564
-	.long 0x0A000000
-	.long 0x00000000
-	.long 0x286E6577
-	.long 0x436F6E74
-	.long 0x65787429
-	.long 0x20455252
-	.long 0x4F523A20
-	.long 0x66726565
-	.long 0x44766443
-	.long 0x6F6E7465
-	.long 0x78742E69
-	.long 0x6E557365
-	.long 0x20282325
-	.long 0x64292069
-	.long 0x73207472
-	.long 0x75650A00
-	.long 0x286E6577
-	.long 0x436F6E74
-	.long 0x65787429
-	.long 0x204E6F77
-	.long 0x20737069
-	.long 0x6E6E696E
-	.long 0x6720696E
-	.long 0x20696E66
-	.long 0x696E6974
-	.long 0x65206C6F
-	.long 0x6F700A00
-	.long 0x00000000
-	.long 0x286E6577
-	.long 0x436F6E74
-	.long 0x65787429
-	.long 0x20536F6D
-	.long 0x65746869
-	.long 0x6E67206F
-	.long 0x76657277
-	.long 0x726F7465
-	.long 0x20746865
-	.long 0x20636F6E
-	.long 0x74657874
-	.long 0x206D6167
-	.long 0x6963202D
-	.long 0x20737069
-	.long 0x6E6E696E
-	.long 0x67200A00
-	.long 0x40404040
-	.long 0x40402057
-	.long 0x41524E49
-	.long 0x4E47202D
-	.long 0x2043616C
-	.long 0x6C696E67
-	.long 0x20445644
-	.long 0x4C6F7752
-	.long 0x65616444
-	.long 0x69736B49
-	.long 0x64207769
-	.long 0x7468204E
-	.long 0x554C4C20
-	.long 0x7074720A
-	.long 0x00000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7752
-	.long 0x65616444
-	.long 0x69736B49
-	.long 0x44292049
-	.long 0x4F535F49
-	.long 0x6F63746C
-	.long 0x4173796E
-	.long 0x63207265
-	.long 0x7475726E
-	.long 0x65642065
-	.long 0x72726F72
-	.long 0x3A202564
-	.long 0x0A000000
-	.long 0x28445644
-	.long 0x4C6F774F
-	.long 0x70656E50
-	.long 0x61727469
-	.long 0x74696F6E
-	.long 0x29206554
-	.long 0x69636B65
-	.long 0x74206D65
-	.long 0x6D6F7279
-	.long 0x20697320
-	.long 0x756E616C
-	.long 0x69676E65
-	.long 0x640A0000
-	.long 0x00000000
-	.long 0x28445644
-	.long 0x4C6F774F
-	.long 0x70656E50
-	.long 0x61727469
-	.long 0x74696F6E
-	.long 0x29206365
-	.long 0x72746966
-	.long 0x69636174
-	.long 0x6573206D
-	.long 0x656D6F72
-	.long 0x79206973
-	.long 0x20756E61
-	.long 0x6C69676E
-	.long 0x65640A00
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F774F
-	.long 0x70656E50
-	.long 0x61727469
-	.long 0x74696F6E
-	.long 0x2920494F
-	.long 0x535F496F
-	.long 0x63746C76
-	.long 0x4173796E
-	.long 0x63207265
-	.long 0x7475726E
-	.long 0x65642065
-	.long 0x72726F72
-	.long 0x3A202564
-	.long 0x0A000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7743
-	.long 0x6C6F7365
-	.long 0x50617274
-	.long 0x6974696F
-	.long 0x6E292049
-	.long 0x4F535F49
-	.long 0x6F63746C
-	.long 0x4173796E
-	.long 0x63207265
-	.long 0x7475726E
-	.long 0x65642065
-	.long 0x72726F72
-	.long 0x3A202564
-	.long 0x0A000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7755
-	.long 0x6E656E63
-	.long 0x72797074
-	.long 0x65645265
-	.long 0x61642920
-	.long 0x494F535F
-	.long 0x496F6374
-	.long 0x6C417379
-	.long 0x6E632072
-	.long 0x65747572
-	.long 0x6E656420
-	.long 0x6572726F
-	.long 0x723A2025
-	.long 0x640A0000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7753
-	.long 0x746F704D
-	.long 0x6F746F72
-	.long 0x2920494F
-	.long 0x535F496F
-	.long 0x63746C41
-	.long 0x73796E63
-	.long 0x20726574
-	.long 0x75726E65
-	.long 0x64206572
-	.long 0x726F723A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7757
-	.long 0x61697446
-	.long 0x6F72436F
-	.long 0x76657243
-	.long 0x6C6F7365
-	.long 0x2920494F
-	.long 0x535F496F
-	.long 0x63746C41
-	.long 0x73796E63
-	.long 0x20726574
-	.long 0x75726E65
-	.long 0x64206572
-	.long 0x726F723A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7749
-	.long 0x6E717569
-	.long 0x72792920
-	.long 0x494F535F
-	.long 0x496F6374
-	.long 0x6C417379
-	.long 0x6E632072
-	.long 0x65747572
-	.long 0x6E656420
-	.long 0x6572726F
-	.long 0x723A2025
-	.long 0x640A0000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7752
-	.long 0x65717565
-	.long 0x73744572
-	.long 0x726F7229
-	.long 0x20494F53
-	.long 0x5F496F63
-	.long 0x746C4173
-	.long 0x796E6320
-	.long 0x72657475
-	.long 0x726E6564
-	.long 0x20657272
-	.long 0x6F723A20
-	.long 0x25640A00
-	.long 0x28445644
-	.long 0x4C6F7753
-	.long 0x65745370
-	.long 0x696E7570
-	.long 0x466C6167
-	.long 0x293A2053
-	.long 0x796E6368
-	.long 0x2066756E
-	.long 0x6374696F
-	.long 0x6E732063
-	.long 0x616E2774
-	.long 0x20626520
-	.long 0x63616C6C
-	.long 0x65642069
-	.long 0x6E206361
-	.long 0x6C6C6261
-	.long 0x636B730A
-	.long 0x00000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F774E
-	.long 0x6F746966
-	.long 0x79526573
-	.long 0x65742920
-	.long 0x494F535F
-	.long 0x496F6374
-	.long 0x6C417379
-	.long 0x6E632072
-	.long 0x65747572
-	.long 0x6E656420
-	.long 0x6572726F
-	.long 0x723A2025
-	.long 0x640A0000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7752
-	.long 0x65736574
-	.long 0x2920494F
-	.long 0x535F496F
-	.long 0x63746C41
-	.long 0x73796E63
-	.long 0x20726574
-	.long 0x75726E65
-	.long 0x64206572
-	.long 0x726F723A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7741
-	.long 0x7564696F
-	.long 0x42756666
-	.long 0x6572436F
-	.long 0x6E666967
-	.long 0x2920494F
-	.long 0x535F496F
-	.long 0x63746C41
-	.long 0x73796E63
-	.long 0x20726574
-	.long 0x75726E65
-	.long 0x64206572
-	.long 0x726F723A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x28445644
-	.long 0x4C6F7747
-	.long 0x6574436F
-	.long 0x76657253
-	.long 0x74617475
-	.long 0x73293A20
-	.long 0x53796E63
-	.long 0x68206675
-	.long 0x6E637469
-	.long 0x6F6E7320
-	.long 0x63616E27
-	.long 0x74206265
-	.long 0x2063616C
-	.long 0x6C656420
-	.long 0x696E2063
-	.long 0x616C6C62
-	.long 0x61636B73
-	.long 0x0A000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7747
-	.long 0x6574436F
-	.long 0x76657253
-	.long 0x74617475
-	.long 0x73292049
-	.long 0x4F535F49
-	.long 0x6F63746C
-	.long 0x20726574
-	.long 0x75726E65
-	.long 0x64206572
-	.long 0x726F723A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7752
-	.long 0x65616444
-	.long 0x56442920
-	.long 0x494F535F
-	.long 0x496F6374
-	.long 0x6C417379
-	.long 0x6E632072
-	.long 0x65747572
-	.long 0x6E656420
-	.long 0x6572726F
-	.long 0x723A2025
-	.long 0x640A0000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7752
-	.long 0x65616444
-	.long 0x5644436F
-	.long 0x6E666967
-	.long 0x2920494F
-	.long 0x535F496F
-	.long 0x63746C41
-	.long 0x73796E63
-	.long 0x20726574
-	.long 0x75726E65
-	.long 0x64206572
-	.long 0x726F723A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7752
-	.long 0x65616444
-	.long 0x7664436F
-	.long 0x70797269
-	.long 0x67687429
-	.long 0x20494F53
-	.long 0x5F496F63
-	.long 0x746C4173
-	.long 0x796E6320
-	.long 0x72657475
-	.long 0x726E6564
-	.long 0x20657272
-	.long 0x6F723A20
-	.long 0x25640A00
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7752
-	.long 0x65616444
-	.long 0x76645068
-	.long 0x79736963
-	.long 0x616C2920
-	.long 0x494F535F
-	.long 0x496F6374
-	.long 0x6C417379
-	.long 0x6E632072
-	.long 0x65747572
-	.long 0x6E656420
-	.long 0x6572726F
-	.long 0x723A2025
-	.long 0x640A0000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7752
-	.long 0x65616444
-	.long 0x76644469
-	.long 0x73634B65
-	.long 0x79292049
-	.long 0x4F535F49
-	.long 0x6F63746C
-	.long 0x4173796E
-	.long 0x63207265
-	.long 0x7475726E
-	.long 0x65642065
-	.long 0x72726F72
-	.long 0x3A202564
-	.long 0x0A000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7752
-	.long 0x65706F72
-	.long 0x744B6579
-	.long 0x2920494F
-	.long 0x535F496F
-	.long 0x63746C41
-	.long 0x73796E63
-	.long 0x20726574
-	.long 0x75726E65
-	.long 0x64206572
-	.long 0x726F723A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F774F
-	.long 0x66667365
-	.long 0x74292049
-	.long 0x4F535F49
-	.long 0x6F63746C
-	.long 0x4173796E
-	.long 0x63207265
-	.long 0x7475726E
-	.long 0x65642065
-	.long 0x72726F72
-	.long 0x3A202564
-	.long 0x0A000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7753
-	.long 0x746F704C
-	.long 0x61736572
-	.long 0x2920494F
-	.long 0x535F496F
-	.long 0x63746C41
-	.long 0x73796E63
-	.long 0x20726574
-	.long 0x75726E65
-	.long 0x64206572
-	.long 0x726F723A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7752
-	.long 0x65616444
-	.long 0x69736B42
-	.long 0x63612920
-	.long 0x494F535F
-	.long 0x496F6374
-	.long 0x6C417379
-	.long 0x6E632072
-	.long 0x65747572
-	.long 0x6E656420
-	.long 0x6572726F
-	.long 0x723A2025
-	.long 0x640A0000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7753
-	.long 0x65724D65
-	.long 0x6173436F
-	.long 0x6E74726F
-	.long 0x6C292049
-	.long 0x4F535F49
-	.long 0x6F63746C
-	.long 0x4173796E
-	.long 0x63207265
-	.long 0x7475726E
-	.long 0x65642065
-	.long 0x72726F72
-	.long 0x3A202564
-	.long 0x0A000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7752
-	.long 0x65717565
-	.long 0x73744469
-	.long 0x73635374
-	.long 0x61747573
-	.long 0x2920494F
-	.long 0x535F496F
-	.long 0x63746C41
-	.long 0x73796E63
-	.long 0x20726574
-	.long 0x75726E65
-	.long 0x64206572
-	.long 0x726F723A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7752
-	.long 0x65717565
-	.long 0x73745265
-	.long 0x7472794E
-	.long 0x756D6265
-	.long 0x72292049
-	.long 0x4F535F49
-	.long 0x6F63746C
-	.long 0x4173796E
-	.long 0x63207265
-	.long 0x7475726E
-	.long 0x65642065
-	.long 0x72726F72
-	.long 0x3A202564
-	.long 0x0A000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7753
-	.long 0x65744D61
-	.long 0x78526F74
-	.long 0x6174696F
-	.long 0x6E292049
-	.long 0x4F535F49
-	.long 0x6F63746C
-	.long 0x4173796E
-	.long 0x63207265
-	.long 0x7475726E
-	.long 0x65642065
-	.long 0x72726F72
-	.long 0x3A202564
-	.long 0x0A000000
-	.long 0x28445644
-	.long 0x4C6F7752
-	.long 0x65616429
-	.long 0x3A204552
-	.long 0x524F5220
-	.long 0x2D206465
-	.long 0x73744164
-	.long 0x64722062
-	.long 0x75666665
-	.long 0x72206973
-	.long 0x206E6F74
-	.long 0x20333220
-	.long 0x62797465
-	.long 0x20616C69
-	.long 0x676E6564
-	.long 0x0A000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7752
-	.long 0x65616429
-	.long 0x20494F53
-	.long 0x5F496F63
-	.long 0x746C4173
-	.long 0x796E6320
-	.long 0x72657475
-	.long 0x726E6564
-	.long 0x20657272
-	.long 0x6F723A20
-	.long 0x25640A00
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7753
-	.long 0x65656B29
-	.long 0x20494F53
-	.long 0x5F496F63
-	.long 0x746C4173
-	.long 0x796E6320
-	.long 0x72657475
-	.long 0x726E6564
-	.long 0x20657272
-	.long 0x6F723A20
-	.long 0x25640A00
-	.long 0x28445644
-	.long 0x4C6F7747
-	.long 0x6574436F
-	.long 0x76657252
-	.long 0x6567293A
-	.long 0x2053796E
-	.long 0x63682066
-	.long 0x756E6374
-	.long 0x696F6E73
-	.long 0x2063616E
-	.long 0x27742062
-	.long 0x65206361
-	.long 0x6C6C6564
-	.long 0x20696E20
-	.long 0x63616C6C
-	.long 0x6261636B
-	.long 0x730A0000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7747
-	.long 0x6574436F
-	.long 0x76657252
-	.long 0x65672920
-	.long 0x494F535F
-	.long 0x496F6374
-	.long 0x6C207265
-	.long 0x7475726E
-	.long 0x65642065
-	.long 0x72726F72
-	.long 0x3A202564
-	.long 0x0A000000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7750
-	.long 0x72657061
-	.long 0x7265436F
-	.long 0x76657252
-	.long 0x65677369
-	.long 0x74657229
-	.long 0x20494F53
-	.long 0x5F496F63
-	.long 0x746C4173
-	.long 0x796E6320
-	.long 0x72657475
-	.long 0x726E6564
-	.long 0x20657272
-	.long 0x6F723A20
-	.long 0x25640A00
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7743
-	.long 0x6C656172
-	.long 0x436F7665
-	.long 0x72496E74
-	.long 0x65727275
-	.long 0x70742920
-	.long 0x494F535F
-	.long 0x496F6374
-	.long 0x6C417379
-	.long 0x6E632072
-	.long 0x65747572
-	.long 0x6E656420
-	.long 0x6572726F
-	.long 0x723A2025
-	.long 0x640A0000
-	.long 0x40404020
-	.long 0x28445644
-	.long 0x4C6F7745
-	.long 0x6E61626C
-	.long 0x65447664
-	.long 0x56696465
-	.long 0x6F292049
-	.long 0x4F535F49
-	.long 0x6F63746C
-	.long 0x4173796E
-	.long 0x63207265
-	.long 0x7475726E
-	.long 0x65642065
-	.long 0x72726F72
-	.long 0x3A202564
-	.long 0x0A000000
-.global lbl_80182E08
-lbl_80182E08:
-	.long 0x44454D4F
-	.long 0x50757473
-	.long 0x2E630000
-	.long 0x496E732E
-	.long 0x206D656D
-	.long 0x6F727920
-	.long 0x746F206C
-	.long 0x6F616420
-	.long 0x524F4D20
-	.long 0x666F6E74
-	.long 0x2E000000
-	.long 0x524F4D20
-	.long 0x666F6E74
-	.long 0x20697320
-	.long 0x61766169
-	.long 0x6C61626C
-	.long 0x6520696E
-	.long 0x20626F6F
-	.long 0x7420524F
-	.long 0x4D207665
-	.long 0x7220302E
-	.long 0x38206F72
-	.long 0x206C6174
-	.long 0x65722E00
-	.long 0x25303878
-	.long 0x25303878
-	.long 0x25303878
-	.long 0x25303878
-	.long 0x25303878
-	.long 0x25303878
-	.long 0x0A000000
-	.long 0x0A776964
-	.long 0x74682025
-	.long 0x640A0000
-	.long 0x3C3C2052
-	.long 0x564C5F53
-	.long 0x444B202D
-	.long 0x20414920
-	.long 0x0972656C
-	.long 0x65617365
-	.long 0x20627569
-	.long 0x6C643A20
-	.long 0x53657020
-	.long 0x20372032
-	.long 0x30303620
-	.long 0x31383A32
-	.long 0x363A3033
-	.long 0x20283078
-	.long 0x34323030
-	.long 0x5F363034
-	.long 0x32322920
-	.long 0x3E3E0000
-	.long 0x3C3C2052
-	.long 0x564C5F53
-	.long 0x444B202D
-	.long 0x20415820
-	.long 0x0972656C
-	.long 0x65617365
-	.long 0x20627569
-	.long 0x6C643A20
-	.long 0x4F637420
-	.long 0x20312032
-	.long 0x30303620
-	.long 0x30333A32
-	.long 0x363A3037
-	.long 0x20283078
-	.long 0x34323030
-	.long 0x5F363034
-	.long 0x32322920
-	.long 0x3E3E0000
-.global lbl_80182F20
-lbl_80182F20:
+	.asciz "(DVDLowOpenPartition) certificates memory is unaligned\n"
+	.asciz "@@@ (DVDLowOpenPartition) IOS_IoctlvAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowClosePartition) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowUnencryptedRead) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowStopMotor) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowWaitForCoverClose) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowInquiry) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowRequestError) IOS_IoctlAsync returned error: %d\n"
+	.asciz "(DVDLowSetSpinupFlag): Synch functions can't be called in callbacks\n"
+	.balign 4
+	.asciz "@@@ (DVDLowNotifyReset) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowReset) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowAudioBufferConfig) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "(DVDLowGetCoverStatus): Synch functions can't be called in callbacks\n"
+	.balign 4
+	.asciz "@@@ (DVDLowGetCoverStatus) IOS_Ioctl returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowReadDVD) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowReadDVDConfig) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowReadDvdCopyright) IOS_IoctlAsync returned error: %d\n"
+	.asciz "@@@ (DVDLowReadDvdPhysical) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowReadDvdDiscKey) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowReportKey) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowOffset) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowStopLaser) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowReadDiskBca) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowSerMeasControl) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowRequestDiscStatus) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowRequestRetryNumber) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowSetMaxRotation) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "(DVDLowRead): ERROR - destAddr buffer is not 32 byte aligned\n"
+	.balign 4
+	.asciz "@@@ (DVDLowRead) IOS_IoctlAsync returned error: %d\n"
+	.asciz "@@@ (DVDLowSeek) IOS_IoctlAsync returned error: %d\n"
+	.asciz "(DVDLowGetCoverReg): Synch functions can't be called in callbacks\n"
+	.balign 4
+	.asciz "@@@ (DVDLowGetCoverReg) IOS_Ioctl returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowPrepareCoverRegsiter) IOS_IoctlAsync returned error: %d\n"
+	.asciz "@@@ (DVDLowClearCoverInterrupt) IOS_IoctlAsync returned error: %d\n"
+	.balign 4
+	.asciz "@@@ (DVDLowEnableDvdVideo) IOS_IoctlAsync returned error: %d\n"
+glabel lbl_80182E08
+	.asciz "DEMOPuts.c"
+	.balign 4
+	.asciz "Ins. memory to load ROM font."
+	.balign 4
+	.asciz "ROM font is available in boot ROM ver 0.8 or later."
+	.asciz "%08x%08x%08x%08x%08x%08x\n"
+	.balign 4
+	.asciz "\nwidth %d\n"
+	.balign 4
+	.asciz "<< RVL_SDK - AI \trelease build: Sep  7 2006 18:26:03 (0x4200_60422) >>"
+	.balign 4
+	.asciz "<< RVL_SDK - AX \trelease build: Oct  1 2006 03:26:07 (0x4200_60422) >>"
+glabel lbl_80182F20
 	.long 0x00000000
 	.long 0x000002F8
 	.long 0x000002F8
@@ -23721,8 +21048,7 @@ lbl_80182F20:
 	.long 0x000009E2
 	.long 0x000009E2
 	.long 0x00000E97
-.global lbl_80182FA0
-lbl_80182FA0:
+glabel lbl_80182FA0
 	.long 0x7F637EC7
 	.long 0x7E2B7D91
 	.long 0x7CF77C5E
@@ -24731,8 +22057,7 @@ lbl_80182FA0:
 	.long 0x545D5468
 	.long 0x5472547C
 	.long 0x54875491
-.global lbl_80183F60
-lbl_80183F60:
+glabel lbl_80183F60
 	.long 0x00000000
 	.long 0x029F0F42
 	.long 0x029F0F4E
@@ -26781,8 +24106,7 @@ lbl_80183F60:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80185F60
-lbl_80185F60:
+glabel lbl_80185F60
 	.long 0x0000009D
 	.long 0x000001DF
 	.long 0x0000033D
@@ -26831,8 +24155,7 @@ lbl_80185F60:
 	.long 0xBF800000
 	.long 0x3F333333
 	.long 0x3E99999A
-.global lbl_80186020
-lbl_80186020:
+glabel lbl_80186020
 	.long 0x000006FD
 	.long 0x000007CF
 	.long 0x0000091D
@@ -26889,8 +24212,7 @@ lbl_80186020:
 	.long 0x0000002F
 	.long 0x00000049
 	.long 0x00000043
-.global lbl_80186100
-lbl_80186100:
+glabel lbl_80186100
 	.long 0x00000001
 	.long 0x00010001
 	.long 0x00010001
@@ -27631,168 +24953,41 @@ lbl_80186100:
 	.long 0xFFF3FFF4
 	.long 0xFFF4FFF4
 	.long 0xFFF4FFF5
-.global lbl_80186C90
-lbl_80186C90:
-	.long 0x3C3C2052
-	.long 0x564C5F53
-	.long 0x444B202D
-	.long 0x20445350
-	.long 0x20097265
-	.long 0x6C656173
-	.long 0x65206275
-	.long 0x696C643A
-	.long 0x20536570
-	.long 0x20323020
-	.long 0x32303036
-	.long 0x2032323A
-	.long 0x32353A35
-	.long 0x31202830
-	.long 0x78343230
-	.long 0x305F3630
-	.long 0x34323229
-	.long 0x203E3E00
-	.long 0x44535049
-	.long 0x6E697428
-	.long 0x293A2042
-	.long 0x75696C64
-	.long 0x20446174
-	.long 0x653A2025
-	.long 0x73202573
-	.long 0x0A000000
-	.long 0x53657020
-	.long 0x32302032
-	.long 0x30303600
-	.long 0x32323A32
-	.long 0x353A3531
+glabel lbl_80186C90
+	.asciz "<< RVL_SDK - DSP \trelease build: Sep 20 2006 22:25:51 (0x4200_60422) >>"
+	.asciz "DSPInit(): Build Date: %s %s\n"
+	.balign 4
+	.asciz "Sep 20 2006"
+	.asciz "22:25:51"
+glabel lbl_80186D10
+	.asciz "DSP is booting task: 0x%08X\n"
+	.balign 4
+	.asciz "__DSP_boot_task()  : IRAM MMEM ADDR: 0x%08X\n"
+	.balign 4
+	.asciz "__DSP_boot_task()  : IRAM DSP ADDR : 0x%08X\n"
+	.balign 4
+	.asciz "__DSP_boot_task()  : IRAM LENGTH   : 0x%08X\n"
+	.balign 4
+	.asciz "__DSP_boot_task()  : DRAM MMEM ADDR: 0x%08X\n"
+	.balign 4
+	.asciz "__DSP_boot_task()  : Start Vector  : 0x%08X\n"
+	.balign 4
+	.asciz "__DSP_add_task() : Added task    : 0x%08X\n"
 	.long 0x00000000
-.global lbl_80186D10
-lbl_80186D10:
-	.long 0x44535020
-	.long 0x69732062
-	.long 0x6F6F7469
-	.long 0x6E672074
-	.long 0x61736B3A
-	.long 0x20307825
-	.long 0x3038580A
-	.long 0x00000000
-	.long 0x5F5F4453
-	.long 0x505F626F
-	.long 0x6F745F74
-	.long 0x61736B28
-	.long 0x2920203A
-	.long 0x20495241
-	.long 0x4D204D4D
-	.long 0x454D2041
-	.long 0x4444523A
-	.long 0x20307825
-	.long 0x3038580A
-	.long 0x00000000
-	.long 0x5F5F4453
-	.long 0x505F626F
-	.long 0x6F745F74
-	.long 0x61736B28
-	.long 0x2920203A
-	.long 0x20495241
-	.long 0x4D204453
-	.long 0x50204144
-	.long 0x4452203A
-	.long 0x20307825
-	.long 0x3038580A
-	.long 0x00000000
-	.long 0x5F5F4453
-	.long 0x505F626F
-	.long 0x6F745F74
-	.long 0x61736B28
-	.long 0x2920203A
-	.long 0x20495241
-	.long 0x4D204C45
-	.long 0x4E475448
-	.long 0x2020203A
-	.long 0x20307825
-	.long 0x3038580A
-	.long 0x00000000
-	.long 0x5F5F4453
-	.long 0x505F626F
-	.long 0x6F745F74
-	.long 0x61736B28
-	.long 0x2920203A
-	.long 0x20445241
-	.long 0x4D204D4D
-	.long 0x454D2041
-	.long 0x4444523A
-	.long 0x20307825
-	.long 0x3038580A
-	.long 0x00000000
-	.long 0x5F5F4453
-	.long 0x505F626F
-	.long 0x6F745F74
-	.long 0x61736B28
-	.long 0x2920203A
-	.long 0x20537461
-	.long 0x72742056
-	.long 0x6563746F
-	.long 0x7220203A
-	.long 0x20307825
-	.long 0x3038580A
-	.long 0x00000000
-	.long 0x5F5F4453
-	.long 0x505F6164
-	.long 0x645F7461
-	.long 0x736B2829
-	.long 0x203A2041
-	.long 0x64646564
-	.long 0x20746173
-	.long 0x6B202020
-	.long 0x203A2030
-	.long 0x78253038
-	.long 0x580A0000
-	.long 0x00000000
-.global lbl_80186E50
-lbl_80186E50:
-	.long 0x2F746D70
-	.long 0x2F737973
-	.long 0x00000000
-.global lbl_80186E5C
-lbl_80186E5C:
-	.long 0x25732F25
-	.long 0x3038782F
-	.long 0x25730000
-.global lbl_80186E68
-lbl_80186E68:
-	.long 0x496C6C65
-	.long 0x67616C20
-	.long 0x4E414E44
-	.long 0x46696C65
-	.long 0x496E666F
-	.long 0x2E0A0000
-.global lbl_80186E80
-lbl_80186E80:
-	.long 0x3C3C2052
-	.long 0x564C5F53
-	.long 0x444B202D
-	.long 0x204E414E
-	.long 0x44200972
-	.long 0x656C6561
-	.long 0x73652062
-	.long 0x75696C64
-	.long 0x3A205365
-	.long 0x70203232
-	.long 0x20323030
-	.long 0x36203032
-	.long 0x3A30313A
-	.long 0x33362028
-	.long 0x30783432
-	.long 0x30305F36
-	.long 0x30343232
-	.long 0x29203E3E
+glabel lbl_80186E50
+	.asciz "/tmp/sys"
+glabel lbl_80186E5C
+	.asciz "%s/%08x/%s"
+glabel lbl_80186E68
+	.asciz "Illegal NANDFileInfo.\n"
+glabel lbl_80186E80
+	.asciz "<< RVL_SDK - NAND \trelease build: Sep 22 2006 02:01:36 (0x4200_60422) >>"
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-	.long 0x00000000
-.global lbl_80186EE0
-lbl_80186EE0:
+glabel lbl_80186EE0
 	.long 0x2F000000
 	.long 0x00000000
 	.long 0x00000000
@@ -27809,74 +25004,25 @@ lbl_80186EE0:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80186F20
-lbl_80186F20:
-	.long 0x2F736861
-	.long 0x72656432
+glabel lbl_80186F20
+	.asciz "/shared2"
+glabel lbl_80186F2C
+	.asciz "/shared2/"
+glabel lbl_80186F38
+	.asciz "CAUTION!  Unexpected error code [%d] was found.\n"
+	.balign 4
+	.asciz "Failed to set home directory.\n"
+	.balign 4
 	.long 0x00000000
-.global lbl_80186F2C
-lbl_80186F2C:
-	.long 0x2F736861
-	.long 0x72656432
-	.long 0x2F000000
-.global lbl_80186F38
-lbl_80186F38:
-	.long 0x43415554
-	.long 0x494F4E21
-	.long 0x2020556E
-	.long 0x65787065
-	.long 0x63746564
-	.long 0x20657272
-	.long 0x6F722063
-	.long 0x6F646520
-	.long 0x5B25645D
-	.long 0x20776173
-	.long 0x20666F75
-	.long 0x6E642E0A
-	.long 0x00000000
-	.long 0x4661696C
-	.long 0x65642074
-	.long 0x6F207365
-	.long 0x7420686F
-	.long 0x6D652064
-	.long 0x69726563
-	.long 0x746F7279
-	.long 0x2E0A0000
-	.long 0x00000000
-	.long 0x2F746974
-	.long 0x6C652F30
-	.long 0x30303130
-	.long 0x30303000
-	.long 0x2F746974
-	.long 0x6C652F30
-	.long 0x30303130
-	.long 0x30303100
-	.long 0x2F746974
-	.long 0x6C652F30
-	.long 0x30303130
-	.long 0x30303300
-	.long 0x2F746974
-	.long 0x6C652F30
-	.long 0x30303130
-	.long 0x30303400
-	.long 0x2F746974
-	.long 0x6C652F30
-	.long 0x30303130
-	.long 0x30303500
-	.long 0x2F746974
-	.long 0x6C652F30
-	.long 0x30303130
-	.long 0x30303600
-	.long 0x2F746974
-	.long 0x6C652F30
-	.long 0x30303130
-	.long 0x30303700
-	.long 0x2F736861
-	.long 0x72656432
-	.long 0x2F746974
-	.long 0x6C650000
-.global lbl_80187010
-lbl_80187010:
+	.asciz "/title/00010000"
+	.asciz "/title/00010001"
+	.asciz "/title/00010003"
+	.asciz "/title/00010004"
+	.asciz "/title/00010005"
+	.asciz "/title/00010006"
+	.asciz "/title/00010007"
+	.asciz "/shared2/title"
+glabel lbl_80187010
 	.long 0x8025AEC8
 	.long 0x8025AED0
 	.long 0x80186F90
@@ -27889,38 +25035,16 @@ lbl_80187010:
 	.long 0x80187000
 	.long 0x00000000
 	.long 0x00000000
-	.long 0x3C3C2052
-	.long 0x564C5F53
-	.long 0x444B202D
-	.long 0x20534320
-	.long 0x0972656C
-	.long 0x65617365
-	.long 0x20627569
-	.long 0x6C643A20
-	.long 0x53657020
-	.long 0x20372032
-	.long 0x30303620
-	.long 0x30373A32
-	.long 0x323A3036
-	.long 0x20283078
-	.long 0x34323030
-	.long 0x5F363034
-	.long 0x32322920
-	.long 0x3E3E0000
-	.long 0x49504C2E
-	.long 0x53414452
-	.long 0x00000000
-	.long 0x4E45542E
-	.long 0x43545043
-	.long 0x00000000
-	.long 0x4E45542E
-	.long 0x50524F46
-	.long 0x00000000
-	.long 0x4E45542E
-	.long 0x57435043
-	.long 0x00000000
-.global lbl_801870B8
-lbl_801870B8:
+	.asciz "<< RVL_SDK - SC \trelease build: Sep  7 2006 07:22:06 (0x4200_60422) >>"
+	.balign 4
+	.asciz "IPL.SADR"
+	.balign 4
+	.asciz "NET.CTPC"
+	.balign 4
+	.asciz "NET.PROF"
+	.balign 4
+	.asciz "NET.WCPC"
+glabel lbl_801870B8
 	.long 0x8025AEDC
 	.long 0x00000000
 	.long 0x8025AEE4
@@ -27977,8 +25101,7 @@ lbl_801870B8:
 	.long 0x0000001A
 	.long 0x8025AF98
 	.long 0x0000001B
-.global lbl_80187198
-lbl_80187198:
+glabel lbl_80187198
 	.long 0x800B3744
 	.long 0x800B3788
 	.long 0x800B37C8
@@ -27989,260 +25112,87 @@ lbl_80187198:
 	.long 0x800B38EC
 	.long 0x800B3928
 	.long 0x800B3930
-.global lbl_801871C0
-lbl_801871C0:
-	.long 0x004A504E
-	.long 0x00015553
-	.long 0x41000245
-	.long 0x55520003
-	.long 0x41555300
-	.long 0x04425241
-	.long 0x00055457
-	.long 0x4E000552
-	.long 0x4F430006
-	.long 0x4B4F5200
-	.long 0x07484B47
-	.long 0x00084153
-	.long 0x4900094C
-	.long 0x544E000A
-	.long 0x53414600
-	.long 0xFF000000
+glabel lbl_801871C0
+	.asciz ""
+	.asciz "JPN"
+	.byte 1
+	.asciz "USA"
+	.byte 2
+	.asciz "EUR"
+	.byte 3
+	.asciz "AUS"
+	.byte 4
+	.asciz "BRA"
+	.byte 5
+	.asciz "TWN"
+	.byte 5
+	.asciz "ROC"
+	.byte 6
+	.asciz "KOR"
+	.byte 7
+	.asciz "HKG"
+	.byte 8
+	.asciz "ASI"
+	.asciz "\tLTN"
+	.asciz "\nSAF"
+	.byte 0xff
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80187208
-lbl_80187208:
-	.long 0x41524349
-	.long 0x6E697448
-	.long 0x616E646C
-	.long 0x653A2062
-	.long 0x61642061
-	.long 0x72636869
-	.long 0x76652066
-	.long 0x6F726D61
-	.long 0x74000000
-.global lbl_8018722C
-lbl_8018722C:
-	.long 0x5761726E
-	.long 0x696E673A
-	.long 0x20415243
-	.long 0x4F70656E
-	.long 0x28293A20
-	.long 0x66696C65
-	.long 0x20272573
-	.long 0x27207761
-	.long 0x73206E6F
-	.long 0x7420666F
-	.long 0x756E6420
-	.long 0x756E6465
-	.long 0x72202573
-	.long 0x20696E20
-	.long 0x74686520
-	.long 0x61726368
-	.long 0x6976652E
-	.long 0x0A000000
+glabel lbl_80187208
+	.asciz "ARCInitHandle: bad archive format"
+glabel lbl_8018722C
+	.asciz "Warning: ARCOpen(): file '%s' was not found under %s in the archive.\n"
 	.long 0x00000000
-.global lbl_80187278
-lbl_80187278:
-	.long 0x41505020
-	.long 0x4552524F
-	.long 0x523A204E
-	.long 0x6F742065
-	.long 0x6E6F7567
-	.long 0x68204950
-	.long 0x43206172
-	.long 0x656E610A
+glabel lbl_80187278
+	.asciz "APP ERROR: Not enough IPC arena\n"
+	.balign 4
 	.long 0x00000000
-	.long 0x00000000
-	.long 0x3C3C2052
-	.long 0x564C5F53
-	.long 0x444B202D
-	.long 0x20504144
-	.long 0x20097265
-	.long 0x6C656173
-	.long 0x65206275
-	.long 0x696C643A
-	.long 0x20536570
-	.long 0x20203720
-	.long 0x32303036
-	.long 0x2030373A
-	.long 0x32303A35
-	.long 0x30202830
-	.long 0x78343230
-	.long 0x305F3630
-	.long 0x34323229
-	.long 0x203E3E00
-.global lbl_801872E8
-lbl_801872E8:
+	.asciz "<< RVL_SDK - PAD \trelease build: Sep  7 2006 07:20:50 (0x4200_60422) >>"
+glabel lbl_801872E8
 	.long 0x800B96B4
 	.long 0x0000007F
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_801872F8
-lbl_801872F8:
-	.long 0x3C3C2052
-	.long 0x564C5F53
-	.long 0x444B202D
-	.long 0x20575041
-	.long 0x44200972
-	.long 0x656C6561
-	.long 0x73652062
-	.long 0x75696C64
-	.long 0x3A204F63
-	.long 0x74203136
-	.long 0x20323030
-	.long 0x36203136
-	.long 0x3A35333A
-	.long 0x32312028
-	.long 0x30783432
-	.long 0x30305F36
-	.long 0x30343232
-	.long 0x29203E3E
+glabel lbl_801872F8
+	.asciz "<< RVL_SDK - WPAD \trelease build: Oct 16 2006 16:53:21 (0x4200_60422) >>"
 	.long 0x00000000
-	.long 0x00000000
-.global lbl_80187348
-lbl_80187348:
+glabel lbl_80187348
 	.long 0x800B9838
 	.long 0x0000007F
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80187358
-lbl_80187358:
-	.long 0x57694669
-	.long 0x20757365
-	.long 0x73206368
-	.long 0x616E6E65
-	.long 0x6C203D20
-	.long 0x25640A00
-.global lbl_80187370
-lbl_80187370:
-	.long 0x57504144
-	.long 0x496E6974
-	.long 0x28290A00
-.global lbl_8018737C
-lbl_8018737C:
-	.long 0x203D3D3E
-	.long 0x74686973
-	.long 0x20657272
-	.long 0x6F72206D
-	.long 0x65616E73
-	.long 0x20746861
-	.long 0x74207468
-	.long 0x65206669
-	.long 0x726D7761
-	.long 0x72652069
-	.long 0x7320666F
-	.long 0x72204E44
-	.long 0x45562025
-	.long 0x730A0000
-.global lbl_801873B4
-lbl_801873B4:
-	.long 0x322E3120
-	.long 0x6F72206C
-	.long 0x61746572
+glabel lbl_80187358
+	.asciz "WiFi uses channel = %d\n"
+glabel lbl_80187370
+	.asciz "WPADInit()\n"
+glabel lbl_8018737C
+	.asciz " ==>this error means that the firmware is for NDEV %s\n"
+glabel lbl_801873B4
+	.asciz "2.1 or later"
+	.balign 4
+	.asciz "connection is opened\n"
+	.balign 4
+	.asciz "connection is closed\n"
+	.balign 4
 	.long 0x00000000
-	.long 0x636F6E6E
-	.long 0x65637469
-	.long 0x6F6E2069
-	.long 0x73206F70
-	.long 0x656E6564
-	.long 0x0A000000
-	.long 0x636F6E6E
-	.long 0x65637469
-	.long 0x6F6E2069
-	.long 0x7320636C
-	.long 0x6F736564
-	.long 0x0A000000
+	.asciz "clean up command queue\n"
+	.asciz "WARNING: disconnection for device handle not assigned to channel.\n"
 	.long 0x00000000
-	.long 0x636C6561
-	.long 0x6E207570
-	.long 0x20636F6D
-	.long 0x6D616E64
-	.long 0x20717565
-	.long 0x75650A00
-	.long 0x5741524E
-	.long 0x494E473A
-	.long 0x20646973
-	.long 0x636F6E6E
-	.long 0x65637469
-	.long 0x6F6E2066
-	.long 0x6F722064
-	.long 0x65766963
-	.long 0x65206861
-	.long 0x6E646C65
-	.long 0x206E6F74
-	.long 0x20617373
-	.long 0x69676E65
-	.long 0x6420746F
-	.long 0x20636861
-	.long 0x6E6E656C
-	.long 0x2E0A0000
-	.long 0x00000000
-.global lbl_80187458
-lbl_80187458:
-	.long 0x48494420
-	.long 0x50617273
-	.long 0x65722072
-	.long 0x65706F72
-	.long 0x74733A20
-	.long 0x25640A00
-.global lbl_80187470
-lbl_80187470:
-	.long 0x57504144
-	.long 0x69526563
-	.long 0x7643616C
-	.long 0x6C626163
-	.long 0x6B28293A
-	.long 0x20556E6B
-	.long 0x6E6F776E
-	.long 0x20636861
-	.long 0x6E6E656C
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x57504144
-	.long 0x53657453
-	.long 0x616D706C
-	.long 0x696E6743
-	.long 0x616C6C62
-	.long 0x61636B28
-	.long 0x290A0000
-.global lbl_801874B8
-lbl_801874B8:
-	.long 0x57504144
-	.long 0x53657443
-	.long 0x6F6E6E65
-	.long 0x63744361
-	.long 0x6C6C6261
-	.long 0x636B2829
-	.long 0x0A000000
-.global lbl_801874D4
-lbl_801874D4:
-	.long 0x57504144
-	.long 0x53657445
-	.long 0x7874656E
-	.long 0x73696F6E
-	.long 0x43616C6C
-	.long 0x6261636B
-	.long 0x28290A00
-.global lbl_801874F0
-lbl_801874F0:
-	.long 0x57504144
-	.long 0x53657441
-	.long 0x75746F53
-	.long 0x616D706C
-	.long 0x696E6742
-	.long 0x75662829
-	.long 0x0A000000
-.global lbl_8018750C
-lbl_8018750C:
-	.long 0x68616E64
-	.long 0x6C65203D
-	.long 0x2025642C
-	.long 0x20726570
-	.long 0x6964203D
-	.long 0x20253032
-	.long 0x780A0000
-.global lbl_80187528
-lbl_80187528:
+glabel lbl_80187458
+	.asciz "HID Parser reports: %d\n"
+glabel lbl_80187470
+	.asciz "WPADiRecvCallback(): Unknown channel %d\n"
+	.balign 4
+	.asciz "WPADSetSamplingCallback()\n"
+glabel lbl_801874B8
+	.asciz "WPADSetConnectCallback()\n"
+glabel lbl_801874D4
+	.asciz "WPADSetExtensionCallback()\n"
+glabel lbl_801874F0
+	.asciz "WPADSetAutoSamplingBuf()\n"
+glabel lbl_8018750C
+	.asciz "handle = %d, repid = %02x\n"
+glabel lbl_80187528
 	.long 0x800BFC90
 	.long 0x800BFC9C
 	.long 0x800BFCA8
@@ -28253,8 +25203,7 @@ lbl_80187528:
 	.long 0x800BFCE4
 	.long 0x800BFCF0
 	.long 0x800BFCFC
-.global lbl_80187550
-lbl_80187550:
+glabel lbl_80187550
 	.long func_800C11F0
 	.long 0x800C1638
 	.long 0x800C19B4
@@ -28287,262 +25236,71 @@ lbl_80187550:
 	.long 0x800C3FAC
 	.long 0x800C3FB0
 	.long 0x800C45A0
-.global lbl_801875D0
-lbl_801875D0:
+glabel lbl_801875D0
 	.long 0xFFFFFFFF
 	.long 0xFFFFFFFF
 	.long 0xFFFFFFFF
 	.long 0xFFFFFFFF
 	.long 0xFFFFFFFF
 	.long 0xFF000000
-	.long 0x44706420
-	.long 0x53657474
-	.long 0x696E6720
-	.long 0x6973206F
-	.long 0x6B2E0A00
-	.long 0x00000000
-	.long 0x44706420
-	.long 0x53657474
-	.long 0x696E6720
-	.long 0x69732062
-	.long 0x726F6B65
-	.long 0x6E2E0A00
-	.long 0x4F6C6420
-	.long 0x4669726D
-	.long 0x77617265
-	.long 0x20757365
-	.long 0x73206465
-	.long 0x6661756C
-	.long 0x74207661
-	.long 0x6C756573
-	.long 0x20626563
-	.long 0x61757365
-	.long 0x20697420
-	.long 0x68617320
-	.long 0x6E6F2044
-	.long 0x70642053
-	.long 0x65747469
-	.long 0x6E672E0A
-	.long 0x00000000
-	.long 0x41636320
-	.long 0x6973206F
-	.long 0x6B2E0A00
-	.long 0x41636320
-	.long 0x69732062
-	.long 0x726F6B65
-	.long 0x6E2E0A00
-	.long 0x30473A20
-	.long 0x20616363
-	.long 0x58203D20
-	.long 0x25642C20
-	.long 0x20616363
-	.long 0x59203D20
-	.long 0x25642C20
-	.long 0x20616363
-	.long 0x5A203D20
-	.long 0x25640A00
-	.long 0x31473A20
-	.long 0x20616363
-	.long 0x58203D20
-	.long 0x25642C20
-	.long 0x20616363
-	.long 0x59203D20
-	.long 0x25642C20
-	.long 0x20616363
-	.long 0x5A203D20
-	.long 0x25640A00
-	.long 0x566F6C75
-	.long 0x6D653A20
-	.long 0x25642C20
-	.long 0x20204D6F
-	.long 0x746F723A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x63686563
-	.long 0x6B207375
-	.long 0x6D206572
-	.long 0x726F722E
-	.long 0x0A000000
-	.long 0x30473A20
-	.long 0x20667361
-	.long 0x63635820
-	.long 0x3D202564
-	.long 0x2C202066
-	.long 0x73616363
-	.long 0x59203D20
-	.long 0x25642C20
-	.long 0x20667361
-	.long 0x63635A20
-	.long 0x3D202564
-	.long 0x0A000000
-	.long 0x31473A20
-	.long 0x20667361
-	.long 0x63635820
-	.long 0x3D202564
-	.long 0x2C202066
-	.long 0x73616363
-	.long 0x59203D20
-	.long 0x25642C20
-	.long 0x20667361
-	.long 0x63635A20
-	.long 0x3D202564
-	.long 0x0A000000
-	.long 0x46533A20
-	.long 0x2058203D
-	.long 0x2025642C
-	.long 0x20205820
-	.long 0x6D617820
-	.long 0x3D202564
-	.long 0x2C202058
-	.long 0x206D696E
-	.long 0x203D2025
-	.long 0x640A0000
-	.long 0x46533A20
-	.long 0x2059203D
-	.long 0x2025642C
-	.long 0x20205920
-	.long 0x6D617820
-	.long 0x3D202564
-	.long 0x2C202059
-	.long 0x206D696E
-	.long 0x203D2025
-	.long 0x640A0000
-	.long 0x434C3A20
-	.long 0x2058203D
-	.long 0x2025642C
-	.long 0x20205820
-	.long 0x6D617820
-	.long 0x3D202564
-	.long 0x2C202058
-	.long 0x206D696E
-	.long 0x203D2025
-	.long 0x640A0000
-	.long 0x434C3A20
-	.long 0x2059203D
-	.long 0x2025642C
-	.long 0x20205920
-	.long 0x6D617820
-	.long 0x3D202564
-	.long 0x2C202059
-	.long 0x206D696E
-	.long 0x203D2025
-	.long 0x640A0000
-	.long 0x43523A20
-	.long 0x2058203D
-	.long 0x2025642C
-	.long 0x20205820
-	.long 0x6D617820
-	.long 0x3D202564
-	.long 0x2C202058
-	.long 0x206D696E
-	.long 0x203D2025
-	.long 0x640A0000
-	.long 0x43523A20
-	.long 0x2059203D
-	.long 0x2025642C
-	.long 0x20205920
-	.long 0x6D617820
-	.long 0x3D202564
-	.long 0x2C202059
-	.long 0x206D696E
-	.long 0x203D2025
-	.long 0x640A0000
-	.long 0x4C523A20
-	.long 0x204C203D
-	.long 0x2025642C
-	.long 0x20205220
-	.long 0x3D202564
-	.long 0x0A000000
-.global lbl_80187860
-lbl_80187860:
-	.long 0x74797065
-	.long 0x203A2025
-	.long 0x640A0000
-.global lbl_8018786C
-lbl_8018786C:
-	.long 0x6D6F6465
-	.long 0x203A2025
-	.long 0x640A0000
-	.long 0x52656365
-	.long 0x69766564
-	.long 0x20726570
-	.long 0x6F727420
-	.long 0x32300A00
-	.long 0x696E6974
-	.long 0x69616C69
-	.long 0x7A652061
-	.long 0x74746163
-	.long 0x686D656E
-	.long 0x740A0000
-	.long 0x616C7265
-	.long 0x61647920
-	.long 0x696E6974
-	.long 0x69616C69
-	.long 0x7A65640A
-	.long 0x00000000
-	.long 0x616C7265
-	.long 0x61647920
-	.long 0x64697363
-	.long 0x6F6E6E65
-	.long 0x63746564
-	.long 0x0A000000
-	.long 0x72656164
-	.long 0x20657272
-	.long 0x6F722068
-	.long 0x61707065
-	.long 0x6E73210A
-	.long 0x00000000
-	.long 0x62617365
-	.long 0x20616464
-	.long 0x723A2025
-	.long 0x3038780A
-	.long 0x00000000
-	.long 0x6C656E67
-	.long 0x74682020
-	.long 0x203A2025
-	.long 0x640A0000
-	.long 0x72656365
-	.long 0x69766564
-	.long 0x20646174
-	.long 0x61206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x72616E67
-	.long 0x65210A00
-	.long 0x52656365
-	.long 0x69766564
-	.long 0x2061636B
-	.long 0x210A0000
-	.long 0x61636B20
-	.long 0x2D2D3E20
-	.long 0x7265706F
-	.long 0x72742049
-	.long 0x44203D20
-	.long 0x25303278
-	.long 0x2C206572
-	.long 0x726F7220
-	.long 0x636F6465
-	.long 0x203D2025
-	.long 0x640A0000
-	.long 0x61636B20
-	.long 0x6572726F
-	.long 0x72202D2D
-	.long 0x3E207265
-	.long 0x706F7274
-	.long 0x20494420
-	.long 0x3D202564
-	.long 0x2C206572
-	.long 0x726F7220
-	.long 0x636F6465
-	.long 0x203D2025
-	.long 0x640A0000
-	.long 0x696E7661
-	.long 0x6C696420
-	.long 0x61636B21
-	.long 0x0A000000
-	.long 0x00000000
-.global lbl_801879B0
-lbl_801879B0:
+	.asciz "Dpd Setting is ok.\n"
+	.balign 8
+	.asciz "Dpd Setting is broken.\n"
+	.asciz "Old Firmware uses default values because it has no Dpd Setting.\n"
+	.balign 4
+	.asciz "Acc is ok.\n"
+	.asciz "Acc is broken.\n"
+	.asciz "0G:  accX = %d,  accY = %d,  accZ = %d\n"
+	.asciz "1G:  accX = %d,  accY = %d,  accZ = %d\n"
+	.asciz "Volume: %d,   Motor: %d\n"
+	.balign 4
+	.asciz "check sum error.\n"
+	.balign 4
+	.asciz "0G:  fsaccX = %d,  fsaccY = %d,  fsaccZ = %d\n"
+	.balign 4
+	.asciz "1G:  fsaccX = %d,  fsaccY = %d,  fsaccZ = %d\n"
+	.balign 4
+	.asciz "FS:  X = %d,  X max = %d,  X min = %d\n"
+	.balign 4
+	.asciz "FS:  Y = %d,  Y max = %d,  Y min = %d\n"
+	.balign 4
+	.asciz "CL:  X = %d,  X max = %d,  X min = %d\n"
+	.balign 4
+	.asciz "CL:  Y = %d,  Y max = %d,  Y min = %d\n"
+	.balign 4
+	.asciz "CR:  X = %d,  X max = %d,  X min = %d\n"
+	.balign 4
+	.asciz "CR:  Y = %d,  Y max = %d,  Y min = %d\n"
+	.balign 4
+	.asciz "LR:  L = %d,  R = %d\n"
+glabel lbl_80187860
+	.asciz "type : %d\n"
+glabel lbl_8018786C
+	.asciz "mode : %d\n"
+	.balign 4
+	.asciz "Received report 20\n"
+	.asciz "initialize attachment\n"
+	.balign 4
+	.asciz "already initialized\n"
+	.balign 4
+	.asciz "already disconnected\n"
+	.balign 4
+	.asciz "read error happens!\n"
+	.balign 4
+	.asciz "base addr: %08x\n"
+	.balign 4
+	.asciz "length   : %d\n"
+	.balign 4
+	.asciz "received data is out of range!\n"
+	.asciz "Received ack!\n"
+	.balign 4
+	.asciz "ack --> report ID = %02x, error code = %d\n"
+	.balign 4
+	.asciz "ack error --> report ID = %d, error code = %d\n"
+	.balign 4
+	.asciz "invalid ack!\n"
+	.balign 8
+glabel lbl_801879B0
 	.long 0xA877A6E0
 	.long 0xF7435A35
 	.long 0x85E27297
@@ -28555,8 +25313,7 @@ lbl_801879B0:
 	.long 0x307E900E
 	.long 0x850A0000
 	.long 0x00000000
-.global lbl_801879E0
-lbl_801879E0:
+glabel lbl_801879E0
 	.long 0x70510386
 	.long 0x400D4FEB
 	.long 0x3ECCD187
@@ -29153,376 +25910,96 @@ lbl_801879E0:
 	.long 0x29203E3E
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80188330
-lbl_80188330:
-	.long 0x55534220
-	.long 0x4552523A
-	.long 0x20000000
-	.long 0x4C696272
-	.long 0x61727920
-	.long 0x69732061
-	.long 0x6C726561
-	.long 0x64792069
-	.long 0x6E697469
-	.long 0x616C697A
-	.long 0x65642E20
-	.long 0x48656170
-	.long 0x20496420
-	.long 0x3D202564
-	.long 0x0A000000
-	.long 0x69757362
-	.long 0x2073697A
-	.long 0x653A2025
-	.long 0x64206C6F
-	.long 0x3A202578
-	.long 0x2068693A
-	.long 0x2025780A
+glabel lbl_80188330
+	.asciz "USB ERR: "
+	.balign 4
+	.asciz "Library is already initialized. Heap Id = %d\n"
+	.balign 4
+	.asciz "iusb size: %d lo: %x hi: %x\n"
+	.balign 4
+	.asciz "Not enough IPC arena\n"
+	.balign 4
+	.asciz "Not enough heaps\n"
+	.balign 4
+	.asciz "_intrBlkCtrlCb returned: %d\n"
+	.balign 4
+	.asciz "_intrBlkCtrlCb: nclean = %d\n"
+	.balign 4
+	.asciz "__intBlkCtrlCb: got invalid nclean\n"
+	.balign 8
+	.asciz "Freeing clean[%d] = %x\n"
+	.asciz "iosFree(%d, 0x%x) failed: %d\n"
+	.balign 4
+	.asciz "cb = %x cbArg = %x\n"
+	.asciz "iosAllocAligned(%d, %u) failed: %d\n"
+	.asciz "OpenDeviceIds: Not enough memory\n"
+	.balign 4
+	.asciz "/dev/usb/%s/%x/%x"
+	.balign 4
+	.asciz "OpenDevice - %s\n"
+	.balign 4
+	.asciz "OpenDevice returned: %d\n"
+	.balign 4
+	.asciz "OpenDevice\n"
+	.asciz "OpenDeviceIdsAsync: Not enough memory\n"
+	.balign 4
+	.asciz "CloseDevice\n"
+	.balign 4
+	.asciz "CloseDevice returned: %d\n"
+	.balign 4
+	.asciz "CloseDeviceAsync: Not enough memory\n"
+	.balign 4
+	.asciz "openDevice: Not enough memory\n"
+	.balign 4
+	.asciz "getDeviceList: Not enough memory\n"
+	.balign 4
+	.asciz "__IntrBlkMsgInt: Not enough memory\n"
+	.asciz "intr/blk ioctl returned: %d\n"
+	.balign 4
+	.asciz "IntBlkMsgInt (async): Not enough memory\n"
+	.balign 4
+	.asciz "intrblkmsg: cb = 0x%x cbArg = 0x%x\n"
+	.asciz "ctrlmsg: bad data buffer\n"
+	.balign 4
+	.asciz "Ctrl Msg: Not enough memory\n"
+	.balign 4
+	.asciz "CtrlMsgInt (async): Not enough memory\n"
+	.balign 4
+	.asciz "ctrlmsgint: cb = 0x%x cbArg = 0x%x\n"
+	.asciz "Ctrl Msg async returned: %d\n"
+	.balign 4
+	.asciz "GetStrCb returned: %d\n"
+	.balign 4
+	.asciz "GetStrCb: buf = 0x%x buflen = %u\n"
+	.balign 4
+	.asciz "Failed to convert buffer from unicode 2 ascii\n"
+	.balign 4
+	.asciz "calling cb 0x%x with arg 0x%x\n"
+	.balign 4
+	.asciz "Failed __CtrlMsg: %d"
+	.balign 4
+	.asciz "Failed to convert unicode 2 ascii\n"
+	.balign 4
+	.asciz "GetStr - _GetStrCb\n"
+	.asciz " GetAsciiStrAsync: Not enough memory\n"
+	.balign 4
 	.long 0x00000000
-	.long 0x4E6F7420
-	.long 0x656E6F75
-	.long 0x67682049
-	.long 0x50432061
-	.long 0x72656E61
-	.long 0x0A000000
-	.long 0x4E6F7420
-	.long 0x656E6F75
-	.long 0x67682068
-	.long 0x65617073
-	.long 0x0A000000
-	.long 0x5F696E74
-	.long 0x72426C6B
-	.long 0x4374726C
-	.long 0x43622072
-	.long 0x65747572
-	.long 0x6E65643A
-	.long 0x2025640A
+	.asciz "__CtrlMsgInt failed %d\n"
+	.asciz "GetDescrCb returned: %d\n"
+	.balign 4
+	.asciz "GetDevDescr\n"
+	.balign 4
 	.long 0x00000000
-	.long 0x5F696E74
-	.long 0x72426C6B
-	.long 0x4374726C
-	.long 0x43623A20
-	.long 0x6E636C65
-	.long 0x616E203D
-	.long 0x2025640A
+	.asciz "GetDevDescr: Not enough memory\n"
+	.asciz "GetDevDescr: %d\n"
+	.balign 4
+	.asciz "GetDevDescr - _GetDescrCb\n"
+	.balign 4
+	.asciz "GetDevDescrAsync: Not enough memory\n"
+	.balign 4
+	.asciz "DeviceRemovalNotifyAsync\n"
 	.long 0x00000000
-	.long 0x5F5F696E
-	.long 0x74426C6B
-	.long 0x4374726C
-	.long 0x43623A20
-	.long 0x676F7420
-	.long 0x696E7661
-	.long 0x6C696420
-	.long 0x6E636C65
-	.long 0x616E0A00
-	.long 0x00000000
-	.long 0x46726565
-	.long 0x696E6720
-	.long 0x636C6561
-	.long 0x6E5B2564
-	.long 0x5D203D20
-	.long 0x25780A00
-	.long 0x696F7346
-	.long 0x72656528
-	.long 0x25642C20
-	.long 0x30782578
-	.long 0x29206661
-	.long 0x696C6564
-	.long 0x3A202564
-	.long 0x0A000000
-	.long 0x6362203D
-	.long 0x20257820
-	.long 0x63624172
-	.long 0x67203D20
-	.long 0x25780A00
-	.long 0x696F7341
-	.long 0x6C6C6F63
-	.long 0x416C6967
-	.long 0x6E656428
-	.long 0x25642C20
-	.long 0x25752920
-	.long 0x6661696C
-	.long 0x65643A20
-	.long 0x25640A00
-	.long 0x4F70656E
-	.long 0x44657669
-	.long 0x63654964
-	.long 0x733A204E
-	.long 0x6F742065
-	.long 0x6E6F7567
-	.long 0x68206D65
-	.long 0x6D6F7279
-	.long 0x0A000000
-	.long 0x2F646576
-	.long 0x2F757362
-	.long 0x2F25732F
-	.long 0x25782F25
-	.long 0x78000000
-	.long 0x4F70656E
-	.long 0x44657669
-	.long 0x6365202D
-	.long 0x2025730A
-	.long 0x00000000
-	.long 0x4F70656E
-	.long 0x44657669
-	.long 0x63652072
-	.long 0x65747572
-	.long 0x6E65643A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x4F70656E
-	.long 0x44657669
-	.long 0x63650A00
-	.long 0x4F70656E
-	.long 0x44657669
-	.long 0x63654964
-	.long 0x73417379
-	.long 0x6E633A20
-	.long 0x4E6F7420
-	.long 0x656E6F75
-	.long 0x6768206D
-	.long 0x656D6F72
-	.long 0x790A0000
-	.long 0x436C6F73
-	.long 0x65446576
-	.long 0x6963650A
-	.long 0x00000000
-	.long 0x436C6F73
-	.long 0x65446576
-	.long 0x69636520
-	.long 0x72657475
-	.long 0x726E6564
-	.long 0x3A202564
-	.long 0x0A000000
-	.long 0x436C6F73
-	.long 0x65446576
-	.long 0x69636541
-	.long 0x73796E63
-	.long 0x3A204E6F
-	.long 0x7420656E
-	.long 0x6F756768
-	.long 0x206D656D
-	.long 0x6F72790A
-	.long 0x00000000
-	.long 0x6F70656E
-	.long 0x44657669
-	.long 0x63653A20
-	.long 0x4E6F7420
-	.long 0x656E6F75
-	.long 0x6768206D
-	.long 0x656D6F72
-	.long 0x790A0000
-	.long 0x67657444
-	.long 0x65766963
-	.long 0x654C6973
-	.long 0x743A204E
-	.long 0x6F742065
-	.long 0x6E6F7567
-	.long 0x68206D65
-	.long 0x6D6F7279
-	.long 0x0A000000
-	.long 0x5F5F496E
-	.long 0x7472426C
-	.long 0x6B4D7367
-	.long 0x496E743A
-	.long 0x204E6F74
-	.long 0x20656E6F
-	.long 0x75676820
-	.long 0x6D656D6F
-	.long 0x72790A00
-	.long 0x696E7472
-	.long 0x2F626C6B
-	.long 0x20696F63
-	.long 0x746C2072
-	.long 0x65747572
-	.long 0x6E65643A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x496E7442
-	.long 0x6C6B4D73
-	.long 0x67496E74
-	.long 0x20286173
-	.long 0x796E6329
-	.long 0x3A204E6F
-	.long 0x7420656E
-	.long 0x6F756768
-	.long 0x206D656D
-	.long 0x6F72790A
-	.long 0x00000000
-	.long 0x696E7472
-	.long 0x626C6B6D
-	.long 0x73673A20
-	.long 0x6362203D
-	.long 0x20307825
-	.long 0x78206362
-	.long 0x41726720
-	.long 0x3D203078
-	.long 0x25780A00
-	.long 0x6374726C
-	.long 0x6D73673A
-	.long 0x20626164
-	.long 0x20646174
-	.long 0x61206275
-	.long 0x66666572
-	.long 0x0A000000
-	.long 0x4374726C
-	.long 0x204D7367
-	.long 0x3A204E6F
-	.long 0x7420656E
-	.long 0x6F756768
-	.long 0x206D656D
-	.long 0x6F72790A
-	.long 0x00000000
-	.long 0x4374726C
-	.long 0x4D736749
-	.long 0x6E742028
-	.long 0x6173796E
-	.long 0x63293A20
-	.long 0x4E6F7420
-	.long 0x656E6F75
-	.long 0x6768206D
-	.long 0x656D6F72
-	.long 0x790A0000
-	.long 0x6374726C
-	.long 0x6D736769
-	.long 0x6E743A20
-	.long 0x6362203D
-	.long 0x20307825
-	.long 0x78206362
-	.long 0x41726720
-	.long 0x3D203078
-	.long 0x25780A00
-	.long 0x4374726C
-	.long 0x204D7367
-	.long 0x20617379
-	.long 0x6E632072
-	.long 0x65747572
-	.long 0x6E65643A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x47657453
-	.long 0x74724362
-	.long 0x20726574
-	.long 0x75726E65
-	.long 0x643A2025
-	.long 0x640A0000
-	.long 0x47657453
-	.long 0x74724362
-	.long 0x3A206275
-	.long 0x66203D20
-	.long 0x30782578
-	.long 0x20627566
-	.long 0x6C656E20
-	.long 0x3D202575
-	.long 0x0A000000
-	.long 0x4661696C
-	.long 0x65642074
-	.long 0x6F20636F
-	.long 0x6E766572
-	.long 0x74206275
-	.long 0x66666572
-	.long 0x2066726F
-	.long 0x6D20756E
-	.long 0x69636F64
-	.long 0x65203220
-	.long 0x61736369
-	.long 0x690A0000
-	.long 0x63616C6C
-	.long 0x696E6720
-	.long 0x63622030
-	.long 0x78257820
-	.long 0x77697468
-	.long 0x20617267
-	.long 0x20307825
-	.long 0x780A0000
-	.long 0x4661696C
-	.long 0x6564205F
-	.long 0x5F437472
-	.long 0x6C4D7367
-	.long 0x3A202564
-	.long 0x00000000
-	.long 0x4661696C
-	.long 0x65642074
-	.long 0x6F20636F
-	.long 0x6E766572
-	.long 0x7420756E
-	.long 0x69636F64
-	.long 0x65203220
-	.long 0x61736369
-	.long 0x690A0000
-	.long 0x47657453
-	.long 0x7472202D
-	.long 0x205F4765
-	.long 0x74537472
-	.long 0x43620A00
-	.long 0x20476574
-	.long 0x41736369
-	.long 0x69537472
-	.long 0x4173796E
-	.long 0x633A204E
-	.long 0x6F742065
-	.long 0x6E6F7567
-	.long 0x68206D65
-	.long 0x6D6F7279
-	.long 0x0A000000
-	.long 0x00000000
-	.long 0x5F5F4374
-	.long 0x726C4D73
-	.long 0x67496E74
-	.long 0x20666169
-	.long 0x6C656420
-	.long 0x25640A00
-	.long 0x47657444
-	.long 0x65736372
-	.long 0x43622072
-	.long 0x65747572
-	.long 0x6E65643A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x47657444
-	.long 0x65764465
-	.long 0x7363720A
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x47657444
-	.long 0x65764465
-	.long 0x7363723A
-	.long 0x204E6F74
-	.long 0x20656E6F
-	.long 0x75676820
-	.long 0x6D656D6F
-	.long 0x72790A00
-	.long 0x47657444
-	.long 0x65764465
-	.long 0x7363723A
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x47657444
-	.long 0x65764465
-	.long 0x73637220
-	.long 0x2D205F47
-	.long 0x65744465
-	.long 0x73637243
-	.long 0x620A0000
-	.long 0x47657444
-	.long 0x65764465
-	.long 0x73637241
-	.long 0x73796E63
-	.long 0x3A204E6F
-	.long 0x7420656E
-	.long 0x6F756768
-	.long 0x206D656D
-	.long 0x6F72790A
-	.long 0x00000000
-	.long 0x44657669
-	.long 0x63655265
-	.long 0x6D6F7661
-	.long 0x6C4E6F74
-	.long 0x69667941
-	.long 0x73796E63
-	.long 0x0A000000
-	.long 0x00000000
-.global lbl_801888E8
-lbl_801888E8:
+glabel lbl_801888E8
 	.long 0x05010905
 	.long 0xA1018510
 	.long 0x150026FF
@@ -29578,134 +26055,33 @@ lbl_801888E8:
 	.long 0x853F9515
 	.long 0x09018100
 	.long 0xC0000000
-.global lbl_801889C4
-lbl_801889C4:
-	.long 0x4170705F
-	.long 0x4D454D61
-	.long 0x6C6C6F63
-	.long 0x0A000000
-.global lbl_801889D4
-lbl_801889D4:
-	.long 0x4170705F
-	.long 0x4D454D66
-	.long 0x7265650A
+glabel lbl_801889C4
+	.asciz "App_MEMalloc\n"
+glabel lbl_801889D4
+	.asciz "App_MEMfree\n"
+glabel lbl_801889E4
+	.asciz "SyncFlushCallback() : %d, Sync: %d\n"
+glabel lbl_80188A08
+	.asciz "DeleteFlushCallback() : %d, Delete: %d\n"
+glabel lbl_80188A30
+	.asciz "ShutFlushCallback() : %d, Shutdown: %d\n"
+glabel lbl_80188A58
+	.asciz "%d devices is stored into SC.\n"
+glabel lbl_80188A78
+	.asciz "Pairing Done\n"
+	.balign 4
+	.asciz "Nintendo RVL-CNT"
+	.balign 4
+	.asciz "write stored link key\n"
+	.balign 4
+	.asciz "addr : %02x:%02x:%02x:%02x:%02x:%02x\n"
+	.balign 4
 	.long 0x00000000
-.global lbl_801889E4
-lbl_801889E4:
-	.long 0x53796E63
-	.long 0x466C7573
-	.long 0x6843616C
-	.long 0x6C626163
-	.long 0x6B282920
-	.long 0x3A202564
-	.long 0x2C205379
-	.long 0x6E633A20
-	.long 0x25640A00
-.global lbl_80188A08
-lbl_80188A08:
-	.long 0x44656C65
-	.long 0x7465466C
-	.long 0x75736843
-	.long 0x616C6C62
-	.long 0x61636B28
-	.long 0x29203A20
-	.long 0x25642C20
-	.long 0x44656C65
-	.long 0x74653A20
-	.long 0x25640A00
-.global lbl_80188A30
-lbl_80188A30:
-	.long 0x53687574
-	.long 0x466C7573
-	.long 0x6843616C
-	.long 0x6C626163
-	.long 0x6B282920
-	.long 0x3A202564
-	.long 0x2C205368
-	.long 0x7574646F
-	.long 0x776E3A20
-	.long 0x25640A00
-.global lbl_80188A58
-lbl_80188A58:
-	.long 0x25642064
-	.long 0x65766963
-	.long 0x65732069
-	.long 0x73207374
-	.long 0x6F726564
-	.long 0x20696E74
-	.long 0x6F205343
-	.long 0x2E0A0000
-.global lbl_80188A78
-lbl_80188A78:
-	.long 0x50616972
-	.long 0x696E6720
-	.long 0x446F6E65
-	.long 0x0A000000
-	.long 0x4E696E74
-	.long 0x656E646F
-	.long 0x2052564C
-	.long 0x2D434E54
-	.long 0x00000000
-	.long 0x77726974
-	.long 0x65207374
-	.long 0x6F726564
-	.long 0x206C696E
-	.long 0x6B206B65
-	.long 0x790A0000
-	.long 0x61646472
-	.long 0x203A2025
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x0A000000
-	.long 0x00000000
-	.long 0x6B657920
-	.long 0x203A2025
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32780A00
-	.long 0x43616E63
-	.long 0x656C2073
-	.long 0x65617263
-	.long 0x68696E67
-	.long 0x20626563
-	.long 0x61757365
-	.long 0x20342063
-	.long 0x6F6E6E65
-	.long 0x6374696F
-	.long 0x6E732065
-	.long 0x78697374
-	.long 0x2E0A0000
-	.long 0x5741524E
-	.long 0x494E473A
-	.long 0x20496C6C
-	.long 0x6967616C
-	.long 0x20737461
-	.long 0x7475730A
-	.long 0x00000000
-.global lbl_80188B84
-lbl_80188B84:
+	.asciz "key  : %02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x\n"
+	.asciz "Cancel searching because 4 connections exist.\n"
+	.balign 4
+	.asciz "WARNING: Illigal status\n"
+glabel lbl_80188B84
 	.long 0x800CAC20
 	.long 0x800CAB54
 	.long 0x800CAB6C
@@ -29715,170 +26091,52 @@ lbl_80188B84:
 	.long 0x800CAC20
 	.long 0x800CAC20
 	.long 0x800CABCC
-	.long 0x6863695F
-	.long 0x76657273
-	.long 0x696F6E20
-	.long 0x20203A20
-	.long 0x25303278
-	.long 0x0A000000
-	.long 0x6863695F
-	.long 0x72657669
-	.long 0x73696F6E
-	.long 0x20203A20
-	.long 0x25303478
-	.long 0x0A000000
-	.long 0x6C6D705F
-	.long 0x76657273
-	.long 0x696F6E20
-	.long 0x20203A20
-	.long 0x25303278
-	.long 0x0A000000
-	.long 0x6C6D705F
-	.long 0x73756276
-	.long 0x65727369
-	.long 0x6F6E3A20
-	.long 0x25303478
-	.long 0x0A000000
-	.long 0x6D616E75
-	.long 0x66616374
-	.long 0x75726572
-	.long 0x20203A20
-	.long 0x25303478
-	.long 0x0A000000
-	.long 0x203D3D3E
-	.long 0x20323034
-	.long 0x35206669
-	.long 0x726D7761
-	.long 0x72652076
-	.long 0x65722E30
-	.long 0x30322E30
-	.long 0x30332E30
-	.long 0x31342E25
-	.long 0x640A0000
-	.long 0x57554469
-	.long 0x41707065
-	.long 0x6E645275
-	.long 0x6E74696D
-	.long 0x65506174
-	.long 0x63682829
-	.long 0x0A000000
-	.long 0x4E696E74
-	.long 0x656E646F
-	.long 0x2052564C
-	.long 0x2D434E54
-	.long 0x2D303100
-	.long 0x6E616D65
-	.long 0x203A2025
-	.long 0x730A0000
-.global lbl_80188C84
-lbl_80188C84:
-	.long 0x4254415F
-	.long 0x496E6974
-	.long 0x28292069
-	.long 0x73207374
-	.long 0x61727465
-	.long 0x640A0000
-.global lbl_80188C9C
-lbl_80188C9C:
-	.long 0x4254415F
-	.long 0x496E6974
-	.long 0x28292069
-	.long 0x7320646F
-	.long 0x6E650A00
-.global lbl_80188CB0
-lbl_80188CB0:
-	.long 0x57554453
-	.long 0x68757464
-	.long 0x6F776E28
-	.long 0x290A0000
-.global lbl_80188CC0
-lbl_80188CC0:
-	.long 0x57554453
-	.long 0x65745379
-	.long 0x6E634465
-	.long 0x76696365
-	.long 0x43616C6C
-	.long 0x6261636B
-	.long 0x0A000000
-	.long 0x57554453
-	.long 0x6574436C
-	.long 0x65617244
-	.long 0x65766963
-	.long 0x6543616C
-	.long 0x6C626163
-	.long 0x6B0A0000
-	.long 0x57554453
-	.long 0x74617274
-	.long 0x53796E63
-	.long 0x44657669
-	.long 0x63652829
-	.long 0x0A000000
-.global lbl_80188D10
-lbl_80188D10:
-	.long 0x57554453
-	.long 0x74617274
-	.long 0x53796E63
-	.long 0x53696D70
-	.long 0x6C652829
-	.long 0x0A000000
-	.long 0x57554443
-	.long 0x616E6365
-	.long 0x6C53796E
-	.long 0x63446576
-	.long 0x69636528
-	.long 0x290A0000
-.global lbl_80188D40
-lbl_80188D40:
-	.long 0x57554453
-	.long 0x746F7053
-	.long 0x796E6353
-	.long 0x696D706C
-	.long 0x6528290A
+	.asciz "hci_version   : %02x\n"
+	.balign 4
+	.asciz "hci_revision  : %04x\n"
+	.balign 4
+	.asciz "lmp_version   : %02x\n"
+	.balign 4
+	.asciz "lmp_subversion: %04x\n"
+	.balign 4
+	.asciz "manufacturer  : %04x\n"
+	.balign 4
+	.asciz " ==> 2045 firmware ver.002.003.014.%d\n"
+	.balign 4
+	.asciz "WUDiAppendRuntimePatch()\n"
+	.balign 4
+	.asciz "Nintendo RVL-CNT-01"
+	.asciz "name : %s\n"
+glabel lbl_80188C84
+	.asciz "BTA_Init() is started\n"
+glabel lbl_80188C9C
+	.asciz "BTA_Init() is done\n"
+glabel lbl_80188CB0
+	.asciz "WUDShutdown()\n"
+glabel lbl_80188CC0
+	.asciz "WUDSetSyncDeviceCallback\n"
+	.balign 4
+	.asciz "WUDSetClearDeviceCallback\n"
+	.balign 4
+	.asciz "WUDStartSyncDevice()\n"
+glabel lbl_80188D10
+	.asciz "WUDStartSyncSimple()\n"
+	.balign 4
+	.asciz "WUDCancelSyncDevice()\n"
+glabel lbl_80188D40
+	.asciz "WUDStopSyncSimple()\n"
+	.balign 4
+	.asciz "WUDStartClearDevice()\n"
+glabel lbl_80188D70
+	.asciz "WUDSetDisableChannel()\n"
+glabel lbl_80188D88
+	.asciz "BTM_SetAfhChannels() : %d\n"
+glabel lbl_80188DA4
+	.asciz "WUDSetHidRecvCallback()\n"
+glabel lbl_80188DC0
+	.asciz "WUDSetHidConnCallback()\n"
 	.long 0x00000000
-	.long 0x57554453
-	.long 0x74617274
-	.long 0x436C6561
-	.long 0x72446576
-	.long 0x69636528
-	.long 0x290A0000
-.global lbl_80188D70
-lbl_80188D70:
-	.long 0x57554453
-	.long 0x65744469
-	.long 0x7361626C
-	.long 0x65436861
-	.long 0x6E6E656C
-	.long 0x28290A00
-.global lbl_80188D88
-lbl_80188D88:
-	.long 0x42544D5F
-	.long 0x53657441
-	.long 0x66684368
-	.long 0x616E6E65
-	.long 0x6C732829
-	.long 0x203A2025
-	.long 0x640A0000
-.global lbl_80188DA4
-lbl_80188DA4:
-	.long 0x57554453
-	.long 0x65744869
-	.long 0x64526563
-	.long 0x7643616C
-	.long 0x6C626163
-	.long 0x6B28290A
-	.long 0x00000000
-.global lbl_80188DC0
-lbl_80188DC0:
-	.long 0x57554453
-	.long 0x65744869
-	.long 0x64436F6E
-	.long 0x6E43616C
-	.long 0x6C626163
-	.long 0x6B28290A
-	.long 0x00000000
-	.long 0x00000000
-.global lbl_80188DE0
-lbl_80188DE0:
+glabel lbl_80188DE0
 	.long 0x70990800
 	.long 0x38000000
 	.long 0x8843D107
@@ -29895,8 +26153,7 @@ lbl_80188DE0:
 	.long 0x01490B60
 	.long 0x90F796FB
 	.long 0xD81D0800
-.global lbl_80188E20
-lbl_80188E20:
+glabel lbl_80188E20
 	.long 0x0520BC65
 	.long 0x01008442
 	.long 0x09D28442
@@ -29914,257 +26171,72 @@ lbl_80188E20:
 	.long 0x01002820
 	.long 0x00E0608D
 	.long 0x23680000
-.global lbl_80188E64
-lbl_80188E64:
-	.long 0x73746172
-	.long 0x74205755
-	.long 0x4469496E
-	.long 0x69745375
-	.long 0x6228290A
+glabel lbl_80188E64
+	.asciz "start WUDiInitSub()\n"
+	.balign 4
 	.long 0x00000000
+	.asciz "WUDiAutoSync()\n"
+	.asciz "WUDiCancelSync()\n"
+	.balign 4
+	.asciz "WUDiDeleteAllLinkKeys()\n"
+	.balign 4
+	.asciz "BTA_DmAddDevice(): %d\n"
+	.balign 4
+	.asciz "BTA_HhAddDev()\n"
+	.asciz "WUDiRemoveDevice : \n"
+	.balign 4
+	.asciz " handle : %d,  addr : %02x:%02x:%02x:%02x:%02x:%02x\n"
+	.balign 4
+	.asciz "remove device info from database.\n"
+	.balign 4
+	.asciz "BTA_HhRemoveDev()\n"
+	.balign 4
+	.asciz " handle : %d\n"
+	.balign 4
+	.asciz "BTA_DmRemoveDevice(): %d\n"
+glabel lbl_80188F9C
+	.asciz "new entry index is %d\n"
+glabel lbl_80188FB4
+	.asciz "WARNING: USB_CLOSE_FAILURE!\n"
+	.balign 4
+	.asciz "WUDSecurityCallback: "
+	.balign 4
 	.long 0x00000000
-	.long 0x57554469
-	.long 0x4175746F
-	.long 0x53796E63
-	.long 0x28290A00
-	.long 0x57554469
-	.long 0x43616E63
-	.long 0x656C5379
-	.long 0x6E632829
-	.long 0x0A000000
-	.long 0x57554469
-	.long 0x44656C65
-	.long 0x7465416C
-	.long 0x6C4C696E
-	.long 0x6B4B6579
-	.long 0x7328290A
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x446D4164
-	.long 0x64446576
-	.long 0x69636528
-	.long 0x293A2025
-	.long 0x640A0000
-	.long 0x4254415F
-	.long 0x48684164
-	.long 0x64446576
-	.long 0x28290A00
-	.long 0x57554469
-	.long 0x52656D6F
-	.long 0x76654465
-	.long 0x76696365
-	.long 0x203A200A
-	.long 0x00000000
-	.long 0x2068616E
-	.long 0x646C6520
-	.long 0x3A202564
-	.long 0x2C202061
-	.long 0x64647220
-	.long 0x3A202530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032780A
-	.long 0x00000000
-	.long 0x72656D6F
-	.long 0x76652064
-	.long 0x65766963
-	.long 0x6520696E
-	.long 0x666F2066
-	.long 0x726F6D20
-	.long 0x64617461
-	.long 0x62617365
-	.long 0x2E0A0000
-	.long 0x4254415F
-	.long 0x48685265
-	.long 0x6D6F7665
-	.long 0x44657628
-	.long 0x290A0000
-	.long 0x2068616E
-	.long 0x646C6520
-	.long 0x3A202564
-	.long 0x0A000000
-	.long 0x4254415F
-	.long 0x446D5265
-	.long 0x6D6F7665
-	.long 0x44657669
-	.long 0x63652829
-	.long 0x3A202564
-	.long 0x0A000000
-.global lbl_80188F9C
-lbl_80188F9C:
-	.long 0x6E657720
-	.long 0x656E7472
-	.long 0x7920696E
-	.long 0x64657820
-	.long 0x69732025
-	.long 0x640A0000
-.global lbl_80188FB4
-lbl_80188FB4:
-	.long 0x5741524E
-	.long 0x494E473A
-	.long 0x20555342
-	.long 0x5F434C4F
-	.long 0x53455F46
-	.long 0x41494C55
-	.long 0x5245210A
-	.long 0x00000000
-	.long 0x57554453
-	.long 0x65637572
-	.long 0x69747943
-	.long 0x616C6C62
-	.long 0x61636B3A
-	.long 0x20000000
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x454E4142
-	.long 0x4C455F45
-	.long 0x56540A00
-	.long 0x686F7374
-	.long 0x203A2025
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x0A000000
-	.long 0x4254415F
-	.long 0x44495341
-	.long 0x424C455F
-	.long 0x4556540A
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x444D5F50
-	.long 0x494E5F52
-	.long 0x45515F45
-	.long 0x56540A00
-	.long 0x4254415F
-	.long 0x444D5F41
-	.long 0x5554485F
-	.long 0x434D504C
-	.long 0x5F455654
-	.long 0x0A000000
-	.long 0x20206164
-	.long 0x6472203A
-	.long 0x20253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32780A00
-	.long 0x20206B65
-	.long 0x7920203A
-	.long 0x20253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x0A000000
-	.long 0x20207265
-	.long 0x73756C74
-	.long 0x203D2025
-	.long 0x640A0000
-	.long 0x4254415F
-	.long 0x444D5F41
-	.long 0x5554484F
-	.long 0x52495A45
-	.long 0x5F455654
-	.long 0x0A000000
-	.long 0x4254415F
-	.long 0x444D5F4C
-	.long 0x494E4B5F
-	.long 0x55505F45
-	.long 0x56540A00
-	.long 0x20202061
-	.long 0x64647220
-	.long 0x3A202530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032780A
-	.long 0x00000000
-	.long 0x2573202D
-	.long 0x2D3E2025
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x0A000000
-	.long 0x6E6F7420
-	.long 0x70616972
-	.long 0x65640000
-	.long 0x34206C69
-	.long 0x6E6B7320
-	.long 0x65786973
-	.long 0x74000000
-	.long 0x4254415F
-	.long 0x444D5F4C
-	.long 0x494E4B5F
-	.long 0x444F574E
-	.long 0x5F455654
-	.long 0x0A000000
-	.long 0x72657375
-	.long 0x6C743A20
-	.long 0x25640A00
-	.long 0x74686973
-	.long 0x20646576
-	.long 0x69636520
-	.long 0x696E206E
-	.long 0x6F742070
-	.long 0x61697265
-	.long 0x640A0000
-	.long 0x5741524E
-	.long 0x494E473A
-	.long 0x206C696E
-	.long 0x6B206E75
-	.long 0x6D20636F
-	.long 0x756E7420
-	.long 0x69732072
-	.long 0x65736574
-	.long 0x2E0A0000
-	.long 0x4254415F
-	.long 0x444D5F53
-	.long 0x49475F53
-	.long 0x5452454E
-	.long 0x4754485F
-	.long 0x4556540A
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x444D5F42
-	.long 0x5553595F
-	.long 0x4C455645
-	.long 0x4C5F4556
-	.long 0x540A0000
-.global lbl_80189230
-lbl_80189230:
+	.asciz "BTA_ENABLE_EVT\n"
+	.asciz "host : %02x:%02x:%02x:%02x:%02x:%02x\n"
+	.balign 4
+	.asciz "BTA_DISABLE_EVT\n"
+	.balign 4
+	.asciz "BTA_DM_PIN_REQ_EVT\n"
+	.asciz "BTA_DM_AUTH_CMPL_EVT\n"
+	.balign 4
+	.asciz "  addr : %02x:%02x:%02x:%02x:%02x:%02x\n"
+	.asciz "  key  : %02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x\n"
+	.balign 4
+	.asciz "  result = %d\n"
+	.balign 4
+	.asciz "BTA_DM_AUTHORIZE_EVT\n"
+	.balign 4
+	.asciz "BTA_DM_LINK_UP_EVT\n"
+	.asciz "   addr : %02x:%02x:%02x:%02x:%02x:%02x\n"
+	.balign 4
+	.asciz "%s --> %02x:%02x:%02x:%02x:%02x:%02x\n"
+	.balign 4
+	.asciz "not paired"
+	.balign 4
+	.asciz "4 links exist"
+	.balign 4
+	.asciz "BTA_DM_LINK_DOWN_EVT\n"
+	.balign 4
+	.asciz "result: %d\n"
+	.asciz "this device in not paired\n"
+	.balign 4
+	.asciz "WARNING: link num count is reset.\n"
+	.balign 4
+	.asciz "BTA_DM_SIG_STRENGTH_EVT\n"
+	.balign 4
+	.asciz "BTA_DM_BUSY_LEVEL_EVT\n"
+glabel lbl_80189230
 	.long 0x800CC8C8
 	.long 0x800CC974
 	.long 0x800CC990
@@ -30174,421 +26246,94 @@ lbl_80189230:
 	.long 0x800CCC18
 	.long 0x800CCD6C
 	.long 0x800CCD7C
-	.long 0x494E5155
-	.long 0x49525920
-	.long 0x52455355
-	.long 0x4C543A20
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x78202020
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x20202025
-	.long 0x640A0000
-	.long 0x494E5155
-	.long 0x4952595F
-	.long 0x434F4D50
-	.long 0x4C455445
-	.long 0x440A0000
-	.long 0x44495343
-	.long 0x4F564552
-	.long 0x20524553
-	.long 0x554C543A
-	.long 0x20202530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x30327820
-	.long 0x20202573
-	.long 0x20282530
-	.long 0x3478290A
+	.asciz "INQUIRY RESULT: %02x:%02x:%02x:%02x:%02x:%02x   %02x%02x%02x   %d\n"
+	.balign 4
+	.asciz "INQUIRY_COMPLETED\n"
+	.balign 4
+	.asciz "DISCOVER RESULT:  %02x:%02x:%02x:%02x:%02x:%02x   %s (%04x)\n"
+	.balign 4
+	.asciz "DISCOVER COMPLETED\n"
+	.asciz "SEARCH CANCEL\n\n"
+	.asciz "Warning: Search Callback returns invalid event\n"
+	.asciz "VSE:- INITIATE_PAIRING\n"
+	.asciz "VSE:- DELETE_ALL_KEYS\n"
+	.balign 4
+	.asciz "VSE:- SI_PORT_STATUS  status = %d\n"
+	.balign 4
+	.asciz "VSE:- WATCH_DOG_RESET  HW error = %d\n"
+	.balign 4
+	.asciz "MODULE FATAL ERROR\n"
+glabel lbl_801893D0
+	.asciz "WUDDeviceStatusCallback\n"
+glabel lbl_801893EC
+	.asciz "---- WARNING: USB FATAL ERROR! ----\n"
+	.balign 4
+	.asciz "BTM_CB_EVT_RETURN_LINK_KEYS\n"
+	.balign 4
+	.asciz "BD_ADDR:  %02x:%02x:%02x:%02x:%02x:%02x\n"
+	.balign 4
+	.asciz "LINKKEY: %02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x\n"
+	.balign 4
+	.asciz "this device is not stored in NAND\n"
+	.balign 4
+	.asciz "   LAST: %02x:%02x:%02x:%02x:%02x:%02x\n"
+	.asciz "BTM_CB_EVT_READ_STORED_LINK_KEYS\n"
+	.balign 4
+	.asciz "  status: %d  max_keys: %d  num_keys: %d\n"
+	.balign 4
+	.asciz "BTM_CB_EVT_WRITE_STORED_LINK_KEYS\n"
+	.balign 4
+	.asciz "  status: %d  num_keys: %d\n"
+	.asciz "BTM_CB_EVT_DELETE_STORED_LINK_KEYS\n"
+	.asciz "WARNING: no entry is deleted\n"
+	.balign 4
+	.asciz "Unknown event\n"
+	.balign 4
+	.asciz "WUDPowerManagerCallback\n"
+	.balign 4
+	.asciz "hci_status = %d"
+	.asciz " addr = %02x:%02x:%02x:%02x:%02x:%02x,  status = %d\n"
+	.balign 4
+	.asciz "_WUDEnableTestMode\n"
+	.asciz "_WUDStartSyncDevice()\n"
+	.balign 4
+	.asciz "_WUDDeleteStoreDevice()\n"
+	.balign 4
+	.asciz "dev number = %d\n"
 	.long 0x00000000
-	.long 0x44495343
-	.long 0x4F564552
-	.long 0x20434F4D
-	.long 0x504C4554
-	.long 0x45440A00
-	.long 0x53454152
-	.long 0x43482043
-	.long 0x414E4345
-	.long 0x4C0A0A00
-	.long 0x5761726E
-	.long 0x696E673A
-	.long 0x20536561
-	.long 0x72636820
-	.long 0x43616C6C
-	.long 0x6261636B
-	.long 0x20726574
-	.long 0x75726E73
-	.long 0x20696E76
-	.long 0x616C6964
-	.long 0x20657665
-	.long 0x6E740A00
-	.long 0x5653453A
-	.long 0x2D20494E
-	.long 0x49544941
-	.long 0x54455F50
-	.long 0x41495249
-	.long 0x4E470A00
-	.long 0x5653453A
-	.long 0x2D204445
-	.long 0x4C455445
-	.long 0x5F414C4C
-	.long 0x5F4B4559
-	.long 0x530A0000
-	.long 0x5653453A
-	.long 0x2D205349
-	.long 0x5F504F52
-	.long 0x545F5354
-	.long 0x41545553
-	.long 0x20207374
-	.long 0x61747573
-	.long 0x203D2025
-	.long 0x640A0000
-	.long 0x5653453A
-	.long 0x2D205741
-	.long 0x5443485F
-	.long 0x444F475F
-	.long 0x52455345
-	.long 0x54202048
-	.long 0x57206572
-	.long 0x726F7220
-	.long 0x3D202564
-	.long 0x0A000000
-	.long 0x4D4F4455
-	.long 0x4C452046
-	.long 0x4154414C
-	.long 0x20455252
-	.long 0x4F520A00
-.global lbl_801893D0
-lbl_801893D0:
-	.long 0x57554444
-	.long 0x65766963
-	.long 0x65537461
-	.long 0x74757343
-	.long 0x616C6C62
-	.long 0x61636B0A
-	.long 0x00000000
-.global lbl_801893EC
-lbl_801893EC:
-	.long 0x2D2D2D2D
-	.long 0x20574152
-	.long 0x4E494E47
-	.long 0x3A205553
-	.long 0x42204641
-	.long 0x54414C20
-	.long 0x4552524F
-	.long 0x5221202D
-	.long 0x2D2D2D0A
-	.long 0x00000000
-	.long 0x42544D5F
-	.long 0x43425F45
-	.long 0x56545F52
-	.long 0x45545552
-	.long 0x4E5F4C49
-	.long 0x4E4B5F4B
-	.long 0x4559530A
-	.long 0x00000000
-	.long 0x42445F41
-	.long 0x4444523A
-	.long 0x20202530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032780A
-	.long 0x00000000
-	.long 0x4C494E4B
-	.long 0x4B45593A
-	.long 0x20253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x0A000000
-	.long 0x74686973
-	.long 0x20646576
-	.long 0x69636520
-	.long 0x6973206E
-	.long 0x6F742073
-	.long 0x746F7265
-	.long 0x6420696E
-	.long 0x204E414E
-	.long 0x440A0000
-	.long 0x2020204C
-	.long 0x4153543A
-	.long 0x20253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32780A00
-	.long 0x42544D5F
-	.long 0x43425F45
-	.long 0x56545F52
-	.long 0x4541445F
-	.long 0x53544F52
-	.long 0x45445F4C
-	.long 0x494E4B5F
-	.long 0x4B455953
-	.long 0x0A000000
-	.long 0x20207374
-	.long 0x61747573
-	.long 0x3A202564
-	.long 0x20206D61
-	.long 0x785F6B65
-	.long 0x79733A20
-	.long 0x25642020
-	.long 0x6E756D5F
-	.long 0x6B657973
-	.long 0x3A202564
-	.long 0x0A000000
-	.long 0x42544D5F
-	.long 0x43425F45
-	.long 0x56545F57
-	.long 0x52495445
-	.long 0x5F53544F
-	.long 0x5245445F
-	.long 0x4C494E4B
-	.long 0x5F4B4559
-	.long 0x530A0000
-	.long 0x20207374
-	.long 0x61747573
-	.long 0x3A202564
-	.long 0x20206E75
-	.long 0x6D5F6B65
-	.long 0x79733A20
-	.long 0x25640A00
-	.long 0x42544D5F
-	.long 0x43425F45
-	.long 0x56545F44
-	.long 0x454C4554
-	.long 0x455F5354
-	.long 0x4F524544
-	.long 0x5F4C494E
-	.long 0x4B5F4B45
-	.long 0x59530A00
-	.long 0x5741524E
-	.long 0x494E473A
-	.long 0x206E6F20
-	.long 0x656E7472
-	.long 0x79206973
-	.long 0x2064656C
-	.long 0x65746564
-	.long 0x0A000000
-	.long 0x556E6B6E
-	.long 0x6F776E20
-	.long 0x6576656E
-	.long 0x740A0000
-	.long 0x57554450
-	.long 0x6F776572
-	.long 0x4D616E61
-	.long 0x67657243
-	.long 0x616C6C62
-	.long 0x61636B0A
-	.long 0x00000000
-	.long 0x6863695F
-	.long 0x73746174
-	.long 0x7573203D
-	.long 0x20256400
-	.long 0x20616464
-	.long 0x72203D20
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x782C2020
-	.long 0x73746174
-	.long 0x7573203D
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x5F575544
-	.long 0x456E6162
-	.long 0x6C655465
-	.long 0x73744D6F
-	.long 0x64650A00
-	.long 0x5F575544
-	.long 0x53746172
-	.long 0x7453796E
-	.long 0x63446576
-	.long 0x69636528
-	.long 0x290A0000
-	.long 0x5F575544
-	.long 0x44656C65
-	.long 0x74655374
-	.long 0x6F726544
-	.long 0x65766963
-	.long 0x6528290A
-	.long 0x00000000
-	.long 0x64657620
-	.long 0x6E756D62
-	.long 0x6572203D
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x00000000
-.global lbl_801896B0
-lbl_801896B0:
-	.long 0x4254415F
-	.long 0x48485F45
-	.long 0x4E41424C
-	.long 0x455F4556
-	.long 0x540A0000
-	.long 0x4254415F
-	.long 0x48485F44
-	.long 0x49534142
-	.long 0x4C455F45
-	.long 0x56540A00
-	.long 0x4254415F
-	.long 0x48485F4F
-	.long 0x50454E5F
-	.long 0x4556540A
-	.long 0x00000000
-	.long 0x68616E64
-	.long 0x6C653A20
-	.long 0x25642C20
-	.long 0x61646472
-	.long 0x3A202530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032780A
-	.long 0x00000000
-	.long 0x6572726F
-	.long 0x7220636F
-	.long 0x64653A20
-	.long 0x25640A00
-	.long 0x4254415F
-	.long 0x48485F43
-	.long 0x4C4F5345
-	.long 0x5F455654
-	.long 0x0A000000
-	.long 0x64657669
-	.long 0x63652068
-	.long 0x616E646C
-	.long 0x65203A20
-	.long 0x25642020
-	.long 0x20737461
-	.long 0x74757320
-	.long 0x3D202564
-	.long 0x0A000000
-	.long 0x4254415F
-	.long 0x48485F53
-	.long 0x45545F52
-	.long 0x50545F45
-	.long 0x56540A00
-	.long 0x4254415F
-	.long 0x48485F47
-	.long 0x45545F52
-	.long 0x50545F45
-	.long 0x56540A00
-	.long 0x4254415F
-	.long 0x48485F53
-	.long 0x45545F50
-	.long 0x524F544F
-	.long 0x5F455654
-	.long 0x0A000000
-	.long 0x4254415F
-	.long 0x48485F47
-	.long 0x45545F50
-	.long 0x524F544F
-	.long 0x5F455654
-	.long 0x0A000000
-	.long 0x4254415F
-	.long 0x48485F53
-	.long 0x45545F49
-	.long 0x444C455F
-	.long 0x4556540A
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48485F47
-	.long 0x45545F49
-	.long 0x444C455F
-	.long 0x4556540A
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48485F47
-	.long 0x45545F44
-	.long 0x4353505F
-	.long 0x4556540A
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48485F41
-	.long 0x44445F44
-	.long 0x45565F45
-	.long 0x56540A00
-	.long 0x72657375
-	.long 0x6C743A20
-	.long 0x25642C20
-	.long 0x68616E64
-	.long 0x6C653A20
-	.long 0x25642C20
-	.long 0x61646472
-	.long 0x3A202530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032780A
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48485F52
-	.long 0x4D565F44
-	.long 0x45565F45
-	.long 0x56540A00
-	.long 0x4254415F
-	.long 0x48485F56
-	.long 0x535F554E
-	.long 0x504C5547
-	.long 0x5F455654
-	.long 0x0A000000
-	.long 0x5741524E
-	.long 0x494E473A
-	.long 0x206C696E
-	.long 0x6B206E75
-	.long 0x6D20636F
-	.long 0x756E7420
-	.long 0x6973206D
-	.long 0x6F646966
-	.long 0x6965642E
-	.long 0x0A000000
-.global lbl_801898B0
-lbl_801898B0:
+glabel lbl_801896B0
+	.asciz "BTA_HH_ENABLE_EVT\n"
+	.balign 4
+	.asciz "BTA_HH_DISABLE_EVT\n"
+	.asciz "BTA_HH_OPEN_EVT\n"
+	.balign 4
+	.asciz "handle: %d, addr: %02x:%02x:%02x:%02x:%02x:%02x\n"
+	.balign 4
+	.asciz "error code: %d\n"
+	.asciz "BTA_HH_CLOSE_EVT\n"
+	.balign 4
+	.asciz "device handle : %d   status = %d\n"
+	.balign 4
+	.asciz "BTA_HH_SET_RPT_EVT\n"
+	.asciz "BTA_HH_GET_RPT_EVT\n"
+	.asciz "BTA_HH_SET_PROTO_EVT\n"
+	.balign 4
+	.asciz "BTA_HH_GET_PROTO_EVT\n"
+	.balign 4
+	.asciz "BTA_HH_SET_IDLE_EVT\n"
+	.balign 4
+	.asciz "BTA_HH_GET_IDLE_EVT\n"
+	.balign 4
+	.asciz "BTA_HH_GET_DCSP_EVT\n"
+	.balign 4
+	.asciz "BTA_HH_ADD_DEV_EVT\n"
+	.asciz "result: %d, handle: %d, addr: %02x:%02x:%02x:%02x:%02x:%02x\n"
+	.balign 4
+	.asciz "BTA_HH_RMV_DEV_EVT\n"
+	.asciz "BTA_HH_VS_UNPLUG_EVT\n"
+	.balign 4
+	.asciz "WARNING: link num count is modified.\n"
+glabel lbl_801898B0
 	.long 0x800CD888
 	.long 0x800CD8A4
 	.long 0x800CD8B4
@@ -30605,1308 +26350,185 @@ lbl_801898B0:
 	.long 0x800CDC20
 	.long 0x800CDCBC
 	.long 0x800CDC30
-.global lbl_801898F0
-lbl_801898F0:
-	.long 0x496E7661
-	.long 0x6C696420
-	.long 0x6170705F
-	.long 0x6964205B
-	.long 0x25645D0A
+glabel lbl_801898F0
+	.asciz "Invalid app_id [%d]\n"
+glabel lbl_80189908
+	.asciz "bta_hh_co_open()\n"
+glabel lbl_8018991C
+	.asciz "bta_hh_co_close()\n"
+glabel lbl_80189930
+	.asciz "getbuf: Size is zero"
+glabel lbl_80189948
+	.asciz "getbuf: Size is too big"
+	.asciz "Free - Buf Corrupted"
+	.balign 4
+	.asciz "Freeing Linked Buf"
+	.balign 4
+	.asciz "Bad Buf QId"
+	.asciz "Sending to unknown dest"
+	.asciz "Send - Buffer corrupted"
+	.asciz "Send - buffer linked"
+glabel lbl_801899E0
+	.asciz "Enqueue - Buffer corrupted"
+glabel lbl_801899FC
+	.asciz "Eneueue - buf already linked"
+glabel lbl_80189A1C
+	.asciz "Eneueue head - buf already linked"
+	.balign 4
+	.asciz "GKI_get_buf_start:: bad addr"
+glabel lbl_80189A60
+	.asciz "Deleting bad pool"
+	.balign 4
 	.long 0x00000000
-.global lbl_80189908
-lbl_80189908:
-	.long 0x6274615F
-	.long 0x68685F63
-	.long 0x6F5F6F70
-	.long 0x656E2829
-	.long 0x0A000000
-.global lbl_8018991C
-lbl_8018991C:
-	.long 0x6274615F
-	.long 0x68685F63
-	.long 0x6F5F636C
-	.long 0x6F736528
-	.long 0x290A0000
-.global lbl_80189930
-lbl_80189930:
-	.long 0x67657462
-	.long 0x75663A20
-	.long 0x53697A65
-	.long 0x20697320
-	.long 0x7A65726F
+	.asciz "HCIS: Unable to allocate buffer for incoming HCI message."
+glabel lbl_80189AB4
+	.asciz "HCIS: Invalid length for incoming HCI message."
 	.long 0x00000000
-.global lbl_80189948
-lbl_80189948:
-	.long 0x67657462
-	.long 0x75663A20
-	.long 0x53697A65
-	.long 0x20697320
-	.long 0x746F6F20
-	.long 0x62696700
-	.long 0x46726565
-	.long 0x202D2042
-	.long 0x75662043
-	.long 0x6F727275
-	.long 0x70746564
+glabel lbl_80189AE8
+	.asciz "HCISU_LOG: uusb_ReadIntrDataCB called\n"
+	.balign 4
+	.asciz "HCISU_ERR: uusb_ReadIntrDataCB: usb_state != UUSB_PPC_OPENED_ST\n"
+	.balign 4
+	.asciz "HCISU_ERR: ************\n* uusb_ReadIntrDataCB(): usb_state != UUSB_PPC_OPENED_ST - stop reading\n************\n"
+	.balign 4
+	.asciz "HCISU_ERR: uusb_ReadIntrDataCB(): Got Error code %d\n"
+	.balign 4
+	.asciz "HCISU_LOG: uusb_ReadIntrDataCB: len(%d) offset (%d) cp_len(%d) data = "
+	.balign 4
+	.asciz "HCISU_ERR: uusb_readBulkDataCB: usb_state != UUSB_PPC_OPENED_ST\n"
+	.balign 4
+	.asciz "HCISU_ERR: ****\n* uusb_readBulkDataCB(): usb_state != UUSB_PPC_OPENED_ST - stop reading\n****\n"
+	.balign 4
+	.asciz "HCISU_ERR: uusb_ReadBulkDataCB(): Got Error code %d\n"
+	.balign 4
+	.asciz "HCISU_LOG: uusb_ReadBulkDataCB: len(%d) offset(%d) cp_len(%d) data = "
+	.balign 4
+	.asciz "HCISU_ERR: ****\n* uusb_issue_bulk_read(): unable to get buffer - try again\n****\n"
+	.balign 4
+	.asciz "HCISU_ERR: uusb_issue_bulk_read: IUSB_ReadBlkMsgAsync failed with err = %d\n"
+	.asciz "HCISU_ERR: ****\n* uusb_issue_bulk_read: IUSB_ReadBlkMsgAsync failed with err = %d\n****\n"
+	.asciz "HCISU_ERR: ****\n* uusb_issue_intr_read(): unable to get buffer - try again\n****\n"
+	.balign 4
+	.asciz "HCISU_ERR: IUSB_ReadIntrMsgAsync failed with err = %d\n"
+	.balign 4
+	.asciz "HCISU_ERR: ****\n* uusb_issue_intr_read(): IUSB_ReadIntrMsgAsync failed with err = %d\n****\n"
+	.balign 4
+	.asciz "HCISU_LOG: uusb_WriteCtrlDataCB called with err = %d\n"
+	.balign 4
+	.asciz "HCISU_ERR: uusb_WriteCtrlDataCB(): Got error (%d)\n"
+	.balign 4
 	.long 0x00000000
-	.long 0x46726565
-	.long 0x696E6720
-	.long 0x4C696E6B
-	.long 0x65642042
-	.long 0x75660000
-	.long 0x42616420
-	.long 0x42756620
-	.long 0x51496400
-	.long 0x53656E64
-	.long 0x696E6720
-	.long 0x746F2075
-	.long 0x6E6B6E6F
-	.long 0x776E2064
-	.long 0x65737400
-	.long 0x53656E64
-	.long 0x202D2042
-	.long 0x75666665
-	.long 0x7220636F
-	.long 0x72727570
-	.long 0x74656400
-	.long 0x53656E64
-	.long 0x202D2062
-	.long 0x75666665
-	.long 0x72206C69
-	.long 0x6E6B6564
+	.asciz "HCISU_ERR: uusb_WriteCtrlDataCB(): error - unable to write data packet\n"
+	.asciz "HCISU_LOG: uusb_WriteBulkDataCB called with err = %d\n"
+	.balign 4
+	.asciz "HCISU_ERR: uusb_WriteBulkDataCB(): Got error (%d)\n"
+	.balign 4
 	.long 0x00000000
-.global lbl_801899E0
-lbl_801899E0:
-	.long 0x456E7175
-	.long 0x65756520
-	.long 0x2D204275
-	.long 0x66666572
-	.long 0x20636F72
-	.long 0x72757074
-	.long 0x65640000
-.global lbl_801899FC
-lbl_801899FC:
-	.long 0x456E6575
-	.long 0x65756520
-	.long 0x2D206275
-	.long 0x6620616C
-	.long 0x72656164
-	.long 0x79206C69
-	.long 0x6E6B6564
+	.asciz "HCISU_ERR: uusb_WriteBulkDataCB(): error - unable to write data packet\n"
+glabel lbl_8018A0B8
+	.asciz "HCISU_ERR: ERROR from IUSB_OpenDeviceIds (%d) : Device (vendor 0x%x product 0x%x) not found\n"
+glabel lbl_8018A118
+	.asciz "HCISU_ERR: No suitable Bluetooth Device was found. Exiting...\n"
+	.balign 4
+	.asciz "HCISU_ERR: UUSB_Register: ERROR - failed IPCCltInit\n"
+	.balign 4
+	.asciz "HCISU_ERR: UUSB_Register: ERROR - failed IUSB_OpenLib\n"
+	.balign 4
+	.asciz "HCISU_ERR: UUSB_Register: Error returned from get_devId()\n"
+	.balign 4
 	.long 0x00000000
-.global lbl_80189A1C
-lbl_80189A1C:
-	.long 0x456E6575
-	.long 0x65756520
-	.long 0x68656164
-	.long 0x202D2062
-	.long 0x75662061
-	.long 0x6C726561
-	.long 0x6479206C
-	.long 0x696E6B65
-	.long 0x64000000
-	.long 0x474B495F
-	.long 0x6765745F
-	.long 0x6275665F
-	.long 0x73746172
-	.long 0x743A3A20
-	.long 0x62616420
-	.long 0x61646472
+	.asciz "HCISU_LOG: UUSB_Register: uusb_get_dev_id returned with usb.devId = %d\n"
+	.asciz "HCISU_LOG: UUSB_Register: Unable to create memory pools\n"
+	.balign 4
+	.asciz "HCISU_LOG: UUSB_Register: hci_cmd_usb_pool_id (%d) hci_acl_usb_pool_id(%d)\n"
+	.asciz "HCISU_LOG: UUSB_Open: USB is not in registered state, unable to open\n"
+	.balign 4
+	.asciz "HCISU_LOG: UUSB_Open: USB Buffer Pool's Invalid\n"
+	.balign 4
 	.long 0x00000000
-.global lbl_80189A60
-lbl_80189A60:
-	.long 0x44656C65
-	.long 0x74696E67
-	.long 0x20626164
-	.long 0x20706F6F
-	.long 0x6C000000
+	.asciz "HCISU_LOG: UUSB_Open: hci_cmd_usb_pool_id = %d\n"
+	.asciz "HCISU_LOG: UUSB_Open: hci_acl_usb_pool_id = %d\n"
+	.asciz "HCISU_ERR: UUSB_Write: usb_state != UUSB_PPC_OPENED_ST\n"
+	.asciz "HCISU_LOG: buffer size = %d\n"
+	.balign 4
+	.asciz "HCISU_LOG: UUSB_Write: ep(%d) len(%d) data = "
+	.balign 4
+	.asciz "HCISU_ERR: UUSB_Write: Unable to get buffer from hci_cmd_usb_pool\n"
+	.balign 4
+	.asciz "HCISU_ERR: UUSB_WRITE(): Ctrl Queue count =  %d\n"
+	.balign 4
+	.asciz "HCISU_ERR: *************************************************************************************\n"
+	.balign 4
+	.asciz "HCISU_ERR: * UUSB_Write(): IUSB_WriteCtrlMsgAsync error...  (%d), writes outstanding (%d)\n"
+	.balign 4
+	.asciz "HCISU_ERR: * UUSB_Write(): IUSB_WriteCtrlMsgAsync error... IOS_ERROR_FAIL_ALLOC  (%d), writes outstanding (%d)\n"
+	.asciz "HCISU_ERR: * UUSB_Write(): IUSB_WriteCtrlMsgAsync error... IOS_ERROR_QFULL  (%d), writes outstanding (%d)\n"
+	.balign 4
+	.asciz "HCISU_ERR: UUSB_Write: Unable to get buffer from hci_acl_usb_pool\n"
+	.balign 4
+	.asciz "HCISU_ERR: UUSB_Write - writing mem data\n"
+	.balign 4
+	.asciz "HCISU_ERR: UUSB_WRITE(): Bulk Queue count =  %d\n"
+	.balign 4
+	.asciz "HCISU_ERR: * UUSB_Write(): IUSB_WriteBlkMsgAsync error...  (%d), writes outstanding (%d)\n"
+	.balign 4
+	.asciz "HCISU_ERR: * UUSB_Write(): IUSB_WriteBlkMsgAsync error... IOS_ERROR_FAIL_ALLOC  (%d), writes outstanding (%d)\n"
+	.balign 4
+	.asciz "HCISU_ERR: * UUSB_Write(): IUSB_WriteBlkMsgAsync error... IOS_ERROR_QFULL  (%d), writes outstanding (%d)\n"
+glabel lbl_8018A830
+	.asciz "BTA got event 0x%x"
+glabel lbl_8018A844
+	.asciz "BTA got unregistered event id %d"
+glabel lbl_8018A868
+	.asciz " bta_dm_disable_timer_cback  "
+glabel lbl_8018A888
+	.asciz " bta_dm_search_timer_cback  "
+glabel lbl_8018A8A8
+	.asciz " bta_dm_pin_cback() -> Failed to start Remote Name Request  "
+glabel lbl_8018A8E8
+	.asciz " timer stopped  "
+glabel lbl_8018A8FC
+	.asciz "bta_dm_l2cap_server_compress_cback, BTA ID %d"
+glabel lbl_8018A92C
+	.asciz "bta_dm_compress_cback open app_id %d, BTA id %d, state %d"
+glabel lbl_8018A968
+	.asciz "bta_dm_compress_cback close app_id %d, BTA id %d, state %d"
 	.long 0x00000000
-	.long 0x48434953
-	.long 0x3A20556E
-	.long 0x61626C65
-	.long 0x20746F20
-	.long 0x616C6C6F
-	.long 0x63617465
-	.long 0x20627566
-	.long 0x66657220
-	.long 0x666F7220
-	.long 0x696E636F
-	.long 0x6D696E67
-	.long 0x20484349
-	.long 0x206D6573
-	.long 0x73616765
-	.long 0x2E000000
-.global lbl_80189AB4
-lbl_80189AB4:
-	.long 0x48434953
-	.long 0x3A20496E
-	.long 0x76616C69
-	.long 0x64206C65
-	.long 0x6E677468
-	.long 0x20666F72
-	.long 0x20696E63
-	.long 0x6F6D696E
-	.long 0x67204843
-	.long 0x49206D65
-	.long 0x73736167
-	.long 0x652E0000
+glabel lbl_8018A9A8
+	.asciz "bta_dm_act no more connected service cbs"
+glabel lbl_8018A9D4
+	.asciz "bta_dm_act no more pm timers"
 	.long 0x00000000
-.global lbl_80189AE8
-lbl_80189AE8:
-	.long 0x48434953
-	.long 0x555F4C4F
-	.long 0x473A2075
-	.long 0x7573625F
-	.long 0x52656164
-	.long 0x496E7472
-	.long 0x44617461
-	.long 0x43422063
-	.long 0x616C6C65
-	.long 0x640A0000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2075
-	.long 0x7573625F
-	.long 0x52656164
-	.long 0x496E7472
-	.long 0x44617461
-	.long 0x43423A20
-	.long 0x7573625F
-	.long 0x73746174
-	.long 0x6520213D
-	.long 0x20555553
-	.long 0x425F5050
-	.long 0x435F4F50
-	.long 0x454E4544
-	.long 0x5F53540A
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A202A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A0A
-	.long 0x2A207575
-	.long 0x73625F52
-	.long 0x65616449
-	.long 0x6E747244
-	.long 0x61746143
-	.long 0x4228293A
-	.long 0x20757362
-	.long 0x5F737461
-	.long 0x74652021
-	.long 0x3D205555
-	.long 0x53425F50
-	.long 0x50435F4F
-	.long 0x50454E45
-	.long 0x445F5354
-	.long 0x202D2073
-	.long 0x746F7020
-	.long 0x72656164
-	.long 0x696E670A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x0A000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2075
-	.long 0x7573625F
-	.long 0x52656164
-	.long 0x496E7472
-	.long 0x44617461
-	.long 0x43422829
-	.long 0x3A20476F
-	.long 0x74204572
-	.long 0x726F7220
-	.long 0x636F6465
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4C4F
-	.long 0x473A2075
-	.long 0x7573625F
-	.long 0x52656164
-	.long 0x496E7472
-	.long 0x44617461
-	.long 0x43423A20
-	.long 0x6C656E28
-	.long 0x25642920
-	.long 0x6F666673
-	.long 0x65742028
-	.long 0x25642920
-	.long 0x63705F6C
-	.long 0x656E2825
-	.long 0x64292064
-	.long 0x61746120
-	.long 0x3D200000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2075
-	.long 0x7573625F
-	.long 0x72656164
-	.long 0x42756C6B
-	.long 0x44617461
-	.long 0x43423A20
-	.long 0x7573625F
-	.long 0x73746174
-	.long 0x6520213D
-	.long 0x20555553
-	.long 0x425F5050
-	.long 0x435F4F50
-	.long 0x454E4544
-	.long 0x5F53540A
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A202A
-	.long 0x2A2A2A0A
-	.long 0x2A207575
-	.long 0x73625F72
-	.long 0x65616442
-	.long 0x756C6B44
-	.long 0x61746143
-	.long 0x4228293A
-	.long 0x20757362
-	.long 0x5F737461
-	.long 0x74652021
-	.long 0x3D205555
-	.long 0x53425F50
-	.long 0x50435F4F
-	.long 0x50454E45
-	.long 0x445F5354
-	.long 0x202D2073
-	.long 0x746F7020
-	.long 0x72656164
-	.long 0x696E670A
-	.long 0x2A2A2A2A
-	.long 0x0A000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2075
-	.long 0x7573625F
-	.long 0x52656164
-	.long 0x42756C6B
-	.long 0x44617461
-	.long 0x43422829
-	.long 0x3A20476F
-	.long 0x74204572
-	.long 0x726F7220
-	.long 0x636F6465
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4C4F
-	.long 0x473A2075
-	.long 0x7573625F
-	.long 0x52656164
-	.long 0x42756C6B
-	.long 0x44617461
-	.long 0x43423A20
-	.long 0x6C656E28
-	.long 0x25642920
-	.long 0x6F666673
-	.long 0x65742825
-	.long 0x64292063
-	.long 0x705F6C65
-	.long 0x6E282564
-	.long 0x29206461
-	.long 0x7461203D
-	.long 0x20000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A202A
-	.long 0x2A2A2A0A
-	.long 0x2A207575
-	.long 0x73625F69
-	.long 0x73737565
-	.long 0x5F62756C
-	.long 0x6B5F7265
-	.long 0x61642829
-	.long 0x3A20756E
-	.long 0x61626C65
-	.long 0x20746F20
-	.long 0x67657420
-	.long 0x62756666
-	.long 0x6572202D
-	.long 0x20747279
-	.long 0x20616761
-	.long 0x696E0A2A
-	.long 0x2A2A2A0A
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2075
-	.long 0x7573625F
-	.long 0x69737375
-	.long 0x655F6275
-	.long 0x6C6B5F72
-	.long 0x6561643A
-	.long 0x20495553
-	.long 0x425F5265
-	.long 0x6164426C
-	.long 0x6B4D7367
-	.long 0x4173796E
-	.long 0x63206661
-	.long 0x696C6564
-	.long 0x20776974
-	.long 0x68206572
-	.long 0x72203D20
-	.long 0x25640A00
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A202A
-	.long 0x2A2A2A0A
-	.long 0x2A207575
-	.long 0x73625F69
-	.long 0x73737565
-	.long 0x5F62756C
-	.long 0x6B5F7265
-	.long 0x61643A20
-	.long 0x49555342
-	.long 0x5F526561
-	.long 0x64426C6B
-	.long 0x4D736741
-	.long 0x73796E63
-	.long 0x20666169
-	.long 0x6C656420
-	.long 0x77697468
-	.long 0x20657272
-	.long 0x203D2025
-	.long 0x640A2A2A
-	.long 0x2A2A0A00
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A202A
-	.long 0x2A2A2A0A
-	.long 0x2A207575
-	.long 0x73625F69
-	.long 0x73737565
-	.long 0x5F696E74
-	.long 0x725F7265
-	.long 0x61642829
-	.long 0x3A20756E
-	.long 0x61626C65
-	.long 0x20746F20
-	.long 0x67657420
-	.long 0x62756666
-	.long 0x6572202D
-	.long 0x20747279
-	.long 0x20616761
-	.long 0x696E0A2A
-	.long 0x2A2A2A0A
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2049
-	.long 0x5553425F
-	.long 0x52656164
-	.long 0x496E7472
-	.long 0x4D736741
-	.long 0x73796E63
-	.long 0x20666169
-	.long 0x6C656420
-	.long 0x77697468
-	.long 0x20657272
-	.long 0x203D2025
-	.long 0x640A0000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A202A
-	.long 0x2A2A2A0A
-	.long 0x2A207575
-	.long 0x73625F69
-	.long 0x73737565
-	.long 0x5F696E74
-	.long 0x725F7265
-	.long 0x61642829
-	.long 0x3A204955
-	.long 0x53425F52
-	.long 0x65616449
-	.long 0x6E74724D
-	.long 0x73674173
-	.long 0x796E6320
-	.long 0x6661696C
-	.long 0x65642077
-	.long 0x69746820
-	.long 0x65727220
-	.long 0x3D202564
-	.long 0x0A2A2A2A
-	.long 0x2A0A0000
-	.long 0x48434953
-	.long 0x555F4C4F
-	.long 0x473A2075
-	.long 0x7573625F
-	.long 0x57726974
-	.long 0x65437472
-	.long 0x6C446174
-	.long 0x61434220
-	.long 0x63616C6C
-	.long 0x65642077
-	.long 0x69746820
-	.long 0x65727220
-	.long 0x3D202564
-	.long 0x0A000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2075
-	.long 0x7573625F
-	.long 0x57726974
-	.long 0x65437472
-	.long 0x6C446174
-	.long 0x61434228
-	.long 0x293A2047
-	.long 0x6F742065
-	.long 0x72726F72
-	.long 0x20282564
-	.long 0x290A0000
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2075
-	.long 0x7573625F
-	.long 0x57726974
-	.long 0x65437472
-	.long 0x6C446174
-	.long 0x61434228
-	.long 0x293A2065
-	.long 0x72726F72
-	.long 0x202D2075
-	.long 0x6E61626C
-	.long 0x6520746F
-	.long 0x20777269
-	.long 0x74652064
-	.long 0x61746120
-	.long 0x7061636B
-	.long 0x65740A00
-	.long 0x48434953
-	.long 0x555F4C4F
-	.long 0x473A2075
-	.long 0x7573625F
-	.long 0x57726974
-	.long 0x6542756C
-	.long 0x6B446174
-	.long 0x61434220
-	.long 0x63616C6C
-	.long 0x65642077
-	.long 0x69746820
-	.long 0x65727220
-	.long 0x3D202564
-	.long 0x0A000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2075
-	.long 0x7573625F
-	.long 0x57726974
-	.long 0x6542756C
-	.long 0x6B446174
-	.long 0x61434228
-	.long 0x293A2047
-	.long 0x6F742065
-	.long 0x72726F72
-	.long 0x20282564
-	.long 0x290A0000
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2075
-	.long 0x7573625F
-	.long 0x57726974
-	.long 0x6542756C
-	.long 0x6B446174
-	.long 0x61434228
-	.long 0x293A2065
-	.long 0x72726F72
-	.long 0x202D2075
-	.long 0x6E61626C
-	.long 0x6520746F
-	.long 0x20777269
-	.long 0x74652064
-	.long 0x61746120
-	.long 0x7061636B
-	.long 0x65740A00
-.global lbl_8018A0B8
-lbl_8018A0B8:
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2045
-	.long 0x52524F52
-	.long 0x2066726F
-	.long 0x6D204955
-	.long 0x53425F4F
-	.long 0x70656E44
-	.long 0x65766963
-	.long 0x65496473
-	.long 0x20282564
-	.long 0x29203A20
-	.long 0x44657669
-	.long 0x63652028
-	.long 0x76656E64
-	.long 0x6F722030
-	.long 0x78257820
-	.long 0x70726F64
-	.long 0x75637420
-	.long 0x30782578
-	.long 0x29206E6F
-	.long 0x7420666F
-	.long 0x756E640A
-	.long 0x00000000
-.global lbl_8018A118
-lbl_8018A118:
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A204E
-	.long 0x6F207375
-	.long 0x69746162
-	.long 0x6C652042
-	.long 0x6C756574
-	.long 0x6F6F7468
-	.long 0x20446576
-	.long 0x69636520
-	.long 0x77617320
-	.long 0x666F756E
-	.long 0x642E2045
-	.long 0x78697469
-	.long 0x6E672E2E
-	.long 0x2E0A0000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2055
-	.long 0x5553425F
-	.long 0x52656769
-	.long 0x73746572
-	.long 0x3A204552
-	.long 0x524F5220
-	.long 0x2D206661
-	.long 0x696C6564
-	.long 0x20495043
-	.long 0x436C7449
-	.long 0x6E69740A
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2055
-	.long 0x5553425F
-	.long 0x52656769
-	.long 0x73746572
-	.long 0x3A204552
-	.long 0x524F5220
-	.long 0x2D206661
-	.long 0x696C6564
-	.long 0x20495553
-	.long 0x425F4F70
-	.long 0x656E4C69
-	.long 0x620A0000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2055
-	.long 0x5553425F
-	.long 0x52656769
-	.long 0x73746572
-	.long 0x3A204572
-	.long 0x726F7220
-	.long 0x72657475
-	.long 0x726E6564
-	.long 0x2066726F
-	.long 0x6D206765
-	.long 0x745F6465
-	.long 0x76496428
-	.long 0x290A0000
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4C4F
-	.long 0x473A2055
-	.long 0x5553425F
-	.long 0x52656769
-	.long 0x73746572
-	.long 0x3A207575
-	.long 0x73625F67
-	.long 0x65745F64
-	.long 0x65765F69
-	.long 0x64207265
-	.long 0x7475726E
-	.long 0x65642077
-	.long 0x69746820
-	.long 0x7573622E
-	.long 0x64657649
-	.long 0x64203D20
-	.long 0x25640A00
-	.long 0x48434953
-	.long 0x555F4C4F
-	.long 0x473A2055
-	.long 0x5553425F
-	.long 0x52656769
-	.long 0x73746572
-	.long 0x3A20556E
-	.long 0x61626C65
-	.long 0x20746F20
-	.long 0x63726561
-	.long 0x7465206D
-	.long 0x656D6F72
-	.long 0x7920706F
-	.long 0x6F6C730A
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4C4F
-	.long 0x473A2055
-	.long 0x5553425F
-	.long 0x52656769
-	.long 0x73746572
-	.long 0x3A206863
-	.long 0x695F636D
-	.long 0x645F7573
-	.long 0x625F706F
-	.long 0x6F6C5F69
-	.long 0x64202825
-	.long 0x64292068
-	.long 0x63695F61
-	.long 0x636C5F75
-	.long 0x73625F70
-	.long 0x6F6F6C5F
-	.long 0x69642825
-	.long 0x64290A00
-	.long 0x48434953
-	.long 0x555F4C4F
-	.long 0x473A2055
-	.long 0x5553425F
-	.long 0x4F70656E
-	.long 0x3A205553
-	.long 0x42206973
-	.long 0x206E6F74
-	.long 0x20696E20
-	.long 0x72656769
-	.long 0x73746572
-	.long 0x65642073
-	.long 0x74617465
-	.long 0x2C20756E
-	.long 0x61626C65
-	.long 0x20746F20
-	.long 0x6F70656E
-	.long 0x0A000000
-	.long 0x48434953
-	.long 0x555F4C4F
-	.long 0x473A2055
-	.long 0x5553425F
-	.long 0x4F70656E
-	.long 0x3A205553
-	.long 0x42204275
-	.long 0x66666572
-	.long 0x20506F6F
-	.long 0x6C277320
-	.long 0x496E7661
-	.long 0x6C69640A
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4C4F
-	.long 0x473A2055
-	.long 0x5553425F
-	.long 0x4F70656E
-	.long 0x3A206863
-	.long 0x695F636D
-	.long 0x645F7573
-	.long 0x625F706F
-	.long 0x6F6C5F69
-	.long 0x64203D20
-	.long 0x25640A00
-	.long 0x48434953
-	.long 0x555F4C4F
-	.long 0x473A2055
-	.long 0x5553425F
-	.long 0x4F70656E
-	.long 0x3A206863
-	.long 0x695F6163
-	.long 0x6C5F7573
-	.long 0x625F706F
-	.long 0x6F6C5F69
-	.long 0x64203D20
-	.long 0x25640A00
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2055
-	.long 0x5553425F
-	.long 0x57726974
-	.long 0x653A2075
-	.long 0x73625F73
-	.long 0x74617465
-	.long 0x20213D20
-	.long 0x55555342
-	.long 0x5F505043
-	.long 0x5F4F5045
-	.long 0x4E45445F
-	.long 0x53540A00
-	.long 0x48434953
-	.long 0x555F4C4F
-	.long 0x473A2062
-	.long 0x75666665
-	.long 0x72207369
-	.long 0x7A65203D
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4C4F
-	.long 0x473A2055
-	.long 0x5553425F
-	.long 0x57726974
-	.long 0x653A2065
-	.long 0x70282564
-	.long 0x29206C65
-	.long 0x6E282564
-	.long 0x29206461
-	.long 0x7461203D
-	.long 0x20000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2055
-	.long 0x5553425F
-	.long 0x57726974
-	.long 0x653A2055
-	.long 0x6E61626C
-	.long 0x6520746F
-	.long 0x20676574
-	.long 0x20627566
-	.long 0x66657220
-	.long 0x66726F6D
-	.long 0x20686369
-	.long 0x5F636D64
-	.long 0x5F757362
-	.long 0x5F706F6F
-	.long 0x6C0A0000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2055
-	.long 0x5553425F
-	.long 0x57524954
-	.long 0x4528293A
-	.long 0x20437472
-	.long 0x6C205175
-	.long 0x65756520
-	.long 0x636F756E
-	.long 0x74203D20
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A202A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x0A000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A202A
-	.long 0x20555553
-	.long 0x425F5772
-	.long 0x69746528
-	.long 0x293A2049
-	.long 0x5553425F
-	.long 0x57726974
-	.long 0x65437472
-	.long 0x6C4D7367
-	.long 0x4173796E
-	.long 0x63206572
-	.long 0x726F722E
-	.long 0x2E2E2020
-	.long 0x28256429
-	.long 0x2C207772
-	.long 0x69746573
-	.long 0x206F7574
-	.long 0x7374616E
-	.long 0x64696E67
-	.long 0x20282564
-	.long 0x290A0000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A202A
-	.long 0x20555553
-	.long 0x425F5772
-	.long 0x69746528
-	.long 0x293A2049
-	.long 0x5553425F
-	.long 0x57726974
-	.long 0x65437472
-	.long 0x6C4D7367
-	.long 0x4173796E
-	.long 0x63206572
-	.long 0x726F722E
-	.long 0x2E2E2049
-	.long 0x4F535F45
-	.long 0x52524F52
-	.long 0x5F464149
-	.long 0x4C5F414C
-	.long 0x4C4F4320
-	.long 0x20282564
-	.long 0x292C2077
-	.long 0x72697465
-	.long 0x73206F75
-	.long 0x74737461
-	.long 0x6E64696E
-	.long 0x67202825
-	.long 0x64290A00
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A202A
-	.long 0x20555553
-	.long 0x425F5772
-	.long 0x69746528
-	.long 0x293A2049
-	.long 0x5553425F
-	.long 0x57726974
-	.long 0x65437472
-	.long 0x6C4D7367
-	.long 0x4173796E
-	.long 0x63206572
-	.long 0x726F722E
-	.long 0x2E2E2049
-	.long 0x4F535F45
-	.long 0x52524F52
-	.long 0x5F514655
-	.long 0x4C4C2020
-	.long 0x28256429
-	.long 0x2C207772
-	.long 0x69746573
-	.long 0x206F7574
-	.long 0x7374616E
-	.long 0x64696E67
-	.long 0x20282564
-	.long 0x290A0000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2055
-	.long 0x5553425F
-	.long 0x57726974
-	.long 0x653A2055
-	.long 0x6E61626C
-	.long 0x6520746F
-	.long 0x20676574
-	.long 0x20627566
-	.long 0x66657220
-	.long 0x66726F6D
-	.long 0x20686369
-	.long 0x5F61636C
-	.long 0x5F757362
-	.long 0x5F706F6F
-	.long 0x6C0A0000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2055
-	.long 0x5553425F
-	.long 0x57726974
-	.long 0x65202D20
-	.long 0x77726974
-	.long 0x696E6720
-	.long 0x6D656D20
-	.long 0x64617461
-	.long 0x0A000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A2055
-	.long 0x5553425F
-	.long 0x57524954
-	.long 0x4528293A
-	.long 0x2042756C
-	.long 0x6B205175
-	.long 0x65756520
-	.long 0x636F756E
-	.long 0x74203D20
-	.long 0x2025640A
-	.long 0x00000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A202A
-	.long 0x20555553
-	.long 0x425F5772
-	.long 0x69746528
-	.long 0x293A2049
-	.long 0x5553425F
-	.long 0x57726974
-	.long 0x65426C6B
-	.long 0x4D736741
-	.long 0x73796E63
-	.long 0x20657272
-	.long 0x6F722E2E
-	.long 0x2E202028
-	.long 0x2564292C
-	.long 0x20777269
-	.long 0x74657320
-	.long 0x6F757473
-	.long 0x74616E64
-	.long 0x696E6720
-	.long 0x28256429
-	.long 0x0A000000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A202A
-	.long 0x20555553
-	.long 0x425F5772
-	.long 0x69746528
-	.long 0x293A2049
-	.long 0x5553425F
-	.long 0x57726974
-	.long 0x65426C6B
-	.long 0x4D736741
-	.long 0x73796E63
-	.long 0x20657272
-	.long 0x6F722E2E
-	.long 0x2E20494F
-	.long 0x535F4552
-	.long 0x524F525F
-	.long 0x4641494C
-	.long 0x5F414C4C
-	.long 0x4F432020
-	.long 0x28256429
-	.long 0x2C207772
-	.long 0x69746573
-	.long 0x206F7574
-	.long 0x7374616E
-	.long 0x64696E67
-	.long 0x20282564
-	.long 0x290A0000
-	.long 0x48434953
-	.long 0x555F4552
-	.long 0x523A202A
-	.long 0x20555553
-	.long 0x425F5772
-	.long 0x69746528
-	.long 0x293A2049
-	.long 0x5553425F
-	.long 0x57726974
-	.long 0x65426C6B
-	.long 0x4D736741
-	.long 0x73796E63
-	.long 0x20657272
-	.long 0x6F722E2E
-	.long 0x2E20494F
-	.long 0x535F4552
-	.long 0x524F525F
-	.long 0x5146554C
-	.long 0x4C202028
-	.long 0x2564292C
-	.long 0x20777269
-	.long 0x74657320
-	.long 0x6F757473
-	.long 0x74616E64
-	.long 0x696E6720
-	.long 0x28256429
-	.long 0x0A000000
-.global lbl_8018A830
-lbl_8018A830:
-	.long 0x42544120
-	.long 0x676F7420
-	.long 0x6576656E
-	.long 0x74203078
-	.long 0x25780000
-.global lbl_8018A844
-lbl_8018A844:
-	.long 0x42544120
-	.long 0x676F7420
-	.long 0x756E7265
-	.long 0x67697374
-	.long 0x65726564
-	.long 0x20657665
-	.long 0x6E742069
-	.long 0x64202564
-	.long 0x00000000
-.global lbl_8018A868
-lbl_8018A868:
-	.long 0x20627461
-	.long 0x5F646D5F
-	.long 0x64697361
-	.long 0x626C655F
-	.long 0x74696D65
-	.long 0x725F6362
-	.long 0x61636B20
-	.long 0x20000000
-.global lbl_8018A888
-lbl_8018A888:
-	.long 0x20627461
-	.long 0x5F646D5F
-	.long 0x73656172
-	.long 0x63685F74
-	.long 0x696D6572
-	.long 0x5F636261
-	.long 0x636B2020
-	.long 0x00000000
-.global lbl_8018A8A8
-lbl_8018A8A8:
-	.long 0x20627461
-	.long 0x5F646D5F
-	.long 0x70696E5F
-	.long 0x63626163
-	.long 0x6B282920
-	.long 0x2D3E2046
-	.long 0x61696C65
-	.long 0x6420746F
-	.long 0x20737461
-	.long 0x72742052
-	.long 0x656D6F74
-	.long 0x65204E61
-	.long 0x6D652052
-	.long 0x65717565
-	.long 0x73742020
-	.long 0x00000000
-.global lbl_8018A8E8
-lbl_8018A8E8:
-	.long 0x2074696D
-	.long 0x65722073
-	.long 0x746F7070
-	.long 0x65642020
-	.long 0x00000000
-.global lbl_8018A8FC
-lbl_8018A8FC:
-	.long 0x6274615F
-	.long 0x646D5F6C
-	.long 0x32636170
-	.long 0x5F736572
-	.long 0x7665725F
-	.long 0x636F6D70
-	.long 0x72657373
-	.long 0x5F636261
-	.long 0x636B2C20
-	.long 0x42544120
-	.long 0x49442025
-	.long 0x64000000
-.global lbl_8018A92C
-lbl_8018A92C:
-	.long 0x6274615F
-	.long 0x646D5F63
-	.long 0x6F6D7072
-	.long 0x6573735F
-	.long 0x63626163
-	.long 0x6B206F70
-	.long 0x656E2061
-	.long 0x70705F69
-	.long 0x64202564
-	.long 0x2C204254
-	.long 0x41206964
-	.long 0x2025642C
-	.long 0x20737461
-	.long 0x74652025
-	.long 0x64000000
-.global lbl_8018A968
-lbl_8018A968:
-	.long 0x6274615F
-	.long 0x646D5F63
-	.long 0x6F6D7072
-	.long 0x6573735F
-	.long 0x63626163
-	.long 0x6B20636C
-	.long 0x6F736520
-	.long 0x6170705F
-	.long 0x69642025
-	.long 0x642C2042
-	.long 0x54412069
-	.long 0x64202564
-	.long 0x2C207374
-	.long 0x61746520
-	.long 0x25640000
-	.long 0x00000000
-.global lbl_8018A9A8
-lbl_8018A9A8:
-	.long 0x6274615F
-	.long 0x646D5F61
-	.long 0x6374206E
-	.long 0x6F206D6F
-	.long 0x72652063
-	.long 0x6F6E6E65
-	.long 0x63746564
-	.long 0x20736572
-	.long 0x76696365
-	.long 0x20636273
-	.long 0x00000000
-.global lbl_8018A9D4
-lbl_8018A9D4:
-	.long 0x6274615F
-	.long 0x646D5F61
-	.long 0x6374206E
-	.long 0x6F206D6F
-	.long 0x72652070
-	.long 0x6D207469
-	.long 0x6D657273
-	.long 0x00000000
-	.long 0x00000000
-.global lbl_8018A9F8
-lbl_8018A9F8:
-	.long 0x6274615F
-	.long 0x68685F73
-	.long 0x64705F63
-	.long 0x6261636B
-	.long 0x3A20705F
-	.long 0x63623A20
-	.long 0x25642072
-	.long 0x6573756C
-	.long 0x74203078
-	.long 0x25303278
-	.long 0x2C202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20206174
-	.long 0x74725F6D
-	.long 0x61736B20
-	.long 0x30782530
-	.long 0x32780000
-.global lbl_8018AA50
-lbl_8018AA50:
-	.long 0x6274615F
-	.long 0x68685F73
-	.long 0x74617274
-	.long 0x5F736470
-	.long 0x3A3A2073
-	.long 0x6B697020
-	.long 0x53445020
-	.long 0x666F7220
-	.long 0x6B6E6F77
-	.long 0x6E206465
-	.long 0x76696365
-	.long 0x73000000
-.global lbl_8018AA80
-lbl_8018AA80:
-	.long 0x6274615F
-	.long 0x68685F73
-	.long 0x74617274
-	.long 0x5F736470
-	.long 0x3A202048
-	.long 0x49445F48
-	.long 0x6F737447
-	.long 0x65745344
-	.long 0x50526563
-	.long 0x6F726420
-	.long 0x6661696C
-	.long 0x65643A20
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x53746174
-	.long 0x75732030
-	.long 0x78253258
-	.long 0x00000000
-.global lbl_8018AAD0
-lbl_8018AAD0:
-	.long 0x6274615F
-	.long 0x68685F73
-	.long 0x64705F63
-	.long 0x6D706C3A
-	.long 0x20207374
-	.long 0x61747573
-	.long 0x20307825
-	.long 0x32580000
-.global lbl_8018AAF0
-lbl_8018AAF0:
-	.long 0x6274615F
-	.long 0x68685F73
-	.long 0x64705F63
-	.long 0x6D706C3A
-	.long 0x20204849
-	.long 0x445F486F
-	.long 0x73744F70
-	.long 0x656E4465
-	.long 0x76206661
-	.long 0x696C6564
-	.long 0x3A202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20205374
-	.long 0x61747573
-	.long 0x20307825
-	.long 0x32580000
-.global lbl_8018AB3C
-lbl_8018AB3C:
-	.long 0x6274615F
-	.long 0x68685F6F
-	.long 0x70656E5F
-	.long 0x6163743A
-	.long 0x20204465
-	.long 0x76696365
-	.long 0x5B25645D
-	.long 0x20636F6E
-	.long 0x6E656374
-	.long 0x65640000
-	.long 0x4254415F
-	.long 0x48485F47
-	.long 0x45545F52
-	.long 0x50545F45
-	.long 0x56540000
-	.long 0x4254415F
-	.long 0x48485F53
-	.long 0x45545F52
-	.long 0x50545F45
-	.long 0x56540000
-	.long 0x4254415F
-	.long 0x48485F47
-	.long 0x45545F50
-	.long 0x524F544F
-	.long 0x5F455654
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48485F53
-	.long 0x45545F50
-	.long 0x524F544F
-	.long 0x5F455654
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48485F47
-	.long 0x45545F49
-	.long 0x444C455F
-	.long 0x45565400
-	.long 0x4254415F
-	.long 0x48485F53
-	.long 0x45545F49
-	.long 0x444C455F
-	.long 0x45565400
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48485F4F
-	.long 0x50454E5F
-	.long 0x45565400
-	.long 0x556E6B6E
-	.long 0x6F776E20
-	.long 0x6576656E
-	.long 0x74000000
-	.long 0x48414E44
-	.long 0x5348414B
-	.long 0x45207265
-	.long 0x63656976
-	.long 0x65642066
-	.long 0x6F723A20
-	.long 0x6576656E
-	.long 0x74203D20
-	.long 0x25732064
-	.long 0x6174613D
-	.long 0x20256400
-	.long 0x756E6B6E
-	.long 0x6F776E20
-	.long 0x7472616E
-	.long 0x73616374
-	.long 0x696F6E20
-	.long 0x74797065
-	.long 0x00000000
-.global lbl_8018AC50
-lbl_8018AC50:
+glabel lbl_8018A9F8
+	.asciz "bta_hh_sdp_cback: p_cb: %d result 0x%02x,                             attr_mask 0x%02x"
+glabel lbl_8018AA50
+	.asciz "bta_hh_start_sdp:: skip SDP for known devices"
+glabel lbl_8018AA80
+	.asciz "bta_hh_start_sdp:  HID_HostGetSDPRecord failed:                 Status 0x%2X"
+glabel lbl_8018AAD0
+	.asciz "bta_hh_sdp_cmpl:  status 0x%2X"
+glabel lbl_8018AAF0
+	.asciz "bta_hh_sdp_cmpl:  HID_HostOpenDev failed:                     Status 0x%2X"
+glabel lbl_8018AB3C
+	.asciz "bta_hh_open_act:  Device[%d] connected"
+	.balign 4
+	.asciz "BTA_HH_GET_RPT_EVT"
+	.balign 4
+	.asciz "BTA_HH_SET_RPT_EVT"
+	.balign 4
+	.asciz "BTA_HH_GET_PROTO_EVT"
+	.balign 4
+	.asciz "BTA_HH_SET_PROTO_EVT"
+	.balign 4
+	.asciz "BTA_HH_GET_IDLE_EVT"
+	.asciz "BTA_HH_SET_IDLE_EVT"
+	.balign 8
+	.asciz "BTA_HH_OPEN_EVT"
+	.asciz "Unknown event"
+	.balign 4
+	.asciz "HANDSHAKE received for: event = %s data= %d"
+	.asciz "unknown transaction type"
+glabel lbl_8018AC50
 	.long 0x800D63E4
 	.long 0x800D63E4
 	.long 0x800D6378
@@ -31917,8 +26539,7 @@ lbl_8018AC50:
 	.long 0x800D6308
 	.long 0x800D6288
 	.long 0x800D6308
-.global lbl_8018AC78
-lbl_8018AC78:
+glabel lbl_8018AC78
 	.long 0x800D6250
 	.long 0x800D6250
 	.long 0x800D6248
@@ -31929,31 +26550,10 @@ lbl_8018AC78:
 	.long 0x800D6230
 	.long 0x800D6238
 	.long 0x800D6240
-	.long 0x4374726C
-	.long 0x20444154
-	.long 0x41207265
-	.long 0x63656976
-	.long 0x65642077
-	.long 0x343A2065
-	.long 0x76656E74
-	.long 0x5B25735D
-	.long 0x00000000
-	.long 0x696E7661
-	.long 0x6C696420
-	.long 0x20747261
-	.long 0x6E736163
-	.long 0x74696F6E
-	.long 0x20747970
-	.long 0x6520666F
-	.long 0x72204441
-	.long 0x54412070
-	.long 0x61796C6F
-	.long 0x61643A20
-	.long 0x345F6576
-	.long 0x745B2573
-	.long 0x5D000000
-.global lbl_8018ACFC
-lbl_8018ACFC:
+	.asciz "Ctrl DATA received w4: event[%s]"
+	.balign 4
+	.asciz "invalid  transaction type for DATA payload: 4_evt[%s]"
+glabel lbl_8018ACFC
 	.long 0x800D65A8
 	.long 0x800D65A8
 	.long 0x800D65A0
@@ -31964,8 +26564,7 @@ lbl_8018ACFC:
 	.long 0x800D6588
 	.long 0x800D6590
 	.long 0x800D6598
-.global lbl_8018AD24
-lbl_8018AD24:
+glabel lbl_8018AD24
 	.long 0x800D64C4
 	.long 0x800D64C4
 	.long 0x800D64BC
@@ -31977,100 +26576,35 @@ lbl_8018AD24:
 	.long 0x800D64AC
 	.long 0x800D64B4
 	.long 0x00000000
-.global lbl_8018AD50
-lbl_8018AD50:
-	.long 0x696E7661
-	.long 0x6C696420
-	.long 0x636F6D6D
-	.long 0x616E6400
-.global lbl_8018AD60
-lbl_8018AD60:
-	.long 0x4849445F
-	.long 0x486F7374
-	.long 0x57726974
-	.long 0x65446576
-	.long 0x20457272
-	.long 0x6F722025
-	.long 0x64000000
-.global lbl_8018AD7C
-lbl_8018AD7C:
-	.long 0x6274615F
-	.long 0x68685F77
-	.long 0x72697465
-	.long 0x5F646576
-	.long 0x5F616374
-	.long 0x3A3A2063
-	.long 0x6D642074
-	.long 0x79706520
-	.long 0x3D202564
-	.long 0x00000000
-	.long 0x4849445F
-	.long 0x48444556
-	.long 0x5F455654
-	.long 0x5F4F5045
-	.long 0x4E000000
-	.long 0x4849445F
-	.long 0x48444556
-	.long 0x5F455654
-	.long 0x5F434C4F
-	.long 0x53450000
-	.long 0x4849445F
-	.long 0x48444556
-	.long 0x5F455654
-	.long 0x5F524554
-	.long 0x5259494E
-	.long 0x47000000
-	.long 0x4849445F
-	.long 0x48444556
-	.long 0x5F455654
-	.long 0x5F494E54
-	.long 0x525F4441
-	.long 0x54410000
-	.long 0x4849445F
-	.long 0x48444556
-	.long 0x5F455654
-	.long 0x5F494E54
-	.long 0x525F4441
-	.long 0x54430000
-	.long 0x4849445F
-	.long 0x48444556
-	.long 0x5F455654
-	.long 0x5F435452
-	.long 0x4C5F4441
-	.long 0x54410000
-	.long 0x4849445F
-	.long 0x48444556
-	.long 0x5F455654
-	.long 0x5F435452
-	.long 0x4C5F4441
-	.long 0x54430000
-	.long 0x4849445F
-	.long 0x48444556
-	.long 0x5F455654
-	.long 0x5F48414E
-	.long 0x44534841
-	.long 0x4B450000
-	.long 0x4849445F
-	.long 0x48444556
-	.long 0x5F455654
-	.long 0x5F56435F
-	.long 0x554E504C
-	.long 0x55470000
-	.long 0x556E6B6E
-	.long 0x6F776E20
-	.long 0x48494420
-	.long 0x6576656E
-	.long 0x74000000
-	.long 0x6274615F
-	.long 0x68685F63
-	.long 0x6261636B
-	.long 0x3A3A4849
-	.long 0x445F6576
-	.long 0x656E7420
-	.long 0x5B25735D
-	.long 0x00000000
-.global lbl_8018AEA8
-lbl_8018AEA8:
+glabel lbl_8018AD50
+	.asciz "invalid command"
+glabel lbl_8018AD60
+	.asciz "HID_HostWriteDev Error %d"
+glabel lbl_8018AD7C
+	.asciz "bta_hh_write_dev_act:: cmd type = %d"
+	.balign 4
+	.asciz "HID_HDEV_EVT_OPEN"
+	.balign 4
+	.asciz "HID_HDEV_EVT_CLOSE"
+	.balign 4
+	.asciz "HID_HDEV_EVT_RETRYING"
+	.balign 4
+	.asciz "HID_HDEV_EVT_INTR_DATA"
+	.balign 4
+	.asciz "HID_HDEV_EVT_INTR_DATC"
+	.balign 4
+	.asciz "HID_HDEV_EVT_CTRL_DATA"
+	.balign 4
+	.asciz "HID_HDEV_EVT_CTRL_DATC"
+	.balign 4
+	.asciz "HID_HDEV_EVT_HANDSHAKE"
+	.balign 4
+	.asciz "HID_HDEV_EVT_VC_UNPLUG"
+	.balign 4
+	.asciz "Unknown HID event"
+	.balign 4
+	.asciz "bta_hh_cback::HID_event [%s]"
+glabel lbl_8018AEA8
 	.long 0x800D6D60
 	.long 0x800D6D68
 	.long 0x800D6ECC
@@ -32080,8 +26614,7 @@ lbl_8018AEA8:
 	.long 0x800D6D88
 	.long 0x800D6D78
 	.long 0x800D6D94
-.global lbl_8018AECC
-lbl_8018AECC:
+glabel lbl_8018AECC
 	.long 0x800D6CE8
 	.long 0x800D6CF0
 	.long 0x800D6CF8
@@ -32091,194 +26624,56 @@ lbl_8018AECC:
 	.long 0x800D6D18
 	.long 0x800D6D20
 	.long 0x800D6D28
-.global lbl_8018AEF0
-lbl_8018AEF0:
-	.long 0x4E6F2072
-	.long 0x65736F75
-	.long 0x72636520
-	.long 0x746F2073
-	.long 0x656E6420
-	.long 0x48494420
-	.long 0x686F7374
-	.long 0x20436F6E
-	.long 0x6E656374
-	.long 0x20726571
-	.long 0x75657374
-	.long 0x2E000000
-.global lbl_8018AF20
-lbl_8018AF20:
-	.long 0x77726F6E
-	.long 0x67206465
-	.long 0x76696365
-	.long 0x2068616E
-	.long 0x646C653A
-	.long 0x205B2564
-	.long 0x5D000000
-	.long 0x4254415F
-	.long 0x48485F4E
-	.long 0x554C4C5F
-	.long 0x53540000
-	.long 0x4254415F
-	.long 0x48485F49
-	.long 0x444C455F
-	.long 0x53540000
-	.long 0x4254415F
-	.long 0x48485F57
-	.long 0x345F434F
-	.long 0x4E4E5F53
-	.long 0x54000000
-	.long 0x4254415F
-	.long 0x48485F43
-	.long 0x4F4E4E5F
-	.long 0x53540000
-	.long 0x756E6B6E
-	.long 0x6F776E20
-	.long 0x48494420
-	.long 0x486F7374
-	.long 0x20737461
-	.long 0x74650000
-	.long 0x6274615F
-	.long 0x68685F73
-	.long 0x6D5F6578
-	.long 0x65637574
-	.long 0x653A2053
-	.long 0x74617465
-	.long 0x20307825
-	.long 0x30327820
-	.long 0x5B25735D
-	.long 0x2C204576
-	.long 0x656E7420
-	.long 0x5B25735D
-	.long 0x00000000
-	.long 0x48482053
-	.long 0x74617465
-	.long 0x20436861
-	.long 0x6E67653A
-	.long 0x205B2573
-	.long 0x5D202D3E
-	.long 0x205B2573
-	.long 0x5D206166
-	.long 0x74657220
-	.long 0x4576656E
-	.long 0x74205B25
-	.long 0x735D0000
-.global lbl_8018AFFC
-lbl_8018AFFC:
-	.long 0x6274615F
-	.long 0x68685F68
-	.long 0x646C5F65
-	.long 0x76656E74
-	.long 0x3A3A2068
-	.long 0x616E646C
-	.long 0x65203D20
-	.long 0x25642064
-	.long 0x65765F63
-	.long 0x625B2564
-	.long 0x5D200000
-	.long 0x4254415F
-	.long 0x48485F41
-	.long 0x50495F44
-	.long 0x49534142
-	.long 0x4C455F45
-	.long 0x56540000
-	.long 0x4254415F
-	.long 0x48485F41
-	.long 0x50495F45
-	.long 0x4E41424C
-	.long 0x455F4556
-	.long 0x54000000
-	.long 0x4254415F
-	.long 0x48485F41
-	.long 0x50495F4F
-	.long 0x50454E5F
-	.long 0x45565400
-	.long 0x4254415F
-	.long 0x48485F41
-	.long 0x50495F43
-	.long 0x4C4F5345
-	.long 0x5F455654
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48485F49
-	.long 0x4E545F4F
-	.long 0x50454E5F
-	.long 0x45565400
-	.long 0x4254415F
-	.long 0x48485F49
-	.long 0x4E545F43
-	.long 0x4C4F5345
-	.long 0x5F455654
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48485F49
-	.long 0x4E545F48
-	.long 0x414E4453
-	.long 0x4B5F4556
-	.long 0x54000000
-	.long 0x4254415F
-	.long 0x48485F49
-	.long 0x4E545F44
-	.long 0x4154415F
-	.long 0x45565400
-	.long 0x4254415F
-	.long 0x48485F49
-	.long 0x4E545F43
-	.long 0x54524C5F
-	.long 0x44415441
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48485F41
-	.long 0x50495F57
-	.long 0x52495445
-	.long 0x5F444556
-	.long 0x5F455654
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48485F53
-	.long 0x44505F43
-	.long 0x4D504C5F
-	.long 0x45565400
-	.long 0x4254415F
-	.long 0x48485F44
-	.long 0x4953435F
-	.long 0x434D504C
-	.long 0x5F455654
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48485F41
-	.long 0x50495F4D
-	.long 0x41494E54
-	.long 0x5F444556
-	.long 0x5F455654
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48485F41
-	.long 0x50495F47
-	.long 0x45545F44
-	.long 0x5343505F
-	.long 0x45565400
-	.long 0x4254415F
-	.long 0x48485F4F
-	.long 0x50454E5F
-	.long 0x434D504C
-	.long 0x5F455654
-	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48485F41
-	.long 0x50495F47
-	.long 0x45545F41
-	.long 0x434C5F51
-	.long 0x5F455654
-	.long 0x00000000
-	.long 0x756E6B6E
-	.long 0x6F776E20
-	.long 0x48494420
-	.long 0x486F7374
-	.long 0x20657665
-	.long 0x6E742063
-	.long 0x6F646500
-.global lbl_8018B1C0
-lbl_8018B1C0:
+glabel lbl_8018AEF0
+	.asciz "No resource to send HID host Connect request."
+glabel lbl_8018AF20
+	.asciz "wrong device handle: [%d]"
+	.balign 4
+	.asciz "BTA_HH_NULL_ST"
+	.balign 4
+	.asciz "BTA_HH_IDLE_ST"
+	.balign 4
+	.asciz "BTA_HH_W4_CONN_ST"
+	.balign 4
+	.asciz "BTA_HH_CONN_ST"
+	.balign 4
+	.asciz "unknown HID Host state"
+	.balign 4
+	.asciz "bta_hh_sm_execute: State 0x%02x [%s], Event [%s]"
+	.balign 4
+	.asciz "HH State Change: [%s] -> [%s] after Event [%s]"
+glabel lbl_8018AFFC
+	.asciz "bta_hh_hdl_event:: handle = %d dev_cb[%d] "
+	.balign 4
+	.asciz "BTA_HH_API_DISABLE_EVT"
+	.balign 4
+	.asciz "BTA_HH_API_ENABLE_EVT"
+	.balign 4
+	.asciz "BTA_HH_API_OPEN_EVT"
+	.asciz "BTA_HH_API_CLOSE_EVT"
+	.balign 4
+	.asciz "BTA_HH_INT_OPEN_EVT"
+	.asciz "BTA_HH_INT_CLOSE_EVT"
+	.balign 4
+	.asciz "BTA_HH_INT_HANDSK_EVT"
+	.balign 4
+	.asciz "BTA_HH_INT_DATA_EVT"
+	.asciz "BTA_HH_INT_CTRL_DATA"
+	.balign 4
+	.asciz "BTA_HH_API_WRITE_DEV_EVT"
+	.balign 4
+	.asciz "BTA_HH_SDP_CMPL_EVT"
+	.asciz "BTA_HH_DISC_CMPL_EVT"
+	.balign 4
+	.asciz "BTA_HH_API_MAINT_DEV_EVT"
+	.balign 4
+	.asciz "BTA_HH_API_GET_DSCP_EVT"
+	.asciz "BTA_HH_OPEN_CMPL_EVT"
+	.balign 4
+	.asciz "BTA_HH_API_GET_ACL_Q_EVT"
+	.balign 4
+	.asciz "unknown HID Host event code"
+glabel lbl_8018B1C0
 	.long 0x800D77C8
 	.long 0x800D77D0
 	.long 0x800D77D8
@@ -32295,1843 +26690,263 @@ lbl_8018B1C0:
 	.long 0x800D77B8
 	.long 0x800D7830
 	.long 0x800D7810
-.global lbl_8018B200
-lbl_8018B200:
-	.long 0x666F756E
-	.long 0x64206B64
-	.long 0x65765F63
-	.long 0x625B2564
-	.long 0x5D206869
-	.long 0x645F6861
-	.long 0x6E646C65
-	.long 0x203D2025
-	.long 0x64200000
-	.long 0x696E5F75
-	.long 0x7365203F
-	.long 0x205B2564
-	.long 0x5D206B64
-	.long 0x65765B25
-	.long 0x645D2E68
-	.long 0x69645F68
-	.long 0x616E646C
-	.long 0x65203D20
-	.long 0x25642073
-	.long 0x74617465
-	.long 0x203D205B
-	.long 0x25645D00
-	.long 0x6274615F
-	.long 0x68685F66
-	.long 0x696E645F
-	.long 0x63623A3A
-	.long 0x20696E64
-	.long 0x6578203D
-	.long 0x20256420
-	.long 0x7768696C
-	.long 0x65206D61
-	.long 0x78203D20
-	.long 0x25640000
-.global lbl_8018B284
-lbl_8018B284:
-	.long 0x73756263
-	.long 0x6C617373
-	.long 0x203D2030
-	.long 0x78253278
+glabel lbl_8018B200
+	.asciz "found kdev_cb[%d] hid_handle = %d "
+	.balign 4
+	.asciz "in_use ? [%d] kdev[%d].hid_handle = %d state = [%d]"
+	.asciz "bta_hh_find_cb:: index = %d while max = %d"
+glabel lbl_8018B284
+	.asciz "subclass = 0x%2x"
+	.balign 4
+	.asciz "bta_hh_parse_keybd_rpt:  (report=%p, report_len=%d) called"
+	.balign 4
 	.long 0x00000000
-	.long 0x6274615F
-	.long 0x68685F70
-	.long 0x61727365
-	.long 0x5F6B6579
-	.long 0x62645F72
-	.long 0x70743A20
-	.long 0x20287265
-	.long 0x706F7274
-	.long 0x3D25702C
-	.long 0x20726570
-	.long 0x6F72745F
-	.long 0x6C656E3D
-	.long 0x25642920
-	.long 0x63616C6C
-	.long 0x65640000
+	.asciz "Alt key pressed"
+	.asciz "Alt key not pressed"
+	.asciz "this_char = %02x"
+	.balign 4
+	.asciz "BTA_HhParseKeybdRpt:  Cannot interpret scan code                 0x%02x"
+	.asciz "bta_hh_parse_mice_rpt:  bta_keybd_rpt_rcvd(report=%p,                 report_len=%d) called"
+	.asciz "mice button: 0x%2x"
+	.balign 4
+	.asciz "mice move: x = %d y = %d"
+	.balign 4
+	.asciz "bta_hh_trace_dev_db:: Device DB list********************"
+	.balign 4
+	.asciz "kdev[%d] in_use[%d]  handle[%d] "
+	.balign 4
+	.asciz "\t\t\t attr_mask[%04x] state [%d] sub_class[%02x] index = %d"
+	.balign 4
+	.asciz "*********************************************************"
 	.long 0x00000000
-	.long 0x416C7420
-	.long 0x6B657920
-	.long 0x70726573
-	.long 0x73656400
-	.long 0x416C7420
-	.long 0x6B657920
-	.long 0x6E6F7420
-	.long 0x70726573
-	.long 0x73656400
-	.long 0x74686973
-	.long 0x5F636861
-	.long 0x72203D20
-	.long 0x25303278
+glabel lbl_8018B4C0
+	.asciz "Duplicate btm_acl_created: RemBdAddr: %02x%02x%02x%02x%02x%02x"
+glabel lbl_8018B500
+	.asciz "SetPacketType Mask -> 0x%04x"
+glabel lbl_8018B520
+	.asciz "Role change request declined since the previous request for this device is not completed "
+	.balign 4
+	.asciz "BTM_SetLinkPolicy switch not supported (settings: 0x%04x)"
+	.balign 4
+	.asciz "BTM_SetLinkPolicy hold not supported (settings: 0x%04x)"
+	.asciz "BTM_SetLinkPolicy sniff not supported (settings: 0x%04x)"
+	.balign 4
 	.long 0x00000000
-	.long 0x4254415F
-	.long 0x48685061
-	.long 0x7273654B
-	.long 0x65796264
-	.long 0x5270743A
-	.long 0x20204361
-	.long 0x6E6E6F74
-	.long 0x20696E74
-	.long 0x65727072
-	.long 0x65742073
-	.long 0x63616E20
-	.long 0x636F6465
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20307825
-	.long 0x30327800
-	.long 0x6274615F
-	.long 0x68685F70
-	.long 0x61727365
-	.long 0x5F6D6963
-	.long 0x655F7270
-	.long 0x743A2020
-	.long 0x6274615F
-	.long 0x6B657962
-	.long 0x645F7270
-	.long 0x745F7263
-	.long 0x76642872
-	.long 0x65706F72
-	.long 0x743D2570
-	.long 0x2C202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20207265
-	.long 0x706F7274
-	.long 0x5F6C656E
-	.long 0x3D256429
-	.long 0x2063616C
-	.long 0x6C656400
-	.long 0x6D696365
-	.long 0x20627574
-	.long 0x746F6E3A
-	.long 0x20307825
-	.long 0x32780000
-	.long 0x6D696365
-	.long 0x206D6F76
-	.long 0x653A2078
-	.long 0x203D2025
-	.long 0x64207920
-	.long 0x3D202564
+	.asciz "BTM_SetLinkPolicy park not supported (settings: 0x%04x)"
+	.asciz "BTM_ReadLinkPolicy: RemBdAddr: %02x%02x%02x%02x%02x%02x"
+glabel lbl_8018B6A0
+	.asciz "BTM_ReadClockOffset: RemBdAddr: %02x%02x%02x%02x%02x%02x"
+glabel lbl_8018B6DC
+	.asciz "Role Switch Event: new_role 0x%02x, HCI Status 0x%02x"
+	.balign 4
+	.asciz "BTM_SetQoS: BdAddr: %02x%02x%02x%02x%02x%02x"
+glabel lbl_8018B744
+	.asciz "BTM: p_flow->delay_variation: 0x%02x"
+glabel lbl_8018B76C
+	.asciz "BTM_ReadRSSI: RemBdAddr: %02x%02x%02x%02x%02x%02x"
+glabel lbl_8018B7A0
+	.asciz "BTM_ReadLinkQuality: RemBdAddr: %02x%02x%02x%02x%02x%02x"
+glabel lbl_8018B7DC
+	.asciz "BTM RSSI Complete: rssi %d, hci status 0x%02x"
+glabel lbl_8018B80C
+	.asciz "BTM Link Quality Complete: Link Quality %d, hci status 0x%02x"
+	.balign 4
+	.asciz "btm BEFORE SCO setting to 1 slot; hci hdl 0x%x"
+	.balign 4
+	.asciz "btm last SCO removed; unsniffing hci hdl 0x%x"
+	.balign 4
+	.asciz "btm last SCO removed; hci hdl 0x%x, types 0x%02x"
+glabel lbl_8018B8E0
+	.asciz "BTM_SetAfhChannels first: %d (%d) last: %d (%d)"
+glabel lbl_8018B910
+	.asciz "btm_reset_complete"
+	.balign 4
+	.asciz "Local supported ACL packet types: 0x%04x"
+	.balign 4
+	.asciz "Local supported SCO packet types: 0x%04x"
+glabel lbl_8018B97C
+	.asciz "BTM: BTM_VendorSpecificCommand: Opcode: 0x%04X, ParamLen: %i."
+glabel lbl_8018B9BC
+	.asciz "BTM: Unable to send vendor specific command (controller is busy)."
+glabel lbl_8018BA00
+	.asciz "BTM Event: Received a vendor specific event from controller"
+	.balign 8
+glabel lbl_8018BA40
+	.asciz "BTM: BTM_WritePageTimeout: Timeout: %d."
+	.asciz "BTM: BTM_WriteVoiceSettings: Settings: 0x%04x."
+	.balign 4
+	.asciz "BTM: BTM_EnableTestMode"
+glabel lbl_8018BAB0
+	.asciz "BTM: BTM_ReadStoredLinkKey: Read_All: %s"
+glabel lbl_8018BADC
+	.asciz "BTM: BTM_WriteStoredLinkKey: num_keys: %d"
+glabel lbl_8018BB08
+	.asciz "BTM: BTM_DeleteStoredLinkKey: delete_all_flag: %s"
 	.long 0x00000000
-	.long 0x6274615F
-	.long 0x68685F74
-	.long 0x72616365
-	.long 0x5F646576
-	.long 0x5F64623A
-	.long 0x3A204465
-	.long 0x76696365
-	.long 0x20444220
-	.long 0x6C697374
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
+glabel lbl_8018BB40
+	.asciz "BTM_SetDiscoverability: mode %d [NonDisc-0, Lim-1, Gen-2], window 0x%04x, interval 0x%04x"
+glabel lbl_8018BB9C
+	.asciz "BTM_SetConnectability: mode %d [NonConn-0, Conn-1], window 0x%04x, interval 0x%04x"
+glabel lbl_8018BBF0
+	.asciz "BTM_CancelInquiry called"
+glabel lbl_8018BC0C
+	.asciz "BTM_StartInquiry: mode: %d, dur: %d, rsps: %d, flt: %d"
+glabel lbl_8018BC44
+	.asciz "BTM_ReadRemoteDeviceName: bd addr [%02x%02x%02x%02x%02x%02x]"
+glabel lbl_8018BC84
+	.asciz "BTM_CancelRemoteDeviceName()"
+glabel lbl_8018BCA4
+	.asciz "BTM_InqDbRead: bd addr [%02x%02x%02x%02x%02x%02x]"
+glabel lbl_8018BCD8
+	.asciz "BTM Warning: Set Event Filter Failed (HCI returned 0x%x)"
+glabel lbl_8018BD14
+	.asciz "BTM Inq Compl Callback: status 0x%02x, num results %d"
 	.long 0x00000000
-	.long 0x6B646576
-	.long 0x5B25645D
-	.long 0x20696E5F
-	.long 0x7573655B
-	.long 0x25645D20
-	.long 0x2068616E
-	.long 0x646C655B
-	.long 0x25645D20
+glabel lbl_8018BD50
+	.asciz "btm mode change AFTER unsniffing; hci hdl 0x%x, types 0x%02x"
+glabel lbl_8018BD90
+	.asciz "btm_esco_conn_rsp -> No Resources"
+	.balign 4
+	.asciz "TCS accept SCO: Packet Types 0x%04x"
+	.asciz "BTM_CreateSco -> (e)SCO Link for ACL handle 0x%04x, Desired Type %d"
+	.asciz "      txbw 0x%x, rxbw 0x%x, lat 0x%x, voice 0x%x, retrans 0x%02x, pkt 0x%04x"
+	.balign 4
+	.asciz "btm_sco_chk_pend_unpark -> (e)SCO Link for ACL handle 0x%04x, Desired Type %d"
+glabel lbl_8018BEBC
+	.asciz "btm_sco_conn_req: No one wants this SCO connection; rejecting it"
+	.balign 4
+	.asciz "BTM_SetEScoMode -> mode %d"
+	.balign 4
+	.asciz "BTM_SetEScoMode -> mode SCO (eSCO not supported)"
+	.balign 4
+	.asciz "    txbw 0x%08x, rxbw 0x%08x, max_lat 0x%04x, voice 0x%04x, pkt 0x%04x, rtx effort 0x%02x"
+	.balign 4
 	.long 0x00000000
-	.long 0x09090920
-	.long 0x61747472
-	.long 0x5F6D6173
-	.long 0x6B5B2530
-	.long 0x34785D20
-	.long 0x73746174
-	.long 0x65205B25
-	.long 0x645D2073
-	.long 0x75625F63
-	.long 0x6C617373
-	.long 0x5B253032
-	.long 0x785D2069
-	.long 0x6E646578
-	.long 0x203D2025
-	.long 0x64000000
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A2A2A2A
-	.long 0x2A000000
+	.asciz "BTM_ReadEScoLinkParms -> sco_inx 0x%04x"
+	.asciz "BTM_ChangeEScoLinkParms -> SCO Link for handle 0x%04x, pkt 0x%04x"
+	.balign 4
+	.asciz "BTM_ChangeEScoLinkParms -> eSCO Link for handle 0x%04x"
+glabel lbl_8018C054
+	.asciz "btm_esco_proc_conn_chg -> handle 0x%04x, status 0x%02x"
 	.long 0x00000000
-.global lbl_8018B4C0
-lbl_8018B4C0:
-	.long 0x4475706C
-	.long 0x69636174
-	.long 0x65206274
-	.long 0x6D5F6163
-	.long 0x6C5F6372
-	.long 0x65617465
-	.long 0x643A2052
-	.long 0x656D4264
-	.long 0x41646472
-	.long 0x3A202530
-	.long 0x32782530
-	.long 0x32782530
-	.long 0x32782530
-	.long 0x32782530
-	.long 0x32782530
-	.long 0x32780000
-.global lbl_8018B500
-lbl_8018B500:
-	.long 0x53657450
-	.long 0x61636B65
-	.long 0x74547970
-	.long 0x65204D61
-	.long 0x736B202D
-	.long 0x3E203078
-	.long 0x25303478
+glabel lbl_8018C090
+	.asciz "BTM_Sec: application registered"
+	.asciz "BTM_SetSecurityMode: mode:%d"
+	.balign 4
+	.asciz "BTM_SetSecurityMode: Authen Enable -> FALSE"
+	.asciz "BTM_SetSecurityMode: Authen Enable -> TRUE"
+glabel lbl_8018C128
+	.asciz "BTM_SetPinType: pin type %d [variable-0, fixed-1], code %s, length %d"
+	.balign 4
+	.asciz "BTM_SEC_REG[%d]: id %d, is_orig %d, psm 0x%04x, proto_id %d, chan_id %d"
+	.asciz "               : sec: 0x%x, service name [%s] (up to %d chars saved)"
+	.balign 4
+	.asciz "BTM_SEC_REG: Out of Service Records (%d)"
 	.long 0x00000000
-.global lbl_8018B520
-lbl_8018B520:
-	.long 0x526F6C65
-	.long 0x20636861
-	.long 0x6E676520
-	.long 0x72657175
-	.long 0x65737420
-	.long 0x6465636C
-	.long 0x696E6564
-	.long 0x2073696E
-	.long 0x63652074
-	.long 0x68652070
-	.long 0x72657669
-	.long 0x6F757320
-	.long 0x72657175
-	.long 0x65737420
-	.long 0x666F7220
-	.long 0x74686973
-	.long 0x20646576
-	.long 0x69636520
-	.long 0x6973206E
-	.long 0x6F742063
-	.long 0x6F6D706C
-	.long 0x65746564
-	.long 0x20000000
-	.long 0x42544D5F
-	.long 0x5365744C
-	.long 0x696E6B50
-	.long 0x6F6C6963
-	.long 0x79207377
-	.long 0x69746368
-	.long 0x206E6F74
-	.long 0x20737570
-	.long 0x706F7274
-	.long 0x65642028
-	.long 0x73657474
-	.long 0x696E6773
-	.long 0x3A203078
-	.long 0x25303478
-	.long 0x29000000
-	.long 0x42544D5F
-	.long 0x5365744C
-	.long 0x696E6B50
-	.long 0x6F6C6963
-	.long 0x7920686F
-	.long 0x6C64206E
-	.long 0x6F742073
-	.long 0x7570706F
-	.long 0x72746564
-	.long 0x20287365
-	.long 0x7474696E
-	.long 0x67733A20
-	.long 0x30782530
-	.long 0x34782900
-	.long 0x42544D5F
-	.long 0x5365744C
-	.long 0x696E6B50
-	.long 0x6F6C6963
-	.long 0x7920736E
-	.long 0x69666620
-	.long 0x6E6F7420
-	.long 0x73757070
-	.long 0x6F727465
-	.long 0x64202873
-	.long 0x65747469
-	.long 0x6E67733A
-	.long 0x20307825
-	.long 0x30347829
+glabel lbl_8018C230
+	.asciz "Security Manager: Attempting Authorization of Unknown Device Address [%02x%02x%02x%02x%02x%02x]"
+glabel lbl_8018C290
+	.asciz "Security Manager: authorized status:%d State:%d"
+	.asciz "BTM_SecBond BDA: %02x:%02x:%02x:%02x:%02x:%02x"
+	.balign 4
+	.asciz "BTM_SecBond: Illegal Pin len:%d"
+	.asciz "BTM_SecBond: no device block"
+	.balign 4
+	.asciz "BTM_SecBond -> Already Paired"
+	.balign 4
+	.asciz "BTM_SecBond: Authen Enable -> TRUE"
+	.balign 4
+	.asciz "BTM_SecBond: no buffer"
+glabel lbl_8018C38C
+	.asciz "btm_restore_mode: Authen Enable -> %d"
+	.balign 4
+	.asciz "Security Manager: BTM_SetEncryption not connected"
+	.balign 4
+	.asciz "Security Manager: BTM_SetEncryption already encrypted"
+	.balign 4
+	.asciz "Security Manager: BTM_SetEncryption busy"
+	.balign 4
 	.long 0x00000000
+	.asciz "Security Manager: BTM_SetEncryption Handle:%d State:%d Flags:0x%x Required:0x%x"
+	.asciz "Security Manager: l2cap_access_req PSM:%d no resources"
+	.balign 4
+	.asciz "Security Manager: l2cap_access_req PSM:%d no application registerd"
+	.balign 4
+	.asciz "Security Manager: l2cap_access_req PSM:%d postponed for multiplexer"
+	.asciz "Security Manager: l2cap_access_req PSM:%d Handle:%d State:%d Flags:0x%x Required:0x%x"
+	.balign 4
+	.asciz "Security Manager: trusted:0x%04x%04x Flags:0x%x"
+glabel lbl_8018C5E8
+	.asciz "Security Manager: MX service not found PSM:%d Proto:%d SCN:%d"
+glabel lbl_8018C628
+	.asciz "Security Manager: connect request from not paired device"
+glabel lbl_8018C664
+	.asciz "Security Manager: rmt_name_complete status:%d State:%d"
+glabel lbl_8018C69C
+	.asciz "Security Manager: auth_complete status:%d State:%d"
+glabel lbl_8018C6D0
+	.asciz "Security Manager: mkey comp status:%d State:%d"
+glabel lbl_8018C700
+	.asciz "Security Manager: encrypt_change status:%d State:%d"
+glabel lbl_8018C734
+	.asciz "Security Manager: btm_sec_connected handle:%d status:%d enc_mode:%d"
+glabel lbl_8018C778
+	.asciz "btm_sec_link_key_notification()  BDA: %02x:%02x:%02x:%02x:%02x:%02x"
+glabel lbl_8018C7BC
+	.asciz "                                TYPE: %d"
+glabel lbl_8018C7E8
+	.asciz "btm_sec_link_key_request()  BDA: %02x:%02x:%02x:%02x:%02x:%02x"
+glabel lbl_8018C828
+	.asciz "btm_sec_pin_code_request_timeout()"
+	.balign 4
+	.asciz "btm_sec_pin_code_request()  BDA: %02x:%02x:%02x:%02x:%02x:%02x"
+	.balign 4
+	.asciz "btm_sec_pin_code_request bonding sending reply"
+	.balign 4
+	.asciz "btm_sec_pin_code_request: Authen Enable -> %d"
+	.balign 4
+	.asciz "btm_sec_pin_code_request(): Pairing disabled:%d; PIN callback:%x, Dev Rec:%x!"
+	.balign 4
+	.asciz "btm_sec_execute_procedure: Required:0x%x Flags:0x%x State:%d"
+	.balign 4
+	.asciz "L2CAP - no LCB for L2CA_conn_req"
+	.balign 4
+	.asciz "Security Manager: Start get name"
+	.balign 4
+	.asciz "Security Manager: Start authentication"
+	.balign 4
+	.asciz "Security Manager: Start encryption"
+	.balign 4
+	.asciz "Security Manager: Start authorization"
+	.balign 4
+	.asciz "Security Manager: trusted:0x%04x%04x"
+	.balign 4
+	.asciz "Security Manager: access granted"
+glabel lbl_8018CA84
+	.asciz "btm_sec_collision_timeout()"
+glabel lbl_8018CAA0
+	.asciz "Ctlr H/w error event"
+glabel lbl_8018CAB8
+	.asciz "Event mismatch opcode=%X cmd opcode=%X"
+glabel lbl_8018CAE0
+	.asciz "Cmd timeout; no cmd in queue"
+glabel lbl_8018CB00
+	.asciz "BTU HCI command timeout - cmd opcode = 0x%02x"
+glabel lbl_8018CB30
+	.asciz "WARNING: GAP Conn Indication for Unexpected Bd Addr...Disconnecting"
+glabel lbl_8018CB74
+	.asciz "GAP_CONN - Rcvd L2CAP conn ind, CID: 0x%x"
+glabel lbl_8018CBA0
+	.asciz "GAP_CONN - Rcvd L2CAP disc, CID: 0x%x"
+glabel lbl_8018CBC8
+	.asciz "GAP_CONN - Rcvd L2CAP Is Congested (%d), CID: 0x%x"
 	.long 0x00000000
-	.long 0x42544D5F
-	.long 0x5365744C
-	.long 0x696E6B50
-	.long 0x6F6C6963
-	.long 0x79207061
-	.long 0x726B206E
-	.long 0x6F742073
-	.long 0x7570706F
-	.long 0x72746564
-	.long 0x20287365
-	.long 0x7474696E
-	.long 0x67733A20
-	.long 0x30782530
-	.long 0x34782900
-	.long 0x42544D5F
-	.long 0x52656164
-	.long 0x4C696E6B
-	.long 0x506F6C69
-	.long 0x63793A20
-	.long 0x52656D42
-	.long 0x64416464
-	.long 0x723A2025
-	.long 0x30327825
-	.long 0x30327825
-	.long 0x30327825
-	.long 0x30327825
-	.long 0x30327825
-	.long 0x30327800
-.global lbl_8018B6A0
-lbl_8018B6A0:
-	.long 0x42544D5F
-	.long 0x52656164
-	.long 0x436C6F63
-	.long 0x6B4F6666
-	.long 0x7365743A
-	.long 0x2052656D
-	.long 0x42644164
-	.long 0x64723A20
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x00000000
-.global lbl_8018B6DC
-lbl_8018B6DC:
-	.long 0x526F6C65
-	.long 0x20537769
-	.long 0x74636820
-	.long 0x4576656E
-	.long 0x743A206E
-	.long 0x65775F72
-	.long 0x6F6C6520
-	.long 0x30782530
-	.long 0x32782C20
-	.long 0x48434920
-	.long 0x53746174
-	.long 0x75732030
-	.long 0x78253032
-	.long 0x78000000
-	.long 0x42544D5F
-	.long 0x53657451
-	.long 0x6F533A20
-	.long 0x42644164
-	.long 0x64723A20
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x00000000
-.global lbl_8018B744
-lbl_8018B744:
-	.long 0x42544D3A
-	.long 0x20705F66
-	.long 0x6C6F772D
-	.long 0x3E64656C
-	.long 0x61795F76
-	.long 0x61726961
-	.long 0x74696F6E
-	.long 0x3A203078
-	.long 0x25303278
-	.long 0x00000000
-.global lbl_8018B76C
-lbl_8018B76C:
-	.long 0x42544D5F
-	.long 0x52656164
-	.long 0x52535349
-	.long 0x3A205265
-	.long 0x6D426441
-	.long 0x6464723A
-	.long 0x20253032
-	.long 0x78253032
-	.long 0x78253032
-	.long 0x78253032
-	.long 0x78253032
-	.long 0x78253032
-	.long 0x78000000
-.global lbl_8018B7A0
-lbl_8018B7A0:
-	.long 0x42544D5F
-	.long 0x52656164
-	.long 0x4C696E6B
-	.long 0x5175616C
-	.long 0x6974793A
-	.long 0x2052656D
-	.long 0x42644164
-	.long 0x64723A20
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x00000000
-.global lbl_8018B7DC
-lbl_8018B7DC:
-	.long 0x42544D20
-	.long 0x52535349
-	.long 0x20436F6D
-	.long 0x706C6574
-	.long 0x653A2072
-	.long 0x73736920
-	.long 0x25642C20
-	.long 0x68636920
-	.long 0x73746174
-	.long 0x75732030
-	.long 0x78253032
-	.long 0x78000000
-.global lbl_8018B80C
-lbl_8018B80C:
-	.long 0x42544D20
-	.long 0x4C696E6B
-	.long 0x20517561
-	.long 0x6C697479
-	.long 0x20436F6D
-	.long 0x706C6574
-	.long 0x653A204C
-	.long 0x696E6B20
-	.long 0x5175616C
-	.long 0x69747920
-	.long 0x25642C20
-	.long 0x68636920
-	.long 0x73746174
-	.long 0x75732030
-	.long 0x78253032
-	.long 0x78000000
-	.long 0x62746D20
-	.long 0x4245464F
-	.long 0x52452053
-	.long 0x434F2073
-	.long 0x65747469
-	.long 0x6E672074
-	.long 0x6F203120
-	.long 0x736C6F74
-	.long 0x3B206863
-	.long 0x69206864
-	.long 0x6C203078
-	.long 0x25780000
-	.long 0x62746D20
-	.long 0x6C617374
-	.long 0x2053434F
-	.long 0x2072656D
-	.long 0x6F766564
-	.long 0x3B20756E
-	.long 0x736E6966
-	.long 0x66696E67
-	.long 0x20686369
-	.long 0x2068646C
-	.long 0x20307825
-	.long 0x78000000
-	.long 0x62746D20
-	.long 0x6C617374
-	.long 0x2053434F
-	.long 0x2072656D
-	.long 0x6F766564
-	.long 0x3B206863
-	.long 0x69206864
-	.long 0x6C203078
-	.long 0x25782C20
-	.long 0x74797065
-	.long 0x73203078
-	.long 0x25303278
-	.long 0x00000000
-.global lbl_8018B8E0
-lbl_8018B8E0:
-	.long 0x42544D5F
-	.long 0x53657441
-	.long 0x66684368
-	.long 0x616E6E65
-	.long 0x6C732066
-	.long 0x69727374
-	.long 0x3A202564
-	.long 0x20282564
-	.long 0x29206C61
-	.long 0x73743A20
-	.long 0x25642028
-	.long 0x25642900
-.global lbl_8018B910
-lbl_8018B910:
-	.long 0x62746D5F
-	.long 0x72657365
-	.long 0x745F636F
-	.long 0x6D706C65
-	.long 0x74650000
-	.long 0x4C6F6361
-	.long 0x6C207375
-	.long 0x70706F72
-	.long 0x74656420
-	.long 0x41434C20
-	.long 0x7061636B
-	.long 0x65742074
-	.long 0x79706573
-	.long 0x3A203078
-	.long 0x25303478
-	.long 0x00000000
-	.long 0x4C6F6361
-	.long 0x6C207375
-	.long 0x70706F72
-	.long 0x74656420
-	.long 0x53434F20
-	.long 0x7061636B
-	.long 0x65742074
-	.long 0x79706573
-	.long 0x3A203078
-	.long 0x25303478
-	.long 0x00000000
-.global lbl_8018B97C
-lbl_8018B97C:
-	.long 0x42544D3A
-	.long 0x2042544D
-	.long 0x5F56656E
-	.long 0x646F7253
-	.long 0x70656369
-	.long 0x66696343
-	.long 0x6F6D6D61
-	.long 0x6E643A20
-	.long 0x4F70636F
-	.long 0x64653A20
-	.long 0x30782530
-	.long 0x34582C20
-	.long 0x50617261
-	.long 0x6D4C656E
-	.long 0x3A202569
-	.long 0x2E000000
-.global lbl_8018B9BC
-lbl_8018B9BC:
-	.long 0x42544D3A
-	.long 0x20556E61
-	.long 0x626C6520
-	.long 0x746F2073
-	.long 0x656E6420
-	.long 0x76656E64
-	.long 0x6F722073
-	.long 0x70656369
-	.long 0x66696320
-	.long 0x636F6D6D
-	.long 0x616E6420
-	.long 0x28636F6E
-	.long 0x74726F6C
-	.long 0x6C657220
-	.long 0x69732062
-	.long 0x75737929
-	.long 0x2E000000
-.global lbl_8018BA00
-lbl_8018BA00:
-	.long 0x42544D20
-	.long 0x4576656E
-	.long 0x743A2052
-	.long 0x65636569
-	.long 0x76656420
-	.long 0x61207665
-	.long 0x6E646F72
-	.long 0x20737065
-	.long 0x63696669
-	.long 0x63206576
-	.long 0x656E7420
-	.long 0x66726F6D
-	.long 0x20636F6E
-	.long 0x74726F6C
-	.long 0x6C657200
-	.long 0x00000000
-.global lbl_8018BA40
-lbl_8018BA40:
-	.long 0x42544D3A
-	.long 0x2042544D
-	.long 0x5F577269
-	.long 0x74655061
-	.long 0x67655469
-	.long 0x6D656F75
-	.long 0x743A2054
-	.long 0x696D656F
-	.long 0x75743A20
-	.long 0x25642E00
-	.long 0x42544D3A
-	.long 0x2042544D
-	.long 0x5F577269
-	.long 0x7465566F
-	.long 0x69636553
-	.long 0x65747469
-	.long 0x6E67733A
-	.long 0x20536574
-	.long 0x74696E67
-	.long 0x733A2030
-	.long 0x78253034
-	.long 0x782E0000
-	.long 0x42544D3A
-	.long 0x2042544D
-	.long 0x5F456E61
-	.long 0x626C6554
-	.long 0x6573744D
-	.long 0x6F646500
-.global lbl_8018BAB0
-lbl_8018BAB0:
-	.long 0x42544D3A
-	.long 0x2042544D
-	.long 0x5F526561
-	.long 0x6453746F
-	.long 0x7265644C
-	.long 0x696E6B4B
-	.long 0x65793A20
-	.long 0x52656164
-	.long 0x5F416C6C
-	.long 0x3A202573
-	.long 0x00000000
-.global lbl_8018BADC
-lbl_8018BADC:
-	.long 0x42544D3A
-	.long 0x2042544D
-	.long 0x5F577269
-	.long 0x74655374
-	.long 0x6F726564
-	.long 0x4C696E6B
-	.long 0x4B65793A
-	.long 0x206E756D
-	.long 0x5F6B6579
-	.long 0x733A2025
-	.long 0x64000000
-.global lbl_8018BB08
-lbl_8018BB08:
-	.long 0x42544D3A
-	.long 0x2042544D
-	.long 0x5F44656C
-	.long 0x65746553
-	.long 0x746F7265
-	.long 0x644C696E
-	.long 0x6B4B6579
-	.long 0x3A206465
-	.long 0x6C657465
-	.long 0x5F616C6C
-	.long 0x5F666C61
-	.long 0x673A2025
-	.long 0x73000000
-	.long 0x00000000
-.global lbl_8018BB40
-lbl_8018BB40:
-	.long 0x42544D5F
-	.long 0x53657444
-	.long 0x6973636F
-	.long 0x76657261
-	.long 0x62696C69
-	.long 0x74793A20
-	.long 0x6D6F6465
-	.long 0x20256420
-	.long 0x5B4E6F6E
-	.long 0x44697363
-	.long 0x2D302C20
-	.long 0x4C696D2D
-	.long 0x312C2047
-	.long 0x656E2D32
-	.long 0x5D2C2077
-	.long 0x696E646F
-	.long 0x77203078
-	.long 0x25303478
-	.long 0x2C20696E
-	.long 0x74657276
-	.long 0x616C2030
-	.long 0x78253034
-	.long 0x78000000
-.global lbl_8018BB9C
-lbl_8018BB9C:
-	.long 0x42544D5F
-	.long 0x53657443
-	.long 0x6F6E6E65
-	.long 0x63746162
-	.long 0x696C6974
-	.long 0x793A206D
-	.long 0x6F646520
-	.long 0x2564205B
-	.long 0x4E6F6E43
-	.long 0x6F6E6E2D
-	.long 0x302C2043
-	.long 0x6F6E6E2D
-	.long 0x315D2C20
-	.long 0x77696E64
-	.long 0x6F772030
-	.long 0x78253034
-	.long 0x782C2069
-	.long 0x6E746572
-	.long 0x76616C20
-	.long 0x30782530
-	.long 0x34780000
-.global lbl_8018BBF0
-lbl_8018BBF0:
-	.long 0x42544D5F
-	.long 0x43616E63
-	.long 0x656C496E
-	.long 0x71756972
-	.long 0x79206361
-	.long 0x6C6C6564
-	.long 0x00000000
-.global lbl_8018BC0C
-lbl_8018BC0C:
-	.long 0x42544D5F
-	.long 0x53746172
-	.long 0x74496E71
-	.long 0x75697279
-	.long 0x3A206D6F
-	.long 0x64653A20
-	.long 0x25642C20
-	.long 0x6475723A
-	.long 0x2025642C
-	.long 0x20727370
-	.long 0x733A2025
-	.long 0x642C2066
-	.long 0x6C743A20
-	.long 0x25640000
-.global lbl_8018BC44
-lbl_8018BC44:
-	.long 0x42544D5F
-	.long 0x52656164
-	.long 0x52656D6F
-	.long 0x74654465
-	.long 0x76696365
-	.long 0x4E616D65
-	.long 0x3A206264
-	.long 0x20616464
-	.long 0x72205B25
-	.long 0x30327825
-	.long 0x30327825
-	.long 0x30327825
-	.long 0x30327825
-	.long 0x30327825
-	.long 0x3032785D
-	.long 0x00000000
-.global lbl_8018BC84
-lbl_8018BC84:
-	.long 0x42544D5F
-	.long 0x43616E63
-	.long 0x656C5265
-	.long 0x6D6F7465
-	.long 0x44657669
-	.long 0x63654E61
-	.long 0x6D652829
-	.long 0x00000000
-.global lbl_8018BCA4
-lbl_8018BCA4:
-	.long 0x42544D5F
-	.long 0x496E7144
-	.long 0x62526561
-	.long 0x643A2062
-	.long 0x64206164
-	.long 0x6472205B
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x25303278
-	.long 0x5D000000
-.global lbl_8018BCD8
-lbl_8018BCD8:
-	.long 0x42544D20
-	.long 0x5761726E
-	.long 0x696E673A
-	.long 0x20536574
-	.long 0x20457665
-	.long 0x6E742046
-	.long 0x696C7465
-	.long 0x72204661
-	.long 0x696C6564
-	.long 0x20284843
-	.long 0x49207265
-	.long 0x7475726E
-	.long 0x65642030
-	.long 0x78257829
-	.long 0x00000000
-.global lbl_8018BD14
-lbl_8018BD14:
-	.long 0x42544D20
-	.long 0x496E7120
-	.long 0x436F6D70
-	.long 0x6C204361
-	.long 0x6C6C6261
-	.long 0x636B3A20
-	.long 0x73746174
-	.long 0x75732030
-	.long 0x78253032
-	.long 0x782C206E
-	.long 0x756D2072
-	.long 0x6573756C
-	.long 0x74732025
-	.long 0x64000000
-	.long 0x00000000
-.global lbl_8018BD50
-lbl_8018BD50:
-	.long 0x62746D20
-	.long 0x6D6F6465
-	.long 0x20636861
-	.long 0x6E676520
-	.long 0x41465445
-	.long 0x5220756E
-	.long 0x736E6966
-	.long 0x66696E67
-	.long 0x3B206863
-	.long 0x69206864
-	.long 0x6C203078
-	.long 0x25782C20
-	.long 0x74797065
-	.long 0x73203078
-	.long 0x25303278
-	.long 0x00000000
-.global lbl_8018BD90
-lbl_8018BD90:
-	.long 0x62746D5F
-	.long 0x6573636F
-	.long 0x5F636F6E
-	.long 0x6E5F7273
-	.long 0x70202D3E
-	.long 0x204E6F20
-	.long 0x5265736F
-	.long 0x75726365
-	.long 0x73000000
-	.long 0x54435320
-	.long 0x61636365
-	.long 0x70742053
-	.long 0x434F3A20
-	.long 0x5061636B
-	.long 0x65742054
-	.long 0x79706573
-	.long 0x20307825
-	.long 0x30347800
-	.long 0x42544D5F
-	.long 0x43726561
-	.long 0x74655363
-	.long 0x6F202D3E
-	.long 0x20286529
-	.long 0x53434F20
-	.long 0x4C696E6B
-	.long 0x20666F72
-	.long 0x2041434C
-	.long 0x2068616E
-	.long 0x646C6520
-	.long 0x30782530
-	.long 0x34782C20
-	.long 0x44657369
-	.long 0x72656420
-	.long 0x54797065
-	.long 0x20256400
-	.long 0x20202020
-	.long 0x20207478
-	.long 0x62772030
-	.long 0x7825782C
-	.long 0x20727862
-	.long 0x77203078
-	.long 0x25782C20
-	.long 0x6C617420
-	.long 0x30782578
-	.long 0x2C20766F
-	.long 0x69636520
-	.long 0x30782578
-	.long 0x2C207265
-	.long 0x7472616E
-	.long 0x73203078
-	.long 0x25303278
-	.long 0x2C20706B
-	.long 0x74203078
-	.long 0x25303478
-	.long 0x00000000
-	.long 0x62746D5F
-	.long 0x73636F5F
-	.long 0x63686B5F
-	.long 0x70656E64
-	.long 0x5F756E70
-	.long 0x61726B20
-	.long 0x2D3E2028
-	.long 0x65295343
-	.long 0x4F204C69
-	.long 0x6E6B2066
-	.long 0x6F722041
-	.long 0x434C2068
-	.long 0x616E646C
-	.long 0x65203078
-	.long 0x25303478
-	.long 0x2C204465
-	.long 0x73697265
-	.long 0x64205479
-	.long 0x70652025
-	.long 0x64000000
-.global lbl_8018BEBC
-lbl_8018BEBC:
-	.long 0x62746D5F
-	.long 0x73636F5F
-	.long 0x636F6E6E
-	.long 0x5F726571
-	.long 0x3A204E6F
-	.long 0x206F6E65
-	.long 0x2077616E
-	.long 0x74732074
-	.long 0x68697320
-	.long 0x53434F20
-	.long 0x636F6E6E
-	.long 0x65637469
-	.long 0x6F6E3B20
-	.long 0x72656A65
-	.long 0x6374696E
-	.long 0x67206974
-	.long 0x00000000
-	.long 0x42544D5F
-	.long 0x53657445
-	.long 0x53636F4D
-	.long 0x6F646520
-	.long 0x2D3E206D
-	.long 0x6F646520
-	.long 0x25640000
-	.long 0x42544D5F
-	.long 0x53657445
-	.long 0x53636F4D
-	.long 0x6F646520
-	.long 0x2D3E206D
-	.long 0x6F646520
-	.long 0x53434F20
-	.long 0x28655343
-	.long 0x4F206E6F
-	.long 0x74207375
-	.long 0x70706F72
-	.long 0x74656429
-	.long 0x00000000
-	.long 0x20202020
-	.long 0x74786277
-	.long 0x20307825
-	.long 0x3038782C
-	.long 0x20727862
-	.long 0x77203078
-	.long 0x25303878
-	.long 0x2C206D61
-	.long 0x785F6C61
-	.long 0x74203078
-	.long 0x25303478
-	.long 0x2C20766F
-	.long 0x69636520
-	.long 0x30782530
-	.long 0x34782C20
-	.long 0x706B7420
-	.long 0x30782530
-	.long 0x34782C20
-	.long 0x72747820
-	.long 0x6566666F
-	.long 0x72742030
-	.long 0x78253032
-	.long 0x78000000
-	.long 0x00000000
-	.long 0x42544D5F
-	.long 0x52656164
-	.long 0x4553636F
-	.long 0x4C696E6B
-	.long 0x5061726D
-	.long 0x73202D3E
-	.long 0x2073636F
-	.long 0x5F696E78
-	.long 0x20307825
-	.long 0x30347800
-	.long 0x42544D5F
-	.long 0x4368616E
-	.long 0x67654553
-	.long 0x636F4C69
-	.long 0x6E6B5061
-	.long 0x726D7320
-	.long 0x2D3E2053
-	.long 0x434F204C
-	.long 0x696E6B20
-	.long 0x666F7220
-	.long 0x68616E64
-	.long 0x6C652030
-	.long 0x78253034
-	.long 0x782C2070
-	.long 0x6B742030
-	.long 0x78253034
-	.long 0x78000000
-	.long 0x42544D5F
-	.long 0x4368616E
-	.long 0x67654553
-	.long 0x636F4C69
-	.long 0x6E6B5061
-	.long 0x726D7320
-	.long 0x2D3E2065
-	.long 0x53434F20
-	.long 0x4C696E6B
-	.long 0x20666F72
-	.long 0x2068616E
-	.long 0x646C6520
-	.long 0x30782530
-	.long 0x34780000
-.global lbl_8018C054
-lbl_8018C054:
-	.long 0x62746D5F
-	.long 0x6573636F
-	.long 0x5F70726F
-	.long 0x635F636F
-	.long 0x6E6E5F63
-	.long 0x6867202D
-	.long 0x3E206861
-	.long 0x6E646C65
-	.long 0x20307825
-	.long 0x3034782C
-	.long 0x20737461
-	.long 0x74757320
-	.long 0x30782530
-	.long 0x32780000
-	.long 0x00000000
-.global lbl_8018C090
-lbl_8018C090:
-	.long 0x42544D5F
-	.long 0x5365633A
-	.long 0x20617070
-	.long 0x6C696361
-	.long 0x74696F6E
-	.long 0x20726567
-	.long 0x69737465
-	.long 0x72656400
-	.long 0x42544D5F
-	.long 0x53657453
-	.long 0x65637572
-	.long 0x6974794D
-	.long 0x6F64653A
-	.long 0x206D6F64
-	.long 0x653A2564
-	.long 0x00000000
-	.long 0x42544D5F
-	.long 0x53657453
-	.long 0x65637572
-	.long 0x6974794D
-	.long 0x6F64653A
-	.long 0x20417574
-	.long 0x68656E20
-	.long 0x456E6162
-	.long 0x6C65202D
-	.long 0x3E204641
-	.long 0x4C534500
-	.long 0x42544D5F
-	.long 0x53657453
-	.long 0x65637572
-	.long 0x6974794D
-	.long 0x6F64653A
-	.long 0x20417574
-	.long 0x68656E20
-	.long 0x456E6162
-	.long 0x6C65202D
-	.long 0x3E205452
-	.long 0x55450000
-.global lbl_8018C128
-lbl_8018C128:
-	.long 0x42544D5F
-	.long 0x53657450
-	.long 0x696E5479
-	.long 0x70653A20
-	.long 0x70696E20
-	.long 0x74797065
-	.long 0x20256420
-	.long 0x5B766172
-	.long 0x6961626C
-	.long 0x652D302C
-	.long 0x20666978
-	.long 0x65642D31
-	.long 0x5D2C2063
-	.long 0x6F646520
-	.long 0x25732C20
-	.long 0x6C656E67
-	.long 0x74682025
-	.long 0x64000000
-	.long 0x42544D5F
-	.long 0x5345435F
-	.long 0x5245475B
-	.long 0x25645D3A
-	.long 0x20696420
-	.long 0x25642C20
-	.long 0x69735F6F
-	.long 0x72696720
-	.long 0x25642C20
-	.long 0x70736D20
-	.long 0x30782530
-	.long 0x34782C20
-	.long 0x70726F74
-	.long 0x6F5F6964
-	.long 0x2025642C
-	.long 0x20636861
-	.long 0x6E5F6964
-	.long 0x20256400
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x2020203A
-	.long 0x20736563
-	.long 0x3A203078
-	.long 0x25782C20
-	.long 0x73657276
-	.long 0x69636520
-	.long 0x6E616D65
-	.long 0x205B2573
-	.long 0x5D202875
-	.long 0x7020746F
-	.long 0x20256420
-	.long 0x63686172
-	.long 0x73207361
-	.long 0x76656429
-	.long 0x00000000
-	.long 0x42544D5F
-	.long 0x5345435F
-	.long 0x5245473A
-	.long 0x204F7574
-	.long 0x206F6620
-	.long 0x53657276
-	.long 0x69636520
-	.long 0x5265636F
-	.long 0x72647320
-	.long 0x28256429
-	.long 0x00000000
-	.long 0x00000000
-.global lbl_8018C230
-lbl_8018C230:
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A204174
-	.long 0x74656D70
-	.long 0x74696E67
-	.long 0x20417574
-	.long 0x686F7269
-	.long 0x7A617469
-	.long 0x6F6E206F
-	.long 0x6620556E
-	.long 0x6B6E6F77
-	.long 0x6E204465
-	.long 0x76696365
-	.long 0x20416464
-	.long 0x72657373
-	.long 0x205B2530
-	.long 0x32782530
-	.long 0x32782530
-	.long 0x32782530
-	.long 0x32782530
-	.long 0x32782530
-	.long 0x32785D00
-.global lbl_8018C290
-lbl_8018C290:
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A206175
-	.long 0x74686F72
-	.long 0x697A6564
-	.long 0x20737461
-	.long 0x7475733A
-	.long 0x25642053
-	.long 0x74617465
-	.long 0x3A256400
-	.long 0x42544D5F
-	.long 0x53656342
-	.long 0x6F6E6420
-	.long 0x4244413A
-	.long 0x20253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32780000
-	.long 0x42544D5F
-	.long 0x53656342
-	.long 0x6F6E643A
-	.long 0x20496C6C
-	.long 0x6567616C
-	.long 0x2050696E
-	.long 0x206C656E
-	.long 0x3A256400
-	.long 0x42544D5F
-	.long 0x53656342
-	.long 0x6F6E643A
-	.long 0x206E6F20
-	.long 0x64657669
-	.long 0x63652062
-	.long 0x6C6F636B
-	.long 0x00000000
-	.long 0x42544D5F
-	.long 0x53656342
-	.long 0x6F6E6420
-	.long 0x2D3E2041
-	.long 0x6C726561
-	.long 0x64792050
-	.long 0x61697265
-	.long 0x64000000
-	.long 0x42544D5F
-	.long 0x53656342
-	.long 0x6F6E643A
-	.long 0x20417574
-	.long 0x68656E20
-	.long 0x456E6162
-	.long 0x6C65202D
-	.long 0x3E205452
-	.long 0x55450000
-	.long 0x42544D5F
-	.long 0x53656342
-	.long 0x6F6E643A
-	.long 0x206E6F20
-	.long 0x62756666
-	.long 0x65720000
-.global lbl_8018C38C
-lbl_8018C38C:
-	.long 0x62746D5F
-	.long 0x72657374
-	.long 0x6F72655F
-	.long 0x6D6F6465
-	.long 0x3A204175
-	.long 0x7468656E
-	.long 0x20456E61
-	.long 0x626C6520
-	.long 0x2D3E2025
-	.long 0x64000000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A204254
-	.long 0x4D5F5365
-	.long 0x74456E63
-	.long 0x72797074
-	.long 0x696F6E20
-	.long 0x6E6F7420
-	.long 0x636F6E6E
-	.long 0x65637465
-	.long 0x64000000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A204254
-	.long 0x4D5F5365
-	.long 0x74456E63
-	.long 0x72797074
-	.long 0x696F6E20
-	.long 0x616C7265
-	.long 0x61647920
-	.long 0x656E6372
-	.long 0x79707465
-	.long 0x64000000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A204254
-	.long 0x4D5F5365
-	.long 0x74456E63
-	.long 0x72797074
-	.long 0x696F6E20
-	.long 0x62757379
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A204254
-	.long 0x4D5F5365
-	.long 0x74456E63
-	.long 0x72797074
-	.long 0x696F6E20
-	.long 0x48616E64
-	.long 0x6C653A25
-	.long 0x64205374
-	.long 0x6174653A
-	.long 0x25642046
-	.long 0x6C616773
-	.long 0x3A307825
-	.long 0x78205265
-	.long 0x71756972
-	.long 0x65643A30
-	.long 0x78257800
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A206C32
-	.long 0x6361705F
-	.long 0x61636365
-	.long 0x73735F72
-	.long 0x65712050
-	.long 0x534D3A25
-	.long 0x64206E6F
-	.long 0x20726573
-	.long 0x6F757263
-	.long 0x65730000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A206C32
-	.long 0x6361705F
-	.long 0x61636365
-	.long 0x73735F72
-	.long 0x65712050
-	.long 0x534D3A25
-	.long 0x64206E6F
-	.long 0x20617070
-	.long 0x6C696361
-	.long 0x74696F6E
-	.long 0x20726567
-	.long 0x69737465
-	.long 0x72640000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A206C32
-	.long 0x6361705F
-	.long 0x61636365
-	.long 0x73735F72
-	.long 0x65712050
-	.long 0x534D3A25
-	.long 0x6420706F
-	.long 0x7374706F
-	.long 0x6E656420
-	.long 0x666F7220
-	.long 0x6D756C74
-	.long 0x69706C65
-	.long 0x78657200
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A206C32
-	.long 0x6361705F
-	.long 0x61636365
-	.long 0x73735F72
-	.long 0x65712050
-	.long 0x534D3A25
-	.long 0x64204861
-	.long 0x6E646C65
-	.long 0x3A256420
-	.long 0x53746174
-	.long 0x653A2564
-	.long 0x20466C61
-	.long 0x67733A30
-	.long 0x78257820
-	.long 0x52657175
-	.long 0x69726564
-	.long 0x3A307825
-	.long 0x78000000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A207472
-	.long 0x75737465
-	.long 0x643A3078
-	.long 0x25303478
-	.long 0x25303478
-	.long 0x20466C61
-	.long 0x67733A30
-	.long 0x78257800
-.global lbl_8018C5E8
-lbl_8018C5E8:
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A204D58
-	.long 0x20736572
-	.long 0x76696365
-	.long 0x206E6F74
-	.long 0x20666F75
-	.long 0x6E642050
-	.long 0x534D3A25
-	.long 0x64205072
-	.long 0x6F746F3A
-	.long 0x25642053
-	.long 0x434E3A25
-	.long 0x64000000
-.global lbl_8018C628
-lbl_8018C628:
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A20636F
-	.long 0x6E6E6563
-	.long 0x74207265
-	.long 0x71756573
-	.long 0x74206672
-	.long 0x6F6D206E
-	.long 0x6F742070
-	.long 0x61697265
-	.long 0x64206465
-	.long 0x76696365
-	.long 0x00000000
-.global lbl_8018C664
-lbl_8018C664:
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A20726D
-	.long 0x745F6E61
-	.long 0x6D655F63
-	.long 0x6F6D706C
-	.long 0x65746520
-	.long 0x73746174
-	.long 0x75733A25
-	.long 0x64205374
-	.long 0x6174653A
-	.long 0x25640000
-.global lbl_8018C69C
-lbl_8018C69C:
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A206175
-	.long 0x74685F63
-	.long 0x6F6D706C
-	.long 0x65746520
-	.long 0x73746174
-	.long 0x75733A25
-	.long 0x64205374
-	.long 0x6174653A
-	.long 0x25640000
-.global lbl_8018C6D0
-lbl_8018C6D0:
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A206D6B
-	.long 0x65792063
-	.long 0x6F6D7020
-	.long 0x73746174
-	.long 0x75733A25
-	.long 0x64205374
-	.long 0x6174653A
-	.long 0x25640000
-.global lbl_8018C700
-lbl_8018C700:
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A20656E
-	.long 0x63727970
-	.long 0x745F6368
-	.long 0x616E6765
-	.long 0x20737461
-	.long 0x7475733A
-	.long 0x25642053
-	.long 0x74617465
-	.long 0x3A256400
-.global lbl_8018C734
-lbl_8018C734:
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A206274
-	.long 0x6D5F7365
-	.long 0x635F636F
-	.long 0x6E6E6563
-	.long 0x74656420
-	.long 0x68616E64
-	.long 0x6C653A25
-	.long 0x64207374
-	.long 0x61747573
-	.long 0x3A256420
-	.long 0x656E635F
-	.long 0x6D6F6465
-	.long 0x3A256400
-.global lbl_8018C778
-lbl_8018C778:
-	.long 0x62746D5F
-	.long 0x7365635F
-	.long 0x6C696E6B
-	.long 0x5F6B6579
-	.long 0x5F6E6F74
-	.long 0x69666963
-	.long 0x6174696F
-	.long 0x6E282920
-	.long 0x20424441
-	.long 0x3A202530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x30327800
-.global lbl_8018C7BC
-lbl_8018C7BC:
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x54595045
-	.long 0x3A202564
-	.long 0x00000000
-.global lbl_8018C7E8
-lbl_8018C7E8:
-	.long 0x62746D5F
-	.long 0x7365635F
-	.long 0x6C696E6B
-	.long 0x5F6B6579
-	.long 0x5F726571
-	.long 0x75657374
-	.long 0x28292020
-	.long 0x4244413A
-	.long 0x20253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32780000
-.global lbl_8018C828
-lbl_8018C828:
-	.long 0x62746D5F
-	.long 0x7365635F
-	.long 0x70696E5F
-	.long 0x636F6465
-	.long 0x5F726571
-	.long 0x75657374
-	.long 0x5F74696D
-	.long 0x656F7574
-	.long 0x28290000
-	.long 0x62746D5F
-	.long 0x7365635F
-	.long 0x70696E5F
-	.long 0x636F6465
-	.long 0x5F726571
-	.long 0x75657374
-	.long 0x28292020
-	.long 0x4244413A
-	.long 0x20253032
-	.long 0x783A2530
-	.long 0x32783A25
-	.long 0x3032783A
-	.long 0x25303278
-	.long 0x3A253032
-	.long 0x783A2530
-	.long 0x32780000
-	.long 0x62746D5F
-	.long 0x7365635F
-	.long 0x70696E5F
-	.long 0x636F6465
-	.long 0x5F726571
-	.long 0x75657374
-	.long 0x20626F6E
-	.long 0x64696E67
-	.long 0x2073656E
-	.long 0x64696E67
-	.long 0x20726570
-	.long 0x6C790000
-	.long 0x62746D5F
-	.long 0x7365635F
-	.long 0x70696E5F
-	.long 0x636F6465
-	.long 0x5F726571
-	.long 0x75657374
-	.long 0x3A204175
-	.long 0x7468656E
-	.long 0x20456E61
-	.long 0x626C6520
-	.long 0x2D3E2025
-	.long 0x64000000
-	.long 0x62746D5F
-	.long 0x7365635F
-	.long 0x70696E5F
-	.long 0x636F6465
-	.long 0x5F726571
-	.long 0x75657374
-	.long 0x28293A20
-	.long 0x50616972
-	.long 0x696E6720
-	.long 0x64697361
-	.long 0x626C6564
-	.long 0x3A25643B
-	.long 0x2050494E
-	.long 0x2063616C
-	.long 0x6C626163
-	.long 0x6B3A2578
-	.long 0x2C204465
-	.long 0x76205265
-	.long 0x633A2578
-	.long 0x21000000
-	.long 0x62746D5F
-	.long 0x7365635F
-	.long 0x65786563
-	.long 0x7574655F
-	.long 0x70726F63
-	.long 0x65647572
-	.long 0x653A2052
-	.long 0x65717569
-	.long 0x7265643A
-	.long 0x30782578
-	.long 0x20466C61
-	.long 0x67733A30
-	.long 0x78257820
-	.long 0x53746174
-	.long 0x653A2564
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F204C
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x636F6E6E
-	.long 0x5F726571
-	.long 0x00000000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A205374
-	.long 0x61727420
-	.long 0x67657420
-	.long 0x6E616D65
-	.long 0x00000000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A205374
-	.long 0x61727420
-	.long 0x61757468
-	.long 0x656E7469
-	.long 0x63617469
-	.long 0x6F6E0000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A205374
-	.long 0x61727420
-	.long 0x656E6372
-	.long 0x79707469
-	.long 0x6F6E0000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A205374
-	.long 0x61727420
-	.long 0x61757468
-	.long 0x6F72697A
-	.long 0x6174696F
-	.long 0x6E000000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A207472
-	.long 0x75737465
-	.long 0x643A3078
-	.long 0x25303478
-	.long 0x25303478
-	.long 0x00000000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x204D616E
-	.long 0x61676572
-	.long 0x3A206163
-	.long 0x63657373
-	.long 0x20677261
-	.long 0x6E746564
-	.long 0x00000000
-.global lbl_8018CA84
-lbl_8018CA84:
-	.long 0x62746D5F
-	.long 0x7365635F
-	.long 0x636F6C6C
-	.long 0x6973696F
-	.long 0x6E5F7469
-	.long 0x6D656F75
-	.long 0x74282900
-.global lbl_8018CAA0
-lbl_8018CAA0:
-	.long 0x43746C72
-	.long 0x20482F77
-	.long 0x20657272
-	.long 0x6F722065
-	.long 0x76656E74
-	.long 0x00000000
-.global lbl_8018CAB8
-lbl_8018CAB8:
-	.long 0x4576656E
-	.long 0x74206D69
-	.long 0x736D6174
-	.long 0x6368206F
-	.long 0x70636F64
-	.long 0x653D2558
-	.long 0x20636D64
-	.long 0x206F7063
-	.long 0x6F64653D
-	.long 0x25580000
-.global lbl_8018CAE0
-lbl_8018CAE0:
-	.long 0x436D6420
-	.long 0x74696D65
-	.long 0x6F75743B
-	.long 0x206E6F20
-	.long 0x636D6420
-	.long 0x696E2071
-	.long 0x75657565
-	.long 0x00000000
-.global lbl_8018CB00
-lbl_8018CB00:
-	.long 0x42545520
-	.long 0x48434920
-	.long 0x636F6D6D
-	.long 0x616E6420
-	.long 0x74696D65
-	.long 0x6F757420
-	.long 0x2D20636D
-	.long 0x64206F70
-	.long 0x636F6465
-	.long 0x203D2030
-	.long 0x78253032
-	.long 0x78000000
-.global lbl_8018CB30
-lbl_8018CB30:
-	.long 0x5741524E
-	.long 0x494E473A
-	.long 0x20474150
-	.long 0x20436F6E
-	.long 0x6E20496E
-	.long 0x64696361
-	.long 0x74696F6E
-	.long 0x20666F72
-	.long 0x20556E65
-	.long 0x78706563
-	.long 0x74656420
-	.long 0x42642041
-	.long 0x6464722E
-	.long 0x2E2E4469
-	.long 0x73636F6E
-	.long 0x6E656374
-	.long 0x696E6700
-.global lbl_8018CB74
-lbl_8018CB74:
-	.long 0x4741505F
-	.long 0x434F4E4E
-	.long 0x202D2052
-	.long 0x63766420
-	.long 0x4C324341
-	.long 0x5020636F
-	.long 0x6E6E2069
-	.long 0x6E642C20
-	.long 0x4349443A
-	.long 0x20307825
-	.long 0x78000000
-.global lbl_8018CBA0
-lbl_8018CBA0:
-	.long 0x4741505F
-	.long 0x434F4E4E
-	.long 0x202D2052
-	.long 0x63766420
-	.long 0x4C324341
-	.long 0x50206469
-	.long 0x73632C20
-	.long 0x4349443A
-	.long 0x20307825
-	.long 0x78000000
-.global lbl_8018CBC8
-lbl_8018CBC8:
-	.long 0x4741505F
-	.long 0x434F4E4E
-	.long 0x202D2052
-	.long 0x63766420
-	.long 0x4C324341
-	.long 0x50204973
-	.long 0x20436F6E
-	.long 0x67657374
-	.long 0x65642028
-	.long 0x2564292C
-	.long 0x20434944
-	.long 0x3A203078
-	.long 0x25780000
-	.long 0x00000000
-.global lbl_8018CC00
-lbl_8018CC00:
-	.long 0x20202047
-	.long 0x41502049
-	.long 0x6E717569
-	.long 0x72792043
-	.long 0x6F6D706C
-	.long 0x65746520
-	.long 0x4576656E
-	.long 0x74202853
-	.long 0x74617475
-	.long 0x73203078
-	.long 0x25303478
-	.long 0x2C205265
-	.long 0x73756C74
-	.long 0x28732920
-	.long 0x25642900
-	.long 0x20202047
-	.long 0x41502044
-	.long 0x6973636F
-	.long 0x76657279
-	.long 0x20436F6D
-	.long 0x706C6574
-	.long 0x65204576
-	.long 0x656E7428
-	.long 0x53445020
-	.long 0x52657375
-	.long 0x6C743A20
-	.long 0x30782530
-	.long 0x34782900
-	.long 0x20202047
-	.long 0x41502044
-	.long 0x6973636F
-	.long 0x76657279
-	.long 0x20537563
-	.long 0x63657373
-	.long 0x66756C6C
-	.long 0x7920436F
-	.long 0x6D706C65
-	.long 0x74656400
-	.long 0x20202047
-	.long 0x41502052
-	.long 0x656D6F74
-	.long 0x65204E61
-	.long 0x6D652043
-	.long 0x6F6D706C
-	.long 0x65746520
-	.long 0x4576656E
-	.long 0x74202873
-	.long 0x74617475
-	.long 0x73203078
-	.long 0x25303478
-	.long 0x29000000
-.global lbl_8018CCCC
-lbl_8018CCCC:
+glabel lbl_8018CC00
+	.asciz "   GAP Inquiry Complete Event (Status 0x%04x, Result(s) %d)"
+	.asciz "   GAP Discovery Complete Event(SDP Result: 0x%04x)"
+	.asciz "   GAP Discovery Successfully Completed"
+	.asciz "   GAP Remote Name Complete Event (status 0x%04x)"
+glabel lbl_8018CCCC
 	.long 0x800E40B8
 	.long 0x800E40C0
 	.long 0x800E40C8
@@ -34141,78 +26956,14 @@ lbl_8018CCCC:
 	.long 0x800E40D8
 	.long 0x800E40E0
 	.long 0x800E40E8
-	.long 0x47415020
-	.long 0x496E7175
-	.long 0x69727920
-	.long 0x52657375
-	.long 0x6C747320
-	.long 0x43616C6C
-	.long 0x6261636B
-	.long 0x20286264
-	.long 0x61646472
-	.long 0x205B2530
-	.long 0x32782530
-	.long 0x32782530
-	.long 0x32782530
-	.long 0x32782530
-	.long 0x32782530
-	.long 0x32785D29
-	.long 0x00000000
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x20202020
-	.long 0x2028434F
-	.long 0x44205B25
-	.long 0x30327825
-	.long 0x30327825
-	.long 0x3032785D
-	.long 0x2C20636C
-	.long 0x6B6F6666
-	.long 0x20307825
-	.long 0x30347829
-	.long 0x00000000
-.global lbl_8018CD78
-lbl_8018CD78:
-	.long 0x20202047
-	.long 0x41503A20
-	.long 0x46696E64
-	.long 0x41646472
-	.long 0x42794E61
-	.long 0x6D652052
-	.long 0x656D204E
-	.long 0x616D6520
-	.long 0x436D706C
-	.long 0x20457674
-	.long 0x20285374
-	.long 0x61747573
-	.long 0x20307825
-	.long 0x3034782C
-	.long 0x204E616D
-	.long 0x65205B25
-	.long 0x735D2900
-.global lbl_8018CDBC
-lbl_8018CDBC:
-	.long 0x20202047
-	.long 0x41503A20
-	.long 0x46696E64
-	.long 0x41646472
-	.long 0x42794E61
-	.long 0x6D652052
-	.long 0x656D204E
-	.long 0x616D6520
-	.long 0x436D706C
-	.long 0x20457674
-	.long 0x20285374
-	.long 0x61747573
-	.long 0x20307825
-	.long 0x30347829
-	.long 0x00000000
-.global lbl_8018CDF8
-lbl_8018CDF8:
+	.asciz "GAP Inquiry Results Callback (bdaddr [%02x%02x%02x%02x%02x%02x])"
+	.balign 4
+	.asciz "                             (COD [%02x%02x%02x], clkoff 0x%04x)"
+glabel lbl_8018CD78
+	.asciz "   GAP: FindAddrByName Rem Name Cmpl Evt (Status 0x%04x, Name [%s])"
+glabel lbl_8018CDBC
+	.asciz "   GAP: FindAddrByName Rem Name Cmpl Evt (Status 0x%04x)"
+glabel lbl_8018CDF8
 	.long 0x800E4310
 	.long 0x800E4318
 	.long 0x800E4320
@@ -34222,8 +26973,7 @@ lbl_8018CDF8:
 	.long 0x800E4330
 	.long 0x800E4338
 	.long 0x800E4340
-.global lbl_8018CE1C
-lbl_8018CE1C:
+glabel lbl_8018CE1C
 	.long 0x800E4278
 	.long 0x800E4280
 	.long 0x800E4288
@@ -34233,27 +26983,9 @@ lbl_8018CE1C:
 	.long 0x800E4298
 	.long 0x800E42A0
 	.long 0x800E42A8
-.global lbl_8018CE40
-lbl_8018CE40:
-	.long 0x20202047
-	.long 0x41503A20
-	.long 0x46696E64
-	.long 0x41646472
-	.long 0x42794E61
-	.long 0x6D652049
-	.long 0x6E712043
-	.long 0x6D706C20
-	.long 0x45767420
-	.long 0x28537461
-	.long 0x74757320
-	.long 0x30782530
-	.long 0x34782C20
-	.long 0x52657375
-	.long 0x6C742873
-	.long 0x29202564
-	.long 0x29000000
-.global lbl_8018CE84
-lbl_8018CE84:
+glabel lbl_8018CE40
+	.asciz "   GAP: FindAddrByName Inq Cmpl Evt (Status 0x%04x, Result(s) %d)"
+glabel lbl_8018CE84
 	.long 0x800E44C4
 	.long 0x800E44CC
 	.long 0x800E44D4
@@ -34263,8 +26995,7 @@ lbl_8018CE84:
 	.long 0x800E44E4
 	.long 0x800E44EC
 	.long 0x800E44F4
-.global lbl_8018CEA8
-lbl_8018CEA8:
+glabel lbl_8018CEA8
 	.long 0x800E4454
 	.long 0x800E445C
 	.long 0x800E4464
@@ -34274,8 +27005,7 @@ lbl_8018CEA8:
 	.long 0x800E4474
 	.long 0x800E447C
 	.long 0x800E4484
-.global lbl_8018CECC
-lbl_8018CECC:
+glabel lbl_8018CECC
 	.long 0x800E4568
 	.long 0x800E4570
 	.long 0x800E4578
@@ -34285,890 +27015,156 @@ lbl_8018CECC:
 	.long 0x800E4588
 	.long 0x800E4590
 	.long 0x800E4598
-.global lbl_8018CEF0
-lbl_8018CEF0:
-	.long 0x48494420
-	.long 0x2D204F72
-	.long 0x6967696E
-	.long 0x61746520
-	.long 0x73746172
-	.long 0x74656400
-.global lbl_8018CF08
-lbl_8018CF08:
-	.long 0x48494420
-	.long 0x2D204F72
-	.long 0x6967696E
-	.long 0x61746520
-	.long 0x6661696C
-	.long 0x65640000
-.global lbl_8018CF20
-lbl_8018CF20:
-	.long 0x68696464
-	.long 0x5F70726F
-	.long 0x635F7265
-	.long 0x70616765
-	.long 0x5F74696D
-	.long 0x656F7574
+glabel lbl_8018CEF0
+	.asciz "HID - Originate started"
+glabel lbl_8018CF08
+	.asciz "HID - Originate failed"
+glabel lbl_8018CF20
+	.asciz "hidd_proc_repage_timeout"
 	.long 0x00000000
+glabel lbl_8018CF40
+	.asciz "HID_ERR_NOT_REGISTERED"
+	.balign 4
+	.asciz "HID_ERR_INVALID_PARAM"
+	.balign 4
+	.asciz "HID_ERR_NO_CONNECTION dev_handle %d"
+	.asciz "Security Registration 1 failed"
+	.balign 4
+	.asciz "Security Registration 2 failed"
+	.balign 4
+	.asciz "Security Registration 3 failed"
+	.balign 4
+	.asciz "Security Registration 4 failed"
+	.balign 4
+	.asciz "Security Registration 5 failed"
+	.balign 4
+	.asciz "Security Registration 6 failed"
 	.long 0x00000000
-.global lbl_8018CF40
-lbl_8018CF40:
-	.long 0x4849445F
-	.long 0x4552525F
-	.long 0x4E4F545F
-	.long 0x52454749
-	.long 0x53544552
-	.long 0x45440000
-	.long 0x4849445F
-	.long 0x4552525F
-	.long 0x494E5641
-	.long 0x4C49445F
-	.long 0x50415241
-	.long 0x4D000000
-	.long 0x4849445F
-	.long 0x4552525F
-	.long 0x4E4F5F43
-	.long 0x4F4E4E45
-	.long 0x4354494F
-	.long 0x4E206465
-	.long 0x765F6861
-	.long 0x6E646C65
-	.long 0x20256400
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x20526567
-	.long 0x69737472
-	.long 0x6174696F
-	.long 0x6E203120
-	.long 0x6661696C
-	.long 0x65640000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x20526567
-	.long 0x69737472
-	.long 0x6174696F
-	.long 0x6E203220
-	.long 0x6661696C
-	.long 0x65640000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x20526567
-	.long 0x69737472
-	.long 0x6174696F
-	.long 0x6E203320
-	.long 0x6661696C
-	.long 0x65640000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x20526567
-	.long 0x69737472
-	.long 0x6174696F
-	.long 0x6E203420
-	.long 0x6661696C
-	.long 0x65640000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x20526567
-	.long 0x69737472
-	.long 0x6174696F
-	.long 0x6E203520
-	.long 0x6661696C
-	.long 0x65640000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x20526567
-	.long 0x69737472
-	.long 0x6174696F
-	.long 0x6E203620
-	.long 0x6661696C
-	.long 0x65640000
+glabel lbl_8018D058
+	.asciz "HID Control Registration failed"
+glabel lbl_8018D078
+	.asciz "HID Interrupt Registration failed"
+glabel lbl_8018D09C
+	.asciz "HID - disconnect"
+	.balign 4
+	.asciz "HID - Rcvd L2CAP conn ind, PSM: 0x%04x  CID 0x%x"
+	.balign 4
+	.asciz "HID - Rcvd INTR L2CAP conn ind, but no CTL channel"
+	.balign 4
+	.asciz "HID - Rcvd INTR L2CAP conn ind, wrong state: %d"
+	.asciz "HID - Rcvd CTL L2CAP conn ind, wrong state: %d"
+	.balign 4
+	.asciz "HID - Rcvd L2CAP conn ind, sent config req, PSM: 0x%04x  CID 0x%x"
+glabel lbl_8018D1BC
+	.asciz "HID - Originate failed"
+	.balign 4
 	.long 0x00000000
-.global lbl_8018D058
-lbl_8018D058:
-	.long 0x48494420
-	.long 0x436F6E74
-	.long 0x726F6C20
-	.long 0x52656769
-	.long 0x73747261
-	.long 0x74696F6E
-	.long 0x20666169
-	.long 0x6C656400
-.global lbl_8018D078
-lbl_8018D078:
-	.long 0x48494420
-	.long 0x496E7465
-	.long 0x72727570
-	.long 0x74205265
-	.long 0x67697374
-	.long 0x72617469
-	.long 0x6F6E2066
-	.long 0x61696C65
-	.long 0x64000000
-.global lbl_8018D09C
-lbl_8018D09C:
-	.long 0x48494420
-	.long 0x2D206469
-	.long 0x73636F6E
-	.long 0x6E656374
+	.asciz "HID - Originator security pass."
+	.asciz "HID - INTR Originate failed"
+	.asciz "HID - Rcvd unexpected conn cnf, CID 0x%x "
+	.balign 4
+	.asciz "HID - got CTRL conn cnf, sent cfg req, CID: 0x%x"
+glabel lbl_8018D274
+	.asciz "HID - Rcvd L2CAP cfg ind, unknown CID: 0x%x"
+glabel lbl_8018D2A0
+	.asciz "HID - Rcvd cfg ind, sent cfg cfm, CID: 0x%x"
+	.asciz "HID - Rcvd cfg cfm, CID: 0x%x  Result: %d"
+glabel lbl_8018D2F8
+	.asciz "HID - Rcvd L2CAP disc, unknown CID: 0x%x"
+glabel lbl_8018D324
+	.asciz "HID - Rcvd L2CAP disc, CID: 0x%x"
+glabel lbl_8018D348
+	.asciz "HID - Rcvd L2CAP disc cfm, unknown CID: 0x%x"
+glabel lbl_8018D378
+	.asciz "HID - Rcvd L2CAP disc cfm, CID: 0x%x"
+glabel lbl_8018D3A0
+	.asciz "HID - Rcvd L2CAP congestion status, unknown CID: 0x%x"
+glabel lbl_8018D3D8
+	.asciz "HID - Rcvd L2CAP congestion status, CID: 0x%x  Cong: %d"
+glabel lbl_8018D410
+	.asciz "HID - Rcvd L2CAP data, unknown CID: 0x%x"
 	.long 0x00000000
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20636F6E
-	.long 0x6E20696E
-	.long 0x642C2050
-	.long 0x534D3A20
-	.long 0x30782530
-	.long 0x34782020
-	.long 0x43494420
-	.long 0x30782578
+glabel lbl_8018D440
+	.asciz "L2CAP - L2CA_Register() called for PSM: 0x%04x"
+	.balign 4
+	.asciz "L2CAP - no cb registering PSM: 0x%04x"
+	.balign 4
+	.asciz "L2CAP - invalid PSM value, PSM: 0x%04x"
+	.balign 4
+	.asciz "L2CAP - no RCB available, PSM: 0x%04x"
+glabel lbl_8018D4E8
+	.asciz "L2CAP - L2CA_Deregister() called for PSM: 0x%04x"
+glabel lbl_8018D51C
+	.asciz "L2CAP - PSM: 0x%04x not found for deregistration"
+	.balign 4
+	.asciz "L2CA_ConnectReq()  PSM: 0x%04x"
+	.balign 4
+	.asciz "L2CA_ConnectReq()  BDA: %02x-%02x-%02x-%02x-%02x-%02x"
+	.balign 4
+	.asciz "L2CAP connect req - BTU not ready"
+	.balign 4
+	.asciz "L2CAP - no RCB for L2CA_conn_req, PSM: 0x%04x"
+	.balign 4
+	.asciz "L2CAP - no LCB for L2CA_conn_req"
+	.balign 4
+	.asciz "L2CAP API - L2CA_conn_req rejected - link disconnecting"
+	.asciz "L2CAP - no CCB for L2CA_conn_req"
+	.balign 4
+	.asciz "L2CAP - L2CA_conn_req() returned CID: 0x%04x"
+	.balign 4
+	.asciz "L2CA_ConnectRsp()  CID: 0x%04x  Result: %d  Status: %d"
+	.balign 4
+	.asciz "L2CA_ConnectRsp()  BDA: %02x-%02x-%02x-%02x-%02x-%02x"
+	.balign 4
+	.asciz "L2CAP - no LCB for L2CA_conn_rsp"
+	.balign 4
+	.asciz "L2CAP - no CCB for L2CA_conn_rsp"
+	.balign 4
+	.asciz "L2CAP - bad id in L2CA_conn_rsp. Exp: %d  Got: %d"
+glabel lbl_8018D798
+	.asciz "L2CA_ConfigReq()  CID: 0x%04x"
+glabel lbl_8018D7B8
+	.asciz "L2CAP - no CCB for L2CA_cfg_req, CID: %d"
+glabel lbl_8018D7E4
+	.asciz "L2CA_ConfigRsp()  CID: 0x%04x  Result: %d"
+glabel lbl_8018D810
+	.asciz "L2CAP - no CCB for L2CA_cfg_rsp, CID: %d"
+glabel lbl_8018D83C
+	.asciz "L2CA_DisconnectReq()  CID: 0x%04x"
+glabel lbl_8018D860
+	.asciz "L2CAP - no CCB for L2CA_disc_req, CID: %d"
+glabel lbl_8018D88C
+	.asciz "L2CA_DisconnectRsp()  CID: 0x%04x"
+glabel lbl_8018D8B0
+	.asciz "L2CAP - no CCB for L2CA_disc_rsp, CID: %d"
+	.balign 4
+	.asciz "L2CA_DataWrite()  CID: 0x%04x  Len: %d"
+	.balign 4
+	.asciz "L2CAP - no CCB for L2CA_DataWrite, CID: %d"
+	.balign 4
+	.asciz "L2CAP - cannot send message bigger than peer's mtu size"
+	.asciz "L2CA_Ping()  BDA: %02x-%02x-%02x-%02x-%02x-%02x"
+	.asciz "L2CAP - no LCB for L2CA_ping"
+	.balign 4
+	.asciz "L2CAP - rejected second L2CA_ping"
+	.balign 4
 	.long 0x00000000
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x76642049
-	.long 0x4E545220
-	.long 0x4C324341
-	.long 0x5020636F
-	.long 0x6E6E2069
-	.long 0x6E642C20
-	.long 0x62757420
-	.long 0x6E6F2043
-	.long 0x544C2063
-	.long 0x68616E6E
-	.long 0x656C0000
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x76642049
-	.long 0x4E545220
-	.long 0x4C324341
-	.long 0x5020636F
-	.long 0x6E6E2069
-	.long 0x6E642C20
-	.long 0x77726F6E
-	.long 0x67207374
-	.long 0x6174653A
-	.long 0x20256400
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x76642043
-	.long 0x544C204C
-	.long 0x32434150
-	.long 0x20636F6E
-	.long 0x6E20696E
-	.long 0x642C2077
-	.long 0x726F6E67
-	.long 0x20737461
-	.long 0x74653A20
-	.long 0x25640000
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20636F6E
-	.long 0x6E20696E
-	.long 0x642C2073
-	.long 0x656E7420
-	.long 0x636F6E66
-	.long 0x69672072
-	.long 0x65712C20
-	.long 0x50534D3A
-	.long 0x20307825
-	.long 0x30347820
-	.long 0x20434944
-	.long 0x20307825
-	.long 0x78000000
-.global lbl_8018D1BC
-lbl_8018D1BC:
-	.long 0x48494420
-	.long 0x2D204F72
-	.long 0x6967696E
-	.long 0x61746520
-	.long 0x6661696C
-	.long 0x65640000
+	.asciz "L2CAP - L2CA_ping rejected - link disconnecting"
+glabel lbl_8018DA10
+	.asciz "L2CAP - no CCB for L2CA_SetIdleTimeout, CID: %d"
+	.asciz "L2CA_SetAclPriority()  bdaddr: %02x%02x%02x%02x%02x%02x"
+	.asciz "L2CAP - no LCB for L2CA_SetAclPriority"
+	.balign 4
+	.asciz "L2CA_SetCompression() local cid %d, direction %d, pe_type %d, mem_level %d, wbits %d, enable %d"
+	.asciz "L2CAP - no CCB for L2CA_Flush, CID: %d"
+	.balign 4
+	.asciz "L2CA_Flush()  CID: 0x%04x flushed %d buffers"
+	.balign 4
+	.asciz "L2CA_GetNumQueuedBufs()  CID: 0x%04x  abmormally returning 0"
+	.balign 4
+	.asciz "L2CA_GetNumQueuedBufs()  CID: 0x%04x  returning %d"
 	.long 0x00000000
-	.long 0x48494420
-	.long 0x2D204F72
-	.long 0x6967696E
-	.long 0x61746F72
-	.long 0x20736563
-	.long 0x75726974
-	.long 0x79207061
-	.long 0x73732E00
-	.long 0x48494420
-	.long 0x2D20494E
-	.long 0x5452204F
-	.long 0x72696769
-	.long 0x6E617465
-	.long 0x20666169
-	.long 0x6C656400
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x76642075
-	.long 0x6E657870
-	.long 0x65637465
-	.long 0x6420636F
-	.long 0x6E6E2063
-	.long 0x6E662C20
-	.long 0x43494420
-	.long 0x30782578
-	.long 0x20000000
-	.long 0x48494420
-	.long 0x2D20676F
-	.long 0x74204354
-	.long 0x524C2063
-	.long 0x6F6E6E20
-	.long 0x636E662C
-	.long 0x2073656E
-	.long 0x74206366
-	.long 0x67207265
-	.long 0x712C2043
-	.long 0x49443A20
-	.long 0x30782578
-	.long 0x00000000
-.global lbl_8018D274
-lbl_8018D274:
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20636667
-	.long 0x20696E64
-	.long 0x2C20756E
-	.long 0x6B6E6F77
-	.long 0x6E204349
-	.long 0x443A2030
-	.long 0x78257800
-.global lbl_8018D2A0
-lbl_8018D2A0:
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x76642063
-	.long 0x66672069
-	.long 0x6E642C20
-	.long 0x73656E74
-	.long 0x20636667
-	.long 0x2063666D
-	.long 0x2C204349
-	.long 0x443A2030
-	.long 0x78257800
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x76642063
-	.long 0x66672063
-	.long 0x666D2C20
-	.long 0x4349443A
-	.long 0x20307825
-	.long 0x78202052
-	.long 0x6573756C
-	.long 0x743A2025
-	.long 0x64000000
-.global lbl_8018D2F8
-lbl_8018D2F8:
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20646973
-	.long 0x632C2075
-	.long 0x6E6B6E6F
-	.long 0x776E2043
-	.long 0x49443A20
-	.long 0x30782578
-	.long 0x00000000
-.global lbl_8018D324
-lbl_8018D324:
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20646973
-	.long 0x632C2043
-	.long 0x49443A20
-	.long 0x30782578
-	.long 0x00000000
-.global lbl_8018D348
-lbl_8018D348:
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20646973
-	.long 0x63206366
-	.long 0x6D2C2075
-	.long 0x6E6B6E6F
-	.long 0x776E2043
-	.long 0x49443A20
-	.long 0x30782578
-	.long 0x00000000
-.global lbl_8018D378
-lbl_8018D378:
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20646973
-	.long 0x63206366
-	.long 0x6D2C2043
-	.long 0x49443A20
-	.long 0x30782578
-	.long 0x00000000
-.global lbl_8018D3A0
-lbl_8018D3A0:
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20636F6E
-	.long 0x67657374
-	.long 0x696F6E20
-	.long 0x73746174
-	.long 0x75732C20
-	.long 0x756E6B6E
-	.long 0x6F776E20
-	.long 0x4349443A
-	.long 0x20307825
-	.long 0x78000000
-.global lbl_8018D3D8
-lbl_8018D3D8:
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20636F6E
-	.long 0x67657374
-	.long 0x696F6E20
-	.long 0x73746174
-	.long 0x75732C20
-	.long 0x4349443A
-	.long 0x20307825
-	.long 0x78202043
-	.long 0x6F6E673A
-	.long 0x20256400
-.global lbl_8018D410
-lbl_8018D410:
-	.long 0x48494420
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20646174
-	.long 0x612C2075
-	.long 0x6E6B6E6F
-	.long 0x776E2043
-	.long 0x49443A20
-	.long 0x30782578
-	.long 0x00000000
-	.long 0x00000000
-.global lbl_8018D440
-lbl_8018D440:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x4C324341
-	.long 0x5F526567
-	.long 0x69737465
-	.long 0x72282920
-	.long 0x63616C6C
-	.long 0x65642066
-	.long 0x6F722050
-	.long 0x534D3A20
-	.long 0x30782530
-	.long 0x34780000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2063
-	.long 0x62207265
-	.long 0x67697374
-	.long 0x6572696E
-	.long 0x67205053
-	.long 0x4D3A2030
-	.long 0x78253034
-	.long 0x78000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x696E7661
-	.long 0x6C696420
-	.long 0x50534D20
-	.long 0x76616C75
-	.long 0x652C2050
-	.long 0x534D3A20
-	.long 0x30782530
-	.long 0x34780000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2052
-	.long 0x43422061
-	.long 0x7661696C
-	.long 0x61626C65
-	.long 0x2C205053
-	.long 0x4D3A2030
-	.long 0x78253034
-	.long 0x78000000
-.global lbl_8018D4E8
-lbl_8018D4E8:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x4C324341
-	.long 0x5F446572
-	.long 0x65676973
-	.long 0x74657228
-	.long 0x29206361
-	.long 0x6C6C6564
-	.long 0x20666F72
-	.long 0x2050534D
-	.long 0x3A203078
-	.long 0x25303478
-	.long 0x00000000
-.global lbl_8018D51C
-lbl_8018D51C:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x50534D3A
-	.long 0x20307825
-	.long 0x30347820
-	.long 0x6E6F7420
-	.long 0x666F756E
-	.long 0x6420666F
-	.long 0x72206465
-	.long 0x72656769
-	.long 0x73747261
-	.long 0x74696F6E
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x5F436F6E
-	.long 0x6E656374
-	.long 0x52657128
-	.long 0x29202050
-	.long 0x534D3A20
-	.long 0x30782530
-	.long 0x34780000
-	.long 0x4C324341
-	.long 0x5F436F6E
-	.long 0x6E656374
-	.long 0x52657128
-	.long 0x29202042
-	.long 0x44413A20
-	.long 0x25303278
-	.long 0x2D253032
-	.long 0x782D2530
-	.long 0x32782D25
-	.long 0x3032782D
-	.long 0x25303278
-	.long 0x2D253032
-	.long 0x78000000
-	.long 0x4C324341
-	.long 0x5020636F
-	.long 0x6E6E6563
-	.long 0x74207265
-	.long 0x71202D20
-	.long 0x42545520
-	.long 0x6E6F7420
-	.long 0x72656164
-	.long 0x79000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2052
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x636F6E6E
-	.long 0x5F726571
-	.long 0x2C205053
-	.long 0x4D3A2030
-	.long 0x78253034
-	.long 0x78000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F204C
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x636F6E6E
-	.long 0x5F726571
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50204150
-	.long 0x49202D20
-	.long 0x4C324341
-	.long 0x5F636F6E
-	.long 0x6E5F7265
-	.long 0x71207265
-	.long 0x6A656374
-	.long 0x6564202D
-	.long 0x206C696E
-	.long 0x6B206469
-	.long 0x73636F6E
-	.long 0x6E656374
-	.long 0x696E6700
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2043
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x636F6E6E
-	.long 0x5F726571
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x4C324341
-	.long 0x5F636F6E
-	.long 0x6E5F7265
-	.long 0x71282920
-	.long 0x72657475
-	.long 0x726E6564
-	.long 0x20434944
-	.long 0x3A203078
-	.long 0x25303478
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x5F436F6E
-	.long 0x6E656374
-	.long 0x52737028
-	.long 0x29202043
-	.long 0x49443A20
-	.long 0x30782530
-	.long 0x34782020
-	.long 0x52657375
-	.long 0x6C743A20
-	.long 0x25642020
-	.long 0x53746174
-	.long 0x75733A20
-	.long 0x25640000
-	.long 0x4C324341
-	.long 0x5F436F6E
-	.long 0x6E656374
-	.long 0x52737028
-	.long 0x29202042
-	.long 0x44413A20
-	.long 0x25303278
-	.long 0x2D253032
-	.long 0x782D2530
-	.long 0x32782D25
-	.long 0x3032782D
-	.long 0x25303278
-	.long 0x2D253032
-	.long 0x78000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F204C
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x636F6E6E
-	.long 0x5F727370
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2043
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x636F6E6E
-	.long 0x5F727370
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x62616420
-	.long 0x69642069
-	.long 0x6E204C32
-	.long 0x43415F63
-	.long 0x6F6E6E5F
-	.long 0x7273702E
-	.long 0x20457870
-	.long 0x3A202564
-	.long 0x2020476F
-	.long 0x743A2025
-	.long 0x64000000
-.global lbl_8018D798
-lbl_8018D798:
-	.long 0x4C324341
-	.long 0x5F436F6E
-	.long 0x66696752
-	.long 0x65712829
-	.long 0x20204349
-	.long 0x443A2030
-	.long 0x78253034
-	.long 0x78000000
-.global lbl_8018D7B8
-lbl_8018D7B8:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2043
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x6366675F
-	.long 0x7265712C
-	.long 0x20434944
-	.long 0x3A202564
-	.long 0x00000000
-.global lbl_8018D7E4
-lbl_8018D7E4:
-	.long 0x4C324341
-	.long 0x5F436F6E
-	.long 0x66696752
-	.long 0x73702829
-	.long 0x20204349
-	.long 0x443A2030
-	.long 0x78253034
-	.long 0x78202052
-	.long 0x6573756C
-	.long 0x743A2025
-	.long 0x64000000
-.global lbl_8018D810
-lbl_8018D810:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2043
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x6366675F
-	.long 0x7273702C
-	.long 0x20434944
-	.long 0x3A202564
-	.long 0x00000000
-.global lbl_8018D83C
-lbl_8018D83C:
-	.long 0x4C324341
-	.long 0x5F446973
-	.long 0x636F6E6E
-	.long 0x65637452
-	.long 0x65712829
-	.long 0x20204349
-	.long 0x443A2030
-	.long 0x78253034
-	.long 0x78000000
-.global lbl_8018D860
-lbl_8018D860:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2043
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x64697363
-	.long 0x5F726571
-	.long 0x2C204349
-	.long 0x443A2025
-	.long 0x64000000
-.global lbl_8018D88C
-lbl_8018D88C:
-	.long 0x4C324341
-	.long 0x5F446973
-	.long 0x636F6E6E
-	.long 0x65637452
-	.long 0x73702829
-	.long 0x20204349
-	.long 0x443A2030
-	.long 0x78253034
-	.long 0x78000000
-.global lbl_8018D8B0
-lbl_8018D8B0:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2043
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x64697363
-	.long 0x5F727370
-	.long 0x2C204349
-	.long 0x443A2025
-	.long 0x64000000
-	.long 0x4C324341
-	.long 0x5F446174
-	.long 0x61577269
-	.long 0x74652829
-	.long 0x20204349
-	.long 0x443A2030
-	.long 0x78253034
-	.long 0x7820204C
-	.long 0x656E3A20
-	.long 0x25640000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2043
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x44617461
-	.long 0x57726974
-	.long 0x652C2043
-	.long 0x49443A20
-	.long 0x25640000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x63616E6E
-	.long 0x6F742073
-	.long 0x656E6420
-	.long 0x6D657373
-	.long 0x61676520
-	.long 0x62696767
-	.long 0x65722074
-	.long 0x68616E20
-	.long 0x70656572
-	.long 0x2773206D
-	.long 0x74752073
-	.long 0x697A6500
-	.long 0x4C324341
-	.long 0x5F50696E
-	.long 0x67282920
-	.long 0x20424441
-	.long 0x3A202530
-	.long 0x32782D25
-	.long 0x3032782D
-	.long 0x25303278
-	.long 0x2D253032
-	.long 0x782D2530
-	.long 0x32782D25
-	.long 0x30327800
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F204C
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x70696E67
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x72656A65
-	.long 0x63746564
-	.long 0x20736563
-	.long 0x6F6E6420
-	.long 0x4C324341
-	.long 0x5F70696E
-	.long 0x67000000
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x4C324341
-	.long 0x5F70696E
-	.long 0x67207265
-	.long 0x6A656374
-	.long 0x6564202D
-	.long 0x206C696E
-	.long 0x6B206469
-	.long 0x73636F6E
-	.long 0x6E656374
-	.long 0x696E6700
-.global lbl_8018DA10
-lbl_8018DA10:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2043
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x53657449
-	.long 0x646C6554
-	.long 0x696D656F
-	.long 0x75742C20
-	.long 0x4349443A
-	.long 0x20256400
-	.long 0x4C324341
-	.long 0x5F536574
-	.long 0x41636C50
-	.long 0x72696F72
-	.long 0x69747928
-	.long 0x29202062
-	.long 0x64616464
-	.long 0x723A2025
-	.long 0x30327825
-	.long 0x30327825
-	.long 0x30327825
-	.long 0x30327825
-	.long 0x30327825
-	.long 0x30327800
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F204C
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x53657441
-	.long 0x636C5072
-	.long 0x696F7269
-	.long 0x74790000
-	.long 0x4C324341
-	.long 0x5F536574
-	.long 0x436F6D70
-	.long 0x72657373
-	.long 0x696F6E28
-	.long 0x29206C6F
-	.long 0x63616C20
-	.long 0x63696420
-	.long 0x25642C20
-	.long 0x64697265
-	.long 0x6374696F
-	.long 0x6E202564
-	.long 0x2C207065
-	.long 0x5F747970
-	.long 0x65202564
-	.long 0x2C206D65
-	.long 0x6D5F6C65
-	.long 0x76656C20
-	.long 0x25642C20
-	.long 0x77626974
-	.long 0x73202564
-	.long 0x2C20656E
-	.long 0x61626C65
-	.long 0x20256400
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2043
-	.long 0x43422066
-	.long 0x6F72204C
-	.long 0x3243415F
-	.long 0x466C7573
-	.long 0x682C2043
-	.long 0x49443A20
-	.long 0x25640000
-	.long 0x4C324341
-	.long 0x5F466C75
-	.long 0x73682829
-	.long 0x20204349
-	.long 0x443A2030
-	.long 0x78253034
-	.long 0x7820666C
-	.long 0x75736865
-	.long 0x64202564
-	.long 0x20627566
-	.long 0x66657273
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x5F476574
-	.long 0x4E756D51
-	.long 0x75657565
-	.long 0x64427566
-	.long 0x73282920
-	.long 0x20434944
-	.long 0x3A203078
-	.long 0x25303478
-	.long 0x20206162
-	.long 0x6D6F726D
-	.long 0x616C6C79
-	.long 0x20726574
-	.long 0x75726E69
-	.long 0x6E672030
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x5F476574
-	.long 0x4E756D51
-	.long 0x75657565
-	.long 0x64427566
-	.long 0x73282920
-	.long 0x20434944
-	.long 0x3A203078
-	.long 0x25303478
-	.long 0x20207265
-	.long 0x7475726E
-	.long 0x696E6720
-	.long 0x25640000
-	.long 0x00000000
-.global lbl_8018DBD0
-lbl_8018DBD0:
+glabel lbl_8018DBD0
 	.long 0x800EABE0
 	.long 0x800EABE4
 	.long 0x800EABE8
@@ -35178,49 +27174,12 @@ lbl_8018DBD0:
 	.long 0x800EABF8
 	.long 0x800EABFC
 	.long 0x800EAC00
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x73743A20
-	.long 0x434C4F53
-	.long 0x45442065
-	.long 0x76743A20
-	.long 0x25640000
-.global lbl_8018DC10
-lbl_8018DC10:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x44697363
-	.long 0x6F6E6E65
-	.long 0x63745F49
-	.long 0x6E645F43
-	.long 0x6228292C
-	.long 0x20434944
-	.long 0x3A203078
-	.long 0x25303478
-	.long 0x20204E6F
-	.long 0x20436F6E
-	.long 0x66204E65
-	.long 0x65646564
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x436F6E6E
-	.long 0x65637443
-	.long 0x666D5F43
-	.long 0x6228292C
-	.long 0x20434944
-	.long 0x3A203078
-	.long 0x25303478
-	.long 0x20205374
-	.long 0x61747573
-	.long 0x3A202564
-	.long 0x00000000
-.global lbl_8018DC90
-lbl_8018DC90:
+	.asciz "L2CAP - st: CLOSED evt: %d"
+glabel lbl_8018DC10
+	.asciz "L2CAP - Calling Disconnect_Ind_Cb(), CID: 0x%04x  No Conf Needed"
+	.balign 4
+	.asciz "L2CAP - Calling ConnectCfm_Cb(), CID: 0x%04x  Status: %d"
+glabel lbl_8018DC90
 	.long 0x800EACC8
 	.long 0x800EACF8
 	.long 0x800EAE84
@@ -35252,18 +27211,8 @@ lbl_8018DC90:
 	.long 0x800EAE84
 	.long 0x800EAE70
 	.long 0x800EAE1C
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x73743A20
-	.long 0x4F524947
-	.long 0x5F57345F
-	.long 0x5345435F
-	.long 0x434F4D50
-	.long 0x20657674
-	.long 0x3A202564
-	.long 0x00000000
-.global lbl_8018DD34
-lbl_8018DD34:
+	.asciz "L2CAP - st: ORIG_W4_SEC_COMP evt: %d"
+glabel lbl_8018DD34
 	.long 0x800EAF1C
 	.long 0x800EAFF4
 	.long 0x800EAFF4
@@ -35291,34 +27240,11 @@ lbl_8018DD34:
 	.long 0x800EAFF4
 	.long 0x800EAFF4
 	.long 0x800EAFD4
-.global lbl_8018DDA0
-lbl_8018DDA0:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x73743A20
-	.long 0x5445524D
-	.long 0x5F57345F
-	.long 0x5345435F
-	.long 0x434F4D50
-	.long 0x20657674
-	.long 0x3A202564
-	.long 0x00000000
-.global lbl_8018DDC8
-lbl_8018DDC8:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x436F6E6E
-	.long 0x6563745F
-	.long 0x496E645F
-	.long 0x43622829
-	.long 0x2C204349
-	.long 0x443A2030
-	.long 0x78253034
-	.long 0x78000000
-.global lbl_8018DDF8
-lbl_8018DDF8:
+glabel lbl_8018DDA0
+	.asciz "L2CAP - st: TERM_W4_SEC_COMP evt: %d"
+glabel lbl_8018DDC8
+	.asciz "L2CAP - Calling Connect_Ind_Cb(), CID: 0x%04x"
+glabel lbl_8018DDF8
 	.long 0x800EB07C
 	.long 0x800EB158
 	.long 0x800EB158
@@ -35346,71 +27272,15 @@ lbl_8018DDF8:
 	.long 0x800EB158
 	.long 0x800EB158
 	.long 0x800EB118
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x73743A20
-	.long 0x57345F4C
-	.long 0x32434150
-	.long 0x5F434F4E
-	.long 0x5F525350
-	.long 0x20657674
-	.long 0x3A202564
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x436F6E6E
-	.long 0x6563745F
-	.long 0x43666D5F
-	.long 0x43622829
-	.long 0x2C204349
-	.long 0x443A2030
-	.long 0x78253034
-	.long 0x782C2053
-	.long 0x75636365
-	.long 0x73730000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x436F6E6E
-	.long 0x6563745F
-	.long 0x506E645F
-	.long 0x43622829
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x436F6E6E
-	.long 0x6563745F
-	.long 0x43666D5F
-	.long 0x43622829
-	.long 0x2C204349
-	.long 0x443A2030
-	.long 0x78253034
-	.long 0x782C2046
-	.long 0x61696C75
-	.long 0x72652043
-	.long 0x6F64653A
-	.long 0x20256400
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x436F6E6E
-	.long 0x6563745F
-	.long 0x43666D5F
-	.long 0x43622829
-	.long 0x2C204349
-	.long 0x443A2030
-	.long 0x78253034
-	.long 0x782C2054
-	.long 0x696D656F
-	.long 0x75740000
-.global lbl_8018DF60
-lbl_8018DF60:
+	.asciz "L2CAP - st: W4_L2CAP_CON_RSP evt: %d"
+	.balign 4
+	.asciz "L2CAP - Calling Connect_Cfm_Cb(), CID: 0x%04x, Success"
+	.balign 4
+	.asciz "L2CAP - Calling Connect_Pnd_Cb()"
+	.balign 4
+	.asciz "L2CAP - Calling Connect_Cfm_Cb(), CID: 0x%04x, Failure Code: %d"
+	.asciz "L2CAP - Calling Connect_Cfm_Cb(), CID: 0x%04x, Timeout"
+glabel lbl_8018DF60
 	.long 0x800EB1F4
 	.long 0x800EB3A0
 	.long 0x800EB3A0
@@ -35439,19 +27309,9 @@ lbl_8018DF60:
 	.long 0x800EB3A0
 	.long 0x800EB398
 	.long 0x800EB340
-.global lbl_8018DFD0
-lbl_8018DFD0:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x73743A20
-	.long 0x57345F4C
-	.long 0x3243415F
-	.long 0x434F4E5F
-	.long 0x52535020
-	.long 0x6576743A
-	.long 0x20256400
-.global lbl_8018DFF4
-lbl_8018DFF4:
+glabel lbl_8018DFD0
+	.asciz "L2CAP - st: W4_L2CA_CON_RSP evt: %d"
+glabel lbl_8018DFF4
 	.long 0x800EB430
 	.long 0x800EB578
 	.long 0x800EB578
@@ -35480,81 +27340,18 @@ lbl_8018DFF4:
 	.long 0x800EB578
 	.long 0x800EB54C
 	.long 0x800EB4F4
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x73743A20
-	.long 0x434F4E46
-	.long 0x49472065
-	.long 0x76743A20
-	.long 0x25640000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x436F6E66
-	.long 0x69675F52
-	.long 0x65715F43
-	.long 0x6228292C
-	.long 0x20434944
-	.long 0x3A203078
-	.long 0x25303478
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x436F6E66
-	.long 0x69675F52
-	.long 0x73705F43
-	.long 0x6228292C
-	.long 0x20434944
-	.long 0x3A203078
-	.long 0x25303478
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x436F6E66
-	.long 0x69675F52
-	.long 0x73705F43
-	.long 0x6228292C
-	.long 0x20434944
-	.long 0x3A203078
-	.long 0x25303478
-	.long 0x2C204661
-	.long 0x696C7572
-	.long 0x653A2025
-	.long 0x64000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x44697363
-	.long 0x6F6E6E65
-	.long 0x63745F49
-	.long 0x6E645F43
-	.long 0x6228292C
-	.long 0x20434944
-	.long 0x3A203078
-	.long 0x25303478
-	.long 0x2020436F
-	.long 0x6E66204E
-	.long 0x65656465
-	.long 0x64000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x44617461
-	.long 0x496E645F
-	.long 0x43622829
-	.long 0x2C204349
-	.long 0x443A2030
-	.long 0x78253034
-	.long 0x78000000
-.global lbl_8018E188
-lbl_8018E188:
+	.asciz "L2CAP - st: CONFIG evt: %d"
+	.balign 4
+	.asciz "L2CAP - Calling Config_Req_Cb(), CID: 0x%04x"
+	.balign 4
+	.asciz "L2CAP - Calling Config_Rsp_Cb(), CID: 0x%04x"
+	.balign 4
+	.asciz "L2CAP - Calling Config_Rsp_Cb(), CID: 0x%04x, Failure: %d"
+	.balign 4
+	.asciz "L2CAP - Calling Disconnect_Ind_Cb(), CID: 0x%04x  Conf Needed"
+	.balign 4
+	.asciz "L2CAP - Calling DataInd_Cb(), CID: 0x%04x"
+glabel lbl_8018E188
 	.long 0x800EB60C
 	.long 0x800EB940
 	.long 0x800EB940
@@ -35583,15 +27380,8 @@ lbl_8018E188:
 	.long 0x800EB940
 	.long 0x800EB8D0
 	.long 0x800EB8F8
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x73743A20
-	.long 0x4F50454E
-	.long 0x20657674
-	.long 0x3A202564
-	.long 0x00000000
-.global lbl_8018E214
-lbl_8018E214:
+	.asciz "L2CAP - st: OPEN evt: %d"
+glabel lbl_8018E214
 	.long 0x800EB9D4
 	.long 0x800EBB9C
 	.long 0x800EBB9C
@@ -35619,30 +27409,10 @@ lbl_8018E214:
 	.long 0x800EBB9C
 	.long 0x800EBB9C
 	.long 0x800EBB4C
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x73743A20
-	.long 0x57345F4C
-	.long 0x32434150
-	.long 0x5F444953
-	.long 0x435F5253
-	.long 0x50206576
-	.long 0x743A2025
-	.long 0x64000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x44697363
-	.long 0x6F6E6E65
-	.long 0x63744366
-	.long 0x6D5F4362
-	.long 0x28292C20
-	.long 0x4349443A
-	.long 0x20307825
-	.long 0x30347800
-.global lbl_8018E2D8
-lbl_8018E2D8:
+	.asciz "L2CAP - st: W4_L2CAP_DISC_RSP evt: %d"
+	.balign 4
+	.asciz "L2CAP - Calling DisconnectCfm_Cb(), CID: 0x%04x"
+glabel lbl_8018E2D8
 	.long 0x800EBC34
 	.long 0x800EBD80
 	.long 0x800EBD80
@@ -35671,20 +27441,9 @@ lbl_8018E2D8:
 	.long 0x800EBD80
 	.long 0x800EBD78
 	.long 0x800EBD24
-.global lbl_8018E348
-lbl_8018E348:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x73743A20
-	.long 0x57345F4C
-	.long 0x3243415F
-	.long 0x44495343
-	.long 0x5F525350
-	.long 0x20657674
-	.long 0x3A202564
-	.long 0x00000000
-.global lbl_8018E370
-lbl_8018E370:
+glabel lbl_8018E348
+	.asciz "L2CAP - st: W4_L2CA_DISC_RSP evt: %d"
+glabel lbl_8018E370
 	.long 0x800EBE10
 	.long 0x800EBEDC
 	.long 0x800EBEDC
@@ -35713,361 +27472,65 @@ lbl_8018E370:
 	.long 0x800EBEDC
 	.long 0x800EBED4
 	.long 0x800EBE58
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x63616E6E
-	.long 0x6F742073
-	.long 0x656E6420
-	.long 0x62756666
-	.long 0x65722C20
-	.long 0x6F666673
-	.long 0x65743A20
-	.long 0x25640000
-.global lbl_8018E408
-lbl_8018E408:
-	.long 0x4C324341
-	.long 0x50206661
-	.long 0x696C6564
-	.long 0x20746F20
-	.long 0x616C6C6F
-	.long 0x63617465
-	.long 0x204C4342
+	.asciz "L2CAP - cannot send buffer, offset: %d"
+glabel lbl_8018E408
+	.asciz "L2CAP failed to allocate LCB"
+glabel lbl_8018E428
+	.asciz "L2CAP got conn_req while connected"
 	.long 0x00000000
-.global lbl_8018E428
-lbl_8018E428:
-	.long 0x4C324341
-	.long 0x5020676F
-	.long 0x7420636F
-	.long 0x6E6E5F72
-	.long 0x65712077
-	.long 0x68696C65
-	.long 0x20636F6E
-	.long 0x6E656374
-	.long 0x65640000
+glabel lbl_8018E450
+	.asciz "L2CAP got conn_comp for unknown BD_ADDR"
+glabel lbl_8018E478
+	.asciz "L2CAP got conn_comp in bad state: %d  status: 0x%d"
+glabel lbl_8018E4AC
+	.asciz "L2CAP got sec_comp for unknown BD_ADDR"
+glabel lbl_8018E4D4
+	.asciz "L2CAP - ping timeout"
+	.balign 4
+	.asciz "L2CAP - Congested(), CID: 0x%04x, Congested"
+	.asciz "L2CAP - Calling CongestionStatus_Cb(), CID: 0x%04x, Congested"
+	.balign 4
+	.asciz "!!! L2CAP - buffer dropped"
+	.balign 4
 	.long 0x00000000
-.global lbl_8018E450
-lbl_8018E450:
-	.long 0x4C324341
-	.long 0x5020676F
-	.long 0x7420636F
-	.long 0x6E6E5F63
-	.long 0x6F6D7020
-	.long 0x666F7220
-	.long 0x756E6B6E
-	.long 0x6F776E20
-	.long 0x42445F41
-	.long 0x44445200
-.global lbl_8018E478
-lbl_8018E478:
-	.long 0x4C324341
-	.long 0x5020676F
-	.long 0x7420636F
-	.long 0x6E6E5F63
-	.long 0x6F6D7020
-	.long 0x696E2062
-	.long 0x61642073
-	.long 0x74617465
-	.long 0x3A202564
-	.long 0x20207374
-	.long 0x61747573
-	.long 0x3A203078
-	.long 0x25640000
-.global lbl_8018E4AC
-lbl_8018E4AC:
-	.long 0x4C324341
-	.long 0x5020676F
-	.long 0x74207365
-	.long 0x635F636F
-	.long 0x6D702066
-	.long 0x6F722075
-	.long 0x6E6B6E6F
-	.long 0x776E2042
-	.long 0x445F4144
-	.long 0x44520000
-.global lbl_8018E4D4
-lbl_8018E4D4:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x70696E67
-	.long 0x2074696D
-	.long 0x656F7574
+	.asciz "L2CAP - Calling CongestionStatus_Cb(), CID: 0x%04x, Uncongested"
+	.asciz "LCB %d Priority:%d XmitWindow:%d Congestion Start:%d End:%d Discard:%d"
+glabel lbl_8018E600
+	.asciz "L2CAP - dropping incomplete pkt"
+glabel lbl_8018E620
+	.asciz "L2CAP - dropping too long pkt"
+glabel lbl_8018E640
+	.asciz "L2CAP - rcvd segment complete, unknown handle: %d"
 	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x436F6E67
-	.long 0x65737465
-	.long 0x6428292C
-	.long 0x20434944
-	.long 0x3A203078
-	.long 0x25303478
-	.long 0x2C20436F
-	.long 0x6E676573
-	.long 0x74656400
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x436F6E67
-	.long 0x65737469
-	.long 0x6F6E5374
-	.long 0x61747573
-	.long 0x5F436228
-	.long 0x292C2043
-	.long 0x49443A20
-	.long 0x30782530
-	.long 0x34782C20
-	.long 0x436F6E67
-	.long 0x65737465
-	.long 0x64000000
-	.long 0x21212120
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x62756666
-	.long 0x65722064
-	.long 0x726F7070
-	.long 0x65640000
+glabel lbl_8018E678
+	.asciz "L2CAP - expected pkt start, got: %d"
+	.asciz "L2CAP - holding ACL for unknown handle:%d ls:%d cid:%d opcode:%d cur count:%d"
+	.balign 4
 	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x43616C6C
-	.long 0x696E6720
-	.long 0x436F6E67
-	.long 0x65737469
-	.long 0x6F6E5374
-	.long 0x61747573
-	.long 0x5F436228
-	.long 0x292C2043
-	.long 0x49443A20
-	.long 0x30782530
-	.long 0x34782C20
-	.long 0x556E636F
-	.long 0x6E676573
-	.long 0x74656400
-	.long 0x4C434220
-	.long 0x25642050
-	.long 0x72696F72
-	.long 0x6974793A
-	.long 0x25642058
-	.long 0x6D697457
-	.long 0x696E646F
-	.long 0x773A2564
-	.long 0x20436F6E
-	.long 0x67657374
-	.long 0x696F6E20
-	.long 0x53746172
-	.long 0x743A2564
-	.long 0x20456E64
-	.long 0x3A256420
-	.long 0x44697363
-	.long 0x6172643A
-	.long 0x25640000
-.global lbl_8018E600
-lbl_8018E600:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x64726F70
-	.long 0x70696E67
-	.long 0x20696E63
-	.long 0x6F6D706C
-	.long 0x65746520
-	.long 0x706B7400
-.global lbl_8018E620
-lbl_8018E620:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x64726F70
-	.long 0x70696E67
-	.long 0x20746F6F
-	.long 0x206C6F6E
-	.long 0x6720706B
-	.long 0x74000000
-.global lbl_8018E640
-lbl_8018E640:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x72637664
-	.long 0x20736567
-	.long 0x6D656E74
-	.long 0x20636F6D
-	.long 0x706C6574
-	.long 0x652C2075
-	.long 0x6E6B6E6F
-	.long 0x776E2068
-	.long 0x616E646C
-	.long 0x653A2025
-	.long 0x64000000
-	.long 0x00000000
-.global lbl_8018E678
-lbl_8018E678:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x65787065
-	.long 0x63746564
-	.long 0x20706B74
-	.long 0x20737461
-	.long 0x72742C20
-	.long 0x676F743A
-	.long 0x20256400
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x686F6C64
-	.long 0x696E6720
-	.long 0x41434C20
-	.long 0x666F7220
-	.long 0x756E6B6E
-	.long 0x6F776E20
-	.long 0x68616E64
-	.long 0x6C653A25
-	.long 0x64206C73
-	.long 0x3A256420
-	.long 0x6369643A
-	.long 0x2564206F
-	.long 0x70636F64
-	.long 0x653A2564
-	.long 0x20637572
-	.long 0x20636F75
-	.long 0x6E743A25
-	.long 0x64000000
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x756E6B6E
-	.long 0x6F776E20
-	.long 0x4349443A
-	.long 0x20256400
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x676F7420
-	.long 0x696E636F
-	.long 0x72726563
-	.long 0x74206863
-	.long 0x69206865
-	.long 0x61646572
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x62616420
-	.long 0x6C656E67
-	.long 0x74682069
-	.long 0x6E20706B
-	.long 0x742E2045
-	.long 0x78703A20
-	.long 0x25642020
-	.long 0x4163743A
-	.long 0x20256400
-	.long 0x474F5420
-	.long 0x434F4E4E
-	.long 0x45435449
-	.long 0x4F4E4C45
-	.long 0x53532044
-	.long 0x41544120
-	.long 0x50534D3A
-	.long 0x25640000
-	.long 0x436F6D6D
-	.long 0x616E6420
-	.long 0x6C656E20
-	.long 0x62616420
-	.long 0x20706B74
-	.long 0x5F6C656E
-	.long 0x3A202564
-	.long 0x2020636D
-	.long 0x645F6C65
-	.long 0x6E3A2025
-	.long 0x64202063
-	.long 0x6F64653A
-	.long 0x20256400
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x4D545520
-	.long 0x72656A20
-	.long 0x48616E64
-	.long 0x6C653A20
-	.long 0x2564204D
-	.long 0x54553A20
-	.long 0x25640000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x72656A20
-	.long 0x77697468
-	.long 0x20434944
-	.long 0x20696E76
-	.long 0x616C6964
-	.long 0x2C204C43
-	.long 0x49443A20
-	.long 0x25642052
-	.long 0x4349443A
-	.long 0x20256400
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x72637664
-	.long 0x20636F6E
-	.long 0x6E207265
-	.long 0x7120666F
-	.long 0x7220756E
-	.long 0x6B6E6F77
-	.long 0x6E205053
-	.long 0x4D3A2025
-	.long 0x64000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x756E6162
-	.long 0x6C652074
-	.long 0x6F20616C
-	.long 0x6C6F6361
-	.long 0x74652043
-	.long 0x43420000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2043
-	.long 0x43422066
-	.long 0x6F722063
-	.long 0x6F6E6E20
-	.long 0x7273702C
-	.long 0x204C4349
-	.long 0x443A2025
-	.long 0x64205243
-	.long 0x49443A20
-	.long 0x25640000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x636F6E20
-	.long 0x72737020
-	.long 0x2D206261
-	.long 0x64204944
-	.long 0x2E204578
-	.long 0x703A2025
-	.long 0x6420476F
-	.long 0x743A2025
-	.long 0x64000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x63666720
-	.long 0x72737020
-	.long 0x2D206261
-	.long 0x64204944
-	.long 0x2E204578
-	.long 0x703A2025
-	.long 0x6420476F
-	.long 0x743A2025
-	.long 0x64000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x72637664
-	.long 0x20636667
-	.long 0x20727370
-	.long 0x20666F72
-	.long 0x20756E6B
-	.long 0x6E6F776E
-	.long 0x20434944
-	.long 0x3A202564
-	.long 0x00000000
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x62616420
-	.long 0x636D6420
-	.long 0x636F6465
-	.long 0x3A202564
-	.long 0x00000000
+	.asciz "L2CAP - unknown CID: %d"
+	.asciz "L2CAP - got incorrect hci header"
+	.balign 4
+	.asciz "L2CAP - bad length in pkt. Exp: %d  Act: %d"
+	.asciz "GOT CONNECTIONLESS DATA PSM:%d"
+	.balign 4
+	.asciz "Command len bad  pkt_len: %d  cmd_len: %d  code: %d"
+	.asciz "L2CAP - MTU rej Handle: %d MTU: %d"
+	.balign 4
+	.asciz "L2CAP - rej with CID invalid, LCID: %d RCID: %d"
+	.asciz "L2CAP - rcvd conn req for unknown PSM: %d"
+	.balign 4
+	.asciz "L2CAP - unable to allocate CCB"
+	.balign 4
+	.asciz "L2CAP - no CCB for conn rsp, LCID: %d RCID: %d"
+	.balign 4
+	.asciz "L2CAP - con rsp - bad ID. Exp: %d Got: %d"
+	.balign 4
+	.asciz "L2CAP - cfg rsp - bad ID. Exp: %d Got: %d"
+	.balign 4
+	.asciz "L2CAP - rcvd cfg rsp for unknown CID: %d"
+	.balign 4
+	.asciz "L2CAP - bad cmd code: %d"
+	.balign 4
 	.long 0x800EE084
 	.long 0x800ED734
 	.long 0x800ED808
@@ -36080,507 +27543,103 @@ lbl_8018E678:
 	.long 0x800EE040
 	.long 0x800EE060
 	.long 0x800ED6B4
-.global lbl_8018E94C
-lbl_8018E94C:
-	.long 0x4C324341
-	.long 0x5020484F
-	.long 0x4C442043
-	.long 0x4F4E5449
-	.long 0x4E554500
-.global lbl_8018E960
-lbl_8018E960:
-	.long 0x4C324341
-	.long 0x5020484F
-	.long 0x4C442054
-	.long 0x494D454F
-	.long 0x55540000
+glabel lbl_8018E94C
+	.asciz "L2CAP HOLD CONTINUE"
+glabel lbl_8018E960
+	.asciz "L2CAP HOLD TIMEOUT"
 	.long 0x00000000
-.global lbl_8018E978
-lbl_8018E978:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2062
-	.long 0x75666665
-	.long 0x7220636D
-	.long 0x645F7265
-	.long 0x6A000000
-.global lbl_8018E994
-lbl_8018E994:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2062
-	.long 0x75666665
-	.long 0x7220666F
-	.long 0x7220636F
-	.long 0x6E6E5F72
-	.long 0x65710000
-.global lbl_8018E9B4
-lbl_8018E9B4:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2062
-	.long 0x75666665
-	.long 0x7220666F
-	.long 0x72206366
-	.long 0x675F7265
-	.long 0x6A000000
-.global lbl_8018E9D4
-lbl_8018E9D4:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2062
-	.long 0x75666665
-	.long 0x7220666F
-	.long 0x72206563
-	.long 0x686F5F72
-	.long 0x65710000
-	.long 0x6C326375
-	.long 0x5F637265
-	.long 0x6174655F
-	.long 0x636F6E6E
-	.long 0x202D2062
-	.long 0x746D5F69
-	.long 0x735F7363
-	.long 0x6F5F6163
-	.long 0x74697665
-	.long 0x5F62795F
-	.long 0x62646164
-	.long 0x64722829
-	.long 0x2069735F
-	.long 0x73636F5F
-	.long 0x61637469
-	.long 0x7665203D
-	.long 0x20257300
-.global lbl_8018EA38
-lbl_8018EA38:
-	.long 0x4C324341
-	.long 0x50202D20
-	.long 0x6E6F2062
-	.long 0x75666665
-	.long 0x7220666F
-	.long 0x72206C32
-	.long 0x63755F63
-	.long 0x72656174
-	.long 0x655F636F
-	.long 0x6E6E0000
-.global lbl_8018EA60
-lbl_8018EA60:
-	.long 0x706F7274
-	.long 0x5F6F7065
-	.long 0x6E5F636F
-	.long 0x6E74696E
-	.long 0x75650000
-	.long 0x706F7274
-	.long 0x5F6F7065
-	.long 0x6E5F636F
-	.long 0x6E74696E
-	.long 0x7565206E
-	.long 0x6F206D78
-	.long 0x20636861
-	.long 0x6E6E656C
+glabel lbl_8018E978
+	.asciz "L2CAP - no buffer cmd_rej"
+glabel lbl_8018E994
+	.asciz "L2CAP - no buffer for conn_req"
+glabel lbl_8018E9B4
+	.asciz "L2CAP - no buffer for cfg_rej"
+glabel lbl_8018E9D4
+	.asciz "L2CAP - no buffer for echo_req"
+	.balign 4
+	.asciz "l2cu_create_conn - btm_is_sco_active_by_bdaddr() is_sco_active = %s"
+glabel lbl_8018EA38
+	.asciz "L2CAP - no buffer for l2cu_create_conn"
+glabel lbl_8018EA60
+	.asciz "port_open_continue"
+	.balign 4
+	.asciz "port_open_continue no mx channel"
+glabel lbl_8018EA98
+	.asciz "PORT_StartCnf result:%d"
+	.asciz "PORT_StartCnf failed result:%d"
+glabel lbl_8018EAD0
+	.asciz "PORT_StartInd"
+glabel lbl_8018EAE0
+	.asciz "PORT_ParNegInd dlci:%d mtu:%d"
+glabel lbl_8018EB00
+	.asciz "PORT_ParNegInd: port not found"
+glabel lbl_8018EB20
+	.asciz "PORT_ParNegCnf dlci:%d mtu:%d cl: %d k: %d"
+glabel lbl_8018EB4C
+	.asciz "PORT_DlcEstablishInd dlci:%d mtu:%d"
+glabel lbl_8018EB70
+	.asciz "PORT_DlcEstablishCnf dlci:%d mtu:%d result:%d"
+glabel lbl_8018EBA0
+	.asciz "PORT_PortNegInd"
+	.asciz "PORT_PortNegCnf"
+	.asciz "PORT_PortNegCnf no port"
+	.asciz "PORT_PortNegCnf Control Already sent"
+glabel lbl_8018EC00
+	.asciz "PORT_ControlInd"
+glabel lbl_8018EC10
+	.asciz "PORT_ControlInd DTR_DSR : %d, RTS_CTS : %d, RI : %d, DCD : %d"
+glabel lbl_8018EC50
+	.asciz "PORT_ControlCnf"
+glabel lbl_8018EC60
+	.asciz "PORT_LineStatusInd"
+glabel lbl_8018EC74
+	.asciz "PORT_DlcReleaseInd"
+glabel lbl_8018EC88
+	.asciz "PORT_CloseInd"
+glabel lbl_8018EC98
+	.asciz "Port_TimeOutCloseMux"
+glabel lbl_8018ECB0
+	.asciz "PORT_DataInd with data length %d"
+glabel lbl_8018ECD4
+	.asciz "PORT_DataInd. Buffer over run. Dropping the buffer"
+glabel lbl_8018ED08
+	.asciz "PORT_FlowInd fc:%d"
+	.balign 4
+	.asciz "Sending RFCOMM_DataReq"
+glabel lbl_8018ED34
+	.asciz "port_rfc_closed in OPENING state ignored"
+glabel lbl_8018ED60
+	.asciz "port_rfc_closed state:%d sending events:%x"
 	.long 0x00000000
-.global lbl_8018EA98
-lbl_8018EA98:
-	.long 0x504F5254
-	.long 0x5F537461
-	.long 0x7274436E
-	.long 0x66207265
-	.long 0x73756C74
-	.long 0x3A256400
-	.long 0x504F5254
-	.long 0x5F537461
-	.long 0x7274436E
-	.long 0x66206661
-	.long 0x696C6564
-	.long 0x20726573
-	.long 0x756C743A
-	.long 0x25640000
-.global lbl_8018EAD0
-lbl_8018EAD0:
-	.long 0x504F5254
-	.long 0x5F537461
-	.long 0x7274496E
-	.long 0x64000000
-.global lbl_8018EAE0
-lbl_8018EAE0:
-	.long 0x504F5254
-	.long 0x5F506172
-	.long 0x4E656749
-	.long 0x6E642064
-	.long 0x6C63693A
-	.long 0x2564206D
-	.long 0x74753A25
-	.long 0x64000000
-.global lbl_8018EB00
-lbl_8018EB00:
-	.long 0x504F5254
-	.long 0x5F506172
-	.long 0x4E656749
-	.long 0x6E643A20
-	.long 0x706F7274
-	.long 0x206E6F74
-	.long 0x20666F75
-	.long 0x6E640000
-.global lbl_8018EB20
-lbl_8018EB20:
-	.long 0x504F5254
-	.long 0x5F506172
-	.long 0x4E656743
-	.long 0x6E662064
-	.long 0x6C63693A
-	.long 0x2564206D
-	.long 0x74753A25
-	.long 0x6420636C
-	.long 0x3A202564
-	.long 0x206B3A20
-	.long 0x25640000
-.global lbl_8018EB4C
-lbl_8018EB4C:
-	.long 0x504F5254
-	.long 0x5F446C63
-	.long 0x45737461
-	.long 0x626C6973
-	.long 0x68496E64
-	.long 0x20646C63
-	.long 0x693A2564
-	.long 0x206D7475
-	.long 0x3A256400
-.global lbl_8018EB70
-lbl_8018EB70:
-	.long 0x504F5254
-	.long 0x5F446C63
-	.long 0x45737461
-	.long 0x626C6973
-	.long 0x68436E66
-	.long 0x20646C63
-	.long 0x693A2564
-	.long 0x206D7475
-	.long 0x3A256420
-	.long 0x72657375
-	.long 0x6C743A25
-	.long 0x64000000
-.global lbl_8018EBA0
-lbl_8018EBA0:
-	.long 0x504F5254
-	.long 0x5F506F72
-	.long 0x744E6567
-	.long 0x496E6400
-	.long 0x504F5254
-	.long 0x5F506F72
-	.long 0x744E6567
-	.long 0x436E6600
-	.long 0x504F5254
-	.long 0x5F506F72
-	.long 0x744E6567
-	.long 0x436E6620
-	.long 0x6E6F2070
-	.long 0x6F727400
-	.long 0x504F5254
-	.long 0x5F506F72
-	.long 0x744E6567
-	.long 0x436E6620
-	.long 0x436F6E74
-	.long 0x726F6C20
-	.long 0x416C7265
-	.long 0x61647920
-	.long 0x73656E74
+glabel lbl_8018ED90
+	.asciz "port_select_mtu bad packet size"
+	.asciz "port_select_mtu selected %d based on connection speed"
+	.balign 4
+	.asciz "port_select_mtu selected %d based on l2cap PDU size"
+	.balign 8
+	.asciz "port_select_mtu application selected %d"
+	.asciz "port_select_mtu credit_rx_max %d, credit_rx_low %d, rx_buf_critical %d"
+glabel lbl_8018EE90
+	.asciz "rfc_port_closed DONE"
+glabel lbl_8018EEA8
+	.asciz "PORT_DataInd Data reached HW. Sending FC set."
+glabel lbl_8018EED8
+	.asciz "rfc_find_lcid_mcb LCID:0x%x"
+	.asciz "rfc_find_lcid_mcb LCID reused LCID:0x%x current:0x%x"
+	.balign 4
+	.asciz "RFCOMM_ConnectCnf LCID:0x%x"
+	.asciz "RFCOMM_ConfigInd LCID:0x%x"
+	.balign 4
+	.asciz "RFCOMM_ConfigCnf LCID:0x%x"
+	.balign 4
+	.asciz "RFCOMM_DisconnectInd LCID:0x%x"
+	.balign 4
+	.asciz "RFCOMM_BufDataInd LCID:0x%x"
+	.asciz "RFCOMM_CongestionStatusInd dropped LCID:0x%x"
+	.balign 4
+	.asciz "RFCOMM_CongestionStatusInd LCID:0x%x"
 	.long 0x00000000
-.global lbl_8018EC00
-lbl_8018EC00:
-	.long 0x504F5254
-	.long 0x5F436F6E
-	.long 0x74726F6C
-	.long 0x496E6400
-.global lbl_8018EC10
-lbl_8018EC10:
-	.long 0x504F5254
-	.long 0x5F436F6E
-	.long 0x74726F6C
-	.long 0x496E6420
-	.long 0x4454525F
-	.long 0x44535220
-	.long 0x3A202564
-	.long 0x2C205254
-	.long 0x535F4354
-	.long 0x53203A20
-	.long 0x25642C20
-	.long 0x5249203A
-	.long 0x2025642C
-	.long 0x20444344
-	.long 0x203A2025
-	.long 0x64000000
-.global lbl_8018EC50
-lbl_8018EC50:
-	.long 0x504F5254
-	.long 0x5F436F6E
-	.long 0x74726F6C
-	.long 0x436E6600
-.global lbl_8018EC60
-lbl_8018EC60:
-	.long 0x504F5254
-	.long 0x5F4C696E
-	.long 0x65537461
-	.long 0x74757349
-	.long 0x6E640000
-.global lbl_8018EC74
-lbl_8018EC74:
-	.long 0x504F5254
-	.long 0x5F446C63
-	.long 0x52656C65
-	.long 0x61736549
-	.long 0x6E640000
-.global lbl_8018EC88
-lbl_8018EC88:
-	.long 0x504F5254
-	.long 0x5F436C6F
-	.long 0x7365496E
-	.long 0x64000000
-.global lbl_8018EC98
-lbl_8018EC98:
-	.long 0x506F7274
-	.long 0x5F54696D
-	.long 0x654F7574
-	.long 0x436C6F73
-	.long 0x654D7578
-	.long 0x00000000
-.global lbl_8018ECB0
-lbl_8018ECB0:
-	.long 0x504F5254
-	.long 0x5F446174
-	.long 0x61496E64
-	.long 0x20776974
-	.long 0x68206461
-	.long 0x7461206C
-	.long 0x656E6774
-	.long 0x68202564
-	.long 0x00000000
-.global lbl_8018ECD4
-lbl_8018ECD4:
-	.long 0x504F5254
-	.long 0x5F446174
-	.long 0x61496E64
-	.long 0x2E204275
-	.long 0x66666572
-	.long 0x206F7665
-	.long 0x72207275
-	.long 0x6E2E2044
-	.long 0x726F7070
-	.long 0x696E6720
-	.long 0x74686520
-	.long 0x62756666
-	.long 0x65720000
-.global lbl_8018ED08
-lbl_8018ED08:
-	.long 0x504F5254
-	.long 0x5F466C6F
-	.long 0x77496E64
-	.long 0x2066633A
-	.long 0x25640000
-	.long 0x53656E64
-	.long 0x696E6720
-	.long 0x5246434F
-	.long 0x4D4D5F44
-	.long 0x61746152
-	.long 0x65710000
-.global lbl_8018ED34
-lbl_8018ED34:
-	.long 0x706F7274
-	.long 0x5F726663
-	.long 0x5F636C6F
-	.long 0x73656420
-	.long 0x696E204F
-	.long 0x50454E49
-	.long 0x4E472073
-	.long 0x74617465
-	.long 0x2069676E
-	.long 0x6F726564
-	.long 0x00000000
-.global lbl_8018ED60
-lbl_8018ED60:
-	.long 0x706F7274
-	.long 0x5F726663
-	.long 0x5F636C6F
-	.long 0x73656420
-	.long 0x73746174
-	.long 0x653A2564
-	.long 0x2073656E
-	.long 0x64696E67
-	.long 0x20657665
-	.long 0x6E74733A
-	.long 0x25780000
-	.long 0x00000000
-.global lbl_8018ED90
-lbl_8018ED90:
-	.long 0x706F7274
-	.long 0x5F73656C
-	.long 0x6563745F
-	.long 0x6D747520
-	.long 0x62616420
-	.long 0x7061636B
-	.long 0x65742073
-	.long 0x697A6500
-	.long 0x706F7274
-	.long 0x5F73656C
-	.long 0x6563745F
-	.long 0x6D747520
-	.long 0x73656C65
-	.long 0x63746564
-	.long 0x20256420
-	.long 0x62617365
-	.long 0x64206F6E
-	.long 0x20636F6E
-	.long 0x6E656374
-	.long 0x696F6E20
-	.long 0x73706565
-	.long 0x64000000
-	.long 0x706F7274
-	.long 0x5F73656C
-	.long 0x6563745F
-	.long 0x6D747520
-	.long 0x73656C65
-	.long 0x63746564
-	.long 0x20256420
-	.long 0x62617365
-	.long 0x64206F6E
-	.long 0x206C3263
-	.long 0x61702050
-	.long 0x44552073
-	.long 0x697A6500
-	.long 0x00000000
-	.long 0x706F7274
-	.long 0x5F73656C
-	.long 0x6563745F
-	.long 0x6D747520
-	.long 0x6170706C
-	.long 0x69636174
-	.long 0x696F6E20
-	.long 0x73656C65
-	.long 0x63746564
-	.long 0x20256400
-	.long 0x706F7274
-	.long 0x5F73656C
-	.long 0x6563745F
-	.long 0x6D747520
-	.long 0x63726564
-	.long 0x69745F72
-	.long 0x785F6D61
-	.long 0x78202564
-	.long 0x2C206372
-	.long 0x65646974
-	.long 0x5F72785F
-	.long 0x6C6F7720
-	.long 0x25642C20
-	.long 0x72785F62
-	.long 0x75665F63
-	.long 0x72697469
-	.long 0x63616C20
-	.long 0x25640000
-.global lbl_8018EE90
-lbl_8018EE90:
-	.long 0x7266635F
-	.long 0x706F7274
-	.long 0x5F636C6F
-	.long 0x73656420
-	.long 0x444F4E45
-	.long 0x00000000
-.global lbl_8018EEA8
-lbl_8018EEA8:
-	.long 0x504F5254
-	.long 0x5F446174
-	.long 0x61496E64
-	.long 0x20446174
-	.long 0x61207265
-	.long 0x61636865
-	.long 0x64204857
-	.long 0x2E205365
-	.long 0x6E64696E
-	.long 0x67204643
-	.long 0x20736574
-	.long 0x2E000000
-.global lbl_8018EED8
-lbl_8018EED8:
-	.long 0x7266635F
-	.long 0x66696E64
-	.long 0x5F6C6369
-	.long 0x645F6D63
-	.long 0x62204C43
-	.long 0x49443A30
-	.long 0x78257800
-	.long 0x7266635F
-	.long 0x66696E64
-	.long 0x5F6C6369
-	.long 0x645F6D63
-	.long 0x62204C43
-	.long 0x49442072
-	.long 0x65757365
-	.long 0x64204C43
-	.long 0x49443A30
-	.long 0x78257820
-	.long 0x63757272
-	.long 0x656E743A
-	.long 0x30782578
-	.long 0x00000000
-	.long 0x5246434F
-	.long 0x4D4D5F43
-	.long 0x6F6E6E65
-	.long 0x6374436E
-	.long 0x66204C43
-	.long 0x49443A30
-	.long 0x78257800
-	.long 0x5246434F
-	.long 0x4D4D5F43
-	.long 0x6F6E6669
-	.long 0x67496E64
-	.long 0x204C4349
-	.long 0x443A3078
-	.long 0x25780000
-	.long 0x5246434F
-	.long 0x4D4D5F43
-	.long 0x6F6E6669
-	.long 0x67436E66
-	.long 0x204C4349
-	.long 0x443A3078
-	.long 0x25780000
-	.long 0x5246434F
-	.long 0x4D4D5F44
-	.long 0x6973636F
-	.long 0x6E6E6563
-	.long 0x74496E64
-	.long 0x204C4349
-	.long 0x443A3078
-	.long 0x25780000
-	.long 0x5246434F
-	.long 0x4D4D5F42
-	.long 0x75664461
-	.long 0x7461496E
-	.long 0x64204C43
-	.long 0x49443A30
-	.long 0x78257800
-	.long 0x5246434F
-	.long 0x4D4D5F43
-	.long 0x6F6E6765
-	.long 0x7374696F
-	.long 0x6E537461
-	.long 0x74757349
-	.long 0x6E642064
-	.long 0x726F7070
-	.long 0x6564204C
-	.long 0x4349443A
-	.long 0x30782578
-	.long 0x00000000
-	.long 0x5246434F
-	.long 0x4D4D5F43
-	.long 0x6F6E6765
-	.long 0x7374696F
-	.long 0x6E537461
-	.long 0x74757349
-	.long 0x6E64204C
-	.long 0x4349443A
-	.long 0x30782578
-	.long 0x00000000
-	.long 0x00000000
-.global lbl_8018F018
-lbl_8018F018:
+glabel lbl_8018F018
 	.long 0x800F2494
 	.long 0x800F2498
 	.long 0x800F249C
@@ -36588,41 +27647,14 @@ lbl_8018F018:
 	.long 0x800F24A4
 	.long 0x800F24A8
 	.long 0x800F24AC
-	.long 0x7266635F
-	.long 0x6D785F73
-	.long 0x6D5F7374
-	.long 0x6174655F
-	.long 0x69646C65
-	.long 0x202D2065
-	.long 0x76743A25
-	.long 0x64000000
-	.long 0x4D782065
-	.long 0x72726F72
-	.long 0x20737461
-	.long 0x74652025
-	.long 0x64206576
-	.long 0x656E7420
-	.long 0x25640000
-	.long 0x7266635F
-	.long 0x6D785F73
-	.long 0x656E645F
-	.long 0x636F6E66
-	.long 0x69675F72
-	.long 0x65710000
-.global lbl_8018F088
-lbl_8018F088:
-	.long 0x5246434F
-	.long 0x4D4D204D
-	.long 0x58206967
-	.long 0x6E6F7265
-	.long 0x64202D20
-	.long 0x6576743A
-	.long 0x25642069
-	.long 0x6E207374
-	.long 0x6174653A
-	.long 0x25640000
-.global lbl_8018F0B0
-lbl_8018F0B0:
+	.asciz "rfc_mx_sm_state_idle - evt:%d"
+	.balign 4
+	.asciz "Mx error state %d event %d"
+	.balign 4
+	.asciz "rfc_mx_send_config_req"
+glabel lbl_8018F088
+	.asciz "RFCOMM MX ignored - evt:%d in state:%d"
+glabel lbl_8018F0B0
 	.long 0x800F267C
 	.long 0x800F2650
 	.long 0x800F2650
@@ -36636,27 +27668,10 @@ lbl_8018F0B0:
 	.long 0x800F259C
 	.long 0x800F2570
 	.long 0x800F2570
-	.long 0x7266635F
-	.long 0x6D785F73
-	.long 0x6D5F7374
-	.long 0x6174655F
-	.long 0x77616974
-	.long 0x5F636F6E
-	.long 0x6E5F636E
-	.long 0x66202D20
-	.long 0x6576743A
-	.long 0x25640000
-	.long 0x7266635F
-	.long 0x6D785F73
-	.long 0x6D5F7374
-	.long 0x6174655F
-	.long 0x636F6E66
-	.long 0x69677572
-	.long 0x65202D20
-	.long 0x6576743A
-	.long 0x25640000
-.global lbl_8018F130
-lbl_8018F130:
+	.asciz "rfc_mx_sm_state_wait_conn_cnf - evt:%d"
+	.balign 4
+	.asciz "rfc_mx_sm_state_configure - evt:%d"
+glabel lbl_8018F130
 	.long 0x800F2900
 	.long 0x800F2960
 	.long 0x800F2960
@@ -36666,17 +27681,8 @@ lbl_8018F130:
 	.long 0x800F292C
 	.long 0x800F2960
 	.long 0x800F294C
-	.long 0x7266635F
-	.long 0x6D785F73
-	.long 0x6D5F7361
-	.long 0x626D655F
-	.long 0x77616974
-	.long 0x5F756120
-	.long 0x2D206576
-	.long 0x743A2564
-	.long 0x00000000
-.global lbl_8018F178
-lbl_8018F178:
+	.asciz "rfc_mx_sm_sabme_wait_ua - evt:%d"
+glabel lbl_8018F178
 	.long 0x800F2AD4
 	.long 0x800F2A84
 	.long 0x800F2AAC
@@ -36692,30 +27698,11 @@ lbl_8018F178:
 	.long 0x800F2A50
 	.long 0x800F2AD4
 	.long 0x800F2A70
-.global lbl_8018F1B4
-lbl_8018F1B4:
-	.long 0x7266635F
-	.long 0x6D785F73
-	.long 0x6D5F7374
-	.long 0x6174655F
-	.long 0x77616974
-	.long 0x5F736162
-	.long 0x6D65202D
-	.long 0x20657674
-	.long 0x3A256400
-.global lbl_8018F1D8
-lbl_8018F1D8:
-	.long 0x7266635F
-	.long 0x6D785F73
-	.long 0x6D5F7374
-	.long 0x6174655F
-	.long 0x636F6E6E
-	.long 0x65637465
-	.long 0x64202D20
-	.long 0x6576743A
-	.long 0x25640000
-.global lbl_8018F1FC
-lbl_8018F1FC:
+glabel lbl_8018F1B4
+	.asciz "rfc_mx_sm_state_wait_sabme - evt:%d"
+glabel lbl_8018F1D8
+	.asciz "rfc_mx_sm_state_connected - evt:%d"
+glabel lbl_8018F1FC
 	.long 0x800F2CE4
 	.long 0x800F2D10
 	.long 0x800F2CAC
@@ -36728,20 +27715,9 @@ lbl_8018F1FC:
 	.long 0x800F2D10
 	.long 0x800F2D10
 	.long 0x800F2CD0
-.global lbl_8018F22C
-lbl_8018F22C:
-	.long 0x7266635F
-	.long 0x6D785F73
-	.long 0x6D5F7374
-	.long 0x6174655F
-	.long 0x64697363
-	.long 0x5F776169
-	.long 0x745F7561
-	.long 0x202D2065
-	.long 0x76743A25
-	.long 0x64000000
-.global lbl_8018F254
-lbl_8018F254:
+glabel lbl_8018F22C
+	.asciz "rfc_mx_sm_state_disc_wait_ua - evt:%d"
+glabel lbl_8018F254
 	.long 0x800F2E84
 	.long 0x800F2DC8
 	.long 0x800F2DC8
@@ -36757,56 +27733,17 @@ lbl_8018F254:
 	.long 0x800F2E84
 	.long 0x800F2E84
 	.long 0x800F2E6C
-.global lbl_8018F290
-lbl_8018F290:
-	.long 0x7266635F
-	.long 0x6D785F63
-	.long 0x6F6E665F
-	.long 0x636E6620
-	.long 0x705F6366
-	.long 0x673A2530
-	.long 0x38782072
-	.long 0x65733A25
-	.long 0x64200000
-.global lbl_8018F2B4
-lbl_8018F2B4:
-	.long 0x7266635F
-	.long 0x6D785F63
-	.long 0x6F6E665F
-	.long 0x696E6420
-	.long 0x705F6366
-	.long 0x673A2530
-	.long 0x78000000
-.global lbl_8018F2D0
-lbl_8018F2D0:
-	.long 0x4E554C4C
-	.long 0x20706F72
-	.long 0x74206576
-	.long 0x656E7420
-	.long 0x25640000
-.global lbl_8018F2E4
-lbl_8018F2E4:
-	.long 0x506F7274
-	.long 0x20657272
-	.long 0x6F722073
-	.long 0x74617465
-	.long 0x20256420
-	.long 0x6576656E
-	.long 0x74202564
-	.long 0x00000000
-.global lbl_8018F304
-lbl_8018F304:
-	.long 0x506F7274
-	.long 0x20737461
-	.long 0x74652063
-	.long 0x6C6F7365
-	.long 0x64204576
-	.long 0x656E7420
-	.long 0x69676E6F
-	.long 0x72656420
-	.long 0x25640000
-.global lbl_8018F328
-lbl_8018F328:
+glabel lbl_8018F290
+	.asciz "rfc_mx_conf_cnf p_cfg:%08x res:%d "
+glabel lbl_8018F2B4
+	.asciz "rfc_mx_conf_ind p_cfg:%0x"
+glabel lbl_8018F2D0
+	.asciz "NULL port event %d"
+glabel lbl_8018F2E4
+	.asciz "Port error state %d event %d"
+glabel lbl_8018F304
+	.asciz "Port state closed Event ignored %d"
+glabel lbl_8018F328
 	.long 0x800F31C8
 	.long 0x800F3200
 	.long 0x800F3204
@@ -36822,21 +27759,9 @@ lbl_8018F328:
 	.long 0x800F3274
 	.long 0x800F31B8
 	.long 0x800F31BC
-.global lbl_8018F364
-lbl_8018F364:
-	.long 0x506F7274
-	.long 0x20737461
-	.long 0x74652073
-	.long 0x61626D65
-	.long 0x5F776169
-	.long 0x745F7561
-	.long 0x20457665
-	.long 0x6E742069
-	.long 0x676E6F72
-	.long 0x65642025
-	.long 0x64000000
-.global lbl_8018F390
-lbl_8018F390:
+glabel lbl_8018F364
+	.asciz "Port state sabme_wait_ua Event ignored %d"
+glabel lbl_8018F390
 	.long 0x800F33D0
 	.long 0x800F3360
 	.long 0x800F3384
@@ -36852,31 +27777,10 @@ lbl_8018F390:
 	.long 0x800F3324
 	.long 0x800F334C
 	.long 0x800F3354
-	.long 0x506F7274
-	.long 0x20657272
-	.long 0x6F722073
-	.long 0x74617465
-	.long 0x20546572
-	.long 0x6D205761
-	.long 0x69742053
-	.long 0x65632065
-	.long 0x76656E74
-	.long 0x20446174
-	.long 0x61000000
-	.long 0x506F7274
-	.long 0x20737461
-	.long 0x74652074
-	.long 0x65726D5F
-	.long 0x77616974
-	.long 0x5F736563
-	.long 0x5F636865
-	.long 0x636B2045
-	.long 0x76656E74
-	.long 0x2069676E
-	.long 0x6F726564
-	.long 0x20256400
-.global lbl_8018F428
-lbl_8018F428:
+	.asciz "Port error state Term Wait Sec event Data"
+	.balign 4
+	.asciz "Port state term_wait_sec_check Event ignored %d"
+glabel lbl_8018F428
 	.long 0x800F3550
 	.long 0x800F35D0
 	.long 0x800F35D0
@@ -36893,32 +27797,11 @@ lbl_8018F428:
 	.long 0x800F350C
 	.long 0x800F3524
 	.long 0x800F3498
-	.long 0x506F7274
-	.long 0x20657272
-	.long 0x6F722073
-	.long 0x74617465
-	.long 0x204F7269
-	.long 0x67205761
-	.long 0x69742053
-	.long 0x65632065
-	.long 0x76656E74
-	.long 0x20446174
-	.long 0x61000000
+	.asciz "Port error state Orig Wait Sec event Data"
+	.balign 4
 	.long 0x00000000
-	.long 0x506F7274
-	.long 0x20737461
-	.long 0x7465206F
-	.long 0x7269675F
-	.long 0x77616974
-	.long 0x5F736563
-	.long 0x5F636865
-	.long 0x636B2045
-	.long 0x76656E74
-	.long 0x2069676E
-	.long 0x6F726564
-	.long 0x20256400
-.global lbl_8018F4C8
-lbl_8018F4C8:
+	.asciz "Port state orig_wait_sec_check Event ignored %d"
+glabel lbl_8018F4C8
 	.long 0x800F36A4
 	.long 0x800F3720
 	.long 0x800F3720
@@ -36935,19 +27818,9 @@ lbl_8018F4C8:
 	.long 0x800F3720
 	.long 0x800F36E8
 	.long 0x800F3654
-.global lbl_8018F508
-lbl_8018F508:
-	.long 0x506F7274
-	.long 0x20737461
-	.long 0x7465206F
-	.long 0x70656E65
-	.long 0x64204576
-	.long 0x656E7420
-	.long 0x69676E6F
-	.long 0x72656420
-	.long 0x25640000
-.global lbl_8018F52C
-lbl_8018F52C:
+glabel lbl_8018F508
+	.asciz "Port state opened Event ignored %d"
+glabel lbl_8018F52C
 	.long 0x800F3874
 	.long 0x800F3870
 	.long 0x800F3884
@@ -36963,21 +27836,9 @@ lbl_8018F52C:
 	.long 0x800F37CC
 	.long 0x800F37F4
 	.long 0x800F37FC
-.global lbl_8018F568
-lbl_8018F568:
-	.long 0x506F7274
-	.long 0x20737461
-	.long 0x74652064
-	.long 0x6973635F
-	.long 0x77616974
-	.long 0x5F756120
-	.long 0x4576656E
-	.long 0x74206967
-	.long 0x6E6F7265
-	.long 0x64202564
-	.long 0x00000000
-.global lbl_8018F594
-lbl_8018F594:
+glabel lbl_8018F568
+	.asciz "Port state disc_wait_ua Event ignored %d"
+glabel lbl_8018F594
 	.long 0x800F39DC
 	.long 0x800F39C4
 	.long 0x800F39D0
@@ -36993,270 +27854,70 @@ lbl_8018F594:
 	.long 0x800F3A28
 	.long 0x800F39B0
 	.long 0x800F39B8
-.global lbl_8018F5D0
-lbl_8018F5D0:
-	.long 0x2A2A2A2A
-	.long 0x2A204D58
-	.long 0x20504E20
-	.long 0x7768696C
-	.long 0x65206469
-	.long 0x73636F6E
-	.long 0x6E656374
-	.long 0x696E6720
-	.long 0x2A2A2A2A
-	.long 0x2A000000
-.global lbl_8018F5F8
-lbl_8018F5F8:
-	.long 0x42616420
-	.long 0x4C656E67
-	.long 0x7468313A
-	.long 0x20256400
-	.long 0x42616420
-	.long 0x4C656E67
-	.long 0x74683220
-	.long 0x25642025
-	.long 0x64000000
-	.long 0x42616420
-	.long 0x5341424D
-	.long 0x45000000
-	.long 0x42616420
-	.long 0x44495343
+glabel lbl_8018F5D0
+	.asciz "***** MX PN while disconnecting *****"
+glabel lbl_8018F5F8
+	.asciz "Bad Length1: %d"
+	.asciz "Bad Length2 %d %d"
+	.balign 4
+	.asciz "Bad SABME"
+	.balign 4
+	.asciz "Bad DISC"
+	.balign 4
+	.asciz "Bad UIH - invalid DLCI"
+	.balign 4
+	.asciz "Bad UIH - FCS"
+	.balign 4
+	.asciz "Bad UIH - response"
+	.balign 4
+	.asciz "Illegal MX Frame ea:%d len:%d"
+	.balign 4
+	.asciz "Bad MX frame"
+	.balign 4
+	.asciz "Bad PN frame"
+	.balign 4
+	.asciz "Bad MSC frame"
+	.balign 4
+	.asciz "Bad RPN frame"
+glabel lbl_8018F6D0
+	.asciz "rfc_timer_stop"
+glabel lbl_8018F6E0
+	.asciz "rfc_timer_start - timeout:%d"
+glabel lbl_8018F700
+	.asciz "rfc_port_timer_start - timeout:%d"
+glabel lbl_8018F724
+	.asciz "rfc_port_timer_stop"
+	.asciz "rfc_port_closed"
+glabel lbl_8018F748
+	.asciz "rfc_inc_credit:%d"
 	.long 0x00000000
-	.long 0x42616420
-	.long 0x55494820
-	.long 0x2D20696E
-	.long 0x76616C69
-	.long 0x6420444C
-	.long 0x43490000
-	.long 0x42616420
-	.long 0x55494820
-	.long 0x2D204643
-	.long 0x53000000
-	.long 0x42616420
-	.long 0x55494820
-	.long 0x2D207265
-	.long 0x73706F6E
-	.long 0x73650000
-	.long 0x496C6C65
-	.long 0x67616C20
-	.long 0x4D582046
-	.long 0x72616D65
-	.long 0x2065613A
-	.long 0x2564206C
-	.long 0x656E3A25
-	.long 0x64000000
-	.long 0x42616420
-	.long 0x4D582066
-	.long 0x72616D65
+glabel lbl_8018F760
+	.asciz "SDP_InitDiscoveryDb Illegal param: p_db 0x%x, len %d, num_uuid %d, num_attr %d"
+glabel lbl_8018F7B0
+	.asciz "SDP_AddAttribute: attr_len:%d too long. truncate to (%d)"
+glabel lbl_8018F7EC
+	.asciz "SDP_AddUuidSequence - too long, add %d uuids of %d"
+	.balign 4
+	.asciz "Deleting attr_id 0x%04x for handle 0x%x"
+glabel lbl_8018F848
+	.asciz "SDP - Unexp. PDU: %d in state: %d"
 	.long 0x00000000
-	.long 0x42616420
-	.long 0x504E2066
-	.long 0x72616D65
-	.long 0x00000000
-	.long 0x42616420
-	.long 0x4D534320
-	.long 0x6672616D
-	.long 0x65000000
-	.long 0x42616420
-	.long 0x52504E20
-	.long 0x6672616D
-	.long 0x65000000
-.global lbl_8018F6D0
-lbl_8018F6D0:
-	.long 0x7266635F
-	.long 0x74696D65
-	.long 0x725F7374
-	.long 0x6F700000
-.global lbl_8018F6E0
-lbl_8018F6E0:
-	.long 0x7266635F
-	.long 0x74696D65
-	.long 0x725F7374
-	.long 0x61727420
-	.long 0x2D207469
-	.long 0x6D656F75
-	.long 0x743A2564
-	.long 0x00000000
-.global lbl_8018F700
-lbl_8018F700:
-	.long 0x7266635F
-	.long 0x706F7274
-	.long 0x5F74696D
-	.long 0x65725F73
-	.long 0x74617274
-	.long 0x202D2074
-	.long 0x696D656F
-	.long 0x75743A25
-	.long 0x64000000
-.global lbl_8018F724
-lbl_8018F724:
-	.long 0x7266635F
-	.long 0x706F7274
-	.long 0x5F74696D
-	.long 0x65725F73
-	.long 0x746F7000
-	.long 0x7266635F
-	.long 0x706F7274
-	.long 0x5F636C6F
-	.long 0x73656400
-.global lbl_8018F748
-lbl_8018F748:
-	.long 0x7266635F
-	.long 0x696E635F
-	.long 0x63726564
-	.long 0x69743A25
-	.long 0x64000000
-	.long 0x00000000
-.global lbl_8018F760
-lbl_8018F760:
-	.long 0x5344505F
-	.long 0x496E6974
-	.long 0x44697363
-	.long 0x6F766572
-	.long 0x79446220
-	.long 0x496C6C65
-	.long 0x67616C20
-	.long 0x70617261
-	.long 0x6D3A2070
-	.long 0x5F646220
-	.long 0x30782578
-	.long 0x2C206C65
-	.long 0x6E202564
-	.long 0x2C206E75
-	.long 0x6D5F7575
-	.long 0x69642025
-	.long 0x642C206E
-	.long 0x756D5F61
-	.long 0x74747220
-	.long 0x25640000
-.global lbl_8018F7B0
-lbl_8018F7B0:
-	.long 0x5344505F
-	.long 0x41646441
-	.long 0x74747269
-	.long 0x62757465
-	.long 0x3A206174
-	.long 0x74725F6C
-	.long 0x656E3A25
-	.long 0x6420746F
-	.long 0x6F206C6F
-	.long 0x6E672E20
-	.long 0x7472756E
-	.long 0x63617465
-	.long 0x20746F20
-	.long 0x28256429
-	.long 0x00000000
-.global lbl_8018F7EC
-lbl_8018F7EC:
-	.long 0x5344505F
-	.long 0x41646455
-	.long 0x75696453
-	.long 0x65717565
-	.long 0x6E636520
-	.long 0x2D20746F
-	.long 0x6F206C6F
-	.long 0x6E672C20
-	.long 0x61646420
-	.long 0x25642075
-	.long 0x75696473
-	.long 0x206F6620
-	.long 0x25640000
-	.long 0x44656C65
-	.long 0x74696E67
-	.long 0x20617474
-	.long 0x725F6964
-	.long 0x20307825
-	.long 0x30347820
-	.long 0x666F7220
-	.long 0x68616E64
-	.long 0x6C652030
-	.long 0x78257800
-.global lbl_8018F848
-lbl_8018F848:
-	.long 0x53445020
-	.long 0x2D20556E
-	.long 0x6578702E
-	.long 0x20504455
-	.long 0x3A202564
-	.long 0x20696E20
-	.long 0x73746174
-	.long 0x653A2025
-	.long 0x64000000
-	.long 0x00000000
-.global lbl_8018F870
-lbl_8018F870:
-	.long 0x53445020
-	.long 0x2D205263
-	.long 0x76642053
-	.long 0x65727669
-	.long 0x63655365
-	.long 0x61726368
-	.long 0x5273702C
-	.long 0x206E6F20
-	.long 0x6D617463
-	.long 0x68657300
-.global lbl_8018F898
-lbl_8018F898:
-	.long 0x53445020
-	.long 0x2D205772
-	.long 0x6F6E6720
-	.long 0x74797065
-	.long 0x3A203078
-	.long 0x25303278
-	.long 0x20696E20
-	.long 0x61747472
-	.long 0x5F727370
-	.long 0x00000000
-	.long 0x53445020
-	.long 0x2D204261
-	.long 0x64206C65
-	.long 0x6E20696E
-	.long 0x20617474
-	.long 0x725F7273
-	.long 0x70202564
-	.long 0x00000000
-	.long 0x53445020
-	.long 0x2D204442
-	.long 0x2066756C
-	.long 0x6C000000
-	.long 0x53445020
-	.long 0x2D204261
-	.long 0x64207479
-	.long 0x70653A20
-	.long 0x30782530
-	.long 0x3278206F
-	.long 0x72206C65
-	.long 0x6E3A2025
-	.long 0x6420696E
-	.long 0x20617474
-	.long 0x725F7273
-	.long 0x70000000
-	.long 0x53445020
-	.long 0x2D206174
-	.long 0x7472206E
-	.long 0x65737469
-	.long 0x6E672074
-	.long 0x6F6F2064
-	.long 0x65657000
-	.long 0x53445020
-	.long 0x2D206261
-	.long 0x64206C65
-	.long 0x6E20696E
-	.long 0x20555549
-	.long 0x44206174
-	.long 0x74723A20
-	.long 0x25640000
-	.long 0x53445020
-	.long 0x2D206261
-	.long 0x64206C65
-	.long 0x6E20696E
-	.long 0x20626F6F
-	.long 0x6C65616E
-	.long 0x20617474
-	.long 0x723A2025
-	.long 0x64000000
-.global lbl_8018F980
-lbl_8018F980:
+glabel lbl_8018F870
+	.asciz "SDP - Rcvd ServiceSearchRsp, no matches"
+glabel lbl_8018F898
+	.asciz "SDP - Wrong type: 0x%02x in attr_rsp"
+	.balign 4
+	.asciz "SDP - Bad len in attr_rsp %d"
+	.balign 4
+	.asciz "SDP - DB full"
+	.balign 4
+	.asciz "SDP - Bad type: 0x%02x or len: %d in attr_rsp"
+	.balign 4
+	.asciz "SDP - attr nesting too deep"
+	.asciz "SDP - bad len in UUID attr: %d"
+	.balign 4
+	.asciz "SDP - bad len in boolean attr: %d"
+glabel lbl_8018F980
 	.long 0x800F92BC
 	.long 0x800F8E88
 	.long 0x800F8F38
@@ -37267,268 +27928,50 @@ lbl_8018F980:
 	.long 0x800F9188
 	.long 0x800F923C
 	.long 0x00000000
-.global lbl_8018F9A8
-lbl_8018F9A8:
-	.long 0x53657276
-	.long 0x69636520
-	.long 0x44697363
-	.long 0x6F766572
-	.long 0x79000000
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x20526567
-	.long 0x69737472
-	.long 0x6174696F
-	.long 0x6E205365
-	.long 0x72766572
-	.long 0x20666169
-	.long 0x6C656400
-	.long 0x53656375
-	.long 0x72697479
-	.long 0x20526567
-	.long 0x69737472
-	.long 0x6174696F
-	.long 0x6E20666F
-	.long 0x7220436C
-	.long 0x69656E74
-	.long 0x20666169
-	.long 0x6C656400
-	.long 0x53445020
-	.long 0x52656769
-	.long 0x73747261
-	.long 0x74696F6E
-	.long 0x20666169
-	.long 0x6C656400
-.global lbl_8018FA20
-lbl_8018FA20:
-	.long 0x53445020
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20636F6E
-	.long 0x6E20696E
-	.long 0x642C2073
-	.long 0x656E7420
-	.long 0x636F6E66
-	.long 0x69672072
-	.long 0x65712C20
-	.long 0x43494420
-	.long 0x30782578
+glabel lbl_8018F9A8
+	.asciz "Service Discovery"
+	.balign 4
+	.asciz "Security Registration Server failed"
+	.asciz "Security Registration for Client failed"
+	.asciz "SDP Registration failed"
+glabel lbl_8018FA20
+	.asciz "SDP - Rcvd L2CAP conn ind, sent config req, CID 0x%x"
+	.balign 4
+	.asciz "SDP - Rcvd conn cnf for unknown CID 0x%x"
+	.balign 4
+	.asciz "SDP - got conn cnf, sent cfg req, CID: 0x%x"
+	.asciz "SDP - Rcvd conn cnf with error: 0x%x  CID 0x%x"
+glabel lbl_8018FAE0
+	.asciz "SDP - Rcvd L2CAP cfg ind, unknown CID: 0x%x"
+glabel lbl_8018FB0C
+	.asciz "SDP - Rcvd cfg ind, sent cfg cfm, CID: 0x%x"
+	.asciz "SDP - Rcvd cfg cfm, CID: 0x%x  Result: %d"
+glabel lbl_8018FB64
+	.asciz "SDP - disconnect  CID: 0x%x"
+glabel lbl_8018FB80
+	.asciz "SDP - Rcvd L2CAP disc, unknown CID: 0x%x"
+glabel lbl_8018FBAC
+	.asciz "SDP - Rcvd L2CAP disc, CID: 0x%x"
+glabel lbl_8018FBD0
+	.asciz "SDP - Ignored L2CAP data while in state: %d, CID: 0x%x"
+glabel lbl_8018FC08
+	.asciz "SDP - Rcvd L2CAP data, unknown CID: 0x%x"
+	.balign 4
+	.asciz "SDP - no spare CCB for orig"
+	.asciz "SDP - Originate started"
+	.asciz "SDP - Originate failed"
+glabel lbl_8018FC80
+	.asciz "SDP - Rcvd L2CAP disc cfm, unknown CID: 0x%x"
+glabel lbl_8018FCB0
+	.asciz "SDP - Rcvd L2CAP disc cfm, CID: 0x%x"
+glabel lbl_8018FCD8
+	.asciz "SDP - CCB timeout in state: %d  CID: 0x%x"
 	.long 0x00000000
-	.long 0x53445020
-	.long 0x2D205263
-	.long 0x76642063
-	.long 0x6F6E6E20
-	.long 0x636E6620
-	.long 0x666F7220
-	.long 0x756E6B6E
-	.long 0x6F776E20
-	.long 0x43494420
-	.long 0x30782578
-	.long 0x00000000
-	.long 0x53445020
-	.long 0x2D20676F
-	.long 0x7420636F
-	.long 0x6E6E2063
-	.long 0x6E662C20
-	.long 0x73656E74
-	.long 0x20636667
-	.long 0x20726571
-	.long 0x2C204349
-	.long 0x443A2030
-	.long 0x78257800
-	.long 0x53445020
-	.long 0x2D205263
-	.long 0x76642063
-	.long 0x6F6E6E20
-	.long 0x636E6620
-	.long 0x77697468
-	.long 0x20657272
-	.long 0x6F723A20
-	.long 0x30782578
-	.long 0x20204349
-	.long 0x44203078
-	.long 0x25780000
-.global lbl_8018FAE0
-lbl_8018FAE0:
-	.long 0x53445020
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20636667
-	.long 0x20696E64
-	.long 0x2C20756E
-	.long 0x6B6E6F77
-	.long 0x6E204349
-	.long 0x443A2030
-	.long 0x78257800
-.global lbl_8018FB0C
-lbl_8018FB0C:
-	.long 0x53445020
-	.long 0x2D205263
-	.long 0x76642063
-	.long 0x66672069
-	.long 0x6E642C20
-	.long 0x73656E74
-	.long 0x20636667
-	.long 0x2063666D
-	.long 0x2C204349
-	.long 0x443A2030
-	.long 0x78257800
-	.long 0x53445020
-	.long 0x2D205263
-	.long 0x76642063
-	.long 0x66672063
-	.long 0x666D2C20
-	.long 0x4349443A
-	.long 0x20307825
-	.long 0x78202052
-	.long 0x6573756C
-	.long 0x743A2025
-	.long 0x64000000
-.global lbl_8018FB64
-lbl_8018FB64:
-	.long 0x53445020
-	.long 0x2D206469
-	.long 0x73636F6E
-	.long 0x6E656374
-	.long 0x20204349
-	.long 0x443A2030
-	.long 0x78257800
-.global lbl_8018FB80
-lbl_8018FB80:
-	.long 0x53445020
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20646973
-	.long 0x632C2075
-	.long 0x6E6B6E6F
-	.long 0x776E2043
-	.long 0x49443A20
-	.long 0x30782578
-	.long 0x00000000
-.global lbl_8018FBAC
-lbl_8018FBAC:
-	.long 0x53445020
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20646973
-	.long 0x632C2043
-	.long 0x49443A20
-	.long 0x30782578
-	.long 0x00000000
-.global lbl_8018FBD0
-lbl_8018FBD0:
-	.long 0x53445020
-	.long 0x2D204967
-	.long 0x6E6F7265
-	.long 0x64204C32
-	.long 0x43415020
-	.long 0x64617461
-	.long 0x20776869
-	.long 0x6C652069
-	.long 0x6E207374
-	.long 0x6174653A
-	.long 0x2025642C
-	.long 0x20434944
-	.long 0x3A203078
-	.long 0x25780000
-.global lbl_8018FC08
-lbl_8018FC08:
-	.long 0x53445020
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20646174
-	.long 0x612C2075
-	.long 0x6E6B6E6F
-	.long 0x776E2043
-	.long 0x49443A20
-	.long 0x30782578
-	.long 0x00000000
-	.long 0x53445020
-	.long 0x2D206E6F
-	.long 0x20737061
-	.long 0x72652043
-	.long 0x43422066
-	.long 0x6F72206F
-	.long 0x72696700
-	.long 0x53445020
-	.long 0x2D204F72
-	.long 0x6967696E
-	.long 0x61746520
-	.long 0x73746172
-	.long 0x74656400
-	.long 0x53445020
-	.long 0x2D204F72
-	.long 0x6967696E
-	.long 0x61746520
-	.long 0x6661696C
-	.long 0x65640000
-.global lbl_8018FC80
-lbl_8018FC80:
-	.long 0x53445020
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20646973
-	.long 0x63206366
-	.long 0x6D2C2075
-	.long 0x6E6B6E6F
-	.long 0x776E2043
-	.long 0x49443A20
-	.long 0x30782578
-	.long 0x00000000
-.global lbl_8018FCB0
-lbl_8018FCB0:
-	.long 0x53445020
-	.long 0x2D205263
-	.long 0x7664204C
-	.long 0x32434150
-	.long 0x20646973
-	.long 0x63206366
-	.long 0x6D2C2043
-	.long 0x49443A20
-	.long 0x30782578
-	.long 0x00000000
-.global lbl_8018FCD8
-lbl_8018FCD8:
-	.long 0x53445020
-	.long 0x2D204343
-	.long 0x42207469
-	.long 0x6D656F75
-	.long 0x7420696E
-	.long 0x20737461
-	.long 0x74653A20
-	.long 0x25642020
-	.long 0x4349443A
-	.long 0x20307825
-	.long 0x78000000
-	.long 0x00000000
-.global lbl_8018FD08
-lbl_8018FD08:
-	.long 0x53445020
-	.long 0x2D207365
-	.long 0x72766572
-	.long 0x20676F74
-	.long 0x20756E6B
-	.long 0x6E6F776E
-	.long 0x20504455
-	.long 0x3A203078
-	.long 0x25780000
-.global lbl_8018FD2C
-lbl_8018FD2C:
-	.long 0x53445020
-	.long 0x2D206E6F
-	.long 0x20627566
-	.long 0x20666F72
-	.long 0x20736561
-	.long 0x72636820
-	.long 0x72737000
-.global lbl_8018FD48
-lbl_8018FD48:
+glabel lbl_8018FD08
+	.asciz "SDP - server got unknown PDU: 0x%x"
+glabel lbl_8018FD2C
+	.asciz "SDP - no buf for search rsp"
+glabel lbl_8018FD48
 	.long 0x800FAFE8
 	.long 0x800FAF88
 	.long 0x800FAF98
@@ -37546,31 +27989,11 @@ lbl_8018FD48:
 	.long 0x800FAFE8
 	.long 0x800FAFE8
 	.long 0x800FAFD4
-.global lbl_8018FD8C
-lbl_8018FD8C:
-	.long 0x53445020
-	.long 0x2D207364
-	.long 0x70755F62
-	.long 0x75696C64
-	.long 0x5F6E5F73
-	.long 0x656E645F
-	.long 0x6572726F
-	.long 0x72202063
-	.long 0x6F64653A
-	.long 0x20307825
-	.long 0x78202043
-	.long 0x49443A20
-	.long 0x30782578
-	.long 0x00000000
-.global lbl_8018FDC4
-lbl_8018FDC4:
-	.long 0x53445020
-	.long 0x2D206E6F
-	.long 0x20627566
-	.long 0x20666F72
-	.long 0x20657272
-	.long 0x206D7367
-	.long 0x00000000
+glabel lbl_8018FD8C
+	.asciz "SDP - sdpu_build_n_send_error  code: 0x%x  CID: 0x%x"
+glabel lbl_8018FDC4
+	.asciz "SDP - no buf for err msg"
+	.balign 4
 	.long 0x800FB2F8
 	.long 0x800FB288
 	.long 0x800FB290
@@ -37579,8 +28002,7 @@ lbl_8018FDC4:
 	.long 0x800FB2A0
 	.long 0x800FB2AC
 	.long 0x800FB2C8
-.global lbl_8018FE00
-lbl_8018FE00:
+glabel lbl_8018FE00
 	.long 0x800FB224
 	.long 0x800FB1B4
 	.long 0x800FB1BC
@@ -37589,8 +28011,7 @@ lbl_8018FE00:
 	.long 0x800FB1CC
 	.long 0x800FB1D8
 	.long 0x800FB1F4
-.global lbl_8018FE20
-lbl_8018FE20:
+glabel lbl_8018FE20
 	.long 0x800FB734
 	.long 0x800FB740
 	.long 0x800FB74C
@@ -37599,24 +28020,10 @@ lbl_8018FE20:
 	.long 0x800FB770
 	.long 0x800FB780
 	.long 0x800FB7A0
-.global lbl_8018FE40
-lbl_8018FE40:
-	.long 0x43415554
-	.long 0x494F4E21
-	.long 0x2020556E
-	.long 0x65787065
-	.long 0x63746564
-	.long 0x20657272
-	.long 0x6F722063
-	.long 0x6F646520
-	.long 0x5B25645D
-	.long 0x20776173
-	.long 0x20666F75
-	.long 0x6E642E0A
+glabel lbl_8018FE40
+	.asciz "CAUTION!  Unexpected error code [%d] was found.\n"
 	.long 0x00000000
-	.long 0x00000000
-.global lbl_8018FE78
-lbl_8018FE78:
+glabel lbl_8018FE78
 	.long 0x00000000
 	.long 0x00000000
 	.long 0xFFFFFC17
@@ -37773,38 +28180,12 @@ lbl_8018FE78:
 	.long 0xFFFFFFFE
 	.long 0xFFFFFFE9
 	.long 0xFFFFFFC0
-.global lbl_801900E8
-lbl_801900E8:
-	.long 0x57617272
-	.long 0x6E696E67
-	.long 0x21202E63
-	.long 0x746F7273
-	.long 0x20736563
-	.long 0x74696F6E
-	.long 0x5B25645D
-	.long 0x21207369
-	.long 0x7A653D25
-	.long 0x780A0000
-	.long 0x57617272
-	.long 0x6E696E67
-	.long 0x21202E64
-	.long 0x746F7273
-	.long 0x20736563
-	.long 0x74696F6E
-	.long 0x5B25645D
-	.long 0x21207369
-	.long 0x7A653D25
-	.long 0x780A0000
-	.long 0x57617272
-	.long 0x6E696E67
-	.long 0x2120756E
-	.long 0x6B6E6F77
-	.long 0x6E207365
-	.long 0x6374696F
-	.long 0x6E5B2564
-	.long 0x5D212073
-	.long 0x697A653D
-	.long 0x25780A00
+glabel lbl_801900E8
+	.asciz "Warrning! .ctors section[%d]! size=%x\n"
+	.balign 4
+	.asciz "Warrning! .dtors section[%d]! size=%x\n"
+	.balign 4
+	.asciz "Warrning! unknown section[%d]! size=%x\n"
 	.long 0x800FC7F0
 	.long 0x800FC750
 	.long 0x800FC758
@@ -37819,184 +28200,77 @@ lbl_801900E8:
 	.long 0x800FC7C8
 	.long 0x800FC7D8
 	.long 0x800FC7E8
-.global lbl_80190198
-lbl_80190198:
-	.long 0x4F534C69
-	.long 0x6E6B3A20
-	.long 0x756E6B6E
-	.long 0x6F776E20
-	.long 0x72656C6F
-	.long 0x63617469
-	.long 0x6F6E2074
-	.long 0x79706520
-	.long 0x2533640A
+glabel lbl_80190198
+	.asciz "OSLink: unknown relocation type %3d\n"
+	.balign 4
+	.asciz "_SDA_BASE_"
+	.balign 4
+	.asciz "_SDA2_BASE_"
+	.asciz "ERROR: incorrect R_PPC_EMB_SDA21 data.\n"
+glabel lbl_80190200
+	.asciz "invalid version number for texture palette"
 	.long 0x00000000
-	.long 0x5F534441
-	.long 0x5F424153
-	.long 0x455F0000
-	.long 0x5F534441
-	.long 0x325F4241
-	.long 0x53455F00
-	.long 0x4552524F
-	.long 0x523A2069
-	.long 0x6E636F72
-	.long 0x72656374
-	.long 0x20525F50
-	.long 0x50435F45
-	.long 0x4D425F53
-	.long 0x44413231
-	.long 0x20646174
-	.long 0x612E0A00
-.global lbl_80190200
-lbl_80190200:
-	.long 0x696E7661
-	.long 0x6C696420
-	.long 0x76657273
-	.long 0x696F6E20
-	.long 0x6E756D62
-	.long 0x65722066
-	.long 0x6F722074
-	.long 0x65787475
-	.long 0x72652070
-	.long 0x616C6574
-	.long 0x74650000
+glabel lbl_80190230
+	.asciz "HBMBase.cpp"
+	.asciz "NW4HBM:Failed assertion mpDvdSoundArchive"
+	.balign 4
+	.asciz "Cannot open \"%s\""
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mpMemorySoundArchive"
+	.balign 4
 	.long 0x00000000
-.global lbl_80190230
-lbl_80190230:
-	.long 0x48424D42
-	.long 0x6173652E
-	.long 0x63707000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D704476
-	.long 0x64536F75
-	.long 0x6E644172
-	.long 0x63686976
-	.long 0x65000000
-	.long 0x43616E6E
-	.long 0x6F74206F
-	.long 0x70656E20
-	.long 0x22257322
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D704D65
-	.long 0x6D6F7279
-	.long 0x536F756E
-	.long 0x64417263
-	.long 0x68697665
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x43616E6E
-	.long 0x6F742073
-	.long 0x65747570
-	.long 0x204D656D
-	.long 0x6F727953
-	.long 0x6F756E64
-	.long 0x41726368
-	.long 0x69766500
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D704E61
-	.long 0x6E64536F
-	.long 0x756E6441
-	.long 0x72636869
-	.long 0x76650000
-	.long 0x50315F44
-	.long 0x65662E62
-	.long 0x726C7974
-	.long 0x00000000
-	.long 0x50325F44
-	.long 0x65662E62
-	.long 0x726C7974
-	.long 0x00000000
-	.long 0x50335F44
-	.long 0x65662E62
-	.long 0x726C7974
-	.long 0x00000000
-	.long 0x50345F44
-	.long 0x65662E62
-	.long 0x726C7974
-	.long 0x00000000
+	.asciz "Cannot setup MemorySoundArchive"
+	.asciz "NW4HBM:Failed assertion mpNandSoundArchive"
+	.balign 4
+	.asciz "P1_Def.brlyt"
+	.balign 4
+	.asciz "P2_Def.brlyt"
+	.balign 4
+	.asciz "P3_Def.brlyt"
+	.balign 4
+	.asciz "P4_Def.brlyt"
+	.balign 4
 	.long 0x00000000
 	.long 0x801902FC
 	.long 0x8019030C
 	.long 0x8019031C
 	.long 0x8019032C
-	.long 0x425F6274
-	.long 0x6E4C5F30
-	.long 0x30000000
-	.long 0x425F6274
-	.long 0x6E4C5F30
-	.long 0x31000000
-	.long 0x425F6274
-	.long 0x6E4C5F31
-	.long 0x30000000
-	.long 0x425F6274
-	.long 0x6E4C5F31
-	.long 0x31000000
-.global lbl_80190380
-lbl_80190380:
+	.asciz "B_btnL_00"
+	.balign 4
+	.asciz "B_btnL_01"
+	.balign 4
+	.asciz "B_btnL_10"
+	.balign 4
+	.asciz "B_btnL_11"
+glabel lbl_80190380
 	.long 0x80190350
 	.long 0x8019035C
 	.long 0x80190368
 	.long 0x80190374
-	.long 0x545F6274
-	.long 0x6E4C5F30
-	.long 0x30000000
-	.long 0x545F6274
-	.long 0x6E4C5F30
-	.long 0x31000000
-	.long 0x545F6274
-	.long 0x6E4C5F31
-	.long 0x30000000
-	.long 0x545F6274
-	.long 0x6E4C5F31
-	.long 0x31000000
+	.asciz "T_btnL_00"
+	.balign 4
+	.asciz "T_btnL_01"
+	.balign 4
+	.asciz "T_btnL_10"
+	.balign 4
+	.asciz "T_btnL_11"
+	.balign 4
 	.long 0x80190390
 	.long 0x8019039C
 	.long 0x801903A8
 	.long 0x801903B4
-	.long 0x62746E4C
-	.long 0x5F30305F
-	.long 0x696E4F75
-	.long 0x74000000
-	.long 0x62746E4C
-	.long 0x5F30315F
-	.long 0x696E4F75
-	.long 0x74000000
-	.long 0x62746E4C
-	.long 0x5F31305F
-	.long 0x696E4F75
-	.long 0x74000000
-	.long 0x62746E4C
-	.long 0x5F31315F
-	.long 0x696E4F75
-	.long 0x74000000
-	.long 0x62746E4C
-	.long 0x5F30305F
-	.long 0x70736800
-	.long 0x62746E4C
-	.long 0x5F30315F
-	.long 0x70736800
-	.long 0x62746E4C
-	.long 0x5F31305F
-	.long 0x70736800
-	.long 0x62746E4C
-	.long 0x5F31315F
-	.long 0x70736800
+	.asciz "btnL_00_inOut"
+	.balign 4
+	.asciz "btnL_01_inOut"
+	.balign 4
+	.asciz "btnL_10_inOut"
+	.balign 4
+	.asciz "btnL_11_inOut"
+	.balign 4
+	.asciz "btnL_00_psh"
+	.asciz "btnL_01_psh"
+	.asciz "btnL_10_psh"
+	.asciz "btnL_11_psh"
 	.long 0x801903D0
 	.long 0x801903E0
 	.long 0x801903F0
@@ -38005,102 +28279,40 @@ lbl_80190380:
 	.long 0x8019041C
 	.long 0x80190428
 	.long 0x80190434
-	.long 0x5F636E74
-	.long 0x42746E5F
-	.long 0x696E2E62
-	.long 0x726C616E
-	.long 0x00000000
-	.long 0x5F636E74
-	.long 0x42746E5F
-	.long 0x7073682E
-	.long 0x62726C61
-	.long 0x6E000000
-	.long 0x5F636E74
-	.long 0x42746E5F
-	.long 0x6F75742E
-	.long 0x62726C61
-	.long 0x6E000000
+	.asciz "_cntBtn_in.brlan"
+	.balign 4
+	.asciz "_cntBtn_psh.brlan"
+	.balign 4
+	.asciz "_cntBtn_out.brlan"
+	.balign 4
 	.long 0x80190460
 	.long 0x80190474
 	.long 0x80190488
-	.long 0x5F6C7472
-	.long 0x49636E5F
-	.long 0x6F6E2E62
-	.long 0x726C616E
-	.long 0x00000000
-	.long 0x5F6F7074
-	.long 0x6E5F6261
-	.long 0x725F7073
-	.long 0x682E6272
-	.long 0x6C616E00
-	.long 0x5F636C6F
-	.long 0x73655F62
-	.long 0x61725F70
-	.long 0x73682E62
-	.long 0x726C616E
-	.long 0x00000000
-	.long 0x5F686D4D
-	.long 0x656E755F
-	.long 0x6261725F
-	.long 0x696E2E62
-	.long 0x726C616E
-	.long 0x00000000
-	.long 0x5F686D4D
-	.long 0x656E755F
-	.long 0x6261725F
-	.long 0x7073682E
-	.long 0x62726C61
-	.long 0x6E000000
-	.long 0x5F6C696E
-	.long 0x6B5F6D73
-	.long 0x675F696E
-	.long 0x2E62726C
-	.long 0x616E0000
-	.long 0x5F6C696E
-	.long 0x6B5F6D73
-	.long 0x675F6F75
-	.long 0x742E6272
-	.long 0x6C616E00
-	.long 0x5F636D6E
-	.long 0x5F6D7367
-	.long 0x5F696E2E
-	.long 0x62726C61
-	.long 0x6E000000
-	.long 0x5F636D6E
-	.long 0x5F6D7367
-	.long 0x5F6F7574
-	.long 0x2E62726C
-	.long 0x616E0000
-	.long 0x5F636E74
-	.long 0x726C5F75
-	.long 0x702E6272
-	.long 0x6C616E00
-	.long 0x5F636E74
-	.long 0x726C5F77
-	.long 0x6E64775F
-	.long 0x6F706E2E
-	.long 0x62726C61
-	.long 0x6E000000
-	.long 0x5F636E74
-	.long 0x726C5F64
-	.long 0x776E2E62
-	.long 0x726C616E
-	.long 0x00000000
-	.long 0x5F686D4D
-	.long 0x656E755F
-	.long 0x6261725F
-	.long 0x6F75742E
-	.long 0x62726C61
-	.long 0x6E000000
-	.long 0x5F636D6E
-	.long 0x5F6D7367
-	.long 0x5F727472
-	.long 0x6E2E6272
-	.long 0x6C616E00
-	.long 0x5F313262
-	.long 0x746E5F6F
-	.long 0x6E2E6272
-	.long 0x6C616E00
+	.asciz "_ltrIcn_on.brlan"
+	.balign 4
+	.asciz "_optn_bar_psh.brlan"
+	.asciz "_close_bar_psh.brlan"
+	.balign 4
+	.asciz "_hmMenu_bar_in.brlan"
+	.balign 4
+	.asciz "_hmMenu_bar_psh.brlan"
+	.balign 4
+	.asciz "_link_msg_in.brlan"
+	.balign 4
+	.asciz "_link_msg_out.brlan"
+	.asciz "_cmn_msg_in.brlan"
+	.balign 4
+	.asciz "_cmn_msg_out.brlan"
+	.balign 4
+	.asciz "_cntrl_up.brlan"
+	.asciz "_cntrl_wndw_opn.brlan"
+	.balign 4
+	.asciz "_cntrl_dwn.brlan"
+	.balign 4
+	.asciz "_hmMenu_bar_out.brlan"
+	.balign 4
+	.asciz "_cmn_msg_rtrn.brlan"
+	.asciz "_12btn_on.brlan"
 	.long 0x801904A8
 	.long 0x801904BC
 	.long 0x801904D0
@@ -38116,59 +28328,34 @@ lbl_80190380:
 	.long 0x801905A4
 	.long 0x801905BC
 	.long 0x801905D0
-	.long 0x6C747249
-	.long 0x636E5F6F
-	.long 0x6E000000
-	.long 0x6F70746E
-	.long 0x5F626172
-	.long 0x5F707368
-	.long 0x00000000
-	.long 0x636C6F73
-	.long 0x655F6261
-	.long 0x725F7073
-	.long 0x68000000
-	.long 0x686D4D65
-	.long 0x6E755F62
-	.long 0x61725F69
-	.long 0x6E000000
-	.long 0x686D4D65
-	.long 0x6E755F62
-	.long 0x61725F70
-	.long 0x73680000
-	.long 0x6C696E6B
-	.long 0x5F6D7367
-	.long 0x5F696E00
-	.long 0x6C696E6B
-	.long 0x5F6D7367
-	.long 0x5F6F7574
-	.long 0x00000000
-	.long 0x636D6E5F
-	.long 0x6D73675F
-	.long 0x696E0000
-	.long 0x636D6E5F
-	.long 0x6D73675F
-	.long 0x6F757400
-	.long 0x636E7472
-	.long 0x6C5F7570
-	.long 0x00000000
-	.long 0x636E7472
-	.long 0x6C5F776E
-	.long 0x64775F6F
-	.long 0x706E0000
-	.long 0x636E7472
-	.long 0x6C5F6477
-	.long 0x6E000000
-	.long 0x686D4D65
-	.long 0x6E755F62
-	.long 0x61725F6F
-	.long 0x75740000
-	.long 0x636D6E5F
-	.long 0x6D73675F
-	.long 0x7274726E
-	.long 0x00000000
-	.long 0x31326274
-	.long 0x6E5F6F6E
-	.long 0x00000000
+	.asciz "ltrIcn_on"
+	.balign 4
+	.asciz "optn_bar_psh"
+	.balign 4
+	.asciz "close_bar_psh"
+	.balign 4
+	.asciz "hmMenu_bar_in"
+	.balign 4
+	.asciz "hmMenu_bar_psh"
+	.balign 4
+	.asciz "link_msg_in"
+	.asciz "link_msg_out"
+	.balign 4
+	.asciz "cmn_msg_in"
+	.balign 4
+	.asciz "cmn_msg_out"
+	.asciz "cntrl_up"
+	.balign 4
+	.asciz "cntrl_wndw_opn"
+	.balign 4
+	.asciz "cntrl_dwn"
+	.balign 4
+	.asciz "hmMenu_bar_out"
+	.balign 4
+	.asciz "cmn_msg_rtrn"
+	.balign 4
+	.asciz "12btn_on"
+	.balign 4
 	.long 0x8019061C
 	.long 0x80190628
 	.long 0x80190638
@@ -38184,123 +28371,45 @@ lbl_80190380:
 	.long 0x801906C4
 	.long 0x801906D4
 	.long 0x801906E4
-	.long 0x5F686D4D
-	.long 0x656E755F
-	.long 0x73747274
-	.long 0x2E62726C
-	.long 0x616E0000
-	.long 0x5F686D4D
-	.long 0x656E755F
-	.long 0x666E7368
-	.long 0x2E62726C
-	.long 0x616E0000
-	.long 0x5F6F7074
-	.long 0x6E5F6261
-	.long 0x725F696E
-	.long 0x2E62726C
-	.long 0x616E0000
-	.long 0x5F6F7074
-	.long 0x6E5F6261
-	.long 0x725F6F75
-	.long 0x742E6272
-	.long 0x6C616E00
-	.long 0x5F6F7074
-	.long 0x6E5F6274
-	.long 0x6E5F696E
-	.long 0x2E62726C
-	.long 0x616E0000
-	.long 0x5F6F7074
-	.long 0x6E5F6274
-	.long 0x6E5F7073
-	.long 0x682E6272
-	.long 0x6C616E00
-	.long 0x5F76625F
-	.long 0x62746E5F
-	.long 0x7768745F
-	.long 0x7073682E
-	.long 0x62726C61
-	.long 0x6E000000
-	.long 0x5F6F7074
-	.long 0x6E5F6274
-	.long 0x6E5F6F75
-	.long 0x742E6272
-	.long 0x6C616E00
-	.long 0x5F76625F
-	.long 0x62746E5F
-	.long 0x796C775F
-	.long 0x7073682E
-	.long 0x62726C61
-	.long 0x6E000000
-	.long 0x5F736F75
-	.long 0x6E645F67
-	.long 0x72792E62
-	.long 0x726C616E
+	.asciz "_hmMenu_strt.brlan"
+	.balign 4
+	.asciz "_hmMenu_fnsh.brlan"
+	.balign 4
+	.asciz "_optn_bar_in.brlan"
+	.balign 4
+	.asciz "_optn_bar_out.brlan"
+	.asciz "_optn_btn_in.brlan"
+	.balign 4
+	.asciz "_optn_btn_psh.brlan"
+	.asciz "_vb_btn_wht_psh.brlan"
+	.balign 4
+	.asciz "_optn_btn_out.brlan"
+	.asciz "_vb_btn_ylw_psh.brlan"
+	.balign 4
+	.asciz "_sound_gry.brlan"
+	.balign 4
+	.asciz "_sound_ylw.brlan"
+	.balign 4
+	.asciz "_cmn_msg_btn_in.brlan"
+	.balign 4
+	.asciz "_cmn_msg_btn_out.brlan"
+	.balign 4
+	.asciz "_cmn_msg_btn_psh.brlan"
+	.balign 4
+	.asciz "_vb_btn_ylw_ylw.brlan"
+	.balign 4
+	.asciz "_btry_wink.brlan"
+	.balign 4
 	.long 0x00000000
-	.long 0x5F736F75
-	.long 0x6E645F79
-	.long 0x6C772E62
-	.long 0x726C616E
+	.asciz "_btry_gry.brlan"
+	.asciz "_btry_wht.brlan"
+	.asciz "_btry_wink_gry.brlan"
+	.balign 4
+	.asciz "_close_bar_in.brlan"
+	.asciz "_close_bar_out.brlan"
+	.balign 4
 	.long 0x00000000
-	.long 0x5F636D6E
-	.long 0x5F6D7367
-	.long 0x5F62746E
-	.long 0x5F696E2E
-	.long 0x62726C61
-	.long 0x6E000000
-	.long 0x5F636D6E
-	.long 0x5F6D7367
-	.long 0x5F62746E
-	.long 0x5F6F7574
-	.long 0x2E62726C
-	.long 0x616E0000
-	.long 0x5F636D6E
-	.long 0x5F6D7367
-	.long 0x5F62746E
-	.long 0x5F707368
-	.long 0x2E62726C
-	.long 0x616E0000
-	.long 0x5F76625F
-	.long 0x62746E5F
-	.long 0x796C775F
-	.long 0x796C772E
-	.long 0x62726C61
-	.long 0x6E000000
-	.long 0x5F627472
-	.long 0x795F7769
-	.long 0x6E6B2E62
-	.long 0x726C616E
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x5F627472
-	.long 0x795F6772
-	.long 0x792E6272
-	.long 0x6C616E00
-	.long 0x5F627472
-	.long 0x795F7768
-	.long 0x742E6272
-	.long 0x6C616E00
-	.long 0x5F627472
-	.long 0x795F7769
-	.long 0x6E6B5F67
-	.long 0x72792E62
-	.long 0x726C616E
-	.long 0x00000000
-	.long 0x5F636C6F
-	.long 0x73655F62
-	.long 0x61725F69
-	.long 0x6E2E6272
-	.long 0x6C616E00
-	.long 0x5F636C6F
-	.long 0x73655F62
-	.long 0x61725F6F
-	.long 0x75742E62
-	.long 0x726C616E
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x5F627472
-	.long 0x795F7265
-	.long 0x642E6272
-	.long 0x6C616E00
+	.asciz "_btry_red.brlan"
 	.long 0x8019072C
 	.long 0x80190740
 	.long 0x80190754
@@ -38323,94 +28432,44 @@ lbl_80190380:
 	.long 0x801908C0
 	.long 0x801908D4
 	.long 0x801908F0
-	.long 0x686D4D65
-	.long 0x6E755F73
-	.long 0x74727400
-	.long 0x686D4D65
-	.long 0x6E755F66
-	.long 0x6E736800
-	.long 0x686D4D65
-	.long 0x6E754263
-	.long 0x6B5F7374
-	.long 0x72740000
-	.long 0x686D4D65
-	.long 0x6E754263
-	.long 0x6B5F666E
-	.long 0x73680000
-	.long 0x6F70746E
-	.long 0x5F626172
-	.long 0x5F696E00
-	.long 0x6F70746E
-	.long 0x5F626172
-	.long 0x5F6F7574
+	.asciz "hmMenu_strt"
+	.asciz "hmMenu_fnsh"
+	.asciz "hmMenuBck_strt"
+	.balign 4
+	.asciz "hmMenuBck_fnsh"
+	.balign 4
+	.asciz "optn_bar_in"
+	.asciz "optn_bar_out"
+	.balign 4
+	.asciz "optnBtn_00_inOut"
+	.balign 4
+	.asciz "optnBtn_01_inOut"
+	.balign 4
+	.asciz "optnBtn_10_inOut"
+	.balign 4
+	.asciz "optnBtn_11_inOut"
+	.balign 4
+	.asciz "optnBtn_20_inOut"
+	.balign 4
+	.asciz "optnBtn_00_psh"
+	.balign 4
+	.asciz "optnBtn_01_psh"
+	.balign 4
+	.asciz "optnBtn_10_psh"
+	.balign 4
+	.asciz "optnBtn_11_psh"
+	.balign 4
+	.asciz "optnBtn_20_psh"
+	.balign 4
+	.asciz "optnBtn_10_cntrl"
+	.balign 4
 	.long 0x00000000
-	.long 0x6F70746E
-	.long 0x42746E5F
-	.long 0x30305F69
-	.long 0x6E4F7574
-	.long 0x00000000
-	.long 0x6F70746E
-	.long 0x42746E5F
-	.long 0x30315F69
-	.long 0x6E4F7574
-	.long 0x00000000
-	.long 0x6F70746E
-	.long 0x42746E5F
-	.long 0x31305F69
-	.long 0x6E4F7574
-	.long 0x00000000
-	.long 0x6F70746E
-	.long 0x42746E5F
-	.long 0x31315F69
-	.long 0x6E4F7574
-	.long 0x00000000
-	.long 0x6F70746E
-	.long 0x42746E5F
-	.long 0x32305F69
-	.long 0x6E4F7574
-	.long 0x00000000
-	.long 0x6F70746E
-	.long 0x42746E5F
-	.long 0x30305F70
-	.long 0x73680000
-	.long 0x6F70746E
-	.long 0x42746E5F
-	.long 0x30315F70
-	.long 0x73680000
-	.long 0x6F70746E
-	.long 0x42746E5F
-	.long 0x31305F70
-	.long 0x73680000
-	.long 0x6F70746E
-	.long 0x42746E5F
-	.long 0x31315F70
-	.long 0x73680000
-	.long 0x6F70746E
-	.long 0x42746E5F
-	.long 0x32305F70
-	.long 0x73680000
-	.long 0x6F70746E
-	.long 0x42746E5F
-	.long 0x31305F63
-	.long 0x6E74726C
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x6D736742
-	.long 0x746E5F30
-	.long 0x305F696E
-	.long 0x4F757400
-	.long 0x6D736742
-	.long 0x746E5F30
-	.long 0x315F696E
-	.long 0x4F757400
-	.long 0x6D736742
-	.long 0x746E5F30
-	.long 0x305F7073
-	.long 0x68000000
-	.long 0x6D736742
-	.long 0x746E5F30
-	.long 0x315F7073
-	.long 0x68000000
+	.asciz "msgBtn_00_inOut"
+	.asciz "msgBtn_01_inOut"
+	.asciz "msgBtn_00_psh"
+	.balign 4
+	.asciz "msgBtn_01_psh"
+	.balign 4
 	.long 0x80190958
 	.long 0x80190964
 	.long 0x80190970
@@ -38446,57 +28505,37 @@ lbl_80190380:
 	.long 0x8025B1E0
 	.long 0x8025B1E8
 	.long 0x8025B1F0
-	.long 0x6C65745F
-	.long 0x69636E5F
-	.long 0x30300000
-	.long 0x4E5F706C
-	.long 0x79725F30
-	.long 0x30000000
-	.long 0x4E5F706C
-	.long 0x79725F30
-	.long 0x31000000
-	.long 0x4E5F706C
-	.long 0x79725F30
-	.long 0x32000000
-	.long 0x4E5F706C
-	.long 0x79725F30
-	.long 0x33000000
+	.asciz "let_icn_00"
+	.balign 4
+	.asciz "N_plyr_00"
+	.balign 4
+	.asciz "N_plyr_01"
+	.balign 4
+	.asciz "N_plyr_02"
+	.balign 4
+	.asciz "N_plyr_03"
+	.balign 4
 	.long 0x80190B44
 	.long 0x80190B50
 	.long 0x80190B5C
 	.long 0x80190B68
 	.long 0x80190B74
-	.long 0x425F6274
-	.long 0x6E5F3030
-	.long 0x00000000
-	.long 0x425F6261
-	.long 0x725F3130
-	.long 0x00000000
-	.long 0x425F6F70
-	.long 0x746E4274
-	.long 0x6E5F3030
-	.long 0x00000000
-	.long 0x425F6F70
-	.long 0x746E4274
-	.long 0x6E5F3031
-	.long 0x00000000
-	.long 0x425F6F70
-	.long 0x746E4274
-	.long 0x6E5F3130
-	.long 0x00000000
-	.long 0x425F6F70
-	.long 0x746E4274
-	.long 0x6E5F3131
-	.long 0x00000000
-	.long 0x425F6F70
-	.long 0x746E4274
-	.long 0x6E5F3230
-	.long 0x00000000
-	.long 0x636E7472
-	.long 0x6C5F3030
-	.long 0x00000000
-.global lbl_80190C08
-lbl_80190C08:
+	.asciz "B_btn_00"
+	.balign 4
+	.asciz "B_bar_10"
+	.balign 4
+	.asciz "B_optnBtn_00"
+	.balign 4
+	.asciz "B_optnBtn_01"
+	.balign 4
+	.asciz "B_optnBtn_10"
+	.balign 4
+	.asciz "B_optnBtn_11"
+	.balign 4
+	.asciz "B_optnBtn_20"
+	.balign 4
+	.asciz "cntrl_00"
+glabel lbl_80190C08
 	.long 0x80190B94
 	.long 0x80190BA0
 	.long 0x80190BAC
@@ -38507,86 +28546,47 @@ lbl_80190C08:
 	.long 0x8025B1F8
 	.long 0x8025B200
 	.long 0x80190BFC
-	.long 0x545F6D73
-	.long 0x675F3030
-	.long 0x00000000
-	.long 0x545F6D73
-	.long 0x675F3031
-	.long 0x00000000
-	.long 0x545F4469
-	.long 0x616C6F67
-	.long 0x00000000
-.global lbl_80190C54
-lbl_80190C54:
+	.asciz "T_msg_00"
+	.balign 4
+	.asciz "T_msg_01"
+	.balign 4
+	.asciz "T_Dialog"
+glabel lbl_80190C54
 	.long 0x80190C30
 	.long 0x80190C3C
 	.long 0x80190C48
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30305F30
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30305F31
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30305F32
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30305F33
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30315F30
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30315F31
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30315F32
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30315F33
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30325F30
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30325F31
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30325F32
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30325F33
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30335F30
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30335F31
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30335F32
-	.long 0x00000000
-	.long 0x62747279
-	.long 0x5077725F
-	.long 0x30335F33
-	.long 0x00000000
-.global lbl_80190D60
-lbl_80190D60:
+	.asciz "btryPwr_00_0"
+	.balign 4
+	.asciz "btryPwr_00_1"
+	.balign 4
+	.asciz "btryPwr_00_2"
+	.balign 4
+	.asciz "btryPwr_00_3"
+	.balign 4
+	.asciz "btryPwr_01_0"
+	.balign 4
+	.asciz "btryPwr_01_1"
+	.balign 4
+	.asciz "btryPwr_01_2"
+	.balign 4
+	.asciz "btryPwr_01_3"
+	.balign 4
+	.asciz "btryPwr_02_0"
+	.balign 4
+	.asciz "btryPwr_02_1"
+	.balign 4
+	.asciz "btryPwr_02_2"
+	.balign 4
+	.asciz "btryPwr_02_3"
+	.balign 4
+	.asciz "btryPwr_03_0"
+	.balign 4
+	.asciz "btryPwr_03_1"
+	.balign 4
+	.asciz "btryPwr_03_2"
+	.balign 4
+	.asciz "btryPwr_03_3"
+glabel lbl_80190D60
 	.long 0x80190C60
 	.long 0x80190C70
 	.long 0x80190C80
@@ -38603,127 +28603,27 @@ lbl_80190D60:
 	.long 0x80190D30
 	.long 0x80190D40
 	.long 0x80190D50
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D705265
-	.long 0x73416363
-	.long 0x6573736F
-	.long 0x72000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D704375
-	.long 0x72736F72
-	.long 0x4C61796F
-	.long 0x75745B69
-	.long 0x5D000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286C7061
-	.long 0x52657329
+	.asciz "NW4HBM:Failed assertion mpResAccessor"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mpCursorLayout[i]"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (lpaRes)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mpAnmController[i]"
+	.balign 4
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D70416E
-	.long 0x6D436F6E
-	.long 0x74726F6C
-	.long 0x6C65725B
-	.long 0x695D0000
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D704772
-	.long 0x6F757041
-	.long 0x6E6D436F
-	.long 0x6E74726F
-	.long 0x6C6C6572
-	.long 0x5B695D00
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D705061
-	.long 0x69724772
-	.long 0x6F757041
-	.long 0x6E6D436F
-	.long 0x6E74726F
-	.long 0x6C6C6572
-	.long 0x5B695D00
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D70486F
-	.long 0x6D654275
-	.long 0x74746F6E
-	.long 0x4576656E
-	.long 0x7448616E
-	.long 0x646C6572
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D705061
-	.long 0x6E654D61
-	.long 0x6E616765
-	.long 0x72000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D704C61
-	.long 0x796F7574
-	.long 0x4E616D65
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D70416E
-	.long 0x6D4E616D
-	.long 0x65000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x72657375
-	.long 0x6C740000
-.global lbl_80190F7C
-lbl_80190F7C:
+	.asciz "NW4HBM:Failed assertion mpGroupAnmController[i]"
+	.asciz "NW4HBM:Failed assertion mpPairGroupAnmController[i]"
+	.asciz "NW4HBM:Failed assertion mpHomeButtonEventHandler"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mpPaneManager"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mpLayoutName"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mpAnmName"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion result"
+glabel lbl_80190F7C
 	.long 0x800FF5A8
 	.long 0x800FF778
 	.long 0x800FFA24
@@ -38744,8 +28644,7 @@ lbl_80190F7C:
 	.long 0x80100738
 	.long 0x8010088C
 	.long 0x80100898
-.global lbl_80190FCC
-lbl_80190FCC:
+glabel lbl_80190FCC
 	.long 0x80102BC4
 	.long 0x80102CB8
 	.long 0x801032E0
@@ -38756,8 +28655,7 @@ lbl_80190FCC:
 	.long 0x80103808
 	.long 0x80103910
 	.long 0x80102CB8
-.global lbl_80190FF4
-lbl_80190FF4:
+glabel lbl_80190FF4
 	.long 0x80103C40
 	.long 0x80103CB4
 	.long 0x801041DC
@@ -38768,8 +28666,7 @@ lbl_80190FF4:
 	.long 0x80104484
 	.long 0x8010450C
 	.long 0x80103CB4
-.global lbl_8019101C
-lbl_8019101C:
+glabel lbl_8019101C
 	.long 0x801048C4
 	.long 0x8010498C
 	.long 0x80104B3C
@@ -38780,51 +28677,13 @@ lbl_8019101C:
 	.long 0x801058D0
 	.long 0x80105A4C
 	.long 0x8010498C
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D70536F
-	.long 0x756E6441
-	.long 0x72636869
-	.long 0x7665506C
-	.long 0x61796572
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D70536F
-	.long 0x756E6448
-	.long 0x616E646C
-	.long 0x65000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D70536F
-	.long 0x756E6448
-	.long 0x65617000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D70536F
-	.long 0x756E6448
-	.long 0x6561702D
-	.long 0x3E497356
-	.long 0x616C6964
-	.long 0x28290000
-.global lbl_801910F0
-lbl_801910F0:
+	.asciz "NW4HBM:Failed assertion mpSoundArchivePlayer"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mpSoundHandle"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mpSoundHeap"
+	.asciz "NW4HBM:Failed assertion mpSoundHeap->IsValid()"
+glabel lbl_801910F0
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80105FC4
@@ -38841,26 +28700,14 @@ lbl_801910F0:
 	.long 0x80106704
 	.long 0x80106708
 	.long 0x800FE92C
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80191160
-lbl_80191160:
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_80191160
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80106734
 	.long 0x80106890
-.global lbl_80191170
-lbl_80191170:
+glabel lbl_80191170
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80106714
@@ -38887,8 +28734,7 @@ lbl_80191170:
 	.long 0x80107B70
 	.long 0x801079E4
 	.long 0x8010608C
-.global lbl_801911D8
-lbl_801911D8:
+glabel lbl_801911D8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80106714
@@ -38910,8 +28756,7 @@ lbl_801911D8:
 	.long 0x800FE97C
 	.long 0x80107A80
 	.long 0x80107630
-.global lbl_8019122C
-lbl_8019122C:
+glabel lbl_8019122C
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80106714
@@ -38927,8 +28772,7 @@ lbl_8019122C:
 	.long func_80106DB8
 	.long func_801073A8
 	.long 0x80108028
-.global lbl_80191268
-lbl_80191268:
+glabel lbl_80191268
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80106714
@@ -38953,556 +28797,105 @@ lbl_80191268:
 	.long func_8010703C
 	.long func_80106DA0
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286C6973
-	.long 0x74290000
-.global lbl_80191350
-lbl_80191350:
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (list)"
+glabel lbl_80191350
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80108E94
 	.long 0x00000000
-.global lbl_80191360
-lbl_80191360:
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x20545241
-	.long 0x43450A00
-	.long 0x41646472
-	.long 0x6573733A
-	.long 0x20202042
-	.long 0x61636B43
-	.long 0x6861696E
-	.long 0x2020204C
-	.long 0x52207361
-	.long 0x76650A00
-	.long 0x25303858
-	.long 0x3A202025
-	.long 0x30385820
-	.long 0x20202025
-	.long 0x30385820
-	.long 0x00000000
-	.long 0x25733A25
-	.long 0x64205061
-	.long 0x6E69633A
-	.long 0x00000000
-.global lbl_801913D0
-lbl_801913D0:
-	.long 0x636F6E73
-	.long 0x6F6C652E
-	.long 0x68000000
-.global lbl_801913DC
-lbl_801913DC:
-	.long 0x506F696E
-	.long 0x74657220
-	.long 0x6D757374
-	.long 0x206E6F74
-	.long 0x20626520
-	.long 0x4E554C4C
-	.long 0x2028636F
-	.long 0x6E736F6C
-	.long 0x65290000
-	.long 0x25733A25
-	.long 0x64205761
-	.long 0x726E696E
-	.long 0x673A0000
-.global lbl_80191410
-lbl_80191410:
-	.long 0x64625F63
-	.long 0x6F6E736F
-	.long 0x6C652E63
-	.long 0x70700000
-.global lbl_80191420
-lbl_80191420:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28636F6E
-	.long 0x736F6C65
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x2870436F
-	.long 0x6E736F6C
-	.long 0x65290000
-	.long 0x696C6C65
-	.long 0x67616C20
-	.long 0x636F6E73
-	.long 0x6F6C6520
-	.long 0x68616E64
-	.long 0x6C650000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28627566
-	.long 0x66657229
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A41
-	.long 0x6C69676E
-	.long 0x6D656E74
-	.long 0x20457272
-	.long 0x6F722830
-	.long 0x78257829
-	.long 0x0A627566
-	.long 0x66657220
-	.long 0x6D757374
-	.long 0x20626520
-	.long 0x616C6967
-	.long 0x6E656420
-	.long 0x746F2034
-	.long 0x20627974
-	.long 0x65732062
-	.long 0x6F756E64
-	.long 0x6172792E
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28737472
-	.long 0x29000000
-.global lbl_80191530
-lbl_80191530:
-	.long 0x64625F64
-	.long 0x69726563
-	.long 0x74507269
-	.long 0x6E742E63
-	.long 0x70700000
-.global lbl_80191544
-lbl_80191544:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x73467261
-	.long 0x6D654275
-	.long 0x66666572
-	.long 0x496E666F
-	.long 0x2E667261
-	.long 0x6D654D65
-	.long 0x6D6F7279
-	.long 0x20213D20
-	.long 0x4E554C4C
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28737472
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x77696474
-	.long 0x68203E20
-	.long 0x30000000
-.global lbl_801915D0
-lbl_801915D0:
+glabel lbl_80191360
+	.asciz "-------------------------------- TRACE\n"
+	.asciz "Address:   BackChain   LR save\n"
+	.asciz "%08X:  %08X    %08X "
+	.balign 4
+	.asciz "%s:%d Panic:"
+glabel lbl_801913D0
+	.asciz "console.h"
+glabel lbl_801913DC
+	.asciz "Pointer must not be NULL (console)"
+	.balign 4
+	.asciz "%s:%d Warning:"
+glabel lbl_80191410
+	.asciz "db_console.cpp"
+glabel lbl_80191420
+	.asciz "NW4HBM:Pointer must not be NULL (console)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (pConsole)"
+	.balign 4
+	.asciz "illegal console handle"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (buffer)"
+	.balign 4
+	.asciz "NW4HBM:Alignment Error(0x%x)\nbuffer must be aligned to 4 bytes boundary."
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (str)"
+glabel lbl_80191530
+	.asciz "db_directPrint.cpp"
+glabel lbl_80191544
+	.asciz "NW4HBM:Failed assertion sFrameBufferInfo.frameMemory != NULL"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (str)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion width > 0"
+glabel lbl_801915D0
 	.long 0x00000000
 	.long 0x00000003
 	.long 0x0000000C
 	.long 0x0000000F
-.global lbl_801915E0
-lbl_801915E0:
-	.long 0x64625F6D
-	.long 0x61704669
-	.long 0x6C652E63
-	.long 0x70700000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28627566
-	.long 0x66657229
+glabel lbl_801915E0
+	.asciz "db_mapFile.cpp"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (buffer)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (mapDataBuf)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (pMapFile)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion sMapFileList->moduleInfo != NULL"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (filePath)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion pMapFile->fileEntry >= 0"
+glabel lbl_80191714
+	.asciz "NW4HBM:Pointer must not be NULL (GetCharPtr_)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (str)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (buf)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (strBuf)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion strBufSize > 0"
+glabel lbl_801917E8
+	.asciz "lyt_animation.cpp"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mpFileResAry == 0"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mAnimLinkAry == 0"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion pAnimTarget->target < ANIMTARGET_PANE_MAX"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion pAnimTarget->curveType == ANIMCURVE_HERMITE"
+	.asciz "NW4HBM:Failed assertion pAnimTarget->curveType == ANIMCURVE_STEP"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion pAnimTarget->target < ANIMTARGET_PANE_COLOR_MAX"
+	.asciz "NW4HBM:Failed assertion pAnimTarget->target < ANIMTARGET_MATCOLOR_MAX"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion pAnimTarget->id < TexMtxMax"
+	.asciz "NW4HBM:Failed assertion pAnimTarget->target < ANIMTARGET_TEXSRT_MAX"
+	.asciz "NW4HBM:Failed assertion pAnimTarget->id < GX_MAX_TEXMAP"
+	.asciz "NW4HBM:Failed assertion pAnimTarget->id < IndTexMtxMax"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (pAnimList)"
+	.asciz "NW4HBM:Pointer must not be NULL (pAnimTrans)"
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286D6170
-	.long 0x44617461
-	.long 0x42756629
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28704D61
-	.long 0x7046696C
-	.long 0x65290000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x734D6170
-	.long 0x46696C65
-	.long 0x4C697374
-	.long 0x2D3E6D6F
-	.long 0x64756C65
-	.long 0x496E666F
-	.long 0x20213D20
-	.long 0x4E554C4C
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x2866696C
-	.long 0x65506174
-	.long 0x68290000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x704D6170
-	.long 0x46696C65
-	.long 0x2D3E6669
-	.long 0x6C65456E
-	.long 0x74727920
-	.long 0x3E3D2030
-	.long 0x00000000
-.global lbl_80191714
-lbl_80191714:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28476574
-	.long 0x43686172
-	.long 0x5074725F
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28737472
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28627566
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28737472
-	.long 0x42756629
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x73747242
-	.long 0x75665369
-	.long 0x7A65203E
-	.long 0x20300000
-.global lbl_801917E8
-lbl_801917E8:
-	.long 0x6C79745F
-	.long 0x616E696D
-	.long 0x6174696F
-	.long 0x6E2E6370
-	.long 0x70000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D704669
-	.long 0x6C655265
-	.long 0x73417279
-	.long 0x203D3D20
-	.long 0x30000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D416E69
-	.long 0x6D4C696E
-	.long 0x6B417279
-	.long 0x203D3D20
-	.long 0x30000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70416E69
-	.long 0x6D546172
-	.long 0x6765742D
-	.long 0x3E746172
-	.long 0x67657420
-	.long 0x3C20414E
-	.long 0x494D5441
-	.long 0x52474554
-	.long 0x5F50414E
-	.long 0x455F4D41
-	.long 0x58000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70416E69
-	.long 0x6D546172
-	.long 0x6765742D
-	.long 0x3E637572
-	.long 0x76655479
-	.long 0x7065203D
-	.long 0x3D20414E
-	.long 0x494D4355
-	.long 0x5256455F
-	.long 0x4845524D
-	.long 0x49544500
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70416E69
-	.long 0x6D546172
-	.long 0x6765742D
-	.long 0x3E637572
-	.long 0x76655479
-	.long 0x7065203D
-	.long 0x3D20414E
-	.long 0x494D4355
-	.long 0x5256455F
-	.long 0x53544550
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70416E69
-	.long 0x6D546172
-	.long 0x6765742D
-	.long 0x3E746172
-	.long 0x67657420
-	.long 0x3C20414E
-	.long 0x494D5441
-	.long 0x52474554
-	.long 0x5F50414E
-	.long 0x455F434F
-	.long 0x4C4F525F
-	.long 0x4D415800
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70416E69
-	.long 0x6D546172
-	.long 0x6765742D
-	.long 0x3E746172
-	.long 0x67657420
-	.long 0x3C20414E
-	.long 0x494D5441
-	.long 0x52474554
-	.long 0x5F4D4154
-	.long 0x434F4C4F
-	.long 0x525F4D41
-	.long 0x58000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70416E69
-	.long 0x6D546172
-	.long 0x6765742D
-	.long 0x3E696420
-	.long 0x3C205465
-	.long 0x784D7478
-	.long 0x4D617800
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70416E69
-	.long 0x6D546172
-	.long 0x6765742D
-	.long 0x3E746172
-	.long 0x67657420
-	.long 0x3C20414E
-	.long 0x494D5441
-	.long 0x52474554
-	.long 0x5F544558
-	.long 0x5352545F
-	.long 0x4D415800
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70416E69
-	.long 0x6D546172
-	.long 0x6765742D
-	.long 0x3E696420
-	.long 0x3C204758
-	.long 0x5F4D4158
-	.long 0x5F544558
-	.long 0x4D415000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70416E69
-	.long 0x6D546172
-	.long 0x6765742D
-	.long 0x3E696420
-	.long 0x3C20496E
-	.long 0x64546578
-	.long 0x4D74784D
-	.long 0x61780000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x2870416E
-	.long 0x696D4C69
-	.long 0x73742900
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x2870416E
-	.long 0x696D5472
-	.long 0x616E7329
-	.long 0x00000000
-	.long 0x00000000
-.global lbl_80191AF8
-lbl_80191AF8:
+glabel lbl_80191AF8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8010B8E8
@@ -39519,258 +28912,68 @@ lbl_80191AF8:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80191B38
-lbl_80191B38:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80191B5C
-lbl_80191B5C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80191B68
-lbl_80191B68:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80191B8C
-lbl_80191B8C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x69647820
-	.long 0x3C20414E
-	.long 0x494D5441
-	.long 0x52474554
-	.long 0x5F50414E
-	.long 0x455F4D41
-	.long 0x58000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x74657853
-	.long 0x52544964
-	.long 0x78203C20
-	.long 0x6D47584D
-	.long 0x656D4E75
-	.long 0x6D2E7465
-	.long 0x78535254
+glabel lbl_80191B38
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80191B5C
+	.asciz "LinkList.h"
+glabel lbl_80191B68
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80191B8C
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion idx < ANIMTARGET_PANE_MAX"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion texSRTIdx < mGXMemNum.texSRT"
+	.balign 4
+	.asciz "material.h"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion texSRTIdx < mGXMemNum.indSRT"
+	.balign 4
+	.asciz "material.h"
 	.long 0x00000000
-	.long 0x6D617465
-	.long 0x7269616C
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x74657853
-	.long 0x52544964
-	.long 0x78203C20
-	.long 0x6D47584D
-	.long 0x656D4E75
-	.long 0x6D2E696E
-	.long 0x64535254
+glabel lbl_80191C58
+	.asciz "lyt_arcResourceAccessor.cpp"
+glabel lbl_80191C74
+	.asciz "NW4HBM:Failed assertion bSuccess"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion std::strlen(name) < FONTNAMEBUF_MAX"
+	.asciz "NW4HBM:Failed assertion ! IsAttached()"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (archiveStart)"
+	.balign 4
 	.long 0x00000000
-	.long 0x6D617465
-	.long 0x7269616C
-	.long 0x2E680000
-	.long 0x00000000
-.global lbl_80191C58
-lbl_80191C58:
-	.long 0x6C79745F
-	.long 0x61726352
-	.long 0x65736F75
-	.long 0x72636541
-	.long 0x63636573
-	.long 0x736F722E
-	.long 0x63707000
-.global lbl_80191C74
-lbl_80191C74:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x62537563
-	.long 0x63657373
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7374643A
-	.long 0x3A737472
-	.long 0x6C656E28
-	.long 0x6E616D65
-	.long 0x29203C20
-	.long 0x464F4E54
-	.long 0x4E414D45
-	.long 0x4255465F
-	.long 0x4D415800
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21204973
-	.long 0x41747461
-	.long 0x63686564
-	.long 0x28290000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28617263
-	.long 0x68697665
-	.long 0x53746172
-	.long 0x74290000
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28726573
-	.long 0x6F757263
-	.long 0x65526F6F
-	.long 0x74446972
-	.long 0x6563746F
-	.long 0x72792900
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x49734174
-	.long 0x74616368
-	.long 0x65642829
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28704C69
-	.long 0x6E6B2900
-.global lbl_80191DB8
-lbl_80191DB8:
+	.asciz "NW4HBM:Pointer must not be NULL (resourceRootDirectory)"
+	.asciz "NW4HBM:Failed assertion IsAttached()"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (pLink)"
+glabel lbl_80191DB8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8010CA3C
 	.long 0x8010CACC
 	.long 0x8010CB88
-.global lbl_80191DCC
-lbl_80191DCC:
+glabel lbl_80191DCC
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x800FDE8C
 	.long 0x8010C96C
 	.long 0x8010C98C
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80191EA0
-lbl_80191EA0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80191EC4
-lbl_80191EC4:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80191ED0
-lbl_80191ED0:
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_80191EA0
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80191EC4
+	.asciz "LinkList.h"
+glabel lbl_80191ED0
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8010CC74
@@ -39797,210 +29000,56 @@ lbl_80191ED0:
 	.long 0x80113B68
 	.long 0x8011397C
 	.long 0x00000000
-.global lbl_80191F38
-lbl_80191F38:
-	.long 0x6C79745F
-	.long 0x636F6D6D
-	.long 0x6F6E2E63
-	.long 0x70700000
-.global lbl_80191F48
-lbl_80191F48:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6E756D20
-	.long 0x3C3D2047
-	.long 0x585F4D41
-	.long 0x585F5445
-	.long 0x584D4150
+glabel lbl_80191F38
+	.asciz "lyt_common.cpp"
+glabel lbl_80191F48
+	.asciz "NW4HBM:Failed assertion num <= GX_MAX_TEXMAP"
+glabel lbl_80191F78
+	.asciz "NW4HBM:Failed assertion texCoordNum <= mCap"
 	.long 0x00000000
-.global lbl_80191F78
-lbl_80191F78:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x74657843
-	.long 0x6F6F7264
-	.long 0x4E756D20
-	.long 0x3C3D206D
-	.long 0x43617000
-	.long 0x00000000
-.global lbl_80191FA8
-lbl_80191FA8:
+glabel lbl_80191FA8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8010DC44
 	.long 0x00000000
-.global lbl_80191FB8
-lbl_80191FB8:
+glabel lbl_80191FB8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8010DDB4
-.global lbl_80191FC4
-lbl_80191FC4:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80191FE8
-lbl_80191FE8:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80191FF4
-lbl_80191FF4:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80192018
-lbl_80192018:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80192024
-lbl_80192024:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80192048
-lbl_80192048:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
+glabel lbl_80191FC4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80191FE8
+	.asciz "LinkList.h"
+glabel lbl_80191FF4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80192018
+	.asciz "LinkList.h"
+glabel lbl_80192024
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80192048
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
 	.long 0x00000000
-.global lbl_801920B8
-lbl_801920B8:
-	.long 0x6C79745F
-	.long 0x6C61796F
-	.long 0x75742E63
-	.long 0x70700000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286D7370
-	.long 0x416C6C6F
-	.long 0x6361746F
-	.long 0x72290000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286C7974
-	.long 0x52657342
-	.long 0x75662900
-	.long 0x56657273
-	.long 0x696F6E20
-	.long 0x63686563
-	.long 0x6B206661
-	.long 0x696C6420
-	.long 0x28272564
-	.long 0x2E256427
-	.long 0x206D7573
-	.long 0x74206265
-	.long 0x20272564
-	.long 0x2E256427
-	.long 0x292E0000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28704C61
-	.long 0x73745061
-	.long 0x6E652900
-	.long 0x63616E27
-	.long 0x7420616C
-	.long 0x6C6F6320
-	.long 0x6D656D6F
-	.long 0x72792E00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28616E6D
-	.long 0x52657342
-	.long 0x75662900
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x72657420
-	.long 0x3D3D2030
-	.long 0x00000000
-.global lbl_801921E4
-lbl_801921E4:
-	.long 0x756E6B6E
-	.long 0x6F776E20
-	.long 0x64617461
-	.long 0x20747970
-	.long 0x65000000
-.global lbl_801921F8
-lbl_801921F8:
+glabel lbl_801920B8
+	.asciz "lyt_layout.cpp"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (mspAllocator)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (lytResBuf)"
+	.asciz "Version check faild ('%d.%d' must be '%d.%d')."
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (pLastPane)"
+	.asciz "can't alloc memory."
+	.asciz "NW4HBM:Pointer must not be NULL (anmResBuf)"
+	.asciz "NW4HBM:Failed assertion ret == 0"
+glabel lbl_801921E4
+	.asciz "unknown data type"
+glabel lbl_801921F8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8010E3BC
@@ -40014,363 +29063,64 @@ lbl_801921F8:
 	.long 0x8010EBC4
 	.long 0x8010EBE4
 	.long 0x8010EC68
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
 	.long 0x00000000
-.global lbl_80192320
-lbl_80192320:
-	.long 0x6C79745F
-	.long 0x6D617465
-	.long 0x7269616C
-	.long 0x2E637070
+glabel lbl_80192320
+	.asciz "lyt_material.cpp"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (resBlockSet.pTextureList)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion pResTexMap[i].texIdx < resBlockSet.pTextureList->texNum"
+	.asciz "NW4HBM:Failed assertion texSRTNum <= mGXMemNum.texSRT"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion IsChanCtrlCap()"
+	.asciz "NW4HBM:Failed assertion IsMatColorCap()"
+	.asciz "NW4HBM:Failed assertion IsTevSwapCap()"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion indTexSRTNum <= mGXMemNum.indSRT"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion IsAlphaCompareCap()"
+	.asciz "NW4HBM:Failed assertion IsBlendModeCap()"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion texMapNum <= GX_MAX_TEXMAP"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion texSRTNum <= TexMtxMax"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion texCoordGenNum <= GX_MAX_TEXCOORD"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion tevStageNum <= GX_MAX_TEVSTAGE"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion indStageNum <= GX_MAX_INDTEXSTAGE"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion indSRTNum <= IndTexMtxMax"
+	.balign 4
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28726573
-	.long 0x426C6F63
-	.long 0x6B536574
-	.long 0x2E705465
-	.long 0x78747572
-	.long 0x654C6973
-	.long 0x74290000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70526573
-	.long 0x5465784D
-	.long 0x61705B69
-	.long 0x5D2E7465
-	.long 0x78496478
-	.long 0x203C2072
-	.long 0x6573426C
-	.long 0x6F636B53
-	.long 0x65742E70
-	.long 0x54657874
-	.long 0x7572654C
-	.long 0x6973742D
-	.long 0x3E746578
-	.long 0x4E756D00
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x74657853
-	.long 0x52544E75
-	.long 0x6D203C3D
-	.long 0x206D4758
-	.long 0x4D656D4E
-	.long 0x756D2E74
-	.long 0x65785352
-	.long 0x54000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x49734368
-	.long 0x616E4374
-	.long 0x726C4361
-	.long 0x70282900
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x49734D61
-	.long 0x74436F6C
-	.long 0x6F724361
-	.long 0x70282900
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x49735465
-	.long 0x76537761
-	.long 0x70436170
-	.long 0x28290000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x696E6454
-	.long 0x65785352
-	.long 0x544E756D
-	.long 0x203C3D20
-	.long 0x6D47584D
-	.long 0x656D4E75
-	.long 0x6D2E696E
-	.long 0x64535254
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x4973416C
-	.long 0x70686143
-	.long 0x6F6D7061
-	.long 0x72654361
-	.long 0x70282900
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x4973426C
-	.long 0x656E644D
-	.long 0x6F646543
-	.long 0x61702829
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7465784D
-	.long 0x61704E75
-	.long 0x6D203C3D
-	.long 0x2047585F
-	.long 0x4D41585F
-	.long 0x5445584D
-	.long 0x41500000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x74657853
-	.long 0x52544E75
-	.long 0x6D203C3D
-	.long 0x20546578
-	.long 0x4D74784D
-	.long 0x61780000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x74657843
-	.long 0x6F6F7264
-	.long 0x47656E4E
-	.long 0x756D203C
-	.long 0x3D204758
-	.long 0x5F4D4158
-	.long 0x5F544558
-	.long 0x434F4F52
-	.long 0x44000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x74657653
-	.long 0x74616765
-	.long 0x4E756D20
-	.long 0x3C3D2047
-	.long 0x585F4D41
-	.long 0x585F5445
-	.long 0x56535441
-	.long 0x47450000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x696E6453
-	.long 0x74616765
-	.long 0x4E756D20
-	.long 0x3C3D2047
-	.long 0x585F4D41
-	.long 0x585F494E
-	.long 0x44544558
-	.long 0x53544147
-	.long 0x45000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x696E6453
-	.long 0x52544E75
-	.long 0x6D203C3D
-	.long 0x20496E64
-	.long 0x5465784D
-	.long 0x74784D61
-	.long 0x78000000
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6E756D20
-	.long 0x3C3D206D
-	.long 0x47584D65
-	.long 0x6D436170
-	.long 0x2E746578
-	.long 0x4D617000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286D7047
-	.long 0x584D656D
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6E756D20
-	.long 0x3C3D206D
-	.long 0x47584D65
-	.long 0x6D436170
-	.long 0x2E746578
-	.long 0x436F6F72
-	.long 0x6447656E
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6E756D20
-	.long 0x3C3D206D
-	.long 0x47584D65
-	.long 0x6D436170
-	.long 0x2E746576
-	.long 0x53746167
-	.long 0x65000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6E756D20
-	.long 0x3C3D206D
-	.long 0x47584D65
-	.long 0x6D436170
-	.long 0x2E696E64
-	.long 0x53746167
-	.long 0x65000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28705465
-	.long 0x784F626A
-	.long 0x29000000
-.global lbl_80192778
-lbl_80192778:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7465784D
-	.long 0x61704964
-	.long 0x78203C20
-	.long 0x6D47584D
-	.long 0x656D4E75
-	.long 0x6D2E7465
-	.long 0x784D6170
-	.long 0x00000000
+	.asciz "NW4HBM:Failed assertion num <= mGXMemCap.texMap"
+	.asciz "NW4HBM:Pointer must not be NULL (mpGXMem)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion num <= mGXMemCap.texCoordGen"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion num <= mGXMemCap.tevStage"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion num <= mGXMemCap.indStage"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (pTexObj)"
+glabel lbl_80192778
+	.asciz "NW4HBM:Failed assertion texMapIdx < mGXMemNum.texMap"
+	.balign 4
 	.long 0x0000001F
 	.long 0x0000001B
 	.long 0x00000017
@@ -40387,50 +29137,10 @@ lbl_80192778:
 	.long 0x0000001A
 	.long 0x00000016
 	.long 0x00000012
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x74657843
-	.long 0x6F6F7264
-	.long 0x47656E73
-	.long 0x5B695D2E
-	.long 0x47657454
-	.long 0x65784765
-	.long 0x6E547970
-	.long 0x65282920
-	.long 0x213D2047
-	.long 0x585F5447
-	.long 0x5F4D5458
-	.long 0x33783400
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7465784D
-	.long 0x7478203D
-	.long 0x3D204758
-	.long 0x5F494445
-	.long 0x4E544954
-	.long 0x59207C7C
-	.long 0x20476574
-	.long 0x5465784D
-	.long 0x74784964
-	.long 0x78287465
-	.long 0x784D7478
-	.long 0x29203C20
-	.long 0x6D47584D
-	.long 0x656D4E75
-	.long 0x6D2E7465
-	.long 0x78535254
+	.asciz "NW4HBM:Failed assertion texCoordGens[i].GetTexGenType() != GX_TG_MTX3x4"
+	.asciz "NW4HBM:Failed assertion texMtx == GX_IDENTITY || GetTexMtxIdx(texMtx) < mGXMemNum.texSRT"
 	.long 0x00000000
-	.long 0x00000000
-.global lbl_80192898
-lbl_80192898:
+glabel lbl_80192898
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8010FF08
@@ -40441,147 +29151,32 @@ lbl_80192898:
 	.long 0x80112524
 	.long 0x8011266C
 	.long 0x80112674
-.global lbl_801928C0
-lbl_801928C0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_801928E4
-lbl_801928E4:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80192920
-lbl_80192920:
-	.long 0x6C79745F
-	.long 0x70616E65
-	.long 0x2E637070
+glabel lbl_801928C0
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_801928E4
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_80192920
+	.asciz "lyt_pane.cpp"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (pChild)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion pChild->mpParent == 0"
+	.balign 4
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28704368
-	.long 0x696C6429
+	.asciz "NW4HBM:Pointer must not be NULL (pNext)"
+	.asciz "NW4HBM:Failed assertion pNext->mpParent == this"
+	.asciz "NW4HBM:Failed assertion pChild->mpParent == this"
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70436869
-	.long 0x6C642D3E
-	.long 0x6D705061
-	.long 0x72656E74
-	.long 0x203D3D20
-	.long 0x30000000
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28704E65
-	.long 0x78742900
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x704E6578
-	.long 0x742D3E6D
-	.long 0x70506172
-	.long 0x656E7420
-	.long 0x3D3D2074
-	.long 0x68697300
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70436869
-	.long 0x6C642D3E
-	.long 0x6D705061
-	.long 0x72656E74
-	.long 0x203D3D20
-	.long 0x74686973
-	.long 0x00000000
-	.long 0x00000000
-.global lbl_80192A20
-lbl_80192A20:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x69647820
-	.long 0x3C20414E
-	.long 0x494D5441
-	.long 0x52474554
-	.long 0x5F50414E
-	.long 0x455F434F
-	.long 0x4C4F525F
-	.long 0x4D415800
-.global lbl_80192A58
-lbl_80192A58:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x2870416E
-	.long 0x696D5472
-	.long 0x616E7329
-	.long 0x00000000
-.global lbl_80192A88
-lbl_80192A88:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x2870416E
-	.long 0x696D6174
-	.long 0x696F6E4C
-	.long 0x696E6B29
-	.long 0x00000000
-.global lbl_80192ABC
-lbl_80192ABC:
+glabel lbl_80192A20
+	.asciz "NW4HBM:Failed assertion idx < ANIMTARGET_PANE_COLOR_MAX"
+glabel lbl_80192A58
+	.asciz "NW4HBM:Pointer must not be NULL (pAnimTrans)"
+glabel lbl_80192A88
+	.asciz "NW4HBM:Pointer must not be NULL (pAnimationLink)"
+glabel lbl_80192ABC
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80112988
@@ -40610,175 +29205,40 @@ lbl_80192ABC:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80112824
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80192BBC
-lbl_80192BBC:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80192BE0
-lbl_80192BE0:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_80192BBC
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80192BE0
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
 	.long 0x00000000
-.global lbl_80192CB0
-lbl_80192CB0:
-	.long 0x6C79745F
-	.long 0x70696374
-	.long 0x7572652E
-	.long 0x63707000
-.global lbl_80192CC0
-lbl_80192CC0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28726573
-	.long 0x426C6F63
-	.long 0x6B536574
-	.long 0x2E704D61
-	.long 0x74657269
-	.long 0x616C4C69
-	.long 0x73742900
-.global lbl_80192CFC
-lbl_80192CFC:
-	.long 0x6D704D61
-	.long 0x74657269
-	.long 0x616C2D3E
-	.long 0x47657454
-	.long 0x65787475
-	.long 0x72654E75
-	.long 0x6D282564
-	.long 0x29206973
-	.long 0x206C6172
-	.long 0x67652E20
-	.long 0x6D704D61
-	.long 0x74657269
-	.long 0x616C2D3E
-	.long 0x47657454
-	.long 0x65787475
-	.long 0x72654361
-	.long 0x70282564
-	.long 0x292C206D
-	.long 0x704D6174
-	.long 0x65726961
-	.long 0x6C2D3E47
-	.long 0x65745465
-	.long 0x78436F6F
-	.long 0x72644765
-	.long 0x6E436170
-	.long 0x28256429
-	.long 0x0A000000
-.global lbl_80192D68
-lbl_80192D68:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x69647820
-	.long 0x3C205645
-	.long 0x52544558
-	.long 0x434F4C4F
-	.long 0x525F4D41
-	.long 0x58000000
-.global lbl_80192D98
-lbl_80192D98:
+glabel lbl_80192CB0
+	.asciz "lyt_picture.cpp"
+glabel lbl_80192CC0
+	.asciz "NW4HBM:Pointer must not be NULL (resBlockSet.pMaterialList)"
+glabel lbl_80192CFC
+	.asciz "mpMaterial->GetTextureNum(%d) is large. mpMaterial->GetTextureCap(%d), mpMaterial->GetTexCoordGenCap(%d)\n"
+glabel lbl_80192D68
+	.asciz "NW4HBM:Failed assertion idx < VERTEXCOLOR_MAX"
+glabel lbl_80192D98
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80113CD8
@@ -40806,312 +29266,65 @@ lbl_80192D98:
 	.long 0x8011397C
 	.long 0x80113DA4
 	.long 0x80113DF0
-.global lbl_80192E04
-lbl_80192E04:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x69647820
-	.long 0x3C20414E
-	.long 0x494D5441
-	.long 0x52474554
-	.long 0x5F564552
-	.long 0x54455843
-	.long 0x4F4C4F52
-	.long 0x5F4D4158
+glabel lbl_80192E04
+	.asciz "NW4HBM:Failed assertion idx < ANIMTARGET_VERTEXCOLOR_MAX"
+glabel lbl_80192E40
+	.asciz "common.h"
+glabel lbl_80192E4C
+	.asciz "NW4HBM:Failed assertion idx < ANIMTARGET_VERTEXCOLOR_MAX"
+glabel lbl_80192E88
+	.asciz "common.h"
+glabel lbl_80192E94
+	.asciz "NW4HBM:Failed assertion idx < mGXMemNum.texCoordGen"
+glabel lbl_80192EC8
+	.asciz "material.h"
 	.long 0x00000000
-.global lbl_80192E40
-lbl_80192E40:
-	.long 0x636F6D6D
-	.long 0x6F6E2E68
-	.long 0x00000000
-.global lbl_80192E4C
-lbl_80192E4C:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x69647820
-	.long 0x3C20414E
-	.long 0x494D5441
-	.long 0x52474554
-	.long 0x5F564552
-	.long 0x54455843
-	.long 0x4F4C4F52
-	.long 0x5F4D4158
-	.long 0x00000000
-.global lbl_80192E88
-lbl_80192E88:
-	.long 0x636F6D6D
-	.long 0x6F6E2E68
-	.long 0x00000000
-.global lbl_80192E94
-lbl_80192E94:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x69647820
-	.long 0x3C206D47
-	.long 0x584D656D
-	.long 0x4E756D2E
-	.long 0x74657843
-	.long 0x6F6F7264
-	.long 0x47656E00
-.global lbl_80192EC8
-lbl_80192EC8:
-	.long 0x6D617465
-	.long 0x7269616C
-	.long 0x2E680000
-	.long 0x00000000
-.global lbl_80192ED8
-lbl_80192ED8:
+glabel lbl_80192ED8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8011429C
 	.long 0x00000000
 	.long 0x801142EC
 	.long 0x00000000
-.global lbl_80192EF0
-lbl_80192EF0:
+glabel lbl_80192EF0
 	.long 0x00000000
 	.long 0xFFFFFFFF
 	.long 0x80139DF8
 	.long 0x00000000
-.global lbl_80192F00
-lbl_80192F00:
-	.long 0x6C79745F
-	.long 0x74657874
-	.long 0x426F782E
-	.long 0x63707000
-.global lbl_80192F10
-lbl_80192F10:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286D7046
-	.long 0x6F6E7429
+glabel lbl_80192F00
+	.asciz "lyt_textBox.cpp"
+glabel lbl_80192F10
+	.asciz "NW4HBM:Pointer must not be NULL (mpFont)"
+	.balign 4
 	.long 0x00000000
+	.asciz "NW4HBM:Pointer must not be NULL (resBlockSet.pFontList)"
+	.asciz "NW4HBM:Failed assertion pBlock->fontIdx < resBlockSet.pFontList->fontNum"
+	.balign 4
+	.asciz "Fail to load ResFont."
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (resBlockSet.pMaterialList)"
+glabel lbl_80193018
+	.asciz "NW4HBM:Failed assertion idx < VERTEXCOLOR_MAX"
+glabel lbl_80193048
+	.asciz "NW4HBM:Failed assertion idx < ANIMTARGET_VERTEXCOLOR_MAX"
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\npTextWriter(=%p) is not valid pointer."
+	.asciz "NW4HBM:Pointer Error\nstr(=%p) is not valid pointer."
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28726573
-	.long 0x426C6F63
-	.long 0x6B536574
-	.long 0x2E70466F
-	.long 0x6E744C69
-	.long 0x73742900
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70426C6F
-	.long 0x636B2D3E
-	.long 0x666F6E74
-	.long 0x49647820
-	.long 0x3C207265
-	.long 0x73426C6F
-	.long 0x636B5365
-	.long 0x742E7046
-	.long 0x6F6E744C
-	.long 0x6973742D
-	.long 0x3E666F6E
-	.long 0x744E756D
-	.long 0x00000000
-	.long 0x4661696C
-	.long 0x20746F20
-	.long 0x6C6F6164
-	.long 0x20526573
-	.long 0x466F6E74
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28726573
-	.long 0x426C6F63
-	.long 0x6B536574
-	.long 0x2E704D61
-	.long 0x74657269
-	.long 0x616C4C69
-	.long 0x73742900
-.global lbl_80193018
-lbl_80193018:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x69647820
-	.long 0x3C205645
-	.long 0x52544558
-	.long 0x434F4C4F
-	.long 0x525F4D41
-	.long 0x58000000
-.global lbl_80193048
-lbl_80193048:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x69647820
-	.long 0x3C20414E
-	.long 0x494D5441
-	.long 0x52474554
-	.long 0x5F564552
-	.long 0x54455843
-	.long 0x4F4C4F52
-	.long 0x5F4D4158
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A705465
-	.long 0x78745772
-	.long 0x69746572
-	.long 0x283D2570
-	.long 0x29206973
-	.long 0x206E6F74
-	.long 0x2076616C
-	.long 0x69642070
-	.long 0x6F696E74
-	.long 0x65722E00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A737472
-	.long 0x283D2570
-	.long 0x29206973
-	.long 0x206E6F74
-	.long 0x2076616C
-	.long 0x69642070
-	.long 0x6F696E74
-	.long 0x65722E00
-	.long 0x00000000
-	.long 0x6C656E67
-	.long 0x74682069
-	.long 0x73206F75
-	.long 0x74206F66
-	.long 0x20626F75
-	.long 0x6E647328
-	.long 0x2564290A
-	.long 0x2564203C
-	.long 0x3D206C65
-	.long 0x6E677468
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A705265
-	.long 0x6374283D
-	.long 0x25702920
-	.long 0x6973206E
-	.long 0x6F742076
-	.long 0x616C6964
-	.long 0x20706F69
-	.long 0x6E746572
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A666F6E
-	.long 0x74283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A636F6E
-	.long 0x74657874
-	.long 0x2E737472
-	.long 0x283D2570
-	.long 0x29206973
-	.long 0x206E6F74
-	.long 0x2076616C
-	.long 0x69642070
-	.long 0x6F696E74
-	.long 0x65722E00
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D546578
-	.long 0x74427566
-	.long 0x42797465
-	.long 0x73203E3D
-	.long 0x2073697A
-	.long 0x656F6628
-	.long 0x77636861
-	.long 0x725F7429
-	.long 0x00000000
-	.long 0x6D546578
-	.long 0x74427566
-	.long 0x20697320
-	.long 0x4E554C4C
-	.long 0x2E0A0000
-	.long 0x64737449
-	.long 0x64782069
-	.long 0x73206F75
-	.long 0x74206F66
-	.long 0x2072616E
-	.long 0x67652E0A
-	.long 0x00000000
-	.long 0x25642063
-	.long 0x68617261
-	.long 0x63746572
-	.long 0x28732920
-	.long 0x64726F70
-	.long 0x65642E0A
-	.long 0x00000000
-.global lbl_80193264
-lbl_80193264:
+	.asciz "length is out of bounds(%d)\n%d <= length not satisfied."
+	.asciz "NW4HBM:Pointer Error\npRect(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nfont(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\ncontext.str(=%p) is not valid pointer."
+	.asciz "NW4HBM:Failed assertion mTextBufBytes >= sizeof(wchar_t)"
+	.balign 4
+	.asciz "mTextBuf is NULL.\n"
+	.balign 4
+	.asciz "dstIdx is out of range.\n"
+	.balign 4
+	.asciz "%d character(s) droped.\n"
+glabel lbl_80193264
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x801146E8
@@ -41141,206 +29354,42 @@ lbl_80193264:
 	.long 0x801164AC
 	.long 0x801164F4
 	.long 0x8011655C
-.global lbl_801932D8
-lbl_801932D8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
+glabel lbl_801932D8
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
+glabel lbl_80193310
+	.asciz "NW4HBM:Failed assertion mReadFunc == ReadNextCharUTF16"
+glabel lbl_80193348
+	.asciz "CharStrmReader.h"
+glabel lbl_8019335C
+	.asciz "NW4HBM:Pointer Error\nstream(=%p) is not valid pointer."
+glabel lbl_80193394
+	.asciz "CharStrmReader.h"
+glabel lbl_801933A8
+	.asciz "NW4HBM:Alignment Error(0x%x)\nstream must be aligned to 2 bytes boundary."
+glabel lbl_801933F4
+	.asciz "CharStrmReader.h"
+glabel lbl_80193408
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
+glabel lbl_80193440
+	.asciz "CharStrmReader.h"
+glabel lbl_80193454
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
+glabel lbl_8019348C
+	.asciz "CharStrmReader.h"
+glabel lbl_801934A0
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
+glabel lbl_801934D8
+	.asciz "CharStrmReader.h"
+glabel lbl_801934EC
+	.asciz "NW4HBM:Failed assertion type < TEXTCOLOR_MAX"
+glabel lbl_8019351C
+	.asciz "textBox.h"
+glabel lbl_80193528
+	.asciz "NW4HBM:Failed assertion type < TEXTCOLOR_MAX"
+glabel lbl_80193558
+	.asciz "textBox.h"
 	.long 0x00000000
-.global lbl_80193310
-lbl_80193310:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D526561
-	.long 0x6446756E
-	.long 0x63203D3D
-	.long 0x20526561
-	.long 0x644E6578
-	.long 0x74436861
-	.long 0x72555446
-	.long 0x31360000
-.global lbl_80193348
-lbl_80193348:
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-.global lbl_8019335C
-lbl_8019335C:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A737472
-	.long 0x65616D28
-	.long 0x3D257029
-	.long 0x20697320
-	.long 0x6E6F7420
-	.long 0x76616C69
-	.long 0x6420706F
-	.long 0x696E7465
-	.long 0x722E0000
-.global lbl_80193394
-lbl_80193394:
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-.global lbl_801933A8
-lbl_801933A8:
-	.long 0x4E573448
-	.long 0x424D3A41
-	.long 0x6C69676E
-	.long 0x6D656E74
-	.long 0x20457272
-	.long 0x6F722830
-	.long 0x78257829
-	.long 0x0A737472
-	.long 0x65616D20
-	.long 0x6D757374
-	.long 0x20626520
-	.long 0x616C6967
-	.long 0x6E656420
-	.long 0x746F2032
-	.long 0x20627974
-	.long 0x65732062
-	.long 0x6F756E64
-	.long 0x6172792E
-	.long 0x00000000
-.global lbl_801933F4
-lbl_801933F4:
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-.global lbl_80193408
-lbl_80193408:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-.global lbl_80193440
-lbl_80193440:
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-.global lbl_80193454
-lbl_80193454:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-.global lbl_8019348C
-lbl_8019348C:
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-.global lbl_801934A0
-lbl_801934A0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-.global lbl_801934D8
-lbl_801934D8:
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-.global lbl_801934EC
-lbl_801934EC:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x74797065
-	.long 0x203C2054
-	.long 0x45585443
-	.long 0x4F4C4F52
-	.long 0x5F4D4158
-	.long 0x00000000
-.global lbl_8019351C
-lbl_8019351C:
-	.long 0x74657874
-	.long 0x426F782E
-	.long 0x68000000
-.global lbl_80193528
-lbl_80193528:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x74797065
-	.long 0x203C2054
-	.long 0x45585443
-	.long 0x4F4C4F52
-	.long 0x5F4D4158
-	.long 0x00000000
-.global lbl_80193558
-lbl_80193558:
-	.long 0x74657874
-	.long 0x426F782E
-	.long 0x68000000
-	.long 0x00000000
-.global lbl_80193568
-lbl_80193568:
+glabel lbl_80193568
 	.long 0x00000100
 	.long 0x00010101
 	.long 0x00010100
@@ -41356,74 +29405,17 @@ lbl_80193568:
 	.long 0x00010100
 	.long 0x01010000
 	.long 0x00010100
-.global lbl_801935A4
-lbl_801935A4:
-	.long 0x6C79745F
-	.long 0x77696E64
-	.long 0x6F772E63
-	.long 0x70700000
-.global lbl_801935B4
-lbl_801935B4:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28726573
-	.long 0x426C6F63
-	.long 0x6B536574
-	.long 0x2E704D61
-	.long 0x74657269
-	.long 0x616C4C69
-	.long 0x73742900
-.global lbl_801935F0
-lbl_801935F0:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x69647820
-	.long 0x3C205645
-	.long 0x52544558
-	.long 0x434F4C4F
-	.long 0x525F4D41
-	.long 0x58000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x74657874
-	.long 0x75726546
-	.long 0x6C697020
-	.long 0x3C205445
-	.long 0x58545552
-	.long 0x45464C49
-	.long 0x505F4D41
-	.long 0x58000000
-.global lbl_80193658
-lbl_80193658:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6672616D
-	.long 0x65496478
-	.long 0x203C2057
-	.long 0x494E444F
-	.long 0x57465241
-	.long 0x4D455F4D
-	.long 0x41580000
-.global lbl_8019368C
-lbl_8019368C:
+glabel lbl_801935A4
+	.asciz "lyt_window.cpp"
+glabel lbl_801935B4
+	.asciz "NW4HBM:Pointer must not be NULL (resBlockSet.pMaterialList)"
+glabel lbl_801935F0
+	.asciz "NW4HBM:Failed assertion idx < VERTEXCOLOR_MAX"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion textureFlip < TEXTUREFLIP_MAX"
+glabel lbl_80193658
+	.asciz "NW4HBM:Failed assertion frameIdx < WINDOWFRAME_MAX"
+glabel lbl_8019368C
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8011736C
@@ -41455,56 +29447,17 @@ lbl_8019368C:
 	.long 0x80117C7C
 	.long 0x8011824C
 	.long 0x801189C4
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x69647820
-	.long 0x3C20414E
-	.long 0x494D5441
-	.long 0x52474554
-	.long 0x5F564552
-	.long 0x54455843
-	.long 0x4F4C4F52
-	.long 0x5F4D4158
-	.long 0x00000000
-	.long 0x636F6D6D
-	.long 0x6F6E2E68
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x69647820
-	.long 0x3C20414E
-	.long 0x494D5441
-	.long 0x52474554
-	.long 0x5F564552
-	.long 0x54455843
-	.long 0x4F4C4F52
-	.long 0x5F4D4158
-	.long 0x00000000
-	.long 0x636F6D6D
-	.long 0x6F6E2E68
-	.long 0x00000000
-.global lbl_801937C8
-lbl_801937C8:
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion idx < ANIMTARGET_VERTEXCOLOR_MAX"
+	.balign 4
+	.asciz "common.h"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion idx < ANIMTARGET_VERTEXCOLOR_MAX"
+	.balign 4
+	.asciz "common.h"
+glabel lbl_801937C8
 	.long 0x00000000
 	.long 0x3F800000
 	.long 0x3CC90A35
@@ -42533,8 +30486,7 @@ lbl_801937C8:
 	.long 0x3F800000
 	.long 0x3CC90A35
 	.long 0xB99DCF89
-.global lbl_801947D8
-lbl_801947D8:
+glabel lbl_801947D8
 	.long 0x00000000
 	.long 0x3FA2EBF1
 	.long 0x3FA2EBF1
@@ -42601,394 +30553,77 @@ lbl_801947D8:
 	.long 0x3F258C33
 	.long 0x42000000
 	.long 0x3F207467
-.global lbl_801948E0
-lbl_801948E0:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
+glabel lbl_801948E0
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
 	.long 0x00000000
-.global lbl_80194910
-lbl_80194910:
-	.long 0x736E645F
-	.long 0x41784D61
-	.long 0x6E616765
-	.long 0x722E6370
-	.long 0x70000000
-.global lbl_80194924
-lbl_80194924:
-	.long 0x6E6F7420
-	.long 0x696E6974
-	.long 0x69616C69
-	.long 0x7A656420
-	.long 0x4149200A
+glabel lbl_80194910
+	.asciz "snd_AxManager.cpp"
+glabel lbl_80194924
+	.asciz "not initialized AI \n"
+glabel lbl_8019493C
+	.asciz "Zero buffer is not created."
+glabel lbl_80194958
+	.asciz "Voice Acquisition failed!\n"
 	.long 0x00000000
-.global lbl_8019493C
-lbl_8019493C:
-	.long 0x5A65726F
-	.long 0x20627566
-	.long 0x66657220
-	.long 0x6973206E
-	.long 0x6F742063
-	.long 0x72656174
-	.long 0x65642E00
-.global lbl_80194958
-lbl_80194958:
-	.long 0x566F6963
-	.long 0x65204163
-	.long 0x71756973
-	.long 0x6974696F
-	.long 0x6E206661
-	.long 0x696C6564
-	.long 0x210A0000
+glabel lbl_80194978
+	.asciz "NW4HBM:Pointer must not be NULL (voice)"
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_80194A00
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80194A24
+	.asciz "LinkList.h"
+glabel lbl_80194A30
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80194A54
+	.asciz "LinkList.h"
+glabel lbl_80194A60
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80194A84
+	.asciz "LinkList.h"
+glabel lbl_80194A90
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+glabel lbl_80194AB4
+	.asciz "LinkList.h"
+glabel lbl_80194AC0
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80194AE4
+	.asciz "LinkList.h"
+glabel lbl_80194AF0
+	.asciz "bus is out of bounds(%d)\n%d <= bus < %d not satisfied."
+glabel lbl_80194B28
+	.asciz "AxManager.h"
 	.long 0x00000000
-.global lbl_80194978
-lbl_80194978:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28766F69
-	.long 0x63652900
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80194A00
-lbl_80194A00:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80194A24
-lbl_80194A24:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80194A30
-lbl_80194A30:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80194A54
-lbl_80194A54:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80194A60
-lbl_80194A60:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80194A84
-lbl_80194A84:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80194A90
-lbl_80194A90:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-.global lbl_80194AB4
-lbl_80194AB4:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80194AC0
-lbl_80194AC0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80194AE4
-lbl_80194AE4:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80194AF0
-lbl_80194AF0:
-	.long 0x62757320
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2062
-	.long 0x7573203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-.global lbl_80194B28
-lbl_80194B28:
-	.long 0x41784D61
-	.long 0x6E616765
-	.long 0x722E6800
+glabel lbl_80194B38
+	.asciz "snd_AxVoice.cpp"
+	.asciz "channelCount is out of bounds(%d)\n%d <= channelCount <= %d not satisfied."
+	.balign 4
+	.asciz "voiceOutCount is out of bounds(%d)\n%d <= voiceOutCount <= %d not satisfied."
+	.asciz "NW4HBM:Failed assertion ! mActiveFlag"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (vpb)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (waveParam.channelParam[channelIndex].dataAddr)"
+glabel lbl_80194C80
+	.asciz "remoteIndex is out of bounds(%d)\n%d <= remoteIndex < %d not satisfied."
+glabel lbl_80194CC8
+	.asciz "bus is out of bounds(%d)\n%d <= bus < %d not satisfied."
+	.balign 4
+	.asciz "voiceOutIndex is out of bounds(%d)\n%d <= voiceOutIndex <= %d not satisfied."
+glabel lbl_80194D4C
+	.asciz "priority is out of bounds(%d)\n%d <= priority <= %d not satisfied."
+	.balign 4
+	.asciz "NW4HBM:Failed assertion channelIndex < CHANNEL_MAX"
 	.long 0x00000000
-.global lbl_80194B38
-lbl_80194B38:
-	.long 0x736E645F
-	.long 0x4178566F
-	.long 0x6963652E
-	.long 0x63707000
-	.long 0x6368616E
-	.long 0x6E656C43
-	.long 0x6F756E74
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x6368616E
-	.long 0x6E656C43
-	.long 0x6F756E74
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x766F6963
-	.long 0x654F7574
-	.long 0x436F756E
-	.long 0x74206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20766F69
-	.long 0x63654F75
-	.long 0x74436F75
-	.long 0x6E74203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21206D41
-	.long 0x63746976
-	.long 0x65466C61
-	.long 0x67000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28767062
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28776176
-	.long 0x65506172
-	.long 0x616D2E63
-	.long 0x68616E6E
-	.long 0x656C5061
-	.long 0x72616D5B
-	.long 0x6368616E
-	.long 0x6E656C49
-	.long 0x6E646578
-	.long 0x5D2E6461
-	.long 0x74614164
-	.long 0x64722900
-.global lbl_80194C80
-lbl_80194C80:
-	.long 0x72656D6F
-	.long 0x7465496E
-	.long 0x64657820
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656D6F74
-	.long 0x65496E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-.global lbl_80194CC8
-lbl_80194CC8:
-	.long 0x62757320
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2062
-	.long 0x7573203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x766F6963
-	.long 0x654F7574
-	.long 0x496E6465
-	.long 0x78206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20766F69
-	.long 0x63654F75
-	.long 0x74496E64
-	.long 0x6578203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-.global lbl_80194D4C
-lbl_80194D4C:
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6368616E
-	.long 0x6E656C49
-	.long 0x6E646578
-	.long 0x203C2043
-	.long 0x48414E4E
-	.long 0x454C5F4D
-	.long 0x41580000
-	.long 0x00000000
-.global lbl_80194DC8
-lbl_80194DC8:
-	.long 0x496E7661
-	.long 0x6C696420
-	.long 0x666F726D
-	.long 0x61740A00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28706172
-	.long 0x616D2900
-.global lbl_80194E00
-lbl_80194E00:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28766F69
-	.long 0x63652900
-.global lbl_80194E28
-lbl_80194E28:
+glabel lbl_80194DC8
+	.asciz "Invalid format\n"
+	.asciz "NW4HBM:Pointer must not be NULL (param)"
+glabel lbl_80194E00
+	.asciz "NW4HBM:Pointer must not be NULL (voice)"
+glabel lbl_80194E28
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8011BA44
@@ -42999,268 +30634,44 @@ lbl_80194E28:
 	.long 0x8011BA04
 	.long 0x00000000
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80194E80
-lbl_80194E80:
-	.long 0x736E645F
-	.long 0x42616E6B
-	.long 0x46696C65
-	.long 0x2E637070
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_80194E80
+	.asciz "snd_BankFile.cpp"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion fileHeader->signature == BankFile::SIGNATURE_FILE"
+	.balign 4
+	.asciz "bank file is not supported version.\n  please reconvert file using new version tools.\n"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (bankData)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mDataBlock->blockHeader.kind == BankFile::SIGNATURE_DATA_BLOCK"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mWaveBlock->blockHeader.kind == BankFile::SIGNATURE_WAVE_BLOCK"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (instInfo)"
+glabel lbl_80195040
+	.asciz "NW4HBM:Pointer must not be NULL (mHeader)"
+glabel lbl_8019506C
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_80195098
+	.asciz "NW4HBM:Failed assertion ref.dataType == 2"
+glabel lbl_801950C4
+	.asciz "NW4HBM:Failed assertion ref.dataType == 3"
+glabel lbl_801950F0
+	.asciz "NW4HBM:Failed assertion ref.dataType == 1"
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x66696C65
-	.long 0x48656164
-	.long 0x65722D3E
-	.long 0x7369676E
-	.long 0x61747572
-	.long 0x65203D3D
-	.long 0x2042616E
-	.long 0x6B46696C
-	.long 0x653A3A53
-	.long 0x49474E41
-	.long 0x54555245
-	.long 0x5F46494C
-	.long 0x45000000
-	.long 0x62616E6B
-	.long 0x2066696C
-	.long 0x65206973
-	.long 0x206E6F74
-	.long 0x20737570
-	.long 0x706F7274
-	.long 0x65642076
-	.long 0x65727369
-	.long 0x6F6E2E0A
-	.long 0x2020706C
-	.long 0x65617365
-	.long 0x20726563
-	.long 0x6F6E7665
-	.long 0x72742066
-	.long 0x696C6520
-	.long 0x7573696E
-	.long 0x67206E65
-	.long 0x77207665
-	.long 0x7273696F
-	.long 0x6E20746F
-	.long 0x6F6C732E
-	.long 0x0A000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x2862616E
-	.long 0x6B446174
-	.long 0x61290000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D446174
-	.long 0x61426C6F
-	.long 0x636B2D3E
-	.long 0x626C6F63
-	.long 0x6B486561
-	.long 0x6465722E
-	.long 0x6B696E64
-	.long 0x203D3D20
-	.long 0x42616E6B
-	.long 0x46696C65
-	.long 0x3A3A5349
-	.long 0x474E4154
-	.long 0x5552455F
-	.long 0x44415441
-	.long 0x5F424C4F
-	.long 0x434B0000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D576176
-	.long 0x65426C6F
-	.long 0x636B2D3E
-	.long 0x626C6F63
-	.long 0x6B486561
-	.long 0x6465722E
-	.long 0x6B696E64
-	.long 0x203D3D20
-	.long 0x42616E6B
-	.long 0x46696C65
-	.long 0x3A3A5349
-	.long 0x474E4154
-	.long 0x5552455F
-	.long 0x57415645
-	.long 0x5F424C4F
-	.long 0x434B0000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28696E73
-	.long 0x74496E66
-	.long 0x6F290000
-.global lbl_80195040
-lbl_80195040:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286D4865
-	.long 0x61646572
-	.long 0x29000000
-.global lbl_8019506C
-lbl_8019506C:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_80195098
-lbl_80195098:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x32000000
-.global lbl_801950C4
-lbl_801950C4:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x33000000
-.global lbl_801950F0
-lbl_801950F0:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x31000000
-	.long 0x00000000
-.global lbl_80195120
-lbl_80195120:
-	.long 0x736E645F
-	.long 0x42617369
-	.long 0x63536F75
-	.long 0x6E642E63
-	.long 0x70700000
-	.long 0x72656D6F
-	.long 0x7465496E
-	.long 0x64657820
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656D6F74
-	.long 0x65496E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-.global lbl_8019517C
-lbl_8019517C:
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-.global lbl_801951C0
-lbl_801951C0:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x766F6C75
-	.long 0x6D65203E
-	.long 0x3D20302E
-	.long 0x30660000
-.global lbl_801951E8
-lbl_801951E8:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70697463
-	.long 0x68203E3D
-	.long 0x20302E30
-	.long 0x66000000
-.global lbl_80195210
-lbl_80195210:
+glabel lbl_80195120
+	.asciz "snd_BasicSound.cpp"
+	.balign 4
+	.asciz "remoteIndex is out of bounds(%d)\n%d <= remoteIndex < %d not satisfied."
+glabel lbl_8019517C
+	.asciz "priority is out of bounds(%d)\n%d <= priority <= %d not satisfied."
+glabel lbl_801951C0
+	.asciz "NW4HBM:Failed assertion volume >= 0.0f"
+glabel lbl_801951E8
+	.asciz "NW4HBM:Failed assertion pitch >= 0.0f"
+glabel lbl_80195210
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80121108
@@ -43287,794 +30698,158 @@ lbl_80195210:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80195278
-lbl_80195278:
-	.long 0x736E645F
-	.long 0x4368616E
-	.long 0x6E656C2E
-	.long 0x63707000
-.global lbl_80195288
-lbl_80195288:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D537765
-	.long 0x65704C65
-	.long 0x6E677468
-	.long 0x20213D20
-	.long 0x30000000
-.global lbl_801952B4
-lbl_801952B4:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28617267
-	.long 0x29000000
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x4368616E
-	.long 0x6E656C20
-	.long 0x416C6C6F
-	.long 0x63617469
-	.long 0x6F6E2066
-	.long 0x61696C65
-	.long 0x64210000
-.global lbl_8019533C
-lbl_8019533C:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80195360
-lbl_80195360:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_8019536C
-lbl_8019536C:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80195390
-lbl_80195390:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_8019539C
-lbl_8019539C:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-.global lbl_801953C0
-lbl_801953C0:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_801953CC
-lbl_801953CC:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286F626A
-	.long 0x29000000
-.global lbl_801953F4
-lbl_801953F4:
-	.long 0x496E7374
-	.long 0x616E6365
-	.long 0x4D616E61
-	.long 0x6765722E
-	.long 0x68000000
-.global lbl_80195408
-lbl_80195408:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286F626A
-	.long 0x29000000
-.global lbl_80195430
-lbl_80195430:
-	.long 0x496E7374
-	.long 0x616E6365
-	.long 0x4D616E61
-	.long 0x6765722E
-	.long 0x68000000
-.global lbl_80195444
-lbl_80195444:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80195468
-lbl_80195468:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80195474
-lbl_80195474:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286F626A
-	.long 0x29000000
-.global lbl_8019549C
-lbl_8019549C:
-	.long 0x496E7374
-	.long 0x616E6365
-	.long 0x4D616E61
-	.long 0x6765722E
-	.long 0x68000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_801954E0
-lbl_801954E0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80195504
-lbl_80195504:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80195510
-lbl_80195510:
-	.long 0x736E645F
-	.long 0x456E7647
-	.long 0x656E6572
-	.long 0x61746F72
-	.long 0x2E637070
+glabel lbl_80195278
+	.asciz "snd_Channel.cpp"
+glabel lbl_80195288
+	.asciz "NW4HBM:Failed assertion mSweepLength != 0"
+glabel lbl_801952B4
+	.asciz "NW4HBM:Pointer must not be NULL (arg)"
+	.balign 4
+	.asciz "priority is out of bounds(%d)\n%d <= priority <= %d not satisfied."
+	.balign 4
+	.asciz "Channel Allocation failed!"
+glabel lbl_8019533C
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80195360
+	.asciz "LinkList.h"
+glabel lbl_8019536C
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80195390
+	.asciz "LinkList.h"
+glabel lbl_8019539C
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+glabel lbl_801953C0
+	.asciz "LinkList.h"
+glabel lbl_801953CC
+	.asciz "NW4HBM:Pointer must not be NULL (obj)"
+glabel lbl_801953F4
+	.asciz "InstanceManager.h"
+glabel lbl_80195408
+	.asciz "NW4HBM:Pointer must not be NULL (obj)"
+glabel lbl_80195430
+	.asciz "InstanceManager.h"
+glabel lbl_80195444
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80195468
+	.asciz "LinkList.h"
+glabel lbl_80195474
+	.asciz "NW4HBM:Pointer must not be NULL (obj)"
+glabel lbl_8019549C
+	.asciz "InstanceManager.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_801954E0
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80195504
+	.asciz "LinkList.h"
+glabel lbl_80195510
+	.asciz "snd_EnvGenerator.cpp"
+glabel lbl_80195528
+	.asciz "scale is out of bounds(%d)\n%d <= scale <= %d not satisfied."
+glabel lbl_80195564
+	.asciz "attack is out of bounds(%d)\n%d <= attack <= %d not satisfied."
+	.balign 4
+	.asciz "decay is out of bounds(%d)\n%d <= decay <= %d not satisfied."
+glabel lbl_801955E0
+	.asciz "release is out of bounds(%d)\n%d <= release <= %d not satisfied."
+glabel lbl_80195620
+	.asciz "sustain is out of bounds(%d)\n%d <= sustain <= %d not satisfied."
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_80195690
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_801956B4
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_801956F0
+	.asciz "snd_FrameHeap.cpp"
+glabel lbl_80195704
+	.asciz "NW4HBM:Pointer must not be NULL (startAddress)"
+glabel lbl_80195734
+	.asciz "NW4HBM:Failed assertion IsValid()"
+	.balign 4
+	.asciz "FrameHeap::Clear(): NewSection is Failed"
+	.balign 4
+	.asciz "FrameHeap::Alloc: Internal Error"
+	.balign 4
+	.asciz "FrameHeap::SaveState(): MEMFreeByStateToFrmHeap is Failed"
+	.balign 4
+	.asciz "level is out of bounds(%d)\n%d <= level < %d not satisfied."
+	.balign 4
+	.asciz "FrameHeap::LoadState(): MEMFreeByStateToFrmHeap is Failed"
+	.balign 4
+	.asciz "FrameHeap::LoadState(): MEMRecordStateForFrmHeap is Failed"
+	.balign 4
+	.asciz "FrameHeap::LoadState(): NewSection is Failed"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_801958F8
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_8019591C
+	.asciz "LinkList.h"
+glabel lbl_80195928
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_8019594C
+	.asciz "LinkList.h"
+glabel lbl_80195958
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_8019597C
+	.asciz "LinkList.h"
+glabel lbl_80195988
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+glabel lbl_801959AC
+	.asciz "LinkList.h"
+glabel lbl_801959B8
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_801959DC
+	.asciz "LinkList.h"
+glabel lbl_801959E8
+	.asciz "snd_InstancePool.cpp"
+glabel lbl_80195A00
+	.asciz "NW4HBM:Pointer must not be NULL (buffer)"
 	.long 0x00000000
-.global lbl_80195528
-lbl_80195528:
-	.long 0x7363616C
-	.long 0x65206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20736361
-	.long 0x6C65203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-.global lbl_80195564
-lbl_80195564:
-	.long 0x61747461
-	.long 0x636B2069
-	.long 0x73206F75
-	.long 0x74206F66
-	.long 0x20626F75
-	.long 0x6E647328
-	.long 0x2564290A
-	.long 0x2564203C
-	.long 0x3D206174
-	.long 0x7461636B
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x64656361
-	.long 0x79206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20646563
-	.long 0x6179203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-.global lbl_801955E0
-lbl_801955E0:
-	.long 0x72656C65
-	.long 0x61736520
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656C6561
-	.long 0x7365203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-.global lbl_80195620
-lbl_80195620:
-	.long 0x73757374
-	.long 0x61696E20
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2073
-	.long 0x75737461
-	.long 0x696E203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80195690
-lbl_80195690:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_801956B4
-lbl_801956B4:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_801956F0
-lbl_801956F0:
-	.long 0x736E645F
-	.long 0x4672616D
-	.long 0x65486561
-	.long 0x702E6370
-	.long 0x70000000
-.global lbl_80195704
-lbl_80195704:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28737461
-	.long 0x72744164
-	.long 0x64726573
-	.long 0x73290000
-.global lbl_80195734
-lbl_80195734:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x49735661
-	.long 0x6C696428
-	.long 0x29000000
-	.long 0x4672616D
-	.long 0x65486561
-	.long 0x703A3A43
-	.long 0x6C656172
-	.long 0x28293A20
-	.long 0x4E657753
-	.long 0x65637469
-	.long 0x6F6E2069
-	.long 0x73204661
-	.long 0x696C6564
-	.long 0x00000000
-	.long 0x4672616D
-	.long 0x65486561
-	.long 0x703A3A41
-	.long 0x6C6C6F63
-	.long 0x3A20496E
-	.long 0x7465726E
-	.long 0x616C2045
-	.long 0x72726F72
-	.long 0x00000000
-	.long 0x4672616D
-	.long 0x65486561
-	.long 0x703A3A53
-	.long 0x61766553
-	.long 0x74617465
-	.long 0x28293A20
-	.long 0x4D454D46
-	.long 0x72656542
-	.long 0x79537461
-	.long 0x7465546F
-	.long 0x46726D48
-	.long 0x65617020
-	.long 0x69732046
-	.long 0x61696C65
-	.long 0x64000000
-	.long 0x6C657665
-	.long 0x6C206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x206C6576
-	.long 0x656C203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x4672616D
-	.long 0x65486561
-	.long 0x703A3A4C
-	.long 0x6F616453
-	.long 0x74617465
-	.long 0x28293A20
-	.long 0x4D454D46
-	.long 0x72656542
-	.long 0x79537461
-	.long 0x7465546F
-	.long 0x46726D48
-	.long 0x65617020
-	.long 0x69732046
-	.long 0x61696C65
-	.long 0x64000000
-	.long 0x4672616D
-	.long 0x65486561
-	.long 0x703A3A4C
-	.long 0x6F616453
-	.long 0x74617465
-	.long 0x28293A20
-	.long 0x4D454D52
-	.long 0x65636F72
-	.long 0x64537461
-	.long 0x7465466F
-	.long 0x7246726D
-	.long 0x48656170
-	.long 0x20697320
-	.long 0x4661696C
-	.long 0x65640000
-	.long 0x4672616D
-	.long 0x65486561
-	.long 0x703A3A4C
-	.long 0x6F616453
-	.long 0x74617465
-	.long 0x28293A20
-	.long 0x4E657753
-	.long 0x65637469
-	.long 0x6F6E2069
-	.long 0x73204661
-	.long 0x696C6564
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_801958F8
-lbl_801958F8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_8019591C
-lbl_8019591C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80195928
-lbl_80195928:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_8019594C
-lbl_8019594C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80195958
-lbl_80195958:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_8019597C
-lbl_8019597C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80195988
-lbl_80195988:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-.global lbl_801959AC
-lbl_801959AC:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_801959B8
-lbl_801959B8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_801959DC
-lbl_801959DC:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_801959E8
-lbl_801959E8:
-	.long 0x736E645F
-	.long 0x496E7374
-	.long 0x616E6365
-	.long 0x506F6F6C
-	.long 0x2E637070
-	.long 0x00000000
-.global lbl_80195A00
-lbl_80195A00:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28627566
-	.long 0x66657229
-	.long 0x00000000
-	.long 0x00000000
-.global lbl_80195A30
-lbl_80195A30:
-	.long 0x736E645F
-	.long 0x4C666F2E
-	.long 0x63707000
-.global lbl_80195A3C
-lbl_80195A3C:
-	.long 0x696E6465
-	.long 0x78206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20696E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-.global lbl_80195A78
-lbl_80195A78:
+glabel lbl_80195A30
+	.asciz "snd_Lfo.cpp"
+glabel lbl_80195A3C
+	.asciz "index is out of bounds(%d)\n%d <= index < %d not satisfied."
+glabel lbl_80195A78
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80124118
 	.long 0x00000000
-.global lbl_80195A88
-lbl_80195A88:
-	.long 0x736E645F
-	.long 0x4D6D6C50
-	.long 0x61727365
-	.long 0x722E6370
-	.long 0x70000000
+
+glabel lbl_80195A88
+	.asciz "snd_MmlParser.cpp"
+	.balign 4
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28747261
-	.long 0x636B2900
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28706C61
-	.long 0x79657229
-	.long 0x00000000
-	.long 0x7365713A
-	.long 0x206D7573
-	.long 0x74207573
-	.long 0x6520616C
-	.long 0x6C6F6374
-	.long 0x7261636B
-	.long 0x20696E20
-	.long 0x73746172
-	.long 0x74757020
-	.long 0x636F6465
-	.long 0x00000000
-	.long 0x6E773468
-	.long 0x626D3A3A
-	.long 0x736E643A
-	.long 0x3A4D6D6C
-	.long 0x50617273
-	.long 0x65723A20
-	.long 0x746F6F20
-	.long 0x6C617267
-	.long 0x65207072
-	.long 0x67204E6F
-	.long 0x2E202564
-	.long 0x00000000
-	.long 0x7661724E
-	.long 0x6F206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20766172
-	.long 0x4E6F203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x23253038
-	.long 0x785B2564
-	.long 0x5D3A2070
-	.long 0x72696E74
-	.long 0x76617220
-	.long 0x25735641
-	.long 0x525F2564
-	.long 0x28256429
-	.long 0x203D2025
-	.long 0x640A0000
-	.long 0x6E773468
-	.long 0x626D3A3A
-	.long 0x736E643A
-	.long 0x3A4D6D6C
-	.long 0x50617273
-	.long 0x65723A20
-	.long 0x6F70656E
-	.long 0x74726163
-	.long 0x6B20666F
-	.long 0x72206E6F
-	.long 0x7420616C
-	.long 0x6C6F6361
-	.long 0x74656420
-	.long 0x74726163
-	.long 0x6B000000
-	.long 0x6E773468
-	.long 0x626D3A3A
-	.long 0x736E643A
-	.long 0x3A4D6D6C
-	.long 0x50617273
-	.long 0x65723A20
-	.long 0x6F70656E
-	.long 0x74726163
-	.long 0x6B20666F
-	.long 0x72207365
-	.long 0x6C662074
-	.long 0x7261636B
-	.long 0x00000000
-	.long 0x6E773468
-	.long 0x626D3A3A
-	.long 0x736E643A
-	.long 0x3A4D6D6C
-	.long 0x50617273
-	.long 0x65723A20
-	.long 0x63616E6E
-	.long 0x6F742027
-	.long 0x63616C6C
-	.long 0x27206265
-	.long 0x63617573
-	.long 0x6520616C
-	.long 0x72656164
-	.long 0x7920746F
-	.long 0x6F206465
-	.long 0x65700000
-	.long 0x6E773468
-	.long 0x626D3A3A
-	.long 0x736E643A
-	.long 0x3A4D6D6C
-	.long 0x50617273
-	.long 0x65723A20
-	.long 0x756E6D61
-	.long 0x74636865
-	.long 0x64207365
-	.long 0x7175656E
-	.long 0x63652063
-	.long 0x6F6D6D61
-	.long 0x6E642027
-	.long 0x72657427
-	.long 0x00000000
-	.long 0x6E773468
-	.long 0x626D3A3A
-	.long 0x736E643A
-	.long 0x3A4D6D6C
-	.long 0x50617273
-	.long 0x65723A20
-	.long 0x63616E6E
-	.long 0x6F742027
-	.long 0x6C6F6F70
-	.long 0x5F737461
-	.long 0x72742720
-	.long 0x62656361
-	.long 0x75736520
-	.long 0x616C7265
-	.long 0x61647920
-	.long 0x746F6F20
-	.long 0x64656570
-	.long 0x00000000
-	.long 0x6E773468
-	.long 0x626D3A3A
-	.long 0x736E643A
-	.long 0x3A4D6D6C
-	.long 0x50617273
-	.long 0x65723A20
-	.long 0x756E6D61
-	.long 0x74636865
-	.long 0x64207365
-	.long 0x7175656E
-	.long 0x63652063
-	.long 0x6F6D6D61
-	.long 0x6E642027
-	.long 0x6C6F6F70
-	.long 0x5F656E64
-	.long 0x27000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x636D6420
-	.long 0x3D3D204D
-	.long 0x4D4C5F45
-	.long 0x585F434F
-	.long 0x4D4D414E
-	.long 0x44000000
-.global lbl_80195D58
-lbl_80195D58:
+	.asciz "NW4HBM:Pointer must not be NULL (track)"
+	.asciz "NW4HBM:Pointer must not be NULL (player)"
+	.balign 4
+	.asciz "seq: must use alloctrack in startup code"
+	.balign 4
+	.asciz "nw4hbm::snd::MmlParser: too large prg No. %d"
+	.balign 4
+	.asciz "varNo is out of bounds(%d)\n%d <= varNo <= %d not satisfied."
+	.asciz "#%08x[%d]: printvar %sVAR_%d(%d) = %d\n"
+	.balign 4
+	.asciz "nw4hbm::snd::MmlParser: opentrack for not allocated track"
+	.balign 4
+	.asciz "nw4hbm::snd::MmlParser: opentrack for self track"
+	.balign 4
+	.asciz "nw4hbm::snd::MmlParser: cannot 'call' because already too deep"
+	.balign 4
+	.asciz "nw4hbm::snd::MmlParser: unmatched sequence command 'ret'"
+	.balign 4
+	.asciz "nw4hbm::snd::MmlParser: cannot 'loop_start' because already too deep"
+	.balign 4
+	.asciz "nw4hbm::snd::MmlParser: unmatched sequence command 'loop_end'"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion cmd == MML_EX_COMMAND"
+glabel lbl_80195D58
 	.long 0x80124878
 	.long 0x8012506C
 	.long 0x8012506C
@@ -44200,225 +30975,56 @@ lbl_80195D58:
 	.long 0x8012506C
 	.long 0x80124CCC
 	.long 0x80124C3C
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x69203C20
-	.long 0x34000000
+	.asciz "NW4HBM:Failed assertion i < 4"
 	.long 0x00000000
-.global lbl_80195F70
-lbl_80195F70:
+glabel lbl_80195F70
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x801247D8
 	.long func_80125084
-.global lbl_80195F80
-lbl_80195F80:
+glabel lbl_80195F80
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80125318
 	.long func_80125304
-.global lbl_80195F90
-lbl_80195F90:
-	.long 0x736E645F
-	.long 0x4D6D6C53
-	.long 0x65715472
-	.long 0x61636B41
-	.long 0x6C6C6F63
-	.long 0x61746F72
-	.long 0x2E637070
-	.long 0x00000000
-.global lbl_80195FB0
-lbl_80195FB0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28747261
-	.long 0x636B2900
-.global lbl_80195FD8
-lbl_80195FD8:
+glabel lbl_80195F90
+	.asciz "snd_MmlSeqTrackAllocator.cpp"
+glabel lbl_80195FB0
+	.asciz "NW4HBM:Pointer must not be NULL (track)"
+glabel lbl_80195FD8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80125460
 	.long 0x80125358
 	.long 0x801253C0
 	.long 0x00000000
-.global lbl_80195FF0
-lbl_80195FF0:
-	.long 0x736E645F
-	.long 0x4E616E64
-	.long 0x536F756E
-	.long 0x64417263
-	.long 0x68697665
-	.long 0x2E637070
+glabel lbl_80195FF0
+	.asciz "snd_NandSoundArchive.cpp"
+glabel lbl_8019600C
+	.asciz "Failed close mcs file. ErrID=%d\n"
+	.balign 4
+	.asciz "Cannot find file %s\n"
+	.balign 4
+	.asciz "Cannot load header\n"
+	.asciz "NW4HBM:Failed assertion nandLen+1 < FILE_PATH_MAX"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion i < FILE_PATH_MAX"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mOpen"
+	.balign 4
 	.long 0x00000000
-.global lbl_8019600C
-lbl_8019600C:
-	.long 0x4661696C
-	.long 0x65642063
-	.long 0x6C6F7365
-	.long 0x206D6373
-	.long 0x2066696C
-	.long 0x652E2045
-	.long 0x72724944
-	.long 0x3D25640A
-	.long 0x00000000
-	.long 0x43616E6E
-	.long 0x6F742066
-	.long 0x696E6420
-	.long 0x66696C65
-	.long 0x2025730A
-	.long 0x00000000
-	.long 0x43616E6E
-	.long 0x6F74206C
-	.long 0x6F616420
-	.long 0x68656164
-	.long 0x65720A00
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6E616E64
-	.long 0x4C656E2B
-	.long 0x31203C20
-	.long 0x46494C45
-	.long 0x5F504154
-	.long 0x485F4D41
-	.long 0x58000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x69203C20
-	.long 0x46494C45
-	.long 0x5F504154
-	.long 0x485F4D41
-	.long 0x58000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D4F7065
-	.long 0x6E000000
-	.long 0x00000000
-	.long 0x4E616E64
-	.long 0x536F756E
-	.long 0x64417263
-	.long 0x68697665
-	.long 0x3A3A4C6F
-	.long 0x61644865
-	.long 0x61646572
-	.long 0x2063616E
-	.long 0x6E6F7420
-	.long 0x7365656B
-	.long 0x2066696C
-	.long 0x652E0A00
-	.long 0x4E616E64
-	.long 0x536F756E
-	.long 0x64417263
-	.long 0x68697665
-	.long 0x3A3A4C6F
-	.long 0x61644865
-	.long 0x61646572
-	.long 0x2063616E
-	.long 0x6E6F7420
-	.long 0x72656164
-	.long 0x2066696C
-	.long 0x652E0A00
-	.long 0x536F756E
-	.long 0x64417263
-	.long 0x68697665
-	.long 0x3A3A4C6F
-	.long 0x61644865
-	.long 0x61646572
-	.long 0x20627566
-	.long 0x66657220
-	.long 0x73697A65
-	.long 0x20697320
-	.long 0x746F6F20
-	.long 0x736D616C
-	.long 0x6C2E0A00
-	.long 0x536F756E
-	.long 0x64417263
-	.long 0x68697665
-	.long 0x3A3A4C6F
-	.long 0x61644C61
-	.long 0x62656C53
-	.long 0x7472696E
-	.long 0x67446174
-	.long 0x61206275
-	.long 0x66666572
-	.long 0x2073697A
-	.long 0x65206973
-	.long 0x20746F6F
-	.long 0x20736D61
-	.long 0x6C6C2E00
-	.long 0x4E616E64
-	.long 0x536F756E
-	.long 0x64417263
-	.long 0x68697665
-	.long 0x3A3A4C6F
-	.long 0x61644C61
-	.long 0x62656C53
-	.long 0x7472696E
-	.long 0x67446174
-	.long 0x61206361
-	.long 0x6E6E6F74
-	.long 0x20736565
-	.long 0x6B206669
-	.long 0x6C652E0A
-	.long 0x00000000
-	.long 0x4E616E64
-	.long 0x536F756E
-	.long 0x64417263
-	.long 0x68697665
-	.long 0x3A3A4C6F
-	.long 0x61644C61
-	.long 0x62656C53
-	.long 0x7472696E
-	.long 0x67446174
-	.long 0x61206361
-	.long 0x6E6E6F74
-	.long 0x20726561
-	.long 0x64206669
-	.long 0x6C652E0A
-	.long 0x00000000
-.global lbl_80196228
-lbl_80196228:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28627566
-	.long 0x29000000
-.global lbl_80196250
-lbl_80196250:
-	.long 0x556E7375
-	.long 0x70706F72
-	.long 0x74656420
-	.long 0x5365656B
-	.long 0x206F7269
-	.long 0x67696E00
-.global lbl_80196268
-lbl_80196268:
+	.asciz "NandSoundArchive::LoadHeader cannot seek file.\n"
+	.asciz "NandSoundArchive::LoadHeader cannot read file.\n"
+	.asciz "SoundArchive::LoadHeader buffer size is too small.\n"
+	.asciz "SoundArchive::LoadLabelStringData buffer size is too small."
+	.asciz "NandSoundArchive::LoadLabelStringData cannot seek file.\n"
+	.balign 4
+	.asciz "NandSoundArchive::LoadLabelStringData cannot read file.\n"
+glabel lbl_80196228
+	.asciz "NW4HBM:Pointer must not be NULL (buf)"
+glabel lbl_80196250
+	.asciz "Unsupported Seek origin"
+glabel lbl_80196268
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80125DA8
@@ -44443,8 +31049,7 @@ lbl_80196268:
 	.long 0x80125D78
 	.long 0x80125DB8
 	.long 0x00000000
-.global lbl_801962C8
-lbl_801962C8:
+glabel lbl_801962C8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x801254EC
@@ -44453,363 +31058,63 @@ lbl_801962C8:
 	.long 0x801259EC
 	.long 0x801257E0
 	.long 0x801258A8
-.global lbl_801962E8
-lbl_801962E8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_8019630C
-lbl_8019630C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80196318
-lbl_80196318:
-	.long 0x736E645F
-	.long 0x52656D6F
-	.long 0x74655370
-	.long 0x65616B65
-	.long 0x722E6370
-	.long 0x70000000
-	.long 0x52656D6F
-	.long 0x74655370
-	.long 0x65616B65
-	.long 0x723A3A53
-	.long 0x65747570
-	.long 0x20697320
-	.long 0x62757379
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x49734176
-	.long 0x61696C61
-	.long 0x626C6528
-	.long 0x29000000
-	.long 0x57504144
-	.long 0x53656E64
-	.long 0x53747265
-	.long 0x616D4461
-	.long 0x74612066
-	.long 0x61696C65
-	.long 0x642E2025
-	.long 0x64000000
-.global lbl_80196398
-lbl_80196398:
-	.long 0x506C6179
-	.long 0x696E6720
-	.long 0x74696D65
-	.long 0x206F6620
-	.long 0x72656D6F
-	.long 0x74652073
-	.long 0x7065616B
-	.long 0x65722825
-	.long 0x64292069
-	.long 0x73206F76
-	.long 0x65722038
-	.long 0x206D696E
-	.long 0x75746573
-	.long 0x2E000000
-.global lbl_801963D0
-lbl_801963D0:
-	.long 0x736E645F
-	.long 0x52656D6F
-	.long 0x74655370
-	.long 0x65616B65
-	.long 0x724D616E
-	.long 0x61676572
-	.long 0x2E637070
+glabel lbl_801962E8
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_8019630C
+	.asciz "LinkList.h"
+glabel lbl_80196318
+	.asciz "snd_RemoteSpeaker.cpp"
+	.balign 4
+	.asciz "RemoteSpeaker::Setup is busy."
+	.balign 4
+	.asciz "NW4HBM:Failed assertion IsAvailable()"
+	.balign 4
+	.asciz "WPADSendStreamData failed. %d"
+glabel lbl_80196398
+	.asciz "Playing time of remote speaker(%d) is over 8 minutes."
+glabel lbl_801963D0
+	.asciz "snd_RemoteSpeakerManager.cpp"
+	.balign 4
+	.asciz "channelIndex is out of bounds(%d)\n%d <= channelIndex < %d not satisfied."
+	.balign 4
+	.asciz "NW4HBM:Failed assertion &manager.mRemoteSpeakerAlarm == alarm"
+	.balign 4
+	.asciz "wrong remote sample size"
+glabel lbl_80196498
+	.asciz "snd_SeqFile.cpp"
+	.asciz "NW4HBM:Failed assertion fileHeader->signature == SeqFile::SIGNATURE_FILE"
+	.balign 4
+	.asciz "seq file is not supported version.\n  please reconvert file using new version tools.\n"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (seqData)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mDataBlock->blockHeader.kind == SeqFile::SIGNATURE_DATA_BLOCK"
+glabel lbl_801965D0
+	.asciz "NW4HBM:Pointer must not be NULL (mHeader)"
 	.long 0x00000000
-	.long 0x6368616E
-	.long 0x6E656C49
-	.long 0x6E646578
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x6368616E
-	.long 0x6E656C49
-	.long 0x6E646578
-	.long 0x203C2025
-	.long 0x64206E6F
-	.long 0x74207361
-	.long 0x74697366
-	.long 0x6965642E
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x266D616E
-	.long 0x61676572
-	.long 0x2E6D5265
-	.long 0x6D6F7465
-	.long 0x53706561
-	.long 0x6B657241
-	.long 0x6C61726D
-	.long 0x203D3D20
-	.long 0x616C6172
-	.long 0x6D000000
-	.long 0x77726F6E
-	.long 0x67207265
-	.long 0x6D6F7465
-	.long 0x2073616D
-	.long 0x706C6520
-	.long 0x73697A65
-	.long 0x00000000
-.global lbl_80196498
-lbl_80196498:
-	.long 0x736E645F
-	.long 0x53657146
-	.long 0x696C652E
-	.long 0x63707000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x66696C65
-	.long 0x48656164
-	.long 0x65722D3E
-	.long 0x7369676E
-	.long 0x61747572
-	.long 0x65203D3D
-	.long 0x20536571
-	.long 0x46696C65
-	.long 0x3A3A5349
-	.long 0x474E4154
-	.long 0x5552455F
-	.long 0x46494C45
-	.long 0x00000000
-	.long 0x73657120
-	.long 0x66696C65
-	.long 0x20697320
-	.long 0x6E6F7420
-	.long 0x73757070
-	.long 0x6F727465
-	.long 0x64207665
-	.long 0x7273696F
-	.long 0x6E2E0A20
-	.long 0x20706C65
-	.long 0x61736520
-	.long 0x7265636F
-	.long 0x6E766572
-	.long 0x74206669
-	.long 0x6C652075
-	.long 0x73696E67
-	.long 0x206E6577
-	.long 0x20766572
-	.long 0x73696F6E
-	.long 0x20746F6F
-	.long 0x6C732E0A
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28736571
-	.long 0x44617461
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D446174
-	.long 0x61426C6F
-	.long 0x636B2D3E
-	.long 0x626C6F63
-	.long 0x6B486561
-	.long 0x6465722E
-	.long 0x6B696E64
-	.long 0x203D3D20
-	.long 0x53657146
-	.long 0x696C653A
-	.long 0x3A534947
-	.long 0x4E415455
-	.long 0x52455F44
-	.long 0x4154415F
-	.long 0x424C4F43
-	.long 0x4B000000
-.global lbl_801965D0
-lbl_801965D0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286D4865
-	.long 0x61646572
-	.long 0x29000000
-	.long 0x00000000
-.global lbl_80196600
-lbl_80196600:
-	.long 0x736E645F
-	.long 0x53657150
-	.long 0x6C617965
-	.long 0x722E6370
-	.long 0x70000000
-	.long 0x74726163
-	.long 0x6B4E6F20
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2074
-	.long 0x7261636B
-	.long 0x4E6F203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x4E6F7420
-	.long 0x656E6F75
-	.long 0x67682053
-	.long 0x65715472
-	.long 0x61636B2E
-	.long 0x00000000
-.global lbl_8019666C
-lbl_8019666C:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28736571
-	.long 0x54726163
-	.long 0x6B290000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x74656D70
-	.long 0x6F526174
-	.long 0x696F203E
-	.long 0x3D20302E
-	.long 0x30660000
-.global lbl_801966C4
-lbl_801966C4:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x766F6C75
-	.long 0x6D65203E
-	.long 0x3D20302E
-	.long 0x30660000
-.global lbl_801966EC
-lbl_801966EC:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70697463
-	.long 0x68203E3D
-	.long 0x20302E30
-	.long 0x66000000
-.global lbl_80196714
-lbl_80196714:
-	.long 0x62757320
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2062
-	.long 0x7573203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-.global lbl_8019674C
-lbl_8019674C:
-	.long 0x72656D6F
-	.long 0x7465496E
-	.long 0x64657820
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656D6F74
-	.long 0x65496E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-.global lbl_80196794
-lbl_80196794:
-	.long 0x7072696F
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x7072696F
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x7661724E
-	.long 0x6F206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20766172
-	.long 0x4E6F203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
+glabel lbl_80196600
+	.asciz "snd_SeqPlayer.cpp"
+	.balign 4
+	.asciz "trackNo is out of bounds(%d)\n%d <= trackNo < %d not satisfied."
+	.balign 4
+	.asciz "Not enough SeqTrack."
+glabel lbl_8019666C
+	.asciz "NW4HBM:Pointer must not be NULL (seqTrack)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion tempoRatio >= 0.0f"
+glabel lbl_801966C4
+	.asciz "NW4HBM:Failed assertion volume >= 0.0f"
+glabel lbl_801966EC
+	.asciz "NW4HBM:Failed assertion pitch >= 0.0f"
+glabel lbl_80196714
+	.asciz "bus is out of bounds(%d)\n%d <= bus < %d not satisfied."
+glabel lbl_8019674C
+	.asciz "remoteIndex is out of bounds(%d)\n%d <= remoteIndex < %d not satisfied."
+glabel lbl_80196794
+	.asciz "prio is out of bounds(%d)\n%d <= prio <= %d not satisfied."
+	.balign 4
+	.asciz "varNo is out of bounds(%d)\n%d <= varNo < %d not satisfied."
+	.balign 4
 	.long 0x00000000
 	.long 0xFFFFFFFF
 	.long 0x801294F0
@@ -44852,59 +31157,14 @@ lbl_80196794:
 	.long 0x00000000
 	.long 0xFFFFFFFF
 	.long 0x80129AE4
-.global lbl_801968B4
-lbl_801968B4:
-	.long 0x7661724E
-	.long 0x6F206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20766172
-	.long 0x4E6F203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D416374
-	.long 0x69766546
-	.long 0x6C616700
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D537461
-	.long 0x72746564
-	.long 0x466C6167
+glabel lbl_801968B4
+	.asciz "varNo is out of bounds(%d)\n%d <= varNo <= %d not satisfied."
+	.asciz "NW4HBM:Failed assertion mActiveFlag"
+	.asciz "NW4HBM:Failed assertion mStartedFlag"
+glabel lbl_8019693C
+	.asciz "NW4HBM:Failed assertion sPlayerList.IsEmpty()"
 	.long 0x00000000
-.global lbl_8019693C
-lbl_8019693C:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x73506C61
-	.long 0x7965724C
-	.long 0x6973742E
-	.long 0x4973456D
-	.long 0x70747928
-	.long 0x29000000
-	.long 0x00000000
-.global lbl_80196970
-lbl_80196970:
+glabel lbl_80196970
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x801267EC
@@ -44995,183 +31255,36 @@ lbl_80196970:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80196B08
-lbl_80196B08:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80196B2C
-lbl_80196B2C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80196B38
-lbl_80196B38:
-	.long 0x736E645F
-	.long 0x53657153
-	.long 0x6F756E64
-	.long 0x2E637070
-	.long 0x00000000
-.global lbl_80196B4C
-lbl_80196B4C:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x2863616C
-	.long 0x6C626163
-	.long 0x6B290000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28476574
-	.long 0x536F756E
-	.long 0x64506C61
-	.long 0x79657228
-	.long 0x29290000
-.global lbl_80196BAC
-lbl_80196BAC:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28736571
-	.long 0x42617365
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28736F75
-	.long 0x6E642900
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x74656D70
-	.long 0x6F526174
-	.long 0x696F203E
-	.long 0x3D20302E
-	.long 0x30660000
-.global lbl_80196C2C
-lbl_80196C2C:
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x766F6C75
-	.long 0x6D65203E
-	.long 0x3D20302E
-	.long 0x30660000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70697463
-	.long 0x68203E3D
-	.long 0x20302E30
-	.long 0x66000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28766172
-	.long 0x29000000
-	.long 0x7661724E
-	.long 0x6F206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20766172
-	.long 0x4E6F203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x74726163
-	.long 0x6B4E6F20
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2074
-	.long 0x7261636B
-	.long 0x4E6F203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-.global lbl_80196D64
-lbl_80196D64:
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_80196B08
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80196B2C
+	.asciz "LinkList.h"
+glabel lbl_80196B38
+	.asciz "snd_SeqSound.cpp"
+glabel lbl_80196B4C
+	.asciz "NW4HBM:Pointer must not be NULL (callback)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (GetSoundPlayer())"
+glabel lbl_80196BAC
+	.asciz "NW4HBM:Pointer must not be NULL (seqBase)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (sound)"
+	.asciz "NW4HBM:Failed assertion tempoRatio >= 0.0f"
+glabel lbl_80196C2C
+	.asciz "priority is out of bounds(%d)\n%d <= priority <= %d not satisfied."
+	.balign 4
+	.asciz "NW4HBM:Failed assertion volume >= 0.0f"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion pitch >= 0.0f"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (var)"
+	.balign 4
+	.asciz "varNo is out of bounds(%d)\n%d <= varNo < %d not satisfied."
+	.balign 4
+	.asciz "trackNo is out of bounds(%d)\n%d <= trackNo < %d not satisfied."
+glabel lbl_80196D64
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80128738
@@ -45197,394 +31310,70 @@ lbl_80196D64:
 	.long 0x80128138
 	.long 0x80128728
 	.long 0x80128730
-.global lbl_80196DC8
-lbl_80196DC8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80196DEC
-lbl_80196DEC:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80196DF8
-lbl_80196DF8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80196E1C
-lbl_80196E1C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80196E28
-lbl_80196E28:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28736F75
-	.long 0x6E642900
-.global lbl_80196E50
-lbl_80196E50:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-.global lbl_80196E68
-lbl_80196E68:
-	.long 0x736E645F
-	.long 0x53657154
-	.long 0x7261636B
-	.long 0x2E637070
+glabel lbl_80196DC8
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80196DEC
+	.asciz "LinkList.h"
+glabel lbl_80196DF8
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80196E1C
+	.asciz "LinkList.h"
+glabel lbl_80196E28
+	.asciz "NW4HBM:Pointer must not be NULL (sound)"
+glabel lbl_80196E50
+	.asciz "SoundInstanceManager.h"
+glabel lbl_80196E68
+	.asciz "snd_SeqTrack.cpp"
+glabel lbl_80196E7C
+	.asciz "playerTrackNo is out of bounds(%d)\n%d <= playerTrackNo <= %d not satisfied."
+	.asciz "release is out of bounds(%d)\n%d <= release <= %d not satisfied."
+	.asciz "NW4HBM:Pointer must not be NULL (dropChannel)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (track)"
+	.asciz "NW4HBM:Pointer must not be NULL (channel)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion false"
+glabel lbl_80196FAC
+	.asciz "NW4HBM:Failed assertion pitch >= 0.0f"
+glabel lbl_80196FD4
+	.asciz "bus is out of bounds(%d)\n%d <= bus < %d not satisfied."
+glabel lbl_8019700C
+	.asciz "remoteIndex is out of bounds(%d)\n%d <= remoteIndex < %d not satisfied."
+	.balign 4
+	.asciz "varNo is out of bounds(%d)\n%d <= varNo < %d not satisfied."
+glabel lbl_80197090
+	.asciz "varNo is out of bounds(%d)\n%d <= varNo <= %d not satisfied."
 	.long 0x00000000
-.global lbl_80196E7C
-lbl_80196E7C:
-	.long 0x706C6179
-	.long 0x65725472
-	.long 0x61636B4E
-	.long 0x6F206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20706C61
-	.long 0x79657254
-	.long 0x7261636B
-	.long 0x4E6F203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x72656C65
-	.long 0x61736520
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656C6561
-	.long 0x7365203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x2864726F
-	.long 0x70436861
-	.long 0x6E6E656C
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28747261
-	.long 0x636B2900
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28636861
-	.long 0x6E6E656C
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x66616C73
-	.long 0x65000000
-.global lbl_80196FAC
-lbl_80196FAC:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70697463
-	.long 0x68203E3D
-	.long 0x20302E30
-	.long 0x66000000
-.global lbl_80196FD4
-lbl_80196FD4:
-	.long 0x62757320
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2062
-	.long 0x7573203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-.global lbl_8019700C
-lbl_8019700C:
-	.long 0x72656D6F
-	.long 0x7465496E
-	.long 0x64657820
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656D6F74
-	.long 0x65496E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x7661724E
-	.long 0x6F206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20766172
-	.long 0x4E6F203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-.global lbl_80197090
-lbl_80197090:
-	.long 0x7661724E
-	.long 0x6F206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20766172
-	.long 0x4E6F203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
+	.asciz "key is out of bounds(%d)\n%d <= key <= %d not satisfied."
+	.asciz "velocity is out of bounds(%d)\n%d <= velocity <= %d not satisfied."
+	.balign 4
+	.asciz "portatime zero is invalid."
+	.balign 4
+	.asciz "fadeTimes is out of bounds(%d)\n%d <= fadeTimes <= %d not satisfied."
+	.asciz "Channel.h"
+	.balign 4
+	.asciz "remoteIndex is out of bounds(%d)\n%d <= remoteIndex < %d not satisfied."
+	.balign 4
+	.asciz "Channel.h"
+	.balign 4
+	.asciz "remoteIndex is out of bounds(%d)\n%d <= remoteIndex < %d not satisfied."
+	.balign 4
+	.asciz "Channel.h"
+	.balign 4
+	.asciz "remoteIndex is out of bounds(%d)\n%d <= remoteIndex < %d not satisfied."
+	.balign 4
+	.asciz "Channel.h"
 	.long 0x00000000
-	.long 0x6B657920
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D206B
-	.long 0x6579203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x76656C6F
-	.long 0x63697479
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x76656C6F
-	.long 0x63697479
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x706F7274
-	.long 0x6174696D
-	.long 0x65207A65
-	.long 0x726F2069
-	.long 0x7320696E
-	.long 0x76616C69
-	.long 0x642E0000
-	.long 0x66616465
-	.long 0x54696D65
-	.long 0x73206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20666164
-	.long 0x6554696D
-	.long 0x6573203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x4368616E
-	.long 0x6E656C2E
-	.long 0x68000000
-	.long 0x72656D6F
-	.long 0x7465496E
-	.long 0x64657820
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656D6F74
-	.long 0x65496E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x4368616E
-	.long 0x6E656C2E
-	.long 0x68000000
-	.long 0x72656D6F
-	.long 0x7465496E
-	.long 0x64657820
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656D6F74
-	.long 0x65496E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x4368616E
-	.long 0x6E656C2E
-	.long 0x68000000
-	.long 0x72656D6F
-	.long 0x7465496E
-	.long 0x64657820
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656D6F74
-	.long 0x65496E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x4368616E
-	.long 0x6E656C2E
-	.long 0x68000000
+glabel lbl_801972B8
+	.asciz "snd_SoundArchive.cpp"
+glabel lbl_801972D0
+	.asciz "NW4HBM:Pointer must not be NULL (fileReader)"
+glabel lbl_80197300
+	.asciz "Too long file path \"%s/%s\""
 	.long 0x00000000
-.global lbl_801972B8
-lbl_801972B8:
-	.long 0x736E645F
-	.long 0x536F756E
-	.long 0x64417263
-	.long 0x68697665
-	.long 0x2E637070
-	.long 0x00000000
-.global lbl_801972D0
-lbl_801972D0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x2866696C
-	.long 0x65526561
-	.long 0x64657229
-	.long 0x00000000
-.global lbl_80197300
-lbl_80197300:
-	.long 0x546F6F20
-	.long 0x6C6F6E67
-	.long 0x2066696C
-	.long 0x65207061
-	.long 0x74682022
-	.long 0x25732F25
-	.long 0x73220000
-	.long 0x00000000
-.global lbl_80197320
-lbl_80197320:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6E756C6C
-	.long 0x506F7320
-	.long 0x3C204649
-	.long 0x4C455F50
-	.long 0x4154485F
-	.long 0x4D415800
-.global lbl_80197350
-lbl_80197350:
+glabel lbl_80197320
+	.asciz "NW4HBM:Failed assertion nullPos < FILE_PATH_MAX"
+glabel lbl_80197350
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80129FE4
@@ -45593,952 +31382,127 @@ lbl_80197350:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_80197370
-lbl_80197370:
-	.long 0x736E645F
-	.long 0x536F756E
-	.long 0x64417263
-	.long 0x68697665
-	.long 0x46696C65
-	.long 0x2E637070
+glabel lbl_80197370
+	.asciz "snd_SoundArchiveFile.cpp"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (soundArchiveData)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion fileHeader->signature == SoundArchiveFile::SIGNATURE_FILE"
+	.balign 4
+	.asciz "sound archive file is not supported version.\n  please reconvert file using new version tools.\n"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (stringChunk)"
+	.balign 4
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28736F75
-	.long 0x6E644172
-	.long 0x63686976
-	.long 0x65446174
-	.long 0x61290000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x66696C65
-	.long 0x48656164
-	.long 0x65722D3E
-	.long 0x7369676E
-	.long 0x61747572
-	.long 0x65203D3D
-	.long 0x20536F75
-	.long 0x6E644172
-	.long 0x63686976
-	.long 0x6546696C
-	.long 0x653A3A53
-	.long 0x49474E41
-	.long 0x54555245
-	.long 0x5F46494C
-	.long 0x45000000
-	.long 0x736F756E
-	.long 0x64206172
-	.long 0x63686976
-	.long 0x65206669
-	.long 0x6C652069
-	.long 0x73206E6F
-	.long 0x74207375
-	.long 0x70706F72
-	.long 0x74656420
-	.long 0x76657273
-	.long 0x696F6E2E
-	.long 0x0A202070
-	.long 0x6C656173
-	.long 0x65207265
-	.long 0x636F6E76
-	.long 0x65727420
-	.long 0x66696C65
-	.long 0x20757369
-	.long 0x6E67206E
-	.long 0x65772076
-	.long 0x65727369
-	.long 0x6F6E2074
-	.long 0x6F6F6C73
-	.long 0x2E0A0000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28737472
-	.long 0x696E6743
-	.long 0x68756E6B
-	.long 0x29000000
+	.asciz "NW4HBM:Failed assertion symbolBlock->blockHeader.kind == SoundArchiveFile::SIGNATURE_SYMB_BLOCK"
+	.asciz "NW4HBM:Pointer must not be NULL (infoChunk)"
+	.asciz "NW4HBM:Failed assertion infoBlock->blockHeader.kind == SoundArchiveFile::SIGNATURE_INFO_BLOCK"
+glabel lbl_80197594
+	.asciz "NW4HBM:Failed assertion id < mStringTable->offsetTable.count"
+glabel lbl_801975D4
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_80197600
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_8019762C
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_80197658
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_80197684
+	.asciz "NW4HBM:Failed assertion ref.dataType == 3"
+glabel lbl_801976B0
+	.asciz "NW4HBM:Failed assertion ref.dataType == 2"
+glabel lbl_801976DC
+	.asciz "NW4HBM:Failed assertion ref.dataType == 1"
+glabel lbl_80197708
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_80197734
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_80197760
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_8019778C
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_801977B8
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_801977E4
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_80197810
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_8019783C
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_80197868
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_801978EC
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_80197918
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x73796D62
-	.long 0x6F6C426C
-	.long 0x6F636B2D
-	.long 0x3E626C6F
-	.long 0x636B4865
-	.long 0x61646572
-	.long 0x2E6B696E
-	.long 0x64203D3D
-	.long 0x20536F75
-	.long 0x6E644172
-	.long 0x63686976
-	.long 0x6546696C
-	.long 0x653A3A53
-	.long 0x49474E41
-	.long 0x54555245
-	.long 0x5F53594D
-	.long 0x425F424C
-	.long 0x4F434B00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28696E66
-	.long 0x6F436875
-	.long 0x6E6B2900
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x696E666F
-	.long 0x426C6F63
-	.long 0x6B2D3E62
-	.long 0x6C6F636B
-	.long 0x48656164
-	.long 0x65722E6B
-	.long 0x696E6420
-	.long 0x3D3D2053
-	.long 0x6F756E64
-	.long 0x41726368
-	.long 0x69766546
-	.long 0x696C653A
-	.long 0x3A534947
-	.long 0x4E415455
-	.long 0x52455F49
-	.long 0x4E464F5F
-	.long 0x424C4F43
-	.long 0x4B000000
-.global lbl_80197594
-lbl_80197594:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6964203C
-	.long 0x206D5374
-	.long 0x72696E67
-	.long 0x5461626C
-	.long 0x652D3E6F
-	.long 0x66667365
-	.long 0x74546162
-	.long 0x6C652E63
-	.long 0x6F756E74
+glabel lbl_80197948
+	.asciz "snd_SoundArchiveLoader.cpp"
+glabel lbl_80197964
+	.asciz "NW4HBM:Pointer must not be NULL (allocater)"
+glabel lbl_80197990
+	.asciz "snd_SoundArchivePlayer.cpp"
+glabel lbl_801979AC
+	.asciz "NW4HBM:Pointer must not be NULL (arc)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (buffer)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (strmBuffer)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion strmBufferSize >= GetRequiredStrmBufferSize( arc )"
+	.balign 4
+	.asciz "NW4HBM:Alignment Error(0x%x)\nbuffer must be aligned to 4 bytes boundary."
+	.balign 4
+	.asciz "NW4HBM:Failed assertion size >= GetRequiredMemSize( arc )"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion createNum == numSounds"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion createNum == numTracks"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion static_cast<char*>(buf) - static_cast<char*>(buffer) == GetRequiredMemSize( arc )"
+glabel lbl_80197BD0
+	.asciz "playerId is out of bounds(%d)\n%d <= playerId < %d not satisfied."
 	.long 0x00000000
-.global lbl_801975D4
-lbl_801975D4:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_80197600
-lbl_80197600:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_8019762C
-lbl_8019762C:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_80197658
-lbl_80197658:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_80197684
-lbl_80197684:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x33000000
-.global lbl_801976B0
-lbl_801976B0:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x32000000
-.global lbl_801976DC
-lbl_801976DC:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x31000000
-.global lbl_80197708
-lbl_80197708:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_80197734
-lbl_80197734:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_80197760
-lbl_80197760:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_8019778C
-lbl_8019778C:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_801977B8
-lbl_801977B8:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_801977E4
-lbl_801977E4:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_80197810
-lbl_80197810:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_8019783C
-lbl_8019783C:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_80197868
-lbl_80197868:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_801978EC
-lbl_801978EC:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_80197918
-lbl_80197918:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
+glabel lbl_80197C18
+	.asciz "Setup is not completed."
+	.asciz "NW4HBM:Pointer must not be NULL (mSoundArchive)"
+	.asciz "Failed to SoundArchivePlayer::GetGroupAddress because group table is not allocated.\n"
+	.balign 4
+	.asciz "Failed to SoundArchivePlayer::GetGroupWaveDataAddress because group table is not allocated.\n"
+	.balign 4
+	.asciz "Failed to SoundArchivePlayer::SetGroupAddress because group table is not allocated.\n"
+	.balign 4
+	.asciz "groupId is out of bounds(%d)\n%d <= groupId < %d not satisfied."
+	.balign 4
+	.asciz "Failed to SoundArchivePlayer::SetGroupWaveDataAddress because group table is not allocated.\n"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (handle)"
+glabel lbl_80197E3C
+	.asciz "NW4HBM:Pointer must not be NULL (info)"
+	.balign 4
+	.asciz "NW4HBM:Alignment Error(0x%x)\nloadBlockSize must be aligned to 32 bytes boundary."
+	.balign 4
+	.asciz "NW4HBM:Failed assertion detail::TaskManager::GetInstance().GetTaskBufferSize() >= sizeof(SeqLoadTask)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (addr)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion detail::TaskManager::GetInstance().GetTaskBufferSize() >= sizeof(StrmHeaderLoadTask)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion detail::TaskManager::GetInstance().GetTaskBufferSize() >= sizeof(StrmDataLoadTask)"
 	.long 0x00000000
-.global lbl_80197948
-lbl_80197948:
-	.long 0x736E645F
-	.long 0x536F756E
-	.long 0x64417263
-	.long 0x68697665
-	.long 0x4C6F6164
-	.long 0x65722E63
-	.long 0x70700000
-.global lbl_80197964
-lbl_80197964:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28616C6C
-	.long 0x6F636174
-	.long 0x65722900
-.global lbl_80197990
-lbl_80197990:
-	.long 0x736E645F
-	.long 0x536F756E
-	.long 0x64417263
-	.long 0x68697665
-	.long 0x506C6179
-	.long 0x65722E63
-	.long 0x70700000
-.global lbl_801979AC
-lbl_801979AC:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28617263
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28627566
-	.long 0x66657229
+glabel lbl_80198028
+	.asciz "NW4HBM:Failed assertion mStream == NULL"
+	.asciz "NW4HBM:Alignment Error(0x%x)\naddr must be aligned to 32 bytes boundary."
+	.asciz "NW4HBM:Alignment Error(0x%x)\nsize must be aligned to 32 bytes boundary."
+	.asciz "NW4HBM:Alignment Error(0x%x)\noffset must be aligned to 4 bytes boundary."
+glabel lbl_8019812C
+	.asciz "failed to load stream\n"
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28737472
-	.long 0x6D427566
-	.long 0x66657229
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7374726D
-	.long 0x42756666
-	.long 0x65725369
-	.long 0x7A65203E
-	.long 0x3D204765
-	.long 0x74526571
-	.long 0x75697265
-	.long 0x64537472
-	.long 0x6D427566
-	.long 0x66657253
-	.long 0x697A6528
-	.long 0x20617263
-	.long 0x20290000
-	.long 0x4E573448
-	.long 0x424D3A41
-	.long 0x6C69676E
-	.long 0x6D656E74
-	.long 0x20457272
-	.long 0x6F722830
-	.long 0x78257829
-	.long 0x0A627566
-	.long 0x66657220
-	.long 0x6D757374
-	.long 0x20626520
-	.long 0x616C6967
-	.long 0x6E656420
-	.long 0x746F2034
-	.long 0x20627974
-	.long 0x65732062
-	.long 0x6F756E64
-	.long 0x6172792E
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x73697A65
-	.long 0x203E3D20
-	.long 0x47657452
-	.long 0x65717569
-	.long 0x7265644D
-	.long 0x656D5369
-	.long 0x7A652820
-	.long 0x61726320
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x63726561
-	.long 0x74654E75
-	.long 0x6D203D3D
-	.long 0x206E756D
-	.long 0x536F756E
-	.long 0x64730000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x63726561
-	.long 0x74654E75
-	.long 0x6D203D3D
-	.long 0x206E756D
-	.long 0x54726163
-	.long 0x6B730000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x73746174
-	.long 0x69635F63
-	.long 0x6173743C
-	.long 0x63686172
-	.long 0x2A3E2862
-	.long 0x75662920
-	.long 0x2D207374
-	.long 0x61746963
-	.long 0x5F636173
-	.long 0x743C6368
-	.long 0x61722A3E
-	.long 0x28627566
-	.long 0x66657229
-	.long 0x203D3D20
-	.long 0x47657452
-	.long 0x65717569
-	.long 0x7265644D
-	.long 0x656D5369
-	.long 0x7A652820
-	.long 0x61726320
-	.long 0x29000000
-.global lbl_80197BD0
-lbl_80197BD0:
-	.long 0x706C6179
-	.long 0x65724964
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x706C6179
-	.long 0x65724964
-	.long 0x203C2025
-	.long 0x64206E6F
-	.long 0x74207361
-	.long 0x74697366
-	.long 0x6965642E
-	.long 0x00000000
-	.long 0x00000000
-.global lbl_80197C18
-lbl_80197C18:
-	.long 0x53657475
-	.long 0x70206973
-	.long 0x206E6F74
-	.long 0x20636F6D
-	.long 0x706C6574
-	.long 0x65642E00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286D536F
-	.long 0x756E6441
-	.long 0x72636869
-	.long 0x76652900
-	.long 0x4661696C
-	.long 0x65642074
-	.long 0x6F20536F
-	.long 0x756E6441
-	.long 0x72636869
-	.long 0x7665506C
-	.long 0x61796572
-	.long 0x3A3A4765
-	.long 0x7447726F
-	.long 0x75704164
-	.long 0x64726573
-	.long 0x73206265
-	.long 0x63617573
-	.long 0x65206772
-	.long 0x6F757020
-	.long 0x7461626C
-	.long 0x65206973
-	.long 0x206E6F74
-	.long 0x20616C6C
-	.long 0x6F636174
-	.long 0x65642E0A
-	.long 0x00000000
-	.long 0x4661696C
-	.long 0x65642074
-	.long 0x6F20536F
-	.long 0x756E6441
-	.long 0x72636869
-	.long 0x7665506C
-	.long 0x61796572
-	.long 0x3A3A4765
-	.long 0x7447726F
-	.long 0x75705761
-	.long 0x76654461
-	.long 0x74614164
-	.long 0x64726573
-	.long 0x73206265
-	.long 0x63617573
-	.long 0x65206772
-	.long 0x6F757020
-	.long 0x7461626C
-	.long 0x65206973
-	.long 0x206E6F74
-	.long 0x20616C6C
-	.long 0x6F636174
-	.long 0x65642E0A
-	.long 0x00000000
-	.long 0x4661696C
-	.long 0x65642074
-	.long 0x6F20536F
-	.long 0x756E6441
-	.long 0x72636869
-	.long 0x7665506C
-	.long 0x61796572
-	.long 0x3A3A5365
-	.long 0x7447726F
-	.long 0x75704164
-	.long 0x64726573
-	.long 0x73206265
-	.long 0x63617573
-	.long 0x65206772
-	.long 0x6F757020
-	.long 0x7461626C
-	.long 0x65206973
-	.long 0x206E6F74
-	.long 0x20616C6C
-	.long 0x6F636174
-	.long 0x65642E0A
-	.long 0x00000000
-	.long 0x67726F75
-	.long 0x70496420
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2067
-	.long 0x726F7570
-	.long 0x4964203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x4661696C
-	.long 0x65642074
-	.long 0x6F20536F
-	.long 0x756E6441
-	.long 0x72636869
-	.long 0x7665506C
-	.long 0x61796572
-	.long 0x3A3A5365
-	.long 0x7447726F
-	.long 0x75705761
-	.long 0x76654461
-	.long 0x74614164
-	.long 0x64726573
-	.long 0x73206265
-	.long 0x63617573
-	.long 0x65206772
-	.long 0x6F757020
-	.long 0x7461626C
-	.long 0x65206973
-	.long 0x206E6F74
-	.long 0x20616C6C
-	.long 0x6F636174
-	.long 0x65642E0A
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x2868616E
-	.long 0x646C6529
-	.long 0x00000000
-.global lbl_80197E3C
-lbl_80197E3C:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28696E66
-	.long 0x6F290000
-	.long 0x4E573448
-	.long 0x424D3A41
-	.long 0x6C69676E
-	.long 0x6D656E74
-	.long 0x20457272
-	.long 0x6F722830
-	.long 0x78257829
-	.long 0x0A6C6F61
-	.long 0x64426C6F
-	.long 0x636B5369
-	.long 0x7A65206D
-	.long 0x75737420
-	.long 0x62652061
-	.long 0x6C69676E
-	.long 0x65642074
-	.long 0x6F203332
-	.long 0x20627974
-	.long 0x65732062
-	.long 0x6F756E64
-	.long 0x6172792E
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x64657461
-	.long 0x696C3A3A
-	.long 0x5461736B
-	.long 0x4D616E61
-	.long 0x6765723A
-	.long 0x3A476574
-	.long 0x496E7374
-	.long 0x616E6365
-	.long 0x28292E47
-	.long 0x65745461
-	.long 0x736B4275
-	.long 0x66666572
-	.long 0x53697A65
-	.long 0x2829203E
-	.long 0x3D207369
-	.long 0x7A656F66
-	.long 0x28536571
-	.long 0x4C6F6164
-	.long 0x5461736B
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28616464
-	.long 0x72290000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x64657461
-	.long 0x696C3A3A
-	.long 0x5461736B
-	.long 0x4D616E61
-	.long 0x6765723A
-	.long 0x3A476574
-	.long 0x496E7374
-	.long 0x616E6365
-	.long 0x28292E47
-	.long 0x65745461
-	.long 0x736B4275
-	.long 0x66666572
-	.long 0x53697A65
-	.long 0x2829203E
-	.long 0x3D207369
-	.long 0x7A656F66
-	.long 0x28537472
-	.long 0x6D486561
-	.long 0x6465724C
-	.long 0x6F616454
-	.long 0x61736B29
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x64657461
-	.long 0x696C3A3A
-	.long 0x5461736B
-	.long 0x4D616E61
-	.long 0x6765723A
-	.long 0x3A476574
-	.long 0x496E7374
-	.long 0x616E6365
-	.long 0x28292E47
-	.long 0x65745461
-	.long 0x736B4275
-	.long 0x66666572
-	.long 0x53697A65
-	.long 0x2829203E
-	.long 0x3D207369
-	.long 0x7A656F66
-	.long 0x28537472
-	.long 0x6D446174
-	.long 0x614C6F61
-	.long 0x64546173
-	.long 0x6B290000
-	.long 0x00000000
-.global lbl_80198028
-lbl_80198028:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D537472
-	.long 0x65616D20
-	.long 0x3D3D204E
-	.long 0x554C4C00
-	.long 0x4E573448
-	.long 0x424D3A41
-	.long 0x6C69676E
-	.long 0x6D656E74
-	.long 0x20457272
-	.long 0x6F722830
-	.long 0x78257829
-	.long 0x0A616464
-	.long 0x72206D75
-	.long 0x73742062
-	.long 0x6520616C
-	.long 0x69676E65
-	.long 0x6420746F
-	.long 0x20333220
-	.long 0x62797465
-	.long 0x7320626F
-	.long 0x756E6461
-	.long 0x72792E00
-	.long 0x4E573448
-	.long 0x424D3A41
-	.long 0x6C69676E
-	.long 0x6D656E74
-	.long 0x20457272
-	.long 0x6F722830
-	.long 0x78257829
-	.long 0x0A73697A
-	.long 0x65206D75
-	.long 0x73742062
-	.long 0x6520616C
-	.long 0x69676E65
-	.long 0x6420746F
-	.long 0x20333220
-	.long 0x62797465
-	.long 0x7320626F
-	.long 0x756E6461
-	.long 0x72792E00
-	.long 0x4E573448
-	.long 0x424D3A41
-	.long 0x6C69676E
-	.long 0x6D656E74
-	.long 0x20457272
-	.long 0x6F722830
-	.long 0x78257829
-	.long 0x0A6F6666
-	.long 0x73657420
-	.long 0x6D757374
-	.long 0x20626520
-	.long 0x616C6967
-	.long 0x6E656420
-	.long 0x746F2034
-	.long 0x20627974
-	.long 0x65732062
-	.long 0x6F756E64
-	.long 0x6172792E
-	.long 0x00000000
-.global lbl_8019812C
-lbl_8019812C:
-	.long 0x6661696C
-	.long 0x65642074
-	.long 0x6F206C6F
-	.long 0x61642073
-	.long 0x74726561
-	.long 0x6D0A0000
-	.long 0x00000000
-.global lbl_80198148
-lbl_80198148:
+glabel lbl_80198148
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8012C8E0
@@ -46551,50 +31515,43 @@ lbl_80198148:
 	.long 0x8012FAA0
 	.long func_8012DE64
 	.long func_8012F920
-.global lbl_80198178
-lbl_80198178:
+glabel lbl_80198178
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8012FA60
 	.long 0x8012F540
 	.long 0x8012F860
-.global lbl_8019818C
-lbl_8019818C:
+glabel lbl_8019818C
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8012FA20
 	.long 0x8012F0D8
 	.long 0x8012F37C
-.global lbl_801981A0
-lbl_801981A0:
+glabel lbl_801981A0
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8012F9E0
 	.long 0x8012EF74
 	.long 0x8012F084
 	.long 0x00000000
-.global lbl_801981B8
-lbl_801981B8:
+glabel lbl_801981B8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8012C6B8
 	.long 0x8012EB30
-.global lbl_801981C8
-lbl_801981C8:
+glabel lbl_801981C8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8012C6F8
 	.long 0x8012EC58
 	.long 0x8012ED9C
 	.long 0x8012EF00
-.global lbl_801981E0
-lbl_801981E0:
+glabel lbl_801981E0
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8012C678
 	.long 0x8012E9B8
-.global lbl_801981F0
-lbl_801981F0:
+glabel lbl_801981F0
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8012C5F8
@@ -46641,1374 +31598,295 @@ lbl_801981F0:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_801982A8
-lbl_801982A8:
+glabel lbl_801982A8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8012F988
 	.long 0x8012FC4C
-.global lbl_801982B8
-lbl_801982B8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_801982DC
-lbl_801982DC:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_801982E8
-lbl_801982E8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_8019830C
-lbl_8019830C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80198318
-lbl_80198318:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_8019833C
-lbl_8019833C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80198348
-lbl_80198348:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-.global lbl_8019836C
-lbl_8019836C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80198378
-lbl_80198378:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_8019839C
-lbl_8019839C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_801983A8
-lbl_801983A8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_801983CC
-lbl_801983CC:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_801983D8
-lbl_801983D8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_801983FC
-lbl_801983FC:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80198408
-lbl_80198408:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-.global lbl_8019842C
-lbl_8019842C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80198498
-lbl_80198498:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_801984BC
-lbl_801984BC:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_801984C8
-lbl_801984C8:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-.global lbl_801984EC
-lbl_801984EC:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_801984F8
-lbl_801984F8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28627566
-	.long 0x66657229
+glabel lbl_801982B8
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_801982DC
+	.asciz "LinkList.h"
+glabel lbl_801982E8
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_8019830C
+	.asciz "LinkList.h"
+glabel lbl_80198318
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_8019833C
+	.asciz "LinkList.h"
+glabel lbl_80198348
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+glabel lbl_8019836C
+	.asciz "LinkList.h"
+glabel lbl_80198378
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_8019839C
+	.asciz "LinkList.h"
+glabel lbl_801983A8
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_801983CC
+	.asciz "LinkList.h"
+glabel lbl_801983D8
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_801983FC
+	.asciz "LinkList.h"
+glabel lbl_80198408
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+glabel lbl_8019842C
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_80198498
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_801984BC
+	.asciz "LinkList.h"
+glabel lbl_801984C8
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+glabel lbl_801984EC
+	.asciz "LinkList.h"
+glabel lbl_801984F8
+	.asciz "NW4HBM:Pointer must not be NULL (buffer)"
+glabel lbl_80198524
+	.asciz "SoundInstanceManager.h"
+glabel lbl_8019853C
+	.asciz "NW4HBM:Pointer must not be NULL (buffer)"
+glabel lbl_80198568
+	.asciz "SoundInstanceManager.h"
+glabel lbl_80198580
+	.asciz "NW4HBM:Pointer must not be NULL (buffer)"
+glabel lbl_801985AC
+	.asciz "SoundInstanceManager.h"
+glabel lbl_801985C4
+	.asciz "NW4HBM:Pointer must not be NULL (buffer)"
+glabel lbl_801985F0
+	.asciz "SoundInstanceManager.h"
+glabel lbl_80198608
+	.asciz "NW4HBM:Pointer must not be NULL (buffer)"
+glabel lbl_80198634
+	.asciz "SoundInstanceManager.h"
+glabel lbl_8019864C
+	.asciz "NW4HBM:Pointer must not be NULL (buffer)"
+glabel lbl_80198678
+	.asciz "SoundInstanceManager.h"
+glabel lbl_80198690
+	.asciz "NW4HBM:Pointer must not be NULL (waveData)"
 	.long 0x00000000
-.global lbl_80198524
-lbl_80198524:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-.global lbl_8019853C
-lbl_8019853C:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28627566
-	.long 0x66657229
+glabel lbl_801986C0
+	.asciz "NW4HBM:Pointer must not be NULL (mSoundArchive)"
+glabel lbl_801986F0
+	.asciz "SoundArchivePlayer.h"
+glabel lbl_80198708
+	.asciz "snd_SoundHandle.cpp"
 	.long 0x00000000
-.global lbl_80198568
-lbl_80198568:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-.global lbl_80198580
-lbl_80198580:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28627566
-	.long 0x66657229
-	.long 0x00000000
-.global lbl_801985AC
-lbl_801985AC:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-.global lbl_801985C4
-lbl_801985C4:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28627566
-	.long 0x66657229
-	.long 0x00000000
-.global lbl_801985F0
-lbl_801985F0:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-.global lbl_80198608
-lbl_80198608:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28627566
-	.long 0x66657229
-	.long 0x00000000
-.global lbl_80198634
-lbl_80198634:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-.global lbl_8019864C
-lbl_8019864C:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28627566
-	.long 0x66657229
-	.long 0x00000000
-.global lbl_80198678
-lbl_80198678:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-.global lbl_80198690
-lbl_80198690:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28776176
-	.long 0x65446174
-	.long 0x61290000
-	.long 0x00000000
-.global lbl_801986C0
-lbl_801986C0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286D536F
-	.long 0x756E6441
-	.long 0x72636869
-	.long 0x76652900
-.global lbl_801986F0
-lbl_801986F0:
-	.long 0x536F756E
-	.long 0x64417263
-	.long 0x68697665
-	.long 0x506C6179
-	.long 0x65722E68
-	.long 0x00000000
-.global lbl_80198708
-lbl_80198708:
-	.long 0x736E645F
-	.long 0x536F756E
-	.long 0x6448616E
-	.long 0x646C652E
-	.long 0x63707000
-	.long 0x00000000
-.global lbl_80198720
-lbl_80198720:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28736F75
-	.long 0x6E642900
-.global lbl_80198748
-lbl_80198748:
+glabel lbl_80198720
+	.asciz "NW4HBM:Pointer must not be NULL (sound)"
+glabel lbl_80198748
 	.long 0x00000000
 	.long 0x00000000
 	.long func_8012FBCC
 	.long 0x8012FC4C
-.global lbl_80198758
-lbl_80198758:
-	.long 0x736E645F
-	.long 0x536F756E
-	.long 0x64506C61
-	.long 0x7965722E
-	.long 0x63707000
-.global lbl_8019876C
-lbl_8019876C:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x766F6C75
-	.long 0x6D65203E
-	.long 0x3D20302E
-	.long 0x30660000
-.global lbl_80198794
-lbl_80198794:
-	.long 0x72656D6F
-	.long 0x7465496E
-	.long 0x64657820
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656D6F74
-	.long 0x65496E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x636F756E
-	.long 0x74203E3D
-	.long 0x20300000
-	.long 0x706C6179
-	.long 0x61626C65
-	.long 0x20736F75
-	.long 0x6E642063
-	.long 0x6F756E74
-	.long 0x20697320
-	.long 0x6F766572
-	.long 0x206C696D
-	.long 0x69742E00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x2864726F
-	.long 0x70536F75
-	.long 0x6E642900
-.global lbl_80198850
-lbl_80198850:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6C696D69
-	.long 0x74203E3D
-	.long 0x20300000
-.global lbl_80198874
-lbl_80198874:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28686561
-	.long 0x70290000
+glabel lbl_80198758
+	.asciz "snd_SoundPlayer.cpp"
+glabel lbl_8019876C
+	.asciz "NW4HBM:Failed assertion volume >= 0.0f"
+glabel lbl_80198794
+	.asciz "remoteIndex is out of bounds(%d)\n%d <= remoteIndex < %d not satisfied."
+	.balign 4
+	.asciz "NW4HBM:Failed assertion count >= 0"
+	.balign 4
+	.asciz "playable sound count is over limit."
+	.asciz "NW4HBM:Pointer must not be NULL (dropSound)"
+glabel lbl_80198850
+	.asciz "NW4HBM:Failed assertion limit >= 0"
+glabel lbl_80198874
+	.asciz "NW4HBM:Pointer must not be NULL (heap)"
 	.long 0x00000000
-.global lbl_801988A0
-lbl_801988A0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28736F75
-	.long 0x6E642900
-.global lbl_801988C8
-lbl_801988C8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_801988EC
-lbl_801988EC:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_801988F8
-lbl_801988F8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_8019891C
-lbl_8019891C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80198928
-lbl_80198928:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-.global lbl_8019894C
-lbl_8019894C:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-.global lbl_801989D0
-lbl_801989D0:
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80198A18
-lbl_80198A18:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28707472
-	.long 0x29000000
-.global lbl_80198A40
-lbl_80198A40:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-.global lbl_80198A58
-lbl_80198A58:
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-.global lbl_80198A9C
-lbl_80198A9C:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80198B74
-lbl_80198B74:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28707472
-	.long 0x29000000
-.global lbl_80198B9C
-lbl_80198B9C:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-.global lbl_80198BB4
-lbl_80198BB4:
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-.global lbl_80198BF8
-lbl_80198BF8:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80198CD0
-lbl_80198CD0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28707472
-	.long 0x29000000
-.global lbl_80198CF8
-lbl_80198CF8:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-.global lbl_80198D10
-lbl_80198D10:
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-.global lbl_80198D54
-lbl_80198D54:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-.global lbl_80198D6C
-lbl_80198D6C:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80198D90
-lbl_80198D90:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80198D9C
-lbl_80198D9C:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80198DC0
-lbl_80198DC0:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
+glabel lbl_801988A0
+	.asciz "NW4HBM:Pointer must not be NULL (sound)"
+glabel lbl_801988C8
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_801988EC
+	.asciz "LinkList.h"
+glabel lbl_801988F8
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_8019891C
+	.asciz "LinkList.h"
+glabel lbl_80198928
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+glabel lbl_8019894C
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.ascii "NW4HBM:Pointer must not "
+glabel lbl_801989D0
+	.asciz "be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+	.balign 4
+	.asciz "LinkList.h"
+glabel lbl_80198A18
+	.asciz "NW4HBM:Pointer must not be NULL (ptr)"
+glabel lbl_80198A40
+	.asciz "SoundInstanceManager.h"
+glabel lbl_80198A58
+	.asciz "priority is out of bounds(%d)\n%d <= priority <= %d not satisfied."
+glabel lbl_80198A9C
+	.asciz "SoundInstanceManager.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+	.balign 4
+	.asciz "LinkList.h"
+glabel lbl_80198B74
+	.asciz "NW4HBM:Pointer must not be NULL (ptr)"
+glabel lbl_80198B9C
+	.asciz "SoundInstanceManager.h"
+glabel lbl_80198BB4
+	.asciz "priority is out of bounds(%d)\n%d <= priority <= %d not satisfied."
+glabel lbl_80198BF8
+	.asciz "SoundInstanceManager.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+	.balign 4
+	.asciz "LinkList.h"
+glabel lbl_80198CD0
+	.asciz "NW4HBM:Pointer must not be NULL (ptr)"
+glabel lbl_80198CF8
+	.asciz "SoundInstanceManager.h"
+glabel lbl_80198D10
+	.asciz "priority is out of bounds(%d)\n%d <= priority <= %d not satisfied."
+glabel lbl_80198D54
+	.asciz "SoundInstanceManager.h"
+glabel lbl_80198D6C
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80198D90
+	.asciz "LinkList.h"
+glabel lbl_80198D9C
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80198DC0
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+	.balign 4
+	.asciz "LinkList.h"
 	.long 0x00000000
-.global lbl_80198EC0
-lbl_80198EC0:
-	.long 0x736E645F
-	.long 0x536F756E
-	.long 0x64537973
-	.long 0x74656D2E
-	.long 0x63707000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x696E6974
-	.long 0x53746174
-	.long 0x7573203D
-	.long 0x3D205343
-	.long 0x5F535441
-	.long 0x5455535F
-	.long 0x4F4B0000
-.global lbl_80198F08
-lbl_80198F08:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x72657375
-	.long 0x6C740000
-	.long 0x536F756E
-	.long 0x64537973
-	.long 0x74656D3A
-	.long 0x3A576169
-	.long 0x74466F72
-	.long 0x52657365
-	.long 0x74526561
-	.long 0x64792069
-	.long 0x73205449
-	.long 0x4D45204F
-	.long 0x55542E0A
+glabel lbl_80198EC0
+	.asciz "snd_SoundSystem.cpp"
+	.asciz "NW4HBM:Failed assertion initStatus == SC_STATUS_OK"
+glabel lbl_80198F08
+	.asciz "NW4HBM:Failed assertion result"
+	.balign 4
+	.asciz "SoundSystem::WaitForResetReady is TIME OUT.\n"
+glabel lbl_80198F58
+	.asciz "snd_SoundThread.cpp"
+glabel lbl_80198F6C
+	.asciz "not initialized nw4hbm::AxManager.\n"
+glabel lbl_80198F90
+	.asciz "NW4HBM:Failed assertion result != 0"
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
 	.long 0x00000000
-.global lbl_80198F58
-lbl_80198F58:
-	.long 0x736E645F
-	.long 0x536F756E
-	.long 0x64546872
-	.long 0x6561642E
-	.long 0x63707000
-.global lbl_80198F6C
-lbl_80198F6C:
-	.long 0x6E6F7420
-	.long 0x696E6974
-	.long 0x69616C69
-	.long 0x7A656420
-	.long 0x6E773468
-	.long 0x626D3A3A
-	.long 0x41784D61
-	.long 0x6E616765
-	.long 0x722E0A00
-.global lbl_80198F90
-lbl_80198F90:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x72657375
-	.long 0x6C742021
-	.long 0x3D203000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
+glabel lbl_80198FE8
+	.asciz "snd_StrmChannel.cpp"
+glabel lbl_80198FFC
+	.asciz "Too large stream buffer size."
 	.long 0x00000000
-.global lbl_80198FE8
-lbl_80198FE8:
-	.long 0x736E645F
-	.long 0x5374726D
-	.long 0x4368616E
-	.long 0x6E656C2E
-	.long 0x63707000
-.global lbl_80198FFC
-lbl_80198FFC:
-	.long 0x546F6F20
-	.long 0x6C617267
-	.long 0x65207374
-	.long 0x7265616D
-	.long 0x20627566
-	.long 0x66657220
-	.long 0x73697A65
-	.long 0x2E000000
+glabel lbl_80199020
+	.asciz "snd_StrmFile.cpp"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (strmData)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion fileHeader->signature == StrmFile::SIGNATURE_FILE"
+	.balign 4
+	.asciz "strm file is not supported version.\n  please reconvert file using new version tools.\n"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mHeadBlock->blockHeader.kind == StrmFile::SIGNATURE_HEAD_BLOCK"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion info->blockSize % 32 == 0"
+glabel lbl_80199190
+	.asciz "NW4HBM:Pointer must not be NULL (mHeader)"
+glabel lbl_801991BC
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_801991E8
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_80199214
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_80199240
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
 	.long 0x00000000
-.global lbl_80199020
-lbl_80199020:
-	.long 0x736E645F
-	.long 0x5374726D
-	.long 0x46696C65
-	.long 0x2E637070
+glabel lbl_80199270
+	.asciz "snd_StrmPlayer.cpp"
+glabel lbl_80199284
+	.asciz "NW4HBM:Pointer must not be NULL (bufferPool)"
+glabel lbl_801992B4
+	.asciz "NW4HBM:Pointer must not be NULL (mVoice)"
+	.balign 4
+	.asciz "stop strm because of loading delay!"
+	.asciz "NW4HBM:Failed assertion false"
+	.balign 4
+	.asciz "AdpcmLoop can not update!"
+glabel lbl_80199340
+	.asciz "NW4HBM:Failed assertion loadSize <= sizeof( LoadCommand::mMramBuf )"
+glabel lbl_80199384
+	.asciz "NW4HBM:Failed assertion sPlayerList.IsEmpty()"
+glabel lbl_801993B4
+	.asciz "bus is out of bounds(%d)\n%d <= bus < %d not satisfied."
+glabel lbl_801993EC
+	.asciz "remoteIndex is out of bounds(%d)\n%d <= remoteIndex < %d not satisfied."
+glabel lbl_80199434
+	.asciz "NW4HBM:Pointer must not be NULL (mBufferPool)"
+	.balign 4
+	.asciz "Too large stream data block size."
+	.balign 4
+	.asciz "Too small stream buffer size."
+glabel lbl_801994A8
+	.asciz "NW4HBM:Pointer must not be NULL (player)"
+	.balign 4
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28737472
-	.long 0x6D446174
-	.long 0x61290000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x66696C65
-	.long 0x48656164
-	.long 0x65722D3E
-	.long 0x7369676E
-	.long 0x61747572
-	.long 0x65203D3D
-	.long 0x20537472
-	.long 0x6D46696C
-	.long 0x653A3A53
-	.long 0x49474E41
-	.long 0x54555245
-	.long 0x5F46494C
-	.long 0x45000000
-	.long 0x7374726D
-	.long 0x2066696C
-	.long 0x65206973
-	.long 0x206E6F74
-	.long 0x20737570
-	.long 0x706F7274
-	.long 0x65642076
-	.long 0x65727369
-	.long 0x6F6E2E0A
-	.long 0x2020706C
-	.long 0x65617365
-	.long 0x20726563
-	.long 0x6F6E7665
-	.long 0x72742066
-	.long 0x696C6520
-	.long 0x7573696E
-	.long 0x67206E65
-	.long 0x77207665
-	.long 0x7273696F
-	.long 0x6E20746F
-	.long 0x6F6C732E
-	.long 0x0A000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D486561
-	.long 0x64426C6F
-	.long 0x636B2D3E
-	.long 0x626C6F63
-	.long 0x6B486561
-	.long 0x6465722E
-	.long 0x6B696E64
-	.long 0x203D3D20
-	.long 0x5374726D
-	.long 0x46696C65
-	.long 0x3A3A5349
-	.long 0x474E4154
-	.long 0x5552455F
-	.long 0x48454144
-	.long 0x5F424C4F
-	.long 0x434B0000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x696E666F
-	.long 0x2D3E626C
-	.long 0x6F636B53
-	.long 0x697A6520
-	.long 0x25203332
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_80199190
-lbl_80199190:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286D4865
-	.long 0x61646572
-	.long 0x29000000
-.global lbl_801991BC
-lbl_801991BC:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_801991E8
-lbl_801991E8:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_80199214
-lbl_80199214:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_80199240
-lbl_80199240:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
+	.asciz "NW4HBM:Failed assertion player->mVoice == voice"
+	.asciz "Unknown AxVoice callback status %d"
 	.long 0x00000000
-.global lbl_80199270
-lbl_80199270:
-	.long 0x736E645F
-	.long 0x5374726D
-	.long 0x506C6179
-	.long 0x65722E63
-	.long 0x70700000
-.global lbl_80199284
-lbl_80199284:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28627566
-	.long 0x66657250
-	.long 0x6F6F6C29
-	.long 0x00000000
-.global lbl_801992B4
-lbl_801992B4:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286D566F
-	.long 0x69636529
-	.long 0x00000000
-	.long 0x73746F70
-	.long 0x20737472
-	.long 0x6D206265
-	.long 0x63617573
-	.long 0x65206F66
-	.long 0x206C6F61
-	.long 0x64696E67
-	.long 0x2064656C
-	.long 0x61792100
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x66616C73
-	.long 0x65000000
-	.long 0x41647063
-	.long 0x6D4C6F6F
-	.long 0x70206361
-	.long 0x6E206E6F
-	.long 0x74207570
-	.long 0x64617465
-	.long 0x21000000
-.global lbl_80199340
-lbl_80199340:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6C6F6164
-	.long 0x53697A65
-	.long 0x203C3D20
-	.long 0x73697A65
-	.long 0x6F662820
-	.long 0x4C6F6164
-	.long 0x436F6D6D
-	.long 0x616E643A
-	.long 0x3A6D4D72
-	.long 0x616D4275
-	.long 0x66202900
-.global lbl_80199384
-lbl_80199384:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x73506C61
-	.long 0x7965724C
-	.long 0x6973742E
-	.long 0x4973456D
-	.long 0x70747928
-	.long 0x29000000
-.global lbl_801993B4
-lbl_801993B4:
-	.long 0x62757320
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2062
-	.long 0x7573203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-.global lbl_801993EC
-lbl_801993EC:
-	.long 0x72656D6F
-	.long 0x7465496E
-	.long 0x64657820
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656D6F74
-	.long 0x65496E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-.global lbl_80199434
-lbl_80199434:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286D4275
-	.long 0x66666572
-	.long 0x506F6F6C
-	.long 0x29000000
-	.long 0x546F6F20
-	.long 0x6C617267
-	.long 0x65207374
-	.long 0x7265616D
-	.long 0x20646174
-	.long 0x6120626C
-	.long 0x6F636B20
-	.long 0x73697A65
-	.long 0x2E000000
-	.long 0x546F6F20
-	.long 0x736D616C
-	.long 0x6C207374
-	.long 0x7265616D
-	.long 0x20627566
-	.long 0x66657220
-	.long 0x73697A65
-	.long 0x2E000000
-.global lbl_801994A8
-lbl_801994A8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28706C61
-	.long 0x79657229
-	.long 0x00000000
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x706C6179
-	.long 0x65722D3E
-	.long 0x6D566F69
-	.long 0x6365203D
-	.long 0x3D20766F
-	.long 0x69636500
-	.long 0x556E6B6E
-	.long 0x6F776E20
-	.long 0x4178566F
-	.long 0x69636520
-	.long 0x63616C6C
-	.long 0x6261636B
-	.long 0x20737461
-	.long 0x74757320
-	.long 0x25640000
-	.long 0x00000000
-.global lbl_80199530
-lbl_80199530:
+glabel lbl_80199530
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8013517C
@@ -48047,8 +31925,7 @@ lbl_80199530:
 	.long 0x801340C4
 	.long 0x801341E8
 	.long 0x8013430C
-.global lbl_801995C8
-lbl_801995C8:
+glabel lbl_801995C8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80134F28
@@ -48091,132 +31968,35 @@ lbl_801995C8:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_801996A0
-lbl_801996A0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_801996C4
-lbl_801996C4:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_801996D0
-lbl_801996D0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_801996F4
-lbl_801996F4:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80199700
-lbl_80199700:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-.global lbl_80199724
-lbl_80199724:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80199730
-lbl_80199730:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80199754
-lbl_80199754:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80199760
-lbl_80199760:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80199784
-lbl_80199784:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80199790
-lbl_80199790:
-	.long 0x736E645F
-	.long 0x5374726D
-	.long 0x536F756E
-	.long 0x642E6370
-	.long 0x70000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28476574
-	.long 0x536F756E
-	.long 0x64506C61
-	.long 0x79657228
-	.long 0x29290000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28627566
-	.long 0x66657250
-	.long 0x6F6F6C29
-	.long 0x00000000
-.global lbl_80199808
-lbl_80199808:
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_801996A0
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_801996C4
+	.asciz "LinkList.h"
+glabel lbl_801996D0
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_801996F4
+	.asciz "LinkList.h"
+glabel lbl_80199700
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+glabel lbl_80199724
+	.asciz "LinkList.h"
+glabel lbl_80199730
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80199754
+	.asciz "LinkList.h"
+glabel lbl_80199760
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80199784
+	.asciz "LinkList.h"
+glabel lbl_80199790
+	.asciz "snd_StrmSound.cpp"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (GetSoundPlayer())"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (bufferPool)"
+glabel lbl_80199808
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80135688
@@ -48242,630 +32022,134 @@ lbl_80199808:
 	.long 0x8011FEA8
 	.long 0x80135678
 	.long 0x80135680
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
 	.long 0x00000000
-.global lbl_801998D0
-lbl_801998D0:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28736F75
-	.long 0x6E642900
-.global lbl_801998F8
-lbl_801998F8:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-.global lbl_80199910
-lbl_80199910:
-	.long 0x736E645F
-	.long 0x5461736B
-	.long 0x4D616E61
-	.long 0x6765722E
-	.long 0x63707000
+glabel lbl_801998D0
+	.asciz "NW4HBM:Pointer must not be NULL (sound)"
+glabel lbl_801998F8
+	.asciz "SoundInstanceManager.h"
+glabel lbl_80199910
+	.asciz "snd_TaskManager.cpp"
 	.long 0x00000000
-.global lbl_80199928
-lbl_80199928:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x4D454D43
-	.long 0x6F756E74
-	.long 0x46726565
-	.long 0x426C6F63
-	.long 0x6B466F72
-	.long 0x556E6974
-	.long 0x48656170
-	.long 0x28206D48
-	.long 0x65617048
-	.long 0x616E646C
-	.long 0x65202920
-	.long 0x3E3D2054
-	.long 0x41534B5F
-	.long 0x4E554D00
-.global lbl_80199978
-lbl_80199978:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D486561
-	.long 0x7048616E
-	.long 0x646C6520
-	.long 0x213D204D
-	.long 0x454D5F48
-	.long 0x4541505F
-	.long 0x494E5641
-	.long 0x4C49445F
-	.long 0x48414E44
-	.long 0x4C450000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x72657375
-	.long 0x6C740000
-.global lbl_801999D8
-lbl_801999D8:
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x203C2025
-	.long 0x64206E6F
-	.long 0x74207361
-	.long 0x74697366
-	.long 0x6965642E
+glabel lbl_80199928
+	.asciz "NW4HBM:Failed assertion MEMCountFreeBlockForUnitHeap( mHeapHandle ) >= TASK_NUM"
+glabel lbl_80199978
+	.asciz "NW4HBM:Failed assertion mHeapHandle != MEM_HEAP_INVALID_HANDLE"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion result"
+glabel lbl_801999D8
+	.asciz "priority is out of bounds(%d)\n%d <= priority < %d not satisfied."
+glabel lbl_80199A1C
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80199A40
+	.asciz "LinkList.h"
+glabel lbl_80199A4C
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80199A70
+	.asciz "LinkList.h"
+glabel lbl_80199A7C
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+glabel lbl_80199AA0
+	.asciz "LinkList.h"
+glabel lbl_80199AAC
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80199AD0
+	.asciz "LinkList.h"
 	.long 0x00000000
-.global lbl_80199A1C
-lbl_80199A1C:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80199A40
-lbl_80199A40:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80199A4C
-lbl_80199A4C:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80199A70
-lbl_80199A70:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80199A7C
-lbl_80199A7C:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-.global lbl_80199AA0
-lbl_80199AA0:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80199AAC
-lbl_80199AAC:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80199AD0
-lbl_80199AD0:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
+glabel lbl_80199AE0
+	.asciz "snd_TaskThread.cpp"
+glabel lbl_80199AF4
+	.asciz "NW4HBM:Failed assertion result != 0"
+glabel lbl_80199B18
+	.asciz "snd_Util.cpp"
+glabel lbl_80199B28
+	.asciz "invalid DataRef::RefType"
 	.long 0x00000000
-.global lbl_80199AE0
-lbl_80199AE0:
-	.long 0x736E645F
-	.long 0x5461736B
-	.long 0x54687265
-	.long 0x61642E63
-	.long 0x70700000
-.global lbl_80199AF4
-lbl_80199AF4:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x72657375
-	.long 0x6C742021
-	.long 0x3D203000
-.global lbl_80199B18
-lbl_80199B18:
-	.long 0x736E645F
-	.long 0x5574696C
-	.long 0x2E637070
+glabel lbl_80199B48
+	.asciz "snd_WavePlayer.cpp"
+	.balign 4
 	.long 0x00000000
-.global lbl_80199B28
-lbl_80199B28:
-	.long 0x696E7661
-	.long 0x6C696420
-	.long 0x44617461
-	.long 0x5265663A
-	.long 0x3A526566
-	.long 0x54797065
-	.long 0x00000000
-	.long 0x00000000
-.global lbl_80199B48
-lbl_80199B48:
-	.long 0x736E645F
-	.long 0x57617665
-	.long 0x506C6179
-	.long 0x65722E63
-	.long 0x70700000
-	.long 0x00000000
-	.long 0x73657475
-	.long 0x70506172
-	.long 0x616D2E63
-	.long 0x68616E6E
-	.long 0x656C436F
-	.long 0x756E7420
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2073
-	.long 0x65747570
-	.long 0x50617261
-	.long 0x6D2E6368
-	.long 0x616E6E65
-	.long 0x6C436F75
-	.long 0x6E74203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x73657475
-	.long 0x70506172
-	.long 0x616D2E76
-	.long 0x6F696365
-	.long 0x436F756E
-	.long 0x74206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20736574
-	.long 0x75705061
-	.long 0x72616D2E
-	.long 0x766F6963
-	.long 0x65436F75
-	.long 0x6E74203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x66616C73
-	.long 0x65000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28776176
-	.long 0x65506163
-	.long 0x6B657429
-	.long 0x00000000
-	.long 0x57617665
-	.long 0x5061636B
-	.long 0x65742069
-	.long 0x73206275
-	.long 0x73792E00
-	.long 0x6E6F7420
-	.long 0x656E6F75
-	.long 0x67682062
-	.long 0x75666665
-	.long 0x7220636F
-	.long 0x756E7420
-	.long 0x696E2057
-	.long 0x61766550
-	.long 0x61636B65
-	.long 0x742E0000
-	.long 0x546F6F20
-	.long 0x736D616C
-	.long 0x6C207761
-	.long 0x76652062
-	.long 0x75666665
-	.long 0x722E0000
-.global lbl_80199CC0
-lbl_80199CC0:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D576176
-	.long 0x65506163
-	.long 0x6B65744C
-	.long 0x6973742E
-	.long 0x4973456D
-	.long 0x70747928
-	.long 0x29000000
-	.long 0x546F6F20
-	.long 0x6C617267
-	.long 0x65207069
-	.long 0x7463682E
-	.long 0x00000000
-	.long 0x62757320
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2062
-	.long 0x7573203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x72656D6F
-	.long 0x7465496E
-	.long 0x64657820
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656D6F74
-	.long 0x65496E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21206D57
-	.long 0x61766550
-	.long 0x61636B65
-	.long 0x744C6973
-	.long 0x742E4973
-	.long 0x456D7074
-	.long 0x79282900
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286D566F
-	.long 0x69636529
-	.long 0x00000000
-	.long 0x556E6B6E
-	.long 0x6F776E20
-	.long 0x4178566F
-	.long 0x69636520
-	.long 0x63616C6C
-	.long 0x6261636B
-	.long 0x20737461
-	.long 0x74757320
-	.long 0x25640000
-.global lbl_80199E0C
-lbl_80199E0C:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x73506C61
-	.long 0x7965724C
-	.long 0x6973742E
-	.long 0x4973456D
-	.long 0x70747928
-	.long 0x29000000
-.global lbl_80199E3C
-lbl_80199E3C:
+	.asciz "setupParam.channelCount is out of bounds(%d)\n%d <= setupParam.channelCount <= %d not satisfied."
+	.asciz "setupParam.voiceCount is out of bounds(%d)\n%d <= setupParam.voiceCount <= %d not satisfied."
+	.asciz "NW4HBM:Failed assertion false"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (wavePacket)"
+	.balign 4
+	.asciz "WavePacket is busy."
+	.asciz "not enough buffer count in WavePacket."
+	.balign 4
+	.asciz "Too small wave buffer."
+glabel lbl_80199CC0
+	.asciz "NW4HBM:Failed assertion mWavePacketList.IsEmpty()"
+	.balign 4
+	.asciz "Too large pitch."
+	.balign 4
+	.asciz "bus is out of bounds(%d)\n%d <= bus < %d not satisfied."
+	.balign 4
+	.asciz "remoteIndex is out of bounds(%d)\n%d <= remoteIndex < %d not satisfied."
+	.balign 4
+	.asciz "NW4HBM:Failed assertion ! mWavePacketList.IsEmpty()"
+	.asciz "NW4HBM:Pointer must not be NULL (mVoice)"
+	.balign 4
+	.asciz "Unknown AxVoice callback status %d"
+glabel lbl_80199E0C
+	.asciz "NW4HBM:Failed assertion sPlayerList.IsEmpty()"
+glabel lbl_80199E3C
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x801366C0
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x801371B4
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80199E84
-lbl_80199E84:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80199EA8
-lbl_80199EA8:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80199EB4
-lbl_80199EB4:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80199ED8
-lbl_80199ED8:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80199EE4
-lbl_80199EE4:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-.global lbl_80199F08
-lbl_80199F08:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80199F14
-lbl_80199F14:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-.global lbl_80199F38
-lbl_80199F38:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80199F44
-lbl_80199F44:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80199F68
-lbl_80199F68:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80199F74
-lbl_80199F74:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80199F98
-lbl_80199F98:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_80199FA4
-lbl_80199FA4:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_80199FC8
-lbl_80199FC8:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_80199E84
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80199EA8
+	.asciz "LinkList.h"
+glabel lbl_80199EB4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80199ED8
+	.asciz "LinkList.h"
+glabel lbl_80199EE4
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+glabel lbl_80199F08
+	.asciz "LinkList.h"
+glabel lbl_80199F14
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+glabel lbl_80199F38
+	.asciz "LinkList.h"
+glabel lbl_80199F44
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80199F68
+	.asciz "LinkList.h"
+glabel lbl_80199F74
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80199F98
+	.asciz "LinkList.h"
+glabel lbl_80199FA4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_80199FC8
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
 	.long 0x00000000
-.global lbl_8019A008
-lbl_8019A008:
-	.long 0x736E645F
-	.long 0x57617665
-	.long 0x536F756E
-	.long 0x642E6370
-	.long 0x70000000
+glabel lbl_8019A008
+	.asciz "snd_WaveSound.cpp"
+	.balign 4
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28776176
-	.long 0x65536F75
-	.long 0x6E644261
-	.long 0x73652900
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x2863616C
-	.long 0x6C626163
-	.long 0x6B290000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28476574
-	.long 0x536F756E
-	.long 0x64506C61
-	.long 0x79657228
-	.long 0x29290000
-.global lbl_8019A0B0
-lbl_8019A0B0:
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x7072696F
-	.long 0x72697479
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-.global lbl_8019A0F4
-lbl_8019A0F4:
+	.asciz "NW4HBM:Pointer must not be NULL (waveSoundBase)"
+	.asciz "NW4HBM:Pointer must not be NULL (callback)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (GetSoundPlayer())"
+glabel lbl_8019A0B0
+	.asciz "priority is out of bounds(%d)\n%d <= priority <= %d not satisfied."
+glabel lbl_8019A0F4
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x801376F4
@@ -48891,333 +32175,54 @@ lbl_8019A0F4:
 	.long 0x8011FEA8
 	.long 0x801376E4
 	.long 0x801376EC
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_8019A1B8
-lbl_8019A1B8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28736F75
-	.long 0x6E642900
-.global lbl_8019A1E0
-lbl_8019A1E0:
-	.long 0x536F756E
-	.long 0x64496E73
-	.long 0x74616E63
-	.long 0x654D616E
-	.long 0x61676572
-	.long 0x2E680000
-.global lbl_8019A1F8
-lbl_8019A1F8:
-	.long 0x736E645F
-	.long 0x57736446
-	.long 0x696C652E
-	.long 0x63707000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x66696C65
-	.long 0x48656164
-	.long 0x65722D3E
-	.long 0x7369676E
-	.long 0x61747572
-	.long 0x65203D3D
-	.long 0x20577364
-	.long 0x46696C65
-	.long 0x3A3A5349
-	.long 0x474E4154
-	.long 0x5552455F
-	.long 0x46494C45
-	.long 0x00000000
-	.long 0x77736420
-	.long 0x66696C65
-	.long 0x20697320
-	.long 0x6E6F7420
-	.long 0x73757070
-	.long 0x6F727465
-	.long 0x64207665
-	.long 0x7273696F
-	.long 0x6E2E0A20
-	.long 0x20706C65
-	.long 0x61736520
-	.long 0x7265636F
-	.long 0x6E766572
-	.long 0x74206669
-	.long 0x6C652075
-	.long 0x73696E67
-	.long 0x206E6577
-	.long 0x20766572
-	.long 0x73696F6E
-	.long 0x20746F6F
-	.long 0x6C732E0A
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28777364
-	.long 0x44617461
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D446174
-	.long 0x61426C6F
-	.long 0x636B2D3E
-	.long 0x626C6F63
-	.long 0x6B486561
-	.long 0x6465722E
-	.long 0x6B696E64
-	.long 0x203D3D20
-	.long 0x57736446
-	.long 0x696C653A
-	.long 0x3A534947
-	.long 0x4E415455
-	.long 0x52455F44
-	.long 0x4154415F
-	.long 0x424C4F43
-	.long 0x4B000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D576176
-	.long 0x65426C6F
-	.long 0x636B2D3E
-	.long 0x626C6F63
-	.long 0x6B486561
-	.long 0x6465722E
-	.long 0x6B696E64
-	.long 0x203D3D20
-	.long 0x57736446
-	.long 0x696C653A
-	.long 0x3A534947
-	.long 0x4E415455
-	.long 0x52455F57
-	.long 0x4156455F
-	.long 0x424C4F43
-	.long 0x4B000000
-.global lbl_8019A388
-lbl_8019A388:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_8019A3B4
-lbl_8019A3B4:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_8019A3E0
-lbl_8019A3E0:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_8019A40C
-lbl_8019A40C:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x7265662E
-	.long 0x64617461
-	.long 0x54797065
-	.long 0x203D3D20
-	.long 0x30000000
-.global lbl_8019A438
-lbl_8019A438:
-	.long 0x736E645F
-	.long 0x57736450
-	.long 0x6C617965
-	.long 0x722E6370
-	.long 0x70000000
-.global lbl_8019A44C
-lbl_8019A44C:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x766F6C75
-	.long 0x6D65203E
-	.long 0x3D20302E
-	.long 0x30660000
-.global lbl_8019A474
-lbl_8019A474:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70697463
-	.long 0x68203E3D
-	.long 0x20302E30
-	.long 0x66000000
-.global lbl_8019A49C
-lbl_8019A49C:
-	.long 0x62757320
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2062
-	.long 0x7573203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-.global lbl_8019A4D4
-lbl_8019A4D4:
-	.long 0x72656D6F
-	.long 0x7465496E
-	.long 0x64657820
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656D6F74
-	.long 0x65496E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-.global lbl_8019A51C
-lbl_8019A51C:
-	.long 0x7072696F
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x7072696F
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x74726163
-	.long 0x6B4E6F20
-	.long 0x3D3D2030
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D416374
-	.long 0x69766546
-	.long 0x6C616700
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D537461
-	.long 0x72746564
-	.long 0x466C6167
-	.long 0x00000000
-.global lbl_8019A5CC
-lbl_8019A5CC:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x73506C61
-	.long 0x7965724C
-	.long 0x6973742E
-	.long 0x4973456D
-	.long 0x70747928
-	.long 0x29000000
-.global lbl_8019A5FC
-lbl_8019A5FC:
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_8019A1B8
+	.asciz "NW4HBM:Pointer must not be NULL (sound)"
+glabel lbl_8019A1E0
+	.asciz "SoundInstanceManager.h"
+glabel lbl_8019A1F8
+	.asciz "snd_WsdFile.cpp"
+	.asciz "NW4HBM:Failed assertion fileHeader->signature == WsdFile::SIGNATURE_FILE"
+	.balign 4
+	.asciz "wsd file is not supported version.\n  please reconvert file using new version tools.\n"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (wsdData)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mDataBlock->blockHeader.kind == WsdFile::SIGNATURE_DATA_BLOCK"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mWaveBlock->blockHeader.kind == WsdFile::SIGNATURE_WAVE_BLOCK"
+glabel lbl_8019A388
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_8019A3B4
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_8019A3E0
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_8019A40C
+	.asciz "NW4HBM:Failed assertion ref.dataType == 0"
+glabel lbl_8019A438
+	.asciz "snd_WsdPlayer.cpp"
+glabel lbl_8019A44C
+	.asciz "NW4HBM:Failed assertion volume >= 0.0f"
+glabel lbl_8019A474
+	.asciz "NW4HBM:Failed assertion pitch >= 0.0f"
+glabel lbl_8019A49C
+	.asciz "bus is out of bounds(%d)\n%d <= bus < %d not satisfied."
+glabel lbl_8019A4D4
+	.asciz "remoteIndex is out of bounds(%d)\n%d <= remoteIndex < %d not satisfied."
+glabel lbl_8019A51C
+	.asciz "prio is out of bounds(%d)\n%d <= prio <= %d not satisfied."
+	.balign 4
+	.asciz "NW4HBM:Failed assertion trackNo == 0"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mActiveFlag"
+	.asciz "NW4HBM:Failed assertion mStartedFlag"
+glabel lbl_8019A5CC
+	.asciz "NW4HBM:Failed assertion sPlayerList.IsEmpty()"
+glabel lbl_8019A5FC
 	.long 0x00000000
 	.long 0x00000000
 	.long func_801372E0
@@ -49307,574 +32312,93 @@ lbl_8019A5FC:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_8019A790
-lbl_8019A790:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-.global lbl_8019A7B4
-lbl_8019A7B4:
-	.long 0x4C696E6B
-	.long 0x4C697374
-	.long 0x2E680000
-.global lbl_8019A7C0
-lbl_8019A7C0:
-	.long 0x736E645F
-	.long 0x57736454
-	.long 0x7261636B
-	.long 0x2E637070
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "LinkList.h"
+glabel lbl_8019A790
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+glabel lbl_8019A7B4
+	.asciz "LinkList.h"
+glabel lbl_8019A7C0
+	.asciz "snd_WsdTrack.cpp"
+glabel lbl_8019A7D4
+	.asciz "NW4HBM:Pointer must not be NULL (mWsdPlayer)"
+	.balign 4
 	.long 0x00000000
-.global lbl_8019A7D4
-lbl_8019A7D4:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286D5773
-	.long 0x64506C61
-	.long 0x79657229
+	.asciz "release is out of bounds(%d)\n%d <= release <= %d not satisfied."
+	.asciz "NW4HBM:Pointer must not be NULL (dropChannel)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (track)"
+	.asciz "NW4HBM:Pointer must not be NULL (channel)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion false"
+	.balign 4
+	.asciz "remoteIndex is out of bounds(%d)\n%d <= remoteIndex < %d not satisfied."
+	.balign 4
+	.asciz "Channel.h"
+	.balign 4
+	.asciz "remoteIndex is out of bounds(%d)\n%d <= remoteIndex < %d not satisfied."
+	.balign 4
+	.asciz "Channel.h"
+	.balign 4
+	.asciz "remoteIndex is out of bounds(%d)\n%d <= remoteIndex < %d not satisfied."
+	.balign 4
+	.asciz "Channel.h"
+glabel lbl_8019A9E8
+	.asciz "ut_binaryFileFormat.cpp"
+	.asciz "NW4HBM:Pointer Error\nheader(=%p) is not valid pointer."
+	.balign 4
+	.asciz "Signature check failed ('%c%c%c%c' must be '%c%c%c%c')."
+	.asciz "Unsupported byte order."
+	.asciz "Version check faild ('%d.%d' must be '%d.%d')."
+	.balign 4
+	.asciz "Too small file size(=%d)."
+	.balign 4
+	.asciz "Too small number of data blocks(=%d)."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nfileHeader(=%p) is not valid pointer."
+glabel lbl_8019AB38
+	.asciz "ut_CharStrmReader.cpp"
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nmCharStrm(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Failed assertion (GetChar<u8>() & 0xC0) != 0x80"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion (GetChar<u8>() & 0xF0) == 0xE0"
+	.balign 4
+	.asciz "NW4HBM:Alignment Error(0x%x)\nmCharStrm must be aligned to 2 bytes boundary."
+glabel lbl_8019AC80
+	.asciz "ut_CharWriter.cpp"
+glabel lbl_8019AC94
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\n& font(=%p) is not valid pointer."
+	.balign 4
+	.asciz "CharWriter::SetupGX: Unknown font sheet format(=%d)"
+	.asciz "mode is out of bounds(%d)\n%d <= mode <= %d not satisfied."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nmFont(=%p) is not valid pointer."
+	.balign 4
+	.asciz "mFont->GetWidth() is out of bounds(%d)\n%d <= mFont->GetWidth() not satisfied."
+	.balign 4
 	.long 0x00000000
+	.asciz "mFont->GetHeight() is out of bounds(%d)\n%d <= mFont->GetHeight() not satisfied."
+	.asciz "NW4HBM:Failed assertion code != Font::INVALID_CHARACTER_CODE"
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\n& glyph(=%p) is not valid pointer."
+	.asciz "glyph.texWidth is out of bounds(%d)\n%d <= glyph.texWidth not satisfied."
+	.asciz "glyph.texHeight is out of bounds(%d)\n%d <= glyph.texHeight not satisfied."
 	.long 0x00000000
-	.long 0x72656C65
-	.long 0x61736520
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656C6561
-	.long 0x7365203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x2864726F
-	.long 0x70436861
-	.long 0x6E6E656C
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28747261
-	.long 0x636B2900
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28636861
-	.long 0x6E6E656C
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x66616C73
-	.long 0x65000000
-	.long 0x72656D6F
-	.long 0x7465496E
-	.long 0x64657820
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656D6F74
-	.long 0x65496E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x4368616E
-	.long 0x6E656C2E
-	.long 0x68000000
-	.long 0x72656D6F
-	.long 0x7465496E
-	.long 0x64657820
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656D6F74
-	.long 0x65496E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x4368616E
-	.long 0x6E656C2E
-	.long 0x68000000
-	.long 0x72656D6F
-	.long 0x7465496E
-	.long 0x64657820
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2072
-	.long 0x656D6F74
-	.long 0x65496E64
-	.long 0x6578203C
-	.long 0x20256420
-	.long 0x6E6F7420
-	.long 0x73617469
-	.long 0x73666965
-	.long 0x642E0000
-	.long 0x4368616E
-	.long 0x6E656C2E
-	.long 0x68000000
-.global lbl_8019A9E8
-lbl_8019A9E8:
-	.long 0x75745F62
-	.long 0x696E6172
-	.long 0x7946696C
-	.long 0x65466F72
-	.long 0x6D61742E
-	.long 0x63707000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A686561
-	.long 0x64657228
-	.long 0x3D257029
-	.long 0x20697320
-	.long 0x6E6F7420
-	.long 0x76616C69
-	.long 0x6420706F
-	.long 0x696E7465
-	.long 0x722E0000
-	.long 0x5369676E
-	.long 0x61747572
-	.long 0x65206368
-	.long 0x65636B20
-	.long 0x6661696C
-	.long 0x65642028
-	.long 0x27256325
-	.long 0x63256325
-	.long 0x6327206D
-	.long 0x75737420
-	.long 0x62652027
-	.long 0x25632563
-	.long 0x25632563
-	.long 0x27292E00
-	.long 0x556E7375
-	.long 0x70706F72
-	.long 0x74656420
-	.long 0x62797465
-	.long 0x206F7264
-	.long 0x65722E00
-	.long 0x56657273
-	.long 0x696F6E20
-	.long 0x63686563
-	.long 0x6B206661
-	.long 0x696C6420
-	.long 0x28272564
-	.long 0x2E256427
-	.long 0x206D7573
-	.long 0x74206265
-	.long 0x20272564
-	.long 0x2E256427
-	.long 0x292E0000
-	.long 0x546F6F20
-	.long 0x736D616C
-	.long 0x6C206669
-	.long 0x6C652073
-	.long 0x697A6528
-	.long 0x3D256429
-	.long 0x2E000000
-	.long 0x546F6F20
-	.long 0x736D616C
-	.long 0x6C206E75
-	.long 0x6D626572
-	.long 0x206F6620
-	.long 0x64617461
-	.long 0x20626C6F
-	.long 0x636B7328
-	.long 0x3D256429
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A66696C
-	.long 0x65486561
-	.long 0x64657228
-	.long 0x3D257029
-	.long 0x20697320
-	.long 0x6E6F7420
-	.long 0x76616C69
-	.long 0x6420706F
-	.long 0x696E7465
-	.long 0x722E0000
-.global lbl_8019AB38
-lbl_8019AB38:
-	.long 0x75745F43
-	.long 0x68617253
-	.long 0x74726D52
-	.long 0x65616465
-	.long 0x722E6370
-	.long 0x70000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A6D4368
-	.long 0x61725374
-	.long 0x726D283D
-	.long 0x25702920
-	.long 0x6973206E
-	.long 0x6F742076
-	.long 0x616C6964
-	.long 0x20706F69
-	.long 0x6E746572
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x28476574
-	.long 0x43686172
-	.long 0x3C75383E
-	.long 0x28292026
-	.long 0x20307843
-	.long 0x30292021
-	.long 0x3D203078
-	.long 0x38300000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x28476574
-	.long 0x43686172
-	.long 0x3C75383E
-	.long 0x28292026
-	.long 0x20307846
-	.long 0x3029203D
-	.long 0x3D203078
-	.long 0x45300000
-	.long 0x4E573448
-	.long 0x424D3A41
-	.long 0x6C69676E
-	.long 0x6D656E74
-	.long 0x20457272
-	.long 0x6F722830
-	.long 0x78257829
-	.long 0x0A6D4368
-	.long 0x61725374
-	.long 0x726D206D
-	.long 0x75737420
-	.long 0x62652061
-	.long 0x6C69676E
-	.long 0x65642074
-	.long 0x6F203220
-	.long 0x62797465
-	.long 0x7320626F
-	.long 0x756E6461
-	.long 0x72792E00
-.global lbl_8019AC80
-lbl_8019AC80:
-	.long 0x75745F43
-	.long 0x68617257
-	.long 0x72697465
-	.long 0x722E6370
-	.long 0x70000000
-.global lbl_8019AC94
-lbl_8019AC94:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A262066
-	.long 0x6F6E7428
-	.long 0x3D257029
-	.long 0x20697320
-	.long 0x6E6F7420
-	.long 0x76616C69
-	.long 0x6420706F
-	.long 0x696E7465
-	.long 0x722E0000
-	.long 0x43686172
-	.long 0x57726974
-	.long 0x65723A3A
-	.long 0x53657475
-	.long 0x7047583A
-	.long 0x20556E6B
-	.long 0x6E6F776E
-	.long 0x20666F6E
-	.long 0x74207368
-	.long 0x65657420
-	.long 0x666F726D
-	.long 0x6174283D
-	.long 0x25642900
-	.long 0x6D6F6465
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x6D6F6465
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A6D466F
-	.long 0x6E74283D
-	.long 0x25702920
-	.long 0x6973206E
-	.long 0x6F742076
-	.long 0x616C6964
-	.long 0x20706F69
-	.long 0x6E746572
-	.long 0x2E000000
-	.long 0x6D466F6E
-	.long 0x742D3E47
-	.long 0x65745769
-	.long 0x64746828
-	.long 0x29206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x206D466F
-	.long 0x6E742D3E
-	.long 0x47657457
-	.long 0x69647468
-	.long 0x2829206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x00000000
-	.long 0x6D466F6E
-	.long 0x742D3E47
-	.long 0x65744865
-	.long 0x69676874
-	.long 0x28292069
-	.long 0x73206F75
-	.long 0x74206F66
-	.long 0x20626F75
-	.long 0x6E647328
-	.long 0x2564290A
-	.long 0x2564203C
-	.long 0x3D206D46
-	.long 0x6F6E742D
-	.long 0x3E476574
-	.long 0x48656967
-	.long 0x68742829
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x636F6465
-	.long 0x20213D20
-	.long 0x466F6E74
-	.long 0x3A3A494E
-	.long 0x56414C49
-	.long 0x445F4348
-	.long 0x41524143
-	.long 0x5445525F
-	.long 0x434F4445
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A262067
-	.long 0x6C797068
-	.long 0x283D2570
-	.long 0x29206973
-	.long 0x206E6F74
-	.long 0x2076616C
-	.long 0x69642070
-	.long 0x6F696E74
-	.long 0x65722E00
-	.long 0x676C7970
-	.long 0x682E7465
-	.long 0x78576964
-	.long 0x74682069
-	.long 0x73206F75
-	.long 0x74206F66
-	.long 0x20626F75
-	.long 0x6E647328
-	.long 0x2564290A
-	.long 0x2564203C
-	.long 0x3D20676C
-	.long 0x7970682E
-	.long 0x74657857
-	.long 0x69647468
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x676C7970
-	.long 0x682E7465
-	.long 0x78486569
-	.long 0x67687420
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2067
-	.long 0x6C797068
-	.long 0x2E746578
-	.long 0x48656967
-	.long 0x6874206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x00000000
-.global lbl_8019AF60
-lbl_8019AF60:
-	.long 0x75745F46
-	.long 0x696C6553
-	.long 0x74726561
-	.long 0x6D2E6370
-	.long 0x70000000
-.global lbl_8019AF74
-lbl_8019AF74:
-	.long 0x53747265
-	.long 0x616D2064
-	.long 0x6F6E2774
-	.long 0x20737570
-	.long 0x706F7274
-	.long 0x20534545
-	.long 0x4B206675
-	.long 0x6E637469
-	.long 0x6F6E0A00
-.global lbl_8019AF98
-lbl_8019AF98:
-	.long 0x53747265
-	.long 0x616D2064
-	.long 0x6F6E2774
-	.long 0x20737570
-	.long 0x706F7274
-	.long 0x2043414E
-	.long 0x43454C20
-	.long 0x66756E63
-	.long 0x74696F6E
-	.long 0x0A000000
-	.long 0x53747265
-	.long 0x616D2064
-	.long 0x6F6E2774
-	.long 0x20737570
-	.long 0x706F7274
-	.long 0x20415359
-	.long 0x4E432066
-	.long 0x756E6374
-	.long 0x696F6E0A
-	.long 0x00000000
+glabel lbl_8019AF60
+	.asciz "ut_FileStream.cpp"
+glabel lbl_8019AF74
+	.asciz "Stream don't support SEEK function\n"
+glabel lbl_8019AF98
+	.asciz "Stream don't support CANCEL function\n"
+	.balign 4
+	.asciz "Stream don't support ASYNC function\n"
+	.balign 4
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80124074
@@ -49899,8 +32423,7 @@ lbl_8019AF98:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_8019B048
-lbl_8019B048:
+glabel lbl_8019B048
 	.long 0x00000000
 	.long 0xFFFFFFFF
 	.long 0x80139B38
@@ -49913,65 +32436,18 @@ lbl_8019B048:
 	.long 0x00000000
 	.long 0xFFFFFFFF
 	.long 0x8013A02C
-	.long 0x75745F46
-	.long 0x6F6E742E
-	.long 0x63707000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
+	.asciz "ut_Font.cpp"
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
 	.long 0x00000000
-	.long 0x00000000
-.global lbl_8019B0C0
-lbl_8019B0C0:
-	.long 0x75745F49
-	.long 0x4F537472
-	.long 0x65616D2E
-	.long 0x63707000
-.global lbl_8019B0D0
-lbl_8019B0D0:
-	.long 0x53747265
-	.long 0x616D2064
-	.long 0x6F6E2774
-	.long 0x20737570
-	.long 0x706F7274
-	.long 0x20524541
-	.long 0x44206675
-	.long 0x6E637469
-	.long 0x6F6E0A00
-.global lbl_8019B0F4
-lbl_8019B0F4:
-	.long 0x53747265
-	.long 0x616D2064
-	.long 0x6F6E2774
-	.long 0x20737570
-	.long 0x706F7274
-	.long 0x20415359
-	.long 0x4E432066
-	.long 0x756E6374
-	.long 0x696F6E0A
-	.long 0x00000000
-.global lbl_8019B11C
-lbl_8019B11C:
-	.long 0x53747265
-	.long 0x616D2064
-	.long 0x6F6E2774
-	.long 0x20737570
-	.long 0x706F7274
-	.long 0x20575249
-	.long 0x54452066
-	.long 0x756E6374
-	.long 0x696F6E0A
-	.long 0x00000000
+glabel lbl_8019B0C0
+	.asciz "ut_IOStream.cpp"
+glabel lbl_8019B0D0
+	.asciz "Stream don't support READ function\n"
+glabel lbl_8019B0F4
+	.asciz "Stream don't support ASYNC function\n"
+glabel lbl_8019B11C
+	.asciz "Stream don't support WRITE function\n"
+	.balign 4
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
@@ -49989,239 +32465,45 @@ lbl_8019B11C:
 	.long 0x8012406C
 	.long 0x80124064
 	.long 0x8012405C
-.global lbl_8019B188
-lbl_8019B188:
-	.long 0x75745F4C
-	.long 0x696E6B4C
-	.long 0x6973742E
-	.long 0x63707000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x21497345
-	.long 0x6D707479
-	.long 0x28290000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28702900
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x70213D26
-	.long 0x6D4E6F64
-	.long 0x65000000
+glabel lbl_8019B188
+	.asciz "ut_LinkList.cpp"
+	.asciz "NW4HBM:Failed assertion !IsEmpty()"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (p)"
+	.asciz "NW4HBM:Failed assertion p!=&mNode"
+	.balign 4
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28704E65
-	.long 0x78742900
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28705072
-	.long 0x65762900
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x69742E6D
-	.long 0x506F696E
-	.long 0x74657221
-	.long 0x3D266D4E
-	.long 0x6F646500
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28704974
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28704974
-	.long 0x50726576
-	.long 0x29000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x702D3E6D
-	.long 0x4E657874
-	.long 0x203D3D20
-	.long 0x4E554C4C
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x702D3E6D
-	.long 0x50726576
-	.long 0x203D3D20
-	.long 0x4E554C4C
-	.long 0x00000000
-.global lbl_8019B330
-lbl_8019B330:
-	.long 0x75745F6C
-	.long 0x6973742E
-	.long 0x63707000
-.global lbl_8019B33C
-lbl_8019B33C:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286C6973
-	.long 0x74290000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x286F626A
-	.long 0x65637429
-	.long 0x00000000
-.global lbl_8019B390
-lbl_8019B390:
-	.long 0x75745F4E
-	.long 0x616E6446
-	.long 0x696C6553
-	.long 0x74726561
-	.long 0x6D2E6370
-	.long 0x70000000
-.global lbl_8019B3A8
-lbl_8019B3A8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28636F6D
-	.long 0x6D616E64
-	.long 0x426C6F63
-	.long 0x6B290000
-.global lbl_8019B3D8
-lbl_8019B3D8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28706174
-	.long 0x68290000
-.global lbl_8019B400
-lbl_8019B400:
-	.long 0x43616E27
-	.long 0x7420436C
-	.long 0x6F736520
-	.long 0x4E414E44
-	.long 0x2046696C
-	.long 0x652E2049
-	.long 0x74207374
-	.long 0x696C6C20
-	.long 0x68617320
-	.long 0x6265656E
-	.long 0x20757365
-	.long 0x640A0000
-	.long 0x4E573448
-	.long 0x424D3A41
-	.long 0x6C69676E
-	.long 0x6D656E74
-	.long 0x20457272
-	.long 0x6F722830
-	.long 0x78257829
-	.long 0x0A627566
-	.long 0x206D7573
-	.long 0x74206265
-	.long 0x20616C69
-	.long 0x676E6564
-	.long 0x20746F20
-	.long 0x33322062
-	.long 0x79746573
-	.long 0x20626F75
-	.long 0x6E646172
-	.long 0x792E0000
-	.long 0x4E573448
-	.long 0x424D3A41
-	.long 0x6C69676E
-	.long 0x6D656E74
-	.long 0x20457272
-	.long 0x6F722830
-	.long 0x78257829
-	.long 0x0A6C656E
-	.long 0x67746820
-	.long 0x6D757374
-	.long 0x20626520
-	.long 0x616C6967
-	.long 0x6E656420
-	.long 0x746F2033
-	.long 0x32206279
-	.long 0x74657320
-	.long 0x626F756E
-	.long 0x64617279
-	.long 0x2E000000
-.global lbl_8019B4C4
-lbl_8019B4C4:
-	.long 0x4E616E64
-	.long 0x46696C65
-	.long 0x53747265
-	.long 0x616D2069
-	.long 0x73206E6F
-	.long 0x74206F70
-	.long 0x656E6564
-	.long 0x00000000
-.global lbl_8019B4E4
-lbl_8019B4E4:
+	.asciz "NW4HBM:Pointer must not be NULL (pNext)"
+	.asciz "NW4HBM:Pointer must not be NULL (pPrev)"
+	.asciz "NW4HBM:Failed assertion it.mPointer!=&mNode"
+	.asciz "NW4HBM:Pointer must not be NULL (pIt)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (pItPrev)"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion p->mNext == NULL"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion p->mPrev == NULL"
+glabel lbl_8019B330
+	.asciz "ut_list.cpp"
+glabel lbl_8019B33C
+	.asciz "NW4HBM:Pointer must not be NULL (list)"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (object)"
+glabel lbl_8019B390
+	.asciz "ut_NandFileStream.cpp"
+glabel lbl_8019B3A8
+	.asciz "NW4HBM:Pointer must not be NULL (commandBlock)"
+glabel lbl_8019B3D8
+	.asciz "NW4HBM:Pointer must not be NULL (path)"
+glabel lbl_8019B400
+	.asciz "Can't Close NAND File. It still has been used\n"
+	.balign 4
+	.asciz "NW4HBM:Alignment Error(0x%x)\nbuf must be aligned to 32 bytes boundary."
+	.balign 4
+	.asciz "NW4HBM:Alignment Error(0x%x)\nlength must be aligned to 32 bytes boundary."
+glabel lbl_8019B4C4
+	.asciz "NandFileStream is not opened"
+glabel lbl_8019B4E4
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80125DA8
@@ -50245,546 +32527,67 @@ lbl_8019B4E4:
 	.long 0x80125D90
 	.long 0x80125D78
 	.long 0x8014097C
-.global lbl_8019B540
-lbl_8019B540:
-	.long 0x75745F52
-	.long 0x6573466F
-	.long 0x6E742E63
-	.long 0x70700000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
+glabel lbl_8019B540
+	.asciz "ut_ResFont.cpp"
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nbrfnt(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Alignment Error(0x%x)\nbrfnt must be aligned to 32 bytes boundary."
+	.balign 4
+	.asciz "Font resource already atached."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nblockHeader(=%p) is not valid pointer."
+	.asciz "Invalid font resource."
+	.balign 4
+	.asciz "ResFont::RemoveResource(): Res font is not loaded.\n"
+	.asciz "NW4HBM:Pointer Error\nfileHeader(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Alignment Error(0x%x)\nfileHeader must be aligned to 32 bytes boundary."
+	.balign 4
+	.asciz "NW4HBM:Failed assertion info == NULL"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion info->fontType == FONT_TYPE_NNGCTEXTURE"
+	.asciz "NW4HBM:Failed assertion info->alterCharIndex != GLYPH_INDEX_NOT_FOUND"
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (info->pGlyph)"
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\ninfo->pGlyph(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\ninfo->pWidth(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\ninfo->pMap(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer must not be NULL (glyph->sheetImage)"
+	.asciz "NW4HBM:Pointer Error\nglyph->sheetImage(=%p) is not valid pointer."
+	.balign 4
+	.asciz "glyph->cellWidth is out of bounds(%d)\n%d <= glyph->cellWidth not satisfied."
+	.asciz "glyph->cellHeight is out of bounds(%d)\n%d <= glyph->cellHeight not satisfied."
+	.balign 4
+	.asciz "glyph->sheetSize is out of bounds(%d)\n%d <= glyph->sheetSize <= %d not satisfied."
+	.balign 4
+	.asciz "glyph->sheetNum is out of bounds(%d)\n%d <= glyph->sheetNum not satisfied."
+	.balign 4
+	.asciz "glyph->sheetRow is out of bounds(%d)\n%d <= glyph->sheetRow not satisfied."
+	.balign 4
+	.asciz "glyph->sheetLine is out of bounds(%d)\n%d <= glyph->sheetLine not satisfied."
+	.asciz "glyph->sheetWidth is out of bounds(%d)\n%d <= glyph->sheetWidth <= %d not satisfied."
+	.asciz "glyph->sheetHeight is out of bounds(%d)\n%d <= glyph->sheetHeight <= %d not satisfied."
+	.balign 4
+	.asciz "NW4HBM:Failed assertion width->indexBegin <= width->indexEnd"
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nwidth->pNext(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Failed assertion map->ccodeBegin <= map->ccodeEnd"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion (map->mappingMethod == FONT_MAPMETHOD_DIRECT) || (map->mappingMethod == FONT_MAPMETHOD_TABLE) || (map->mappingMethod == FONT_MAPMETHOD_SCAN)"
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nmap->pNext(=%p) is not valid pointer."
+	.balign 4
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A627266
-	.long 0x6E74283D
-	.long 0x25702920
-	.long 0x6973206E
-	.long 0x6F742076
-	.long 0x616C6964
-	.long 0x20706F69
-	.long 0x6E746572
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A41
-	.long 0x6C69676E
-	.long 0x6D656E74
-	.long 0x20457272
-	.long 0x6F722830
-	.long 0x78257829
-	.long 0x0A627266
-	.long 0x6E74206D
-	.long 0x75737420
-	.long 0x62652061
-	.long 0x6C69676E
-	.long 0x65642074
-	.long 0x6F203332
-	.long 0x20627974
-	.long 0x65732062
-	.long 0x6F756E64
-	.long 0x6172792E
-	.long 0x00000000
-	.long 0x466F6E74
-	.long 0x20726573
-	.long 0x6F757263
-	.long 0x6520616C
-	.long 0x72656164
-	.long 0x79206174
-	.long 0x61636865
-	.long 0x642E0000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A626C6F
-	.long 0x636B4865
-	.long 0x61646572
-	.long 0x283D2570
-	.long 0x29206973
-	.long 0x206E6F74
-	.long 0x2076616C
-	.long 0x69642070
-	.long 0x6F696E74
-	.long 0x65722E00
-	.long 0x496E7661
-	.long 0x6C696420
-	.long 0x666F6E74
-	.long 0x20726573
-	.long 0x6F757263
-	.long 0x652E0000
-	.long 0x52657346
-	.long 0x6F6E743A
-	.long 0x3A52656D
-	.long 0x6F766552
-	.long 0x65736F75
-	.long 0x72636528
-	.long 0x293A2052
-	.long 0x65732066
-	.long 0x6F6E7420
-	.long 0x6973206E
-	.long 0x6F74206C
-	.long 0x6F616465
-	.long 0x642E0A00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A66696C
-	.long 0x65486561
-	.long 0x64657228
-	.long 0x3D257029
-	.long 0x20697320
-	.long 0x6E6F7420
-	.long 0x76616C69
-	.long 0x6420706F
-	.long 0x696E7465
-	.long 0x722E0000
-	.long 0x4E573448
-	.long 0x424D3A41
-	.long 0x6C69676E
-	.long 0x6D656E74
-	.long 0x20457272
-	.long 0x6F722830
-	.long 0x78257829
-	.long 0x0A66696C
-	.long 0x65486561
-	.long 0x64657220
-	.long 0x6D757374
-	.long 0x20626520
-	.long 0x616C6967
-	.long 0x6E656420
-	.long 0x746F2033
-	.long 0x32206279
-	.long 0x74657320
-	.long 0x626F756E
-	.long 0x64617279
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x696E666F
-	.long 0x203D3D20
-	.long 0x4E554C4C
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x696E666F
-	.long 0x2D3E666F
-	.long 0x6E745479
-	.long 0x7065203D
-	.long 0x3D20464F
-	.long 0x4E545F54
-	.long 0x5950455F
-	.long 0x4E4E4743
-	.long 0x54455854
-	.long 0x55524500
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x696E666F
-	.long 0x2D3E616C
-	.long 0x74657243
-	.long 0x68617249
-	.long 0x6E646578
-	.long 0x20213D20
-	.long 0x474C5950
-	.long 0x485F494E
-	.long 0x4445585F
-	.long 0x4E4F545F
-	.long 0x464F554E
-	.long 0x44000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28696E66
-	.long 0x6F2D3E70
-	.long 0x476C7970
-	.long 0x68290000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A696E66
-	.long 0x6F2D3E70
-	.long 0x476C7970
-	.long 0x68283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A696E66
-	.long 0x6F2D3E70
-	.long 0x57696474
-	.long 0x68283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A696E66
-	.long 0x6F2D3E70
-	.long 0x4D617028
-	.long 0x3D257029
-	.long 0x20697320
-	.long 0x6E6F7420
-	.long 0x76616C69
-	.long 0x6420706F
-	.long 0x696E7465
-	.long 0x722E0000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x6572206D
-	.long 0x75737420
-	.long 0x6E6F7420
-	.long 0x6265204E
-	.long 0x554C4C20
-	.long 0x28676C79
-	.long 0x70682D3E
-	.long 0x73686565
-	.long 0x74496D61
-	.long 0x67652900
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A676C79
-	.long 0x70682D3E
-	.long 0x73686565
-	.long 0x74496D61
-	.long 0x6765283D
-	.long 0x25702920
-	.long 0x6973206E
-	.long 0x6F742076
-	.long 0x616C6964
-	.long 0x20706F69
-	.long 0x6E746572
-	.long 0x2E000000
-	.long 0x676C7970
-	.long 0x682D3E63
-	.long 0x656C6C57
-	.long 0x69647468
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x676C7970
-	.long 0x682D3E63
-	.long 0x656C6C57
-	.long 0x69647468
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x676C7970
-	.long 0x682D3E63
-	.long 0x656C6C48
-	.long 0x65696768
-	.long 0x74206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20676C79
-	.long 0x70682D3E
-	.long 0x63656C6C
-	.long 0x48656967
-	.long 0x6874206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x676C7970
-	.long 0x682D3E73
-	.long 0x68656574
-	.long 0x53697A65
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x676C7970
-	.long 0x682D3E73
-	.long 0x68656574
-	.long 0x53697A65
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x676C7970
-	.long 0x682D3E73
-	.long 0x68656574
-	.long 0x4E756D20
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2067
-	.long 0x6C797068
-	.long 0x2D3E7368
-	.long 0x6565744E
-	.long 0x756D206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x676C7970
-	.long 0x682D3E73
-	.long 0x68656574
-	.long 0x526F7720
-	.long 0x6973206F
-	.long 0x7574206F
-	.long 0x6620626F
-	.long 0x756E6473
-	.long 0x28256429
-	.long 0x0A256420
-	.long 0x3C3D2067
-	.long 0x6C797068
-	.long 0x2D3E7368
-	.long 0x65657452
-	.long 0x6F77206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x676C7970
-	.long 0x682D3E73
-	.long 0x68656574
-	.long 0x4C696E65
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x676C7970
-	.long 0x682D3E73
-	.long 0x68656574
-	.long 0x4C696E65
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x676C7970
-	.long 0x682D3E73
-	.long 0x68656574
-	.long 0x57696474
-	.long 0x68206973
-	.long 0x206F7574
-	.long 0x206F6620
-	.long 0x626F756E
-	.long 0x64732825
-	.long 0x64290A25
-	.long 0x64203C3D
-	.long 0x20676C79
-	.long 0x70682D3E
-	.long 0x73686565
-	.long 0x74576964
-	.long 0x7468203C
-	.long 0x3D202564
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x676C7970
-	.long 0x682D3E73
-	.long 0x68656574
-	.long 0x48656967
-	.long 0x68742069
-	.long 0x73206F75
-	.long 0x74206F66
-	.long 0x20626F75
-	.long 0x6E647328
-	.long 0x2564290A
-	.long 0x2564203C
-	.long 0x3D20676C
-	.long 0x7970682D
-	.long 0x3E736865
-	.long 0x65744865
-	.long 0x69676874
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x77696474
-	.long 0x682D3E69
-	.long 0x6E646578
-	.long 0x42656769
-	.long 0x6E203C3D
-	.long 0x20776964
-	.long 0x74682D3E
-	.long 0x696E6465
-	.long 0x78456E64
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A776964
-	.long 0x74682D3E
-	.long 0x704E6578
-	.long 0x74283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D61702D
-	.long 0x3E63636F
-	.long 0x64654265
-	.long 0x67696E20
-	.long 0x3C3D206D
-	.long 0x61702D3E
-	.long 0x63636F64
-	.long 0x65456E64
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x286D6170
-	.long 0x2D3E6D61
-	.long 0x7070696E
-	.long 0x674D6574
-	.long 0x686F6420
-	.long 0x3D3D2046
-	.long 0x4F4E545F
-	.long 0x4D41504D
-	.long 0x4554484F
-	.long 0x445F4449
-	.long 0x52454354
-	.long 0x29207C7C
-	.long 0x20286D61
-	.long 0x702D3E6D
-	.long 0x61707069
-	.long 0x6E674D65
-	.long 0x74686F64
-	.long 0x203D3D20
-	.long 0x464F4E54
-	.long 0x5F4D4150
-	.long 0x4D455448
-	.long 0x4F445F54
-	.long 0x41424C45
-	.long 0x29207C7C
-	.long 0x20286D61
-	.long 0x702D3E6D
-	.long 0x61707069
-	.long 0x6E674D65
-	.long 0x74686F64
-	.long 0x203D3D20
-	.long 0x464F4E54
-	.long 0x5F4D4150
-	.long 0x4D455448
-	.long 0x4F445F53
-	.long 0x43414E29
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A6D6170
-	.long 0x2D3E704E
-	.long 0x65787428
-	.long 0x3D257029
-	.long 0x20697320
-	.long 0x6E6F7420
-	.long 0x76616C69
-	.long 0x6420706F
-	.long 0x696E7465
-	.long 0x722E0000
-	.long 0x00000000
-	.long 0x54686520
-	.long 0x666F6E74
-	.long 0x20686173
-	.long 0x20756E6B
-	.long 0x6E6F776E
-	.long 0x20626C6F
-	.long 0x636B2827
-	.long 0x25632563
-	.long 0x25632563
-	.long 0x27292E00
-.global lbl_8019BDA0
-lbl_8019BDA0:
+	.asciz "The font has unknown block('%c%c%c%c')."
+glabel lbl_8019BDA0
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x801409CC
@@ -50807,164 +32610,33 @@ lbl_8019BDA0:
 	.long 0x80143CB4
 	.long 0x80144350
 	.long 0x80144738
-.global lbl_8019BDF8
-lbl_8019BDF8:
+glabel lbl_8019BDF8
 	.long 0x00000000
 	.long 0xFFFFFFFF
 	.long 0x8013A02C
-	.long 0x75745F52
-	.long 0x6573466F
-	.long 0x6E744261
-	.long 0x73652E63
-	.long 0x70700000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A705573
-	.long 0x65724275
-	.long 0x66666572
-	.long 0x283D2570
-	.long 0x29206973
-	.long 0x206E6F74
-	.long 0x2076616C
-	.long 0x69642070
-	.long 0x6F696E74
-	.long 0x65722E00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A70466F
-	.long 0x6E74496E
-	.long 0x666F283D
-	.long 0x25702920
-	.long 0x6973206E
-	.long 0x6F742076
-	.long 0x616C6964
-	.long 0x20706F69
-	.long 0x6E746572
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D526573
-	.long 0x6F757263
-	.long 0x65203D3D
-	.long 0x204E554C
-	.long 0x4C000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D466F6E
-	.long 0x74496E66
-	.long 0x6F203D3D
-	.long 0x204E554C
-	.long 0x4C000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A6D466F
-	.long 0x6E74496E
-	.long 0x666F283D
-	.long 0x25702920
-	.long 0x6973206E
-	.long 0x6F742076
-	.long 0x616C6964
-	.long 0x20706F69
-	.long 0x6E746572
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A262077
-	.long 0x69647468
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-	.long 0x6C696E65
-	.long 0x66656564
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x6C696E65
-	.long 0x66656564
-	.long 0x203C3D20
-	.long 0x2564206E
-	.long 0x6F742073
-	.long 0x61746973
-	.long 0x66696564
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A705769
-	.long 0x64746828
-	.long 0x3D257029
-	.long 0x20697320
-	.long 0x6E6F7420
-	.long 0x76616C69
-	.long 0x6420706F
-	.long 0x696E7465
-	.long 0x722E0000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A704D61
-	.long 0x70283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-	.long 0x756E6B6E
-	.long 0x776F6E20
-	.long 0x4D41504D
-	.long 0x4554484F
-	.long 0x44000000
-.global lbl_8019C060
-lbl_8019C060:
+	.asciz "ut_ResFontBase.cpp"
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\npUserBuffer(=%p) is not valid pointer."
+	.asciz "NW4HBM:Pointer Error\npFontInfo(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mResource == NULL"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mFontInfo == NULL"
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nmFontInfo(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\n& widths(=%p) is not valid pointer."
+	.balign 4
+	.asciz "linefeed is out of bounds(%d)\n%d <= linefeed <= %d not satisfied."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\npWidth(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\npMap(=%p) is not valid pointer."
+	.balign 4
+	.asciz "unknwon MAPMETHOD"
+glabel lbl_8019C060
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x801419EC
@@ -50987,8 +32659,7 @@ lbl_8019C060:
 	.long 0x80143CB4
 	.long 0x80144350
 	.long 0x80144738
-.global lbl_8019C0B8
-lbl_8019C0B8:
+glabel lbl_8019C0B8
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x8011669C
@@ -51011,68 +32682,26 @@ lbl_8019C0B8:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_8019C110
-lbl_8019C110:
-	.long 0x75745F54
-	.long 0x61675072
-	.long 0x6F636573
-	.long 0x736F7242
-	.long 0x6173652E
-	.long 0x63707000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x636F6465
-	.long 0x203C2027
-	.long 0x20270000
+glabel lbl_8019C110
+	.asciz "ut_TagProcessorBase.cpp"
+	.asciz "NW4HBM:Failed assertion code < ' '"
+	.balign 4
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A636F6E
-	.long 0x74657874
-	.long 0x283D2570
-	.long 0x29206973
-	.long 0x206E6F74
-	.long 0x2076616C
-	.long 0x69642070
-	.long 0x6F696E74
-	.long 0x65722E00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A705265
-	.long 0x6374283D
-	.long 0x25702920
-	.long 0x6973206E
-	.long 0x6F742076
-	.long 0x616C6964
-	.long 0x20706F69
-	.long 0x6E746572
-	.long 0x2E000000
-.global lbl_8019C1C0
-lbl_8019C1C0:
+	.asciz "NW4HBM:Pointer Error\ncontext(=%p) is not valid pointer."
+	.asciz "NW4HBM:Pointer Error\npRect(=%p) is not valid pointer."
+glabel lbl_8019C1C0
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80145A9C
 	.long 0x80145ADC
 	.long 0x80145E5C
-.global lbl_8019C1D4
-lbl_8019C1D4:
+glabel lbl_8019C1D4
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x80145198
 	.long 0x801451D8
 	.long 0x80145558
-.global lbl_8019C1E8
-lbl_8019C1E8:
+glabel lbl_8019C1E8
 	.long 0x00000000
 	.long 0xFFFFFFFF
 	.long 0x80139DF8
@@ -51085,394 +32714,66 @@ lbl_8019C1E8:
 	.long 0x00000000
 	.long 0xFFFFFFFF
 	.long 0x8013A240
-.global lbl_8019C218
-lbl_8019C218:
-	.long 0x75745F54
-	.long 0x65787457
-	.long 0x72697465
-	.long 0x72426173
-	.long 0x652E6370
-	.long 0x70000000
-.global lbl_8019C230
-lbl_8019C230:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
+glabel lbl_8019C218
+	.asciz "ut_TextWriterBase.cpp"
+glabel lbl_8019C230
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\ntagProcessor(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nformat(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\npRect(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nstr(=%p) is not valid pointer."
 	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746167
-	.long 0x50726F63
-	.long 0x6573736F
-	.long 0x72283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A666F72
-	.long 0x6D617428
-	.long 0x3D257029
-	.long 0x20697320
-	.long 0x6E6F7420
-	.long 0x76616C69
-	.long 0x6420706F
-	.long 0x696E7465
-	.long 0x722E0000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A705265
-	.long 0x6374283D
-	.long 0x25702920
-	.long 0x6973206E
-	.long 0x6F742076
-	.long 0x616C6964
-	.long 0x20706F69
-	.long 0x6E746572
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A737472
-	.long 0x283D2570
-	.long 0x29206973
-	.long 0x206E6F74
-	.long 0x2076616C
-	.long 0x69642070
-	.long 0x6F696E74
-	.long 0x65722E00
-	.long 0x00000000
-	.long 0x6C656E67
-	.long 0x74682069
-	.long 0x73206F75
-	.long 0x74206F66
-	.long 0x20626F75
-	.long 0x6E647328
-	.long 0x2564290A
-	.long 0x2564203C
-	.long 0x3D206C65
-	.long 0x6E677468
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A627566
-	.long 0x66657228
-	.long 0x3D257029
-	.long 0x20697320
-	.long 0x6E6F7420
-	.long 0x76616C69
-	.long 0x6420706F
-	.long 0x696E7465
-	.long 0x722E0000
-	.long 0x73697A65
-	.long 0x20697320
-	.long 0x6F757420
-	.long 0x6F662062
-	.long 0x6F756E64
-	.long 0x73282564
-	.long 0x290A2564
-	.long 0x203C3D20
-	.long 0x73697A65
-	.long 0x206E6F74
-	.long 0x20736174
-	.long 0x69736669
-	.long 0x65642E00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A666F6E
-	.long 0x74283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A636F6E
-	.long 0x74657874
-	.long 0x2E737472
-	.long 0x283D2570
-	.long 0x29206973
-	.long 0x206E6F74
-	.long 0x2076616C
-	.long 0x69642070
-	.long 0x6F696E74
-	.long 0x65722E00
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A476574
-	.long 0x466F6E74
-	.long 0x2829283D
-	.long 0x25702920
-	.long 0x6973206E
-	.long 0x6F742076
-	.long 0x616C6964
-	.long 0x20706F69
-	.long 0x6E746572
-	.long 0x2E000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-.global lbl_8019C4DC
-lbl_8019C4DC:
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D526561
-	.long 0x6446756E
-	.long 0x63203D3D
-	.long 0x20526561
-	.long 0x644E6578
-	.long 0x74436861
-	.long 0x72555446
-	.long 0x38207C7C
-	.long 0x206D5265
-	.long 0x61644675
-	.long 0x6E63203D
-	.long 0x3D205265
-	.long 0x61644E65
-	.long 0x78744368
-	.long 0x61724350
-	.long 0x31323532
-	.long 0x207C7C20
-	.long 0x6D526561
-	.long 0x6446756E
-	.long 0x63203D3D
-	.long 0x20526561
-	.long 0x644E6578
-	.long 0x74436861
-	.long 0x72534A49
-	.long 0x53000000
-.global lbl_8019C558
-lbl_8019C558:
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-.global lbl_8019C56C
-lbl_8019C56C:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A737472
-	.long 0x65616D28
-	.long 0x3D257029
-	.long 0x20697320
-	.long 0x6E6F7420
-	.long 0x76616C69
-	.long 0x6420706F
-	.long 0x696E7465
-	.long 0x722E0000
-.global lbl_8019C5A4
-lbl_8019C5A4:
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-.global lbl_8019C5B8
-lbl_8019C5B8:
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-.global lbl_8019C5F0
-lbl_8019C5F0:
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A46
-	.long 0x61696C65
-	.long 0x64206173
-	.long 0x73657274
-	.long 0x696F6E20
-	.long 0x6D526561
-	.long 0x6446756E
-	.long 0x63203D3D
-	.long 0x20526561
-	.long 0x644E6578
-	.long 0x74436861
-	.long 0x72555446
-	.long 0x31360000
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A737472
-	.long 0x65616D28
-	.long 0x3D257029
-	.long 0x20697320
-	.long 0x6E6F7420
-	.long 0x76616C69
-	.long 0x6420706F
-	.long 0x696E7465
-	.long 0x722E0000
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A41
-	.long 0x6C69676E
-	.long 0x6D656E74
-	.long 0x20457272
-	.long 0x6F722830
-	.long 0x78257829
-	.long 0x0A737472
-	.long 0x65616D20
-	.long 0x6D757374
-	.long 0x20626520
-	.long 0x616C6967
-	.long 0x6E656420
-	.long 0x746F2032
-	.long 0x20627974
-	.long 0x65732062
-	.long 0x6F756E64
-	.long 0x6172792E
-	.long 0x00000000
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-	.long 0x4E573448
-	.long 0x424D3A50
-	.long 0x6F696E74
-	.long 0x65722045
-	.long 0x72726F72
-	.long 0x0A746869
-	.long 0x73283D25
-	.long 0x70292069
-	.long 0x73206E6F
-	.long 0x74207661
-	.long 0x6C696420
-	.long 0x706F696E
-	.long 0x7465722E
-	.long 0x00000000
-	.long 0x43686172
-	.long 0x5374726D
-	.long 0x52656164
-	.long 0x65722E68
-	.long 0x00000000
-.global lbl_8019C7E0
-lbl_8019C7E0:
+	.asciz "length is out of bounds(%d)\n%d <= length not satisfied."
+	.asciz "NW4HBM:Pointer Error\nbuffer(=%p) is not valid pointer."
+	.balign 4
+	.asciz "size is out of bounds(%d)\n%d <= size not satisfied."
+	.asciz "NW4HBM:Pointer Error\nfont(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\ncontext.str(=%p) is not valid pointer."
+	.asciz "NW4HBM:Pointer Error\nGetFont()(=%p) is not valid pointer."
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
+glabel lbl_8019C4DC
+	.asciz "NW4HBM:Failed assertion mReadFunc == ReadNextCharUTF8 || mReadFunc == ReadNextCharCP1252 || mReadFunc == ReadNextCharSJIS"
+glabel lbl_8019C558
+	.asciz "CharStrmReader.h"
+glabel lbl_8019C56C
+	.asciz "NW4HBM:Pointer Error\nstream(=%p) is not valid pointer."
+glabel lbl_8019C5A4
+	.asciz "CharStrmReader.h"
+glabel lbl_8019C5B8
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
+glabel lbl_8019C5F0
+	.asciz "CharStrmReader.h"
+	.balign 4
+	.asciz "NW4HBM:Failed assertion mReadFunc == ReadNextCharUTF16"
+	.balign 4
+	.asciz "CharStrmReader.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nstream(=%p) is not valid pointer."
+	.balign 4
+	.asciz "CharStrmReader.h"
+	.balign 4
+	.asciz "NW4HBM:Alignment Error(0x%x)\nstream must be aligned to 2 bytes boundary."
+	.balign 4
+	.asciz "CharStrmReader.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
+	.balign 4
+	.asciz "CharStrmReader.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
+	.balign 4
+	.asciz "CharStrmReader.h"
+	.balign 4
+	.asciz "NW4HBM:Pointer Error\nthis(=%p) is not valid pointer."
+	.balign 4
+	.asciz "CharStrmReader.h"
+glabel lbl_8019C7E0
 	.long 0x8025B380
 	.long 0x00000000
 	.long 0x8014F260
@@ -51480,13 +32781,9 @@ lbl_8019C7E0:
 	.long 0x8025B388
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_8019C7FC
-lbl_8019C7FC:
-	.long 0x6261645F
-	.long 0x616C6C6F
-	.long 0x63000000
-.global lbl_8019C808
-lbl_8019C808:
+glabel lbl_8019C7FC
+	.asciz "bad_alloc"
+glabel lbl_8019C808
 	.long 0x8015081C
 	.long 0x8015081C
 	.long 0x80150774
@@ -51539,8 +32836,7 @@ lbl_8019C808:
 	.long 0x801517E8
 	.long 0x801517A8
 	.long 0x00000000
-.global lbl_8019C8D8
-lbl_8019C8D8:
+glabel lbl_8019C8D8
 	.long 0x8025B3A0
 	.long 0x00000000
 	.long 0x801514A0
@@ -51548,15 +32844,10 @@ lbl_8019C8D8:
 	.long 0x8025B388
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_8019C8F4
-lbl_8019C8F4:
-	.long 0x6261645F
-	.long 0x65786365
-	.long 0x7074696F
-	.long 0x6E000000
+glabel lbl_8019C8F4
+	.asciz "bad_exception"
 	.long 0x00000000
-.global lbl_8019C908
-lbl_8019C908:
+glabel lbl_8019C908
 	.long 0x00000000
 	.long 0x0A800000
 	.long 0x00000000
@@ -51637,8 +32928,7 @@ lbl_8019C908:
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_8019CA48
-lbl_8019CA48:
+glabel lbl_8019CA48
 	.long 0x80153070
 	.long 0x80153264
 	.long 0x80153264
@@ -51713,8 +33003,7 @@ lbl_8019CA48:
 	.long 0x80153234
 	.long 0x8015324C
 	.long 0x00000000
-.global lbl_8019CB70
-lbl_8019CB70:
+glabel lbl_8019CB70
 	.long 0x40240000
 	.long 0x00000000
 	.long 0x40590000
@@ -51731,8 +33020,7 @@ lbl_8019CB70:
 	.long 0x00000000
 	.long 0x4197D784
 	.long 0x00000000
-.global lbl_8019CBB0
-lbl_8019CBB0:
+glabel lbl_8019CBB0
 	.long 0x8025CD80
 	.long 0x8025CD84
 	.long 0x8025CD84
@@ -51841,8 +33129,7 @@ lbl_8019CBB0:
 	.long 0x8016B530
 	.long 0x8016B588
 	.long 0x8025CD84
-.global lbl_8019CD60
-lbl_8019CD60:
+glabel lbl_8019CD60
 	.long 0x00000000
 	.long 0x43000000
 	.long 0x00000000
@@ -51861,8 +33148,7 @@ lbl_8019CD60:
 	.long 0x8019CCEC
 	.long 0x8019CD20
 	.long 0x8019CD38
-.global lbl_8019CDA8
-lbl_8019CDA8:
+glabel lbl_8019CDA8
 	.long 0x80155D10
 	.long 0x80155E70
 	.long 0x80155E70
@@ -51936,8 +33222,7 @@ lbl_8019CDA8:
 	.long 0x801559A4
 	.long 0x801559A4
 	.long 0x80155990
-.global lbl_8019CECC
-lbl_8019CECC:
+glabel lbl_8019CECC
 	.long 0x80155F68
 	.long 0x80155F74
 	.long 0x80155F74
@@ -51971,8 +33256,7 @@ lbl_8019CECC:
 	.long 0x80155F74
 	.long 0x80155F74
 	.long 0x80155F68
-.global lbl_8019CF50
-lbl_8019CF50:
+glabel lbl_8019CF50
 	.long 0x801561D0
 	.long 0x801561DC
 	.long 0x801561DC
@@ -52015,8 +33299,7 @@ lbl_8019CF50:
 	.long 0x80157698
 	.long 0x801576A8
 	.long 0x801576B0
-.global lbl_8019CFF8
-lbl_8019CFF8:
+glabel lbl_8019CFF8
 	.long 0x801582C4
 	.long 0x801585F0
 	.long 0x801585F0
@@ -52073,8 +33356,7 @@ lbl_8019CFF8:
 	.long 0x801585F0
 	.long 0x801585F0
 	.long 0x801582AC
-.global lbl_8019D0D8
-lbl_8019D0D8:
+glabel lbl_8019D0D8
 	.long 0x80158C7C
 	.long 0x80158C84
 	.long 0x80158C8C
@@ -52083,8 +33365,7 @@ lbl_8019D0D8:
 	.long 0x80158CB0
 	.long 0x80158CB8
 	.long 0x80158CC0
-.global lbl_8019D0F8
-lbl_8019D0F8:
+glabel lbl_8019D0F8
 	.long 0x80158AE4
 	.long 0x80158AEC
 	.long 0x80158AF4
@@ -52213,8 +33494,7 @@ lbl_8019D0F8:
 	.long 0x8015D0BC
 	.long 0x8015D114
 	.long 0x8015D174
-.global lbl_8019D2F8
-lbl_8019D2F8:
+glabel lbl_8019D2F8
 	.long 0x80162B78
 	.long 0x80162A9C
 	.long 0x80162AAC
@@ -52243,8 +33523,7 @@ lbl_8019D2F8:
 	.long 0x80162B4C
 	.long 0x80162B5C
 	.long 0x00000000
-.global lbl_8019D368
-lbl_8019D368:
+glabel lbl_8019D368
 	.long 0x80163740
 	.long 0x80163760
 	.long 0x80163738
@@ -52252,8 +33531,7 @@ lbl_8019D368:
 	.long 0x80163748
 	.long 0x80163750
 	.long 0x80163758
-.global lbl_8019D384
-lbl_8019D384:
+glabel lbl_8019D384
 	.long 0x80163984
 	.long 0x801639A4
 	.long 0x8016397C
@@ -52261,26 +33539,22 @@ lbl_8019D384:
 	.long 0x8016398C
 	.long 0x80163994
 	.long 0x8016399C
-.global lbl_8019D3A0
-lbl_8019D3A0:
+glabel lbl_8019D3A0
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_8019D3AC
-lbl_8019D3AC:
+glabel lbl_8019D3AC
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x01000000
-.global lbl_8019D3BC
-lbl_8019D3BC:
+glabel lbl_8019D3BC
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
-.global lbl_8019D3D0
-lbl_8019D3D0:
+glabel lbl_8019D3D0
 	.long 0x00000100
 	.long 0x00000200
 	.long 0x00000300
@@ -52297,8 +33571,7 @@ lbl_8019D3D0:
 	.long 0x00001400
 	.long 0x00001700
 	.long 0x00000000
-.global lbl_8019D410
-lbl_8019D410:
+glabel lbl_8019D410
 	.long 0x00000000
 	.long 0x00000000
 	.long 0x00000000
