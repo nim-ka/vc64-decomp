@@ -395,7 +395,7 @@ extern s32 lbl_8025C9E6;
 extern s32 lbl_8025C9E7;
 extern s32 lbl_8025C9E8;
 extern s32 lbl_8025C9F0;
-extern s32 lbl_8025C9F4;
+extern f32 lbl_8025C9F4;
 extern s32 lbl_8025C9F8;
 extern s32 lbl_8025CA00;
 extern s32 lbl_8025CA04;

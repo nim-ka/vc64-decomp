@@ -312,11 +312,9 @@ s32 func_80106DA0(void) {
 	return 1;
 }
 
-#ifdef NON_MATCHING
-void func_80106DA8(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800FDEF8/func_80106DA8.s")
-#endif
+s8 func_80106DA8(s8 arg0[], s32 arg1) {
+	return arg0[arg1 + 4];
+}
 
 void func_80106DB4(void) {}
 
@@ -330,11 +328,9 @@ s32 func_80106DD8(s32 *arg0) {
 	return arg0[0x20 / 4];
 }
 
-#ifdef NON_MATCHING
-void func_80106DE0(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800FDEF8/func_80106DE0.s")
-#endif
+void func_80106DE0(s8 arg0[], s32 arg1, s8 arg2) {
+	arg0[arg1 + 4] = arg2;
+}
 
 void func_80106DEC(void) {}
 
@@ -438,11 +434,9 @@ void func_80107E2C(void) {}
 GLOBAL_ASM("asm/src/code_800FDEF8/func_80107E2C.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_80107F2C(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800FDEF8/func_80107F2C.s")
-#endif
+u8 func_80107F2C(u8 arg0[]) {
+	return arg0[0xcf] & 1;
+}
 
 s32 func_80107F38(s32 *arg0) {
 	return arg0[0xc / 4];
@@ -514,17 +508,13 @@ void func_80108680(void) {}
 GLOBAL_ASM("asm/src/code_800FDEF8/func_80108680.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_80108694(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800FDEF8/func_80108694.s")
-#endif
+void func_80108694(f32 arg0[]) {
+	arg0[3] = arg0[2] = lbl_8025C9F4;
+}
 
-#ifdef NON_MATCHING
-void func_801086A4(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800FDEF8/func_801086A4.s")
-#endif
+void func_801086A4(s32 arg0[]) {
+	func_801091D0(arg0[9], arg0[0]);
+}
 
 void func_801086B4(void) {}
 
@@ -544,11 +534,10 @@ void func_80108754(void) {}
 GLOBAL_ASM("asm/src/code_800FDEF8/func_80108754.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_801087B4(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800FDEF8/func_801087B4.s")
-#endif
+void func_801087B4(s8 arg0[]) {
+	arg0[0x42] = 0;
+	arg0[0x43] = 0;
+}
 
 #ifdef NON_MATCHING
 void func_801087C4(void) {}
@@ -556,11 +545,9 @@ void func_801087C4(void) {}
 GLOBAL_ASM("asm/src/code_800FDEF8/func_801087C4.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_801089FC(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800FDEF8/func_801089FC.s")
-#endif
+void func_801089FC(s32 arg0[]) {
+	func_80109334(arg0[9], arg0[0]);
+}
 
 void func_80108A0C(void) {}
 
@@ -647,7 +634,7 @@ GLOBAL_ASM("asm/src/code_800FDEF8/func_80109108.s")
 #endif
 
 #ifdef NON_MATCHING
-void func_801091D0(void) {}
+void func_801091D0(s32 arg0, s32 arg1) {}
 #else
 GLOBAL_ASM("asm/src/code_800FDEF8/func_801091D0.s")
 #endif
@@ -675,7 +662,7 @@ s32 func_8010932C(void) {
 }
 
 #ifdef NON_MATCHING
-void func_80109334(void) {}
+void func_80109334(s32 arg0, s32 arg1) {}
 #else
 GLOBAL_ASM("asm/src/code_800FDEF8/func_80109334.s")
 #endif
@@ -892,11 +879,9 @@ void func_8010B6AC(void) {}
 GLOBAL_ASM("asm/src/code_800FDEF8/func_8010B6AC.s")
 #endif
 
-#ifdef NON_MATCHING
-void func_8010B8A8(void) {}
-#else
-GLOBAL_ASM("asm/src/code_800FDEF8/func_8010B8A8.s")
-#endif
+u16 func_8010B8A8(struct idk_8010B8A8 *arg0) {
+	return (*arg0->unkC)[4];
+}
 
 #ifdef NON_MATCHING
 void func_8010B8B4(void) {}
