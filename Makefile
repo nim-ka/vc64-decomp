@@ -78,7 +78,7 @@ $(ELF): $(O_FILES) $(LDSCRIPT)
 build/src/init1.o: OPT_FLAGS ?= -opt peep -opt schedule
 OPT_FLAGS ?= -O4,p
 
-$(GLOBAL_ASM_O_FILES): BUILD_C := $(ASM_PROCESSOR) "$(CC) $(CFLAGS) $(OPT_FLAGS)" "$(AS) $(ASFLAGS)"
+$(GLOBAL_ASM_O_FILES): BUILD_C := $(ASM_PROCESSOR) "$(CC) $(CFLAGS) $(OPT_FLAGS)" "$(AS) $(ASFLAGS)" -o
 BUILD_C ?= $(CC) $(CFLAGS) $(OPT_FLAGS) -c -o
 
 $(BUILD)/%.o: %.s
