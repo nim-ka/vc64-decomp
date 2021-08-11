@@ -3,7 +3,7 @@
 ################################################################################
 #                                 Description                                  #
 ################################################################################
-# calcprogress: Used to calculate the progress of the OGWS decomp.             #
+# calcprogress: Used to calculate the progress of the N64 VC decomp.             #
 # Prints to stdout for now, but eventually will have some form of storage,     #
 # i.e. CSV, so that it can be used for a webpage display.                      #
 #                                                                              #
