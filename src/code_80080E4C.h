@@ -377,7 +377,7 @@ extern void func_80087430(void);
 extern void func_80087440(void);
 extern void func_80087690(void);
 extern void func_80087700(void);
-extern void func_80087784(void);
+extern void func_80087784(s32 arg0);
 extern void func_80087AC8(void);
 extern void func_80087BA4(void);
 extern s32 func_80087BAC(s32 *arg0);

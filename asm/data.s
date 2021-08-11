@@ -38995,33 +38995,11 @@ lbl_80191350:
 	.long 0x00000000
 .global lbl_80191360
 lbl_80191360:
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x2D2D2D2D
-	.long 0x20545241
-	.long 0x43450A00
-	.long 0x41646472
-	.long 0x6573733A
-	.long 0x20202042
-	.long 0x61636B43
-	.long 0x6861696E
-	.long 0x2020204C
-	.long 0x52207361
-	.long 0x76650A00
-	.long 0x25303858
-	.long 0x3A202025
-	.long 0x30385820
-	.long 0x20202025
-	.long 0x30385820
+        .asciz "-------------------------------- TRACE\n"
+        .asciz "Address:   BackChain   LR save\n"
+	.ascii "%08X:  %08X    %08X "
 	.long 0x00000000
-	.long 0x25733A25
-	.long 0x64205061
-	.long 0x6E69633A
+	.ascii "%s:%d Panic:"
 	.long 0x00000000
 .global lbl_801913D0
 lbl_801913D0:
