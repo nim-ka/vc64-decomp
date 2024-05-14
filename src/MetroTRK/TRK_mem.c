@@ -46,8 +46,19 @@
 #include "MetroTRK.h"
 
 #ifdef NON_MATCHING
-void func_8013E0FC(void) {}
+void *TRK_memset(void *p, s32 fill, u32 len) {
+	func_80164414(p, fill, len);
+	return p;
+}
 #else
-GLOBAL_ASM("asm/src/code_8013E0FC/func_8013E0FC.s")
+GLOBAL_ASM("asm/src/MetroTRK/TRK_memset.s")
 #endif
 
+void *TRK_memcpy(void *dst, void *src, u32 len) {
+	u8 *s;
+	u8 *d;
+
+	for (s = (u8 *) src - 1, d = (u8 *) dst - 1, len++; --len; ) {
+		*++d = *++s;
+	}
+}

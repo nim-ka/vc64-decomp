@@ -11,5 +11,3 @@ extern void __flush_cache(void);
 extern void *memcpy(void *dst, void *src, u32 len);
 extern void __fill_mem(void);
 extern void memset(void);
-extern void TRK_memset(void);
-extern void TRK_memcpy(void);

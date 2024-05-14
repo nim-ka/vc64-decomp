@@ -43,7 +43,7 @@
 #include "code_8013E0FC.h"
 #include "code_8013E6A8.h"
 #include "init0.h"
-#include "init1.h"
+#include "MetroTRK.h"
 
 const s32 lbl_8025D394;
 const s32 lbl_8025D390;

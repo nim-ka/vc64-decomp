@@ -43,7 +43,7 @@
 #include "code_8013E0FC.h"
 #include "code_8013E6A8.h"
 #include "init0.h"
-#include "init1.h"
+#include "MetroTRK.h"
 
 void __check_pad3(void) {
 	if (((* (u16 *) 0x800030E4) & 0xEEF) != 0xEEF) {

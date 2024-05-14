@@ -43,7 +43,7 @@
 #include "code_8013E0FC.h"
 #include "code_8013E6A8.h"
 #include "init0.h"
-#include "init1.h"
+#include "MetroTRK.h"
 
 void *memcpy(void *dst, void *src, u32 len) {
 	u8 *s;

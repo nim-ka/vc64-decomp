@@ -379,7 +379,7 @@ extern s32 func_80164334(void);
 extern s32 func_8016433C(void);
 extern void func_80164344(void);
 extern void func_801643DC(void);
-extern void func_80164414(void);
+extern void func_80164414(void *p, s32 fill, u32 len);
 extern void func_801644CC(void);
 extern void func_801644E8(void);
 extern void func_801644F0(void);

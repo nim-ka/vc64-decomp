@@ -18,7 +18,7 @@ else
 endif
 
 ASM_DIRS := asm asm/init
-SRC_DIRS := src src/init
+SRC_DIRS := src src/init src/MetroTRK
 
 S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
 C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
@@ -62,7 +62,7 @@ endif
 
 ASFLAGS := $(ASFLAGS) -mgekko -I include
 LDFLAGS := $(LDFLAGS) -proc gekko -nostdlib -fp hard -map $(MAP)
-CFLAGS := $(CFLAGS) -sdata 4 -sdata2 4 -proc gekko -nostdinc -Cpp_exceptions off -fp hard -i include -i src -i src/init
+CFLAGS := $(CFLAGS) -sdata 4 -sdata2 4 -proc gekko -nostdinc -Cpp_exceptions off -fp hard -i include $(foreach dir,$(SRC_DIRS),-i $(dir))
 
 DUMMY != mkdir -p $(BUILD) $(foreach dir,$(ASM_DIRS),$(BUILD)/$(dir)) $(foreach dir,$(SRC_DIRS),$(BUILD)/$(dir))
 
@@ -81,7 +81,8 @@ $(ELF): $(O_FILES) $(LDSCRIPT)
 	$(LD) $(LDFLAGS) -o $@ -lcf $(LDSCRIPT) $(O_FILES)
 	$(OBJCOPY) $@ $@
 
-build/src/init/init1.o: OPT_FLAGS ?= -opt peep -opt schedule
+build/src/MetroTRK/TRK_mem.o: OPT_FLAGS ?= -opt schedule -O4,p
+build/src/MetroTRK/init1.o: OPT_FLAGS ?= -opt peep -opt schedule
 OPT_FLAGS ?= -O4,p
 
 $(GLOBAL_ASM_O_FILES): BUILD_C := $(ASM_PROCESSOR) "$(CC) $(CFLAGS) $(OPT_FLAGS)" "$(AS) $(ASFLAGS)" -o
