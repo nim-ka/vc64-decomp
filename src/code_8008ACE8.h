@@ -198,7 +198,7 @@ extern void func_8008DFA4(void);
 extern void func_8008E0A4(void);
 extern void func_8008E13C(void);
 extern void func_8008E1F0(void);
-extern void func_8008E220(s32, s32, s32);
+extern void OSResetSystem(s32, s32, s32);
 extern void func_8008E23C(void);
 extern void func_8008E374(void);
 extern void func_8008E574(void);

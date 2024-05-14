@@ -1,6 +1,6 @@
 .section .text
 
-glabel func_8008E220
+glabel OSResetSystem
 /* 8008E220 000897E0  3C 60 80 17 */	lis r3, lbl_801745D0@ha
 /* 8008E224 000897E4  3C A0 80 17 */	lis r5, lbl_8017460C@ha
 /* 8008E228 000897E8  38 63 45 D0 */	addi r3, r3, lbl_801745D0@l

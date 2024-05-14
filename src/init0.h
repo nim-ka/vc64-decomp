@@ -1,7 +1,7 @@
 #pragma once
 
 
-extern void func_80004000(void);
+extern void __check_pad3(void);
 extern void func_80004028(void);
 extern void func_80004034(void);
 extern void main(void);

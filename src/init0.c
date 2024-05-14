@@ -45,11 +45,13 @@
 #include "init0.h"
 #include "init1.h"
 
-#ifdef NON_MATCHING
-void func_80004000(void) {}
-#else
-GLOBAL_ASM("asm/src/init/func_80004000.s")
-#endif
+void __check_pad3(void) {
+	if (((* (u16 *) 0x800030E4) & 0xEEF) != 0xEEF) {
+		return;
+	}
+
+	OSResetSystem(0x0, 0x0, 0x0);
+}
 
 #ifdef NON_MATCHING
 void func_80004028(void) {}

@@ -537,9 +537,9 @@ GLOBAL_ASM("asm/src/code_8008ACE8/func_8008E1F0.s")
 #endif
 
 #ifdef NON_MATCHING
-void func_8008E220(s32 arg0, s32 arg1, s32 arg2) {}
+void OSResetSystem(s32 arg0, s32 arg1, s32 arg2) {}
 #else
-GLOBAL_ASM("asm/src/code_8008ACE8/func_8008E220.s")
+GLOBAL_ASM("asm/src/code_8008ACE8/OSResetSystem.s")
 #endif
 
 #ifdef NON_MATCHING

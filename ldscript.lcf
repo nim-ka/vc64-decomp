@@ -9,7 +9,7 @@ FORCEFILES {
 SECTIONS {
 	.init BIND(0x80004000): {
 		init0.o(.text)
-		init0.o(.rodata)
+		__exception.o(.rodata)
 		init1.o(.text)
 		init1.o(.rodata)
 		*(.init)
