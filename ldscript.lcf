@@ -9,9 +9,18 @@ FORCEFILES {
 SECTIONS {
 	.init BIND(0x80004000): {
 		init0.o(.text)
+		__start.o(.text)
+		__init_registers.o(.text)
+		__init_data.o(.text)
+		__init_hardware.o(.text)
+		__flush_cache.o(.text)
+		memcpy.o(.text)
+		__fill_mem.o(.text)
+		memset.o(.text)
+		TRK_mem.o(.text)
 		__exception.o(.rodata)
 		init1.o(.text)
-		init1.o(.rodata)
+		initdata.o(.rodata)
 		*(.init)
 	}
 

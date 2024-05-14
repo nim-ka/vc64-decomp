@@ -1,3 +1,5 @@
+.include "macros.s"
+
 .section .rodata
 
 glabel lbl_80006420

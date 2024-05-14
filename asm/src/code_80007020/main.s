@@ -1,6 +1,6 @@
 .section .text
 
-glabel func_80007448
+glabel main
 /* 80007448 00002A08  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 8000744C 00002A0C  7C 08 02 A6 */	mflr r0
 /* 80007450 00002A10  90 01 00 24 */	stw r0, 0x24(r1)

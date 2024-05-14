@@ -129,7 +129,7 @@ s32 lbl_8025BA20;
 s32 lbl_8025BA1C;
 s32 lbl_8025BA18;
 s32 lbl_8025BA14;
-s32 lbl_8025BA10;
+u8 Debug_BBA;
 s32 lbl_8025BA0C;
 s32 lbl_8025BA08;
 s32 lbl_8025BA04;
@@ -955,9 +955,9 @@ GLOBAL_ASM("asm/src/code_8008ACE8/func_80091ADC.s")
 #endif
 
 #ifdef NON_MATCHING
-void func_80091B24(void) {}
+void exit(void) {}
 #else
-GLOBAL_ASM("asm/src/code_8008ACE8/func_80091B24.s")
+GLOBAL_ASM("asm/src/code_8008ACE8/exit.s")
 #endif
 
 #ifdef NON_MATCHING

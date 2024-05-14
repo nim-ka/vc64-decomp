@@ -159,9 +159,9 @@ GLOBAL_ASM("asm/src/code_80007020/func_80007430.s")
 #endif
 
 #ifdef NON_MATCHING
-void func_80007448(void) {}
+void main(void) {}
 #else
-GLOBAL_ASM("asm/src/code_80007020/func_80007448.s")
+GLOBAL_ASM("asm/src/code_80007020/main.s")
 #endif
 
 s32 func_80007748(void) {

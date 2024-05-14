@@ -44,7 +44,7 @@ extern void func_800073F4(void);
 extern s32 func_80007420(void);
 extern s32 func_80007428(void);
 extern void func_80007430(void);
-extern void func_80007448(void);
+extern void main(void);
 extern s32 func_80007748(void);
 extern s32 func_80007750(void);
 extern s32 func_80007758(void);

@@ -1,6 +1,8 @@
+.include "macros.s"
+
 .section .text
 
-glabel func_800041A8
+glabel __init_registers
 /* 800041A8 000002A8  38 00 00 00 */	li r0, 0
 /* 800041AC 000002AC  38 60 00 00 */	li r3, 0
 /* 800041B0 000002B0  38 80 00 00 */	li r4, 0

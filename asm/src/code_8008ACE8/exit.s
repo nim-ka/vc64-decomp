@@ -1,6 +1,6 @@
 .section .text
 
-glabel func_80091B24
+glabel exit
 /* 80091B24 0008D0E4  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 80091B28 0008D0E8  7C 08 02 A6 */	mflr r0
 /* 80091B2C 0008D0EC  90 01 00 14 */	stw r0, 0x14(r1)

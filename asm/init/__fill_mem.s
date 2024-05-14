@@ -1,6 +1,8 @@
+.include "macros.s"
+
 .section .text
 
-glabel func_80004388
+glabel __fill_mem
 /* 80004388 00000488  28 05 00 20 */	cmplwi r5, 0x20
 /* 8000438C 0000048C  54 87 06 3E */	clrlwi r7, r4, 0x18
 /* 80004390 00000490  38 C3 FF FF */	addi r6, r3, -1

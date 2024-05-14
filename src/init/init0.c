@@ -53,74 +53,11 @@ void __check_pad3(void) {
 	OSResetSystem(0x0, 0x0, 0x0);
 }
 
-#ifdef NON_MATCHING
-void func_80004028(void) {}
-#else
-GLOBAL_ASM("asm/src/init/func_80004028.s")
-#endif
+void __set_debug_bba(void) {
+	Debug_BBA = 1;
+}
 
-#ifdef NON_MATCHING
-void func_80004034(void) {}
-#else
-GLOBAL_ASM("asm/src/init/func_80004034.s")
-#endif
+u8 __get_debug_bba(void) {
+	return Debug_BBA;
+}
 
-#ifdef NON_MATCHING
-void main(void) {}
-#else
-GLOBAL_ASM("asm/src/init/main.s")
-#endif
-
-#ifdef NON_MATCHING
-void func_800041A8(void) {}
-#else
-GLOBAL_ASM("asm/src/init/func_800041A8.s")
-#endif
-
-#ifdef NON_MATCHING
-void func_80004238(void) {}
-#else
-GLOBAL_ASM("asm/src/init/func_80004238.s")
-#endif
-
-#ifdef NON_MATCHING
-void func_800042E0(void) {}
-#else
-GLOBAL_ASM("asm/src/init/func_800042E0.s")
-#endif
-
-#ifdef NON_MATCHING
-void func_80004304(void) {}
-#else
-GLOBAL_ASM("asm/src/init/func_80004304.s")
-#endif
-
-#ifdef NON_MATCHING
-void func_80004338(void) {}
-#else
-GLOBAL_ASM("asm/src/init/func_80004338.s")
-#endif
-
-#ifdef NON_MATCHING
-void func_80004388(void) {}
-#else
-GLOBAL_ASM("asm/src/init/func_80004388.s")
-#endif
-
-#ifdef NON_MATCHING
-void func_8000443C(void) {}
-#else
-GLOBAL_ASM("asm/src/init/func_8000443C.s")
-#endif
-
-#ifdef NON_MATCHING
-void func_8000446C(void) {}
-#else
-GLOBAL_ASM("asm/src/init/func_8000446C.s")
-#endif
-
-#ifdef NON_MATCHING
-void func_8000449C(void) {}
-#else
-GLOBAL_ASM("asm/src/init/func_8000449C.s")
-#endif

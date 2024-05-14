@@ -1,6 +1,8 @@
+.include "macros.s"
+
 .section .text
 
-glabel func_800042E0
+glabel __init_hardware
 /* 800042E0 000003E0  7C 00 00 A6 */	mfmsr r0
 /* 800042E4 000003E4  60 00 20 00 */	ori r0, r0, 0x2000
 /* 800042E8 000003E8  7C 00 01 24 */	mtmsr r0
