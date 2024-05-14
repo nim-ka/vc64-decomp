@@ -1,7 +1,7 @@
 #pragma once
 
 extern s32 lbl_8025B44C;
-extern s32 lbl_8025B448;
+extern s32 gSystem;
 extern s32 lbl_8025B444;
 extern s32 lbl_8025B440;
 extern s32 lbl_8025B43C;

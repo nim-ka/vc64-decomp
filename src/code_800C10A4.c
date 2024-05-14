@@ -42,7 +42,7 @@
 #include "code_80139084.h"
 #include "code_8013E0FC.h"
 #include "code_8013E6A8.h"
-#include "init0.h"
+#include "init.h"
 #include "MetroTRK.h"
 
 s32 lbl_8025BF2C;

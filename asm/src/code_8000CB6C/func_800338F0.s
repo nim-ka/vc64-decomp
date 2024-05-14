@@ -1,7 +1,7 @@
 .section .text
 
 glabel func_800338F0
-/* 800338F0 0002EEB0  80 8D 89 88 */	lwz r4, lbl_8025B448-_SDA_BASE_(r13)
+/* 800338F0 0002EEB0  80 8D 89 88 */	lwz r4, gSystem-_SDA_BASE_(r13)
 /* 800338F4 0002EEB4  80 84 00 10 */	lwz r4, 0x10(r4)
 /* 800338F8 0002EEB8  90 64 00 3C */	stw r3, 0x3c(r4)
 /* 800338FC 0002EEBC  81 8D 89 90 */	lwz r12, lbl_8025B450-_SDA_BASE_(r13)

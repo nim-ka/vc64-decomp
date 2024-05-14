@@ -1,7 +1,7 @@
 .section .text
 
 glabel func_80010514
-/* 80010514 0000BAD4  80 ED 89 88 */	lwz r7, lbl_8025B448-_SDA_BASE_(r13)
+/* 80010514 0000BAD4  80 ED 89 88 */	lwz r7, gSystem-_SDA_BASE_(r13)
 /* 80010518 0000BAD8  80 E7 00 0C */	lwz r7, 0xc(r7)
 /* 8001051C 0000BADC  3C 07 BC B4 */	addis r0, r7, 0xbcb4
 /* 80010520 0000BAE0  28 00 42 4A */	cmplwi r0, 0x424a
