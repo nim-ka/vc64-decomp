@@ -1,6 +1,7 @@
 ifneq ($(findstring MINGW,$(shell uname)),)
 	WINDOWS := 1
 endif
+
 ifneq ($(findstring MSYS,$(shell uname)),)
 	WINDOWS := 1
 endif
@@ -23,10 +24,9 @@ S_FILES := $(wildcard $(ASM_DIR)/*.s)
 C_FILES := $(wildcard $(SRC_DIR)/*.c)
 LDSCRIPT := ldscript.lcf
 
-# Do we compare the SHA1 hash of the app after building?
 COMPARE ?= 1
 
-TARGET := vc64_00000001.app
+TARGET := vc64.app
 
 BUILD := build
 DOL := $(BUILD)/$(TARGET)
