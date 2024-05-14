@@ -4,6 +4,7 @@ CC="$1"
 shift
 AS="$1"
 shift
+shift
 
 temp="$(mktemp)"
 
