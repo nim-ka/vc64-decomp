@@ -1,166 +1,166 @@
 FORCEFILES {
-        code_8000CB6C.o
-        code_80043A0C.o
-        code_8004E5A0.o
-        code_8005F198.o
-        code_800C7B54.o
+	code_8000CB6C.o
+	code_80043A0C.o
+	code_8004E5A0.o
+	code_8005F198.o
+	code_800C7B54.o
 }
 
 SECTIONS {
-    .init BIND(0x80004000): {
-        init0.o(.text)
-        init0.o(.rodata)
-        init1.o(.text)
-        init1.o(.rodata)
-	*(.init)
-    }
+	.init BIND(0x80004000): {
+		init0.o(.text)
+		init0.o(.rodata)
+		init1.o(.text)
+		init1.o(.rodata)
+		*(.init)
+	}
 
-    extab_ BIND(0x800064E0): { *(extab_) }
-    extabindex_ BIND(0x800069A0): { *(extabindex_) }
+	extab_ BIND(0x800064E0): { *(extab_) }
+	extabindex_ BIND(0x800069A0): { *(extabindex_) }
 
-    .text BIND(0x80007020): {
-        code_80007020.o(.text)
-        code_8000CB6C.o(.text)
-        code_80033914.o(.text)
-        code_80043A0C.o(.text)
-        code_8004E5A0.o(.text)
-        code_800575A0.o(.text)
-        code_8005F198.o(.text)
-        code_80077288.o(.text)
-        code_8007D744.o(.text)
-        code_80080E4C.o(.text)
-        code_8008ACE8.o(.text)
-        code_8009A6D8.o(.text)
-        code_8009DF0C.o(.text)
-        code_800A7E98.o(.text)
-        code_800ABE50.o(.text)
-        code_800ACCB4.o(.text)
-        code_800C10A4.o(.text)
-        code_800C7B54.o(.text)
-        code_800FD3D0.o(.text)
-        code_800FDEF8.o(.text)
-        code_8010DA94.o(.text)
-        code_801126C0.o(.text)
-        code_80112BF8.o(.text)
-        code_8011713C.o(.text)
-        code_8011F614.o(.text)
-        code_80121508.o(.text)
-        code_80123E48.o(.text)
-        code_80123FD0.o(.text)
-        code_80127C48.o(.text)
-        code_80128C98.o(.text)
-        code_80139084.o(.text)
-        code_8013E0FC.o(.text)
-        code_8013E6A8.o(.text)
-        *(.text)
-    }
+	.text BIND(0x80007020): {
+		code_80007020.o(.text)
+		code_8000CB6C.o(.text)
+		code_80033914.o(.text)
+		code_80043A0C.o(.text)
+		code_8004E5A0.o(.text)
+		code_800575A0.o(.text)
+		code_8005F198.o(.text)
+		code_80077288.o(.text)
+		code_8007D744.o(.text)
+		code_80080E4C.o(.text)
+		code_8008ACE8.o(.text)
+		code_8009A6D8.o(.text)
+		code_8009DF0C.o(.text)
+		code_800A7E98.o(.text)
+		code_800ABE50.o(.text)
+		code_800ACCB4.o(.text)
+		code_800C10A4.o(.text)
+		code_800C7B54.o(.text)
+		code_800FD3D0.o(.text)
+		code_800FDEF8.o(.text)
+		code_8010DA94.o(.text)
+		code_801126C0.o(.text)
+		code_80112BF8.o(.text)
+		code_8011713C.o(.text)
+		code_8011F614.o(.text)
+		code_80121508.o(.text)
+		code_80123E48.o(.text)
+		code_80123FD0.o(.text)
+		code_80127C48.o(.text)
+		code_80128C98.o(.text)
+		code_80139084.o(.text)
+		code_8013E0FC.o(.text)
+		code_8013E6A8.o(.text)
+		*(.text)
+	}
 
-    .ctors BIND(0x80167240): {
-        ctors.o(.ctors)
-        *(.ctors)
-    }
+	.ctors BIND(0x80167240): {
+		ctors.o(.ctors)
+		*(.ctors)
+	}
 
-    .dtors BIND(0x801672A0): {
-        dtors.o(.dtors)
-        *(.dtors)
-    }
+	.dtors BIND(0x801672A0): {
+		dtors.o(.dtors)
+		*(.dtors)
+	}
 
-    .rodata BIND(0x801672C0): {
-        rodata.o(.rodata)
-        *(.rodata)
-    }
+	.rodata BIND(0x801672C0): {
+		rodata.o(.rodata)
+		*(.rodata)
+	}
 
-    .data BIND(0x8016C300): {
-        data.o(.data)
-        *(.data)
-    }
+	.data BIND(0x8016C300): {
+		data.o(.data)
+		*(.data)
+	}
 
-    .bss BIND(0x8019D440): {
-        code_80007020.o(.bss)
-        code_8000CB6C.o(.bss)
-        code_80033914.o(.bss)
-        code_80043A0C.o(.bss)
-        code_8004E5A0.o(.bss)
-        code_800575A0.o(.bss)
-        code_8005F198.o(.bss)
-        code_80077288.o(.bss)
-        code_8007D744.o(.bss)
-        code_80080E4C.o(.bss)
-        code_8008ACE8.o(.bss)
-        code_8009A6D8.o(.bss)
-        code_8009DF0C.o(.bss)
-        code_800A7E98.o(.bss)
-        code_800ABE50.o(.bss)
-        code_800ACCB4.o(.bss)
-        code_800C10A4.o(.bss)
-        code_800C7B54.o(.bss)
-        code_800FD3D0.o(.bss)
-        code_800FDEF8.o(.bss)
-        code_8010DA94.o(.bss)
-        code_801126C0.o(.bss)
-        code_80112BF8.o(.bss)
-        code_8011713C.o(.bss)
-        code_8011F614.o(.bss)
-        code_80121508.o(.bss)
-        code_80123E48.o(.bss)
-        code_80123FD0.o(.bss)
-        code_80127C48.o(.bss)
-        code_80128C98.o(.bss)
-        code_80139084.o(.bss)
-        code_8013E0FC.o(.bss)
-        code_8013E6A8.o(.bss)
-        *(.bss)
-    }
+	.bss BIND(0x8019D440): {
+		code_80007020.o(.bss)
+		code_8000CB6C.o(.bss)
+		code_80033914.o(.bss)
+		code_80043A0C.o(.bss)
+		code_8004E5A0.o(.bss)
+		code_800575A0.o(.bss)
+		code_8005F198.o(.bss)
+		code_80077288.o(.bss)
+		code_8007D744.o(.bss)
+		code_80080E4C.o(.bss)
+		code_8008ACE8.o(.bss)
+		code_8009A6D8.o(.bss)
+		code_8009DF0C.o(.bss)
+		code_800A7E98.o(.bss)
+		code_800ABE50.o(.bss)
+		code_800ACCB4.o(.bss)
+		code_800C10A4.o(.bss)
+		code_800C7B54.o(.bss)
+		code_800FD3D0.o(.bss)
+		code_800FDEF8.o(.bss)
+		code_8010DA94.o(.bss)
+		code_801126C0.o(.bss)
+		code_80112BF8.o(.bss)
+		code_8011713C.o(.bss)
+		code_8011F614.o(.bss)
+		code_80121508.o(.bss)
+		code_80123E48.o(.bss)
+		code_80123FD0.o(.bss)
+		code_80127C48.o(.bss)
+		code_80128C98.o(.bss)
+		code_80139084.o(.bss)
+		code_8013E0FC.o(.bss)
+		code_8013E6A8.o(.bss)
+		*(.bss)
+	}
 
-    .sdata BIND(0x8025AAC0): {
-        sdata.o(.sdata)
-        *(.sdata)
-    }
+	.sdata BIND(0x8025AAC0): {
+		sdata.o(.sdata)
+		*(.sdata)
+	}
 
-    .sbss BIND(0x8025B3E0): {
-        code_80007020.o(.sbss)
-        code_8000CB6C.o(.sbss)
-        code_80033914.o(.sbss)
-        code_80043A0C.o(.sbss)
-        code_8004E5A0.o(.sbss)
-        code_800575A0.o(.sbss)
-        code_8005F198.o(.sbss)
-        code_80077288.o(.sbss)
-        code_8007D744.o(.sbss)
-        code_80080E4C.o(.sbss)
-        code_8008ACE8.o(.sbss)
-        code_8009A6D8.o(.sbss)
-        code_8009DF0C.o(.sbss)
-        code_800A7E98.o(.sbss)
-        code_800ABE50.o(.sbss)
-        code_800ACCB4.o(.sbss)
-        code_800C10A4.o(.sbss)
-        code_800C7B54.o(.sbss)
-        code_800FD3D0.o(.sbss)
-        code_800FDEF8.o(.sbss)
-        code_8010DA94.o(.sbss)
-        code_801126C0.o(.sbss)
-        code_80112BF8.o(.sbss)
-        code_8011713C.o(.sbss)
-        code_8011F614.o(.sbss)
-        code_80121508.o(.sbss)
-        code_80123E48.o(.sbss)
-        code_80123FD0.o(.sbss)
-        code_80127C48.o(.sbss)
-        code_80128C98.o(.sbss)
-        code_80139084.o(.sbss)
-        code_8013E0FC.o(.sbss)
-        code_8013E6A8.o(.sbss)
-        *(.sbss)
-    }
+	.sbss BIND(0x8025B3E0): {
+		code_80007020.o(.sbss)
+		code_8000CB6C.o(.sbss)
+		code_80033914.o(.sbss)
+		code_80043A0C.o(.sbss)
+		code_8004E5A0.o(.sbss)
+		code_800575A0.o(.sbss)
+		code_8005F198.o(.sbss)
+		code_80077288.o(.sbss)
+		code_8007D744.o(.sbss)
+		code_80080E4C.o(.sbss)
+		code_8008ACE8.o(.sbss)
+		code_8009A6D8.o(.sbss)
+		code_8009DF0C.o(.sbss)
+		code_800A7E98.o(.sbss)
+		code_800ABE50.o(.sbss)
+		code_800ACCB4.o(.sbss)
+		code_800C10A4.o(.sbss)
+		code_800C7B54.o(.sbss)
+		code_800FD3D0.o(.sbss)
+		code_800FDEF8.o(.sbss)
+		code_8010DA94.o(.sbss)
+		code_801126C0.o(.sbss)
+		code_80112BF8.o(.sbss)
+		code_8011713C.o(.sbss)
+		code_8011F614.o(.sbss)
+		code_80121508.o(.sbss)
+		code_80123E48.o(.sbss)
+		code_80123FD0.o(.sbss)
+		code_80127C48.o(.sbss)
+		code_80128C98.o(.sbss)
+		code_80139084.o(.sbss)
+		code_8013E0FC.o(.sbss)
+		code_8013E6A8.o(.sbss)
+		*(.sbss)
+	}
 
-    .sdata2 BIND(0x8025C140): {
-        sdata2.o(.sdata2)
-        *(.sdata2)
-    }
+	.sdata2 BIND(0x8025C140): {
+		sdata2.o(.sdata2)
+		*(.sdata2)
+	}
 
-    .sbss2 BIND(0x8025D380): {
-        code_8010DA94.o(.sbss2)
-        *(.sbss2)
-    }
+	.sbss2 BIND(0x8025D380): {
+		code_8010DA94.o(.sbss2)
+		*(.sbss2)
+	}
 }

@@ -222,7 +222,7 @@ GLOBAL_ASM("asm/src/code_800A7E98/func_800A847C.s")
 #endif
 
 void func_800A85FC(void) {
-    lbl_8025BC98 = 0;
+	lbl_8025BC98 = 0;
 }
 
 #ifdef NON_MATCHING

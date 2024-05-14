@@ -526,7 +526,7 @@ GLOBAL_ASM("asm/src/code_80080E4C/func_80084A8C.s")
 #endif
 
 void func_80084BE0(void) {
-    func_80090148(&lbl_8025B720);
+	func_80090148(&lbl_8025B720);
 }
 
 #ifdef NON_MATCHING
